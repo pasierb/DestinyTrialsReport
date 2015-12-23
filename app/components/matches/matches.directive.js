@@ -3,7 +3,7 @@
 
   angular
     .module('trialsReportApp')
-    .factory('matchStats', matchStats);
+    .directive('matchStats', matchStats);
 
   function matchStats() {
     return {
@@ -78,6 +78,9 @@
               setOrIncrement(allStats, value, index);
             }
           });
+          setOrIncrement(allStats, match.values.killsDeathsRatio, 'killsDeathsRatio');
+          setOrIncrement(allStats, match.values.killsDeathsAssists, 'killsDeathsAssists');
+          setOrIncrement(allStats, match.values.assists, 'assists');
           matchCount++
         });
         $scope.weapons = weapons;

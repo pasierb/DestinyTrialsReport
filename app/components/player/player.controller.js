@@ -3,7 +3,8 @@
 angular.module('trialsReportApp')
   .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory, guardianggFactory) {
 
-    homeFactory.getActivities($scope.player, '50');
+    var activityCount = $scope.subdomain ? '200' : '50';
+    homeFactory.getActivities($scope.player, activityCount);
     statsFactory.getStats($scope.player);
     statsFactory.getGrimoire($scope.player);
     statsFactory.checkSupporter($scope.player);
