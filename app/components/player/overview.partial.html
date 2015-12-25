@@ -49,7 +49,7 @@
         <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
         <label>Wins</label>
       </div>
-      <div class="col-xs-3 stat">
+      <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
         <span ng-bind="player.activities.streak || 'N/A'"></span>
         <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
         <label>Streak</label>

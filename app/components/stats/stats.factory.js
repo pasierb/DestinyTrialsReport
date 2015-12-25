@@ -93,7 +93,7 @@ angular.module('trialsReportApp')
               }
             }
           });
-          dfd.resolve(players);
+          dfd.resolve(fireteam);
           return dfd.promise;
         });
     };

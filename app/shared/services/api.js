@@ -13,6 +13,7 @@ app.service('api', [
         supporterStatus: '/supporterStatus/{membershipId}',
         lighthouseCount: '/api/lighthouseCount/{membershipIdArray}',
         opponents: '/api/getOpponents/{membershipId}',
+        streak: '/api/longestStreak/{membershipId}/{characterId}',
         topWeapons: '/api/topWeapons/{membershipId}',
         recentTeammates: '/api/recentTeammates/{membershipId}',
         previousMatches: '/api/previousMatches/{membershipId}',
@@ -35,6 +36,13 @@ app.service('api', [
       this.getOpponents = function(membershipId) {
         return this.get(ENDPOINTS.opponents, {
           membershipId: membershipId
+        });
+      };
+
+      this.longestStreak = function(membershipId, characterId) {
+        return this.get(ENDPOINTS.streak, {
+          membershipId: membershipId,
+          characterId: characterId
         });
       };
 

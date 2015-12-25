@@ -37,7 +37,7 @@ function start() {
     if (req.headers[process.env.AUTH]) {
       var options = {
         url: 'http://' + process.env.API_URL + ':8000/' + req.originalUrl,
-        headers: {'X-API-Key': process.env.BUNGIE_API_KEY}
+        headers: {'X-API-Key': process.env.BUNGIE_API_KEY, 'X-AUTH-Key': process.env.AUTH_KEY}
       };
       try {
         request(options, function (error, response, body) {

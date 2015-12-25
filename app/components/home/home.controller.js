@@ -152,6 +152,19 @@
 
             guardianggFactory.getTeamElo($scope.fireteam);
             statsFactory.getLighthouseCount($scope.fireteam);
+
+            _.each($scope.fireteam, function (player) {
+              statsFactory.getTopWeapons(player);
+              api.longestStreak(
+                player.membershipId,
+                player.characterInfo.characterId
+              ).then(function (streak) {
+                  if (streak && streak.data && streak.data[0]) {
+                    player.longestStreak = streak.data[0];
+                  }
+                });
+            });
+
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()
                 .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +

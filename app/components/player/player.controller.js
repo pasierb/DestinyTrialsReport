@@ -8,7 +8,6 @@ angular.module('trialsReportApp')
     statsFactory.getStats($scope.player);
     statsFactory.getGrimoire($scope.player);
     statsFactory.checkSupporter($scope.player);
-    statsFactory.getTopWeapons($scope.player);
 
     $scope.getLastMatch = function (player) {
       return matchesFactory.getLastThree(player)
