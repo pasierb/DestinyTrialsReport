@@ -19,6 +19,7 @@
     $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
 
+    $scope.flawlessLeaderboard = null;
     $scope.weaponKills = weaponKills;
     $scope.statNamesByHash = statNamesByHash;
 
@@ -188,11 +189,10 @@
     }
 
     if (_.isUndefined(config.fireteam)) {
-      if (_.isUndefined($scope.flawlessLeaderboard)) {
-        $scope.flawlessLeaderboard = {};
-
+      if (!$scope.flawlessLeaderboard) {
         api.trialsFirst()
           .then(function (matches) {
+            $scope.flawlessLeaderboard = {};
             _.each(matches.data, function (match) {
               return api.teamByMatch(
                 match.instanceId

@@ -41,7 +41,7 @@
       </div>
     </div>
   </article>
-  <div class="home__aside" ng-if="flawlessLeaderboard.length > 0">
+  <div class="home__aside" ng-if="flawlessLeaderboard">
     <article class="block top-weapons shadow-z-1">
       <div class="block__title">
         <h2>
@@ -58,7 +58,7 @@
           </div>
           <div class="col-xs-2 stat">
             <label>
-              <a href="https://www.bungie.net/en/Legend/PGCR?instanceId={{week.instanceId}}" target="_blank">
+              <a ng-href="https://www.bungie.net/en/Legend/PGCR?instanceId={{week.instanceId}}" target="_blank">
                 <i class="material-icons" style="font-size: 20px;margin-top: -4px;">&#xE89E;</i>
               </a>
             </label>
