@@ -32,6 +32,23 @@
   }
 }
 
+.colofon__twitter {
+  img {
+    height: 1em;
+    margin-right: .2em;
+  }
+
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      color: white;
+      filter: brightness(2);
+    }
+  }
+}
+
 .colofon__contribute {
   img {
     height: 1em;

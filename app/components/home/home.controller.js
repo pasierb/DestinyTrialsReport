@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $routeParams, $scope, util) {
+  function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $routeParams, $scope, statsFactory, util) {
     $scope.currentMap = DestinyCrucibleMapDefinition[2507231345];
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
@@ -151,7 +151,7 @@
             var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
 
             guardianggFactory.getTeamElo($scope.fireteam);
-
+            statsFactory.getLighthouseCount($scope.fireteam);
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()
                 .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +

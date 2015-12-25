@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .factory('statsFactory', function ($http, bungie, api) {
+  .factory('statsFactory', function ($http, bungie, api, $q) {
 
     var getStats = function (player) {
       return bungie.getStats(
@@ -45,54 +45,61 @@ angular.module('trialsReportApp')
         });
     };
 
-    var getLighthouseCount = function (player) {
+    var getLighthouseCount = function (fireteam) {
       return api.lighthouseCount(
-        player.membershipId
+        _.pluck(fireteam, 'membershipId')
       ).then(function (result) {
-          if (result && result.data) {
-            var lighthouseVisits = {};
-            var accountCount = 0;
-            var characterCount = 0;
+          var dfd = $q.defer();
+          _.each(fireteam, function (player) {
+            if (result && result.data) {
+              var lighthouseVisits = {};
+              var accountCount = 0;
+              var characterCount = 0;
 
-            var visitsByCharacter = _.groupBy(result.data, 'characterId');
-            _.each(visitsByCharacter, function (visits, characterId) {
-              var weeks = {};
+              var visitsByCharacter = _.groupBy(result.data, 'characterId');
+              _.each(visitsByCharacter, function (visits, characterId) {
+                var weeks = {};
 
-              _.each(visits, function (visit) {
-                var now = moment.utc(visit.period);
-                var begin = now.clone().day(5).hour(18).minute(0).second(0).millisecond(0);
-                if (now.isBefore(begin)) begin.subtract(1, 'week');
+                _.each(visits, function (visit) {
+                  var now = moment.utc(visit.period);
+                  var begin = now.clone().day(5).hour(18).minute(0).second(0).millisecond(0);
+                  if (now.isBefore(begin)) begin.subtract(1, 'week');
 
-                var dateBeginTrials = begin.format('YYYY-MM-DD');
+                  var dateBeginTrials = begin.format('YYYY-MM-DD');
 
-                weeks[dateBeginTrials] = weeks[dateBeginTrials] + 1 || 1;
+                  weeks[dateBeginTrials] = weeks[dateBeginTrials] + 1 || 1;
+                });
+
+                var visitsCount = _.size(weeks);
+                if (visits[0].membershipId == player.membershipId) {
+                  accountCount += visitsCount;
+                }
+                lighthouseVisits[characterId] = weeks;
+                if (characterId == player.characterInfo.characterId) {
+                  characterCount = visitsCount;
+                }
               });
 
-              var visitsCount = _.size(weeks);
-              lighthouseVisits[characterId] = weeks;
-              accountCount += visitsCount;
-              if (characterId == player.characterInfo.characterId) {
-                characterCount = visitsCount;
+              if (player.hasOwnProperty('lighthouse')) {
+                player.lighthouse.visits = lighthouseVisits;
+                player.lighthouse.accountCount = accountCount;
+                player.lighthouse.characterCount = characterCount;
+              } else {
+                player.lighthouse = {
+                  visits: lighthouseVisits,
+                  accountCount: accountCount,
+                  characterCount: characterCount
+                };
               }
-            });
-
-            if (player.hasOwnProperty('lighthouse')) {
-              player.lighthouse.visits = lighthouseVisits;
-              player.lighthouse.accountCount = accountCount;
-              player.lighthouse.characterCount = characterCount;
-            } else {
-              player.lighthouse = {
-                visits: lighthouseVisits,
-                accountCount: accountCount,
-                characterCount: characterCount
-              };
             }
-            return player;
-          }
+          });
+          dfd.resolve(players);
+          return dfd.promise;
         });
     };
 
     var getTopWeapons = function (player) {
+      var dfd = $q.defer();
       return api.topWeapons(
         player.membershipId
       ).then(function (result) {
@@ -102,7 +109,8 @@ angular.module('trialsReportApp')
               topWeapons[weapon.weaponId] = {percision: +(100 * weapon.headshots / weapon.kills).toFixed(), kills: weapon.kills, headshots: weapon.headshots};
             });
             player.topWeapons = topWeapons;
-            return player;
+            dfd.resolve(player);
+            return dfd.promise;
           }
         });
     };

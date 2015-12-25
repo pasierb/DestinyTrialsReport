@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory, guardianggFactory) {
+  .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory) {
 
     var activityCount = $scope.subdomain ? '200' : '50';
     homeFactory.getActivities($scope.player, activityCount);
     statsFactory.getStats($scope.player);
     statsFactory.getGrimoire($scope.player);
     statsFactory.checkSupporter($scope.player);
+    statsFactory.getTopWeapons($scope.player);
 
     $scope.getLastMatch = function (player) {
       return matchesFactory.getLastThree(player)
@@ -55,8 +56,5 @@ angular.module('trialsReportApp')
         case false: return lighthouseData.accountCount;
       }
     };
-
-    statsFactory.getLighthouseCount($scope.player);
-    //statsFactory.getTopWeapons($scope.player);
 
   });

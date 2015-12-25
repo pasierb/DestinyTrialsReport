@@ -11,7 +11,7 @@ app.service('api', [
       var BASE_URL = '';
       var ENDPOINTS = {
         supporterStatus: '/supporterStatus/{membershipId}',
-        lighthouseCount: '/api/lighthouseAll/{membershipId}',
+        lighthouseCount: '/api/lighthouseCount/{membershipIdArray}',
         opponents: '/api/getOpponents/{membershipId}',
         topWeapons: '/api/topWeapons/{membershipId}',
         recentTeammates: '/api/recentTeammates/{membershipId}',
@@ -26,9 +26,9 @@ app.service('api', [
         });
       };
 
-      this.lighthouseCount = function(membershipId) {
+      this.lighthouseCount = function(membershipIdArray) {
         return this.get(ENDPOINTS.lighthouseCount, {
-          membershipId: membershipId
+          membershipIdArray: membershipIdArray
         });
       };
 
