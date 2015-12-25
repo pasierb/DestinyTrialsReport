@@ -14,7 +14,7 @@ angular
       animation: false,
       container: 'body',
       html: true,
-      placement: 'auto top',
+      placement: 'top',
       trigger: 'hover'
     });
   });
