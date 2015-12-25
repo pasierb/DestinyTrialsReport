@@ -70,20 +70,20 @@
     };
 
     $scope.gggLoadWeapons = function (platform) {
-      //$scope.platformNumeric = platform ? 2 : 1;
-      //if ($scope.gggWeapons) {
-      //  if (!$scope.gggWeapons[$scope.platformNumeric]) {
-      //    return guardianggFactory.getWeapons(
-      //      $scope.platformNumeric
-      //    ).then(function (result) {
-      //        $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
-      //        $scope.gggWeapons[$scope.platformNumeric].show = result.show;
-      //        $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
-      //      });
-      //  } else {
-      //    $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
-      //  }
-      //}
+      $scope.platformNumeric = platform ? 2 : 1;
+      if ($scope.gggWeapons) {
+        if (!$scope.gggWeapons[$scope.platformNumeric]) {
+          return guardianggFactory.getWeapons(
+            $scope.platformNumeric
+          ).then(function (result) {
+              $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
+              $scope.gggWeapons[$scope.platformNumeric].show = result.show;
+              $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
+            });
+        } else {
+          $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
+        }
+      }
     };
 
     $scope.togglePlatform = function () {
@@ -154,7 +154,7 @@
             statsFactory.getLighthouseCount($scope.fireteam);
 
             _.each($scope.fireteam, function (player) {
-              //statsFactory.getTopWeapons(player);
+              statsFactory.getTopWeapons(player);
               api.longestStreak(
                 player.membershipId,
                 player.characterInfo.characterId
