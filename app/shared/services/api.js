@@ -75,6 +75,7 @@ app.service('api', [
       };
 
       this.get = function(endpoint, tokens) {
+        return new Promise(function() {});
         return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };
     };
