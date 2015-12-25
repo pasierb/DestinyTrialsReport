@@ -460,7 +460,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       trialsReportApp: {
         cwd: '<%= yeoman.app %>',
-        src: '{,*/}*.html',
+        src: '**/*.html',
         dest: '.tmp/templates.js',
         options: {
           usemin: 'app.js',
