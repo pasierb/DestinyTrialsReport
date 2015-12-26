@@ -36,7 +36,7 @@ function start() {
   app.use('/api/*?', function(req, res) {
     if (req.headers[process.env.AUTH]) {
       var options = {
-        url: 'http://' + process.env.API_URL + ':8000/' + req.originalUrl,
+        url: 'http://' + process.env.API_URL + '/' + req.originalUrl.replace('/api/', ''),
         headers: {'X-API-Key': process.env.BUNGIE_API_KEY, 'X-AUTH-Key': process.env.AUTH_KEY}
       };
       try {
@@ -57,7 +57,7 @@ function start() {
   // Guardian.net API Proxy
   app.use('/ggg/*?', function(req, res) {
     var options = {
-      url: 'https://api.guardian.gg/' + req.originalUrl.replace("/ggg/", ""),
+      url: 'https://api.guardian.gg/' + req.originalUrl.replace('/ggg/', ''),
       headers: {'X-API-Key': process.env.BUNGIE_API_KEY}
     };
     request(options, function (error, response, body) {
