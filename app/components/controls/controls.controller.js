@@ -58,7 +58,7 @@
               statsFactory.getGrimoire($scope.fireteam[index]);
               statsFactory.checkSupporter($scope.fireteam[index]);
               statsFactory.getLighthouseCount($scope.fireteam);
-              statsFactory.getTopWeapons($scope.fireteam[index]);
+              statsFactory.weaponStats($scope.fireteam[index]);
               guardianggFactory.getTeamElo($scope.fireteam);
               updateUrl($scope, locationChanger);
             });

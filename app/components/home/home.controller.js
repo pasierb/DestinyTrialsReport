@@ -154,12 +154,12 @@
           statsFactory.getLighthouseCount($scope.fireteam);
 
           _.each($scope.fireteam, function (player) {
-            statsFactory.getTopWeapons(player);
+            statsFactory.weaponStats(player);
             api.longestStreak(
               player.membershipId,
               player.characterInfo.characterId
             ).then(function (streak) {
-                if (streak && streak.data && streak.data) {
+                if (streak && streak.data) {
                   player.longestStreak = streak.data;
                 }
               });

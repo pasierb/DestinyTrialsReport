@@ -115,6 +115,33 @@ angular.module('trialsReportApp')
         });
     };
 
+    var weaponStats = function (player) {
+      var dfd = $q.defer();
+      var pWeapons = player.inventory.weapons;
+      var weaponArray = [pWeapons.primary.definition,pWeapons.special.definition,pWeapons.heavy.definition];
+      var weaponIds = _.pluck(weaponArray, 'itemHash');
+      return api.weaponStats(
+        player.membershipId,
+        weaponIds
+      ).then(function (result) {
+          if (result && result.data) {
+            var topWeapons = {};
+            _.each(result.data, function (weapon) {
+              topWeapons[weapon.weaponId] = {
+                percision: +(100 * weapon.headshots / weapon.kills).toFixed(),
+                kills: weapon.kills,
+                headshots: weapon.headshots,
+                win_percentage: (weapon.win_percentage * 1).toFixed()
+              };
+            });
+            player.topWeapons = topWeapons;
+            dfd.resolve(player);
+            return dfd.promise;
+          }
+        });
+    };
+
+
     var getPreviousMatches = function (player) {
       return api.previousMatches(
         player.membershipId
@@ -144,6 +171,7 @@ angular.module('trialsReportApp')
       checkSupporter: checkSupporter,
       getLighthouseCount: getLighthouseCount,
       getTopWeapons: getTopWeapons,
-      getPreviousMatches: getPreviousMatches
+      getPreviousMatches: getPreviousMatches,
+      weaponStats: weaponStats
     };
   });
