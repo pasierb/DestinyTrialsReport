@@ -6,7 +6,7 @@
     .controller('homeController', homeController);
 
   function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $routeParams, $scope, statsFactory, util) {
-    $scope.currentMap = DestinyCrucibleMapDefinition[3817155567];
+    $scope.currentMap = DestinyCrucibleMapDefinition[4200263342];
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
     $scope.$storage = $localStorage.$default({
@@ -159,8 +159,8 @@
               player.membershipId,
               player.characterInfo.characterId
             ).then(function (streak) {
-                if (streak && streak.data && streak.data[0]) {
-                  player.longestStreak = streak.data[0];
+                if (streak && streak.data && streak.data) {
+                  player.longestStreak = streak.data;
                 }
               });
           });
