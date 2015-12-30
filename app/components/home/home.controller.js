@@ -192,17 +192,21 @@
       if (!$scope.flawlessLeaderboard) {
         api.trialsFirst()
           .then(function (matches) {
-            $scope.flawlessLeaderboard = {};
-            _.each(matches.data, function (match) {
-              return api.teamByMatch(
-                match.instanceId
-              ).then(function (result) {
-                  result.data.date = util.convertUTCDateToLocalDate(new Date(result.data[0].date));
-                  result.data.instanceId = match.instanceId;
-                  result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
-                  $scope.flawlessLeaderboard[match.instanceId] = result.data;
-                });
-            });
+            if (matches && matches.data) {
+              $scope.flawlessLeaderboard = {};
+              _.each(matches.data, function (match) {
+                if (match && match.instanceId) {
+                  return api.teamByMatch(
+                    match.instanceId
+                  ).then(function (result) {
+                      result.data.date = util.convertUTCDateToLocalDate(new Date(result.data[0].date));
+                      result.data.instanceId = match.instanceId;
+                      result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
+                      $scope.flawlessLeaderboard[match.instanceId] = result.data;
+                    });
+                }
+              });
+            }
           });
       }
     }
