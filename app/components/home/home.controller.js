@@ -122,7 +122,7 @@
       $scope.fireteam = config.fireteam;
       $scope.$storage.platform = ($routeParams.platformName === 'ps');
       if ($scope.sdOpponents) {
-        $scope.opponents = config.data;
+        $scope.opponents = config.data.reverse();
         $scope.opponentsCopy = $scope.opponents;
         $scope.focusOnPlayers = true;
 
@@ -146,26 +146,25 @@
       }
       if (angular.isDefined($scope.fireteam[0])) {
         $scope.platformValue = $scope.fireteam[0].membershipType === 2;
-        if ($scope.fireteam[0] && $scope.fireteam[1] && $scope.fireteam[2]) {
+        if (($scope.fireteam[0] && $scope.fireteam[1] && $scope.fireteam[2]) || $scope.subdomain) {
+          $scope.focusOnPlayers = true;
+          var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
+
+          guardianggFactory.getTeamElo($scope.fireteam);
+          statsFactory.getLighthouseCount($scope.fireteam);
+
+          _.each($scope.fireteam, function (player) {
+            statsFactory.getTopWeapons(player);
+            api.longestStreak(
+              player.membershipId,
+              player.characterInfo.characterId
+            ).then(function (streak) {
+                if (streak && streak.data && streak.data[0]) {
+                  player.longestStreak = streak.data[0];
+                }
+              });
+          });
           if ($scope.fireteam[2].membershipId) {
-            $scope.focusOnPlayers = true;
-            var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
-
-            guardianggFactory.getTeamElo($scope.fireteam);
-            statsFactory.getLighthouseCount($scope.fireteam);
-
-            _.each($scope.fireteam, function (player) {
-              statsFactory.getTopWeapons(player);
-              api.longestStreak(
-                player.membershipId,
-                player.characterInfo.characterId
-              ).then(function (streak) {
-                  if (streak && streak.data && streak.data[0]) {
-                    player.longestStreak = streak.data[0];
-                  }
-                });
-            });
-
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()
                 .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +

@@ -7,26 +7,30 @@
       </div>
       <div class="top-weapons__type" style="min-height: 112px;">
         <div class="row">
-          <div class="col-xs-5">
+          <div class="col-xs-4">
             <label class="top-weapons__label">Player</label>
           </div>
-          <div class="col-xs-5 stat">
+          <div class="col-xs-4 stat">
             <label> Standing </label>
           </div>
-          <div class="col-xs-2 stat">
+          <div class="col-xs-4 stat">
             <label>
-
+              Opponent KD
             </label>
           </div>
         </div>
         <div class="row top-weapon" dir-paginate="opponent in opponents | itemsPerPage: 15" style="margin-top: 0; padding-top: .75em; cursor: pointer; cursor: hand;"
              ng-click="getMatchDetails(opponent.instanceId)" ng-class="{'active-player': matchResults.activityDetails.instanceId == opponent.instanceId}">
-          <div class="col-xs-6 last-weapon-weapon__descr">
+          <div class="col-xs-4 last-weapon-weapon__descr">
             <span class="last-match-weapon__title" style="line-height: 1.3;" ng-bind="opponent.displayName"></span>
           </div>
-          <div class="col-xs-6 stat">
+          <div class="col-xs-4 stat">
             <span class="last-match-weapon__title" style="line-height: 1.3;"
-                  ng-bind="opponent.standing === 1 ? 'Won' : 'Lost'"></span>
+                  ng-bind="opponent.standing === '1' ? 'Won' : 'Lost'"></span>
+          </div>
+          <div class="col-xs-4 stat">
+            <span class="last-match-weapon__title" style="line-height: 1.3;"
+                  ng-bind="opponent.kd | number:2 "></span>
           </div>
         </div>
         <dir-pagination-controls max-size="6"></dir-pagination-controls>
