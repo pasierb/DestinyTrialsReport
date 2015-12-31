@@ -78,6 +78,30 @@ module.exports = function (grunt) {
                 'git commit -m "' + (grunt.option('gitm') ? grunt.option('gitm') : 'updated') + '" --allow-empty',
                 'git push --force staging master'
             ].join('&&')
+        }, //these need to be updated still, but will work for now.
+        'deploy-init': {
+            command: [
+                'cd heroku',
+                'git init',
+                'git remote add production ssh://root@destinytrialsreport.com/var/git/production.git',
+                'git remote add development ssh://root@destinytrialsreport.com/var/git/development.git'
+            ].join('&&')
+        },
+        'deploy-production': {
+            command: [
+                'cd heroku',
+                'git add -A',
+                'git commit -m "' + (grunt.option('gitm') ? grunt.option('gitm') : 'updated') + '" --allow-empty',
+                'git push --force production master'
+            ].join('&&')
+        },
+        'deploy-development': {
+            command: [
+                'cd heroku',
+                'git add -A',
+                'git commit -m "' + (grunt.option('gitm') ? grunt.option('gitm') : 'updated') + '" --allow-empty',
+                'git push --force development master'
+            ].join('&&')
         }
     },
 
@@ -168,17 +192,6 @@ module.exports = function (grunt) {
           },
           rewrite: {
             '^/ggg': '/'
-          }
-        },
-        {
-          context: '/api',
-          host: '',
-          port: 8000,
-          https: false,
-          xforward: false,
-          headers: {
-            'host': 'http://',
-            'X-API-Key': BUNGIE_API_KEY
           }
         }]
       },
@@ -379,32 +392,6 @@ module.exports = function (grunt) {
         ]
       }
     },
-
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/assets/css/main.css': [
-    //         '.tmp/assets/css/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/app.js': [
-    //         '<%= yeoman.dist %>/scripts/app.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
 
     imagemin: {
       //jpg: {
@@ -621,6 +608,22 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('deploy', function(method) {
+    switch(method) {
+      case 'init':
+        grunt.task.run(['shell:deploy-init']);
+      break;
+
+      case 'production':
+        grunt.task.run(['shell:deploy-production']);
+      break;
+
+      case 'development':
+        grunt.task.run(['shell:deploy-development']);
+      break;
+    }
+  });
 
   //Heroku Settings
   grunt.registerTask('heroku', function(method) {
