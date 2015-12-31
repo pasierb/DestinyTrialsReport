@@ -17,9 +17,9 @@
             <a href="#" ng-click="orderByField='kd'; reverseSort = !reverseSort">
             <label>
               Opponent KD
-              <span ng-show="orderByField == 'kd'">
-                <span ng-show="!reverseSort">^</span>
-                <span ng-show="reverseSort">v</span>
+              <span class="d-block pull-right" ng-show="orderByField == 'kd'">
+                <i ng-hide="reverseSort" class="material-icons">&#xE316;</i>
+                <i ng-show="reverseSort" class="material-icons">&#xE313;</i>
               </span>
             </label>
               </a>
