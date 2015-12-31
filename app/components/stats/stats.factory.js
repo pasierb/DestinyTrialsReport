@@ -110,7 +110,7 @@ angular.module('trialsReportApp')
                 precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
                 kills: weapon.kills,
                 headshots: weapon.headshots,
-                win_percentage: weapon.win_percentage,
+                win_percentage: (weapon.win_percentage * 1).toFixed(),
                 total_matches: weapon.total_matches
               };
             });
