@@ -8,7 +8,7 @@ app.service('guardianGG', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = '/ggg';
+      var BASE_URL = 'https://api.guardian.gg';
       var ENDPOINTS = {
         getElo: '/elo/{membershipId}',
         getMap: '/dtr/trials-map',
