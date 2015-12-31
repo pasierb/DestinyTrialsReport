@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .directive('caroussel', ['$customSwipe', '$timeout', function($customSwipe) {
+  .directive('caroussel', ['$customSwipe', function($customSwipe) {
     return {
       restrict: 'A',
       link: function(scope, ele) {

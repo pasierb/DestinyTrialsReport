@@ -8,18 +8,18 @@ app.service('api', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = '';
+      var BASE_URL = 'http://api.destinytrialsreport.com';
       var ENDPOINTS = {
         supporterStatus: '/supporterStatus/{membershipId}',
-        lighthouseCount: '/api/lighthouseCount/{membershipIdArray}',
-        opponents: '/api/getOpponents/{membershipId}',
-        streak: '/api/longestStreak/{membershipId}/{characterId}',
-        topWeapons: '/api/topWeapons/{membershipId}',
-        weaponStats: '/api/weaponStats/{membershipId}/{weaponIdArray}',
-        recentTeammates: '/api/recentTeammates/{membershipId}',
-        previousMatches: '/api/previousMatches/{membershipId}',
-        teamByMatch: '/api/teamByMatch/{instanceId}',
-        trialsFirst: '/api/trialsFirst'
+        lighthouseCount: '/lighthouseCount/{membershipIdArray}',
+        opponents: '/getOpponents/{membershipId}',
+        streak: '/longestStreak/{membershipId}/{characterId}',
+        topWeapons: '/topWeapons/{membershipId}',
+        weaponStats: '/weaponStats/{membershipId}/{weaponIdArray}',
+        recentTeammates: '/recentTeammates/{membershipId}',
+        previousMatches: '/previousMatches/{membershipId}',
+        teamByMatch: '/teamByMatch/{instanceId}',
+        trialsFirst: '/trialsFirst'
       };
 
       this.checkSupporterStatus = function(membershipId) {

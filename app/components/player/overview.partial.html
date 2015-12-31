@@ -12,7 +12,7 @@
           </span>
           <div ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard.split(' ')[1]" class="player-hazard"
                ng-class="{'player-hazard--developer': hazard === 'Site Developer', 'player-hazard--donator': hazard === 'Site Donator'}"
-               data-placement="bottom" data-content="{{DestinyHazardDefinition[hazard]}}" bs-popover>
+               data-placement="bottom" data-content="{{DestinyHazardDefinition[hazard]}}" data-auto-close='1' bs-popover>
           </div>
         </div>
         <div class="player-level">
@@ -49,16 +49,16 @@
         <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
         <label>Wins</label>
       </div>
-      <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
+      <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" data-auto-close='1' bs-popover>
         <span ng-bind="player.activities.streak || 'N/A'"></span>
         <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
         <label>Streak</label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.ggg.elo || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
+        <span ng-bind="player.ggg.elo || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" data-auto-close='1' bs-popover></span>
         <span>
           <a href="https://guardian.gg/en/faq" target="_blank"
-             data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
+             data-content="Elo is an account-wide rating system provided by Guardian.gg" data-auto-close='1' bs-popover>
             <i class="material-icons icon--small">&#xE8FD;</i>
           </a>
         </span>
@@ -69,7 +69,7 @@
           <i class="material-icons">&#xE14C;</i>
         </span>
         <span class="player-main-stats__lighthouse success" ng-if="player.lighthouse.grimoire === true"
-              data-template-url="shared/popovers/lighthouse.popover.html" bs-popover>
+              data-template-url="shared/popovers/lighthouse.popover.html" data-auto-close='1' bs-popover>
           <i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>
           <span ng-bind="player.lighthouse.accountCount ? getLighthouseCount(player.lighthouse, subdomain) + 'x' : 'Year 1'"></span>
         </span>
