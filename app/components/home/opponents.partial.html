@@ -14,12 +14,18 @@
             <label> Standing </label>
           </div>
           <div class="col-xs-4 stat">
+            <a href="#" ng-click="orderByField='kd'; reverseSort = !reverseSort">
             <label>
               Opponent KD
+              <span ng-show="orderByField == 'kd'">
+                <span ng-show="!reverseSort">^</span>
+                <span ng-show="reverseSort">v</span>
+              </span>
             </label>
+              </a>
           </div>
         </div>
-        <div class="row top-weapon" dir-paginate="opponent in opponents | itemsPerPage: 15" style="margin-top: 0; padding-top: .75em; cursor: pointer; cursor: hand;"
+        <div class="row top-weapon" dir-paginate="opponent in opponents | itemsPerPage: 15 | orderBy:orderByField:reverseSort" style="margin-top: 0; padding-top: .75em; cursor: pointer; cursor: hand;"
              ng-click="getMatchDetails(opponent.instanceId)" ng-class="{'active-player': matchResults.activityDetails.instanceId == opponent.instanceId}">
           <div class="col-xs-4 last-weapon-weapon__descr">
             <span class="last-match-weapon__title" style="line-height: 1.3;" ng-bind="opponent.displayName"></span>

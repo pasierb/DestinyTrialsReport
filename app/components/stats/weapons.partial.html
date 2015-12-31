@@ -1,29 +1,29 @@
 <div class="player-tab--maps player-maps">
   <div class="player-tab__section">
     <div class="row">
-      <div class="col-xs-12" ng-repeat="(key, value) in player.topWeapons track by $index">
+      <div class="col-xs-12" ng-repeat="weapon in player.topWeapons track by $index">
         <div class="stat-row__header">
-          <span ng-bind="DestinyWeaponDefinition[key].name"></span>
+          <span ng-bind="DestinyWeaponDefinition[weapon.weaponId].name"></span>
         </div>
         <div class="row stat-row">
           <div class="col-xs-2 col-xs-offset-2 stat">
-            <span ng-bind="value.kills || 0"></span>
+            <span ng-bind="weapon.kills || 0"></span>
             <label>Kills</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="value.headshots || 0"></span>
+            <span ng-bind="weapon.headshots || 0"></span>
             <label>HS</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="value.precision || 0"></span>
+            <span ng-bind="weapon.precision || 0"></span>
             <label>Acc</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="(value.win_percentage + '%') || 0"></span>
+            <span ng-bind="(weapon.win_percentage + '%') || 0"></span>
             <label>Win %</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="value.total_matches || 0"></span>
+            <span ng-bind="weapon.total_matches || 0"></span>
             <label>Games</label>
           </div>
         </div>

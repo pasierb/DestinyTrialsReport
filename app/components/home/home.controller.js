@@ -122,6 +122,7 @@
       $scope.fireteam = config.fireteam;
       $scope.$storage.platform = ($routeParams.platformName === 'ps');
       if ($scope.sdOpponents) {
+        $scope.reverseSort = false;
         $scope.opponents = config.data.reverse();
         $scope.opponentsCopy = $scope.opponents;
         $scope.focusOnPlayers = true;

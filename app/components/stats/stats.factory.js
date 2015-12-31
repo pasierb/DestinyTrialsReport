@@ -104,15 +104,16 @@ angular.module('trialsReportApp')
         player.characterInfo.characterId
       ).then(function (result) {
           if (result && result.data) {
-            var topWeapons = {};
+            var topWeapons = [];
             _.each(result.data, function (weapon) {
-              topWeapons[weapon.weaponId] = {
+              topWeapons.push({
+                weaponId: weapon.weaponId,
                 precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
                 kills: weapon.kills,
                 headshots: weapon.headshots,
                 win_percentage: (weapon.win_percentage * 1).toFixed(),
                 total_matches: weapon.total_matches
-              };
+              });
             });
             player.topWeapons = topWeapons;
             dfd.resolve(player);
