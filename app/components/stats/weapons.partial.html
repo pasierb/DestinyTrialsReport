@@ -1,0 +1,60 @@
+<div class="player-tab--maps player-maps">
+  <div class="player-tab__section">
+    <div class="row">
+      <div class="col-xs-12" ng-repeat="(key, value) in player.topWeapons track by $index">
+        <div class="stat-row__header">
+          <span ng-bind="DestinyWeaponDefinition[key].name"></span>
+        </div>
+        <div class="row stat-row">
+          <div class="col-xs-2 col-xs-offset-2 stat">
+            <span ng-bind="value.kills || 0"></span>
+            <label>Kills</label>
+          </div>
+          <div class="col-xs-2 stat">
+            <span ng-bind="value.headshots || 0"></span>
+            <label>HS</label>
+          </div>
+          <div class="col-xs-2 stat">
+            <span ng-bind="value.precision || 0"></span>
+            <label>Acc</label>
+          </div>
+          <div class="col-xs-2 stat">
+            <span ng-bind="(value.win_percentage | number: 2 + '%') || 0"></span>
+            <label>Win %</label>
+          </div>
+          <div class="col-xs-2 stat">
+            <span ng-bind="value.total_matches || 0"></span>
+            <label>Games</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<div class="player-tab__section">-->
+    <!--<div class="stat-row__header">-->
+      <!--<span>Totals</span>-->
+    <!--</div>-->
+    <!--<div class="row stat-row">-->
+      <!--<div class="col-xs-2 col-xs-offset-2 stat">-->
+        <!--<span ng-bind="player.activities.totals.kills || 0"></span>-->
+        <!--<label>Kills</label>-->
+      <!--</div>-->
+      <!--<div class="col-xs-2 stat">-->
+        <!--<span ng-bind="player.activities.totals.deaths || 0"></span>-->
+        <!--<label>Deaths</label>-->
+      <!--</div>-->
+      <!--<div class="col-xs-2 stat">-->
+        <!--<span ng-bind="player.activities.totals.assists || 0"></span>-->
+        <!--<label>Assists</label>-->
+      <!--</div>-->
+      <!--<div class="col-xs-2 stat">-->
+        <!--<span ng-bind="player.activities.totals.wins || 0"></span>-->
+        <!--<label>Wins</label>-->
+      <!--</div>-->
+      <!--<div class="col-xs-2 stat">-->
+        <!--<span ng-bind="player.activities.totals.losses || 0"></span>-->
+        <!--<label>Loss</label>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+</div>

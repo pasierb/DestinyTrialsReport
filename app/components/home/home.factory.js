@@ -98,29 +98,19 @@
     function setActivityData(account, activities) {
       var lastThree = {},
         reversedAct = activities.slice().reverse(),
-        mapStats = {},
         pastActivities = [],
-        streak = 0,
-        totals = {
-          kills: 0,
-          deaths: 0,
-          assists: 0,
-          wins: 0,
-          losses: 0
-        };
+        streak = 0;
       var recentActivity = {
         'id': activities[0].activityDetails.instanceId,
         'standing': activities[0].values.standing.basic.value
       };
-      streak = setMapReturnStreak(reversedAct, pastActivities, streak, recentActivity, mapStats, totals);
+      streak = returnStreak(reversedAct, pastActivities, streak, recentActivity);
       setLastThreeMatches(lastThree, activities);
       account.activities = {
         lastTwentyFive: pastActivities,
         recentActivity: recentActivity,
         streak: streak,
-        lastThree: lastThree,
-        mapStats: mapStats,
-        totals: totals
+        lastThree: lastThree
       };
 
       return account;

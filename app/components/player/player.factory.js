@@ -1,29 +1,5 @@
 'use strict';
 
-function setMapBasedStats(mapStats, mapHash, reversedAct, n, totals) {
-  if (!angular.isObject(mapStats[mapHash])) {
-    mapStats[mapHash] = {};
-    mapStats[mapHash].kills = 0;
-    mapStats[mapHash].deaths = 0;
-    mapStats[mapHash].assists = 0;
-    mapStats[mapHash].wins = 0;
-    mapStats[mapHash].losses = 0;
-  }
-  var statAttributes = ['kills', 'deaths', 'assists'];
-  for (var m = 0; m < statAttributes.length; m++) {
-    mapStats[mapHash][statAttributes[m]] += reversedAct[n].values[statAttributes[m]].basic.value;
-    totals[statAttributes[m]] += reversedAct[n].values[statAttributes[m]].basic.value;
-  }
-  if (reversedAct[n].values.standing.basic.value === 0) {
-    mapStats[mapHash].wins += 1;
-    totals.wins += 1;
-  }
-  else {
-    mapStats[mapHash].losses += 1;
-    totals.losses += 1;
-  }
-}
-
 function setPastActivities(reversedAct, n, pastActivities) {
   pastActivities.push({
     'id': reversedAct[n].activityDetails.instanceId,
@@ -37,10 +13,9 @@ function setPastActivities(reversedAct, n, pastActivities) {
   });
 }
 
-function setMapReturnStreak(reversedAct, pastActivities, streak, recentActivity, mapStats, totals) {
+function returnStreak(reversedAct, pastActivities, streak, recentActivity) {
   for (var n = 0; n < reversedAct.length; n++) {
     setPastActivities(reversedAct, n, pastActivities);
-    setMapBasedStats(mapStats, reversedAct[n].activityDetails.referenceId, reversedAct, n, totals);
     reversedAct[n].values.standing.basic.value === recentActivity.standing ? streak++ : streak = 0;
   }
   return streak;

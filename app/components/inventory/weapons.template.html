@@ -9,7 +9,7 @@
     <div class="weapon__info">
       <div class="weapon__title">
         <span ng-bind="weapon.definition.name"></span>
-        <span class="weapon__damage" ng-if="topWeapons && topWeapons[weapon.definition.itemHash] && topWeapons[weapon.definition.itemHash].percision > 0"
+        <span class="weapon__damage" ng-if="topWeapons && topWeapons[weapon.definition.itemHash] && topWeapons[weapon.definition.itemHash].precision > 0"
               ng-bind="' WIN % (' + topWeapons[weapon.definition.itemHash].win_percentage + '%)'"></span>
       </div>
       <div class="weapon__perks">

@@ -101,12 +101,18 @@ angular.module('trialsReportApp')
     var getTopWeapons = function (player) {
       var dfd = $q.defer();
       return api.topWeapons(
-        player.membershipId
+        player.characterInfo.characterId
       ).then(function (result) {
           if (result && result.data) {
             var topWeapons = {};
             _.each(result.data, function (weapon) {
-              topWeapons[weapon.weaponId] = {percision: +(100 * weapon.headshots / weapon.kills).toFixed(), kills: weapon.kills, headshots: weapon.headshots};
+              topWeapons[weapon.weaponId] = {
+                precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
+                kills: weapon.kills,
+                headshots: weapon.headshots,
+                win_percentage: weapon.win_percentage,
+                total_matches: weapon.total_matches
+              };
             });
             player.topWeapons = topWeapons;
             dfd.resolve(player);
@@ -128,7 +134,7 @@ angular.module('trialsReportApp')
             var topWeapons = {};
             _.each(result.data, function (weapon) {
               topWeapons[weapon.weaponId] = {
-                percision: +(100 * weapon.headshots / weapon.kills).toFixed(),
+                precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
                 kills: weapon.kills,
                 headshots: weapon.headshots,
                 win_percentage: (weapon.win_percentage * 1).toFixed()

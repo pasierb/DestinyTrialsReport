@@ -154,7 +154,13 @@
           statsFactory.getLighthouseCount($scope.fireteam);
 
           _.each($scope.fireteam, function (player) {
-            statsFactory.weaponStats(player);
+
+            if ($scope.subdomain) {
+              statsFactory.getTopWeapons(player);
+            } else {
+              statsFactory.weaponStats(player);
+            }
+
             api.longestStreak(
               player.membershipId,
               player.characterInfo.characterId
@@ -164,6 +170,7 @@
                 }
               });
           });
+
           if ($scope.fireteam[2].membershipId) {
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()
