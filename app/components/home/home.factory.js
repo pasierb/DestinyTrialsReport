@@ -34,7 +34,7 @@
         membershipType,
         membershipId
       ).then(function (resultChar) {
-          if (resultChar.data.Response) {
+          if (resultChar && resultChar.data && resultChar.data.Response) {
             return playerFactory.build(
               resultChar.data.Response.data,
               name,

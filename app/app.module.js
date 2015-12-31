@@ -2,8 +2,8 @@
 
 function getSubdomain() {
   var segments = location.hostname.split('.');
-  //return segments.length>2?segments[segments.length-3].toLowerCase():null;
-  return 'my'
+  return segments.length>2?segments[segments.length-3].toLowerCase():null;
+  //return 'opponents'
 }
 
 function getFromParams(homeFactory, inventoryService, guardianggFactory, api, toastr, bungie, $route, $q) {
