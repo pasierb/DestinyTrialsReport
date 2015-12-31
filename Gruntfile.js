@@ -179,20 +179,6 @@ module.exports = function (grunt) {
             'host': 'www.bungie.net',
             'X-API-Key': BUNGIE_API_KEY
           }
-        },
-        {
-          context: '/ggg',
-          host: 'api.guardian.gg',
-          port: 80,
-          https: false,
-          xforward: false,
-          headers: {
-            'host': 'api.guardian.gg',
-            'X-API-Key': BUNGIE_API_KEY
-          },
-          rewrite: {
-            '^/ggg': '/'
-          }
         }]
       },
       test: {
