@@ -6,7 +6,7 @@
     .controller('homeController', homeController);
 
   function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $popover, $routeParams, $scope, statsFactory, util) {
-    $scope.currentMap = DestinyCrucibleMapDefinition[4200263342];
+    $scope.currentMap = DestinyCrucibleMapDefinition[284635225];
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
     $scope.$storage = $localStorage.$default({
