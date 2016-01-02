@@ -10,7 +10,7 @@ angular.module('trialsReportApp')
              'style="display:block"' +
              'data-ad-client="ca-pub-5549262666967585"' +
              'data-ad-slot="7148544984"' +
-             'data-ad-format="horizontal">' +
+             'data-ad-format="auto">' +
         '</ins>'
       ].join(''),
       controller: function () {
