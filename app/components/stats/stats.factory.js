@@ -80,16 +80,18 @@ angular.module('trialsReportApp')
                 }
               });
 
-              if (player.hasOwnProperty('lighthouse')) {
-                player.lighthouse.visits = lighthouseVisits;
-                player.lighthouse.accountCount = accountCount;
-                player.lighthouse.characterCount = characterCount;
-              } else {
-                player.lighthouse = {
-                  visits: lighthouseVisits,
-                  accountCount: accountCount,
-                  characterCount: characterCount
-                };
+              if (player) {
+                if (player.hasOwnProperty('lighthouse')) {
+                  player.lighthouse.visits = lighthouseVisits;
+                  player.lighthouse.accountCount = accountCount;
+                  player.lighthouse.characterCount = characterCount;
+                } else {
+                  player.lighthouse = {
+                    visits: lighthouseVisits,
+                    accountCount: accountCount,
+                    characterCount: characterCount
+                  };
+                }
               }
             }
           });

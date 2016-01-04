@@ -156,23 +156,25 @@
 
           _.each($scope.fireteam, function (player) {
 
-            if ($scope.subdomain) {
-              statsFactory.getTopWeapons(player);
-            } else {
-              statsFactory.weaponStats(player);
-            }
+            if (player) {
+              if ($scope.subdomain) {
+                statsFactory.getTopWeapons(player);
+              } else {
+                statsFactory.weaponStats(player);
+              }
 
-            api.longestStreak(
-              player.membershipId,
-              player.characterInfo.characterId
-            ).then(function (streak) {
-                if (streak && streak.data) {
-                  player.longestStreak = streak.data;
-                }
-              });
+              api.longestStreak(
+                player.membershipId,
+                player.characterInfo.characterId
+              ).then(function (streak) {
+                  if (streak && streak.data) {
+                    player.longestStreak = streak.data;
+                  }
+                });
+            }
           });
 
-          if ($scope.fireteam[2].membershipId) {
+          if ($scope.fireteam[2] && $scope.fireteam[2].membershipId) {
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()
                 .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +
