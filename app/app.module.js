@@ -31,7 +31,7 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
                   if (resultBNG && resultBNG[0]) {
                     return getFireteam(resultBNG);
                   } else {
-                    return guardianFactory.getFireteam('14', player.membershipId)
+                    return guardianggFactory.getFireteam('14', player.membershipId)
                       .then(function (resultGGG) {
                         if (resultGGG && resultGGG.data.length > 0) {
                           return resultGGG.data;
