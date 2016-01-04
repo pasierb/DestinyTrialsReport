@@ -37,13 +37,16 @@ angular.module('trialsReportApp')
     };
 
     var getTeamElo = function (fireteam) {
-      return guardianGG.getTeamElo([fireteam[0].membershipId, fireteam[1].membershipId, fireteam[2].membershipId])
+      var membershipIds = _.pluck(fireteam, 'membershipId');
+      return guardianGG.getTeamElo(_.reject(membershipIds, function(player){ return player == undefined; }))
         .then(function (elo) {
           if (elo && elo.data && elo.data.players) {
             var playerElo;
             _.each(fireteam, function (player) {
-              playerElo = elo.data.players[player.membershipId];
-              eloTier(playerElo, player, $filter);
+              if (player) {
+                playerElo = elo.data.players[player.membershipId];
+                eloTier(playerElo, player, $filter);
+              }
             });
           }
           return fireteam;
