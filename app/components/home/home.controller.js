@@ -206,7 +206,7 @@
                   return api.teamByMatch(
                     match.instanceId
                   ).then(function (result) {
-                      result.data.date = util.convertUTCDateToLocalDate(new Date(result.data[0].date));
+                      result.data.date = util.convertUTCDateToLocalDate(new Date(result.data[0].period));
                       result.data.instanceId = match.instanceId;
                       result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
                       $scope.flawlessLeaderboard[match.instanceId] = result.data;
