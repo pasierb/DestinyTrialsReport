@@ -1,5 +1,6 @@
 .popover {
-  color: #333;
+  font-family: 'Roboto', sans-serif;
+  color: $main-dark;
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +12,6 @@
   font-style: normal;
   font-weight: normal;
   line-height: 1.42857143;
-  font-family: 'Roboto', sans-serif;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -45,20 +45,30 @@
 .popover.left {
   margin-left: -10px;
 }
+
 .popover-title {
-  padding: 8px 14px;
   margin: 0;
-  font-size: 14px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
   font-weight: normal;
-}
-.popover-content {
-  padding: 9px 14px;
-  font-weight: 300;
   font-size: 1em;
+  padding: .5em .8em;
 }
+
+.popover-content {
+  font-weight: 300;
+  padding: .5em .8em;
+}
+
+.popover-footer {
+  border-top: 1px solid #dedede;
+  padding: .5em .8em;
+  font-weight: 300;
+  font-size: .9em;
+  color: lighten($main-dark, 50%);
+}
+
 .popover > .arrow,
 .popover > .arrow:after {
   position: absolute;
@@ -136,72 +146,16 @@
   border-left-color: #fff;
 }
 
-.popover.longest-streak,
-.popover.ggg-elo,
-.popover.lighthouse-count {
-  text-align: center;
-  line-height: 15.4px;
-  font-size: 10.78px;
-  padding: 0px;
-
-  .popover-title {
-    padding: 2px;
-    height: 19px;
-    border: 0px;
-    font-size: 10.78px;
-    line-height: 15.4px;
-  }
-}
-
-.popover.longest-streak {
-  color: rgba(0, 0, 0, .90);
-
-  .count {
-    font-size: 12.6px;
-    line-height: 18.4px;
-    text-align: left;
-    span {
-      display: block;
-      float: right;
-      margin-left: 8px;
-      font-weight: 400;
-    }
-  }
-}
-
-.popover.lighthouse-count {
-  font-size: 12.6px;
-  line-height: 18.4px;
-
-  table {
-    width: 100%;
-  }
-
-  .left {
-    text-align: left;
-  }
-
-  .incomplete-warning {
-    font-size: 10.78px;
-    margin-top: 5px;
-  }
-}
-
 .popover.ggg-elo {
-  color: rgba(255, 255, 255, .71);
+  min-width: 10em;
 
-  .popover-content {
-    color: #fff;
-    padding-top: 7px;
+  .stat > span {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.85);
+  }
 
-    .elo {
-     font-size: 19.6px;
-     line-height: 28px;
-    }
-
-    .rank {
-      font-weight: bold;
-    }
+  .stat > label {
+    color: rgba(255, 255, 255, 0.6);
   }
 }
 

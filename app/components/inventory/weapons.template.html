@@ -9,8 +9,7 @@
     <div class="weapon__info">
       <div class="weapon__title">
         <span ng-bind="weapon.definition.name"></span>
-        <span class="weapon__damage" ng-if="topWeapons && topWeapons[weapon.definition.itemHash] && topWeapons[weapon.definition.itemHash].precision > 0"
-              ng-bind="' WIN % (' + topWeapons[weapon.definition.itemHash].win_percentage + '%)'"></span>
+        <span ng-if="topWeapons && topWeapons[weapon.definition.itemHash]" class="weapon__stats-link" data-template-url="shared/popovers/weaponstats.popover.html" bs-popover><i class="material-icons">&#xE5D3;</i></span>
       </div>
       <div class="weapon__perks">
         <div class="weapon-perk" ng-repeat="node in weapon.nodes track by $index"

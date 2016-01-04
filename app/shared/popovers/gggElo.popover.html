@@ -1,8 +1,15 @@
 <div class="popover ggg-elo {{player.ggg.tier.toLowerCase()}}" tabindex="-1" ng-show="player.ggg">
   <div class="arrow"></div>
-  <h3 class="popover-title" ng-bind="player.ggg.tier"></h3>
   <div class="popover-content">
-    <div class="elo"><span ng-bind="player.ggg.elo"></span></div>
-    <div class="rank"><span ng-bind="player.ggg.rank"></span></div>
+    <div class="row row--small-gutter">
+      <div class="col-xs-6 stat">
+        <span ng-bind="player.ggg.tier"></span>
+        <label>Tier</label>
+      </div>
+      <div class="col-xs-6 stat">
+        <span ng-bind="player.ggg.rank === 'Placing' ? '-' : player.ggg.rank"></span>
+        <label>Rank</label>
+      </div>
+    </div>
   </div>
 </div>

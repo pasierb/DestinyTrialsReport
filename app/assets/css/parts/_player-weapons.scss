@@ -19,17 +19,6 @@
     border-radius: 5px;
   }
 
-  span {
-    position: absolute;
-    margin-top: 50px;
-    margin-left: 5px;
-    font-size: .9em;
-    flex-grow: 1;
-    text-shadow: $text-shadow;
-    color: $player-card;
-    font-weight: 500;
-  }
-
   &:before {
     content: "";
     position: absolute;
@@ -91,11 +80,18 @@
 }
 
 .weapon__damage {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   font-size: .8em;
-  line-height: 1.6em;
-  color: lighten($main-dark, 40%);
-  margin-left: .5em;
+  color: white;
+  border-bottom-left-radius: 5px;
+  padding: 0 5px;
   text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 5px;
+  line-height: 1.6;
+  font-weight: normal;
 }
 
 .weapon__info {
@@ -124,4 +120,16 @@
 
 .weapon-perk__hazard {
   background: darkred;
+}
+
+.weapon__stats-link {
+  cursor: pointer;
+  margin-left: .1em;
+
+  i {
+    font-size: 1em;
+    vertical-align: -15%;
+    color: #999;
+
+  }
 }

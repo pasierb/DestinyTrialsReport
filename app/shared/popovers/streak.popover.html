@@ -1,9 +1,17 @@
 <div class="popover longest-streak" tabindex="-1" ng-show="player.longestStreak">
   <div class="arrow"></div>
-  <h3 class="popover-title">Longest Streak</h3>
+  <h3 class="popover-title">Longest win streak</h3>
   <div class="popover-content">
-    <div class="count">Account <span ng-bind="player.longestStreak.accountStreak"></span></div>
-    <div class="count">Character <span ng-bind="player.longestStreak.characterStreak"></span></div>
+    <div class="row row--small-gutter">
+      <div class="col-xs-6 stat">
+        <span ng-bind="player.longestStreak.accountStreak"></span>
+        <label>Account</label>
+      </div>
+      <div class="col-xs-6 stat">
+        <span ng-bind="player.longestStreak.characterStreak"></span>
+        <label>Character</label>
+      </div>
+    </div>
   </div>
 </div>
 

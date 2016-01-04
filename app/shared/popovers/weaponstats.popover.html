@@ -1,0 +1,33 @@
+<div class="popover" tabindex="-1">
+  <div class="arrow"></div>
+  <div ng-if="topWeapons && topWeapons[weapon.definition.itemHash] != null">
+    <div class="popover-content">
+      <div class="row">
+        <div class="col-xs-3 stat">
+          <span ng-bind="topWeapons[weapon.definition.itemHash].kills | number:0"></span>
+          <label>Kills</label>
+        </div>
+        <div class="col-xs-3 stat">
+          <span ng-bind="topWeapons[weapon.definition.itemHash].headshots | number:0"></span>
+          <label>Headshots</label>
+        </div>
+        <div class="col-xs-3 stat">
+          <span ng-bind="topWeapons[weapon.definition.itemHash].precision"></span>%
+          <label>Precision</label>
+        </div>
+        <div class="col-xs-3 stat">
+          <span ng-bind="topWeapons[weapon.definition.itemHash].win_percentage"></span>%
+          <label>Wins</label>
+        </div>
+      </div>
+    </div>
+    <div class="popover-footer">
+      Stats are for this character with this weapon
+    </div>
+  </div>
+  <div ng-if="topWeapons == null || topWeapons[weapon.definition.itemHash] == null">
+    <div class="popover-content">
+      No Trials experience for this character with this weapon yet
+    </div>
+  </div>
+</div>

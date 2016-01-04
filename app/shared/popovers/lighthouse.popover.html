@@ -1,25 +1,39 @@
-<div class="popover lighthouse-count" tabindex="-1" ng-show="player.lighthouse.accountCount">
+<div class="popover" tabindex="-1" ng-show="player.lighthouse.accountCount">
   <div class="arrow"></div>
   <!--<h3 class="popover-title">Year Two</h3>-->
   <div class="popover-content">
-    <table>
-      <tr>
-        <th></th>
-        <th>Year 2</th>
-        <th>Year 1</th>
-      </tr>
-      <tr>
-        <td class="left">Account</td>
-        <td ng-bind="player.lighthouse.accountCount"></td>
-        <td ng-bind="player.lighthouse.accountCount"></td>
-      </tr>
-      <tr>
-        <td class="left">Character</td>
-        <td ng-bind="player.lighthouse.characterCount"></td>
-        <td ng-bind="player.lighthouse.characterCount"></td>
-      </tr>
-    </table>
-    <div class="incomplete-warning">Year 1 data collection is in progress.</div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="stat__header">
+          Year 2
+        </div>
+        <div class="row row--small-gutter">
+          <div class="col-xs-6 stat">
+            <span ng-bind="player.lighthouse.accountCount"></span>
+            <label>Account</label>
+          </div>
+          <div class="col-xs-6 stat">
+            <span ng-bind="player.lighthouse.characterCount"></span>
+            <label>Character</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="stat__header">
+          Year 1
+        </div>
+        <div class="row row--small-gutter">
+          <div class="col-xs-6 stat">
+            <span ng-bind="player.lighthouse.accountCount"></span>
+            <label>Account</label>
+          </div>
+          <div class="col-xs-6 stat">
+            <span ng-bind="player.lighthouse.characterCount"></span>
+            <label>Character</label>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
