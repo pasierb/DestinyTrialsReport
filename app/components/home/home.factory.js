@@ -54,7 +54,7 @@
         '14',
         '1'
       ).then(function (result) {
-          if (result && result.data && result.data.Response) {
+          if (result && result.data && result.data.Response && result.data.Response.data && result.data.Response.data.activities) {
             var activities = result.data.Response.data.activities;
             activities.displayName = account.name;
             return activities;
