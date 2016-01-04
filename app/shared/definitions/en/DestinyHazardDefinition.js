@@ -7,6 +7,7 @@ var DestinyHazardDefinition = {
   "Quick Revive": "This Guardian can revive allies and be revived very quickly.",
   "Grenade on Spawn": "This Guardian will have a grenade every round.",
   "Blink Shotgun": "This Guardian is using Blink and has a shotgun equipped. Be careful!",
-  "Site Developer": "Hey! We made this site, so more than likely we are looking you up too...",
-  "Site Donator": "Part of an amazing few who've helped keep this site running"
+  "Developer": "Hey! We made this site, so more than likely we are looking you up too...",
+  "Donator": "Part of an amazing few who've helped keep this site running",
+  "Guardian.gg": "One of the creators of Guardian.gg, a fantastic resource for all things Destiny."
 };
