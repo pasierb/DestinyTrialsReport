@@ -10,8 +10,8 @@
             <img src="/assets/img/grimoire.png" alt="Grimoire">
             <span ng-bind="player.grimoire"></span>
           </span>
-          <div ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard.split(' ')[1]" class="player-hazard"
-               ng-class="{'player-hazard--developer': hazard === 'Site Developer', 'player-hazard--donator': hazard === 'Site Donator'}"
+          <div ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard" class="player-hazard"
+               ng-class="{'player-hazard--developer': hazard === 'Developer' || hazard === 'Guardian.gg', 'player-hazard--donator': hazard === 'Donator'}"
                data-placement="bottom" data-content="{{DestinyHazardDefinition[hazard]}}" bs-popover>
           </div>
         </div>
