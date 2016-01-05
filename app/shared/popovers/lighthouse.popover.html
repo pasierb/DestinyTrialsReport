@@ -2,23 +2,22 @@
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row">
-      <div class="col-xs-{{12/player.lighthouse.yearCount}}" ng-repeat="(key, value) in player.lighthouse.years">
-        <div class="stat__header" ng-bind="'Year '+ key">
-        </div>
+      <div class="col-xs-{{12/player.lighthouse.yearCount}}" ng-repeat="year in player.lighthouse.years | orderObjectBy:'year':true track by $index">
+        <div class="stat__header" ng-bind="'Year ' + year.year"></div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
-            <span ng-bind="value.accountCount"></span>
+            <span ng-bind="year.accountCount"></span>
             <label>Account</label>
           </div>
           <div class="col-xs-6 stat">
-            <span ng-bind="characterLighthouse(player, value)"></span>
+            <span ng-bind="characterLighthouse(player, year)"></span>
             <label>Character</label>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="popover-footer text-center">
+  <div class="popover-footer text-center" ng-if="player.lighthouse.years[1]">
     Year 1 data collection is in progress.
   </div>
 </div>
