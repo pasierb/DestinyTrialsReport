@@ -15,9 +15,11 @@ function eloTier(playerElo, player, $filter) {
     if (player.ggg.rank > 0) {
       player.ggg.rank = '#' + $filter('number')(player.ggg.rank);
     } else if (player.ggg.rank == -1) {
-      player.ggg.rank = 'Placing';
+      //player.ggg.rank = 'Placing';
+      player.ggg.rank = '-';
     } else if (player.ggg.rank == -2) {
-      player.ggg.rank = 'Inactive';
+      //player.ggg.rank = 'Inactive';
+      player.ggg.rank = '-';
     }
   }
 }
