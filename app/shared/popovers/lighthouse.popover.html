@@ -1,33 +1,17 @@
-<div class="popover" tabindex="-1" ng-show="player.lighthouse.accountCount">
+<div class="popover" tabindex="-1" ng-show="player.lighthouse.years">
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row">
-      <div class="col-xs-6">
-        <div class="stat__header">
-          Year 2
+      <div class="col-xs-{{12/player.lighthouse.yearCount}}" ng-repeat="(key, value) in player.lighthouse.years">
+        <div class="stat__header" ng-bind="'Year '+ key">
         </div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
-            <span ng-bind="player.lighthouse.accountCount"></span>
+            <span ng-bind="value.accountCount"></span>
             <label>Account</label>
           </div>
           <div class="col-xs-6 stat">
-            <span ng-bind="player.lighthouse.characterCount"></span>
-            <label>Character</label>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="stat__header">
-          Year 1
-        </div>
-        <div class="row row--small-gutter">
-          <div class="col-xs-6 stat">
-            <span ng-bind="player.lighthouse.accountCount"></span>
-            <label>Account</label>
-          </div>
-          <div class="col-xs-6 stat">
-            <span ng-bind="player.lighthouse.characterCount"></span>
+            <span ng-bind="characterLighthouse(player, value)"></span>
             <label>Character</label>
           </div>
         </div>

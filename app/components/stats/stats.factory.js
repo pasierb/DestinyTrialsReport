@@ -51,48 +51,21 @@ angular.module('trialsReportApp')
       ).then(function (result) {
           var dfd = $q.defer();
           _.each(fireteam, function (player) {
-            if (result && result.data) {
-              var lighthouseVisits = {};
-              var accountCount = 0;
-              var characterCount = 0;
-
-              var visitsByCharacter = _.groupBy(result.data, 'characterId');
-              _.each(visitsByCharacter, function (visits, characterId) {
-                var weeks = {};
-
-                _.each(visits, function (visit) {
-                  var now = moment.utc(visit.period);
-                  var begin = now.clone().day(5).hour(18).minute(0).second(0).millisecond(0);
-                  if (now.isBefore(begin)) begin.subtract(1, 'week');
-
-                  var dateBeginTrials = begin.format('YYYY-MM-DD');
-
-                  weeks[dateBeginTrials] = weeks[dateBeginTrials] + 1 || 1;
+            var lighthouseVisits = {yearCount: 0};
+            if (player && result && result.data) {
+              if (result.data[player.membershipId]) {
+                lighthouseVisits.years = {};
+                var years = result.data[player.membershipId].years;
+                _.each(years, function (values, year) {
+                  lighthouseVisits.yearCount++;
+                  lighthouseVisits.years[year] = {accountCount: values.count};
+                  var characters = values.characters;
+                  if (characters) {
+                    lighthouseVisits.years[year].characters = characters;
+                  }
                 });
-
-                var visitsCount = _.size(weeks);
-                if (visits[0].membershipId == player.membershipId) {
-                  accountCount += visitsCount;
-                }
-                lighthouseVisits[characterId] = weeks;
-                if (characterId == player.characterInfo.characterId) {
-                  characterCount = visitsCount;
-                }
-              });
-
-              if (player) {
-                if (player.hasOwnProperty('lighthouse')) {
-                  player.lighthouse.visits = lighthouseVisits;
-                  player.lighthouse.accountCount = accountCount;
-                  player.lighthouse.characterCount = characterCount;
-                } else {
-                  player.lighthouse = {
-                    visits: lighthouseVisits,
-                    accountCount: accountCount,
-                    characterCount: characterCount
-                  };
-                }
               }
+              angular.extend(player, {lighthouse: lighthouseVisits});
             }
           });
           dfd.resolve(fireteam);
