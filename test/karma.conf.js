@@ -39,7 +39,7 @@ module.exports = function(config) {
       'bower_components/angulartics/src/angulartics-intercom.js',
       'bower_components/angulartics/src/angulartics-inspectlet.js',
       'bower_components/angulartics/src/angulartics-newrelic-insights.js',
-      'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+      'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
