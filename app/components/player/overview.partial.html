@@ -54,8 +54,8 @@
         <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
         <label>Streak</label>
       </div>
-      <div class="col-xs-3 stat">
-        <span ng-bind="player.ggg.elo || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
+      <div class="col-xs-3 stat" data-template-url="shared/popovers/gggElo.popover.html" bs-popover>
+        <span ng-bind="player.ggg.elo || 'N/A'"></span>
         <span>
           <a href="https://guardian.gg/en/faq" target="_blank"
              data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
@@ -64,13 +64,12 @@
         </span>
         <label>Elo Rating</label>
       </div>
-      <div class="col-xs-3 stat">
+      <div class="col-xs-3 stat" data-template-url="shared/popovers/lighthouse.popover.html" data-placement="top-right" bs-popover>
         <span class="player-main-stats__lighthouse fail" ng-if="player.lighthouse.grimoire !== true">
           <i class="material-icons">&#xE14C;</i>
         </span>
-        <span class="player-main-stats__lighthouse success" ng-if="player.lighthouse.grimoire === true"
-              data-template-url="shared/popovers/lighthouse.popover.html" data-placement="top-right" bs-popover>
-          <i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>
+        <span class="player-main-stats__lighthouse success" ng-if="player.lighthouse.grimoire === true">
+          <!--<i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>-->
           <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'"></span>
         </span>
         <label>Flawless</label>
