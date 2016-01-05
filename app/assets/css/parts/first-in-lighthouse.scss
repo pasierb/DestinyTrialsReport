@@ -38,7 +38,17 @@
   font-size: 1em;
 }
 
-.first-in-lighthouse__time {
+.first-in-lighthouse__stats {
   align-self: flex-end;
   padding-left: 2em;
+
+  span img {
+    height: 1em;
+    filter: brightness(0.4);
+  }
+
+  span + label + span {
+    display: block;
+    margin-top: .75em;
+  }
 }
