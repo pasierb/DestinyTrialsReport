@@ -1,0 +1,21 @@
+<div class="popover" tabindex="-1">
+  <div class="arrow"></div>
+  <div class="popover-content">
+    <div class="row" ng-if="stat.tier">
+      <div class="col-xs-4 stat">
+        <span ng-bind="stat.tier"></span>
+        <label>Tier</label>
+      </div>
+      <div class="col-xs-8 stat">
+        <span ng-bind="stat.cooldown"></span>
+        <label>Cooldown</label>
+      </div>
+    </div>
+    <div class="row" ng-if="!stat.tier">
+      <div class="col-xs-12 stat">
+        <span ng-bind="stat.percentage + '%'"></span>
+        <label ng-bind="stat.name"></label>
+      </div>
+    </div>
+  </div>
+</div>

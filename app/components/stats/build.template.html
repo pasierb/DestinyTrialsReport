@@ -1,6 +1,6 @@
 <div class="player-tab__section">
   <div class="row">
-    <div class="player-cooldown col-xs-4" ng-repeat="stat in stats track by $index" data-content="{{statPopover(stat)}}" bs-popover>
+    <div class="player-cooldown col-xs-4" ng-repeat="stat in stats track by $index" data-template-url="components/stats/cooldown.popover.html" bs-popover>
       <div class="player-cooldown__label" ng-bind="stat.name"></div>
       <div class="player-cooldown__nr">
         <uib-progress max="10" animate="true" class="progress not-rounded" ng-if="!stat.tiers">

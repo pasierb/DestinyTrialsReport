@@ -37,20 +37,6 @@ angular.module('trialsReportApp')
       scope: {
         stats: '=buildStats'
       },
-      link: function ($scope, element, attrs) {
-        $scope.statPopover = function (stat) {
-          var popover;
-
-          if (stat) {
-            if (angular.isDefined(stat.tier)) {
-              popover = 'Tier ' + stat.tier + ' — ' + stat.value + ' / 300 (' + stat.percentage + '%)' + '<br>' + 'Cooldown: ' + stat.cooldown;
-            } else {
-              popover = stat.name + ': ' + (stat.value / 10) * 100 + '%';
-            }
-          }
-          return popover;
-        };
-      },
       templateUrl: 'components/stats/build.template.html'
     };
   });
