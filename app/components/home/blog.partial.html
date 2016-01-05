@@ -1,5 +1,5 @@
 <div class="home__content">
-  <article class="home__main"  ng-class="{'full__width':!gggShow}">
+  <article class="home__main">
     <div class="block blog-post shadow-z-1">
       <div class="blog-post__img" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}"></div>
       <div class="blog-post__content">
@@ -41,37 +41,29 @@
     </div>
   </article>
   <div class="home__aside" ng-if="flawlessLeaderboard">
-    <article class="block top-weapons shadow-z-1">
+    <article class="block block--no-padding shadow-z-1">
       <div class="block__title">
         <h2>
-          <span class="highlight">First Flawless</span> by week
+          First to reach <span class="highlight">the lighthouse</span>
         </h2>
       </div>
-      <div class="top-weapons__type" ng-repeat="week in flawlessLeaderboard | orderObjectBy:'instanceId':true" style="min-height: 112px;">
-        <div class="row">
-          <div class="col-xs-5">
-            <label class="top-weapons__label">Player</label>
-          </div>
-          <div class="col-xs-5 stat">
-            <label ng-bind="week.date | date:'medium':EST"></label>
-          </div>
-          <div class="col-xs-2 stat">
-            <label>
-              <a ng-href="https://www.bungie.net/en/Legend/PGCR?instanceId={{week.instanceId}}" target="_blank">
-                <i class="material-icons" style="font-size: 20px;margin-top: -4px;">&#xE89E;</i>
-              </a>
-            </label>
-          </div>
+      <div class="first-in-lighthouse" ng-repeat="week in flawlessLeaderboard | orderObjectBy:'instanceId':true track by $index">
+        <div class="first-in-lighthouse__label" style="background-image: url({{week.map}});">
+          <label ng-if="$index === 0">{{trialsInProgress ? (week.weeksAgo <= 1 ? 'This week' : 'Last week') : 'Last week'}}</label>
+          <label ng-if="$index !== 0">{{week.weeksAgo}} weeks ago</label>
         </div>
-        <div class="row top-weapon" ng-repeat="player in week track by $index">
-          <div class="col-xs-6 last-weapon-weapon__descr">
-            <!--<img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net/' + weapon.icon}}" alt="{{weapon.name}}">-->
-            <span class="last-match-weapon__title" style="line-height: 1.3;" ng-bind="player.displayName"></span>
+        <div class="first-in-lighthouse__content">
+          <div class="stat first-in-lighthouse__players">
+            <span ng-repeat="player in week track by $index">
+              <a href="http://my.destinytrialsreport.com/{{player.membershipType === '1' ? 'xbox' : 'ps'}}/{{player.displayName}}">
+                {{player.displayName}}
+              </a>
+            </span>
+            <label>Player<span ng-if="week.length > 1">s</span></label>
           </div>
-          <div class="col-xs-6 stat" ng-if="$index < 1">
-            <img class="last-match-weapon__img img-responsive"
-                 style="position: absolute;width: 100%;height: auto;margin-left: -35px; max-height: 65px"
-                 ng-src="{{week.map}}">
+          <div class="stat first-in-lighthouse__time">
+            <span ng-bind="week.time"></span>
+            <label>Time needed</label>
           </div>
         </div>
       </div>
@@ -84,7 +76,7 @@
           <img ng-src="{{platformValue ? 'assets/img/ps.svg' : 'assets/img/xbox.svg'}}">
         </figure>
         <h2>
-          <span class="highlight">Top weapons</span> this week
+          <span class="highlight">Top weapons</span> {{trialsInProgress ? 'this' : 'last'}} week
         </h2>
       </div>
       <div class="top-weapons__type" ng-repeat="type in [gggWeapons[platformNumeric].primary,

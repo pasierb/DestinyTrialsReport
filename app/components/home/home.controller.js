@@ -7,6 +7,7 @@
 
   function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $popover, $routeParams, $scope, statsFactory, util) {
     $scope.currentMap = DestinyCrucibleMapDefinition[284635225];
+    $scope.trialsInProgress = new moment().utc().diff(new moment.utc().day("-2").hour(18).minute(0).second(0), 'days') <= 3;
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
     $scope.$storage = $localStorage.$default({
@@ -199,6 +200,7 @@
 
     if (_.isUndefined(config.fireteam)) {
       if (!$scope.flawlessLeaderboard) {
+        var now = new moment().utc();
         api.trialsFirst()
           .then(function (matches) {
             if (matches && matches.data) {
@@ -208,7 +210,9 @@
                   return api.teamByMatch(
                     match.instanceId
                   ).then(function (result) {
-                      result.data.date = moment.utc(result.data[0].period, 'YYYY-MM-DD HH:mm:ss').local().format();
+                      var trialsStart = new moment.utc(result.data[0].period).day("-2").hour(18).minute(0).second(0)
+                      result.data.time = new moment(new moment.utc(result.data[0].period).diff(trialsStart)).utc().format("HH:mm:ss");
+                      result.data.weeksAgo = now.diff(new moment.utc(result.data[0].period), 'weeks') + 1;
                       result.data.instanceId = match.instanceId;
                       result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
                       $scope.flawlessLeaderboard[match.instanceId] = result.data;

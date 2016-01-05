@@ -14,13 +14,12 @@
 
 .home__main {
   width: 60%;
-  &.full__width {
-    width: 100% !important;
-  }
+  flex-grow: 2;
 }
 
 .home__aside {
   width: 40%;
+  flex-grow: 1;
 }
 
 .home__main,
