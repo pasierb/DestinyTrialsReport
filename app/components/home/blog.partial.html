@@ -50,7 +50,7 @@
       <div class="first-in-lighthouse" ng-repeat="week in flawlessLeaderboard | orderObjectBy:'instanceId':true track by $index">
         <div class="first-in-lighthouse__label" style="background-image: url({{week.map}});">
           <label ng-if="$index === 0" ng-bind="trialsInProgress ? (week.weeksAgo <= 1 ? 'This week' : 'Last week') : 'Last week'"></label>
-          <label ng-if="$index !== 0" ng-bind="week.weeksAgo + 'weeks ago'"></label>
+          <label ng-if="$index !== 0" ng-bind="week.weeksAgo + ' weeks ago'"></label>
         </div>
         <div class="first-in-lighthouse__content">
           <div class="stat first-in-lighthouse__players">
