@@ -55,17 +55,22 @@ angular.module('trialsReportApp')
             if (player && result && result.data) {
               if (result.data[player.membershipId]) {
                 lighthouseVisits.years = {};
-                var years = result.data[player.membershipId].years;
-                _.each(years, function (values, year) {
+                _.each(result.data[player.membershipId].years, function (values, year) {
                   lighthouseVisits.yearCount++;
-                  lighthouseVisits.years[year] = {accountCount: values.count};
-                  var characters = values.characters;
-                  if (characters) {
-                    lighthouseVisits.years[year].characters = characters;
+                  lighthouseVisits.years[year] = {year: year, accountCount: values.count};
+                  if (values.characters) {
+                    lighthouseVisits.years[year].characters = values.characters;
                   }
                 });
               }
-              angular.extend(player, {lighthouse: lighthouseVisits});
+
+              if (player) {
+                if (player.hasOwnProperty('lighthouse')) {
+                  angular.extend(player.lighthouse, lighthouseVisits);
+                } else {
+                  player.lighthouse = lighthouseVisits;
+                }
+              }
             }
           });
           dfd.resolve(fireteam);
@@ -86,7 +91,7 @@ angular.module('trialsReportApp')
                 precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
                 kills: weapon.kills,
                 headshots: weapon.headshots,
-                win_percentage: (weapon.win_percentage * 1).toFixed(),
+                win_percentage: +(1 * weapon.win_percentage).toFixed(),
                 total_matches: weapon.total_matches
               });
             });
@@ -113,7 +118,7 @@ angular.module('trialsReportApp')
                 precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
                 kills: weapon.kills,
                 headshots: weapon.headshots,
-                win_percentage: (weapon.win_percentage * 1).toFixed()
+                win_percentage: +(1 * weapon.win_percentage).toFixed()
               };
             });
             player.topWeapons = topWeapons;
