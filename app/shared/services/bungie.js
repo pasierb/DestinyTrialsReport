@@ -8,15 +8,15 @@ app.service('bungie', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = '/Platform/Destiny';
+      var BASE_URL = '/Platform/Destiny/';
       var ENDPOINTS = {
-        searchForPlayer: '/SearchDestinyPlayer/{platform}/{name}/',
-        account: '/{platform}/Account/{membershipId}/',
-        grimoire: '/Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}',
-        stats: '/Stats/{platform}/{membershipId}/{characterId}/?modes={mode}',
-        inventory: '/{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
-        activityHistory: '/Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}',
-        pgcr: '/Stats/PostGameCarnageReport/{instanceId}/'
+        searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/',
+        account: '{platform}/Account/{membershipId}/',
+        grimoire: 'Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}',
+        stats: 'Stats/{platform}/{membershipId}/{characterId}/?modes={mode}',
+        inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
+        activityHistory: 'Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}',
+        pgcr: 'Stats/PostGameCarnageReport/{instanceId}/'
       };
       this.searchForPlayer = function(platform, name) {
         return this.get(ENDPOINTS.searchForPlayer, {

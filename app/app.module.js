@@ -168,10 +168,31 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
   }
 }
 
+function getTrialsBeginDate(referenceDate) {
+  var now = moment.utc(referenceDate);
+  var begin = now.clone().day(5).hour(18).minute(0).second(0).millisecond(0);
+  if (now.isBefore(begin)) {
+    begin.subtract(1, 'week');
+  }
+  return begin;
+}
+
+function getTrialsDates() {
+  var begin = getTrialsBeginDate();
+  var end = begin.clone().add(4, 'days').hour(9);
+  return {
+    begin: begin,
+    end: end
+  }
+}
+
+var trialsDates = getTrialsDates();
+
 function gggWeapons($localStorage, guardianggFactory) {
   var platformNumeric = $localStorage.platform ? 2 : 1;
   return guardianggFactory.getWeapons(
-    platformNumeric
+    platformNumeric,
+    trialsDates
   ).then(function (result) {
       return {
         gggWeapons: result,

@@ -8,14 +8,14 @@ app.service('guardianGG', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = 'https://api.guardian.gg';
+      var BASE_URL = 'https://api.guardian.gg/';
       var ENDPOINTS = {
-        getElo: '/elo/{membershipId}',
-        getMap: '/dtr/trials-map',
-        getTeamElo: '/dtr/elo?alpha={teamArray}',
-        getFireteam: '/fireteam/{mode}/{membershipId}',
-        getTeam: '/dtr/{membershipIdArray}',
-        getWeapons: '/weapon/top?platform={platform}&mode=14&start={start}&end={end}'
+        getElo: 'elo/{membershipId}',
+        getMap: 'dtr/trials-map',
+        getTeamElo: 'dtr/elo?alpha={teamArray}',
+        getFireteam: 'fireteam/{mode}/{membershipId}',
+        getTeam: 'dtr/{membershipIdArray}',
+        getWeapons: 'weapon/top?platform={platform}&mode=14&start={start}&end={end}'
       };
 
       this.getElo = function(membershipId) {

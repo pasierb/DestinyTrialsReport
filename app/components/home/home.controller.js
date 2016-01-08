@@ -7,7 +7,6 @@
 
   function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $popover, $routeParams, $scope, statsFactory, util) {
     $scope.currentMap = DestinyCrucibleMapDefinition[284635225];
-    $scope.trialsInProgress = new moment().utc().diff(new moment.utc().day("-2").hour(18).minute(0).second(0), 'days') <= 3;
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
     $scope.$storage = $localStorage.$default({
@@ -19,6 +18,12 @@
     $scope.DestinyMedalDefinition = DestinyMedalDefinition;
     $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
+
+    $scope.trialsDates = {
+      begin: trialsDates.begin.format('YYYY-MM-DD'),
+      end: trialsDates.end.format('YYYY-MM-DD')
+    };
+    $scope.trialsInProgress = moment().isBefore(trialsDates.end);
 
     $scope.flawlessLeaderboard = null;
     $scope.weaponKills = weaponKills;
@@ -73,10 +78,12 @@
 
     $scope.gggLoadWeapons = function (platform) {
       $scope.platformNumeric = platform ? 2 : 1;
+
       if ($scope.gggWeapons) {
         if (!$scope.gggWeapons[$scope.platformNumeric]) {
           return guardianggFactory.getWeapons(
-            $scope.platformNumeric
+            $scope.platformNumeric,
+            $scope.trialsDates
           ).then(function (result) {
               $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
               $scope.gggWeapons[$scope.platformNumeric].show = result.show;
@@ -193,34 +200,32 @@
       $scope.gggWeapons[config.platformNumeric] = config.gggWeapons.gggWeapons;
       $scope.gggWeapons[config.platformNumeric].show = config.gggWeapons.show;
       $scope.platformNumeric = config.platformNumeric;
-      $scope.dateBeginTrials = config.gggWeapons.dateBeginTrials;
-      $scope.dateEndTrials = config.gggWeapons.dateEndTrials;
       $scope.gggShow = $scope.gggWeapons[config.platformNumeric].show;
     }
 
     if (_.isUndefined(config.fireteam)) {
       if (!$scope.flawlessLeaderboard) {
-        var now = new moment().utc();
+        $scope.flawlessLeaderboard = {};
         api.trialsFirst()
           .then(function (matches) {
             if (matches && matches.data) {
-              $scope.flawlessLeaderboard = {};
               _.each(matches.data, function (match) {
                 if (match && match.instanceId) {
                   return api.teamByMatch(
                     match.instanceId
                   ).then(function (result) {
-                      var trialsStart = new moment.utc(result.data[0].period).day("-2").hour(18).minute(0).second(0)
-                      result.data.time = new moment(new moment.utc(result.data[0].period).diff(trialsStart)).utc().format("HH:mm:ss");
-                      result.data.weeksAgo = now.diff(new moment.utc(result.data[0].period), 'weeks') + 1;
-                      result.data.instanceId = match.instanceId;
-                      result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
-                      $scope.flawlessLeaderboard[match.instanceId] = result.data;
-                    });
+                    var period = moment.utc(result.data[0].period);
+                    var trialsBeginDate = getTrialsBeginDate(result.data[0].period);
+                    result.data.time = moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss');
+                    result.data.weeksAgo = moment().diff(period, 'weeks') + 1;
+                    result.data.instanceId = match.instanceId;
+                    result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
+                    $scope.flawlessLeaderboard[match.instanceId] = result.data;
+                  });
                 }
               });
             }
-          });
+        });
       }
     }
   }

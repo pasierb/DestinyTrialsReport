@@ -1,6 +1,6 @@
 'use strict';
 
-var getGggTierByElo = function (elo) {
+function getGggTierByElo(elo) {
   if (elo < 1100) return 'Bronze';
   if (elo < 1300) return 'Silver';
   if (elo < 1500) return 'Gold';
@@ -62,16 +62,8 @@ angular.module('trialsReportApp')
         }).catch(function () {});
     };
 
-    var getWeapons = function (platform) {
-      var now = moment.utc();
-      var begin = now.clone().day(5).hour(18).minute(0).second(0).millisecond(0);
-      if (now.isBefore(begin)) begin.subtract(1, 'week');
-      var end = begin.clone().add(4, 'days').hour(9);
-
-      var dateBeginTrials = begin.format('YYYY-MM-DD');
-      var dateEndTrials = end.format('YYYY-MM-DD');
-
-      return guardianGG.getWeapons(platform, dateBeginTrials, dateEndTrials)
+    var getWeapons = function (platform, trialsDates) {
+      return guardianGG.getWeapons(platform, trialsDates.begin.format('YYYY-MM-DD'), trialsDates.end.format('YYYY-MM-DD'))
         .then(function (weapons) {
           var show = false;
           if (angular.isDefined(weapons.data)) {
@@ -84,8 +76,6 @@ angular.module('trialsReportApp')
 
           return {
             gggWeapons: weapons.data,
-            dateBeginTrials: dateBeginTrials,
-            dateEndTrials: dateEndTrials,
             show: show
           };
         }).catch(function () {});
