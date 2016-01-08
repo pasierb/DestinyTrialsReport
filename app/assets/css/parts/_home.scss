@@ -1,7 +1,7 @@
 .home {
   display: flex;
   padding: 1em;
-  max-width: 1140px;
+  max-width: 1080px;
   margin: 0 auto;
   align-items: center;
   min-height: 100vh;
@@ -53,5 +53,11 @@
 
   .home__aside {
     margin-top: 1em;
+  }
+}
+
+@media all and (min-width: 1441px) {
+  .home {
+    max-width: 1323px;
   }
 }
