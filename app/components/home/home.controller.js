@@ -25,7 +25,7 @@
     };
     $scope.trialsInProgress = moment().isBefore(trialsDates.end);
 
-    $scope.flawlessLeaderboard = null;
+    $scope.lighthouseLeaderboard = null;
     $scope.weaponKills = weaponKills;
     $scope.statNamesByHash = statNamesByHash;
 
@@ -204,27 +204,46 @@
     }
 
     if (_.isUndefined(config.fireteam)) {
-      if (!$scope.flawlessLeaderboard) {
-        $scope.flawlessLeaderboard = {};
-        api.trialsFirst()
-          .then(function (matches) {
-            if (matches && matches.data) {
-              _.each(matches.data, function (match) {
-                if (match && match.instanceId) {
-                  return api.teamByMatch(
-                    match.instanceId
-                  ).then(function (result) {
-                    var period = moment.utc(result.data[0].period);
-                    var trialsBeginDate = getTrialsBeginDate(result.data[0].period);
-                    result.data.time = moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss');
-                    result.data.weeksAgo = moment().diff(period, 'weeks') + 1;
-                    result.data.instanceId = match.instanceId;
-                    result.data.map = DestinyCrucibleMapDefinition[match.referenceId].pgcrImage;
-                    $scope.flawlessLeaderboard[match.instanceId] = result.data;
-                  });
+      if (!$scope.lighthouseLeaderboard) {
+        api.lighthouseLeaderboard()
+        .then(function (results) {
+          if (results && results.data && results.data.data) {
+            $scope.lighthouseLeaderboard = [];
+            var flawlessThisWeek = false;
+
+            _.each(results.data.data, function (entry) {
+              var period = moment.utc(entry.period);
+              var trialsBeginDate = getTrialsBeginDate(entry.period);
+              var weeksAgo = trialsDates.begin.diff(trialsBeginDate, 'weeks');
+              var header;
+
+              if (weeksAgo === 0) {
+                if ($scope.trialsInProgress && period.isAfter(trialsDates.begin)) {
+                  flawlessThisWeek = true;
+                  header = 'this week';
+                } else {
+                  header = 'last week';
                 }
+              } else if (weeksAgo === 1) {
+                if (flawlessThisWeek) {
+                  header = 'last week';
+                } else {
+                  header = '2 weeks ago';
+                }
+              } else {
+                if (!flawlessThisWeek) weeksAgo++;
+                header = weeksAgo + ' weeks ago';
+              }
+
+              $scope.lighthouseLeaderboard.push({
+                map: DestinyCrucibleMapDefinition[entry.map].pgcrImage,
+                platform: entry.platform,
+                players: entry.players,
+                time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
+                header: header
               });
-            }
+            });
+          }
         });
       }
     }

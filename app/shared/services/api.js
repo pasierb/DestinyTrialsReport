@@ -18,8 +18,7 @@ app.service('api', [
         weaponStats: 'weaponStats/{membershipId}/{weaponIdArray}',
         recentTeammates: 'recentTeammates/{membershipId}',
         previousMatches: 'previousMatches/{membershipId}',
-        teamByMatch: 'teamByMatch/{instanceId}',
-        trialsFirst: 'trialsFirst'
+        lighthouseLeaderboard: 'lighthouseLeaderboard'
       };
 
       this.checkSupporterStatus = function(membershipId) {
@@ -72,18 +71,11 @@ app.service('api', [
         });
       };
 
-      this.teamByMatch = function(instanceId) {
-        return this.get(ENDPOINTS.teamByMatch, {
-          instanceId: instanceId
-        });
-      };
-
-      this.trialsFirst = function() {
-        return this.get(ENDPOINTS.trialsFirst, {});
+      this.lighthouseLeaderboard = function() {
+        return this.get(ENDPOINTS.lighthouseLeaderboard, {});
       };
 
       this.get = function(endpoint, tokens) {
-        //return new Promise(function() {});
         return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };
     };
