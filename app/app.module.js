@@ -179,7 +179,7 @@ function getTrialsBeginDate(referenceDate) {
 
 function getTrialsDates() {
   var begin = getTrialsBeginDate();
-  var end = begin.clone().add(4, 'days').hour(9);
+  var end = begin.clone().add(3, 'days').hour(9);
   return {
     begin: begin,
     end: end

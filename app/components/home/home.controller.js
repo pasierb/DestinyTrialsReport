@@ -209,29 +209,26 @@
         .then(function (results) {
           if (results && results.data && results.data.data) {
             $scope.lighthouseLeaderboard = [];
-            var flawlessThisWeek = false;
-
             _.each(results.data.data, function (entry) {
               var period = moment.utc(entry.period);
               var trialsBeginDate = getTrialsBeginDate(entry.period);
               var weeksAgo = trialsDates.begin.diff(trialsBeginDate, 'weeks');
-              var header;
 
+              var header;
               if (weeksAgo === 0) {
                 if ($scope.trialsInProgress && period.isAfter(trialsDates.begin)) {
-                  flawlessThisWeek = true;
                   header = 'this week';
                 } else {
                   header = 'last week';
                 }
               } else if (weeksAgo === 1) {
-                if (flawlessThisWeek) {
+                if ($scope.trialsInProgress) {
                   header = 'last week';
                 } else {
                   header = '2 weeks ago';
                 }
               } else {
-                if (!flawlessThisWeek) weeksAgo++;
+                if (!$scope.trialsInProgress) weeksAgo++;
                 header = weeksAgo + ' weeks ago';
               }
 
