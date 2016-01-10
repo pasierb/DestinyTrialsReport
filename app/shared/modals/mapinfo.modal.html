@@ -12,7 +12,7 @@
         </div>
         <div class="modal-stats">
           <div class="modal-hero__stats" ng-bind="mapInfo.timeAgo"></div>
-          <div class="modal-hero__description">Last time in Trials</div>
+          <div class="modal-hero__description" ng-bind="trialsInProgress ? 'Trials Ends' : 'Last time in Trials'"></div>
         </div>
         <div class="modal-stats">
           <div class="modal-hero__stats" ng-bind="mapInfo.lighthouse | number"></div>
