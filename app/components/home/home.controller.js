@@ -213,32 +213,13 @@
             _.each(results.data.data, function (entry) {
               var period = moment.utc(entry.period);
               var trialsBeginDate = getTrialsBeginDate(entry.period);
-              var weeksAgo = trialsDates.begin.diff(trialsBeginDate, 'weeks');
-
-              var header;
-              if (weeksAgo === 0) {
-                if ($scope.trialsInProgress && period.isAfter(trialsDates.begin)) {
-                  header = 'this week';
-                } else {
-                  header = 'last week';
-                }
-              } else if (weeksAgo === 1) {
-                if ($scope.trialsInProgress) {
-                  header = 'last week';
-                } else {
-                  header = '2 weeks ago';
-                }
-              } else {
-                if (!$scope.trialsInProgress) weeksAgo++;
-                header = weeksAgo + ' weeks ago';
-              }
 
               $scope.lighthouseLeaderboard.push({
                 map: DestinyCrucibleMapDefinition[entry.map].pgcrImage,
                 platform: entry.platform,
                 players: entry.players,
                 time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
-                header: header
+                weekText: getRelativeWeekText(trialsBeginDate, $scope.trialsInProgress, false, period)
               });
             });
           }
