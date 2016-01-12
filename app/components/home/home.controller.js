@@ -615,7 +615,6 @@
     $scope.dayIndicators[i] = {
       label: dayChange.format('ddd')
     };
-    var previousDayChange = 0;
 
     angular.forEach(kdGraphData, function (value, key) {
       var dateLabel = new moment.utc(new Date(value.tmstamp)).local();
@@ -630,7 +629,6 @@
 
       if (dayChange < dateLabel) {
         $scope.dayIndicators[i].value = key / kdGraphData.length * 100;
-        previousDayChange = key / kdGraphData.length * 100;
 
         i++;
         dayChange = dayChange.clone().add('1', 'hour').endOf('day');
