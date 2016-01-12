@@ -6,6 +6,8 @@
   flex-direction: row;
   align-items: flex-end;
   transition: filter linear .5s;
+  position: relative;
+  z-index: 2;
 }
 
 .current-map__content {

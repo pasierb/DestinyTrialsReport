@@ -219,5 +219,6 @@ angular
     'ui.bootstrap.progressbar',
     'ui.bootstrap.tabs',
     'ui.bootstrap.pagination',
-    'angularUtils.directives.dirPagination'
+    'angularUtils.directives.dirPagination',
+    'chart.js'
   ]);
