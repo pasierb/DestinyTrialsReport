@@ -8,32 +8,35 @@
           <div class="modal-hero__label" ng-bind="(trialsInProgress ? 'This' : 'Last') + ' week\'s map'"></div>
         </div>
       </div>
+      <svg class="spinner" style="position: absolute; left: 43%;" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg" ng-class="{'hide': mapInfo}">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
       <div class="modal-text">
         <div class="row">
           <div class="col-xs-3 stat">
-            <span>3 weeks ago</span>
+            <span ng-bind="mapInfo.timeAgo"></span>
             <label>Last time in Trials</label>
           </div>
           <div class="col-xs-3 stat">
-            <span>123,938</span>
+            <span ng-bind="mapInfo.lighthouse | number"></span>
             <label>Flawless runs</label>
           </div>
           <div class="col-xs-3 stat">
-            <span>1,938</span>
-            <label>Some stat</label>
+            <span ng-bind="mapInfo.players | number"></span>
+            <label>Guardians participated</label>
           </div>
           <div class="col-xs-3 stat">
-            <span>2,138</span>
-            <label>Some other stat</label>
+            <span ng-bind="mapInfo.kills | number"></span>
+            <label>Total Kills</label>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-xs-5">
+          <div class="col-xs-5" ng-repeat="(key, weapons) in weaponSummary track by $index" ng-class="{'col-xs-offset-1': $index > 0}">
             <div class="top-weapons--map">
               <div class="row">
                 <div class="col-xs-4">
-                  <label class="top-weapons__label" ng-bind="'Primary'"></label>
+                  <label class="top-weapons__label" ng-bind="key"></label>
                 </div>
                 <div class="col-xs-4 stat">
                   <label>Kills</label>
@@ -42,105 +45,24 @@
                   <label>Diff. to avg</label>
                 </div>
               </div>
-              <div class="row top-weapons--map__row">
+              <div class="row top-weapons--map__row" ng-repeat="weapon in weapons">
                 <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/assault-rifle.svg'}}" alt="{{'Assault Rifle'}}">
+                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/' + weapon.weapon_type.toLowerCase().replace(' ','-') + '.svg'}}" alt="{{weapon.weapon_type}}">
                 </div>
                 <div class="col-xs-4 stat">
-                  <span ng-bind="'12.50'"></span>%
+                  <span ng-bind="weapon.killPercentage"></span>%
                 </div>
-                <div class="col-xs-4 stat success">
-                  <i class="material-icons">&#xE5CE;</i> <span ng-bind="'1.23'"></span>%
-                </div>
-              </div>
-              <div class="row top-weapons--map__row">
-                <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/pulse-rifle.svg'}}" alt="{{'Pulse Rifle'}}">
-                </div>
-                <div class="col-xs-4 stat">
-                  <span ng-bind="'10.98'"></span>%
-                </div>
-                <div class="col-xs-4 stat fail">
-                  <i class="material-icons">&#xE5CF;</i> <span ng-bind="'1.23'"></span>%
-                </div>
-              </div>
-              <div class="row top-weapons--map__row">
-                <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/handcannon.svg'}}" alt="{{'Handcannon'}}">
-                </div>
-                <div class="col-xs-4 stat">
-                  <span ng-bind="'12.50'"></span>%
-                </div>
-                <div class="col-xs-4 stat success">
-                  <i class="material-icons">&#xE5CE;</i> <span ng-bind="'1.23'"></span>%
-                </div>
-              </div>
-              <div class="row top-weapons--map__row">
-                <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/scout-rifle.svg'}}" alt="{{'Scout Rifle'}}">
-                </div>
-                <div class="col-xs-4 stat">
-                  <span ng-bind="'10.98'"></span>%
-                </div>
-                <div class="col-xs-4 stat fail">
-                  <i class="material-icons">&#xE5CF;</i> <span ng-bind="'1.23'"></span>%
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-5 col-xs-offset-1">
-            <div class="top-weapons--map">
-              <div class="row">
-                <div class="col-xs-4">
-                  <label class="top-weapons__label" ng-bind="'Special'"></label>
-                </div>
-                <div class="col-xs-4 stat">
-                  <label>Kills</label>
-                </div>
-                <div class="col-xs-4 stat">
-                  <label>Diff. to avg</label>
-                </div>
-              </div>
-              <div class="row top-weapons--map__row">
-                <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/shotgun.svg'}}" alt="{{'Shotgun'}}">
-                </div>
-                <div class="col-xs-4 stat">
-                  <span ng-bind="'13.56'"></span>%
-                </div>
-                <div class="col-xs-4 stat fail">
-                  <i class="material-icons">&#xE5CF;</i> <span ng-bind="'1.23'"></span>%
-                </div>
-              </div>
-              <div class="row top-weapons--map__row">
-                <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/sniper.svg'}}" alt="{{'Sniper'}}">
-                </div>
-                <div class="col-xs-4 stat">
-                  <span ng-bind="'13.56'"></span>%
-                </div>
-                <div class="col-xs-4 stat fail">
-                  <i class="material-icons">&#xE5CF;</i> <span ng-bind="'1.23'"></span>%
-                </div>
-              </div>
-              <div class="row top-weapons--map__row">
-                <div class="col-xs-4">
-                  <img class="weapon-type-icon img-responsive" ng-src="{{'assets/img/weapon-icons/fusion-rifle.svg'}}" alt="{{'Fusion Rifle'}}">
-                </div>
-                <div class="col-xs-4 stat">
-                  <span ng-bind="'13.56'"></span>%
-                </div>
-                <div class="col-xs-4 stat fail">
-                  <i class="material-icons">&#xE5CF;</i> <span ng-bind="'1.23'"></span>%
+                <div class="col-xs-4 stat" ng-class="{'success': weapon.diffPercentage > 0, 'fail': weapon.diffPercentage < 0}">
+                  <i class="material-icons"> {{weapon.diffPercentage > 0 ? '&#xE5CE;' : '&#xE5CF;'}} </i> <span ng-bind="weapon.diffPercentage"></span>%
                 </div>
               </div>
             </div>
           </div>
         </div>
         <hr>
-        <div class="row">
-          <div class="col-xs-6" ng-repeat="type in [gggWeapons[platformNumeric].primary,
-                                     gggWeapons[platformNumeric].special] track by $index">
+        <div class="row" ng-if="gggModalShow">
+          <div class="col-xs-6" ng-repeat="type in [gggModal[platformNumeric].primary,
+                                     gggModal[platformNumeric].special] track by $index">
             <div class="row top-weapon" ng-repeat="weapon in type track by $index" ng-if="$index < 5">
               <div class="col-xs-7 last-weapon-weapon__descr">
                 <img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net/' + weapon.icon}}" alt="{{weapon.name}}">
@@ -152,29 +74,29 @@
             </div>
           </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-5 stat">
-            <span>
-              <i class="material-icons star">&#xE838;</i>
-              <i class="material-icons star">&#xE838;</i>
-              <i class="material-icons star">&#xE838;</i>
-              <i class="material-icons star">&#xE839;</i>
-              <i class="material-icons star">&#xE83A;</i>
-            </span>
-            <label>Community rating</label>
-          </div>
-          <div class="col-xs-5 col-xs-offset-1 stat">
-            <span class="rating rating--unrated">
-              <i class="material-icons star">&#xE83A;</i>
-              <i class="material-icons star">&#xE83A;</i>
-              <i class="material-icons star">&#xE83A;</i>
-              <i class="material-icons star">&#xE83A;</i>
-              <i class="material-icons star">&#xE83A;</i>
-            </span>
-            <label>Your rating</label>
-          </div>
-        </div>
+        <!--<hr>-->
+        <!--<div class="row">-->
+          <!--<div class="col-xs-5 stat">-->
+            <!--<span>-->
+              <!--<i class="material-icons star">&#xE838;</i>-->
+              <!--<i class="material-icons star">&#xE838;</i>-->
+              <!--<i class="material-icons star">&#xE838;</i>-->
+              <!--<i class="material-icons star">&#xE839;</i>-->
+              <!--<i class="material-icons star">&#xE83A;</i>-->
+            <!--</span>-->
+            <!--<label>Community rating</label>-->
+          <!--</div>-->
+          <!--<div class="col-xs-5 col-xs-offset-1 stat">-->
+            <!--<span class="rating rating&#45;&#45;unrated">-->
+              <!--<i class="material-icons star">&#xE83A;</i>-->
+              <!--<i class="material-icons star">&#xE83A;</i>-->
+              <!--<i class="material-icons star">&#xE83A;</i>-->
+              <!--<i class="material-icons star">&#xE83A;</i>-->
+              <!--<i class="material-icons star">&#xE83A;</i>-->
+            <!--</span>-->
+            <!--<label>Your rating</label>-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
     </div>
   </div>

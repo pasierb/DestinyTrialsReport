@@ -18,7 +18,8 @@ app.service('api', [
         weaponStats: 'weaponStats/{membershipId}/{weaponIdArray}',
         recentTeammates: 'recentTeammates/{membershipId}',
         previousMatches: 'previousMatches/{membershipId}',
-        lighthouseLeaderboard: 'lighthouseLeaderboard'
+        lighthouseLeaderboard: 'lighthouseLeaderboard',
+        mapInfo: 'mapInfo/{referenceId}'
       };
 
       this.checkSupporterStatus = function(membershipId) {
@@ -73,6 +74,12 @@ app.service('api', [
 
       this.lighthouseLeaderboard = function() {
         return this.get(ENDPOINTS.lighthouseLeaderboard, {});
+      };
+
+      this.getMapInfo = function(referenceId) {
+        return this.get(ENDPOINTS.mapInfo, {
+          referenceId: referenceId
+        });
       };
 
       this.get = function(endpoint, tokens) {
