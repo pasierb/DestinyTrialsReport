@@ -70,6 +70,10 @@ $duration: 1.4s;
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .d-block {
   display: block;
 }
@@ -116,5 +120,64 @@ $duration: 1.4s;
   100% {
     stroke-dashoffset: $offset;
     transform:rotate(450deg);
+  }
+}
+
+.btn-fab-left {
+  left: -90px !important;
+}
+
+.btn-fab-right {
+  right: -90px !important;
+}
+
+.btn-fab-map {
+  background-color: white !important;
+  top: 35% !important;
+  font-size: 41px !important;
+  width: 80px !important;
+  height: 80px !important;
+  position: fixed !important;
+}
+
+.slide-left {
+  left: -300%;
+}
+
+.slide-right {
+  left: 300%;
+}
+
+.slide-center {
+  transition: 0s linear all;
+  left: 0;
+}
+
+.slide-center-add, .slide-center-remove {
+  transition: all ease-in-out 1s;
+}
+
+.slide-left-add, .slide-right-add  {
+  transition: all ease-in-out .1s;
+}
+
+.slide-left-remove, .slide-right-remove {
+  transition: all ease-in-out .1s;
+}
+
+@media (max-width: 780px) {
+  .btn-fab-left {
+    left: 170px !important;
+    z-index: 1;
+  }
+  .btn-fab-right {
+    right: 32px !important;
+    z-index: 1;
+  }
+  .btn-fab-map {
+    top: 22% !important;
+    font-size: 32px !important;
+    width: 60px !important;
+    height: 60px !important;
   }
 }

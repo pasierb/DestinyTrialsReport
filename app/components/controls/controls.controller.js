@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('controlsController', controlsController);
 
-  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory) {
+  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $timeout) {
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
@@ -62,6 +62,88 @@
               guardianggFactory.getTeamElo($scope.fireteam);
               updateUrl($scope, locationChanger);
             });
+          }
+        });
+    };
+
+    $scope.hideModal = false;
+    $scope.direction = 'center';
+    $scope.mapIndex = 0;
+    $scope.showNext = false;
+    $scope.showPrev = true;
+
+    $scope.toggleDirection = function (value) {
+      var offset = (value == 'left' ? -1 : 1);
+      $scope.mapIndex = ($scope.mapIndex + offset);
+      var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
+      var nextIndex = newIndex + 1;
+      $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
+      $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
+      $scope.direction = value;
+      $timeout(function() {
+        $scope.hideModal = true;
+      }, 100);
+      $timeout(function() {
+        $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
+        $scope.direction = (value == 'left' ? 'right' : 'left');
+      }, 200);
+      $timeout(function() {
+        $scope.hideModal = false;
+        $scope.direction = 'center';
+      }, 300);
+    };
+
+    $scope.loadMapInfo = function (referenceId) {
+      return api.getMapInfo(referenceId)
+        .then(function (mapInfo) {
+          if (mapInfo && mapInfo.data) {
+            var kills, sum, typeKills, bucketSum;
+            $scope.gggModal = {};
+            $scope.mapInfo = mapInfo.data.map_info[0];
+            $scope.mapInfo.timeAgo = moment.utc($scope.mapInfo.end_date).fromNow();
+            $scope.weaponTotals = {
+              totalSum: 0,
+              totalLifetime: 0
+            };
+
+            $scope.mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
+            _.each(mapInfo.data.weapon_stats, function (weapon) {
+              weapon.bucket = bucketHashToName[weapon.bucket];
+            });
+
+            var weaponsByBucket = _.groupBy(mapInfo.data.weapon_stats, 'bucket');
+            _.each(['primary', 'special', 'heavy'], function (bucket) {
+              kills = _.pluck(weaponsByBucket[bucket], 'kills');
+              typeKills = _.pluck(weaponsByBucket[bucket], 'sum_kills');
+              sum = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
+              bucketSum = _.reduce(typeKills, function(memo, num){ return memo + parseInt(num); }, 0);
+              $scope.weaponTotals.totalSum += parseInt(sum);
+              $scope.weaponTotals.totalLifetime += parseInt(bucketSum);
+              $scope.weaponTotals[bucket] = {
+                sum: sum,
+                bucketSum: bucketSum
+              };
+            });
+
+            $scope.weaponSummary = _.omit(weaponsByBucket, 'heavy');
+            _.each($scope.weaponSummary, function (weapons, key) {
+              _.each(weapons, function (weapon) {
+                var avgPercentage = +(100 * (weapon.sum_kills/$scope.weaponTotals[weapon.bucket].bucketSum)).toFixed(2);
+                weapon.killPercentage = +(100 * (weapon.kills/$scope.weaponTotals[weapon.bucket].sum)).toFixed(2);
+                weapon.diffPercentage = (weapon.killPercentage - avgPercentage).toFixed(2);
+              });
+            });
+
+            var platform = $scope.platform === 'ps' ? '2' : '1';
+
+            return guardianggFactory.getWeapons(
+              platform,
+              {begin: moment.utc($scope.mapInfo.start_date), end: moment.utc($scope.mapInfo.end_date)}
+            ).then(function (result) {
+                $scope.gggModal[$scope.platformNumeric] = result.gggWeapons;
+                $scope.gggModal[$scope.platformNumeric].show = result.show;
+                $scope.gggModalShow = $scope.gggModal[$scope.platformNumeric].show;
+              });
           }
         });
     };

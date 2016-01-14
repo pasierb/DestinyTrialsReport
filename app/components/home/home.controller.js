@@ -6,7 +6,8 @@
     .controller('homeController', homeController);
 
   function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $popover, $routeParams, $scope, statsFactory, util) {
-    $scope.currentMap = DestinyCrucibleMapDefinition[469270447];
+    $scope.currentMapId = 469270447;
+    $scope.currentMap = DestinyCrucibleMapDefinition[$scope.currentMapId];
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
     $scope.$storage = $localStorage.$default({
@@ -20,8 +21,8 @@
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
 
     $scope.trialsDates = {
-      begin: trialsDates.begin.format('YYYY-MM-DD'),
-      end: trialsDates.end.format('YYYY-MM-DD')
+      begin: trialsDates.begin,
+      end: trialsDates.end
     };
     $scope.trialsInProgress = moment().isBefore(trialsDates.end);
 
