@@ -1,10 +1,13 @@
-<div class="modal modal--white" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+
+<div class="modal modal--white" tabindex="-1" role="dialog" aria-hidden="true" >
+  <a href="javascript:void(0)" class="btn btn-default btn-fab pull-left btn-fab-left" ng-click="toggleDirection('left')" ng-show="showPrev"><i class="material-icons">&#xE5C4;</i></a>
+  <a href="javascript:void(0)" class="btn btn-default btn-fab pull-right btn-fab-right" ng-click="toggleDirection('right')" ng-show="showNext"><i class="material-icons">&#xE5C8;</i></a>
+  <div class="modal-dialog" ng-hide="hideModal">
+    <div class="modal-content" ng-class="{ 'slide-left': direction == 'left', 'slide-right' : direction == 'right', 'slide-center': direction == 'center' }">
       <div ng-click="$hide()" class="modal-close"><i class="material-icons">&#xE14C;</i></div>
-      <div class="modal-hero" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
+      <div class="modal-hero" ng-style="{'background-image':'url(' + DestinyCrucibleMapDefinition[mapInfo.referenceId].pgcrImage + ')'}">
         <div>
-          <div class="modal-hero__title" ng-bind="currentMap.name"></div>
+          <div class="modal-hero__title" ng-bind="DestinyCrucibleMapDefinition[mapInfo.referenceId].name"></div>
           <div class="modal-hero__label" ng-bind="(trialsInProgress ? 'This' : 'Last') + ' week\'s map'"></div>
         </div>
       </div>

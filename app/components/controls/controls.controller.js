@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('controlsController', controlsController);
 
-  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api) {
+  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $timeout) {
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
@@ -66,6 +66,33 @@
         });
     };
 
+    $scope.hideModal = false;
+    $scope.direction = 'center';
+    $scope.mapIndex = 0;
+    $scope.showNext = false;
+    $scope.showPrev = true;
+
+    $scope.toggleDirection = function (value) {
+      var offset = (value == 'left' ? -1 : 1);
+      $scope.mapIndex = ($scope.mapIndex + offset);
+      var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
+      var nextIndex = newIndex + 1;
+      $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
+      $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
+      $scope.direction = value;
+      $timeout(function() {
+        $scope.hideModal = true;
+      }, 100);
+      $timeout(function() {
+        $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
+        $scope.direction = (value == 'left' ? 'right' : 'left');
+      }, 200);
+      $timeout(function() {
+        $scope.hideModal = false;
+        $scope.direction = 'center';
+      }, 300);
+    };
+
     $scope.loadMapInfo = function (referenceId) {
       return api.getMapInfo(referenceId)
         .then(function (mapInfo) {
@@ -79,6 +106,7 @@
               totalLifetime: 0
             };
 
+            $scope.mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
             _.each(mapInfo.data.weapon_stats, function (weapon) {
               weapon.bucket = bucketHashToName[weapon.bucket];
             });

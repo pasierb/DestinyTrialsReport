@@ -118,3 +118,40 @@ $duration: 1.4s;
     transform:rotate(450deg);
   }
 }
+
+.btn-fab-left {
+  margin-left: 30% !important;
+}
+.btn-fab-right {
+  margin-right: 30% !important;
+}
+
+.btn-fab {
+  margin-top: 21% !important;
+  background-color: white !important;
+}
+
+.slide-left {
+  left: -300%;
+}
+
+.slide-right {
+  left: 300%;
+}
+
+.slide-center {
+  transition: 0s linear all;
+  left: 0;
+}
+
+.slide-center-add, .slide-center-remove {
+  transition: all ease-in-out 1s;
+}
+
+.slide-left-add, .slide-right-add  {
+  transition: all ease-in-out .1s;
+}
+
+.slide-left-remove, .slide-right-remove {
+  transition: all ease-in-out .1s;
+}
