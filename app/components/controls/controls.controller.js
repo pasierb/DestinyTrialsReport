@@ -134,8 +134,10 @@
               });
             });
 
+            var platform = $scope.platform === 'ps' ? '2' : '1';
+
             return guardianggFactory.getWeapons(
-              $scope.platformNumeric,
+              platform,
               {begin: moment.utc($scope.mapInfo.start_date), end: moment.utc($scope.mapInfo.end_date)}
             ).then(function (result) {
                 $scope.gggModal[$scope.platformNumeric] = result.gggWeapons;

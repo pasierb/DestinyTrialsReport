@@ -21,8 +21,8 @@
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
 
     $scope.trialsDates = {
-      begin: trialsDates.begin.format('YYYY-MM-DD'),
-      end: trialsDates.end.format('YYYY-MM-DD')
+      begin: trialsDates.begin,
+      end: trialsDates.end
     };
     $scope.trialsInProgress = moment().isBefore(trialsDates.end);
 
