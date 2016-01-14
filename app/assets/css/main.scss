@@ -165,6 +165,10 @@ $duration: 1.4s;
   transition: all ease-in-out .1s;
 }
 
+.faded {  
+  color: #999;
+}
+
 @media (max-width: 780px) {
   .btn-fab-left {
     left: 170px !important;
