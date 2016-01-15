@@ -213,10 +213,10 @@ $duration: 1.4s;
 }
 
 .modal-content {
-  -webkit-backface-visibility: hidden;
+  //backface-visibility: hidden;
 }
 
-.faded {  
+.faded {
   color: #999;
 }
 
