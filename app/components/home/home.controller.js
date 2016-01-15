@@ -9,22 +9,8 @@
     $scope.$storage = $localStorage.$default({
       platform: true
     });
-
+    //setCurrentMap(284635225);
     getMapFromStorage();
-    if (_.isUndefined($scope.currentMapId)) {
-      return api.getCurrentMap()
-        .then(function (result) {
-          if (result && result.data && result.data[0] && result.data[0].referenceId) {
-            setCurrentMap(result.data[0].referenceId);
-            $scope.$storage.currentMap = {
-              id: $scope.currentMapId,
-              start_date: result.data[0].start_date
-            }
-          } else {
-            setCurrentMap(284635225);
-          }
-        })
-    }
 
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
@@ -73,6 +59,24 @@
           }
         }
       }
+      if (angular.isUndefined($scope.currentMapId)) {
+        getMapFromDb();
+      }
+    }
+
+    function getMapFromDb() {
+      return api.getCurrentMap()
+        .then(function (result) {
+          if (result && result.data && result.data[0] && result.data[0].referenceId) {
+            setCurrentMap(result.data[0].referenceId);
+            $scope.$storage.currentMap = {
+              id: $scope.currentMapId,
+              start_date: result.data[0].start_date
+            }
+          } else {
+            setCurrentMap(284635225);
+          }
+        })
     }
 
     $scope.suggestRecentPlayers = function () {
