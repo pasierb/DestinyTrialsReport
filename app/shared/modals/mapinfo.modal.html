@@ -3,19 +3,27 @@
   <div class="modal-dialog">
     <a href="javascript:void(0)" class="btn btn-default btn-fab pull-left btn-fab-left btn-fab-map" ng-click="toggleDirection('left')" ng-show="showPrev"><i class="material-icons">&#xE5C4;</i></a>
     <a href="javascript:void(0)" class="btn btn-default btn-fab pull-right btn-fab-right btn-fab-map" ng-click="toggleDirection('right')" ng-show="showNext"><i class="material-icons">&#xE5C8;</i></a>
-    <div class="modal-content" ng-class="{ 'slide-left': direction == 'left', 'slide-right' : direction == 'right', 'slide-center': direction == 'center' }" ng-class="'invisible': hideModal">
+    <div class="modal-content" ng-class="{ 'slide-left': direction == 'left', 'slide-right' : direction == 'right' }">
       <div ng-click="$hide()" class="modal-close"><i class="material-icons">&#xE14C;</i></div>
       <div class="modal-hero" ng-style="{'background-image':'url(' + DestinyCrucibleMapDefinition[mapInfo.referenceId].pgcrImage + ')'}">
-        <div>
+        <div style="width: 100%;">
           <div class="modal-hero__title" ng-bind="DestinyCrucibleMapDefinition[mapInfo.referenceId].name"></div>
           <div class="modal-hero__label" ng-bind="(trialsInProgress ? 'This' : 'Last') + ' week\'s map'"></div>
+        </div>
+        <div class="modal-stats">
+          <div class="modal-hero__stats" ng-bind="mapInfo.timeAgo"></div>
+          <div class="modal-hero__description">Last time in Trials</div>
+        </div>
+        <div class="modal-stats">
+          <div class="modal-hero__stats" ng-bind="mapInfo.lighthouse | number"></div>
+          <div class="modal-hero__description">Flawless runs</div>
         </div>
       </div>
       <svg class="spinner" style="position: absolute; left: 43%;" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg" ng-class="{'hide': mapInfo}">
         <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
       </svg>
       <div class="modal-text">
-        <div class="row">
+        <div class="row" ng-if="false">
           <div class="col-xs-6 col-md-3 stat">
             <span ng-bind="mapInfo.timeAgo"></span>
             <label>Last time in Trials</label>
@@ -33,7 +41,7 @@
             <label>Total Kills</label>
           </div>
         </div>
-        <hr>
+        <hr ng-if="false">
         <div class="row">
           <div class="col-xs-12 col-sm-5" ng-repeat="(key, weapons) in weaponSummary track by $index" ng-class="{'col-sm-offset-1': $index > 0}">
             <div class="top-weapons--map">
@@ -64,7 +72,7 @@
           </div>
         </div>
         <hr>
-        <div class="row" ng-if="gggModalShow">
+        <div class="row" ng-if="false">
           <div class="col-xs-12 col-sm-6" ng-repeat="type in [gggModal[platformNumeric].primary,
                                      gggModal[platformNumeric].special] track by $index">
             <div class="row top-weapon" ng-repeat="weapon in type track by $index" ng-if="$index < 5">

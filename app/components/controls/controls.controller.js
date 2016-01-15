@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('controlsController', controlsController);
 
-  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $timeout) {
+  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $interval, $timeout) {
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
@@ -71,8 +71,24 @@
     $scope.mapIndex = 0;
     $scope.showNext = false;
     $scope.showPrev = true;
+    var wait;
+
+    $scope.startAnimation = function() {
+      if (angular.isDefined(wait)) {
+        $interval.cancel(wait);
+        wait = undefined;
+      }
+    };
 
     $scope.toggleDirection = function (value) {
+      if ( angular.isDefined(wait) ) return;
+
+      wait = $interval(function() {
+        if ($scope.direction == 'center') {
+          $scope.startAnimation();
+        }
+      }, 100);
+
       var offset = (value == 'left' ? -1 : 1);
       $scope.mapIndex = ($scope.mapIndex + offset);
       var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
@@ -80,17 +96,10 @@
       $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
       $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
       $scope.direction = value;
+      $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
       $timeout(function() {
-        $scope.hideModal = true;
-      }, 100);
-      $timeout(function() {
-        $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
-        $scope.direction = (value == 'left' ? 'right' : 'left');
-      }, 200);
-      $timeout(function() {
-        $scope.hideModal = false;
         $scope.direction = 'center';
-      }, 300);
+      }, 800);
     };
 
     $scope.loadMapInfo = function (referenceId) {

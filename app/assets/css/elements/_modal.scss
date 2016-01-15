@@ -30,10 +30,28 @@
   padding: 2em;
 }
 
+.modal-stats {
+  width: 30%;
+  text-align: right;
+}
+
 .modal-hero__title {
   font-size: 2em;
   color: white;
   line-height: 1;
+}
+
+.modal-hero__stats {
+  font-size: 1.2em;
+  color: white;
+  line-height: 1;
+  //float: right;
+}
+
+.modal-hero__description {
+  @extend .data-label;
+  font-size: .8em;
+  //float: right;
 }
 
 .modal-hero__label {
