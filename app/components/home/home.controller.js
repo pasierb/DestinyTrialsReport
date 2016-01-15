@@ -6,7 +6,8 @@
     .controller('homeController', homeController);
 
   function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $popover, $routeParams, $scope, statsFactory, util) {
-    $scope.currentMap = DestinyCrucibleMapDefinition[469270447];
+    $scope.currentMapId = 469270447;
+    $scope.currentMap = DestinyCrucibleMapDefinition[$scope.currentMapId];
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
     $scope.$storage = $localStorage.$default({
@@ -83,7 +84,7 @@
         if (!$scope.gggWeapons[$scope.platformNumeric]) {
           return guardianggFactory.getWeapons(
             $scope.platformNumeric,
-            $scope.trialsDates
+            trialsDates
           ).then(function (result) {
               $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
               $scope.gggWeapons[$scope.platformNumeric].show = result.show;

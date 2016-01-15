@@ -175,6 +175,12 @@ var itemPerkToBucket = {
   1094584227: 'heavy'
 };
 
+var bucketHashToName = {
+  1498876634: 'primary',
+  2465295065: 'special',
+  953998645: 'heavy'
+};
+
 var reloadPerksToItemType = {
   2129333927: 14,
   1394084296: 14,

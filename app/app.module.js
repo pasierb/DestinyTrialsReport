@@ -3,7 +3,6 @@
 function getSubdomain() {
   var segments = location.hostname.split('.');
   return segments.length>2?segments[segments.length-3].toLowerCase():null;
-  //return 'my'
 }
 
 function getFromParams(homeFactory, inventoryService, guardianggFactory, api, toastr, bungie, $route, $q) {
@@ -170,7 +169,8 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
 
 function getTrialsBeginDate(referenceDate) {
   var now = moment.utc(referenceDate);
-  var begin = now.clone().day(5).hour(18).minute(0).second(0).millisecond(0);
+  var hour = now.clone().tz('America/Los_Angeles').isDST() ? 17 : 18;
+  var begin = now.clone().day(5).hour(hour).minute(0).second(0).millisecond(0);
   if (now.isBefore(begin)) {
     begin.subtract(1, 'week');
   }
@@ -206,6 +206,7 @@ angular
   .module('trialsReportApp', [
     'angulartics',
     'angulartics.google.analytics',
+    'angularUtils.directives.dirPagination',
     'angular-loading-bar',
     'mgcrea.ngStrap.modal',
     'mgcrea.ngStrap.popover',

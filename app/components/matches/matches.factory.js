@@ -9,7 +9,7 @@
     var getPostGame = function (recentActivity) {
       return $http({
         method: 'GET',
-        url: '/Platform/Destiny/Stats/PostGameCarnageReport/' + recentActivity.id + '/'
+        url: '//proxy.destinytrialsreport.com/Platform/Destiny/Stats/PostGameCarnageReport/' + recentActivity.id + '/'
       }).then(function (resultPostAct) {
         return resultPostAct.data.Response.data;
       }).catch(function () {});
