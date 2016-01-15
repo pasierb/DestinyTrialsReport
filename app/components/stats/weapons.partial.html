@@ -6,7 +6,10 @@
           <span ng-bind="DestinyWeaponDefinition[weapon.weaponId].name"></span>
         </div>
         <div class="row stat-row">
-          <div class="col-xs-2 col-xs-offset-2 stat">
+          <div class="col-xs-2 stat">
+            <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.weaponId).icon}}" alt="{{DestinyWeaponDefinition[weapon.weaponId].name}}">
+          </div>
+          <div class="col-xs-2 stat">
             <span ng-bind="weapon.kills || 0"></span>
             <label>Kills</label>
           </div>
