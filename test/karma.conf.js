@@ -46,6 +46,9 @@ module.exports = function(config) {
       'bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js',
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/underscore/underscore.js',
+      'bower_components/angularUtils-pagination/dirPagination.js',
+      'bower_components/Chart.js/Chart.js',
+      'bower_components/angular-chart.js/dist/angular-chart.js',
       'bower_components/xpull/xpull.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower

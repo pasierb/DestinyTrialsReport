@@ -60,7 +60,7 @@
     </div>
   </div>
 </div>
-<div class="current-map shadow-z-1" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
+<div class="current-map shadow-z-2" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
   <div class="current-map__content">
     <div class="current-map__title">
       <span ng-bind="currentMap.name"></span>
@@ -84,5 +84,23 @@
         Map
       </button>
     </div>
+  </div>
+</div>
+
+<div class="kd-graph shadow-z-1">
+  <div class="kd-graph__container shadow-z-1">
+    <div class="kd-graph__now-indicator" ng-style="{'left':nowIndicator + '%'}"></div>
+    <div class="kd-graph__day-indicators">
+      <div ng-repeat="day in dayIndicators track by $index"
+           ng-style="{'left': ($index === 0 ? '0%' : dayIndicators[$index-1].value+'%'), 'width': ($index === 0 ? day.value+'%' : (day.value === undefined ? 100 - dayIndicators[$index-1].value : dayIndicators[$index+1].value - day.value)+'%')}"
+           class="kd-graph__day-indicator">
+        <label ng-bind="day.label" title="{{day.label}}"></label>
+      </div>
+    </div>
+    <canvas id="line" class="chart chart-line" chart-data="chartValues" chart-labels="chartLabels"></canvas>
+  </div>
+  <div class="kd-graph__label">
+    <label>Avg players' K/D throughout last weekend</label>
+    <i class="material-icons icon--small" data-content="Times are in your local time. Please note that the differences are very small." bs-popover>&#xE8FD;</i>
   </div>
 </div>

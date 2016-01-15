@@ -26,6 +26,8 @@
     "moment-timezone": "~0.5.0",
     "ngstorage": "~0.3.10",
     "underscore": "~1.8.3",
+    "angularUtils-pagination": "angular-utils-pagination#~0.9.3",
+    "angular-chart.js": "~0.8.8",
     "xpull": "*"
   },
   "devDependencies": {

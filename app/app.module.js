@@ -241,5 +241,7 @@ angular
     'ui.bootstrap.tpls',
     'ui.bootstrap.progressbar',
     'ui.bootstrap.tabs',
-    'ui.bootstrap.pagination'
+    'ui.bootstrap.pagination',
+    'angularUtils.directives.dirPagination',
+    'chart.js'
   ]);

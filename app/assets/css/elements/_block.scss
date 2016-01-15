@@ -77,6 +77,15 @@
   }
 }
 
+.block__footer--ad {
+  margin-top: 2em;
+
+  .ad {
+    margin: auto;
+    padding: 0;
+  }
+}
+
 .block__link {
   @include inset-shadow();
   margin-left: -2em;
@@ -88,5 +97,16 @@
     color: #666;
     display: block;
     margin: 0;
+  }
+}
+
+@media all and (min-width: 960px) {
+  .block__footer--ad {
+    margin-top: 2em;
+
+    .ad {
+      margin: auto;
+      width: 520px;
+    }
   }
 }
