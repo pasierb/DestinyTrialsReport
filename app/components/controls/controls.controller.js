@@ -109,6 +109,7 @@
             var kills, sum, typeKills, bucketSum;
             $scope.gggModal = {};
             $scope.mapInfo = mapInfo.data.map_info[0];
+            $scope.mapInfo.weekText = getRelativeWeekText(moment.utc($scope.mapInfo.start_date), $scope.trialsInProgress, true);
             $scope.mapInfo.timeAgo = moment.utc($scope.mapInfo.end_date).fromNow();
             $scope.weaponTotals = {
               totalSum: 0,

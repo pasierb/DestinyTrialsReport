@@ -188,6 +188,28 @@ function getTrialsDates() {
 
 var trialsDates = getTrialsDates();
 
+function getRelativeWeekText(trialsBeginDate, trialsInProgress, showImmediately, period) {
+  var weeksAgo = Math.round(trialsDates.begin.diff(trialsBeginDate, 'weeks', true));
+  var text;
+  if (weeksAgo === 0) {
+    if (trialsInProgress && (showImmediately || period.isAfter(trialsDates.begin))) {
+      text = 'this week';
+    } else {
+      text = 'last week';
+    }
+  } else if (weeksAgo === 1) {
+    if (trialsInProgress) {
+      text = 'last week';
+    } else {
+      text = '2 weeks ago';
+    }
+  } else {
+    if (!trialsInProgress) weeksAgo++;
+    text = weeksAgo + ' weeks ago';
+  }
+  return text;
+}
+
 function gggWeapons($localStorage, guardianggFactory) {
   var platformNumeric = $localStorage.platform ? 2 : 1;
   return guardianggFactory.getWeapons(
