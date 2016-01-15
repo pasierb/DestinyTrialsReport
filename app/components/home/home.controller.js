@@ -14,10 +14,14 @@
     if (_.isUndefined($scope.currentMapId)) {
       return api.getCurrentMap()
         .then(function (result) {
-          setCurrentMap(result.data[0].referenceId);
-          $scope.$storage.currentMap = {
-            id: $scope.currentMapId,
-            start_date: result.data[0].start_date
+          if (result && result.data && result.data[0] && result.data[0].referenceId) {
+            setCurrentMap(result.data[0].referenceId);
+            $scope.$storage.currentMap = {
+              id: $scope.currentMapId,
+              start_date: result.data[0].start_date
+            }
+          } else {
+            setCurrentMap(284635225);
           }
         })
     }
