@@ -168,17 +168,6 @@ module.exports = function (grunt) {
             '^/ps': '/#!ps',
             '^/xbox': '/#!xbox'
           }
-        },
-        {
-          context: '/Platform',
-          host: 'www.bungie.net',
-          port: 80,
-          https: false,
-          xforward: false,
-          headers: {
-            'host': 'www.bungie.net',
-            'X-API-Key': BUNGIE_API_KEY
-          }
         }]
       },
       test: {

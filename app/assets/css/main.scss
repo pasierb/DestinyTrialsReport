@@ -216,6 +216,10 @@ $duration: 1.4s;
   -webkit-backface-visibility: hidden;
 }
 
+.faded {  
+  color: #999;
+}
+
 @media (max-width: 780px) {
   .btn-fab-left {
     left: 0 !important;

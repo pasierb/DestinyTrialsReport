@@ -21,8 +21,8 @@
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
 
     $scope.trialsDates = {
-      begin: trialsDates.begin,
-      end: trialsDates.end
+      begin: trialsDates.begin.format('YYYY-MM-DD'),
+      end: trialsDates.end.format('YYYY-MM-DD')
     };
     $scope.trialsInProgress = moment().isBefore(trialsDates.end);
 
@@ -84,7 +84,7 @@
         if (!$scope.gggWeapons[$scope.platformNumeric]) {
           return guardianggFactory.getWeapons(
             $scope.platformNumeric,
-            $scope.trialsDates
+            trialsDates
           ).then(function (result) {
               $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
               $scope.gggWeapons[$scope.platformNumeric].show = result.show;
