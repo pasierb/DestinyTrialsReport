@@ -637,7 +637,7 @@
     };
 
     angular.forEach(kdGraphData, function (value, key) {
-      var dateLabel = new moment.utc(new Date(value.tmstamp)).local();
+      var dateLabel = new moment.utc(value.tmstamp).local();
       $scope.chartLabels.push(dateLabel.format('dddd, HH:00'));
       $scope.chartValues.push(value.kd);
 

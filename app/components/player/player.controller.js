@@ -21,7 +21,9 @@ angular.module('trialsReportApp')
               var enemyTeam = _.find(match.teams, function(matchTeam) {
                 return matchTeam.standing.basic.value !== player[0].standing;
               });
-              player[0].values.enemyScore = enemyTeam.score;
+              if (enemyTeam) {
+                player[0].values.enemyScore = enemyTeam.score;
+              }
               player[0].values.dateAgo = moment(match.period).fromNow();
               var matchId = match.activityDetails.instanceId;
               lastMatches[matchId] = player[0];
