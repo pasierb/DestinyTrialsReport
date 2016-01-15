@@ -66,12 +66,15 @@
         });
     };
 
-    $scope.hideModal = false;
-    $scope.direction = 'center';
-    $scope.mapIndex = 0;
-    $scope.showNext = false;
-    $scope.showPrev = true;
+    $scope.searchedMaps = {};
     var wait;
+
+    $scope.resetMapVars = function() {
+      $scope.direction = 'center';
+      $scope.mapIndex = 0;
+      $scope.showNext = false;
+      $scope.showPrev = true;
+    };
 
     $scope.startAnimation = function() {
       if (angular.isDefined(wait)) {
@@ -103,59 +106,62 @@
     };
 
     $scope.loadMapInfo = function (referenceId) {
-      return api.getMapInfo(referenceId)
-        .then(function (mapInfo) {
-          if (mapInfo && mapInfo.data) {
-            var kills, sum, typeKills, bucketSum;
-            $scope.gggModal = {};
-            $scope.mapInfo = mapInfo.data.map_info[0];
-            $scope.mapInfo.weekText = getRelativeWeekText(moment.utc($scope.mapInfo.start_date), $scope.trialsInProgress, true);
-            $scope.mapInfo.timeAgo = moment.utc($scope.mapInfo.end_date).fromNow();
-            $scope.weaponTotals = {
-              totalSum: 0,
-              totalLifetime: 0
-            };
-
-            $scope.mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
-            _.each(mapInfo.data.weapon_stats, function (weapon) {
-              weapon.bucket = bucketHashToName[weapon.bucket];
-            });
-
-            var weaponsByBucket = _.groupBy(mapInfo.data.weapon_stats, 'bucket');
-            _.each(['primary', 'special', 'heavy'], function (bucket) {
-              kills = _.pluck(weaponsByBucket[bucket], 'kills');
-              typeKills = _.pluck(weaponsByBucket[bucket], 'sum_kills');
-              sum = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
-              bucketSum = _.reduce(typeKills, function(memo, num){ return memo + parseInt(num); }, 0);
-              $scope.weaponTotals.totalSum += parseInt(sum);
-              $scope.weaponTotals.totalLifetime += parseInt(bucketSum);
-              $scope.weaponTotals[bucket] = {
-                sum: sum,
-                bucketSum: bucketSum
+      if ($scope.searchedMaps[referenceId]) {
+        var map = $scope.searchedMaps[referenceId];
+        $scope.weaponSummary = map.weaponSummary;
+        $scope.weaponTotals = map.weaponTotals;
+        $scope.mapHistory = map.mapHistory;
+        $scope.mapInfo = map.mapInfo;
+      } else {
+        return api.getMapInfo(referenceId)
+          .then(function (mapInfo) {
+            if (mapInfo && mapInfo.data) {
+              var kills, sum, typeKills, bucketSum;
+              $scope.mapInfo = mapInfo.data.map_info[0];
+              $scope.mapInfo.weekText = getRelativeWeekText(moment.utc($scope.mapInfo.start_date), $scope.trialsInProgress, true);
+              $scope.mapInfo.timeAgo = moment.utc($scope.mapInfo.end_date).fromNow();
+              $scope.weaponTotals = {
+                totalSum: 0,
+                totalLifetime: 0
               };
-            });
 
-            $scope.weaponSummary = _.omit(weaponsByBucket, 'heavy');
-            _.each($scope.weaponSummary, function (weapons, key) {
-              _.each(weapons, function (weapon) {
-                var avgPercentage = +(100 * (weapon.sum_kills/$scope.weaponTotals[weapon.bucket].bucketSum)).toFixed(2);
-                weapon.killPercentage = +(100 * (weapon.kills/$scope.weaponTotals[weapon.bucket].sum)).toFixed(2);
-                weapon.diffPercentage = (weapon.killPercentage - avgPercentage).toFixed(2);
+              $scope.mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
+              _.each(mapInfo.data.weapon_stats, function (weapon) {
+                weapon.bucket = bucketHashToName[weapon.bucket];
               });
-            });
 
-            var platform = $scope.platform === 'ps' ? '2' : '1';
-
-            return guardianggFactory.getWeapons(
-              platform,
-              {begin: moment.utc($scope.mapInfo.start_date), end: moment.utc($scope.mapInfo.end_date)}
-            ).then(function (result) {
-                $scope.gggModal[$scope.platformNumeric] = result.gggWeapons;
-                $scope.gggModal[$scope.platformNumeric].show = result.show;
-                $scope.gggModalShow = $scope.gggModal[$scope.platformNumeric].show;
+              var weaponsByBucket = _.groupBy(mapInfo.data.weapon_stats, 'bucket');
+              _.each(['primary', 'special', 'heavy'], function (bucket) {
+                kills = _.pluck(weaponsByBucket[bucket], 'kills');
+                typeKills = _.pluck(weaponsByBucket[bucket], 'sum_kills');
+                sum = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
+                bucketSum = _.reduce(typeKills, function(memo, num){ return memo + parseInt(num); }, 0);
+                $scope.weaponTotals.totalSum += parseInt(sum);
+                $scope.weaponTotals.totalLifetime += parseInt(bucketSum);
+                $scope.weaponTotals[bucket] = {
+                  sum: sum,
+                  bucketSum: bucketSum
+                };
               });
-          }
-        });
+
+              $scope.weaponSummary = _.omit(weaponsByBucket, 'heavy');
+              _.each($scope.weaponSummary, function (weapons, key) {
+                _.each(weapons, function (weapon) {
+                  var avgPercentage = +(100 * (weapon.sum_kills/$scope.weaponTotals[weapon.bucket].bucketSum)).toFixed(2);
+                  weapon.killPercentage = +(100 * (weapon.kills/$scope.weaponTotals[weapon.bucket].sum)).toFixed(2);
+                  weapon.diffPercentage = (weapon.killPercentage - avgPercentage).toFixed(2);
+                });
+              });
+
+              $scope.searchedMaps[referenceId] = {
+                weaponSummary: $scope.weaponSummary,
+                weaponTotals:  $scope.weaponTotals,
+                mapHistory:    $scope.mapHistory,
+                mapInfo:       $scope.mapInfo
+              };
+            }
+          });
+      }
     };
   }
 })();
