@@ -189,8 +189,8 @@ function getTrialsDates() {
 var trialsDates = getTrialsDates();
 
 function getRelativeWeekText(trialsBeginDate, trialsInProgress, showImmediately, period) {
-  var weeksAgo = trialsDates.begin.diff(trialsBeginDate, 'weeks');
-  var text = 'unknown';
+  var weeksAgo = Math.round(trialsDates.begin.diff(trialsBeginDate, 'weeks', true));
+  var text;
   if (weeksAgo === 0) {
     if (trialsInProgress && (showImmediately || period.isAfter(trialsDates.begin))) {
       text = 'this week';
