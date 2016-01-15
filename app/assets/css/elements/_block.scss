@@ -55,6 +55,14 @@
   }
 }
 
+.block__footer-dark {
+  @include inset-shadow();
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1em;
+  background: #292929;
+}
+
 .block__footer--ggg {
   text-align: center;
 
@@ -108,5 +116,11 @@
       margin: auto;
       width: 520px;
     }
+  }
+
+  .block__footer--ad-dark .ad-small {
+    margin: auto;
+    width: 320px;
+    height: 50px;
   }
 }
