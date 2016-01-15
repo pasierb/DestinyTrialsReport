@@ -6,9 +6,9 @@ $graph-height: 7.5em;
 
 .kd-graph__container {
   position: relative;
-  margin-left: -5px;
-  padding-right: 10px;
   z-index: 1;
+  margin-left: 0px;
+  margin-right: 0px;
   background: rgba(255,255,255,0.1);
 
   .chart-container {

@@ -89,7 +89,7 @@
 
 <div class="kd-graph shadow-z-1">
   <div class="kd-graph__container shadow-z-1">
-    <div class="kd-graph__now-indicator" ng-style="{'left':nowIndicator + '%'}"></div>
+    <div class="kd-graph__now-indicator" ng-if="trialsInProgress" ng-style="{'left':nowIndicator + '%'}"></div>
     <div class="kd-graph__day-indicators">
       <div ng-repeat="day in dayIndicators track by $index"
            ng-style="{'left': ($index === 0 ? '0%' : dayIndicators[$index-1].value+'%'), 'width': ($index === 0 ? day.value+'%' : (day.value === undefined ? 100 - dayIndicators[$index-1].value : dayIndicators[$index+1].value - day.value)+'%')}"
