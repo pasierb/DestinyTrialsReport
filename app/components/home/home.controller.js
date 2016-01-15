@@ -627,10 +627,10 @@
     $scope.dayIndicators = {};
 
     if ($scope.trialsInProgress) {
-      var now = new moment.utc().local();
+      var now = new moment.utc().subtract(1, 'weeks').local();
     }
 
-    var dayChange = trialsDates.begin.local().endOf('day');
+    var dayChange = trialsDates.begin.subtract(1, 'weeks').local().endOf('day');
     var i = 0;
     $scope.dayIndicators[i] = {
       label: dayChange.format('ddd')
