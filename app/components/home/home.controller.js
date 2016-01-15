@@ -627,17 +627,17 @@
     $scope.dayIndicators = {};
 
     if ($scope.trialsInProgress) {
-      var now = new moment.utc().subtract(1, 'weeks').local();
+      var now = moment().subtract(1, 'week');
     }
 
-    var dayChange = trialsDates.begin.subtract(1, 'weeks').local().endOf('day');
+    var dayChange = trialsDates.begin.clone().local().endOf('day');
     var i = 0;
     $scope.dayIndicators[i] = {
       label: dayChange.format('ddd')
     };
 
     angular.forEach(kdGraphData, function (value, key) {
-      var dateLabel = new moment.utc(value.tmstamp).local();
+      var dateLabel = moment.utc(value.tmstamp, 'MM/DD/YYYY HH:mm:ss').local();
       $scope.chartLabels.push(dateLabel.format('dddd, HH:00'));
       $scope.chartValues.push(value.kd);
 
@@ -651,7 +651,7 @@
         $scope.dayIndicators[i].value = key / kdGraphData.length * 100;
 
         i++;
-        dayChange = dayChange.clone().add('1', 'hour').endOf('day');
+        dayChange = dayChange.clone().add(1, 'hour').endOf('day');
         $scope.dayIndicators[i] = {
           label: dayChange.format('ddd')
         };

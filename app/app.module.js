@@ -230,6 +230,7 @@ angular
     'angulartics.google.analytics',
     'angularUtils.directives.dirPagination',
     'angular-loading-bar',
+    'chart.js',
     'mgcrea.ngStrap.modal',
     'mgcrea.ngStrap.popover',
     'ngAnimate',
@@ -241,7 +242,5 @@ angular
     'ui.bootstrap.tpls',
     'ui.bootstrap.progressbar',
     'ui.bootstrap.tabs',
-    'ui.bootstrap.pagination',
-    'angularUtils.directives.dirPagination',
-    'chart.js'
+    'ui.bootstrap.pagination'
   ]);
