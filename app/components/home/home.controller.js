@@ -5,14 +5,25 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $popover, $routeParams, $scope, statsFactory, util) {
-    $scope.currentMapId = 469270447;
-    $scope.currentMap = DestinyCrucibleMapDefinition[$scope.currentMapId];
-    $scope.subdomain = config.subdomain === 'my';
-    $scope.sdOpponents = config.subdomain === 'opponents';
+  function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $routeParams, $scope, statsFactory) {
     $scope.$storage = $localStorage.$default({
       platform: true
     });
+
+    getMapFromStorage();
+    if (_.isUndefined($scope.currentMapId)) {
+      return api.getCurrentMap()
+        .then(function (result) {
+          setCurrentMap(result.data[0].referenceId);
+          $scope.$storage.currentMap = {
+            id: $scope.currentMapId,
+            start_date: result.data[0].start_date
+          }
+        })
+    }
+
+    $scope.subdomain = config.subdomain === 'my';
+    $scope.sdOpponents = config.subdomain === 'opponents';
 
     $scope.DestinyCrucibleMapDefinition = DestinyCrucibleMapDefinition;
     $scope.DestinyHazardDefinition = DestinyHazardDefinition;
@@ -40,6 +51,25 @@
     $scope.shiftPlayerFocus = function (direction) {
       $scope.focusOnPlayer = Math.min(3, Math.max(1, $scope.focusOnPlayer + Math.floor(window.innerWidth / 320) * direction));
     };
+
+    function setCurrentMap(id) {
+      $scope.currentMapId = id;
+      $scope.currentMap = DestinyCrucibleMapDefinition[id];
+    }
+
+    function getMapFromStorage() {
+      $scope.currentMapId = undefined;
+      if (angular.isDefined($scope.$storage.currentMap)) {
+        var map = $localStorage.currentMap;
+        if (map && map.id && map.start_date) {
+          var today = moment();
+          var weekAfterLastMap = moment.utc(map.start_date).day(12);
+          if (weekAfterLastMap.isAfter(today)) {
+            setCurrentMap(map.id);
+          }
+        }
+      }
+    }
 
     $scope.suggestRecentPlayers = function () {
       if (angular.isUndefined($scope.recentPlayers)) {

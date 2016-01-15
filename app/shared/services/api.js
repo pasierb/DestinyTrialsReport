@@ -19,7 +19,8 @@ app.service('api', [
         recentTeammates: 'recentTeammates/{membershipId}',
         previousMatches: 'previousMatches/{membershipId}',
         lighthouseLeaderboard: 'lighthouseLeaderboard',
-        mapInfo: 'mapInfo/{referenceId}'
+        mapInfo: 'mapInfo/{referenceId}',
+        currentMap: 'currentMap'
       };
 
       this.checkSupporterStatus = function(membershipId) {
@@ -80,6 +81,10 @@ app.service('api', [
         return this.get(ENDPOINTS.mapInfo, {
           referenceId: referenceId
         });
+      };
+
+      this.getCurrentMap = function() {
+        return this.get(ENDPOINTS.currentMap, {});
       };
 
       this.get = function(endpoint, tokens) {
