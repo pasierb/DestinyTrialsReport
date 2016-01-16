@@ -78,13 +78,19 @@ module.exports = function (grunt) {
                 'git commit -m "' + (grunt.option('gitm') ? grunt.option('gitm') : 'updated') + '" --allow-empty',
                 'git push --force staging master'
             ].join('&&')
-        }, //these need to be updated still, but will work for now.
+        },
+        'deploy-clean': {
+            command: [
+                'cd heroku',
+                'rm -rf .git'
+            ].join('&&')
+        },
         'deploy-init': {
             command: [
                 'cd heroku',
                 'git init',
-                'git remote add production ssh://root@destinytrialsreport.com/var/git/production.git',
-                'git remote add development ssh://root@destinytrialsreport.com/var/git/development.git'
+                'git remote add production ssh://root@45.79.157.80/var/git/production.git',
+                'git remote add development ssh://root@45.79.157.80/var/git/development.git'
             ].join('&&')
         },
         'deploy-production': {
@@ -589,8 +595,12 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('deploy', function(method) {
-    switch(method) {
+  grunt.registerTask('deploy', function (method) {
+    switch (method) {
+      case 'clean':
+        grunt.task.run(['shell:deploy-clean']);
+      break;
+
       case 'init':
         grunt.task.run(['shell:deploy-init']);
       break;
@@ -631,27 +641,6 @@ module.exports = function (grunt) {
           grunt.task.run([
               'copy:heroku'
           ]);
-      }
-      switch (method) {
-          case 'init':
-              grunt.task.run([
-                  'shell:heroku-git-init',
-                  'shell:heroku-dyno'
-              ]);
-              break;
-          case 'push':
-              grunt.task.run([
-                  'shell:heroku-git-push'
-              ]);
-              break;
-          case 'staging':
-              grunt.task.run([
-                  'shell:heroku-git-push-staging'
-              ]);
-              break;
-          default:
-              console.log('heroku:' + method + ' is not a valid target.');
-              break;
       }
   });
 };
