@@ -630,7 +630,7 @@
       var now = moment().subtract(1, 'week');
     }
 
-    var dayChange = trialsDates.begin.clone().local().endOf('day');
+    var dayChange = trialsDates.begin.clone().local().subtract(1, 'week').endOf('day');
     var i = 0;
     $scope.dayIndicators[i] = {
       label: dayChange.format('ddd')
