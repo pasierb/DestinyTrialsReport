@@ -11,12 +11,13 @@
         platform,
         name
       ).then(function (result) {
-          if (result.data.Response.length < 1) {
+          var response;
+          if (result && result.data && result.data.Response) {
+            response = result.data.Response[0];
+            return response;
+          } else {
             toastr.error('Player not found', 'Error');
-            return;
           }
-          var response = result.data.Response[0];
-          return response;
         });
     };
 

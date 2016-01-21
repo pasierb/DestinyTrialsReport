@@ -5,11 +5,10 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, locationChanger, $localStorage, matchesFactory, $routeParams, $scope, statsFactory) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, matchesFactory, $routeParams, $scope, statsFactory) {
     $scope.$storage = $localStorage.$default({
       platform: true
     });
-    //setCurrentMap(284635225);
     getMapFromStorage();
 
     $scope.subdomain = config.subdomain === 'my';
@@ -220,14 +219,6 @@
                 });
             }
           });
-
-          if ($scope.fireteam[2] && $scope.fireteam[2].membershipId) {
-            if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
-              locationChanger.skipReload()
-                .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +
-                $scope.fireteam[1].name + '/' + $scope.fireteam[2].name, true);
-            }
-          }
         }
       } else {
         $scope.fireteam = null;
