@@ -8,7 +8,7 @@ app.service('api', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = 'http://api.destinytrialsreport.com/';
+      var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
         supporterStatus: 'supporterStatus/{membershipId}',
         lighthouseCount: 'lighthouseCount/{membershipIdArray}',

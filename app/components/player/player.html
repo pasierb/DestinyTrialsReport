@@ -34,12 +34,12 @@
            analytics-on analytics-event="Click" analytics-category="Guardian.gg">
           <img src="/assets/img/ggg-logo.png" alt="Guardian.gg">
         </a>
-        <a href="http://my.destinytrialsreport.com/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
+        <a href="https://my.destinytrialsreport.com/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="!subdomain"
            analytics-on analytics-event="Click" analytics-category="myDestinyTrialsReport">
           myTrialsReport
         </a>
-        <a href="http://www.destinytrialsreport.com/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
+        <a href="https://destinytrialsreport.com/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="subdomain"
            analytics-on analytics-event="Click" analytics-category="DestinyTrialsReport">
           DestinyTrialsReport
