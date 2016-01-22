@@ -52,17 +52,19 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
           return activities;
         }
         return bungie.getPgcr(activities[0].activityDetails.instanceId)
-          .then(function(result) {
+          .then(function (result) {
             var fireteam = [];
-            _.each(result.data.Response.data.entries, function(player) {
-              if (player.standing === activities[0].values.standing.basic.value) {
-                fireteam.push({
-                  membershipType: player.player.destinyUserInfo.membershipType,
-                  membershipId: player.player.destinyUserInfo.membershipId,
-                  name: player.player.destinyUserInfo.displayName
-                });
-              }
-            });
+            if (result && result.data && result.data.Response && result.data.Response.data) {
+              _.each(result.data.Response.data.entries, function (player) {
+                if (player.standing === activities[0].values.standing.basic.value) {
+                  fireteam.push({
+                    membershipType: player.player.destinyUserInfo.membershipType,
+                    membershipId: player.player.destinyUserInfo.membershipId,
+                    name: player.player.destinyUserInfo.displayName
+                  });
+                }
+              });
+            }
             return fireteam;
           });
       },
