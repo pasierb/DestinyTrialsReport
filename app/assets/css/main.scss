@@ -90,6 +90,18 @@ $duration: 1.4s;
   background-color: #ECEFF1;
 }
 
+.p-0 {
+  padding: 0 !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
 @keyframes rotator {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(270deg); }

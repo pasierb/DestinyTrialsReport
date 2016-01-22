@@ -87,12 +87,12 @@
       if ( angular.isDefined(wait) ) return;
 
       wait = $interval(function() {
-        if ($scope.direction == 'center') {
+        if ($scope.direction === 'center') {
           $scope.startAnimation();
         }
       }, 100);
 
-      var offset = (value == 'left' ? -1 : 1);
+      var offset = (value === 'left' ? -1 : 1);
       $scope.mapIndex = ($scope.mapIndex + offset);
       var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
       var nextIndex = newIndex + 1;
@@ -113,54 +113,17 @@
         $scope.mapHistory = map.mapHistory;
         $scope.mapInfo = map.mapInfo;
       } else {
-        return api.getMapInfo(referenceId)
+        return statsFactory.mapStats(referenceId)
           .then(function (mapInfo) {
-            if (mapInfo && mapInfo.data) {
-              var kills, sum, typeKills, bucketSum;
-              $scope.mapInfo = mapInfo.data.map_info[0];
-              $scope.mapInfo.weekText = getRelativeWeekText(moment.utc($scope.mapInfo.start_date), $scope.trialsInProgress, true);
-              $scope.mapInfo.timeAgo = moment.utc($scope.mapInfo.end_date).fromNow();
-              $scope.weaponTotals = {
-                totalSum: 0,
-                totalLifetime: 0
-              };
-
-              $scope.mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
-              _.each(mapInfo.data.weapon_stats, function (weapon) {
-                weapon.bucket = bucketHashToName[weapon.bucket];
-              });
-
-              var weaponsByBucket = _.groupBy(mapInfo.data.weapon_stats, 'bucket');
-              _.each(['primary', 'special', 'heavy'], function (bucket) {
-                kills = _.pluck(weaponsByBucket[bucket], 'kills');
-                typeKills = _.pluck(weaponsByBucket[bucket], 'sum_kills');
-                sum = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
-                bucketSum = _.reduce(typeKills, function(memo, num){ return memo + parseInt(num); }, 0);
-                $scope.weaponTotals.totalSum += parseInt(sum);
-                $scope.weaponTotals.totalLifetime += parseInt(bucketSum);
-                $scope.weaponTotals[bucket] = {
-                  sum: sum,
-                  bucketSum: bucketSum
-                };
-              });
-
-              $scope.weaponSummary = _.omit(weaponsByBucket, 'heavy');
-              _.each($scope.weaponSummary, function (weapons, key) {
-                _.each(weapons, function (weapon) {
-                  var avgPercentage = +(100 * (weapon.sum_kills/$scope.weaponTotals[weapon.bucket].bucketSum)).toFixed(2);
-                  weapon.killPercentage = +(100 * (weapon.kills/$scope.weaponTotals[weapon.bucket].sum)).toFixed(2);
-                  weapon.diffPercentage = (weapon.killPercentage - avgPercentage).toFixed(2);
-                });
-              });
-
-              $scope.searchedMaps[referenceId] = {
-                weaponSummary: $scope.weaponSummary,
-                weaponTotals:  $scope.weaponTotals,
-                mapHistory:    $scope.mapHistory,
-                mapInfo:       $scope.mapInfo
-              };
-            }
-          });
+            $scope.searchedMaps[referenceId] = mapInfo;
+            $scope.weaponSummary = mapInfo.weaponSummary;
+            $scope.weaponTotals = mapInfo.weaponTotals;
+            $scope.mapHistory = mapInfo.mapHistory;
+            $scope.mapInfo = mapInfo.mapInfo;
+            $scope.mapInfo.weekText = getRelativeWeekText(moment.utc(mapInfo.mapInfo.start_date), $scope.trialsInProgress, true);
+            $scope.mapInfo.timeAgo = moment.utc(mapInfo.mapInfo.end_date).fromNow();
+          }
+        );
       }
     };
   }

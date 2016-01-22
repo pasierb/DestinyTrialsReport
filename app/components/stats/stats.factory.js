@@ -128,6 +128,54 @@ angular.module('trialsReportApp')
         });
     };
 
+    var mapStats = function (mapId) {
+      return api.getMapInfo(mapId)
+        .then(function (mapInfo) {
+          if (mapInfo && mapInfo.data) {
+            var kills, sum, typeKills, bucketSum;
+            var mapData = mapInfo.data.map_info[0];
+            var weaponTotals = {
+              totalSum: 0,
+              totalLifetime: 0
+            };
+
+            var mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
+            _.each(mapInfo.data.weapon_stats, function (weapon) {
+              weapon.bucket = bucketHashToName[weapon.bucket];
+            });
+
+            var weaponsByBucket = _.groupBy(mapInfo.data.weapon_stats, 'bucket');
+            _.each(['primary', 'special', 'heavy'], function (bucket) {
+              kills = _.pluck(weaponsByBucket[bucket], 'kills');
+              typeKills = _.pluck(weaponsByBucket[bucket], 'sum_kills');
+              sum = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
+              bucketSum = _.reduce(typeKills, function(memo, num){ return memo + parseInt(num); }, 0);
+              weaponTotals.totalSum += parseInt(sum);
+              weaponTotals.totalLifetime += parseInt(bucketSum);
+              weaponTotals[bucket] = {
+                sum: sum,
+                bucketSum: bucketSum
+              };
+            });
+
+            var weaponSummary = _.omit(weaponsByBucket, 'heavy');
+            _.each(weaponSummary, function (weapons, key) {
+              _.each(weapons, function (weapon) {
+                var avgPercentage = +(100 * (weapon.sum_kills/weaponTotals[weapon.bucket].bucketSum)).toFixed(2);
+                weapon.killPercentage = +(100 * (weapon.kills/weaponTotals[weapon.bucket].sum)).toFixed(2);
+                weapon.diffPercentage = (weapon.killPercentage - avgPercentage).toFixed(2);
+              });
+            });
+
+            return {
+              weaponSummary: weaponSummary,
+              weaponTotals:  weaponTotals,
+              mapHistory:    mapHistory,
+              mapInfo:       mapData
+            };
+          }
+        });
+    };
 
     var getPreviousMatches = function (player) {
       return api.previousMatches(
@@ -159,6 +207,7 @@ angular.module('trialsReportApp')
       getLighthouseCount: getLighthouseCount,
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
-      weaponStats: weaponStats
+      weaponStats: weaponStats,
+      mapStats: mapStats
     };
   });

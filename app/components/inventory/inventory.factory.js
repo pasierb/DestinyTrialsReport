@@ -53,7 +53,7 @@ function defineAbilities(subclass, hasVikingFuneral, hasTouchOfFlame) {
           subclass.abilities.weaponKillsSuper = subclass.nodes[s];
         } else {
           subclass.displayedNodes[subclass.nodes[s].nodeStepHash] = subclass.nodes[s];
-          subclass.ionicBlink = subclass.nodes[s].nodeStepHash === IONIC_BLINK
+          subclass.ionicBlink = subclass.nodes[s].nodeStepHash === IONIC_BLINK;
         }
         break;
       case 4:

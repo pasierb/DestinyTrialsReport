@@ -1,5 +1,6 @@
 .donate {
   //padding: $controls-padding;
+  text-align: center;
   padding: 1em;
   border-top: 1px solid lighten($header-bg, 5%);
   border-bottom: 1px solid darken($header-bg, 5%);
@@ -37,5 +38,7 @@
 
 .donate__descr {
   max-width: 19.5em;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: .5em;
 }

@@ -81,7 +81,7 @@
           setOrIncrement(allStats, match.values.killsDeathsRatio, 'killsDeathsRatio');
           setOrIncrement(allStats, match.values.killsDeathsAssists, 'killsDeathsAssists');
           setOrIncrement(allStats, match.values.assists, 'assists');
-          matchCount++
+          matchCount++;
         });
         $scope.weapons = weapons;
         $scope.abilityKills = abilityKills;

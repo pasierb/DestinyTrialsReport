@@ -33,6 +33,22 @@
   }
 }
 
+.blog-image {
+  margin-left: -2em;
+  margin-top: -2em;
+  margin-right: -2em;
+  margin-bottom: 1.5em;
+}
+
+.block__title--lighthouse {
+  margin-top: 0;
+  box-shadow: inset 0 10px 8px -10px rgba(0, 0, 0, 0.75);
+}
+
+.shadow--lighthouse__middle {
+  box-shadow: inset 0 10px 10px 0 rgba(0, 0, 0, 0.75);
+}
+
 @media all and (max-width: 960px) {
 
   .home {
