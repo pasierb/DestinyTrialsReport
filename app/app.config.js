@@ -3,6 +3,25 @@
 angular
   .module('trialsReportApp')
   .config(window.$QDecorator)
+  .factory('httpResponseErrorInterceptor', ['$injector', '$q', '$timeout', function($injector, $q, $timeout) {
+    return {
+      'response': function (response) {
+        if (response && response.data && response.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
+          console.log('PerEndpointRequestThrottleExceeded, retrying');
+          return $timeout(function() {
+            var $http = $injector.get('$http');
+            return $http(response.config);
+          }, 200);
+          return $q.reject(response);
+        } else {
+          return response;
+        }
+      }
+    };
+  }])
+  .config(function($httpProvider) {
+    $httpProvider.interceptors.push('httpResponseErrorInterceptor');
+  })
   .config(function ($modalProvider) {
     angular.extend($modalProvider.defaults, {
       container: 'body',
@@ -35,4 +54,4 @@ angular
       tooltipFontFamily: "'Roboto Condensed', sans-serif",
       tooltipTitleFontStyle: "300"
     });
-  }]);
+  }])
