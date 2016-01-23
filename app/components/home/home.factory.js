@@ -5,18 +5,28 @@
     .module('trialsReportApp')
     .factory('homeFactory', homeFactory);
 
-  function homeFactory(bungie, inventoryService, playerFactory, $q, statsFactory, toastr) {
+  function homeFactory(api, bungie, inventoryService, playerFactory, $q, statsFactory, toastr, $location) {
     var searchByName = function (platform, name) {
-      return bungie.searchForPlayer(
+      return api.searchByName(
         platform,
         name
       ).then(function (result) {
           var response;
-          if (result && result.data && result.data.Response) {
-            response = result.data.Response[0];
+          if (result && result.data && result.data[0]) {
+            response = result.data[0];
             return response;
           } else {
-            toastr.error('Player not found', 'Error');
+            return bungie.searchForPlayer(
+              platform,
+              name
+            ).then(function (result) {
+                if (result && result.data && result.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
+                  toastr.error('We are currently under more traffic than the Bungie API will allow. Try again in a few minutes while we work on a solution', 'Error');
+                  $location.path('/');
+                } else {
+                  toastr.error('Player not found', 'Error');
+                }
+              });
           }
         });
     };
@@ -41,7 +51,12 @@
               name,
               resultChar.data.Response.data.characters[0]);
           } else {
-            toastr.error('Player not found', 'Error');
+            if (resultChar && resultChar.data && resultChar.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
+              toastr.error('We are currently under more traffic than the Bungie API will allow. Try again in a few minutes while we work on a solution', 'Error');
+              $location.path('/');
+            } else {
+              toastr.error('Player not found', 'Error');
+            }
           }
         }).catch(function () {
         });

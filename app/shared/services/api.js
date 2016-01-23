@@ -20,7 +20,15 @@ app.service('api', [
         previousMatches: 'previousMatches/{membershipId}',
         lighthouseLeaderboard: 'lighthouseLeaderboard',
         mapInfo: 'mapInfo/{referenceId}',
-        currentMap: 'currentMap'
+        currentMap: 'currentMap',
+        searchByName: 'searchByName/{membershipType}/{displayName}'
+      };
+
+      this.searchByName = function(membershipType, displayName) {
+        return this.get(ENDPOINTS.searchByName, {
+          membershipType: membershipType,
+          displayName: displayName
+        });
       };
 
       this.checkSupporterStatus = function(membershipId) {

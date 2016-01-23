@@ -25,17 +25,18 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
                 params.playerName
               );
             } else {
-              return homeFactory.getRecentActivity(player)
-                .then(function (resultBNG) {
-                  if (resultBNG && resultBNG[0]) {
-                    return getFireteam(resultBNG);
+              return guardianggFactory.getFireteam('14', player.membershipId)
+                .then(function (resultGGG) {
+                  if (resultGGG && resultGGG.data.length > 0) {
+                    return resultGGG.data;
                   } else {
-                    return guardianggFactory.getFireteam('14', player.membershipId)
-                      .then(function (resultGGG) {
-                        if (resultGGG && resultGGG.data.length > 0) {
-                          return resultGGG.data;
-                        } else {
+                    //return getFireteam(resultBNG);
+                    return homeFactory.getRecentActivity(player)
+                      .then(function (resultBNG) {
+                        if (resultBNG && resultBNG[0]) {
                           return getFireteam(resultBNG);
+                        } else {
+
                         }
                       });
                   }

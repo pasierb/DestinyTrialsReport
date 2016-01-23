@@ -3,25 +3,27 @@
 angular
   .module('trialsReportApp')
   .config(window.$QDecorator)
-  .factory('httpResponseErrorInterceptor', ['$injector', '$q', '$timeout', function($injector, $q, $timeout) {
-    return {
-      'response': function (response) {
-        if (response && response.data && response.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
-          console.log('PerEndpointRequestThrottleExceeded, retrying');
-          return $timeout(function() {
-            var $http = $injector.get('$http');
-            return $http(response.config);
-          }, 1000);
-          return $q.reject(response);
-        } else {
-          return response;
-        }
-      }
-    };
-  }])
-  .config(function($httpProvider) {
-    $httpProvider.interceptors.push('httpResponseErrorInterceptor');
-  })
+  //.factory('httpResponseErrorInterceptor', ['$injector', '$q', '$timeout','$location', function($injector, $q, $timeout, $location) {
+  //  return {
+  //    'response': function (response) {
+  //      if (response && response.data && response.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
+  //        //toastr.error('We are currently under more traffic than the Bungie API will allow. Try again in a few minutes while we work on a solution', 'Error');
+  //        //console.log('PerEndpointRequestThrottleExceeded, retrying');
+  //        //return $timeout(function() {
+  //        //  var $http = $injector.get('$http');
+  //        //  return $http(response.config);
+  //        //}, 5000);
+  //        $location.path('/');
+  //        return $q.reject(response);
+  //      } else {
+  //        return response;
+  //      }
+  //    }
+  //  };
+  //}])
+  //.config(function($httpProvider) {
+  //  $httpProvider.interceptors.push('httpResponseErrorInterceptor');
+  //})
   .config(function ($modalProvider) {
     angular.extend($modalProvider.defaults, {
       container: 'body',

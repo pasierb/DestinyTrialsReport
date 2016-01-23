@@ -8,7 +8,7 @@ app.service('bungie', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = '//proxy.destinytrialsreport.com/Platform/Destiny/';
+      var BASE_URL = "//proxy.guardian.gg/Platform/Destiny/";
       var ENDPOINTS = {
         searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/',
         account: '{platform}/Account/{membershipId}/',
@@ -75,6 +75,7 @@ app.service('bungie', [
       };
 
       this.get = function(endpoint, tokens) {
+        //var domain = Math.round(Math.random()) === 1 ? 'guardian.gg' : 'destinytrialsreport.com';
         return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };
     };
