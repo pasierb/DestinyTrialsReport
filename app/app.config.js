@@ -11,7 +11,7 @@ angular
           return $timeout(function() {
             var $http = $injector.get('$http');
             return $http(response.config);
-          }, 200);
+          }, 1000);
           return $q.reject(response);
         } else {
           return response;
