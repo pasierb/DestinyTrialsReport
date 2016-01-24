@@ -5,12 +5,9 @@
     .module('trialsReportApp')
     .factory('matchesFactory', matchesFactory);
 
-  function matchesFactory($http, $q) {
+  function matchesFactory(bungie, $http, $q) {
     var getPostGame = function (recentActivity) {
-      return $http({
-        method: 'GET',
-        url: '//proxy.destinytrialsreport.com/Platform/Destiny/Stats/PostGameCarnageReport/' + recentActivity.id + '/'
-      }).then(function (resultPostAct) {
+      return bungie.getPgcr(recentActivity.id).then(function (resultPostAct) {
         return resultPostAct.data.Response.data;
       }).catch(function () {});
     };
