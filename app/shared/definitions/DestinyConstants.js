@@ -211,6 +211,20 @@ var itemTypeToBucket = {
   10: 'heavy'
 };
 
+var itemTypeNameToBucket = {
+  'Auto Rifle': 1498876634,
+  'Hand Cannon': 1498876634,
+  'Pulse Rifle': 1498876634,
+  'Scout Rifle': 1498876634,
+  'Fusion Rifle': 2465295065,
+  'Sniper Rifle': 2465295065,
+  'Shotgun': 2465295065,
+  'Sidearm': 2465295065,
+  'Machine Gun': 953998645,
+  'Rocket Launcher': 953998645,
+  'Sword': 953998645
+};
+
 var className = [
   'Titan',
   'Hunter',

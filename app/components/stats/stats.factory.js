@@ -132,7 +132,7 @@ angular.module('trialsReportApp')
       return api.getMapInfo(mapId)
         .then(function (mapInfo) {
           if (mapInfo && mapInfo.data) {
-            var kills, sum, typeKills, bucketSum;
+            var kills, sum, typeKills, bucketSum, bucket;
             var mapData = mapInfo.data.map_info[0];
             var weaponTotals = {
               totalSum: 0,
@@ -141,7 +141,8 @@ angular.module('trialsReportApp')
 
             var mapHistory = _.sortBy(mapInfo.data.map_ref, 'first_instance');
             _.each(mapInfo.data.weapon_stats, function (weapon) {
-              weapon.bucket = bucketHashToName[weapon.bucket];
+              bucket = itemTypeNameToBucket[weapon.weapon_type];
+              weapon.bucket = bucketHashToName[bucket];
             });
 
             var weaponsByBucket = _.groupBy(mapInfo.data.weapon_stats, 'bucket');
