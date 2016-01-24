@@ -25,18 +25,17 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
                 params.playerName
               );
             } else {
-              return guardianggFactory.getFireteam('14', player.membershipId)
-                .then(function (resultGGG) {
-                  if (resultGGG && resultGGG.data.length > 0) {
-                    return resultGGG.data;
+              return homeFactory.getRecentActivity(player)
+                .then(function (resultBNG) {
+                  if (resultBNG && resultBNG[0]) {
+                    return getFireteam(resultBNG);
                   } else {
-                    //return getFireteam(resultBNG);
-                    return homeFactory.getRecentActivity(player)
-                      .then(function (resultBNG) {
-                        if (resultBNG && resultBNG[0]) {
-                          return getFireteam(resultBNG);
+                    return guardianggFactory.getFireteam('14', player.membershipId)
+                      .then(function (resultGGG) {
+                        if (resultGGG && resultGGG.data.length > 0) {
+                          return resultGGG.data;
                         } else {
-
+                          return getFireteam(resultBNG);
                         }
                       });
                   }
@@ -66,6 +65,9 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
                 }
               });
             }
+            if (activities.membershipId) {
+              fireteam.membershipId = activities.membershipId;
+            }
             return fireteam;
           });
       },
@@ -91,7 +93,7 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
       teammatesFromRecent = function (players) {
         if (players && players[0] && !players[0].characterInfo) {
           var playerOne = _.find(players, function(player) {
-            return angular.lowercase(player.name) === angular.lowercase(name);
+            return player.membershipId === players.membershipId;
           });
           var methods = [homeFactory.getCharacters(
             playerOne.membershipType,

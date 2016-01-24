@@ -20,11 +20,17 @@
               platform,
               name
             ).then(function (result) {
-                if (result && result.data && result.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
-                  toastr.error('We are currently under more traffic than the Bungie API will allow. Try again in a few minutes while we work on a solution', 'Error');
-                  $location.path('/');
+                var response;
+                if (result && result.data && result.data.Response) {
+                  response = result.data.Response[0];
+                  return response;
                 } else {
-                  toastr.error('Player not found', 'Error');
+                  if (result && result.data && result.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
+                    toastr.error('We are currently under more traffic than the Bungie API will allow. Try again in a few minutes while we work on a solution', 'Error');
+                    $location.path('/');
+                  } else {
+                    toastr.error('Player not found', 'Error');
+                  }
                 }
               });
           }
@@ -73,6 +79,7 @@
           if (result && result.data && result.data.Response && result.data.Response.data && result.data.Response.data.activities) {
             var activities = result.data.Response.data.activities;
             activities.displayName = account.name;
+            activities.membershipId = account.membershipId;
             return activities;
           } else {
             toastr.error('No Trials matches found for player', 'Error');
