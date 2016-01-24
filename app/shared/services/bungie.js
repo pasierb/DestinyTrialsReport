@@ -74,11 +74,11 @@ app.service('bungie', [
       };
 
       this.get = function(endpoint, tokens) {
-        var rand = _.random(1, 5);
+        var rand = _.random(23, 26);
         if (rand === 1) {
-          rand = '';
+          rand = '//proxy.destinytrialsreport.com/Platform/Destiny/';
         }
-        var BASE_URL = '//proxy' + rand + '.destinytrialsreport.com/Platform/Destiny/';
+        var BASE_URL = '//trials-api' + rand + '.herokuapp.com/Platform/Destiny/';
         return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };
     };
