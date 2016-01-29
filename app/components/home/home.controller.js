@@ -240,6 +240,8 @@
                 player.characterInfo.characterId
               ).then(function (result) {
                   if (result && result.data) {
+                    var matches = _.pluck(result.data, 'matches_used');
+                    player.lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
                     player.lastWeapons = result.data;
                   }
                 });

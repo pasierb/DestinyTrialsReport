@@ -31,7 +31,7 @@
   </div>
   <div class="player__content player-quick-look player-quick-look__hide-stats" ng-if="hideStats">
     <div class="player-overlay-content__header hide-stats__no-stats" ng-if="player.lastWeapons.length < 1">No Matches Played in Year 2</div>
-    <div class="row" ng-repeat="weapon in player.lastWeapons | orderObjectBy:'matches_played':true">
+    <div class="row" ng-repeat="weapon in player.lastWeapons | orderObjectBy:'matches_played'">
       <div class=" col-xs-3">
         <img class="weapon-type-icon img-responsive"
              ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName.toLowerCase().replace(' ','-') + '.svg'}}"
@@ -49,7 +49,7 @@
       </div>
       <div class=" col-xs-3">
         <div class="">
-          <span ng-bind="weapon.matches_used || 'N/A'"></span>
+          <span ng-bind="(weapon.matches_used / player.lastWeaponTotalPlayed) * 100 | number:2"></span>%
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@
         <label class="data-label">Accuracy</label>
       </div>
       <div class=" col-xs-3">
-        <label class="data-label">Matches Used</label>
+        <label class="data-label">% Used</label>
       </div>
     </div>
   </div>
