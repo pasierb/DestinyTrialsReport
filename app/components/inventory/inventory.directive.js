@@ -21,7 +21,8 @@
       restrict: 'A',
       scope: {
         weapons: '=weaponNodes',
-        topWeapons:  '=topWeapons'
+        topWeapons:  '=topWeapons',
+        hideStats: '=hideStats'
       },
       templateUrl: 'components/inventory/weapons.template.html'
     };

@@ -233,6 +233,18 @@ $duration: 1.4s;
   color: #999;
 }
 
+.new-badge {
+  position: absolute;
+  right: 7px;
+  top: -12px;
+  padding: 2px 3px;
+  border-radius: 2px;
+  background: #fe6363;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+}
+
 @media (max-width: 780px) {
   .btn-fab-left {
     left: 0 !important;

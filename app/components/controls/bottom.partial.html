@@ -1,19 +1,25 @@
 <div class="domain-switch">
   <div class="btn-group-justified">
+    <a type="button" class="btn btn-default" style="padding-right: 0;"
+       title="Toggle Stats" ng-click="toggleStats()"
+       analytics-on analytics-event="Toggle Stats" analytics-category="Toggle Stats">
+      <span class="highlight" ng-bind="hideStats ? 'Show' : 'Hide'"></span> Stats
+      <i class="material-icons highlight" style="line-height: 0;">&#xE031;</i>
+    </a>
+    <!--<a type="button" class="btn btn-default" href="https://guardian.gg" target="_blank"-->
+       <!--analytics-on analytics-event="Click" analytics-category="GGG Controls">-->
+      <!--Guardian<span class="highlight">.gg</span>-->
+    <!--</a>-->
     <a type="button" class="btn btn-default" ng-if="!subdomain" href="https://my.destinytrialsreport.com" target="_self">
       <span class="highlight">my</span>Report
     </a>
     <a type="button" class="btn btn-default" ng-if="subdomain" href="https://destinytrialsreport.com" target="_self">
       <span class="highlight">trials</span>Report
     </a>
-    <a type="button" class="btn btn-default" href="https://guardian.gg" target="_blank"
-       analytics-on analytics-event="Click" analytics-category="GGG Controls">
-      Guardian<span class="highlight">.gg</span>
-    </a>
     <a type="button" class="btn btn-default"
-       title="Toggle Stats" ng-click="toggleStats()"
-       analytics-on analytics-event="Toggle Stats" analytics-category="Toggle Stats">
-      <span class="highlight" ng-bind="hideStats ? 'Show Stats' : 'Hide Stats'">FAQ</span>
+       title="FAQ" data-content-template="shared/modals/faq.modal.html" bs-modal
+       analytics-on analytics-event="Click" analytics-category="FAQ">
+      <span class="highlight">FAQ</span>
     </a>
   </div>
 </div>

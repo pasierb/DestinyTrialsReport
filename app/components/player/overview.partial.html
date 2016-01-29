@@ -39,7 +39,7 @@
       </div>
       <div class=" col-xs-3">
         <div class="">
-          <span ng-bind="weapon.per_match | number:2"></span>
+          <span ng-bind="(weapon.per_match / player.lastWeaponTotalPerMatch) * 100 | number:2"></span>%
         </div>
       </div>
       <div class=" col-xs-3">
@@ -64,7 +64,7 @@
         <label class="data-label">Accuracy</label>
       </div>
       <div class=" col-xs-3">
-        <label class="data-label">% Used</label>
+        <label class="data-label">Matches Used</label>
       </div>
     </div>
   </div>

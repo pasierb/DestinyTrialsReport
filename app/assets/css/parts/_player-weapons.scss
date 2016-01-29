@@ -125,9 +125,10 @@
 .weapon__stats-link {
   cursor: pointer;
   margin-left: .1em;
-
+  float: right;
+  
   i {
-    font-size: 1em;
+    font-size: 1.5em;
     vertical-align: -15%;
     color: #999;
 

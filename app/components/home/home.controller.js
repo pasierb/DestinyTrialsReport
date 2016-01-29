@@ -241,7 +241,9 @@
               ).then(function (result) {
                   if (result && result.data) {
                     var matches = _.pluck(result.data, 'matches_used');
+                    var per_matches = _.pluck(result.data, 'per_match');
                     player.lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
+                    player.lastWeaponTotalPerMatch = _.reduce(per_matches, function(memo, num){ return memo + parseInt(num); }, 0);
                     player.lastWeapons = result.data;
                   }
                 });
@@ -258,10 +260,10 @@
           var autoRefresh;
           var intervalPeriod = 45000;
           autoRefresh = $interval(function () {
-            if ($scope.hideStats) {
-              $scope.refreshInventory($scope.fireteam);
+            $scope.refreshInventory($scope.fireteam);
+            //if ($scope.hideStats) {
               //$interval.cancel(autoRefresh);
-            }
+            //}
           }, intervalPeriod);
 
         }
