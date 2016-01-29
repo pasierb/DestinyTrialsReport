@@ -82,3 +82,33 @@
     content: "\e5c5";
   }
 }
+
+.player-quick-look__hide-stats {
+  min-height: 10.82em;
+  padding-top: 1.5em;
+  position:relative;
+  .row {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+}
+
+.hide-stats__no-stats {
+  text-align: center;
+  margin-top: 2em;
+}
+
+.hide-stats__labels {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 14px !important;
+  .col-xs-3 {
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+  }
+}

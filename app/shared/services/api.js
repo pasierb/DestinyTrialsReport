@@ -15,6 +15,7 @@ app.service('api', [
         opponents: 'getOpponents/{membershipId}',
         streak: 'longestStreak/{membershipId}/{characterId}',
         topWeapons: 'topWeapons/{membershipId}',
+        lastWeapons: 'lastWeapons/{characterId}',
         weaponStats: 'weaponStats/{membershipId}/{weaponIdArray}',
         recentTeammates: 'recentTeammates/{membershipId}',
         previousMatches: 'previousMatches/{membershipId}',
@@ -59,6 +60,12 @@ app.service('api', [
       this.topWeapons = function(membershipId) {
         return this.get(ENDPOINTS.topWeapons, {
           membershipId: membershipId
+        });
+      };
+
+      this.lastWeapons = function(characterId) {
+        return this.get(ENDPOINTS.lastWeapons, {
+          characterId: characterId
         });
       };
 

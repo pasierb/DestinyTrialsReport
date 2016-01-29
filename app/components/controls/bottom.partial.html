@@ -11,9 +11,9 @@
       Guardian<span class="highlight">.gg</span>
     </a>
     <a type="button" class="btn btn-default"
-       title="FAQ" data-content-template="shared/modals/faq.modal.html" bs-modal
-       analytics-on analytics-event="Click" analytics-category="FAQ">
-      <span class="highlight">FAQ</span>
+       title="Toggle Stats" ng-click="toggleStats()"
+       analytics-on analytics-event="Toggle Stats" analytics-category="Toggle Stats">
+      <span class="highlight" ng-bind="hideStats ? 'Show Stats' : 'Hide Stats'">FAQ</span>
     </a>
   </div>
 </div>

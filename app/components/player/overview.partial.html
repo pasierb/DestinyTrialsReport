@@ -29,7 +29,46 @@
     </div>
   </div>
   </div>
-  <div class="player__content player-quick-look">
+  <div class="player__content player-quick-look player-quick-look__hide-stats" ng-if="hideStats">
+    <div class="player-overlay-content__header hide-stats__no-stats" ng-if="player.lastWeapons.length < 1">No Matches Played in Year 2</div>
+    <div class="row" ng-repeat="weapon in player.lastWeapons | orderObjectBy:'matches_played':true">
+      <div class=" col-xs-3">
+        <img class="weapon-type-icon img-responsive"
+             ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName.toLowerCase().replace(' ','-') + '.svg'}}"
+             alt="{{weapon.weapon_type}}">
+      </div>
+      <div class=" col-xs-3">
+        <div class="">
+          <span ng-bind="weapon.per_match | number:2"></span>
+        </div>
+      </div>
+      <div class=" col-xs-3">
+        <div class="">
+          <span ng-bind="(weapon.sum_headshots / weapon.sum_kills) * 100 | number:2"></span>%
+        </div>
+      </div>
+      <div class=" col-xs-3">
+        <div class="">
+          <span ng-bind="weapon.matches_used || 'N/A'"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row hide-stats__labels">
+      <div class=" col-xs-3">
+        <label class="data-label">Weapon Type</label>
+      </div>
+      <div class=" col-xs-3">
+        <label class="data-label">Kills per match</label>
+      </div>
+      <div class=" col-xs-3">
+        <label class="data-label">Accuracy</label>
+      </div>
+      <div class=" col-xs-3">
+        <label class="data-label">Matches Used</label>
+      </div>
+    </div>
+  </div>
+  <div class="player__content player-quick-look" ng-if="!hideStats">
     <div class="row">
       <div class="player-quick-look__form col-xs-9">
         <div class="player-quick-look__form__matches" trials-history="player.activities.lastTwentyFive" player-kd="player.stats.killsDeathsRatio.basic.value"></div>
@@ -43,7 +82,7 @@
       </div>
     </div>
   </div>
-  <div class="player-main-stats">
+  <div class="player-main-stats" ng-if="!hideStats">
     <div class="row">
       <div class="col-xs-3 stat">
         <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>

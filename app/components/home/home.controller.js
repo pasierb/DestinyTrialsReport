@@ -5,9 +5,10 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval) {
     $scope.$storage = $localStorage.$default({
-      platform: true
+      platform: true,
+      hideStats: false
     });
     getMapFromStorage();
 
@@ -32,6 +33,8 @@
 
     $scope.focusOnPlayers = false;
     $scope.focusOnPlayer = 1;
+
+    $scope.hideStats = $scope.$storage.hideStats;
 
     $scope.switchFocus = function () {
       $scope.focusOnPlayers = !$scope.focusOnPlayers;
@@ -88,6 +91,11 @@
           }
         });
     }
+
+    $scope.toggleStats = function () {
+      $scope.hideStats = !$scope.hideStats;
+      $scope.$storage.hideStats = $scope.hideStats;
+    };
 
     $scope.suggestRecentPlayers = function () {
       if (angular.isUndefined($scope.recentPlayers)) {
@@ -228,6 +236,13 @@
                     player.longestStreak = streak.data;
                   }
                 });
+              api.lastWeapons(
+                player.characterInfo.characterId
+              ).then(function (result) {
+                  if (result && result.data) {
+                    player.lastWeapons = result.data;
+                  }
+                });
             }
           });
           if ($scope.fireteam[2] && $scope.fireteam[2].membershipId) {
@@ -237,6 +252,16 @@
                 $scope.fireteam[1].name + '/' + $scope.fireteam[2].name, true);
             }
           }
+
+          var autoRefresh;
+          var intervalPeriod = 45000;
+          autoRefresh = $interval(function () {
+            if ($scope.hideStats) {
+              $scope.refreshInventory($scope.fireteam);
+              //$interval.cancel(autoRefresh);
+            }
+          }, intervalPeriod);
+
         }
       } else {
         $scope.fireteam = null;
