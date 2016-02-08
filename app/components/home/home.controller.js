@@ -257,11 +257,10 @@
             }
           }
 
-          var autoRefresh;
           var intervalPeriod = 45000;
-          autoRefresh = $interval(function () {
-            $scope.refreshInventory($scope.fireteam);
+          $interval(function () {
             //if ($scope.hideStats) {
+              $scope.refreshInventory($scope.fireteam);
               //$interval.cancel(autoRefresh);
             //}
           }, intervalPeriod);

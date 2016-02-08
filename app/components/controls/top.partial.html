@@ -72,7 +72,7 @@
         Previous Maps
       </button>
     </div>
-    <div class="current-map__btn" ng-if="currentMap.heatmapImage">
+    <div class="current-map__btn current-map__btn" ng-if="currentMap.heatmapImage && !currentMap.mapImage">
       <button type="button" class="btn btn-default btn-sm"
               data-template-url="shared/modals/heatmap.modal.html" bs-modal>
         Heatmap

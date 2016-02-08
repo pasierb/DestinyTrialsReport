@@ -38,7 +38,7 @@
       return homeFactory.getAccount(($scope.platformValue ? 2 : 1), name)
         .then(function (account) {
           if (account) {
-            if (angular.isDefined($scope.fireteam[1].name) || angular.isDefined($scope.fireteam[2].name)) {
+            if (($scope.fireteam[1] && angular.isDefined($scope.fireteam[1].name)) || ($scope.fireteam[2] && angular.isDefined($scope.fireteam[2].name))) {
               $scope.switchFocus();
               document.activeElement.blur();
             }
@@ -59,6 +59,17 @@
               statsFactory.checkSupporter($scope.fireteam[index]);
               statsFactory.getLighthouseCount($scope.fireteam);
               statsFactory.weaponStats($scope.fireteam[index]);
+              api.lastWeapons(
+                $scope.fireteam[index].characterInfo.characterId
+              ).then(function (result) {
+                  if (result && result.data) {
+                    var matches = _.pluck(result.data, 'matches_used');
+                    var kills = _.pluck(result.data, 'sum_kills');
+                    $scope.fireteam[index].lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
+                    $scope.fireteam[index].lastWeaponTotalKills = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
+                    $scope.fireteam[index].lastWeapons = result.data;
+                  }
+                });
               guardianggFactory.getTeamElo($scope.fireteam);
               updateUrl($scope, locationChanger);
             });

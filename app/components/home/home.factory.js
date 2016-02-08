@@ -6,7 +6,7 @@
     .factory('homeFactory', homeFactory);
 
   function homeFactory(api, bungie, inventoryService, playerFactory, $q, statsFactory, toastr, $location) {
-    var searchByName = function (platform, name) {
+    var searchByName = function (platform, name, retried) {
       return api.searchByName(
         platform,
         name
@@ -22,8 +22,16 @@
             ).then(function (result) {
                 var response;
                 if (result && result.data && result.data.Response) {
-                  response = result.data.Response[0];
-                  return response;
+                  if (result.data.Response.length > 0) {
+                    response = result.data.Response[0];
+                    return response;
+                  } else {
+                    if (retried) {
+                      toastr.error('Player not found', 'Error');
+                    } else {
+                      return searchByName((platform === 2 ? 1 : 2), name, true);
+                    }
+                  }
                 } else {
                   if (result && result.data && result.data.ErrorStatus == 'PerEndpointRequestThrottleExceeded') {
                     toastr.error('We are currently under more traffic than the Bungie API will allow. Try again in a few minutes while we work on a solution', 'Error');

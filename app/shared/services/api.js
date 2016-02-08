@@ -5,8 +5,9 @@ var app = angular.module('trialsReportApp');
 app.service('api', [
   '$http',
   'util',
+  'RequestFallback',
 
-  function ($http, util) {
+  function ($http, util, RequestFallback) {
     return new function () {
       var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
@@ -25,11 +26,15 @@ app.service('api', [
         searchByName: 'searchByName/{membershipType}/{displayName}'
       };
 
+      var FALLBACK = {
+        searchByName: 'https://proxy.destinytrialsreport.com/Platform/Destiny/SearchDestinyPlayer/{membershipType}/{displayName}/'
+      };
+
       this.searchByName = function(membershipType, displayName) {
         return this.get(ENDPOINTS.searchByName, {
           membershipType: membershipType,
           displayName: displayName
-        });
+        }, FALLBACK.searchByName);
       };
 
       this.checkSupporterStatus = function(membershipId) {
@@ -102,9 +107,9 @@ app.service('api', [
         return this.get(ENDPOINTS.currentMap, {});
       };
 
-      this.get = function(endpoint, tokens) {
-        return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
-      };
+      this.get = function(endpoint, tokens, fallback) {
+        return RequestFallback(BASE_URL, endpoint, tokens, fallback);
+      }
     };
   }
 ]);

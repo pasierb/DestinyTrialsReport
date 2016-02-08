@@ -2,10 +2,17 @@
 
 function getSubdomain() {
   var segments = location.hostname.split('.');
-  return segments.length>2?segments[segments.length-3].toLowerCase():null;
+  return segments.length > 2 ? segments[segments.length - 3].toLowerCase() : null;
 }
 
-function getFromParams(homeFactory, inventoryService, guardianggFactory, api, toastr, bungie, $route, $q) {
+function throwLog(msg) {
+  var logsOn = false;
+  if (logsOn) {
+    console.log(msg);
+  }
+}
+
+function getFromParams(homeFactory, inventoryService, $localStorage, guardianggFactory, api, toastr, bungie, $route, $q) {
   var params = $route.current.params;
   var name = params.playerName || params.playerOne;
   if (angular.isDefined(name)) {
@@ -13,6 +20,7 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
     var subdomain = getSubdomain();
 
     var getPlayer = function () {
+      throwLog('getPlayer');
       return homeFactory.getAccount(platform, params.playerName)
         .then(function (result) {
           if (result) {
@@ -45,105 +53,120 @@ function getFromParams(homeFactory, inventoryService, guardianggFactory, api, to
             return false;
           }
         });
-      },
-      getFireteam = function (activities) {
-        if (angular.isUndefined(activities[0])) {
-          toastr.error('No Trials matches found for player', 'Error');
-          return activities;
-        }
-        return bungie.getPgcr(activities[0].activityDetails.instanceId)
-          .then(function (result) {
-            var fireteam = [];
-            if (result && result.data && result.data.Response && result.data.Response.data) {
-              _.each(result.data.Response.data.entries, function (player) {
-                if (player.standing === activities[0].values.standing.basic.value) {
-                  fireteam.push({
-                    membershipType: player.player.destinyUserInfo.membershipType,
-                    membershipId: player.player.destinyUserInfo.membershipId,
-                    name: player.player.destinyUserInfo.displayName
-                  });
-                }
-              });
-            }
-            if (activities.membershipId) {
-              fireteam.membershipId = activities.membershipId;
-            }
-            return fireteam;
-          });
-      },
-      teammatesFromParams = function () {
-        var methods = [
-          homeFactory.getAccount(platform, params.playerOne),
-          homeFactory.getAccount(platform, params.playerTwo),
-          homeFactory.getAccount(platform, params.playerThree)
-        ];
-        return $q.all(methods);
-      },
-      teammatesFromChars = function (player) {
-        if (player) {
-          var methods = [];
-          angular.forEach(player.characters, function (character) {
-            methods.push(character);
-          });
-          return $q.all(methods);
-        } else {
-          return false;
-        }
-      },
-      teammatesFromRecent = function (players) {
-        if (players && players[0] && !players[0].characterInfo) {
-          var playerOne = _.find(players, function(player) {
-            return player.membershipId === players.membershipId;
-          });
-          var methods = [homeFactory.getCharacters(
-            playerOne.membershipType,
-            playerOne.membershipId,
-            playerOne.name
-          )];
-          angular.forEach(players, function (player) {
-            if (angular.lowercase(player.name) !== angular.lowercase(name)) {
-              methods.push(homeFactory.getCharacters(
-                player.membershipType,
-                player.membershipId,
-                player.name
-              ));
-            }
-          });
-          return $q.all(methods);
-        } else if (players && players.characterInfo) {
-          return [players];
-        } else {
-          return false;
-        }
-      },
-      getInventory = function (players) {
+    };
+
+
+    var getFireteam = function (activities) {
+      throwLog('getFireteam');
+      if (angular.isUndefined(activities[0])) {
+        toastr.error('No Trials matches found for player', 'Error');
+        return activities;
+      }
+      return bungie.getPgcr(activities[0].activityDetails.instanceId)
+        .then(function (result) {
+          var fireteam = [];
+          if (result && result.data && result.data.Response && result.data.Response.data) {
+            _.each(result.data.Response.data.entries, function (player) {
+              if (player.standing === activities[0].values.standing.basic.value) {
+                fireteam.push({
+                  membershipType: player.player.destinyUserInfo.membershipType,
+                  membershipId: player.player.destinyUserInfo.membershipId,
+                  name: player.player.destinyUserInfo.displayName
+                });
+              }
+            });
+          }
+          if (activities.membershipId) {
+            fireteam.membershipId = activities.membershipId;
+          }
+          return fireteam;
+        });
+    };
+
+    var teammatesFromParams = function () {
+      throwLog('teammatesFromParams');
+      var methods = [
+        homeFactory.getAccount(platform, params.playerOne),
+        homeFactory.getAccount(platform, params.playerTwo),
+        homeFactory.getAccount(platform, params.playerThree)
+      ];
+      return $q.all(methods);
+    };
+
+    var teammatesFromChars = function (player) {
+      throwLog('teammatesFromChars');
+      if (player) {
         var methods = [];
-        angular.forEach(players, function (player) {
-          methods.push(inventoryService.getInventory(player.membershipType, player));
+        angular.forEach(player.characters, function (character) {
+          methods.push(character);
         });
         return $q.all(methods);
-      },
-      getOpponents = function (player) {
-        return api.getOpponents(player.membershipId)
-      },
-      returnPlayer = function (results) {
-        if (results) {
-          return {
-            fireteam: [results[0],results[1], results[2]],
-            subdomain: subdomain,
-            updateUrl: params.playerName,
-            data: results.data
-          };
-        } else {
-          return {
-            fireteam: [],
-            subdomain: subdomain
-          };
-        }
-      },
-      reportProblems = function (fault) {
-        console.log(String(fault));
-      };
+      } else {
+        return false;
+      }
+    };
+
+    var teammatesFromRecent = function (players) {
+      throwLog('teammatesFromRecent');
+      if (players && players[0] && !players[0].characterInfo) {
+        var playerOne = _.find(players, function (player) {
+          return player.membershipId === players.membershipId;
+        });
+        var methods = [homeFactory.getCharacters(
+          playerOne.membershipType,
+          playerOne.membershipId,
+          playerOne.name
+        )];
+        angular.forEach(players, function (player) {
+          if (angular.lowercase(player.name) !== angular.lowercase(name)) {
+            methods.push(homeFactory.getCharacters(
+              player.membershipType,
+              player.membershipId,
+              player.name
+            ));
+          }
+        });
+        return $q.all(methods);
+      } else if (players && players.characterInfo) {
+        return [players];
+      } else {
+        return false;
+      }
+    };
+
+    var getInventory = function (players) {
+      throwLog('getInventory');
+      var methods = [];
+      angular.forEach(players, function (player) {
+        methods.push(inventoryService.getInventory(player.membershipType, player));
+      });
+      return $q.all(methods);
+    };
+
+    var getOpponents = function (player) {
+      throwLog('getOpponents');
+      return api.getOpponents(player.membershipId)
+    };
+
+    var returnPlayer = function (results) {
+      throwLog('returnPlayer', results);
+      if (results && results.length > 0) {
+        return {
+          fireteam: [results[0], results[1], results[2]],
+          subdomain: subdomain,
+          updateUrl: params.playerName,
+          data: results.data
+        };
+      } else {
+        return gggWeapons($localStorage, guardianggFactory);
+      }
+    };
+
+    var reportProblems = function (fault) {
+      throwLog('reportProblems');
+      console.log(fault);
+    };
+
     if (!$route.current.params.preventLoad) {
       if (params.playerOne) {
         return teammatesFromParams()

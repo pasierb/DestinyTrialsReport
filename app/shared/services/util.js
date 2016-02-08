@@ -22,4 +22,35 @@ app.service('util', [
       };
     };
   }
-]);
+])
+  .factory('RequestFallback', ['$http', '$q', 'util', function($http, $q, util) {
+    return function(BASE_URL, endpoint, tokens, fallback) {
+      var MAX_REQUESTS = 3,
+        counter = 1,
+        results = $q.defer();
+
+      var request = function(path) {
+        $http({method: 'GET', url: path})
+          .success(function(response) {
+            results.resolve({data: response})
+          })
+          .error(function() {
+            if (fallback) {
+              request(util.buildUrl(fallback, tokens));
+            } else {
+              results.reject("Could not load");
+            }
+            //if (counter < MAX_REQUESTS) {
+            //  request();
+            //  counter++;
+            //} else {
+            //  results.reject("Could not load after multiple tries");
+            //}
+          });
+      };
+
+      request(BASE_URL + util.buildUrl(endpoint, tokens));
+
+      return results.promise;
+    }
+  }]);
