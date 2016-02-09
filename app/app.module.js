@@ -41,6 +41,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
                     return guardianggFactory.getFireteam('14', player.membershipId)
                       .then(function (resultGGG) {
                         if (resultGGG && resultGGG.data.length > 0) {
+                          resultGGG.data.membershipId = player.membershipId;
                           return resultGGG.data;
                         } else {
                           return getFireteam(resultBNG);
