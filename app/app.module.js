@@ -146,12 +146,12 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
 
     var getOpponents = function (player) {
       throwLog('getOpponents');
-      return api.getOpponents(player.membershipId)
+      return api.getOpponents(player.membershipId);
     };
 
     var returnPlayer = function (results) {
       throwLog('returnPlayer', results);
-      if (results && results.length > 0) {
+      if (results && (results.length > 0 || results.data)) {
         return {
           fireteam: [results[0], results[1], results[2]],
           subdomain: subdomain,

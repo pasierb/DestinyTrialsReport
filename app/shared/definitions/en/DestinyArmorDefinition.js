@@ -1582,7 +1582,7 @@ var DestinyArmorDefinition = {
   "454534839": {
     "name": "Mark of a Kellslayer",
     "description": "\"See this mark and know: by my hands a Kell has fallen.\"",
-    "icon": "/common/destiny_content/icons/ae143306cf8913d6df814853f464de48.jpg",
+    "icon": "/common/destiny_content/icons/b37f84ff21e0e9a5729fc7aacc5e10c8.jpg",
     "tierType": 5
   },
   "457764795": {
@@ -1835,6 +1835,18 @@ var DestinyArmorDefinition = {
     "name": "Harrowed Grasp of Eir",
     "description": "At the beginning, they stood in thrall of the Formless One, and they offered themselves to its depth.",
     "icon": "/common/destiny_content/icons/174c755f4489707b46a31edcb6f4d931.jpg",
+    "tierType": 5
+  },
+  "523184150": {
+    "name": "Crimson Shell",
+    "description": "For Ghosts who want a little glamour.",
+    "icon": "/common/destiny_content/icons/7f91bd6636fd13d7d6aa407932f4f1f9.jpg",
+    "tierType": 5
+  },
+  "523184151": {
+    "name": "Sugary Shell",
+    "description": "For Ghosts who enjoy the sweet taste of Crucible victories.",
+    "icon": "/common/destiny_content/icons/1cdb935ebfe5475cf00ac84b967b499b.jpg",
     "tierType": 5
   },
   "530352838": {
@@ -5524,19 +5536,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"The Cure\"",
     "description": "\"We have a solution.\" - Ikora Rey, in an emergency session of the City Consensus",
-    "icon": "/common/destiny_content/icons/cd6a54f0bd8e02946259556863a2e67a.png",
+    "icon": "/common/destiny_content/icons/81a40306771aba84b803efe0110b9a95.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"The Unconquerable\"",
     "description": "\"Let's stop thinking about how to open the lock and start thinking about removing the wall.\"",
-    "icon": "/common/destiny_content/icons/54eaf342e2630fc7776eb69b8f0b15a1.png",
+    "icon": "/common/destiny_content/icons/69af2a52a13b6cf5eaa75beedb39b431.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Born of Sight\"",
     "description": "\"Reality is the most ruthless analyst.\" - Praxic saying",
-    "icon": "/common/destiny_content/icons/9839ce9181916dde17fe2baf5de7bb15.png",
+    "icon": "/common/destiny_content/icons/5b9d6e62e3500621e74e439a1f0cde45.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8158,13 +8170,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Inertia Engine\"",
     "description": "\"I believe that the Traveler and its Light are advanced technology. I refuse to accept that this diminishes me.\"",
-    "icon": "/common/destiny_content/icons/69e00bb65221ca276987fc4428bc2c3d.png",
+    "icon": "/common/destiny_content/icons/b3ccd9cd0ebe5cad1265011f236a2096.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Cosmic Truths\"",
     "description": "\"To bind Light into the same framework as the proton or the mere neutrino is an act of close-minded hubris.\"",
-    "icon": "/common/destiny_content/icons/69e00bb65221ca276987fc4428bc2c3d.png",
+    "icon": "/common/destiny_content/icons/b3ccd9cd0ebe5cad1265011f236a2096.png",
     "tierType": 3
   },
   "2580679414": {
@@ -10546,13 +10558,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Bond of the Universal",
     "description": "Some orders argue that Light and Darkness can be explained in the context of supersymmetric physics.",
-    "icon": "/common/destiny_content/icons/dae7d7c6465c1b4159ac6c65143fd485.png",
+    "icon": "/common/destiny_content/icons/c4b25c48df6870c8a6d18f6699667698.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Bond of Polarity",
     "description": "Some orders believe that Light and Darkness exist beyond the merely material, with a logic of their own.",
-    "icon": "/common/destiny_content/icons/9ef96b4f35d9db5cffa4a83951113d87.png",
+    "icon": "/common/destiny_content/icons/c022aa7c96fa5cbd311b1501402448ce.png",
     "tierType": 2
   },
   "3346783228": {
@@ -10636,7 +10648,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"The Gone\"",
     "description": "\"He came at me with a knife. I put out my hand and - just so - made him into ash.\"",
-    "icon": "/common/destiny_content/icons/69b8af874825ad2ca2340b3a88c40059.png",
+    "icon": "/common/destiny_content/icons/ce7a6a5a8d68d20e35849946cf8d9f74.png",
     "tierType": 4
   },
   "3366017012": {
@@ -12958,7 +12970,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Trained Chaos\"",
     "description": "\"Control space and time. Mere matter and energy will follow.\"",
-    "icon": "/common/destiny_content/icons/f3ba1fb20cd7574525a04cea1c4da422.png",
+    "icon": "/common/destiny_content/icons/acbf89d6dee91bd1469dac941a835c90.png",
     "tierType": 4
   },
   "4187254944": {

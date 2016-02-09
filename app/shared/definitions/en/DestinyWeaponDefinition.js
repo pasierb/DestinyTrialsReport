@@ -225,7 +225,7 @@ var DestinyWeaponDefinition = {
   },
   "133098253": {
     "name": "Häkke Test-A",
-    "icon": "/common/destiny_content/icons/7154fc70f8bedceb5d4df5076330119c.jpg",
+    "icon": "/common/destiny_content/icons/48adc3c91912860f26aec3af28e3f4a1.jpg",
     "subType": 13,
     "tierType": 2
   },
@@ -561,7 +561,7 @@ var DestinyWeaponDefinition = {
   },
   "536304807": {
     "name": "Omolon Test HC1",
-    "icon": "/common/destiny_content/icons/68e93a14f4e5c3ffe5eceeabc15b9263.jpg",
+    "icon": "/common/destiny_content/icons/05cb8d2e4b22f395a046151dd32a3b4d.jpg",
     "subType": 9,
     "tierType": 2
   },
@@ -693,7 +693,7 @@ var DestinyWeaponDefinition = {
   },
   "677734480": {
     "name": "Omolon Test FR1",
-    "icon": "/common/destiny_content/icons/eda42bdf9d0c481ac740180e127245e7.jpg",
+    "icon": "/common/destiny_content/icons/8c9d087de4069cd745fe8ef9f48d6135.jpg",
     "subType": 11,
     "tierType": 2
   },
@@ -729,7 +729,7 @@ var DestinyWeaponDefinition = {
   },
   "718379268": {
     "name": "Omolon Test RR1",
-    "icon": "/common/destiny_content/icons/3cb6e35207177e531ef1363fd00bb9a4.jpg",
+    "icon": "/common/destiny_content/icons/643e22a5ac9d7ca6a298fbe5de79a946.jpg",
     "subType": 12,
     "tierType": 2
   },
@@ -1797,7 +1797,7 @@ var DestinyWeaponDefinition = {
   },
   "1501850185": {
     "name": "Häkke Test-A",
-    "icon": "/common/destiny_content/icons/7154fc70f8bedceb5d4df5076330119c.jpg",
+    "icon": "/common/destiny_content/icons/48adc3c91912860f26aec3af28e3f4a1.jpg",
     "subType": 13,
     "tierType": 2
   },
@@ -2709,7 +2709,7 @@ var DestinyWeaponDefinition = {
   },
   "2245649823": {
     "name": "Omolon Test HC1",
-    "icon": "/common/destiny_content/icons/68e93a14f4e5c3ffe5eceeabc15b9263.jpg",
+    "icon": "/common/destiny_content/icons/05cb8d2e4b22f395a046151dd32a3b4d.jpg",
     "subType": 9,
     "tierType": 2
   },
@@ -2787,7 +2787,7 @@ var DestinyWeaponDefinition = {
   },
   "2322501562": {
     "name": "Omolon Test RR1",
-    "icon": "/common/destiny_content/icons/3cb6e35207177e531ef1363fd00bb9a4.jpg",
+    "icon": "/common/destiny_content/icons/643e22a5ac9d7ca6a298fbe5de79a946.jpg",
     "subType": 12,
     "tierType": 2
   },
@@ -3003,7 +3003,7 @@ var DestinyWeaponDefinition = {
   },
   "2469630254": {
     "name": "Omolon Test FR1",
-    "icon": "/common/destiny_content/icons/eda42bdf9d0c481ac740180e127245e7.jpg",
+    "icon": "/common/destiny_content/icons/8c9d087de4069cd745fe8ef9f48d6135.jpg",
     "subType": 11,
     "tierType": 2
   },
