@@ -31,7 +31,7 @@ angular.module('trialsReportApp')
       return guardianGG.getElo(player.membershipId)
         .then(function (elo) {
           var playerElo = _.find(elo.data, function (arr) {
-            return arr.mode === 14;
+            return arr.mode === 523;
           });
           eloTier(playerElo, player, $filter);
           return player;

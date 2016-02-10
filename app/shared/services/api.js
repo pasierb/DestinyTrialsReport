@@ -19,6 +19,7 @@ app.service('api', [
         lastWeapons: 'lastWeapons/{characterId}',
         weaponStats: 'weaponStats/{membershipId}/{weaponIdArray}',
         recentTeammates: 'recentTeammates/{membershipId}',
+        teammatesDoubles: 'teammatesDoubles/{membershipId}',
         previousMatches: 'previousMatches/{membershipId}',
         lighthouseLeaderboard: 'lighthouseLeaderboard',
         mapInfo: 'mapInfo/{referenceId}',
@@ -83,6 +84,12 @@ app.service('api', [
 
       this.recentTeammates = function(membershipId) {
         return this.get(ENDPOINTS.recentTeammates, {
+          membershipId: membershipId
+        });
+      };
+
+      this.teammatesDoubles = function(membershipId) {
+        return this.get(ENDPOINTS.teammatesDoubles, {
           membershipId: membershipId
         });
       };

@@ -109,8 +109,18 @@
                 recents[member.displayName] = member;
               }
             });
-            $scope.recentPlayers = angular.extend($scope.recentPlayers, recents);
-            $scope.recentPlayersCopy = $scope.recentPlayers;
+            return api.recentTeammates(
+              $scope.fireteam[0].membershipId
+            ).then(function (result) {
+                var recents = {};
+                _.each(result.data, function (member) {
+                  if (member.membershipId !==  $scope.fireteam[0].membershipId) {
+                    recents[member.displayName] = member;
+                  }
+                });
+                $scope.recentPlayers = angular.extend($scope.recentPlayers, recents);
+                $scope.recentPlayersCopy = $scope.recentPlayers;
+              });
           });
       }
     };
@@ -212,11 +222,10 @@
       }
       if (angular.isDefined($scope.fireteam[0])) {
         $scope.platformValue = $scope.fireteam[0].membershipType === 2;
-        if (($scope.fireteam[0] && $scope.fireteam[1] && $scope.fireteam[2]) || $scope.subdomain) {
+        if (($scope.fireteam[0] && $scope.fireteam[1]) || $scope.subdomain) {
           $scope.focusOnPlayers = true;
           var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
 
-          guardianggFactory.getTeamElo($scope.fireteam);
           statsFactory.getLighthouseCount($scope.fireteam);
 
           _.each($scope.fireteam, function (player) {
@@ -227,6 +236,8 @@
               } else {
                 statsFactory.weaponStats(player);
               }
+
+              guardianggFactory.getElo(player);
 
               api.longestStreak(
                 player.membershipId,
@@ -249,11 +260,11 @@
                 });
             }
           });
-          if ($scope.fireteam[2] && $scope.fireteam[2].membershipId) {
+          if ($scope.fireteam[1] && $scope.fireteam[1].membershipId) {
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()
                 .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +
-                $scope.fireteam[1].name + '/' + $scope.fireteam[2].name, true);
+                $scope.fireteam[1].name, true);
             }
           }
 

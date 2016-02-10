@@ -53,7 +53,7 @@ angular.module('trialsReportApp')
         player.membershipType,
         player.membershipId,
         player.characterInfo.characterId,
-        '14',
+        '23',
         '21'
       )
       .then(function (result) {

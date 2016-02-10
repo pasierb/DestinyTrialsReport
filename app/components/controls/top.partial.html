@@ -1,7 +1,7 @@
 <div class="title-bar">
   <div class="title-bar__title">
     <a href="/" target="_self">
-      <span ng-if="subdomain" class="highlight">my</span>D<span class="hide-on-small">estiny</span><span class="highlight">T<span class="hide-on-small">rials</span></span>R<span class="hide-on-small">eport</span>
+      <span ng-if="subdomain" class="highlight">my</span>C<span class="hide-on-small">rimson</span><span class="highlight">D<span class="hide-on-small">oubles</span></span>R<span class="hide-on-small">eport</span>
     </a>
   </div>
   <div class="platform-toggle">
@@ -36,7 +36,7 @@
           </div>
         </div>
       </form>
-      <div ng-if="!subdomain && fireteam[0].name && $index < 3 && $index > 0" ng-repeat="player in fireteam track by $index">
+      <div ng-if="!subdomain && fireteam[0].name && $index < 2 && $index > 0" ng-repeat="player in fireteam track by $index">
         <form role="form" ng-submit="searchPlayerbyName(teammateName, platformValue, $index)">
           <div class="main-search__row">
             <div class="main-search__input">

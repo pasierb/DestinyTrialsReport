@@ -38,7 +38,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
                   if (resultBNG && resultBNG[0]) {
                     return getFireteam(resultBNG);
                   } else {
-                    return guardianggFactory.getFireteam('14', player.membershipId)
+                    return guardianggFactory.getFireteam('523', player.membershipId)
                       .then(function (resultGGG) {
                         if (resultGGG && resultGGG.data.length > 0) {
                           resultGGG.data.membershipId = player.membershipId;
@@ -88,8 +88,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
       throwLog('teammatesFromParams');
       var methods = [
         homeFactory.getAccount(platform, params.playerOne),
-        homeFactory.getAccount(platform, params.playerTwo),
-        homeFactory.getAccount(platform, params.playerThree)
+        homeFactory.getAccount(platform, params.playerTwo)
       ];
       return $q.all(methods);
     };
@@ -153,7 +152,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
       throwLog('returnPlayer', results);
       if (results && (results.length > 0 || results.data)) {
         return {
-          fireteam: [results[0], results[1], results[2]],
+          fireteam: [results[0], results[1]],
           subdomain: subdomain,
           updateUrl: params.playerName,
           data: results.data

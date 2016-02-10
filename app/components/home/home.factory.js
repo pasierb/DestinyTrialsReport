@@ -81,7 +81,7 @@
         account.membershipType,
         account.membershipId,
         account.characterInfo.characterId,
-        '14',
+        '23',
         '1'
       ).then(function (result) {
           if (result && result.data && result.data.Response && result.data.Response.data && result.data.Response.data.activities) {
@@ -102,7 +102,7 @@
         account.membershipType,
         account.membershipId,
         account.characterInfo.characterId,
-        '14',
+        '23',
         aCount
       ).then(function (result) {
           if (result && result.data && result.data.Response && result.data.Response.data && result.data.Response.data.activities) {

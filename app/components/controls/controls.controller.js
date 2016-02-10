@@ -21,12 +21,12 @@
     };
 
     function updateUrl($scope, locationChanger) {
-      if ($scope.fireteam[0] && $scope.fireteam[1] && $scope.fireteam[2]) {
-        if ($scope.fireteam[2].membershipId) {
+      if ($scope.fireteam[0] && $scope.fireteam[1]) {
+        if ($scope.fireteam[1].membershipId) {
           var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
           locationChanger.skipReload()
             .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +
-            $scope.fireteam[1].name + '/' + $scope.fireteam[2].name, true);
+            $scope.fireteam[1].name, true);
         }
       }
     }
@@ -38,7 +38,7 @@
       return homeFactory.getAccount(($scope.platformValue ? 2 : 1), name)
         .then(function (account) {
           if (account) {
-            if (($scope.fireteam[1] && angular.isDefined($scope.fireteam[1].name)) || ($scope.fireteam[2] && angular.isDefined($scope.fireteam[2].name))) {
+            if (($scope.fireteam[1] && angular.isDefined($scope.fireteam[1].name))) {
               $scope.switchFocus();
               document.activeElement.blur();
             }
@@ -59,6 +59,7 @@
               statsFactory.checkSupporter($scope.fireteam[index]);
               statsFactory.getLighthouseCount($scope.fireteam);
               statsFactory.weaponStats($scope.fireteam[index]);
+              guardianggFactory.getElo($scope.fireteam[index]);
               api.lastWeapons(
                 $scope.fireteam[index].characterInfo.characterId
               ).then(function (result) {
@@ -70,7 +71,6 @@
                     $scope.fireteam[index].lastWeapons = result.data;
                   }
                 });
-              guardianggFactory.getTeamElo($scope.fireteam);
               updateUrl($scope, locationChanger);
             });
           }

@@ -20,7 +20,7 @@ angular
           config: getFromParams
         }
       })
-      .when('/:platformName/:playerOne/:playerTwo/:playerThree', {
+      .when('/:platformName/:playerOne/:playerTwo', {
         templateUrl: 'components/home/home.html',
         controller: 'homeController',
         resolve: {

@@ -8,11 +8,11 @@ angular.module('trialsReportApp')
         player.membershipType,
         player.membershipId,
         player.characterInfo.characterId,
-        '14'
+        '23'
       ).then(function (result) {
           var stats;
           if (angular.isDefined(result.data.Response)) {
-            stats = result.data.Response.trialsOfOsiris.allTime;
+            stats = result.data.Response.elimination.allTime;
             if (stats) {
               stats.activitiesWinPercentage = {
                 'basic': {'value': +(100 * stats.activitiesWon.basic.value / stats.activitiesEntered.basic.value).toFixed()},
