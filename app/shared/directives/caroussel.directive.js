@@ -45,22 +45,11 @@ angular.module('trialsReportApp')
                   $('.players-wrapper').removeClass('focus-on-player-one').addClass('focus-on-player-two');
                   scope.$parent.focusOnPlayer = 2;
                 }
-              } else if (activePlayer === 2) {
-                $('.players-wrapper').removeClass('focus-on-player-two').addClass('focus-on-player-three');
-                scope.$parent.focusOnPlayer = 3;
               }
             } else if (delta > 10) {
               if (activePlayer === 2) {
                 $('.players-wrapper').removeClass('focus-on-player-two').addClass('focus-on-player-one');
                 scope.$parent.focusOnPlayer = 1;
-              } else if (activePlayer === 3) {
-                if (window.innerWidth > 640) {
-                  $('.players-wrapper').removeClass('focus-on-player-three').addClass('focus-on-player-one');
-                  scope.$parent.focusOnPlayer = 1;
-                } else {
-                  $('.players-wrapper').removeClass('focus-on-player-three').addClass('focus-on-player-two');
-                  scope.$parent.focusOnPlayer = 2;
-                }
               }
             }
             active = false;
