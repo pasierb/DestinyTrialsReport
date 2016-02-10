@@ -21,7 +21,7 @@ app.service('bungie', [
       this.searchForPlayer = function(platform, name) {
         return this.get(ENDPOINTS.searchForPlayer, {
           platform: platform,
-          name: name
+          name: name.replace(/[^\w\s\-]/g, '')
         });
       };
 

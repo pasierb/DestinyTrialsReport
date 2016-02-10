@@ -31,10 +31,11 @@ app.service('api', [
       };
 
       this.searchByName = function(membershipType, displayName) {
+        var name = displayName.replace(/[^\w\s\-]/g, '');
         return this.get(ENDPOINTS.searchByName, {
           membershipType: membershipType,
-          displayName: displayName
-        }, FALLBACK.searchByName);
+          displayName: name
+        }, FALLBACK.searchByName + membershipType + '/' + name);
       };
 
       this.checkSupporterStatus = function(membershipId) {
