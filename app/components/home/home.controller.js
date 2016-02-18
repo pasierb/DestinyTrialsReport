@@ -5,10 +5,11 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, $location, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval) {
     $scope.$storage = $localStorage.$default({
       platform: true,
-      hideStats: false
+      hideStats: false,
+      archToggled: false
     });
     getMapFromStorage();
 
@@ -186,11 +187,12 @@
     if (config.fireteam) {
       $scope.fireteam = config.fireteam;
       $scope.$storage.platform = ($routeParams.platformName === 'ps');
-      if ($scope.sdOpponents) {
+      if ($scope.sdOpponents && config.data) {
         $scope.reverseSort = false;
         $scope.opponents = config.data.reverse();
         $scope.opponentsCopy = $scope.opponents;
         $scope.focusOnPlayers = true;
+        $scope.archToggled = $scope.$storage.archToggled;
 
         $scope.filterPlayers = function (change) {
           var result = [];
@@ -202,13 +204,33 @@
           $scope.opponents = result;
         };
 
+        $scope.archEnemies = function (value) {
+          $scope.archToggled = value;
+          $scope.$storage.archToggled = value;
+          if ($scope.archToggled) {
+            $scope.opponents = _.chain($scope.opponents).groupBy('displayName').filter(function(v){return v.length > 1}).flatten().value();
+          } else {
+            $scope.opponents = $scope.opponentsCopy;
+          }
+        };
+
         $scope.getMatchDetails = function (instanceId) {
           return matchesFactory.getPostGame({id: instanceId})
             .then(function (pgcr) {
               pgcr.map = DestinyCrucibleMapDefinition[pgcr.activityDetails.referenceId];
               $scope.matchResults = pgcr;
+              locationChanger.skipReload()
+                .withoutRefresh($routeParams.platformName + '/' + config.updateUrl + '/' + instanceId, true);
             });
         };
+
+        if ($routeParams.instanceId) {
+          $scope.getMatchDetails($routeParams.instanceId);
+        }
+
+        if ($scope.archToggled) {
+          $scope.archEnemies(true);
+        }
       }
       if (angular.isDefined($scope.fireteam[0])) {
         $scope.platformValue = $scope.fireteam[0].membershipType === 2;

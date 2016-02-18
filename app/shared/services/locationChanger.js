@@ -6,7 +6,8 @@ app.service('locationChanger', ['$location', '$route', '$rootScope', function ($
   this.skipReload = function () {
     var lastRoute = $route.current;
     $rootScope.$on('$locationChangeSuccess', function () {
-      if (angular.isUndefined($route.current.params.playerName)){
+      if (angular.isUndefined($route.current.params.playerName) ||
+        angular.isDefined($route.current.params.instanceId)){
         lastRoute.params.preventLoad = true;
         $route.current = lastRoute;
       }

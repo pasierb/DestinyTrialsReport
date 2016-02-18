@@ -20,6 +20,13 @@ angular
           config: getFromParams
         }
       })
+      .when('/:platformName/:playerName/:instanceId', {
+        templateUrl: 'components/home/home.html',
+        controller: 'homeController',
+        resolve: {
+          config: getFromParams
+        }
+      })
       .when('/:platformName/:playerOne/:playerTwo/:playerThree', {
         templateUrl: 'components/home/home.html',
         controller: 'homeController',
