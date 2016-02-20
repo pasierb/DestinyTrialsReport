@@ -95,7 +95,7 @@
         <label>Streak</label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.ggg.elo || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
+        <span ng-bind="(player.ggg.elo | number:0) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
         <span>
           <a href="https://guardian.gg/en/faq" target="_blank"
              data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
