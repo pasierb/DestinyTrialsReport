@@ -1,7 +1,6 @@
 <div class="domain-switch">
   <div class="btn-group-justified">
-    <a type="button" class="btn btn-default"
-       title="Toggle Stats" ng-click="toggleStats()"
+    <a type="button" class="btn btn-default" ng-click="toggleStats()"
        analytics-on analytics-event="Toggle Stats" analytics-category="Toggle Stats">
       <span class="highlight" ng-bind="hideStats ? 'Show' : 'Hide'"></span>Stats
     </a>
@@ -9,25 +8,23 @@
        <!--analytics-on analytics-event="Click" analytics-category="GGG Controls">-->
       <!--Guardian<span class="highlight">.gg</span>-->
     <!--</a>-->
-    <a type="button" class="btn btn-default" ng-if="!subdomain" href="https://my.destinytrialsreport.com" target="_self">
-      <span class="highlight">my</span>Report
-    </a>
-    <a type="button" class="btn btn-default" ng-if="subdomain" href="https://destinytrialsreport.com" target="_self">
-      <span class="highlight">trials</span>Report
-    </a>
-    <a type="button" class="btn btn-default" ng-if="!sdOpponents" href="https://opponents.destinytrialsreport.com" target="_self">
+    <a type="button" class="btn btn-default" ng-if="!sdOpponents" href="https://opponents.destinytrialsreport.com" target="_self"
+       analytics-on analytics-event="Click" analytics-category="myOpponents">
       <span class="highlight hide-on-sm">my</span>Opponents
     </a>
-    <a type="button" class="btn btn-default" ng-if="sdOpponents" href="https://destinytrialsreport.com" target="_self">
+    <a type="button" class="btn btn-default" ng-if="!subdomain" href="https://my.destinytrialsreport.com" target="_self"
+       analytics-on analytics-event="Click" analytics-category="myReport">
+      <span class="highlight">my</span>Report
+    </a>
+    <a type="button" class="btn btn-default" ng-if="subdomain || sdOpponents" href="https://destinytrialsreport.com" target="_self"
+       analytics-on analytics-event="Click" analytics-category="trialsReport">
       <span class="highlight">trials</span>Report
     </a>
-    <!--<a type="button" class="btn btn-default"-->
-       <!--title="FAQ" data-content-template="shared/modals/faq.modal.html" bs-modal-->
+    <!--<a type="button" class="btn btn-default" title="FAQ" data-content-template="shared/modals/faq.modal.html" bs-modal-->
        <!--analytics-on analytics-event="Click" analytics-category="FAQ">-->
       <!--<span class="highlight">FAQ</span>-->
     <!--</a>-->
-    <!--<a type="button" class="btn btn-default"-->
-       <!--title="Doubles" href="https://doubles.destinytrialsreport.com"-->
+    <!--<a type="button" class="btn btn-default" href="https://doubles.destinytrialsreport.com" target="_self"-->
        <!--analytics-on analytics-event="Click" analytics-category="Doubles">-->
       <!--<span class="highlight">C</span>Doubles-->
     <!--</a>-->
