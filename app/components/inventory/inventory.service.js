@@ -90,7 +90,9 @@ angular.module('trialsReportApp')
         },
         setPlayerInventory = function (inventory) {
           var dfd = $q.defer();
-          player.setInventory(player, inventory);
+          if (inventory) {
+            player.setInventory(player, inventory);
+          }
           dfd.resolve(player);
           return dfd.promise;
         },

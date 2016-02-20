@@ -9,7 +9,7 @@
 .player-quick-look__form {
   overflow: hidden;
   padding-right: 0;
-  width: calc(75% + 5px);
+  width: calc(79% + 5px);
 }
 
 .player-quick-look__form__matches {
@@ -52,7 +52,7 @@
 
 .player-quick-look__kd {
   padding-left: 10px;
-  width: calc(25% - 5px);
+  width: calc(21% - 5px);
 }
 
 .player-quick-look__kd__nr {
@@ -61,6 +61,8 @@
   font-size: 1.5em;
   line-height: 40px;
   position: relative;
+  text-align: right;
+
 
   &:before,
   &:after {
@@ -84,11 +86,11 @@
 }
 
 .player-quick-look__hide-stats {
-  min-height: 10.82em;
+  min-height: 9.2em;
   position:relative;
   .row {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: .3em;
+    margin-bottom: .3em;
   }
 }
 
@@ -110,7 +112,7 @@
   left: 0;
   margin-right: 0;
   margin-left: 0;
-  margin-bottom: 14px !important;
+  margin-bottom: 9px !important;
   .col-xs-3 {
     padding-right: 10px;
     padding-left: 10px;

@@ -324,18 +324,6 @@
       }
     }
 
-    var methods = [];
-    angular.forEach(players, function (player) {
-      if (angular.lowercase(player.name) !== angular.lowercase(name)) {
-        methods.push(homeFactory.getCharacters(
-          player.membershipType,
-          player.membershipId,
-          player.name
-        ));
-      }
-    });
-    return $q.all(methods);
-
     //$scope.chartLabels = [];
     //$scope.chartValues = [];
     //$scope.nowIndicator = null;
