@@ -1,5 +1,6 @@
 .player-main-stats {
-  padding: $player-content-padding;
+  //padding: $player-content-padding;
+  padding: .6em 1em .6em 1em;
   border-top: 1px solid #eee;
 
   .player.with-overlay & {

@@ -57,19 +57,21 @@ angular.module('trialsReportApp')
         '21'
       )
       .then(function (result) {
-          var equippedItems = result.data.Response.data.buckets.Equippable,
-            definedItems = [],
-            talentGrid;
-          for (var i = 0, len = equippedItems.length; i < len; i++) {
-            var equippedItem = equippedItems[i],
-              item = equippedItem.items[0];
-            if (item) {
-              talentGrid = DestinyTalentGridDefinition[item.talentGridHash];
-              var definedNodes = collectDefinedNodes(talentGrid, item);
-              buildItem(definedItems, item, equippedItem, definedNodes);
+          if (result && result.data && result.data.Response) {
+            var equippedItems = result.data.Response.data.buckets.Equippable,
+              definedItems = [],
+              talentGrid;
+            for (var i = 0, len = equippedItems.length; i < len; i++) {
+              var equippedItem = equippedItems[i],
+                item = equippedItem.items[0];
+              if (item) {
+                talentGrid = DestinyTalentGridDefinition[item.talentGridHash];
+                var definedNodes = collectDefinedNodes(talentGrid, item);
+                buildItem(definedItems, item, equippedItem, definedNodes);
+              }
             }
+            return definedItems;
           }
-        return definedItems;
       });
     };
 

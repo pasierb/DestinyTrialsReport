@@ -1,12 +1,11 @@
 <div class="player-tab--equipped">
 
-  <div class="player-tab__section">
+  <div class="player-tab__section" style="padding-bottom: .4em;padding-top: .4em;">
     <div weapon-nodes="[player.inventory.weapons.primary, player.inventory.weapons.special, player.inventory.weapons.heavy]" top-weapons="player.topWeapons" hide-stats="hideStats"></div>
   </div>
-  <div class="player-tab__section">
+  <div class="player-tab__section" style="padding-bottom: .4em;padding-top: .4em;">
     <div armor-nodes="player.inventory.armor.equipped" has-exotic="player.inventory.armor.equipped.definition.tierType === 6"></div>
   </div>
-
   <div build-stats="[player.characterInfo.stats.STAT_INTELLECT, player.characterInfo.stats.STAT_DISCIPLINE, player.characterInfo.stats.STAT_STRENGTH]"></div>
   <div build-stats="[player.characterInfo.stats.STAT_ARMOR, player.characterInfo.stats.STAT_RECOVERY, player.characterInfo.stats.STAT_AGILITY]"></div>
 
@@ -17,6 +16,12 @@
         <img class="player-perk__icon img-responsive" ng-src="{{subclassNode.icon}}" alt="{{subclassNode.name}}">
         <span class="player-perk__title" ng-bind="subclassNode.name"></span>
       </div>
+    </div>
+  </div>
+
+  <div class="block__footer block__footer--ad" style="padding: .7em .7em .3em .7em;margin-left: 0;margin-right: 0;margin-top: 0;">
+    <div class="ad" style="width: 320px;">
+      <div adsense-player index="{{$index}}"></div>
     </div>
   </div>
 </div>
