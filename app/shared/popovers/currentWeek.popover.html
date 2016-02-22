@@ -6,7 +6,7 @@
     </div>
     <div class="row row--small-gutter">
       <div class="col-xs-5 stat">
-        <span ng-bind="100 * player.currentWeek.wins / player.currentWeek.matches | number:0"></span>%
+        <span ng-bind="player.currentWeek.percent + '%'"></span>
         <label>Percent</label>
       </div>
       <div class="col-xs-3 stat">

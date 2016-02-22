@@ -207,7 +207,7 @@ angular.module('trialsReportApp')
       ).then(function (result) {
           if (result && result.data && result.data[0] && result.data[0].matches && result.data[0].losses) {
             player.currentWeek = {
-              matches: result.data[0].matches,
+              percent: +(100 * (result.data[0].matches - result.data[0].losses) / result.data[0].matches).toFixed(0),
               wins: (result.data[0].matches - result.data[0].losses),
               losses: result.data[0].losses
             };
