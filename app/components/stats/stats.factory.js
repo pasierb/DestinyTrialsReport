@@ -103,29 +103,31 @@ angular.module('trialsReportApp')
     };
 
     var weaponStats = function (player) {
-      var dfd = $q.defer();
-      var pWeapons = player.inventory.weapons;
-      var weaponArray = [pWeapons.primary.definition,pWeapons.special.definition,pWeapons.heavy.definition];
-      var weaponIds = _.pluck(weaponArray, 'itemHash');
-      return api.weaponStats(
-        player.membershipId,
-        weaponIds
-      ).then(function (result) {
-          if (result && result.data) {
-            var topWeapons = {};
-            _.each(result.data, function (weapon) {
-              topWeapons[weapon.weaponId] = {
-                precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
-                kills: weapon.kills,
-                headshots: weapon.headshots,
-                win_percentage: +(1 * weapon.win_percentage).toFixed()
-              };
-            });
-            player.topWeapons = topWeapons;
-            dfd.resolve(player);
-            return dfd.promise;
-          }
-        });
+      if (player && player.inventory) {
+        var dfd = $q.defer();
+        var pWeapons = player.inventory.weapons;
+        var weaponArray = [pWeapons.primary.definition,pWeapons.special.definition,pWeapons.heavy.definition];
+        var weaponIds = _.pluck(weaponArray, 'itemHash');
+        return api.weaponStats(
+          player.membershipId,
+          weaponIds
+        ).then(function (result) {
+            if (result && result.data) {
+              var topWeapons = {};
+              _.each(result.data, function (weapon) {
+                topWeapons[weapon.weaponId] = {
+                  precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
+                  kills: weapon.kills,
+                  headshots: weapon.headshots,
+                  win_percentage: +(1 * weapon.win_percentage).toFixed()
+                };
+              });
+              player.topWeapons = topWeapons;
+              dfd.resolve(player);
+              return dfd.promise;
+            }
+          });
+      }
     };
 
     var mapStats = function (mapId) {

@@ -83,10 +83,13 @@ angular.module('trialsReportApp')
           return dfd.promise;
         },
         inventoryInParallel = function (inventoryItems) {
-          var dfd = $q.defer();
-          dfd.resolve(inventoryFactory.getData(inventoryItems));
-
-          return dfd.promise;
+          if (inventoryItems) {
+            var dfd = $q.defer();
+            dfd.resolve(inventoryFactory.getData(inventoryItems));
+            return dfd.promise;
+          } else {
+            return null;
+          }
         },
         setPlayerInventory = function (inventory) {
           var dfd = $q.defer();

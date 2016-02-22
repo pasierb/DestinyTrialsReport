@@ -20,7 +20,7 @@ angular.module('trialsReportApp')
             });
             if (player && player[0]) {
               var enemyTeam = _.find(match.teams, function(matchTeam) {
-                return matchTeam.standing.basic.value !== player[0].standing;
+                return parseInt(matchTeam.teamId) !== parseInt(player[0].values.team.basic.value);
               });
               if (enemyTeam) {
                 player[0].values.enemyScore = enemyTeam.score;

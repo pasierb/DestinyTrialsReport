@@ -14,7 +14,7 @@ app.service('bungie', [
         account: '{platform}/Account/{membershipId}/',
         grimoire: 'Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}',
         stats: 'Stats/{platform}/{membershipId}/{characterId}/?modes={mode}',
-        inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
+        inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/',
         activityHistory: 'Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}',
         pgcr: 'Stats/PostGameCarnageReport/{instanceId}/'
       };

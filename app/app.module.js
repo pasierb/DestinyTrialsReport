@@ -56,7 +56,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
         });
     };
 
-
     var getFireteam = function (activities) {
       throwLog('getFireteam');
       if (angular.isUndefined(activities[0])) {
@@ -68,7 +67,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
           var fireteam = [];
           if (result && result.data && result.data.Response && result.data.Response.data) {
             _.each(result.data.Response.data.entries, function (player) {
-              if (player.standing === activities[0].values.standing.basic.value) {
+              if (parseInt(player.values.team.basic.value) === parseInt(activities[0].values.team.basic.value)) {
                 fireteam.push({
                   membershipType: player.player.destinyUserInfo.membershipType,
                   membershipId: player.player.destinyUserInfo.membershipId,
