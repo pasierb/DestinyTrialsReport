@@ -23,6 +23,7 @@ app.service('api', [
         lighthouseLeaderboard: 'lighthouseLeaderboard',
         mapInfo: 'mapInfo/{referenceId}',
         currentMap: 'currentMap',
+        currentWeek: 'currentWeek/{membershipId}',
         searchByName: 'searchByName/{membershipType}/{displayName}'
       };
 
@@ -106,6 +107,12 @@ app.service('api', [
 
       this.getCurrentMap = function() {
         return this.get(ENDPOINTS.currentMap, {});
+      };
+
+      this.currentWeek = function(membershipId) {
+        return this.get(ENDPOINTS.currentWeek, {
+          membershipId: membershipId
+        });
       };
 
       this.get = function(endpoint, tokens, fallback) {

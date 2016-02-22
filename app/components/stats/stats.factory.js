@@ -201,8 +201,23 @@ angular.module('trialsReportApp')
         });
     };
 
+    var getCurrentWeek = function (player) {
+      return api.currentWeek(
+        player.membershipId
+      ).then(function (result) {
+          if (result && result.data && result.data[0] && result.data[0].matches && result.data[0].losses) {
+            player.currentWeek = {
+              wins: (result.data[0].matches - result.data[0].losses),
+              losses: result.data[0].losses
+            };
+            return player;
+          }
+        });
+    };
+
     return {
       getStats: getStats,
+      getCurrentWeek: getCurrentWeek,
       getGrimoire: getGrimoire,
       checkSupporter: checkSupporter,
       getLighthouseCount: getLighthouseCount,

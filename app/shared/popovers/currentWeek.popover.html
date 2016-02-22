@@ -1,0 +1,18 @@
+<div class="popover" tabindex="-1" ng-show="player.currentWeek">
+  <div class="arrow"></div>
+  <div class="popover-content">
+    <div class="stat__header">
+      This Week
+    </div>
+    <div class="row row--small-gutter">
+      <div class="col-xs-6 stat">
+        <span ng-bind="player.currentWeek.wins"></span>
+        <label>Wins</label>
+      </div>
+      <div class="col-xs-6 stat">
+        <span ng-bind="player.currentWeek.losses"></span>
+        <label>Losses</label>
+      </div>
+    </div>
+  </div>
+</div>

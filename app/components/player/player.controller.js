@@ -7,6 +7,7 @@ angular.module('trialsReportApp')
     homeFactory.getActivities($scope.player, activityCount);
     statsFactory.getStats($scope.player);
     statsFactory.getGrimoire($scope.player);
+    statsFactory.getCurrentWeek($scope.player);
     statsFactory.checkSupporter($scope.player);
 
     $scope.getLastMatch = function (player) {

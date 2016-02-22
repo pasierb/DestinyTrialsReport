@@ -85,7 +85,7 @@
   </div>
   <div class="player-main-stats" ng-if="!hideStats">
     <div class="row">
-      <div class="col-xs-3 stat">
+      <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" bs-popover>
         <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
         <label>Wins</label>
       </div>
