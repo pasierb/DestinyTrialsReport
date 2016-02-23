@@ -5,13 +5,19 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, $location, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval) {
     $scope.$storage = $localStorage.$default({
       platform: true,
       hideStats: false,
       archToggled: false
     });
     getMapFromStorage();
+
+    $scope.adsenseSlots = {
+      0: '1401297353',
+      1: '4354763755',
+      2: '5831496956'
+    };
 
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
@@ -128,9 +134,11 @@
 
     $scope.refreshInventory = function (fireteam) {
       _.each(fireteam, function (player, index) {
-        homeFactory.refreshInventory($scope.fireteam[index]).then(function (teammate) {
-          $scope.$evalAsync($scope.fireteam[index] = teammate);
-        });
+        if (player) {
+          homeFactory.refreshInventory($scope.fireteam[index]).then(function (teammate) {
+            $scope.$evalAsync($scope.fireteam[index] = teammate);
+          });
+        }
       });
     };
 
@@ -240,6 +248,19 @@
 
           guardianggFactory.getTeamElo($scope.fireteam);
           statsFactory.getLighthouseCount($scope.fireteam);
+          //statsFactory.getPlayerAds($scope.fireteam).then(function (result) {
+          //  if (!result) {
+              api.getRandomAd().then(function (result) {
+                if (result && result.data && result.data[0]) {
+                  if ($scope.fireteam[_.random(0, 2)]) {
+                    $scope.fireteam[_.random(0, 2)].playerAd = result.data[0];
+                  } else {
+                    $scope.fireteam[0].playerAd = result.data[0];
+                  }
+                }
+              });
+          //  }
+          //});
 
           _.each($scope.fireteam, function (player) {
 
@@ -271,6 +292,7 @@
                 });
             }
           });
+
           if ($scope.fireteam[2] && $scope.fireteam[2].membershipId) {
             if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
               locationChanger.skipReload()

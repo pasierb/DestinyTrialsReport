@@ -1,79 +1,40 @@
-'use strict';
+(function () {
 
-angular.module('trialsReportApp')
-  .directive('adsense', function() {
-    return {
-      restrict: 'A',
-      replace: true,
-      template: [
-        '<ins class="adsbygoogle"' +
-             'style="display:block"' +
-             'data-ad-client="ca-pub-7408805581120581"' +
-             'data-ad-slot="1127916954"' +
-             'data-ad-format="auto">' +
-        '</ins>'
-      ].join(''),
-      controller: function () {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }
-    }
-  })
-  .directive('adsenseSmall', function() {
-    return {
-      restrict: 'A',
-      replace: true,
-      template: [
-        '<ins class="adsbygoogle"' +
-        'style="display:inline-block;width:320px;height:50px"' +
-        'data-ad-client="ca-pub-7408805581120581"' +
-        'data-ad-slot="7815945353">' +
-        '</ins>'
-      ].join(''),
-      controller: function () {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }
-    }
-  })
-  .directive('adsensePlayer', function() {
-    return {
-      restrict: 'A',
-      replace: true,
-      scope: {
-        index: '@'
-      },
-      link: function(scope, ele) {
-        var slots = {
-          0: '1401297353',
-          1: '4354763755',
-          2: '5831496956'
-        };
-        scope.slot = slots[scope.index];
-      },
-      template: [
-        '<ins class="adsbygoogle"' +
-        'style="display:inline-block;width:320px;height:50px"' +
-        'data-ad-client="ca-pub-7408805581120581"' +
-        'data-ad-slot="{{slot}}">' +
-        '</ins>'
-      ].join(''),
-      controller: function () {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }
-    }
-  })
-  .directive('adsenseFooter', function() {
-    return {
-      restrict: 'A',
-      replace: true,
-      template: [
-        '<ins class="adsbygoogle"' +
-        'style="display:inline-block;width:728px;height:90px"' +
-        'data-ad-client="ca-pub-7408805581120581"' +
-        'data-ad-slot="2319627357">' +
-        '</ins>'
-      ].join(''),
-      controller: function () {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }
-    }
-  });
+  'use strict';
+
+  angular.module('trialsReportApp').
+
+    service('Adsense', [function(){
+      this.url = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      this.isAlreadyLoaded = false;
+    }]).
+
+    directive('adsense', function () {
+      return {
+        restrict: 'E',
+        replace: true,
+        scope : {
+          adClient : '@',
+          adSlot : '@',
+          inlineStyle : '@',
+          formatAuto : '@'
+        },
+        template: '<div class="ads"><ins class="adsbygoogle" data-ad-client="{{adClient}}" data-ad-slot="{{adSlot}}" style="{{inlineStyle}}" data-ad-format="{{formatAuto ? \'auto\' : \'\' }}"></ins></div>',
+        controller: ['Adsense', '$timeout', function (Adsense, $timeout) {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.src = Adsense.url;
+          s.async = true;
+          document.body.appendChild(s);
+          /**
+           * We need to wrap the call the AdSense in a $apply to update the bindings.
+           * Otherwise, we get a 400 error because AdSense gets literal strings from the directive
+           */
+          setTimeout(function() { (window.adsbygoogle = window.adsbygoogle || []).push({}); }, 750);
+          //$timeout(function(){
+          //  (window.adsbygoogle = window.adsbygoogle || []).push({});
+          //});
+        }]
+      };
+    });
+}());

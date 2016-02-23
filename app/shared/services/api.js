@@ -24,7 +24,9 @@ app.service('api', [
         mapInfo: 'mapInfo/{referenceId}',
         currentMap: 'currentMap',
         currentWeek: 'currentWeek/{membershipId}',
-        searchByName: 'searchByName/{membershipType}/{displayName}'
+        searchByName: 'searchByName/{membershipType}/{displayName}',
+        getRandomAd: 'getRandomAd',
+        playerAds: 'playerAds/{membershipIds}'
       };
 
       var FALLBACK = {
@@ -113,6 +115,16 @@ app.service('api', [
         return this.get(ENDPOINTS.currentWeek, {
           membershipId: membershipId
         });
+      };
+
+      this.playerAds = function(membershipIds) {
+        return this.get(ENDPOINTS.playerAds, {
+          membershipIds: membershipIds
+        });
+      };
+
+      this.getRandomAd = function() {
+        return this.get(ENDPOINTS.getRandomAd, {});
       };
 
       this.get = function(endpoint, tokens, fallback) {

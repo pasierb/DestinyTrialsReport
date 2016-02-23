@@ -21,7 +21,19 @@
 
   <div class="block__footer block__footer--ad" style="padding: .7em .7em .3em .7em;margin-left: 0;margin-right: 0;margin-top: 0;">
     <div class="ad" style="width: 320px;">
-      <div adsense-player index="{{$index}}"></div>
+      <a href="{{player.playerAd.url}}" ng-if="player.playerAd && player.playerAd.url" target="_blank"
+         style="display:inline-block;width:320px;height:50px;margin-bottom: 5px;">
+        <img  ng-src="{{player.playerAd.image_url}}">
+      </a>
+      <!--<a href="" ng-if="player.playerAd && !player.playerAd.url" target="_blank"-->
+         <!--title="Advertise your streams for $1" data-content-template="shared/modals/adspace.modal.html"-->
+         <!--style="display:inline-block;width:320px;height:50px;margin-bottom: 5px;" bs-modal>-->
+        <!--<img  ng-src="{{player.playerAd.image_url}}">-->
+      <!--</a>-->
+      <adsense ad-client="ca-pub-7408805581120581" ad-slot="{{adsenseSlots[$index]}}"
+               inline-style="display:inline-block;width:320px;height:50px;"
+               ng-if="!player.playerAd">
+      </adsense>
     </div>
   </div>
 </div>

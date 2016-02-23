@@ -218,6 +218,24 @@ angular.module('trialsReportApp')
         });
     };
 
+    var getPlayerAds = function (fireteam) {
+      return api.playerAds(
+        _.pluck(fireteam, 'membershipId')
+      ).then(function (result) {
+          var foundMatch = false;
+          if (result && result.data && result.data[0]) {
+            _.each(fireteam, function (player) {
+              var playerAd = _.find(result.data, function(ad){ return ad.membershipId == player.membershipId; });
+              if (playerAd) {
+                player.playerAd = playerAd;
+                foundMatch = true;
+              }
+            });
+          }
+          return foundMatch
+        });
+    };
+
     return {
       getStats: getStats,
       getCurrentWeek: getCurrentWeek,
@@ -227,6 +245,7 @@ angular.module('trialsReportApp')
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
       weaponStats: weaponStats,
-      mapStats: mapStats
+      mapStats: mapStats,
+      getPlayerAds: getPlayerAds
     };
   });
