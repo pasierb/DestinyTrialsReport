@@ -5,17 +5,95 @@
     .module('trialsReportApp')
     .controller('controlsController', controlsController);
 
-  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $interval, $timeout) {
+  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $interval, $timeout, bungie, toastr) {
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
 
-    $scope.searchMainPlayerbyName = function (name) {
+    function getSubdomain() {
+      var segments = location.hostname.split('.');
+      return segments.length > 2 ? segments[segments.length - 3].toLowerCase() : null;
+    }
+
+    function getFromParams(platform, name) {
       if (angular.isDefined(name)) {
-        $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
+        if (getSubdomain()) {
+          $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
+        }
+
+        var getPlayer = function () {
+          return homeFactory.getAccount(platform, name)
+            .then(function (result) {
+              if (result) {
+                var player = result;
+                player.searched = true;
+                return homeFactory.getRecentActivity(player)
+                  .then(function (resultBNG) {
+                    if (resultBNG && resultBNG[0]) {
+                      return getFireteam(resultBNG);
+                    } else {
+                      return guardianggFactory.getFireteam('14', player.membershipId)
+                        .then(function (resultGGG) {
+                          if (resultGGG && resultGGG.data.length > 0) {
+                            resultGGG.data.membershipId = player.membershipId;
+                            return resultGGG.data;
+                          } else {
+                            return getFireteam(resultBNG);
+                          }
+                        });
+                    }
+                  });
+              } else {
+                return false;
+              }
+            });
+        };
+
+        var getFireteam = function (activities) {
+          if (angular.isUndefined(activities[0])) {
+            toastr.error('No Trials matches found for player', 'Error');
+            return activities;
+          }
+          return bungie.getPgcr(activities[0].activityDetails.instanceId)
+            .then(function (result) {
+              var fireteam = [];
+              if (result && result.data && result.data.Response && result.data.Response.data) {
+                _.each(result.data.Response.data.entries, function (player) {
+                  if (parseInt(player.values.team.basic.value) === parseInt(activities[0].values.team.basic.value)) {
+                    if (activities.membershipId && activities.membershipId != player.player.destinyUserInfo.membershipId) {
+                      fireteam.push(player.player.destinyUserInfo.displayName);
+                    }
+                  }
+                });
+              }
+              return fireteam;
+            });
+        };
+
+        var reportProblems = function (fault) {
+          console.log(fault);
+        };
+
+        return getPlayer()
+          .catch(reportProblems);
+      }
+    }
+
+    $scope.searchMainPlayerbyName = function (name) {
+      var platform = $scope.platformValue ? 2 : 1;
+      if (angular.isDefined(name)) {
+        getFromParams(platform, name).then(function (result) {
+          if (result) {
+            $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + result.join('/'));
+          }
+        });
       } else {
         if (angular.isDefined($scope.searchedPlayer)) {
-          $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + $scope.searchedPlayer);
+          getFromParams(platform, name).then(function (result) {
+            if (result) {
+              $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + result.join('/'));
+            }
+          });
         }
       }
     };

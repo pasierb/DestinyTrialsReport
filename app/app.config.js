@@ -56,14 +56,15 @@ angular
       tooltipFontFamily: "'Roboto Condensed', sans-serif",
       tooltipTitleFontStyle: "300"
     })
-  }])
-  .run(function ($rootScope, $window) {
-    // delete all the google related variables before you change the url
-    $rootScope.$on('$locationChangeStart', function () {
-      Object.keys($window).filter(function(k) { return k.indexOf('google') >= 0 }).forEach(
-        function(key) {
-          delete($window[key]);
-        }
-      );
-    });
-  });
+  }]);
+  //.run(function ($rootScope, $window) {
+  //  // delete all the google related variables before you change the url
+  //  $rootScope.$on('$locationChangeStart', function () {
+  //    console.log('changing url')
+  //    Object.keys($window).filter(function(k) { return k.indexOf('google') >= 0 }).forEach(
+  //      function(key) {
+  //        delete($window[key]);
+  //      }
+  //    );
+  //  });
+  //});
