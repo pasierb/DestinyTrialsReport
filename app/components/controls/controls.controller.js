@@ -82,7 +82,7 @@
     $scope.searchMainPlayerbyName = function (name) {
       var platform = $scope.platformValue ? 2 : 1;
       if (angular.isDefined(name)) {
-        if (getSubdomain() === 'opponents') {
+        if (getSubdomain()) {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
         } else {
           getFromParams(platform, name).then(function (result) {
