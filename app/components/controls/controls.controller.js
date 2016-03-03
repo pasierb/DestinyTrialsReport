@@ -82,11 +82,15 @@
     $scope.searchMainPlayerbyName = function (name) {
       var platform = $scope.platformValue ? 2 : 1;
       if (angular.isDefined(name)) {
-        getFromParams(platform, name).then(function (result) {
-          if (result) {
-            $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + result.join('/'));
-          }
-        });
+        if (getSubdomain() === 'opponents') {
+          $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
+        } else {
+          getFromParams(platform, name).then(function (result) {
+            if (result) {
+              $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + result.join('/'));
+            }
+          });
+        }
       } else {
         if (angular.isDefined($scope.searchedPlayer)) {
           getFromParams(platform, name).then(function (result) {
