@@ -30,8 +30,8 @@
 }
 
 .first-in-lighthouse__players {
-  flex-grow: 1;
-
+  margin-bottom: 1.5em;
+  
   a {
     color: inherit;
   }
@@ -39,13 +39,17 @@
 
 .first-in-lighthouse__players > span {
   display: block;
-  line-height: 1.65;
   font-size: 1em;
+
+  & + span {
+    margin-top: .5em;
+  }
 }
 
 .first-in-lighthouse__stats {
-  align-self: flex-end;
-  padding-left: 2em;
+  > div {
+
+  }
 
   span img {
     height: 1em;
@@ -53,9 +57,8 @@
   }
 
   p {
-    text-align: center;
     img {
-      height: 1.8em;
+      height: 1em;
       filter: brightness(0.4);
     }
   }

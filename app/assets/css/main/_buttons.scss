@@ -7,6 +7,16 @@
   }
 }
 
+.btn-inline {
+  margin: 0;
+  display: inline-block;
+  color: inherit;
+
+  & + .btn-inline {
+    margin-left: .5rem;
+  }
+}
+
 .control-btn.btn.btn.btn {
   display: none;
   padding: 0;
