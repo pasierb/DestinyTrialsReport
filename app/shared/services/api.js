@@ -9,7 +9,7 @@ app.service('api', [
 
   function ($http, util, RequestFallback) {
     return new function () {
-      var BASE_URL = '//api.trials.report/';
+      var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
         supporterStatus: 'supporterStatus/{membershipId}',
         lighthouseCount: 'lighthouseCount/{membershipIdArray}',
@@ -30,7 +30,7 @@ app.service('api', [
       };
 
       var FALLBACK = {
-        searchByName: 'https://proxy.trials.report/Platform/Destiny/SearchDestinyPlayer/{membershipType}/{displayName}/'
+        searchByName: 'https://proxy.destinytrialsreport.com/Platform/Destiny/SearchDestinyPlayer/{membershipType}/{displayName}/'
       };
 
       this.searchByName = function(membershipType, displayName) {

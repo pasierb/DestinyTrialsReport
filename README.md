@@ -1,4 +1,4 @@
-### Destiny Trials Report - [www.trials.report](http://www.trials.report/)
+### Destiny Trials Report - [www.DestinyTrialsReport.com](http://www.destinytrialsreport.com/)
 
 [![Build Status](https://secure.travis-ci.org/SteffanLong/DestinyTrialsReport.svg)](http://travis-ci.org/DestinyTrialsReport/DestinyTrialsReport)
 [![Dependency Status](https://david-dm.org/SteffanLong/DestinyTrialsReport.svg)](https://david-dm.org/DestinyTrialsReport/DestinyTrialsReport)
