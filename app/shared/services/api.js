@@ -29,16 +29,12 @@ app.service('api', [
         playerAds: 'playerAds/{membershipIds}'
       };
 
-      var FALLBACK = {
-        searchByName: 'https://proxy.destinytrialsreport.com/Platform/Destiny/SearchDestinyPlayer/{membershipType}/{displayName}/'
-      };
-
       this.searchByName = function(membershipType, displayName) {
         var name = displayName.replace(/[^\w\s\-]/g, '');
         return this.get(ENDPOINTS.searchByName, {
           membershipType: membershipType,
           displayName: name
-        }, FALLBACK.searchByName + membershipType + '/' + name);
+        });
       };
 
       this.checkSupporterStatus = function(membershipId) {
