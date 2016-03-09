@@ -8,7 +8,7 @@ app.service('bungie', [
 
   function ($http, util) {
     return new function () {
-      //var BASE_URL = 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
+      //var BASE_URL = 'https://proxy.trials.report/Platform/Destiny/';
       var ENDPOINTS = {
         searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/',
         account: '{platform}/Account/{membershipId}/',

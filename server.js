@@ -112,7 +112,7 @@ function start() {
 
   // CORS
   app.all('*', function (req, res) {
-    res.header('Access-Control-Allow-Origin', 'http://www.destinytrialsreport.com');
+    res.header('Access-Control-Allow-Origin', 'http://www.trials.report');
   });
 
   // Start server
