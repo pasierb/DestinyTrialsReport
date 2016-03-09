@@ -9,7 +9,7 @@ app.service('bungie', [
 
   function ($http, util, RequestFallback) {
     return new function () {
-      var BASE_URL = 'https://proxys.destinytrialsreport.com/Platform/Destiny/';
+      //var BASE_URL = 'https://proxys.destinytrialsreport.com/Platform/Destiny/';
       var ENDPOINTS = {
         searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/',
         account: '{platform}/Account/{membershipId}/',
@@ -76,6 +76,8 @@ app.service('bungie', [
       };
 
       this.get = function(endpoint, tokens) {
+        var rand = _.random(3, 26);
+        var BASE_URL = '//trials-api' + rand + '.herokuapp.com/Platform/Destiny/';
         return RequestFallback(BASE_URL, endpoint, tokens);
         //return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };

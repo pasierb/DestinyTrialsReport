@@ -35,8 +35,7 @@ app.service('util', [
             results.resolve({data: response})
           })
           .error(function() {
-            var rand = _.random(3, 26);
-            var fallback = '//trials-api' + rand + '.herokuapp.com/Platform/Destiny/';
+            var fallback = 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
             request(fallback + util.buildUrl(endpoint, tokens));
             //if (counter < MAX_REQUESTS) {
             //  request();
