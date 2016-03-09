@@ -59,6 +59,12 @@
 .popover-content {
   font-weight: 300;
   padding: .5em .8em;
+
+  > img {
+    max-width: 100%;
+    display: block;
+    margin: .5rem auto;
+  }
 }
 
 .popover-footer {
