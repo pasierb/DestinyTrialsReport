@@ -203,6 +203,19 @@ angular.module('trialsReportApp')
         });
     };
 
+    var checkCharitySupporter = function (player) {
+      return api.checkCharitySupporter(
+        player.membershipId
+      ).then(function (result) {
+          var nonHazardCharity;
+          if (result && result.data && result.data[0]) {
+            nonHazardCharity = result.data[0];
+          }
+          player.nonHazardCharity = nonHazardCharity;
+          return player;
+        });
+    };
+
     var getCurrentWeek = function (player) {
       return api.currentWeek(
         player.membershipId
@@ -241,6 +254,7 @@ angular.module('trialsReportApp')
       getCurrentWeek: getCurrentWeek,
       getGrimoire: getGrimoire,
       checkSupporter: checkSupporter,
+      checkCharitySupporter: checkCharitySupporter,
       getLighthouseCount: getLighthouseCount,
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
