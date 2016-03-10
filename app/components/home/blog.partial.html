@@ -1,35 +1,35 @@
 <div class="home__content">
   <article class="home__main">
     <div class="block blog-post shadow-z-1">
-      <div class="modal-hero blog-image" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
+      <div class="modal-hero blog-image" ng-style="{'background-image':'url(' + currentMapInfo.pgcrImage + ')'}">
         <div class="modal-hero__header">
-          <h2 class="modal-hero__title" ng-bind="currentMap.name"></h2>
-          <p class="modal-hero__description stat" ng-bind="currentMapInfo.mapInfo.weekText"></p>
+          <h2 class="modal-hero__title" ng-bind="currentMapInfo.name"></h2>
+          <p class="modal-hero__description stat" ng-bind="currentMapInfo.weekText"></p>
         </div>
         <div class="modal-hero__switch">
           <div class="modal-hero__switch__btns">
-            <a href="#"><i class="material-icons">&#xE5CB;</i></a>
-            <a href="#" style="opacity: .2;"><i class="material-icons">&#xE5CC;</i></a>
+            <a href="#" ng-style="{'opacity': showPrev ? '1' : '.2' }" ng-click="toggleDirection('left')"><i class="material-icons">&#xE5CB;</i></a>
+            <a href="#" ng-style="{'opacity': showNext ? '1' : '.2' }" ng-click="toggleDirection('right')"><i class="material-icons">&#xE5CC;</i></a>
           </div>
           <label>Other weeks</label>
         </div>
       </div>
-      <div class="blog-post__content">
+      <div class="blog-post__content" ng-if="currentMapInfo">
         <div class="row">
           <div class="col-xs-6 col-md-3 stat">
-            <span ng-bind="123123 | number"></span>
+            <span ng-bind="currentMapInfo.lighthouse | number"></span>
             <label>Flawless runs</label>
           </div>
           <div class="col-xs-6 col-md-3 stat">
-            <span ng-bind="123123 | number"></span>
+            <span ng-bind="currentMapInfo.players | number"></span>
             <label>Guardians participated</label>
           </div>
           <div class="col-xs-6 col-md-3 stat">
-            <span ng-bind="123123 | number"></span>
+            <span ng-bind="currentMapInfo.matches | number"></span>
             <label>Total matches</label>
           </div>
           <div class="col-xs-6 col-md-3 stat">
-            <span ng-bind="123123 | number"></span>
+            <span ng-bind="currentMapInfo.kills | number"></span>
             <label>Total kills</label>
           </div>
         </div>
@@ -41,11 +41,11 @@
             </h3>
           </div>
           <div class="col-xs-10">
-            <button type="button" class="btn btn-inline btn-raised btn-sm"
+            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.heatmapImage"
                     data-template-url="shared/modals/heatmap.modal.html" bs-modal>
               Heatmap
             </button>
-            <button type="button" class="btn btn-inline btn-raised btn-sm"
+            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.mapImage"
                     data-template-url="shared/modals/map.modal.html" bs-modal>
               Map Overview
             </button>
@@ -62,7 +62,7 @@
               <i class="material-icons icon--small info">&#xE8FD;</i>
             </span>
           </div>
-          <div class="col-xs-12 col-sm-4" ng-repeat="(key, weapons) in currentMapInfo.weaponSummary track by $index"
+          <div class="col-xs-12 col-sm-4" ng-repeat="(key, weapons) in weaponSummary track by $index"
                ng-class="{'col-sm-offset-1': $index > 0}">
             <div class="top-weapons--map">
               <div class="row">
@@ -99,7 +99,7 @@
         <div class="row">
           <div class="col-xs-2">
             <h3 class="stat-header">
-              Top weapons <span ng-bind="currentMapInfo.mapInfo.weekText"></span>
+              Top weapons <span ng-bind="currentMapInfo.weekText"></span>
             </h3>
             <a
               href="http://guardian.gg"

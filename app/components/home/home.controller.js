@@ -5,12 +5,66 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout) {
     $scope.$storage = $localStorage.$default({
       platform: true,
       hideStats: false,
       archToggled: false
     });
+
+    $scope.searchedMaps = {};
+    var wait;
+
+    $scope.resetMapVars = function() {
+      $scope.direction = 'center';
+      $scope.mapIndex = 0;
+      $scope.showNext = false;
+      $scope.showPrev = true;
+    };
+
+    $scope.toggleDirection = function (value) {
+      var offset = (value === 'left' ? -1 : 1);
+      if ((value === 'right' && $scope.showNext) || ((value === 'left' && $scope.showPrev))){
+        $scope.mapIndex = ($scope.mapIndex + offset);
+        var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
+        var nextIndex = newIndex + 1;
+        $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
+        $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
+        $scope.direction = value;
+        $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
+        $scope.direction = 'center';
+      }
+    };
+
+    $scope.loadMapInfo = function (referenceId) {
+      if ($scope.searchedMaps[referenceId]) {
+        var map = $scope.searchedMaps[referenceId];
+        $scope.weaponSummary = map.weaponSummary;
+        $scope.weaponTotals = map.weaponTotals;
+        $scope.mapHistory = map.mapHistory;
+        $scope.currentMapInfo = map.mapInfo;
+        $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
+      } else {
+        return statsFactory.mapStats(referenceId)
+          .then(function (mapInfo) {
+            $scope.searchedMaps[referenceId] = mapInfo;
+            $scope.weaponSummary = mapInfo.weaponSummary;
+            $scope.weaponTotals = mapInfo.weaponTotals;
+            $scope.mapHistory = mapInfo.mapHistory;
+            $scope.currentMapInfo = mapInfo.mapInfo;
+            $scope.currentMapInfo.weekText = getRelativeWeekText(moment.utc(mapInfo.mapInfo.start_date), $scope.trialsInProgress, true);
+            $scope.currentMapInfo.timeAgo = moment.utc(mapInfo.mapInfo.end_date).fromNow();
+            $scope.currentMapInfo.mapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].mapImage;
+            $scope.currentMapInfo.pgcrImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].pgcrImage;
+            $scope.currentMapInfo.heatmapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
+            $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
+            $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
+          }
+        );
+      }
+    };
+
+    $scope.resetMapVars();
     getMapFromStorage();
 
     $scope.adsenseSlots = {
@@ -51,20 +105,10 @@
       $scope.focusOnPlayer = Math.min(3, Math.max(1, $scope.focusOnPlayer + Math.floor(window.innerWidth / 320) * direction));
     };
 
-    function getCurrentMapData(referenceId) {
-      return statsFactory.mapStats(referenceId)
-        .then(function (mapInfo) {
-          $scope.currentMapInfo = mapInfo;
-          $scope.currentMapInfo.mapInfo.weekText = getRelativeWeekText(moment.utc(mapInfo.mapInfo.start_date), $scope.trialsInProgress, true);
-          $scope.currentMapInfo.mapInfo.timeAgo = moment.utc(mapInfo.mapInfo.end_date).fromNow();
-        }
-      );
-    }
-
     function setCurrentMap(id) {
       $scope.currentMapId = id;
       $scope.currentMap = DestinyCrucibleMapDefinition[id];
-      getCurrentMapData(id);
+      $scope.loadMapInfo(id);
     }
 
     function getMapFromStorage() {
@@ -142,22 +186,28 @@
       });
     };
 
-    $scope.gggLoadWeapons = function (platform) {
+    $scope.gggLoadWeapons = function (platform, start_date, end_date) {
       $scope.platformNumeric = platform ? 2 : 1;
+      var dates = trialsDates;
+
+      if (start_date && end_date) {
+        dates = {
+          begin:  moment.utc(start_date),
+          end:  moment.utc(end_date)
+        }
+      }
 
       if ($scope.gggWeapons) {
-        if (!$scope.gggWeapons[$scope.platformNumeric]) {
-          return guardianggFactory.getWeapons(
-            $scope.platformNumeric,
-            trialsDates
-          ).then(function (result) {
-              $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
-              $scope.gggWeapons[$scope.platformNumeric].show = result.show;
-              $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
-            });
-        } else {
-          $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
-        }
+        return guardianggFactory.getWeapons(
+          $scope.platformNumeric,
+          dates
+        ).then(function (result) {
+            $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
+            $scope.gggWeapons[$scope.platformNumeric].show = result.show;
+            $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
+          });
+      } else {
+        $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
       }
     };
 
