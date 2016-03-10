@@ -276,3 +276,12 @@ $duration: 1.4s;
     font-size: 1em;
   }
 }
+
+.highlight-change {
+  background-color: rgba(255,215,0, 1);
+  transition: background-color 20s cubic-bezier(0,1,1,1);
+}
+
+.highlight-fade {
+  background-color: rgba(255,215,0,0);
+}

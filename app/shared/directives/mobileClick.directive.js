@@ -22,4 +22,30 @@ angular.module('trialsReportApp')
         };
       }
     };
-  });
+  })
+  .directive('highlighter', ['$timeout', function($timeout) {
+    return {
+      restrict: 'A',
+      scope: {
+        model: '=highlighter'
+      },
+      link: function(scope, element) {
+        scope.$watch('model', function (nv, ov) {
+          if (nv !== ov) {
+            // apply class
+            element.addClass('highlight-change');
+
+            // auto remove after some delay
+            $timeout(function () {
+              element.addClass('highlight-fade');
+            }, 5000);
+
+            $timeout(function () {
+              element.removeClass('highlight-change');
+              element.removeClass('highlight-fade');
+            }, 25000);
+          }
+        });
+      }
+    };
+  }]);
