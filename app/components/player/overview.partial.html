@@ -18,7 +18,7 @@
                data-template-url="shared/popovers/charity1.popover.html"
                data-placement="bottom"
                ng-bind="hazard.status"
-               accessible-contents-popover>
+               bs-popover>
           </div>
         </div>
         <div class="player-level">
@@ -81,7 +81,7 @@
         <div class="player-quick-look__form__matches" trials-history="player.activities.lastTwentyFive" player-kd="player.stats.killsDeathsRatio.basic.value"></div>
         <label class="data-label">Recent Matches</label>
       </div>
-      <div class="player-quick-look__kd col-xs-3">
+      <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
         <div class="player-quick-look__kd__nr">
           <span ng-bind="player.stats.killsDeathsRatio.basic.displayValue || 'N/A'"></span>
         </div>

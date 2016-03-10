@@ -11,6 +11,7 @@ app.service('api', [
     return new function () {
       var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
+        player: 'player/{membershipId}',
         supporterStatus: 'supporterStatus/{membershipId}',
         charitySupporter: 'charitySupporter/{membershipId}',
         lighthouseCount: 'lighthouseCount/{membershipIdArray}',
@@ -35,6 +36,12 @@ app.service('api', [
         return this.get(ENDPOINTS.searchByName, {
           membershipType: membershipType,
           displayName: name
+        });
+      };
+
+      this.getPlayer = function(membershipId) {
+        return this.get(ENDPOINTS.player, {
+          membershipId: membershipId
         });
       };
 

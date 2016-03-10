@@ -26,6 +26,78 @@ angular.module('trialsReportApp')
         });
     };
 
+    var getPlayer = function (player) {
+      return api.getPlayer(
+        player.membershipId
+      ).then(function (result) {
+          var year2;
+          var nonHazard;
+          var nonHazardCharity;
+          var currentWeek;
+          if (result && result.data && result.data[0]) {
+            var data = result.data[0];
+
+            if (data.kills && data.deaths && data.match_count) {
+              var deaths = data.deaths == 0 ? 1 : data.deaths;
+              var kd = (data.kills / deaths).toFixed(2);
+              year2 = {kd: kd, matches: data.match_count};
+            }
+
+            if (data.flawless) {
+              var lighthouseVisits = {yearCount: 0};
+              lighthouseVisits.years = {};
+              _.each(data.flawless.years, function (values, year) {
+                lighthouseVisits.yearCount++;
+                lighthouseVisits.years[year] = {year: year, accountCount: values.count};
+                if (values.characters) {
+                  lighthouseVisits.years[year].characters = values.characters;
+                }
+              });
+
+              if (player) {
+                if (player.hasOwnProperty('lighthouse')) {
+                  angular.extend(player.lighthouse, lighthouseVisits);
+                } else {
+                  player.lighthouse = lighthouseVisits;
+                }
+              }
+            }
+
+            if (data.supporterStatus && data.supporterStatus[0]) {
+              nonHazard = data.supporterStatus;
+            }
+
+            if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
+              nonHazardCharity = data.charitySupporterStatus;
+            }
+
+            if (data.streak) {
+              player.longestStreak = {accountStreak: data.streak.accountStreak};
+              var characters = data.streak.characters;
+              if (characters && characters[player.characterInfo.characterId]) {
+                var character = characters[player.characterInfo.characterId];
+                player.longestStreak.characterStreak = character.characterStreak;
+              }
+            }
+
+            if (data.thisWeek && data.thisWeek[0]) {
+              currentWeek = {
+                percent: +(100 * (data.thisWeek[0].matches - data.thisWeek[0].losses) / data.thisWeek[0].matches).toFixed(0),
+                wins: (data.thisWeek[0].matches - data.thisWeek[0].losses),
+                losses: data.thisWeek[0].losses,
+                matches: data.thisWeek[0].matches,
+                kd: (1 * data.thisWeek[0].kd).toFixed(2)
+              };
+            }
+          }
+          player.year2 = year2;
+          player.nonHazard = nonHazard;
+          player.nonHazardCharity = nonHazardCharity;
+          player.currentWeek = currentWeek;
+          return player;
+        });
+    };
+
     var getGrimoire = function (player) {
       return bungie.getGrimoire(
         player.membershipType,
@@ -42,39 +114,6 @@ angular.module('trialsReportApp')
             player.lighthouse = {grimoire: lighthouse};
           }
           return player;
-        });
-    };
-
-    var getLighthouseCount = function (fireteam) {
-      return api.lighthouseCount(
-        _.pluck(fireteam, 'membershipId')
-      ).then(function (result) {
-          var dfd = $q.defer();
-          _.each(fireteam, function (player) {
-            var lighthouseVisits = {yearCount: 0};
-            if (player && result && result.data) {
-              if (result.data[player.membershipId]) {
-                lighthouseVisits.years = {};
-                _.each(result.data[player.membershipId].years, function (values, year) {
-                  lighthouseVisits.yearCount++;
-                  lighthouseVisits.years[year] = {year: year, accountCount: values.count};
-                  if (values.characters) {
-                    lighthouseVisits.years[year].characters = values.characters;
-                  }
-                });
-              }
-
-              if (player) {
-                if (player.hasOwnProperty('lighthouse')) {
-                  angular.extend(player.lighthouse, lighthouseVisits);
-                } else {
-                  player.lighthouse = lighthouseVisits;
-                }
-              }
-            }
-          });
-          dfd.resolve(fireteam);
-          return dfd.promise;
         });
     };
 
@@ -190,47 +229,6 @@ angular.module('trialsReportApp')
         });
     };
 
-    var checkSupporter = function (player) {
-      return api.checkSupporterStatus(
-        player.membershipId
-      ).then(function (result) {
-          var nonHazard;
-          if (angular.isDefined(result.data)) {
-            nonHazard = result.data;
-          }
-          player.nonHazard = nonHazard;
-          return player;
-        });
-    };
-
-    var checkCharitySupporter = function (player) {
-      return api.checkCharitySupporter(
-        player.membershipId
-      ).then(function (result) {
-          var nonHazardCharity;
-          if (result && result.data && result.data[0]) {
-            nonHazardCharity = result.data[0];
-          }
-          player.nonHazardCharity = nonHazardCharity;
-          return player;
-        });
-    };
-
-    var getCurrentWeek = function (player) {
-      return api.currentWeek(
-        player.membershipId
-      ).then(function (result) {
-          if (result && result.data && result.data[0] && result.data[0].matches && result.data[0].losses) {
-            player.currentWeek = {
-              percent: +(100 * (result.data[0].matches - result.data[0].losses) / result.data[0].matches).toFixed(0),
-              wins: (result.data[0].matches - result.data[0].losses),
-              losses: result.data[0].losses
-            };
-            return player;
-          }
-        });
-    };
-
     var getPlayerAds = function (fireteam) {
       return api.playerAds(
         _.pluck(fireteam, 'membershipId')
@@ -251,11 +249,8 @@ angular.module('trialsReportApp')
 
     return {
       getStats: getStats,
-      getCurrentWeek: getCurrentWeek,
       getGrimoire: getGrimoire,
-      checkSupporter: checkSupporter,
-      checkCharitySupporter: checkCharitySupporter,
-      getLighthouseCount: getLighthouseCount,
+      getPlayer: getPlayer,
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
       weaponStats: weaponStats,
