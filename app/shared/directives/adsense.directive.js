@@ -11,18 +11,18 @@
 
   ngAdSense.controller('AdsenseController', ["SCRIPT_URL", "AdsenseTracker", "$timeout", function (SCRIPT_URL, AdsenseTracker, $timeout) {
 
-    if (!AdsenseTracker.isLoaded) {
-      var s = document.createElement('script');
-      s.src = SCRIPT_URL;
-      document.body.appendChild(s);
-      AdsenseTracker.isLoaded = true;
-    }
-    $timeout(function () {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (ex) {
-      }
-    }, 750);
+    //if (!AdsenseTracker.isLoaded) {
+    //  var s = document.createElement('script');
+    //  s.src = SCRIPT_URL;
+    //  document.body.appendChild(s);
+    //  AdsenseTracker.isLoaded = true;
+    //}
+    //$timeout(function () {
+    //  try {
+    //    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    //  } catch (ex) {
+    //  }
+    //}, 750);
   }]);
 
   ngAdSense.directive('adsense', function () {

@@ -138,8 +138,7 @@
                 $scope.fireteam[0].activities = {lastThree: {}, lastMatches: {}};
               }
               statsFactory.getGrimoire($scope.fireteam[index]);
-              statsFactory.checkSupporter($scope.fireteam[index]);
-              statsFactory.getLighthouseCount($scope.fireteam);
+              statsFactory.getPlayer($scope.fireteam[index]);
               statsFactory.weaponStats($scope.fireteam[index]);
               api.lastWeapons(
                 $scope.fireteam[index].characterInfo.characterId

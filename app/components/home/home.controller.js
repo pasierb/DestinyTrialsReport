@@ -207,7 +207,7 @@
             $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
           });
       } else {
-        $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
+        $scope.gggShow = false;
       }
     };
 
@@ -297,7 +297,6 @@
           var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
 
           guardianggFactory.getTeamElo($scope.fireteam);
-          statsFactory.getLighthouseCount($scope.fireteam);
           //statsFactory.getPlayerAds($scope.fireteam).then(function (result) {
           //  if (!result) {
               api.getRandomAd().then(function (result) {
@@ -321,14 +320,6 @@
                 statsFactory.weaponStats(player);
               }
 
-              api.longestStreak(
-                player.membershipId,
-                player.characterInfo.characterId
-              ).then(function (streak) {
-                  if (streak && streak.data) {
-                    player.longestStreak = streak.data;
-                  }
-                });
               api.lastWeapons(
                 player.characterInfo.characterId
               ).then(function (result) {

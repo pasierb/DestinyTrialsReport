@@ -26,6 +26,58 @@ angular.module('trialsReportApp')
         });
     };
 
+    var getPlayer = function (player) {
+      return api.getPlayer(
+        player.membershipId
+      ).then(function (result) {
+          var nonHazard;
+          var nonHazardCharity;
+          if (result && result.data && result.data[0]) {
+            var data = result.data[0];
+
+            if (data.flawless) {
+              var lighthouseVisits = {yearCount: 0};
+              lighthouseVisits.years = {};
+              _.each(data.flawless.years, function (values, year) {
+                lighthouseVisits.yearCount++;
+                lighthouseVisits.years[year] = {year: year, accountCount: values.count};
+                if (values.characters) {
+                  lighthouseVisits.years[year].characters = values.characters;
+                }
+              });
+
+              if (player) {
+                if (player.hasOwnProperty('lighthouse')) {
+                  angular.extend(player.lighthouse, lighthouseVisits);
+                } else {
+                  player.lighthouse = lighthouseVisits;
+                }
+              }
+            }
+
+            if (data.supporterStatus && data.supporterStatus[0]) {
+              nonHazard = data.supporterStatus;
+            }
+
+            if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
+              nonHazardCharity = data.charitySupporterStatus;
+            }
+
+            if (data.streak) {
+              player.longestStreak = {accountStreak: data.streak.accountStreak};
+              var characters = data.streak.characters;
+              if (characters && characters[player.characterInfo.characterId]) {
+                var character = characters[player.characterInfo.characterId];
+                player.longestStreak.characterStreak = character.characterStreak;
+              }
+            }
+          }
+          player.nonHazard = nonHazard;
+          player.nonHazardCharity = nonHazardCharity;
+          return player;
+        });
+    };
+
     var getGrimoire = function (player) {
       return bungie.getGrimoire(
         player.membershipType,
@@ -42,39 +94,6 @@ angular.module('trialsReportApp')
             player.lighthouse = {grimoire: lighthouse};
           }
           return player;
-        });
-    };
-
-    var getLighthouseCount = function (fireteam) {
-      return api.lighthouseCount(
-        _.pluck(fireteam, 'membershipId')
-      ).then(function (result) {
-          var dfd = $q.defer();
-          _.each(fireteam, function (player) {
-            var lighthouseVisits = {yearCount: 0};
-            if (player && result && result.data) {
-              if (result.data[player.membershipId]) {
-                lighthouseVisits.years = {};
-                _.each(result.data[player.membershipId].years, function (values, year) {
-                  lighthouseVisits.yearCount++;
-                  lighthouseVisits.years[year] = {year: year, accountCount: values.count};
-                  if (values.characters) {
-                    lighthouseVisits.years[year].characters = values.characters;
-                  }
-                });
-              }
-
-              if (player) {
-                if (player.hasOwnProperty('lighthouse')) {
-                  angular.extend(player.lighthouse, lighthouseVisits);
-                } else {
-                  player.lighthouse = lighthouseVisits;
-                }
-              }
-            }
-          });
-          dfd.resolve(fireteam);
-          return dfd.promise;
         });
     };
 
@@ -190,32 +209,6 @@ angular.module('trialsReportApp')
         });
     };
 
-    var checkSupporter = function (player) {
-      return api.checkSupporterStatus(
-        player.membershipId
-      ).then(function (result) {
-          var nonHazard;
-          if (angular.isDefined(result.data)) {
-            nonHazard = result.data;
-          }
-          player.nonHazard = nonHazard;
-          return player;
-        });
-    };
-
-    var checkCharitySupporter = function (player) {
-      return api.checkCharitySupporter(
-        player.membershipId
-      ).then(function (result) {
-          var nonHazardCharity;
-          if (result && result.data && result.data[0]) {
-            nonHazardCharity = result.data[0];
-          }
-          player.nonHazardCharity = nonHazardCharity;
-          return player;
-        });
-    };
-
     var getCurrentWeek = function (player) {
       return api.currentWeek(
         player.membershipId
@@ -253,9 +246,7 @@ angular.module('trialsReportApp')
       getStats: getStats,
       getCurrentWeek: getCurrentWeek,
       getGrimoire: getGrimoire,
-      checkSupporter: checkSupporter,
-      checkCharitySupporter: checkCharitySupporter,
-      getLighthouseCount: getLighthouseCount,
+      getPlayer: getPlayer,
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
       weaponStats: weaponStats,
