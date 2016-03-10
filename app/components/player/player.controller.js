@@ -9,6 +9,7 @@ angular.module('trialsReportApp')
     statsFactory.getGrimoire($scope.player);
     statsFactory.getCurrentWeek($scope.player);
     statsFactory.checkSupporter($scope.player);
+    statsFactory.checkCharitySupporter($scope.player);
 
     $scope.getLastMatch = function (player) {
       return matchesFactory.getLastThree(player)

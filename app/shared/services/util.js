@@ -24,7 +24,7 @@ app.service('util', [
   }
 ])
   .factory('RequestFallback', ['$http', '$q', 'util', function($http, $q, util) {
-    return function(BASE_URL, endpoint, tokens, fallback) {
+    return function(BASE_URL, endpoint, tokens) {
       var MAX_REQUESTS = 3,
         counter = 1,
         results = $q.defer();
@@ -35,11 +35,9 @@ app.service('util', [
             results.resolve({data: response})
           })
           .error(function() {
-            if (fallback) {
-              request(util.buildUrl(fallback, tokens));
-            } else {
-              results.reject("Could not load");
-            }
+            var rand = _.random(3, 26);
+            var fallback = '//trials-api' + rand + '.herokuapp.com/Platform/Destiny/';
+            request(fallback + util.buildUrl(endpoint, tokens));
             //if (counter < MAX_REQUESTS) {
             //  request();
             //  counter++;
