@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="weapon col-xs-12" ng-repeat="weapon in weapons track by $index" ng-if="weapons" highlighter="weapon.definition.name">
+  <div class="weapon col-xs-12" ng-repeat="weapon in weapons track by $index" ng-if="weapons">
     <div class="weapon__img">
       <span class="weapon__damage" ng-if="weapon.damage" ng-bind="weapon.damage"></span>
       <img class="img-responsive"
