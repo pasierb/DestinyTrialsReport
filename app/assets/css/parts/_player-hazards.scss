@@ -42,9 +42,10 @@
   color: $success;
 }
 
-.player-overview .player-hazard--donator,
-.player-overview .player-hazard--developer {
-  margin-left: 1em;
+.player-hazard--charity1 {
+  background: white;
+  text-shadow: none;
+  color: #651FFF;
 }
 
 .player-hazard--none {

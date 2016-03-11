@@ -12,6 +12,7 @@ app.service('api', [
       var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
         supporterStatus: 'supporterStatus/{membershipId}',
+        charitySupporter: 'charitySupporter/{membershipId}',
         lighthouseCount: 'lighthouseCount/{membershipIdArray}',
         opponents: 'getOpponents/{membershipId}',
         streak: 'longestStreak/{membershipId}/{characterId}',
@@ -39,6 +40,12 @@ app.service('api', [
 
       this.checkSupporterStatus = function(membershipId) {
         return this.get(ENDPOINTS.supporterStatus, {
+          membershipId: membershipId
+        });
+      };
+
+      this.checkCharitySupporter = function(membershipId) {
+        return this.get(ENDPOINTS.charitySupporter, {
           membershipId: membershipId
         });
       };
