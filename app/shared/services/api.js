@@ -137,9 +137,9 @@ app.service('api', [
         return this.get(ENDPOINTS.getRandomAd, {});
       };
 
-      this.get = function(endpoint, tokens, fallback) {
-        return RequestFallback(BASE_URL, endpoint, tokens, fallback);
-      }
+      this.get = function(endpoint, tokens) {
+        return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
+      };
     };
   }
 ]);
