@@ -292,13 +292,13 @@
             }
           }
 
-          var intervalPeriod = 30000;
-          $interval(function () {
-            //if ($scope.hideStats) {
-              $scope.refreshInventory($scope.fireteam);
-              //$interval.cancel(autoRefresh);
-            //}
-          }, intervalPeriod);
+          //var intervalPeriod = 30000;
+          //$interval(function () {
+          //  //if ($scope.hideStats) {
+          //    $scope.refreshInventory($scope.fireteam);
+          //    //$interval.cancel(autoRefresh);
+          //  //}
+          //}, intervalPeriod);
 
         }
       } else {
