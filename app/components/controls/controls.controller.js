@@ -79,8 +79,12 @@
       }
     }
 
-    $scope.searchMainPlayerbyName = function (name) {
+    $scope.searchMainPlayerbyName = function (name, membershipType) {
       var platform = $scope.platformValue ? 2 : 1;
+      if (membershipType) {
+        platform = membershipType;
+        $scope.platformValue = (platform == 2);
+      }
       if (angular.isDefined(name)) {
         if (getSubdomain()) {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
@@ -156,67 +160,6 @@
             });
           }
         });
-    };
-
-    $scope.searchedMaps = {};
-    var wait;
-
-    $scope.resetMapVars = function() {
-      $scope.direction = 'center';
-      $scope.mapIndex = 0;
-      $scope.showNext = false;
-      $scope.showPrev = true;
-    };
-
-    $scope.startAnimation = function() {
-      if (angular.isDefined(wait)) {
-        $interval.cancel(wait);
-        wait = undefined;
-      }
-    };
-
-    $scope.toggleDirection = function (value) {
-      if ( angular.isDefined(wait) ) return;
-
-      wait = $interval(function() {
-        if ($scope.direction === 'center') {
-          $scope.startAnimation();
-        }
-      }, 100);
-
-      var offset = (value === 'left' ? -1 : 1);
-      $scope.mapIndex = ($scope.mapIndex + offset);
-      var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
-      var nextIndex = newIndex + 1;
-      $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
-      $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
-      $scope.direction = value;
-      $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
-      $timeout(function() {
-        $scope.direction = 'center';
-      }, 800);
-    };
-
-    $scope.loadMapInfo = function (referenceId) {
-      if ($scope.searchedMaps[referenceId]) {
-        var map = $scope.searchedMaps[referenceId];
-        $scope.weaponSummary = map.weaponSummary;
-        $scope.weaponTotals = map.weaponTotals;
-        $scope.mapHistory = map.mapHistory;
-        $scope.mapInfo = map.mapInfo;
-      } else {
-        return statsFactory.mapStats(referenceId)
-          .then(function (mapInfo) {
-            $scope.searchedMaps[referenceId] = mapInfo;
-            $scope.weaponSummary = mapInfo.weaponSummary;
-            $scope.weaponTotals = mapInfo.weaponTotals;
-            $scope.mapHistory = mapInfo.mapHistory;
-            $scope.mapInfo = mapInfo.mapInfo;
-            $scope.mapInfo.weekText = getRelativeWeekText(moment.utc(mapInfo.mapInfo.start_date), $scope.trialsInProgress, true);
-            $scope.mapInfo.timeAgo = moment.utc(mapInfo.mapInfo.end_date).fromNow();
-          }
-        );
-      }
     };
   }
 })();

@@ -96,7 +96,8 @@ var DestinyCrucibleMapDefinition = {
   },
   "3602734434": {
     "name": "Bannerfall",
-    "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/bannerfall.jpg"
+    "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/bannerfall.jpg",
+    "mapImage": "/assets/img/maps/bannerfall.jpg"
   },
   "3817155567": {
     "name": "Twilight Gap",

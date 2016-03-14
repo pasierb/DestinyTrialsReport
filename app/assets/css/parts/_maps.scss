@@ -1,25 +1,9 @@
-.maps__specific {
-  padding: 1em;
-  background: linear-gradient( 180deg, $maps-background, darken($maps-background, 5%));
-  border-bottom: 1px solid darken($maps-background, 20%);
+.maps {
+  position: relative;
+  z-index: 1;
+  transition: transform ease-in-out .3s;
 
-  .col-xs-12:first-child {
-    .stat-row__header {
-      margin-top: 0;
-    }
-  }
-
-  .stat-row__header {
-    font-size: .9em;
-  }
-}
-
-.maps__totals {
-  padding: 1em;
-  border-top: 1px solid lighten($maps-background, 20%);
-  background: linear-gradient( 180deg, darken($maps-background, 5%), white);
-
-  .stat-row__header {
-    margin-top: 0;
+  &.is-switching {
+    transform: translate3d(120vw, 0, 0);
   }
 }

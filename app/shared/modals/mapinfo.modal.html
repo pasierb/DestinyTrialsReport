@@ -10,10 +10,10 @@
           <div class="modal-hero__title" ng-bind="DestinyCrucibleMapDefinition[mapInfo.referenceId].name"></div>
           <div class="modal-hero__label" ng-bind="mapInfo.weekText"></div>
         </div>
-        <!--<div class="modal-stats">-->
-          <!--<div class="modal-hero__stats" ng-bind="mapInfo.timeAgo"></div>-->
-          <!--<div class="modal-hero__description" ng-bind="trialsInProgress ? 'Trials Ends' : 'Last time in Trials'"></div>-->
-        <!--</div>-->
+        <div class="modal-stats">
+          <div class="modal-hero__stats" ng-bind="mapInfo.timeAgo"></div>
+          <div class="modal-hero__description" ng-bind="trialsInProgress ? 'Trials Ends' : 'Last time in Trials'"></div>
+        </div>
         <div class="modal-stats">
           <div class="modal-hero__stats" ng-bind="mapInfo.lighthouse | number"></div>
           <div class="modal-hero__description">Flawless runs</div>
@@ -64,8 +64,7 @@
                   <span ng-bind="weapon.killPercentage | number:2"></span>%
                 </div>
                 <div class="col-xs-3 col-sm-4 stat" ng-class="{'success': weapon.diffPercentage > 0, 'fail': weapon.diffPercentage < 0}">
-                  <i class="material-icons" ng-bind="weapon.diffPercentage > 0 ? '&#xE5CE;' : '&#xE5CF;'"></i>
-                  <span ng-bind="weapon.diffPercentage | number:2"></span>%
+                  <i class="material-icons"> {{weapon.diffPercentage > 0 ? '&#xE5CE;' : '&#xE5CF;'}} </i> <span ng-bind="weapon.diffPercentage | number:2"></span>%
                 </div>
               </div>
               <hr class="visible-xs" ng-if="$index === 0">
@@ -89,7 +88,7 @@
           </div>
         </div>-->
         <hr>
-        <div class="faded text-center">Weapon usage during Trials of Osiris on <span ng-bind="DestinyCrucibleMapDefinition[mapInfo.referenceId].name || 'this map'"></span>, compared to all maps</div>
+        <div class="faded text-center">Weapon usage during Trials of Osiris on <span ng-bind="DestinyCrucibleMapDefinition[mapInfo.referenceId].name"></span>, compared to all maps</div>
         <!--<hr>-->
         <!--<div class="row">-->
           <!--<div class="col-xs-5 stat">-->

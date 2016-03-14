@@ -1,25 +1,68 @@
 <div class="home__content">
   <article class="home__main">
-    <div class="block blog-post shadow-z-1">
-      <div class="modal-hero blog-image" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
-        <div class="w-100">
-          <div class="modal-hero__title" ng-bind="currentMap.name"></div>
-          <div class="modal-hero__label" ng-bind="currentMapInfo.mapInfo.weekText"></div>
+    <div class="maps block blog-post shadow-z-1 {{mapInfoAnimClass}}">
+      <div class="modal-hero blog-image" ng-style="{'background-image':'url(' + currentMapInfo.pgcrImage + ')'}">
+        <div class="modal-hero__header">
+          <h2 class="modal-hero__title" ng-bind="currentMapInfo.name"></h2>
+          <p class="modal-hero__description stat" ng-bind="currentMapInfo.weekText"></p>
         </div>
-        <div class="modal-stats">
-          <div class="modal-hero__stats" ng-bind="currentMapInfo.mapInfo.lighthouse | number"></div>
-          <div class="modal-hero__description">Flawless runs</div>
+        <div class="modal-hero__switch">
+          <div class="modal-hero__switch__btns">
+            <a href="#" ng-style="{'opacity': showPrev ? '1' : '.2' }" ng-click="toggleDirection('left')"><i class="material-icons">&#xE5CB;</i></a>
+            <a href="#" ng-style="{'opacity': showNext ? '1' : '.2' }" ng-click="toggleDirection('right')"><i class="material-icons">&#xE5CC;</i></a>
+          </div>
+          <label>Other weeks</label>
         </div>
       </div>
-      <div class="blog-post__content">
-        <div class="row" ng-if="currentMapInfo">
-          <div class="faded text-center">
-            Weapon usage during Trials of Osiris on
-            <span ng-bind="currentMap.name || 'this map'"></span>, compared to all maps
+      <div class="blog-post__content" ng-if="currentMapInfo">
+        <div class="row">
+          <div class="col-xs-6 col-md-3 stat">
+            <span ng-bind="currentMapInfo.lighthouse | number"></span>
+            <label>Flawless runs</label>
           </div>
-          <br/>
-
-          <div class="col-xs-12 col-sm-5" ng-repeat="(key, weapons) in currentMapInfo.weaponSummary track by $index"
+          <div class="col-xs-6 col-md-3 stat">
+            <span ng-bind="currentMapInfo.players | number"></span>
+            <label>Guardians participated</label>
+          </div>
+          <div class="col-xs-6 col-md-3 stat">
+            <span ng-bind="currentMapInfo.matches | number"></span>
+            <label>Total matches</label>
+          </div>
+          <div class="col-xs-6 col-md-3 stat">
+            <span ng-bind="currentMapInfo.kills | number"></span>
+            <label>Total kills</label>
+          </div>
+        </div>
+        <hr ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
+        <div class="row" ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Info
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.heatmapImage"
+                    data-template-url="shared/modals/heatmap.modal.html" bs-modal>
+              Heatmap
+            </button>
+            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.mapImage"
+                    data-template-url="shared/modals/map.modal.html" bs-modal>
+              Map Overview
+            </button>
+          </div>
+        </div>
+        <hr>
+        <div class="row" ng-if="currentMapInfo">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Weapon usage on this map
+            </h3>
+            <span
+               data-content="{{'Weapon usage during Trials of Osiris on ' + (currentMap.name || 'this map') + ' compared to all maps'}}" bs-popover>
+              <i class="material-icons icon--small info">&#xE8FD;</i>
+            </span>
+          </div>
+          <div class="col-xs-12 col-sm-4" ng-repeat="(key, weapons) in weaponSummary track by $index"
                ng-class="{'col-sm-offset-1': $index > 0}">
             <div class="top-weapons--map">
               <div class="row">
@@ -48,155 +91,70 @@
                   <span ng-bind="weapon.diffPercentage | number:2"></span>%
                 </div>
               </div>
-              <hr class="visible-xs" ng-if="$index === 0">
+              <hr class="hr--minor visible-xs" ng-if="$index === 0">
             </div>
           </div>
         </div>
         <hr>
-        <div class="block__title block__title--lighthouse">
-          <h2>First to reach <span class="highlight">the lighthouse</span></h2>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Top weapons <span ng-bind="currentMapInfo.weekText"></span>
+            </h3>
+            <a
+              href="http://guardian.gg"
+              target="_blank"
+              data-content="Kindly provided by Guardian.gg. Click here to head over there for the complete list and a lot more cool stats." bs-popover>
+              <i class="material-icons icon--small info">&#xE148;</i>
+            </a>
+          </div>
+          <div class="col-xs-12 col-sm-5" ng-repeat="type in [gggWeapons[platformNumeric].primary,
+                                     gggWeapons[platformNumeric].special] track by $index">
+            <div class="row top-weapon" ng-repeat="weapon in type track by $index" ng-if="$index < 3">
+              <div class="col-xs-6 col-sm-7 last-weapon-weapon__descr">
+                <img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net/' + weapon.icon}}" alt="{{weapon.name}}">
+                <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+              </div>
+              <div class="col-xs-6 col-sm-5 stat">
+                <span ng-bind="weapon.kills | number:2"></span>%
+              </div>
+            </div>
+            <hr class="hr--minor visible-xs" ng-if="$index === 0">
+          </div>
         </div>
-        <div class="row first-in-lighthouse__container">
-          <div class="col-md-12 p-0 m-0">
-            <div class="first-in-lighthouse col-md-4 m-0 p-0" ng-repeat="entry in lighthouseLeaderboard track by $index"
-                 ng-if="$index < 3" ng-class="{'shadow--lighthouse__middle': $index == 1}">
-              <div class="first-in-lighthouse__label" ng-style="{'background-image':'url(' + entry.map + ')'}">
-                <label ng-bind="entry.weekText"></label>
-              </div>
-              <div class="first-in-lighthouse__content">
-                <div class="stat first-in-lighthouse__players">
-                  <span ng-repeat="player in entry.players track by $index">
-                    <a ng-href="https://my.destinytrialsreport.com/{{$parent.entry.platform === 1 ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
-                  </span>
-                  <label>Player<span ng-if="entry.players.length > 1">s</span></label>
-                </div>
-                <div class="stat first-in-lighthouse__stats">
-                  <p ng-if="entry.platform === 1">
-                    <img src="assets/img/xbox.svg" alt="Xbox">
-                  </p>
-                  <p ng-if="entry.platform === 2">
-                    <img src="assets/img/ps.svg" alt="PlayStation">
-                  </p>
-                  <!--<label>Platform</label>-->
-                  <span ng-bind="entry.time"></span>
-                  <label>Time needed</label>
-                </div>
-              </div>
+        <hr>
+        <div class="row" ng-init="entry = lighthouseLeaderboard[0]">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              First players to reach the lighthouse
+            </h3>
+          </div>
+          <div class="col-xs-5 col-sm-3 stat first-in-lighthouse__players">
+            <span ng-repeat="player in lighthouseLeaderboard[0].players track by $index">
+              <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard[0].platform === 1 ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
+            </span>
+            <label>Player<span ng-if="lighthouseLeaderboard[0].players.length > 1">s</span></label>
+          </div>
+          <div class="col-xs-4 col-sm-3 stat first-in-lighthouse__time">
+            <span ng-bind="lighthouseLeaderboard[0].time"></span>
+            <label>Time needed</label>
+          </div>
+          <div class="col-xs-2 col-sm-3 first-in-lighthouse__stats">
+            <div class="stat">
+              <span ng-if="lighthouseLeaderboard[0].platform === 1">
+                <img src="assets/img/xbox.svg" alt="Xbox">
+              </span>
+              <span ng-if="lighthouseLeaderboard[0].platform === 2">
+                <img src="assets/img/ps.svg" alt="PlayStation">
+              </span>
+              <label>Platform</label>
             </div>
           </div>
         </div>
       </div>
-      <div class="block__footer block__footer--ggg block__footer--twitter">
-        <a href="https://twitter.com/TrialsReport" target="_blank"
-           analytics-on analytics-event="Click" analytics-category="Twitter Blog">
-          <img src="/assets/img/twitter.svg">
-        </a>
-        <label>
-          <strong>Use Twitter?</strong><br>
-          We have good news! We're now on Twitter as <a href="https://twitter.com/TrialsReport">@TrialsReport</a>.
-          Please follow us for updates
-          on new site features and all things Destiny.
-        </label>
-      </div>
-      <!--<div class="block__footer block__footer&#45;&#45;ad">-->
-      <!--<strong>If you come across any issue, error, or just want to send us a suggestion you can-->
-      <!--<a href="mailto:destinytrialsreport@gmail.com" target="_top">email</a> us or open an issue on-->
-      <!--<a href="https://github.com/DestinyTrialsReport/DestinyTrialsReport" target="_top">GitHub</a>.-->
-      <!--</strong>-->
-      <!--</div>-->
     </div>
   </article>
-  <!--<div class="home__aside" ng-if="lighthouseLeaderboard">-->
-  <!--<article class="block block&#45;&#45;no-padding shadow-z-1">-->
-  <!--<div class="block__title">-->
-  <!--<h2>-->
-  <!--First to reach <span class="highlight">the lighthouse</span>-->
-  <!--</h2>-->
-  <!--</div>-->
-  <!--<div class="first-in-lighthouse" ng-repeat="entry in lighthouseLeaderboard track by $index">-->
-  <!--<div class="first-in-lighthouse__label" ng-style="{'background-image':'url(' + entry.map + ')'}">-->
-  <!--<label ng-bind="entry.weekText"></label>-->
-  <!--</div>-->
-  <!--<div class="first-in-lighthouse__content">-->
-  <!--<div class="stat first-in-lighthouse__players">-->
-  <!--<span ng-repeat="player in entry.players track by $index">-->
-  <!--<a ng-href="https://my.destinytrialsreport.com/{{$parent.entry.platform === 1 ? 'xbox' : 'ps'}}/{{player}}"-->
-  <!--ng-bind="player" target="_blank">-->
-  <!--</a>-->
-  <!--</span>-->
-  <!--<label>Player<span ng-if="entry.players.length > 1">s</span></label>-->
-  <!--</div>-->
-  <!--<div class="stat first-in-lighthouse__stats">-->
-  <!--<span ng-if="entry.platform === 1">-->
-  <!--<img src="assets/img/xbox.svg" alt="Xbox">-->
-  <!--</span>-->
-  <!--<span ng-if="entry.platform === 2">-->
-  <!--<img src="assets/img/ps.svg" alt="PlayStation">-->
-  <!--</span>-->
-  <!--<label>Platform</label>-->
-  <!--<span ng-bind="entry.time"></span>-->
-  <!--<label>Time needed</label>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</article>-->
-  <!--</div>-->
-  <div class="home__aside" ng-if="gggShow">
-    <article class="block top-weapons shadow-z-1">
-      <div class="block__title">
-        <figure>
-          <img ng-src="{{platformValue ? 'assets/img/ps.svg' : 'assets/img/xbox.svg'}}">
-        </figure>
-        <h2>
-          <span class="highlight">Top weapons</span>
-          <span ng-bind="(trialsInProgress ? 'this' : 'last') + ' week'"></span>
-        </h2>
-      </div>
-      <div class="top-weapons__type" ng-repeat="type in [gggWeapons[platformNumeric].primary,
-                                 gggWeapons[platformNumeric].special,
-                                 gggWeapons[platformNumeric].heavy] track by $index">
-        <div class="row">
-          <div class="col-xs-6">
-            <label class="top-weapons__label" ng-bind="getWeaponTypeByIndex($index)"></label>
-          </div>
-          <div class="col-xs-3 stat">
-            <label>Kills</label>
-          </div>
-          <div class="col-xs-3 stat">
-            <label>Headshots</label>
-          </div>
-        </div>
-        <div class="row top-weapon" ng-repeat="weapon in type track by $index" ng-if="$index < 3">
-          <div class="col-xs-6 last-weapon-weapon__descr">
-            <img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net/' + weapon.icon}}"
-                 alt="{{weapon.name}}">
-            <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
-          </div>
-          <div class="col-xs-3 stat">
-            <span ng-bind="weapon.kills | number:2"></span>%
-          </div>
-          <div class="col-xs-3 stat">
-            <span ng-if="weapon.precisionKills >= 0.01">
-              <span ng-bind="weapon.precisionKills | number:2"></span>%
-            </span>
-            <span ng-if="weapon.precisionKills < 0.01">N/A</span>
-          </div>
-        </div>
-      </div>
-      <div class="block__footer block__footer--ggg">
-        <label>Powered by</label><br>
-        <a href="https://guardian.gg" target="_blank"
-           analytics-on analytics-event="Click" analytics-category="GGG Powered By">
-          <img src="/assets/img/ggg-logo.png">
-        </a>
-      </div>
-      <div class="block__link">
-        <a class="btn"
-           ng-href="https://guardian.gg/en/weapon-stats?platform={{platformNumeric}}&mode=14&start={{trialsDates.begin}}&end={{trialsDates.end}}"
-           target="_blank" analytics-on analytics-event="Click" analytics-category="GGG Show More">
-          Visit them for a lot more stats <i class="material-icons icon--small">&#xE5CC;</i>
-        </a>
-      </div>
-    </article>
+  <div class="home__aside">
+    <div ng-include="'components/home/aside.partial.html'"></div>
   </div>
 </div>

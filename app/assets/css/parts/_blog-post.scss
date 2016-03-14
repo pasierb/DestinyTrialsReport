@@ -1,12 +1,16 @@
 .blog-post {
   display: flex;
   flex-direction: column;
-  padding-bottom: 0;
 }
 
 .blog-post__content {
   flex-shrink: 0;
   flex-grow: 1;
+}
+
+.blog-post__img {
+  min-height: 20rem;
+  background-size: cover;
 }
 
 .blog-post__meta {
