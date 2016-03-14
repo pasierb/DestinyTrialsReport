@@ -28,7 +28,8 @@ app.service('api', [
         currentWeek: 'currentWeek/{membershipId}',
         searchByName: 'searchByName/{membershipType}/{displayName}',
         getRandomAd: 'getRandomAd',
-        playerAds: 'playerAds/{membershipIds}'
+        playerAds: 'playerAds/{membershipIds}',
+        searchName: 'search/name/{name}'
       };
 
       this.searchByName = function(membershipType, displayName) {
@@ -36,6 +37,13 @@ app.service('api', [
         return this.get(ENDPOINTS.searchByName, {
           membershipType: membershipType,
           displayName: name
+        });
+      };
+
+      this.searchName = function(name) {
+        name = name.replace(/[^\w\s\-]/g, '');
+        return this.get(ENDPOINTS.searchName, {
+          name: name
         });
       };
 

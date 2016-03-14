@@ -104,6 +104,23 @@
       $scope.$storage.hideStats = $scope.hideStats;
     };
 
+    $scope.getPlatformName = function (membershipType) {
+      if (membershipType) {
+        return membershipType == 2 ? 'PSN' : 'XBL';
+      }
+    };
+
+    $scope.searchName = function (name) {
+      if (name && name.length > 3) {
+        $scope.playerNames = {};
+        return api.searchName(
+          name
+        ).then(function (result) {
+            $scope.playerNames = result.data;
+          });
+      }
+    };
+
     $scope.suggestRecentPlayers = function () {
       if (angular.isUndefined($scope.recentPlayers)) {
         $scope.recentPlayers = {};

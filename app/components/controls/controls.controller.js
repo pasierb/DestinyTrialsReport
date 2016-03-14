@@ -79,8 +79,12 @@
       }
     }
 
-    $scope.searchMainPlayerbyName = function (name) {
+    $scope.searchMainPlayerbyName = function (name, membershipType) {
       var platform = $scope.platformValue ? 2 : 1;
+      if (membershipType) {
+        platform = membershipType;
+        $scope.platformValue = (platform == 2);
+      }
       if (angular.isDefined(name)) {
         if (getSubdomain()) {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
