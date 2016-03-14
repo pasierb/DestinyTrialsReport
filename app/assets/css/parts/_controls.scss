@@ -36,3 +36,15 @@ header {
     content: "Please consider turning off your ad blocker, it's one of our ways to keep this site running. Plus, you are missing out on some fabulous deals!!!"
   }
 }
+
+@media all and (max-width: 320px) {
+  .ad {
+    padding: 0;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 380px) {
+  .ad {
+    padding: .5em;
+  }
+}

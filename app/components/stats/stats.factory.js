@@ -30,10 +30,18 @@ angular.module('trialsReportApp')
       return api.getPlayer(
         player.membershipId
       ).then(function (result) {
+          var year2;
           var nonHazard;
           var nonHazardCharity;
+          var currentWeek;
           if (result && result.data && result.data[0]) {
             var data = result.data[0];
+
+            if (data.kills && data.deaths && data.match_count) {
+              var deaths = data.deaths == 0 ? 1 : data.deaths;
+              var kd = (data.kills / deaths).toFixed(2);
+              year2 = {kd: kd, matches: data.match_count};
+            }
 
             if (data.flawless) {
               var lighthouseVisits = {yearCount: 0};
@@ -71,9 +79,21 @@ angular.module('trialsReportApp')
                 player.longestStreak.characterStreak = character.characterStreak;
               }
             }
+
+            if (data.thisWeek && data.thisWeek[0]) {
+              currentWeek = {
+                percent: +(100 * (data.thisWeek[0].matches - data.thisWeek[0].losses) / data.thisWeek[0].matches).toFixed(0),
+                wins: (data.thisWeek[0].matches - data.thisWeek[0].losses),
+                losses: data.thisWeek[0].losses,
+                matches: data.thisWeek[0].matches,
+                kd: (1 * data.thisWeek[0].kd).toFixed(2)
+              };
+            }
           }
+          player.year2 = year2;
           player.nonHazard = nonHazard;
           player.nonHazardCharity = nonHazardCharity;
+          player.currentWeek = currentWeek;
           return player;
         });
     };
@@ -209,21 +229,6 @@ angular.module('trialsReportApp')
         });
     };
 
-    var getCurrentWeek = function (player) {
-      return api.currentWeek(
-        player.membershipId
-      ).then(function (result) {
-          if (result && result.data && result.data[0] && result.data[0].matches && result.data[0].losses) {
-            player.currentWeek = {
-              percent: +(100 * (result.data[0].matches - result.data[0].losses) / result.data[0].matches).toFixed(0),
-              wins: (result.data[0].matches - result.data[0].losses),
-              losses: result.data[0].losses
-            };
-            return player;
-          }
-        });
-    };
-
     var getPlayerAds = function (fireteam) {
       return api.playerAds(
         _.pluck(fireteam, 'membershipId')
@@ -244,7 +249,6 @@ angular.module('trialsReportApp')
 
     return {
       getStats: getStats,
-      getCurrentWeek: getCurrentWeek,
       getGrimoire: getGrimoire,
       getPlayer: getPlayer,
       getTopWeapons: getTopWeapons,

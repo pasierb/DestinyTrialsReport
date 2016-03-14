@@ -152,6 +152,23 @@
       $scope.$storage.hideStats = $scope.hideStats;
     };
 
+    $scope.getPlatformName = function (membershipType) {
+      if (membershipType) {
+        return membershipType == 2 ? 'PSN' : 'XBL';
+      }
+    };
+
+    $scope.searchName = function (name) {
+      if (name && name.length > 3) {
+        $scope.playerNames = {};
+        return api.searchName(
+          name
+        ).then(function (result) {
+            $scope.playerNames = result.data;
+          });
+      }
+    };
+
     $scope.suggestRecentPlayers = function () {
       if (angular.isUndefined($scope.recentPlayers)) {
         $scope.recentPlayers = {};
@@ -347,13 +364,13 @@
             }
           }
 
-          var intervalPeriod = 30000;
-          $interval(function () {
-            //if ($scope.hideStats) {
-              $scope.refreshInventory($scope.fireteam);
-              //$interval.cancel(autoRefresh);
-            //}
-          }, intervalPeriod);
+          //var intervalPeriod = 30000;
+          //$interval(function () {
+          //  //if ($scope.hideStats) {
+          //    $scope.refreshInventory($scope.fireteam);
+          //    //$interval.cancel(autoRefresh);
+          //  //}
+          //}, intervalPeriod);
 
         }
       } else {
