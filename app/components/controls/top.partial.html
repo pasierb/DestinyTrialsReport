@@ -1,16 +1,21 @@
-<div class="title-bar">
-  <div class="title-bar__title">
-    <a href="/" target="_self">
-      <span ng-if="subdomain" class="highlight">my</span>D<span class="hide-on-small">estiny</span><span class="highlight">T<span class="hide-on-small">rials</span></span>R<span class="hide-on-small">eport</span>
-    </a>
-  </div>
-  <div class="platform-toggle">
-    <div class="togglebutton">
-      <label class="platform-toggle__name" ng-class="{'is-active':platformValue}" ng-click="platformValue = setPlatform(true)"><img src="assets/img/ps.svg" alt="PlayStation"></label>
-      <label class="platform-toggle__btn">
-        <input type="checkbox" ng-click="togglePlatform()" ng-model="platformValue" ng-true-value="false" ng-false-value="true">
-      </label>
-      <label class="platform-toggle__name" ng-class="{'is-active':!platformValue}" ng-click="platformValue = setPlatform(false)"><img src="assets/img/xbox.svg" alt="Xbox"></label>
+<div class="title-bar" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
+  <!--<div class="title-bar__map">
+    <span ng-bind="currentMapInfo.weekText"></span>'s map is <span class="highlight">Asylum</span>
+  </div>-->
+  <div class="title-bar__content">
+    <div class="title-bar__title">
+      <a href="/" target="_self">
+        <span ng-if="subdomain" class="highlight">my</span>D<span class="hide-on-small">estiny</span><span class="highlight">T<span class="hide-on-small">rials</span></span>R<span class="hide-on-small">eport</span>
+      </a>
+    </div>
+    <div class="platform-toggle">
+      <div class="togglebutton">
+        <label class="platform-toggle__name" ng-class="{'is-active':platformValue}" ng-click="platformValue = setPlatform(true)"><img src="assets/img/ps.svg" alt="PlayStation"></label>
+        <label class="platform-toggle__btn">
+          <input type="checkbox" ng-click="togglePlatform()" ng-model="platformValue" ng-true-value="false" ng-false-value="true">
+        </label>
+        <label class="platform-toggle__name" ng-class="{'is-active':!platformValue}" ng-click="platformValue = setPlatform(false)"><img src="assets/img/xbox.svg" alt="Xbox"></label>
+      </div>
     </div>
   </div>
 </div>
@@ -67,13 +72,6 @@
           </div>
         </form>
       </div>
-    </div>
-  </div>
-</div>
-<div class="current-map shadow-z-2" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
-  <div class="current-map__content">
-    <div class="current-map__title">
-      <span ng-bind="currentMap.name"></span>
     </div>
   </div>
 </div>
