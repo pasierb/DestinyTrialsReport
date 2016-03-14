@@ -18,12 +18,17 @@
 	text-transform: uppercase;
 	font-size: 1.1em;
 
-	background-color: darken($home-aside-color, 20%);
   color: transparent;
   text-shadow: 0px 2px 3px rgba(255,255,255,0.9);
-  -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
+
+	 color: $home-aside-color;
+	 -webkit-text-fill-color: transparent;
+	 background: -webkit-linear-gradient(darken($home-aside-color, 20%), darken($home-aside-color, 20%));
+	 background: -o-linear-gradient(darken($home-aside-color, 20%), darken($home-aside-color, 20%));
+	 -webkit-background-clip: text;
+   -webkit-background-clip: text;
+      -moz-background-clip: text;
+           background-clip: text;
 
 	margin-bottom: 1.5rem;
 }
@@ -77,12 +82,14 @@
 	font-weight: normal;
 	font-size: 1.3em;
 
-	background-color: darken($home-aside-color, 20%);
-  color: transparent;
   text-shadow: 0px 2px 3px rgba(255,255,255,0.9);
-  -webkit-background-clip: text;
-     -moz-background-clip: text;
-          background-clip: text;
+	color: $home-aside-color;
+	-webkit-text-fill-color: transparent;
+	background: -webkit-linear-gradient(darken($home-aside-color, 20%), darken($home-aside-color, 20%));
+	background: -o-linear-gradient(darken($home-aside-color, 20%), darken($home-aside-color, 20%));
+	-webkit-background-clip: text;
+	   -moz-background-clip: text;
+	        background-clip: text;
 
 	.material-icons {
 		color: $home-aside-color;
@@ -97,8 +104,11 @@
 	font-family: 'Roboto Condensed', 'Roboto', sans-serif;
 
 	> span {
-		background-color: darken($home-aside-color, 70%);
-	  -webkit-background-clip: text;
+		color: darken($home-aside-color, 20%);
+		-webkit-text-fill-color: transparent;
+		background: -webkit-linear-gradient(darken($home-aside-color, 70%), darken($home-aside-color, 70%));
+		background: -o-linear-gradient(darken($home-aside-color, 70%), darken($home-aside-color, 70%));
+		-webkit-background-clip: text;
 	     -moz-background-clip: text;
 	          background-clip: text;
 	}
@@ -106,4 +116,12 @@
 
 .more__logo--small {
 	font-size: 1.1em;
+}
+
+@media all and (max-width: 960px) {
+	.more {
+		margin: auto;
+		margin-top: 3em;
+		text-align: center;
+	}
 }

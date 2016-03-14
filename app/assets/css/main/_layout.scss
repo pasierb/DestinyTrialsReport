@@ -135,6 +135,11 @@ hr {
   height: 1px;
   border: 0;
   background: linear-gradient(to right, rgba(150,150,150,0.1) 0%,rgba(150,150,150,.3) 50%,rgba(150,150,150,0.1) 100%);
+
+  &.hr--minor {
+    margin: .75em 0;
+    background: linear-gradient(to right, rgba(200,200,200,0.1) 0%,rgba(200,200,200,.3) 50%,rgba(200,200,200,0.1) 100%);
+  }
 }
 
 .info {

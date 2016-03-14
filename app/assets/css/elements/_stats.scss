@@ -56,6 +56,14 @@
   color: #333;
 }
 
+@media all and (max-width: 767px) {
+  .stat-header {
+    margin-bottom: 1em;
+    display: inline-block;
+    font-size: .9em;
+  }
+}
+
 .stat__label--heave {
   color: #666;
 }
