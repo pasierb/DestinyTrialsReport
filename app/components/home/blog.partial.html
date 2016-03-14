@@ -1,6 +1,6 @@
 <div class="home__content">
   <article class="home__main">
-    <div class="block blog-post shadow-z-1">
+    <div class="maps block blog-post shadow-z-1 {{mapInfoAnimClass}}">
       <div class="modal-hero blog-image" ng-style="{'background-image':'url(' + currentMapInfo.pgcrImage + ')'}">
         <div class="modal-hero__header">
           <h2 class="modal-hero__title" ng-bind="currentMapInfo.name"></h2>
@@ -34,7 +34,7 @@
           </div>
         </div>
         <hr>
-        <div class="row">
+        <div class="row" ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
           <div class="col-xs-2">
             <h3 class="stat-header">
               Info

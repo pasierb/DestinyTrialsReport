@@ -51,6 +51,12 @@
   box-shadow: inset 0 10px 10px 0 rgba(0, 0, 0, 0.75);
 }
 
+@media all and (min-width: 961px) {
+  .home__main {
+    width: 50em;
+  }
+}
+
 @media all and (max-width: 960px) {
 
   .home {

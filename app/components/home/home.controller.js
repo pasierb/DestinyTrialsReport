@@ -22,9 +22,11 @@
       $scope.showPrev = true;
     };
 
+    $scope.mapInfoAnimClass = '';
     $scope.toggleDirection = function (value) {
       var offset = (value === 'left' ? -1 : 1);
       if ((value === 'right' && $scope.showNext) || ((value === 'left' && $scope.showPrev))){
+        $scope.mapInfoAnimClass = 'is-switching';
         $scope.mapIndex = ($scope.mapIndex + offset);
         var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
         var nextIndex = newIndex + 1;
@@ -38,12 +40,14 @@
 
     $scope.loadMapInfo = function (referenceId) {
       if ($scope.searchedMaps[referenceId]) {
-        var map = $scope.searchedMaps[referenceId];
-        $scope.weaponSummary = map.weaponSummary;
-        $scope.weaponTotals = map.weaponTotals;
-        $scope.mapHistory = map.mapHistory;
-        $scope.currentMapInfo = map.mapInfo;
-        $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
+        $timeout(function () {
+          var map = $scope.searchedMaps[referenceId];
+          $scope.weaponSummary = map.weaponSummary;
+          $scope.weaponTotals = map.weaponTotals;
+          $scope.mapHistory = map.mapHistory;
+          $scope.currentMapInfo = map.mapInfo;
+          $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
+        }, 200);
       } else {
         return statsFactory.mapStats(referenceId)
           .then(function (mapInfo) {
@@ -202,6 +206,7 @@
           $scope.platformNumeric,
           dates
         ).then(function (result) {
+            $scope.mapInfoAnimClass = '';
             $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
             $scope.gggWeapons[$scope.platformNumeric].show = result.show;
             $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
