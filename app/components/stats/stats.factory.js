@@ -169,8 +169,8 @@ angular.module('trialsReportApp')
       }
     };
 
-    var mapStats = function (mapId) {
-      return api.getMapInfo(mapId)
+    var mapStats = function (weekId) {
+      return api.getMapInfo(weekId)
         .then(function (mapInfo) {
           if (mapInfo && mapInfo.data) {
             var kills, sum, typeKills, bucketSum, bucket;

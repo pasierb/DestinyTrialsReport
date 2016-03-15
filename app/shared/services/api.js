@@ -5,9 +5,8 @@ var app = angular.module('trialsReportApp');
 app.service('api', [
   '$http',
   'util',
-  'RequestFallback',
 
-  function ($http, util, RequestFallback) {
+  function ($http, util) {
     return new function () {
       var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
@@ -23,7 +22,7 @@ app.service('api', [
         recentTeammates: 'recentTeammates/{membershipId}',
         previousMatches: 'previousMatches/{membershipId}',
         lighthouseLeaderboard: 'lighthouseLeaderboard',
-        mapInfo: 'mapInfo/{referenceId}',
+        mapInfo: 'maps/week/{week}',
         currentMap: 'currentMap',
         currentWeek: 'currentWeek/{membershipId}',
         searchByName: 'searchByName/{membershipType}/{displayName}',
@@ -119,9 +118,9 @@ app.service('api', [
         return this.get(ENDPOINTS.lighthouseLeaderboard, {});
       };
 
-      this.getMapInfo = function(referenceId) {
+      this.getMapInfo = function(week) {
         return this.get(ENDPOINTS.mapInfo, {
-          referenceId: referenceId
+          week: week
         });
       };
 

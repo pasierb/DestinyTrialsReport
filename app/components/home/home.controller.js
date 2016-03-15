@@ -33,25 +33,41 @@
         $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
         $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
         $scope.direction = value;
-        $scope.loadMapInfo($scope.mapHistory[newIndex].referenceId);
+        $scope.loadMapInfo($scope.mapHistory[newIndex].week);
         $scope.direction = 'center';
       }
     };
 
-    $scope.loadMapInfo = function (referenceId) {
-      if ($scope.searchedMaps[referenceId]) {
+    $scope.setFlawlessRecord = function (map) {
+      if (map && map.flawlessPlayers) {
+        var period = moment.utc(map.flawlessTime);
+        var trialsBeginDate = getTrialsBeginDate(map.flawlessTime);
+        var players = map.flawlessPlayers.split(',');
+
+        $scope.lighthouseLeaderboard = {
+          platform: map.flawlessPlatform,
+          players: players,
+          time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
+          weekText: getRelativeWeekText(trialsBeginDate, $scope.trialsInProgress, false, period)
+        };
+      }
+    };
+
+    $scope.loadMapInfo = function (week) {
+      if ($scope.searchedMaps[week]) {
         $timeout(function () {
-          var map = $scope.searchedMaps[referenceId];
+          var map = $scope.searchedMaps[week];
           $scope.weaponSummary = map.weaponSummary;
           $scope.weaponTotals = map.weaponTotals;
           $scope.mapHistory = map.mapHistory;
           $scope.currentMapInfo = map.mapInfo;
-          $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
+          $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
+          $scope.setFlawlessRecord($scope.currentMapInfo);
         }, 200);
       } else {
-        return statsFactory.mapStats(referenceId)
+        return statsFactory.mapStats(week)
           .then(function (mapInfo) {
-            $scope.searchedMaps[referenceId] = mapInfo;
+            $scope.searchedMaps[week] = mapInfo;
             $scope.weaponSummary = mapInfo.weaponSummary;
             $scope.weaponTotals = mapInfo.weaponTotals;
             $scope.mapHistory = mapInfo.mapHistory;
@@ -63,6 +79,7 @@
             $scope.currentMapInfo.heatmapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
             $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
             $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
+            $scope.setFlawlessRecord($scope.currentMapInfo);
           }
         );
       }
@@ -109,10 +126,10 @@
       $scope.focusOnPlayer = Math.min(3, Math.max(1, $scope.focusOnPlayer + Math.floor(window.innerWidth / 320) * direction));
     };
 
-    function setCurrentMap(id) {
+    function setCurrentMap(id, week) {
       $scope.currentMapId = id;
       $scope.currentMap = DestinyCrucibleMapDefinition[id];
-      $scope.loadMapInfo(id);
+      $scope.loadMapInfo(week);
     }
 
     function getMapFromStorage() {
@@ -123,7 +140,7 @@
           var today = moment();
           var weekAfterLastMap = moment.utc(map.start_date).day(12);
           if (weekAfterLastMap.isAfter(today)) {
-            setCurrentMap(map.id);
+            setCurrentMap(map.id, map.week);
           }
         }
       }
@@ -136,13 +153,14 @@
       return api.getCurrentMap()
         .then(function (result) {
           if (result && result.data && result.data[0] && result.data[0].referenceId) {
-            setCurrentMap(result.data[0].referenceId);
+            setCurrentMap(result.data[0].referenceId, result.data[0].week);
             $scope.$storage.currentMap = {
               id: $scope.currentMapId,
+              week: result.data[0].week,
               start_date: result.data[0].start_date
             };
           } else {
-            setCurrentMap(284635225);
+            setCurrentMap(284635225, 1);
           }
         });
     }
@@ -386,28 +404,28 @@
       $scope.gggShow = $scope.gggWeapons[config.platformNumeric].show;
     }
 
-    if (_.isUndefined(config.fireteam)) {
-      if (!$scope.lighthouseLeaderboard) {
-        api.lighthouseLeaderboard()
-        .then(function (results) {
-          if (results && results.data && results.data.data) {
-            $scope.lighthouseLeaderboard = [];
-            _.each(results.data.data, function (entry) {
-              var period = moment.utc(entry.period);
-              var trialsBeginDate = getTrialsBeginDate(entry.period);
-
-              $scope.lighthouseLeaderboard.push({
-                map: DestinyCrucibleMapDefinition[entry.map].pgcrImage,
-                platform: entry.platform,
-                players: entry.players,
-                time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
-                weekText: getRelativeWeekText(trialsBeginDate, $scope.trialsInProgress, false, period)
-              });
-            });
-          }
-        });
-      }
-    }
+    //if (_.isUndefined(config.fireteam)) {
+    //  if (!$scope.lighthouseLeaderboard) {
+    //    api.lighthouseLeaderboard()
+    //    .then(function (results) {
+    //      if (results && results.data && results.data.data) {
+    //        $scope.lighthouseLeaderboard = [];
+    //        _.each(results.data.data, function (entry) {
+    //          var period = moment.utc(entry.period);
+    //          var trialsBeginDate = getTrialsBeginDate(entry.period);
+    //
+    //          $scope.lighthouseLeaderboard.push({
+    //            map: DestinyCrucibleMapDefinition[entry.map].pgcrImage,
+    //            platform: entry.platform,
+    //            players: entry.players,
+    //            time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
+    //            weekText: getRelativeWeekText(trialsBeginDate, $scope.trialsInProgress, false, period)
+    //          });
+    //        });
+    //      }
+    //    });
+    //  }
+    //}
 
     //$scope.chartLabels = [];
     //$scope.chartValues = [];
