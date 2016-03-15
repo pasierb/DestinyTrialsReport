@@ -134,7 +134,8 @@
 
     function getMapFromStorage() {
       $scope.currentMapId = undefined;
-      if (angular.isDefined($scope.$storage.currentMap)) {
+      if (angular.isDefined($scope.$storage.currentMap) &&
+        angular.isDefined($scope.$storage.currentMap.week)) {
         var map = $localStorage.currentMap;
         if (map && map.id && map.start_date) {
           var today = moment();
