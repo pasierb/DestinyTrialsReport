@@ -4,27 +4,6 @@ header {
   flex-grow: 1;
 }
 
-.controls-wrapper {
-  min-height: 100vh;
-  min-width: 300px;
-  width: 25vw;
-  max-width: 420px;
-  overflow-x: hidden;
-  z-index: 99;
-  display: flex;
-  pointer-events: none;
-}
-
-.controls {
-  pointer-events: auto;
-  width: 100%;
-  background: $header-bg;
-  display: flex;
-  flex-direction: column;
-  color: $text-on-dark;
-  flex-grow: 1;
-}
-
 .header-bar {
   padding: .75em 0;
 
