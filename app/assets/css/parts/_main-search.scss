@@ -22,6 +22,7 @@
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
+  position: relative;
 }
 
 .main-search__controls {
@@ -49,10 +50,6 @@
     &:active {
       padding-left: $controls-padding;
     }
-  }
-
-  &.open {
-    position: relative;
   }
 }
 

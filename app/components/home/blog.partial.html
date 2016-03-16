@@ -33,24 +33,6 @@
             <label>Total kills</label>
           </div>
         </div>
-        <hr ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
-        <div class="row" ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
-          <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header">
-              Info
-            </h3>
-          </div>
-          <div class="col-xs-12 col-sm-10">
-            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.heatmapImage"
-                    data-template-url="shared/modals/heatmap.modal.html" bs-modal>
-              Heatmap
-            </button>
-            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.mapImage"
-                    data-template-url="shared/modals/map.modal.html" bs-modal>
-              Map Overview
-            </button>
-          </div>
-        </div>
         <hr>
         <div class="row" ng-if="currentMapInfo">
           <div class="col-xs-12 col-sm-2">
@@ -130,21 +112,21 @@
             </h3>
           </div>
           <div class="col-xs-5 col-sm-3 stat first-in-lighthouse__players">
-            <span ng-repeat="player in lighthouseLeaderboard[0].players track by $index">
-              <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard[0].platform === 1 ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
+            <span ng-repeat="player in lighthouseLeaderboard.players track by $index">
+              <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard.platform === '1' ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
             </span>
-            <label>Player<span ng-if="lighthouseLeaderboard[0].players.length > 1">s</span></label>
+            <label>Player<span ng-if="lighthouseLeaderboard.players.length > 1">s</span></label>
           </div>
           <div class="col-xs-4 col-sm-3 stat first-in-lighthouse__time">
-            <span ng-bind="lighthouseLeaderboard[0].time"></span>
+            <span ng-bind="lighthouseLeaderboard.time"></span>
             <label>Time needed</label>
           </div>
           <div class="col-xs-2 col-sm-3 first-in-lighthouse__stats">
             <div class="stat">
-              <span ng-if="lighthouseLeaderboard[0].platform === 1">
+              <span ng-if="lighthouseLeaderboard.platform === '1'">
                 <img src="assets/img/xbox.svg" alt="Xbox">
               </span>
-              <span ng-if="lighthouseLeaderboard[0].platform === 2">
+              <span ng-if="lighthouseLeaderboard.platform === '2'">
                 <img src="assets/img/ps.svg" alt="PlayStation">
               </span>
               <label>Platform</label>
