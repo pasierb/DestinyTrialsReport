@@ -33,24 +33,6 @@
             <label>Total kills</label>
           </div>
         </div>
-        <hr ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
-        <div class="row" ng-if="currentMapInfo.heatmapImage || currentMapInfo.mapImage">
-          <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header">
-              Info
-            </h3>
-          </div>
-          <div class="col-xs-12 col-sm-10">
-            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.heatmapImage"
-                    data-template-url="shared/modals/heatmap.modal.html" bs-modal>
-              Heatmap
-            </button>
-            <button type="button" class="btn btn-inline btn-raised btn-sm" ng-if="currentMapInfo.mapImage"
-                    data-template-url="shared/modals/map.modal.html" bs-modal>
-              Map Overview
-            </button>
-          </div>
-        </div>
         <hr>
         <div class="row" ng-if="currentMapInfo">
           <div class="col-xs-12 col-sm-2">
