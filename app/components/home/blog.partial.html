@@ -81,7 +81,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-2">
             <h3 class="stat-header">
-              Top weapons <span ng-bind="currentMapInfo.weekText"></span>
+              Top weapons
             </h3>
             <a
               href="http://guardian.gg"
@@ -105,23 +105,27 @@
           </div>
         </div>
         <hr>
-        <div class="row" ng-init="entry = lighthouseLeaderboard[0]">
+        <div class="row first-in-lighthouse">
           <div class="col-xs-12 col-sm-2">
             <h3 class="stat-header">
-              First players to reach the lighthouse
+              First fireteam to reach the lighthouse
             </h3>
           </div>
-          <div class="col-xs-5 col-sm-3 stat first-in-lighthouse__players">
+          <div class="col-xs-12 col-sm-10" ng-if="!lighthouseLeaderboard">
+            <div class="first-in-lighthouse__undecided">
+              The race is still on...
+            </div>
+          </div>
+          <div class="col-xs-5 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard">
             <span ng-repeat="player in lighthouseLeaderboard.players track by $index">
               <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard.platform === '1' ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
             </span>
-            <label>Player<span ng-if="lighthouseLeaderboard.players.length > 1">s</span></label>
           </div>
-          <div class="col-xs-4 col-sm-3 stat first-in-lighthouse__time">
+          <div class="col-xs-4 col-sm-3 stat first-in-lighthouse__time" ng-if="lighthouseLeaderboard">
             <span ng-bind="lighthouseLeaderboard.time"></span>
             <label>Time needed</label>
           </div>
-          <div class="col-xs-2 col-sm-3 first-in-lighthouse__stats">
+          <div class="col-xs-2 col-sm-3 first-in-lighthouse__stats" ng-if="lighthouseLeaderboard">
             <div class="stat">
               <span ng-if="lighthouseLeaderboard.platform === '1'">
                 <img src="assets/img/xbox.svg" alt="Xbox">
