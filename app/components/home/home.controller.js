@@ -27,14 +27,17 @@
       var offset = (value === 'left' ? -1 : 1);
       if ((value === 'right' && $scope.showNext) || ((value === 'left' && $scope.showPrev))){
         $scope.mapInfoAnimClass = 'is-switching';
-        $scope.mapIndex = ($scope.mapIndex + offset);
-        var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
-        var nextIndex = newIndex + 1;
-        $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
-        $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
-        $scope.direction = value;
-        $scope.loadMapInfo($scope.mapHistory[newIndex].week);
-        $scope.direction = 'center';
+        $timeout(function () {
+          $scope.mapInfoAnimClass = 'is-waiting';
+          $scope.mapIndex = ($scope.mapIndex + offset);
+          var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
+          var nextIndex = newIndex + 1;
+          $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
+          $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
+          $scope.direction = value;
+          $scope.loadMapInfo($scope.mapHistory[newIndex].week);
+          $scope.direction = 'center';
+        }, 300);
       }
     };
 
@@ -55,15 +58,13 @@
 
     $scope.loadMapInfo = function (week) {
       if ($scope.searchedMaps[week]) {
-        $timeout(function () {
-          var map = $scope.searchedMaps[week];
-          $scope.weaponSummary = map.weaponSummary;
-          $scope.weaponTotals = map.weaponTotals;
-          $scope.mapHistory = map.mapHistory;
-          $scope.currentMapInfo = map.mapInfo;
-          $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
-          $scope.setFlawlessRecord($scope.currentMapInfo);
-        }, 200);
+        var map = $scope.searchedMaps[week];
+        $scope.weaponSummary = map.weaponSummary;
+        $scope.weaponTotals = map.weaponTotals;
+        $scope.mapHistory = map.mapHistory;
+        $scope.currentMapInfo = map.mapInfo;
+        $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
+        $scope.setFlawlessRecord($scope.currentMapInfo);
       } else {
         return statsFactory.mapStats(week)
           .then(function (mapInfo) {
