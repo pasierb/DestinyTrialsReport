@@ -9,20 +9,20 @@
     this.isLoaded = false;
   }]);
 
-  ngAdSense.controller('AdsenseController', ["SCRIPT_URL", "AdsenseTracker", "$timeout", function (SCRIPT_URL, AdsenseTracker, $timeout) {
+  ngAdSense.controller('AdsenseController', ["SCRIPT_URL", "AdsenseTracker", "$timeout", "$scope", function (SCRIPT_URL, AdsenseTracker, $timeout, $scope) {
 
-    //if (!AdsenseTracker.isLoaded) {
-    //  var s = document.createElement('script');
-    //  s.src = SCRIPT_URL;
-    //  document.body.appendChild(s);
-    //  AdsenseTracker.isLoaded = true;
-    //}
-    //$timeout(function () {
-    //  try {
-    //    (window.adsbygoogle = window.adsbygoogle || []).push({});
-    //  } catch (ex) {
-    //  }
-    //}, 750);
+    if (!$scope.playerAd) {
+      var s = document.createElement('script');
+      s.src = SCRIPT_URL;
+      document.body.appendChild(s);
+      AdsenseTracker.isLoaded = true;
+    }
+    $timeout(function () {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (ex) {
+      }
+    }, 750);
   }]);
 
   ngAdSense.directive('adsense', function () {
@@ -33,9 +33,9 @@
         adClient: '@',
         adSlot: '@',
         inlineStyle: '@',
-        formatAuto: '@'
+        playerAd: '@'
       },
-      template: '<div class="ads"><ins class="adsbygoogle" data-ad-client="{{adClient}}" data-ad-slot="{{adSlot}}" style="{{inlineStyle}}" data-ad-format="{{formatAuto ? \'auto\' : \'\' }}"></ins></div>',
+      template: '<div class="ads"><ins class="adsbygoogle" data-ad-client="{{adClient}}" data-ad-slot="{{adSlot}}" style="{{inlineStyle}}"></ins></div>',
       controller: 'AdsenseController'
     };
   });

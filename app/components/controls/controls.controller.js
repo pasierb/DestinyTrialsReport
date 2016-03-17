@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('controlsController', controlsController);
 
-  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $interval, $timeout, bungie, toastr) {
+  function controlsController(guardianggFactory, homeFactory, inventoryService, $location, locationChanger, $q, $routeParams, $scope, statsFactory, api, $window, bungie, toastr) {
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
@@ -86,7 +86,7 @@
         $scope.platformValue = (platform == 2);
       }
       if (angular.isDefined(name)) {
-        if (getSubdomain()) {
+        if (getSubdomain() && getSubdomain() !== 'staging') {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
         } else {
           getFromParams(platform, name).then(function (result) {
@@ -124,40 +124,47 @@
       return homeFactory.getAccount(($scope.platformValue ? 2 : 1), name)
         .then(function (account) {
           if (account) {
-            if (($scope.fireteam[1] && angular.isDefined($scope.fireteam[1].name)) || ($scope.fireteam[2] && angular.isDefined($scope.fireteam[2].name))) {
-              $scope.switchFocus();
-              document.activeElement.blur();
-            }
-            var methods = [
-              inventoryService.getInventory(account.membershipType, account),
-              statsFactory.getStats(account),
-              homeFactory.getActivities(account, '50')
-            ];
-
-            $q.all(methods).then(function (results) {
-              var teammate = results[0];
-              $scope.$evalAsync( $scope.fireteam[index] = teammate );
-              $scope.$parent.focusOnPlayer = index + 1;
-              if (!$scope.fireteam[0].activities) {
-                $scope.fireteam[0].activities = {lastThree: {}, lastMatches: {}};
-              }
-              statsFactory.getGrimoire($scope.fireteam[index]);
-              statsFactory.getPlayer($scope.fireteam[index]);
-              statsFactory.weaponStats($scope.fireteam[index]);
-              api.lastWeapons(
-                $scope.fireteam[index].characterInfo.characterId
-              ).then(function (result) {
-                  if (result && result.data) {
-                    var matches = _.pluck(result.data, 'matches_used');
-                    var kills = _.pluck(result.data, 'sum_kills');
-                    $scope.fireteam[index].lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
-                    $scope.fireteam[index].lastWeaponTotalKills = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
-                    $scope.fireteam[index].lastWeapons = result.data;
-                  }
-                });
-              guardianggFactory.getTeamElo($scope.fireteam);
-              updateUrl($scope, locationChanger);
-            });
+            var names = {};
+            names[0] = $scope.fireteam[0];
+            names[1] = $scope.fireteam[1];
+            names[2] = $scope.fireteam[2];
+            names[index] =  account;
+            var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
+            $location.path(platformUrl + names[0].name + '/' + names[1].name + '/' + names[2].name);
+            //if (($scope.fireteam[1] && angular.isDefined($scope.fireteam[1].name)) || ($scope.fireteam[2] && angular.isDefined($scope.fireteam[2].name))) {
+            //  $scope.switchFocus();
+            //  document.activeElement.blur();
+            //}
+            //var methods = [
+            //  inventoryService.getInventory(account.membershipType, account),
+            //  statsFactory.getStats(account),
+            //  homeFactory.getActivities(account, '50')
+            //];
+            //
+            //$q.all(methods).then(function (results) {
+            //  var teammate = results[0];
+            //  $scope.$evalAsync( $scope.fireteam[index] = teammate );
+            //  $scope.$parent.focusOnPlayer = index + 1;
+            //  if (!$scope.fireteam[0].activities) {
+            //    $scope.fireteam[0].activities = {lastThree: {}, lastMatches: {}};
+            //  }
+            //  statsFactory.getGrimoire($scope.fireteam[index]);
+            //  statsFactory.getPlayer($scope.fireteam[index]);
+            //  statsFactory.weaponStats($scope.fireteam[index]);
+            //  api.lastWeapons(
+            //    $scope.fireteam[index].characterInfo.characterId
+            //  ).then(function (result) {
+            //      if (result && result.data) {
+            //        var matches = _.pluck(result.data, 'matches_used');
+            //        var kills = _.pluck(result.data, 'sum_kills');
+            //        $scope.fireteam[index].lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
+            //        $scope.fireteam[index].lastWeaponTotalKills = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
+            //        $scope.fireteam[index].lastWeapons = result.data;
+            //      }
+            //    });
+            //  guardianggFactory.getTeamElo($scope.fireteam);
+            //  updateUrl($scope, locationChanger);
+            //});
           }
         });
     };

@@ -18,6 +18,12 @@
   }
 }
 
+.first-in-lighthouse__undecided {
+  @extend .data-label;
+  text-align: center;
+  line-height: 7em;
+}
+
 .first-in-lighthouse__content {
   padding: .3em 1.5em 1.25em;
   display: flex;
@@ -30,41 +36,81 @@
 }
 
 .first-in-lighthouse__players {
-  margin-bottom: 1.5em;
-  
+  text-align: center;
+
   a {
     color: inherit;
   }
 }
 
-.first-in-lighthouse__players > span {
+.first-in-lighthouse__rank {
+  background: url('/assets/img/winner-gold.svg') center center no-repeat;
+  background-size: contain;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 4em;
+  height: 4em;
+  margin: auto;
+  margin-bottom: 1em;
+
+  > span {
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
+    text-shadow: 0 0 3px rgba(100, 100, 100, 0.5);
+
+    > sup {
+      text-transform: uppercase;
+      top: -.3em;
+      font-size: .5em;
+    }
+  }
+}
+.first-in-lighthouse__rank--second {
+  width: 3.5em;
+  height: 3.5em;
+  margin-top: .5em;
+  background-image: url('/assets/img/winner-silver.svg');
+
+  > span {
+    font-size: 1.1em;
+  }
+}
+
+.first-in-lighthouse__rank--third {
+  width: 3em;
+  height: 3em;
+  margin-top: 1em;
+  background-image: url('/assets/img/winner-bronze.svg');
+
+  > span {
+    font-size: .9em;
+  }
+}
+
+.first-in-lighthouse__player.first-in-lighthouse__player {
   display: block;
   font-size: 1em;
 
-  & + span {
+  & + .first-in-lighthouse__player {
     margin-top: .5em;
   }
 }
 
-.first-in-lighthouse__stats {
-  > div {
+.first-in-lighthouse__platform {
+  margin: .5em 0 .75em 0;
 
+  img {
+    width: 1em;
   }
+}
 
-  span img {
-    height: 1em;
-    filter: brightness(0.4);
-  }
+.first-in-lighthouse__time {
+  display: block;
 
-  p {
-    img {
-      height: 1em;
-      filter: brightness(0.4);
-    }
-  }
-
-  span + label + span {
-    display: block;
-    margin-top: .75em;
+  sub {
+    font-size: 60%;
+    bottom: 0;
   }
 }
