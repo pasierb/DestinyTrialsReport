@@ -86,7 +86,7 @@
         $scope.platformValue = (platform == 2);
       }
       if (angular.isDefined(name)) {
-        if (getSubdomain()) {
+        if (getSubdomain() && getSubdomain() !== 'staging') {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
         } else {
           getFromParams(platform, name).then(function (result) {
