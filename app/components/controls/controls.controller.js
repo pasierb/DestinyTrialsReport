@@ -109,6 +109,7 @@
     function updateUrl($scope, locationChanger) {
       if ($scope.fireteam[0] && $scope.fireteam[1] && $scope.fireteam[2]) {
         if ($scope.fireteam[2].membershipId) {
+          var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
           locationChanger.skipReload()
             .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +
             $scope.fireteam[1].name + '/' + $scope.fireteam[2].name, true);
