@@ -209,11 +209,14 @@ angular.module('trialsReportApp')
               });
             });
 
+            var lighthouseLeaderboard = mapInfo.data.lighthouseLeaderboard;
+
             return {
               weaponSummary: weaponSummary,
               weaponTotals:  weaponTotals,
               mapHistory:    mapHistory,
-              mapInfo:       mapData
+              mapInfo:       mapData,
+              lighthouseLeaderboard: lighthouseLeaderboard
             };
           }
         });

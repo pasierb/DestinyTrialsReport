@@ -41,18 +41,31 @@
       }
     };
 
-    $scope.setFlawlessRecord = function (map) {
-      if (map && map.flawlessPlayers) {
-        var period = moment.utc(map.flawlessTime);
-        var trialsBeginDate = getTrialsBeginDate(map.flawlessTime);
-        var players = map.flawlessPlayers.split(',');
+    $scope.setFlawlessRecord = function (leaderboard) {
+      if (leaderboard && leaderboard[0]) {
+        $scope.lighthouseLeaderboard = [];
 
-        $scope.lighthouseLeaderboard = {
-          platform: map.flawlessPlatform,
-          players: players,
-          time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
-          weekText: getRelativeWeekText(trialsBeginDate, $scope.trialsInProgress, false, period)
-        };
+        $scope.lighthouseLeaderboard[0] = _.find(leaderboard, function(lb){ return lb.rank == 1; });
+        if ($scope.lighthouseLeaderboard[0]) {
+          $scope.lighthouseLeaderboard[0].rankSuffix = 'st';
+          $scope.lighthouseLeaderboard[0].class = '';
+          $scope.lighthouseLeaderboard[0].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[0].period)
+            .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[0].period))).format('HH:mm:ss');
+        }
+        $scope.lighthouseLeaderboard[1] = _.find(leaderboard, function(lb){ return lb.rank == 2; });
+        if ($scope.lighthouseLeaderboard[1]) {
+          $scope.lighthouseLeaderboard[1].rankSuffix = 'nd';
+          $scope.lighthouseLeaderboard[1].class = 'second';
+          $scope.lighthouseLeaderboard[1].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[1].period)
+            .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[1].period))).format('HH:mm:ss');
+        }
+        $scope.lighthouseLeaderboard[2] = _.find(leaderboard, function(lb){ return lb.rank == 3; });
+        if ($scope.lighthouseLeaderboard[2]) {
+          $scope.lighthouseLeaderboard[2].rankSuffix = 'rd';
+          $scope.lighthouseLeaderboard[2].class = 'third';
+          $scope.lighthouseLeaderboard[2].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[2].period)
+            .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[2].period))).format('HH:mm:ss');
+        }
       }
     };
 
@@ -64,7 +77,7 @@
         $scope.mapHistory = map.mapHistory;
         $scope.currentMapInfo = map.mapInfo;
         $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
-        $scope.setFlawlessRecord($scope.currentMapInfo);
+        $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
       } else {
         return statsFactory.mapStats(week)
           .then(function (mapInfo) {
@@ -79,8 +92,9 @@
             $scope.currentMapInfo.pgcrImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].pgcrImage;
             $scope.currentMapInfo.heatmapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
             $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
-            $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date)
-            $scope.setFlawlessRecord($scope.currentMapInfo);
+            $scope.currentMapInfo.lighthouseLeaderboard = mapInfo.lighthouseLeaderboard;
+            $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
+            $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
           }
         );
       }

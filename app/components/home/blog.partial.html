@@ -116,51 +116,21 @@
               The race is still on...
             </div>
           </div>
-          <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard">
-            <span class="first-in-lighthouse__rank">
-              <span>1<sup>st</sup></span>
+          <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard" ng-repeat="lb in lighthouseLeaderboard">
+            <span class="first-in-lighthouse__rank first-in-lighthouse__rank&#45;&#45;{{lb.class}}">
+              <span>{{lb.rank}}<sup ng-bind="lb.rankSuffix"></sup></span>
             </span>
-            <span class="first-in-lighthouse__player" ng-repeat="player in lighthouseLeaderboard.players track by $index">
-              <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard.platform === '1' ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
+            <span class="first-in-lighthouse__player" ng-repeat="player in lb.players track by $index">
+              <a ng-href="https://my.trials.report/{{$parent.lb.platform === 1 ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
             </span>
             <div class="first-in-lighthouse__platform">
-              <img ng-if="lighthouseLeaderboard.platform === '1'" src="assets/img/xbox.svg" alt="Xbox">
-              <img ng-if="lighthouseLeaderboard.platform === '2'" src="assets/img/ps.svg" alt="PlayStation">
+              <img ng-if="$parent.lb.platform === 1" src="assets/img/xbox.svg" alt="Xbox">
+              <img ng-if="$parent.lb.platform === 2" src="assets/img/ps.svg" alt="PlayStation">
             </div>
             <span class="first-in-lighthouse__time">
-              <span ng-bind="lighthouseLeaderboard.time"></span><sub>000</sub>
+              <span ng-bind="lb.time"></span>
             </span>
             <hr class="hr--minor visible-xs">
-          </div>
-          <div class="col-xs-6 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard">
-            <span class="first-in-lighthouse__rank first-in-lighthouse__rank--second">
-              <span>2<sup>nd</sup></span>
-            </span>
-            <span class="first-in-lighthouse__player"  ng-repeat="player in lighthouseLeaderboard.players track by $index">
-              <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard.platform === '1' ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
-            </span>
-            <div class="first-in-lighthouse__platform">
-              <img ng-if="lighthouseLeaderboard.platform === '1'" src="assets/img/xbox.svg" alt="Xbox">
-              <img ng-if="lighthouseLeaderboard.platform === '2'" src="assets/img/ps.svg" alt="PlayStation">
-            </div>
-            <span class="first-in-lighthouse__time">
-              <span ng-bind="lighthouseLeaderboard.time"></span><sub>000</sub>
-            </span>
-          </div>
-          <div class="col-xs-6 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard">
-            <span class="first-in-lighthouse__rank first-in-lighthouse__rank--third">
-              <span>3<sup>rd</sup></span>
-            </span>
-            <span class="first-in-lighthouse__player" ng-repeat="player in lighthouseLeaderboard.players track by $index">
-              <a ng-href="https://my.trials.report/{{$parent.lighthouseLeaderboard.platform === '1' ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
-            </span>
-            <div class="first-in-lighthouse__platform">
-              <img ng-if="lighthouseLeaderboard.platform === '1'" src="assets/img/xbox.svg" alt="Xbox">
-              <img ng-if="lighthouseLeaderboard.platform === '2'" src="assets/img/ps.svg" alt="PlayStation">
-            </div>
-            <span class="first-in-lighthouse__time">
-              <span ng-bind="lighthouseLeaderboard.time"></span><sub>000</sub>
-            </span>
           </div>
         </div>
       </div>
