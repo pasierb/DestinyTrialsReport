@@ -92,6 +92,14 @@
 .player-tab--last-matches {
   @include tab-background($last-matches-background);
 
+  &.is-loading:before {
+    display: block;
+    content: '';
+    min-height: 30em;
+    background: url('/assets/img/loading.svg') center center no-repeat;
+    background-size: 3em 3em;
+  }
+
   ul &.active {
     background: $last-matches-background;
 
