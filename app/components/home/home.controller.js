@@ -26,9 +26,9 @@
     $scope.toggleDirection = function (value) {
       var offset = (value === 'left' ? -1 : 1);
       if ((value === 'right' && $scope.showNext) || ((value === 'left' && $scope.showPrev))){
-        $scope.mapInfoAnimClass = 'is-switching';
+        $scope.mapInfoAnimClass = 'is-switching-' + value;
         $timeout(function () {
-          $scope.mapInfoAnimClass = 'is-waiting';
+          $scope.mapInfoAnimClass = 'is-waiting-' + value;
           $scope.mapIndex = ($scope.mapIndex + offset);
           var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
           var nextIndex = newIndex + 1;
