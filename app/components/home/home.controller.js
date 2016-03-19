@@ -186,20 +186,16 @@
       $scope.$storage.hideStats = $scope.hideStats;
     };
 
-    $scope.getPlatformName = function (membershipType) {
-      if (membershipType) {
-        return membershipType == 2 ? 'PSN' : 'XBL';
-      }
-    };
-
     $scope.searchName = function (name) {
       if (name && name.length > 3) {
         $scope.playerNames = {};
+        var membershipType = $scope.platformValue ? 2 : 1;
         return api.searchName(
-          name
+          name,
+          membershipType
         ).then(function (result) {
-            $scope.playerNames = result.data;
-          });
+          $scope.playerNames = result.data;
+        });
       }
     };
 

@@ -28,7 +28,7 @@ app.service('api', [
         searchByName: 'searchByName/{membershipType}/{displayName}',
         getRandomAd: 'getRandomAd',
         playerAds: 'playerAds/{membershipIds}',
-        searchName: 'search/name/{name}'
+        searchName: 'search/name/{name}/{membershipType}'
       };
 
       this.searchByName = function(membershipType, displayName) {
@@ -39,10 +39,11 @@ app.service('api', [
         });
       };
 
-      this.searchName = function(name) {
+      this.searchName = function(name, membershipType) {
         name = name.replace(/[^\w\s\-]/g, '');
         return this.get(ENDPOINTS.searchName, {
-          name: name
+          name: name,
+          membershipType: membershipType
         });
       };
 

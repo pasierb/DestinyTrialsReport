@@ -31,7 +31,7 @@
                 <li class="dropdown-menu__label">Suggested Players</li>
                 <li ng-repeat="player in playerNames">
                   <a href="#" ng-click="searchMainPlayerbyName(player.displayName, player.membershipType)"
-                     ng-bind="player.displayName + ' (' + getPlatformName(player.membershipType) + ')' "></a>
+                     ng-bind="player.displayName"></a>
                 </li>
               </ul>
             </div>
