@@ -260,7 +260,7 @@ var FORCE_MULTI = [910871216, 910871217];
 var cooldownsSuperA  = ['5:00', '4:46', '4:31', '4:15', '3:58', '3:40'];
 var cooldownsSuperB  = ['5:30', '5:14', '4:57', '4:39', '4:20', '4:00'];
 var cooldownsGrenade = ['1:00', '0:55', '0:49', '0:42', '0:34', '0:25'];
-var cooldownsMelee   = ['1:00', '0:55', '0:49', '0:42', '0:34', '0:25'];
+var cooldownsMelee   = ['1:10', '1:04', '0:57', '0:49', '0:40', '0:29'];
 
 // Nodes hidden from weapon and armor stats
 var hiddenNodes = [
