@@ -38,9 +38,9 @@ function getAbilityCooldown(subclass, ability, tier) {
     switch (subclass) {
       case 'Nightstalker':
       case 'Gunslinger':
-        return cooldownsMelee[tier];
+        return cooldownsMeleeA[tier];
       default:
-        return cooldownsGrenade[tier];
+        return cooldownsMeleeB[tier];
     }
   } else {
     return '-:--';
