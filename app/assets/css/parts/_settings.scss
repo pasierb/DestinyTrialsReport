@@ -1,0 +1,19 @@
+.settings-btn {
+	position: relative;
+	z-index: -1;
+	opacity: .5;
+
+	.btn.btn.btn {
+		background: rgba(255, 255, 255, .07);
+		display: block;
+		width: 100%;
+		text-align: left;
+		padding: 1em $controls-padding;
+		font-size: .9em;
+		color: rgba(255, 255, 255, .4);
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+}
