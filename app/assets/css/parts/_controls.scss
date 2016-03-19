@@ -49,16 +49,34 @@ header {
   font-size: 1em;
 }
 
-.ad {
-  padding: 1em;
+.block__footer--ad-dark {
+  position: relative;
+  height: 250px;
   overflow: hidden;
+  padding: 1em 0;
+  box-sizing: content-box;
 
-  > div:empty:before {
-    font-size: .9em;
-    display: block;
-    color: #777;
-    font-family: 'Roboto Condensed';
-    content: "Please consider turning off your ad blocker, it's one of our ways to keep this site running. Plus, you are missing out on some fabulous deals!!!"
+  .ad {
+    height: 250px;
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    display: inline-block;
+
+    > adsense:empty:before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: .9em;
+      display: block;
+      color: #777;
+      font-family: 'Roboto Condensed';
+      content: "Please consider turning off your ad blocker, it's one of our ways to keep this site running. Plus, you are missing out on some fabulous deals!!!"
+    }
   }
 }
 
