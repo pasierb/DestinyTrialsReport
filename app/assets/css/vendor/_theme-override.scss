@@ -9,3 +9,13 @@ a:hover,
 a:focus {
   color: $primary;
 }
+
+.togglebutton label input[type=checkbox]:checked + .toggle,
+.togglebutton-default label input[type=checkbox]:checked + .toggle {
+  background-color: transparentize($success, .5);
+}
+
+.togglebutton label input[type=checkbox]:checked + .toggle:after,
+.togglebutton-default label input[type=checkbox]:checked + .toggle:after {
+  background-color: $success;
+}

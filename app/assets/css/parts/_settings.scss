@@ -33,3 +33,21 @@
 		font-size: 1.3em;
 	}
 }
+
+.setting {
+	> label {
+		@extend .data-label;
+		color: darken(#999, 20%);
+	}
+
+	.togglebutton {
+		margin-bottom: .75em;
+	}
+
+	> span {
+		font-size: .8em;
+		line-height: 1.4;
+		display: block;
+		color: lighten(#999, 20%);
+	}
+}
