@@ -17,3 +17,19 @@
 		opacity: 1;
 	}
 }
+
+.settings-modal {
+	.modal-hero {
+		background: repeating-linear-gradient(
+		  45deg,
+		  #333,
+		  #333 5px,
+		  darken(#333, 10%) 5px,
+		  darken(#333, 10%) 10px
+		);
+	}
+
+	.modal-hero__title {
+		font-size: 1.3em;
+	}
+}
