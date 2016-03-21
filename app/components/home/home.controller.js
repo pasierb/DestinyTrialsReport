@@ -42,6 +42,7 @@
     };
 
     $scope.setFlawlessRecord = function (leaderboard) {
+      $scope.lighthouseLeaderboard = undefined;
       if (leaderboard && leaderboard[0]) {
         $scope.lighthouseLeaderboard = [];
 
@@ -156,7 +157,7 @@
           var today = moment();
           var weekAfterLastMap = moment.utc(map.start_date).day(12);
           if (weekAfterLastMap.isAfter(today)) {
-            setCurrentMap(map.id, map.week);
+            setCurrentMap(2332037858, 21);
           }
         }
       }
