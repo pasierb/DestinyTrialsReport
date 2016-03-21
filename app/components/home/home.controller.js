@@ -40,7 +40,7 @@
     $scope.searchedMaps = {};
     var wait;
 
-    $scope.resetMapVars = function() {
+    $scope.resetMapVars = function () {
       $scope.direction = 'center';
       $scope.mapIndex = 0;
       $scope.showNext = false;
@@ -195,7 +195,7 @@
         .then(function (result) {
           if (result && result.data && result.data[0] && result.data[0].referenceId) {
             setCurrentMap(result.data[0].referenceId, result.data[0].week);
-            $scope.$storage.currentMap = {
+            $localStorage.currentMap = {
               id: $scope.currentMapId,
               week: result.data[0].week,
               start_date: result.data[0].start_date
@@ -321,7 +321,7 @@
 
     if (config.fireteam) {
       $scope.fireteam = config.fireteam;
-      $scope.$storage.platform = ($routeParams.platformName === 'ps');
+      $localStorage.platform = ($routeParams.platformName === 'ps');
       if ($scope.sdOpponents && config.data) {
         $scope.reverseSort = false;
         $scope.opponents = config.data.reverse();

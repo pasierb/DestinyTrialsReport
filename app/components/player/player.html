@@ -29,17 +29,17 @@
   <div class="player__links">
     <div class="row">
       <div class="col-xs-12 player__links__btns">
-        <a href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
+        <a ng-href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default"
            analytics-on analytics-event="Click" analytics-category="Guardian.gg">
           <img src="/assets/img/ggg-logo.png" alt="Guardian.gg">
         </a>
-        <a href="https://my.trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
+        <a ng-href="https://my.trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="!subdomain"
            analytics-on analytics-event="Click" analytics-category="myDestinyTrialsReport">
           myTrialsReport
         </a>
-        <a href="https://trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
+        <a ng-href="https://trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="subdomain"
            analytics-on analytics-event="Click" analytics-category="DestinyTrialsReport">
           DestinyTrialsReport
