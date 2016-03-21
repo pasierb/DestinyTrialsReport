@@ -8,15 +8,17 @@
       <div class="modal-text">
         <div class="row">
           <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header">
+            <h3 class="stat-header" translate="LANGUAGE">
               Language
             </h3>
           </div>
           <div class="col-xs-12 col-sm-10">
             <div class="select">
-              <select>
-                <option value="en">English</option>
-                <option value="ger">German</option>
+              <select ng-model="$storage.language" ng-change="changeLanguage()">
+                <option value="en" translate="ENGLISH">English</option>
+                <option value="es" translate="SPANISH">Spanish</option>
+                <option value="de" translate="GERMAN">German</option>
+                <option value="fr" translate="FRENCH">French</option>
               </select>
             </div>
             <hr class="hr--faded">

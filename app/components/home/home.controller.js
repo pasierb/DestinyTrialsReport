@@ -5,12 +5,37 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics) {
     $scope.$storage = $localStorage.$default({
+      language: 'en',
       platform: true,
+      archToggled: false,
       hideStats: false,
-      archToggled: false
+      visibility: {
+        kdRatio: true,
+        mainStats: true,
+        weeklyStats: false,
+        equipped: {
+          tab: true,
+          weapons: true,
+          armor: true,
+          build: true,
+          talents: true
+        },
+        lastMatches: {
+          tab: true
+        },
+        stats: {
+          tab: true
+        }
+      }
     });
+
+    $scope.changeLanguage = function () {
+      // load new manifest
+      $analytics.eventTrack('languageChanged', {category: $localStorage.language});
+      $translate.use($localStorage.language);
+    }
 
     $scope.searchedMaps = {};
     var wait;

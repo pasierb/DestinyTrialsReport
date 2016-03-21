@@ -57,6 +57,39 @@ angular
       tooltipTitleFontStyle: "300"
     })
   }])
+  .config(['$translateProvider', '$localStorageProvider', function ($translateProvider, $localStorageProvider) {
+    $translateProvider
+      .translations('en', {
+        LANGUAGE: 'Language',
+        ENGLISH: 'English',
+        SPANISH: 'Spanish',
+        GERMAN: 'German',
+        FRENCH: 'French'
+      })
+      .translations('es', {
+        LANGUAGE: 'Idioma',
+        ENGLISH: 'Inglés',
+        SPANISH: 'Español',
+        GERMAN: 'Alemán',
+        FRENCH: 'Francés'
+      })
+      .translations('de', {
+        LANGUAGE: 'Sprache',
+        ENGLISH: 'Englisch',
+        SPANISH: 'Spanisch',
+        GERMAN: 'Deutsche',
+        FRENCH: 'Französisch'
+      })
+      .translations('fr', {
+        LANGUAGE: 'Langue',
+        ENGLISH: 'Anglais',
+        SPANISH: 'Espanol',
+        GERMAN: 'Allemand',
+        FRENCH: 'Français'
+      })
+      .preferredLanguage($localStorageProvider.get('language') || 'en')
+      .fallbackLanguage('en');
+  }])
   .run(function ($rootScope, $window) {
     // delete all the google related variables before you change the url
     $rootScope.$on('$locationChangeStart', function () {
