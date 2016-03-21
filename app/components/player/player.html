@@ -3,14 +3,23 @@
   <div ng-include="'components/player/overview.partial.html'"></div>
 
   <uib-tabset class="player-tabs" ng-if="!subdomain">
-    <uib-tab class="player-tab--equipped" heading="Equipped" analytics-on analytics-event="Click" analytics-category="Equipped">
-      <div ng-include="'components/inventory/inventory.partial.html'"></div>
+    <uib-tab ng-show="$storage.visibility.equipped.tab" class="player-tab--equipped" heading="Equipped"
+             analytics-on analytics-event="Click" analytics-category="Equipped">
+      <div ng-show="$storage.visibility.equipped.tab"
+           ng-include="'components/inventory/inventory.partial.html'">
+      </div>
     </uib-tab>
-    <uib-tab class="player-tab--last-matches" heading="Last Matches" analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
-      <div ng-include="'components/matches/matches.partial.html'"></div>
+    <uib-tab ng-show="$storage.visibility.lastMatches.tab" class="player-tab--last-matches" heading="Last Matches"
+             analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
+      <div ng-show="$storage.visibility.lastMatches.tab"
+           ng-include="'components/matches/matches.partial.html'">
+      </div>
     </uib-tab>
-    <uib-tab class="player-tab--stats" heading="Stats" analytics-on analytics-event="Click" analytics-category="Stats">
-      <div ng-include="'components/stats/stats.partial.html'"></div>
+    <uib-tab ng-show="$storage.visibility.stats.tab" class="player-tab--stats" heading="Stats"
+             analytics-on analytics-event="Click" analytics-category="Stats">
+      <div ng-show="$storage.visibility.stats.tab"
+           ng-include="'components/stats/stats.partial.html'">
+      </div>
     </uib-tab>
   </uib-tabset>
 

@@ -44,7 +44,7 @@
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox" ng-model="$storage.visibility.kdRatio">
                     </label>
                   </div>
                   <label>Kill/Death ratio</label>
@@ -55,7 +55,7 @@
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox" ng-model="$storage.visibility.mainStats">
                     </label>
                   </div>
                   <label>Main stats</label>
@@ -66,7 +66,7 @@
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox" ng-model="$storage.visibility.weeklyStats">
                     </label>
                   </div>
                   <label>Weekly stats</label>
@@ -80,7 +80,7 @@
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox" ng-model="$storage.visibility.equipped.tab">
                     </label>
                   </div>
                   <label>Equipped tab</label>
@@ -91,7 +91,7 @@
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox" ng-model="$storage.visibility.lastMatches.tab">
                     </label>
                   </div>
                   <label>Last Matches tab</label>
@@ -102,7 +102,7 @@
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox" ng-model="$storage.visibility.stats.tab">
                     </label>
                   </div>
                   <label>Stats tab</label>
@@ -121,31 +121,37 @@
           </div>
           <div class="col-xs-12 col-sm-10">
             <div class="row">
-              <div class="col-xs-12 col-sm-4"> <!-- TODO: Stats from now on should only be shown if "Equipped" tab is turned on -->
+              <div class="col-xs-12 col-sm-4">
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox"
+                             ng-model="$storage.visibility.equipped.weapons"
+                             ng-disabled="!$storage.visibility.equipped.tab">
                     </label>
                   </div>
                   <label>Equipped weapons</label>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-4"> <!-- TODO: Stats from now on should only be shown if "Equipped" tab is turned on -->
+              <div class="col-xs-12 col-sm-4">
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox"
+                             ng-model="$storage.visibility.equipped.armor"
+                             ng-disabled="!$storage.visibility.equipped.tab">
                     </label>
                   </div>
                   <label>Equipped armor</label>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-4"> <!-- TODO: Stats from now on should only be shown if "Equipped" tab is turned on -->
+              <div class="col-xs-12 col-sm-4">
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox"
+                             ng-model="$storage.visibility.equipped.build"
+                             ng-disabled="!$storage.visibility.equipped.tab">
                     </label>
                   </div>
                   <label>Armor stats</label>
@@ -154,11 +160,13 @@
             </div>
             <hr class="hr--minor">
             <div class="row">
-              <div class="col-xs-12 col-sm-4"> <!-- TODO: Stats from now on should only be shown if "Equipped" tab is turned on -->
+              <div class="col-xs-12 col-sm-4">
                 <div class="setting">
                   <div class="togglebutton">
                     <label>
-                      <input type="checkbox" checked>
+                      <input type="checkbox"
+                             ng-model="$storage.visibility.equipped.talents"
+                             ng-disabled="!$storage.visibility.equipped.tab">
                     </label>
                   </div>
                   <label>Character perks</label>
