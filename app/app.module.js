@@ -266,6 +266,7 @@ angular
     'ngSanitize',
     'ngStorage',
     'ngTouch',
+    'pascalprecht.translate',
     'toastr',
     'ui.bootstrap.tpls',
     'ui.bootstrap.progressbar',

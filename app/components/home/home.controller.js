@@ -5,17 +5,42 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics) {
     $scope.$storage = $localStorage.$default({
+      language: 'en',
       platform: true,
+      archToggled: false,
       hideStats: false,
-      archToggled: false
+      visibility: {
+        kdRatio: true,
+        mainStats: true,
+        weeklyStats: false,
+        equipped: {
+          tab: true,
+          weapons: true,
+          armor: true,
+          build: true,
+          talents: true
+        },
+        lastMatches: {
+          tab: true
+        },
+        stats: {
+          tab: true
+        }
+      }
     });
+
+    $scope.changeLanguage = function () {
+      // load new manifest
+      $analytics.eventTrack('languageChanged', {category: $localStorage.language});
+      $translate.use($localStorage.language);
+    }
 
     $scope.searchedMaps = {};
     var wait;
 
-    $scope.resetMapVars = function() {
+    $scope.resetMapVars = function () {
       $scope.direction = 'center';
       $scope.mapIndex = 0;
       $scope.showNext = false;
@@ -170,7 +195,7 @@
         .then(function (result) {
           if (result && result.data && result.data[0] && result.data[0].referenceId) {
             setCurrentMap(result.data[0].referenceId, result.data[0].week);
-            $scope.$storage.currentMap = {
+            $localStorage.currentMap = {
               id: $scope.currentMapId,
               week: result.data[0].week,
               start_date: result.data[0].start_date
@@ -296,7 +321,7 @@
 
     if (config.fireteam) {
       $scope.fireteam = config.fireteam;
-      $scope.$storage.platform = ($routeParams.platformName === 'ps');
+      $localStorage.platform = ($routeParams.platformName === 'ps');
       if ($scope.sdOpponents && config.data) {
         $scope.reverseSort = false;
         $scope.opponents = config.data.reverse();

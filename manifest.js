@@ -19,35 +19,39 @@ function writeDefinitionFile(path, name, data) {
 
 function onManifestRequest(error, response, body) {
   var parsedResponse = JSON.parse(body);
-  var manifestFile = fs.createWriteStream('manifest.zip');
+  var version = parsedResponse.Response.version;
 
-  version = parsedResponse.Response.version;
-
-  request
-    .get('https://www.bungie.net' + parsedResponse.Response.mobileWorldContentPaths.en)
-    .pipe(manifestFile)
-    .on('close', onManifestDownloaded);
+  for (var language in parsedResponse.Response.mobileWorldContentPaths) {
+    console.log('Downloading zip for ' + language + '.');
+    var zip = 'manifest/' + language + '/manifest.zip';
+    (function (zip, language) {
+      request
+        .get('https://www.bungie.net' + parsedResponse.Response.mobileWorldContentPaths[language])
+        .pipe(fs.createWriteStream(zip))
+        .on('close', function () {
+          onManifestDownloaded(zip, language);
+        });
+    })(zip, language);
+  }
 }
 
-function onManifestDownloaded() {
-  fs.createReadStream('manifest.zip')
+function onManifestDownloaded(zip, language) {
+  console.log('Processing zip for ' + language);
+  fs.createReadStream(zip)
     .pipe(unzip.Parse())
-    .on('entry', function(entry) {
-      ws = fs.createWriteStream('manifest/' + entry.path);
-
-      ws.on('finish', function() {
-        var exists = fs.existsSync('manifest/' + entry.path);
-
-        if (exists) {
-          extractDB('manifest/' + entry.path);
+    .on('entry', function (entry) {
+      var path = 'manifest/' + language + '/' + entry.path;
+      ws = fs.createWriteStream(path)
+      ws.on('finish', function () {
+        if (fs.existsSync(path)) {
+          extractDB(path, language);
         }
       });
-
       entry.pipe(ws);
     });
 }
 
-function extractDB(dbFile) {
+function extractDB(dbFile, language) {
   db = new sqlite3.Database(dbFile);
 
   db.all('SELECT * FROM DestinyInventoryItemDefinition', function(err, rows) {
@@ -101,9 +105,9 @@ function extractDB(dbFile) {
     }
     */
 
-    writeDefinitionFile('app/shared/definitions/en/DestinyArmorDefinition.js',    'DestinyArmorDefinition',    DestinyArmorDefinition);
-    writeDefinitionFile('app/shared/definitions/en/DestinySubclassDefinition.js', 'DestinySubclassDefinition', DestinySubclassDefinition);
-    writeDefinitionFile('app/shared/definitions/en/DestinyWeaponDefinition.js',   'DestinyWeaponDefinition',   DestinyWeaponDefinition);
+    writeDefinitionFile('app/shared/definitions/' + language + '/DestinyArmorDefinition.js',    'DestinyArmorDefinition',    DestinyArmorDefinition);
+    writeDefinitionFile('app/shared/definitions/' + language + '/DestinySubclassDefinition.js', 'DestinySubclassDefinition', DestinySubclassDefinition);
+    writeDefinitionFile('app/shared/definitions/' + language + '/DestinyWeaponDefinition.js',   'DestinyWeaponDefinition',   DestinyWeaponDefinition);
   });
 
   db.all('SELECT * FROM DestinyHistoricalStatsDefinition', function(err, rows) {
@@ -123,7 +127,7 @@ function extractDB(dbFile) {
       }
     });
 
-    writeDefinitionFile('app/shared/definitions/en/DestinyMedalDefinition.js', 'DestinyMedalDefinition', DestinyMedalDefinition);
+    writeDefinitionFile('app/shared/definitions/' + language + '/DestinyMedalDefinition.js', 'DestinyMedalDefinition', DestinyMedalDefinition);
   });
 
   db.all('SELECT * FROM DestinyActivityDefinition', function(err, rows) {
@@ -154,7 +158,7 @@ function extractDB(dbFile) {
       }
     });
 
-    writeDefinitionFile('app/shared/definitions/en/DestinyCrucibleMapDefinition.js', 'DestinyCrucibleMapDefinition', DestinyCrucibleMapDefinition);
+    writeDefinitionFile('app/shared/definitions/' + language + '/DestinyCrucibleMapDefinition.js', 'DestinyCrucibleMapDefinition', DestinyCrucibleMapDefinition);
   });
 
   db.all('SELECT * FROM DestinyTalentGridDefinition', function(err, rows) {
@@ -188,8 +192,11 @@ function extractDB(dbFile) {
       DestinyTalentGridDefinition[item.gridHash] = nodes;
     });
 
-    writeDefinitionFile('app/shared/definitions/en/DestinyTalentGridDefinition.js', 'DestinyTalentGridDefinition', DestinyTalentGridDefinition);
+    writeDefinitionFile('app/shared/definitions/' + language + '/DestinyTalentGridDefinition.js', 'DestinyTalentGridDefinition', DestinyTalentGridDefinition);
   });
 }
 
-request.get('https://www.bungie.net/Platform/Destiny/Manifest/', onManifestRequest);
+request.get({
+  url: 'https://www.bungie.net/Platform/Destiny/Manifest/',
+  headers: {'X-API-Key':'10E792629C2A47E19356B8A79EEFA640'}
+}, onManifestRequest);

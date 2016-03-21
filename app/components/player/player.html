@@ -3,14 +3,23 @@
   <div ng-include="'components/player/overview.partial.html'"></div>
 
   <uib-tabset class="player-tabs" ng-if="!subdomain">
-    <uib-tab class="player-tab--equipped" heading="Equipped" analytics-on analytics-event="Click" analytics-category="Equipped">
-      <div ng-include="'components/inventory/inventory.partial.html'"></div>
+    <uib-tab ng-show="$storage.visibility.equipped.tab" class="player-tab--equipped" heading="Equipped"
+             analytics-on analytics-event="Click" analytics-category="Equipped">
+      <div ng-show="$storage.visibility.equipped.tab"
+           ng-include="'components/inventory/inventory.partial.html'">
+      </div>
     </uib-tab>
-    <uib-tab class="player-tab--last-matches" heading="Last Matches" analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
-      <div ng-include="'components/matches/matches.partial.html'"></div>
+    <uib-tab ng-show="$storage.visibility.lastMatches.tab" class="player-tab--last-matches" heading="Last Matches"
+             analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
+      <div ng-show="$storage.visibility.lastMatches.tab"
+           ng-include="'components/matches/matches.partial.html'">
+      </div>
     </uib-tab>
-    <uib-tab class="player-tab--stats" heading="Stats" analytics-on analytics-event="Click" analytics-category="Stats">
-      <div ng-include="'components/stats/stats.partial.html'"></div>
+    <uib-tab ng-show="$storage.visibility.stats.tab" class="player-tab--stats" heading="Stats"
+             analytics-on analytics-event="Click" analytics-category="Stats">
+      <div ng-show="$storage.visibility.stats.tab"
+           ng-include="'components/stats/stats.partial.html'">
+      </div>
     </uib-tab>
   </uib-tabset>
 
@@ -29,17 +38,17 @@
   <div class="player__links">
     <div class="row">
       <div class="col-xs-12 player__links__btns">
-        <a href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
+        <a ng-href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default"
            analytics-on analytics-event="Click" analytics-category="Guardian.gg">
           <img src="/assets/img/ggg-logo.png" alt="Guardian.gg">
         </a>
-        <a href="https://my.trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
+        <a ng-href="https://my.trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="!subdomain"
            analytics-on analytics-event="Click" analytics-category="myDestinyTrialsReport">
           myTrialsReport
         </a>
-        <a href="https://trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
+        <a ng-href="https://trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="subdomain"
            analytics-on analytics-event="Click" analytics-category="DestinyTrialsReport">
           DestinyTrialsReport
