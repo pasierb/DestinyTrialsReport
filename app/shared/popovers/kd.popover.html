@@ -2,12 +2,12 @@
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row">
-      <div class="col-xs-{{!player.currentWeek ? '12' : '6'}}">
+      <div class="col-xs-{{player.currentWeek.matches == 0 ? 12 : 6}}">
         <div class="stat__header">Year 2</div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
             <span ng-bind="player.year2.kd"></span>
-            <label>KD</label>
+            <label>K/D</label>
           </div>
           <div class="col-xs-6 stat">
             <span ng-bind="player.year2.matches"></span>
@@ -15,12 +15,12 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-6" ng-if="player.currentWeek">
+      <div class="col-xs-6" ng-if="player.currentWeek.matches > 0">
         <div class="stat__header">This Week</div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
             <span ng-bind="player.currentWeek.kd"></span>
-            <label>KD</label>
+            <label>K/D</label>
           </div>
           <div class="col-xs-6 stat">
             <span ng-bind="player.currentWeek.matches"></span>
