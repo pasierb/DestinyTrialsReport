@@ -6,11 +6,11 @@
     </div>
     <div class="row row--small-gutter">
       <div class="col-xs-6 stat">
-        <span ng-bind="player.longestStreak.accountStreak"></span>
+        <span ng-bind="player.longestStreak.accountStreak || 0 | number"></span>
         <label>Account</label>
       </div>
       <div class="col-xs-6 stat">
-        <span ng-bind="player.longestStreak.characterStreak"></span>
+        <span ng-bind="player.longestStreak.characterStreak || 0 | number"></span>
         <label>Character</label>
       </div>
     </div>
