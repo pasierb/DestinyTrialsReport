@@ -2,9 +2,12 @@
   overflow: hidden;
   margin: auto;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .players {
+  width: 100%;
   white-space: nowrap;
   transition: transform ease-out .3s;
   perspective: 1000px;
