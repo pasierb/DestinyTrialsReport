@@ -169,3 +169,14 @@ hr {
     margin-top: 1em;
   }
 }
+
+@media all and (min-height: 950px) and (min-width: 1281px) {
+  .controls-wrapper {
+    position: fixed;
+    height: 100vh;
+  }
+
+  .content {
+    padding-left: 25vw;
+  }
+}
