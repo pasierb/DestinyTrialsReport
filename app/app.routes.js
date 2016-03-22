@@ -10,28 +10,32 @@ angular
         templateUrl: 'components/home/home.html',
         controller: 'homeController',
         resolve: {
-          config: gggWeapons
+          config: gggWeapons,
+          definitions: getDefinitions
         }
       })
       .when('/:platformName/:playerName', {
         templateUrl: 'components/home/home.html',
         controller: 'homeController',
         resolve: {
-          config: getFromParams
+          config: getFromParams,
+          definitions: getDefinitions
         }
       })
       .when('/:platformName/:playerName/:instanceId', {
         templateUrl: 'components/home/home.html',
         controller: 'homeController',
         resolve: {
-          config: getFromParams
+          config: getFromParams,
+          definitions: getDefinitions
         }
       })
       .when('/:platformName/:playerOne/:playerTwo/:playerThree', {
         templateUrl: 'components/home/home.html',
         controller: 'homeController',
         resolve: {
-          config: getFromParams
+          config: getFromParams,
+          definitions: getDefinitions
         }
       })
       .otherwise({

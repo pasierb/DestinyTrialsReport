@@ -252,6 +252,26 @@ function gggWeapons($localStorage, guardianggFactory) {
     });
 }
 
+function getDefinitions($localStorage, $ocLazyLoad) {
+  var language = 'en';
+  if ($localStorage.language) {
+    language = $localStorage.language;
+  }
+  var methods = [];
+  angular.forEach([
+    'DestinyArmorDefinition',
+    'DestinyMedalDefinition',
+    'DestinySubclassDefinition',
+    'DestinyWeaponDefinition',
+    'DestinyCrucibleMapDefinition',
+    'DestinyTalentGridDefinition'
+  ], function(def) {
+    methods.push('/shared/definitions/' + $localStorage.language + '/' + def + '.js')
+  });
+
+  return $ocLazyLoad.load(methods);
+}
+
 angular
   .module('trialsReportApp', [
     'angulartics',
@@ -271,5 +291,6 @@ angular
     'ui.bootstrap.tpls',
     'ui.bootstrap.progressbar',
     'ui.bootstrap.tabs',
-    'ui.bootstrap.pagination'
+    'ui.bootstrap.pagination',
+    'oc.lazyLoad'
   ]);
