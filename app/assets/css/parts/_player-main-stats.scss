@@ -5,6 +5,11 @@
   .player.with-overlay & {
     @include overlay-modifiers();
   }
+
+  .player-quick-look.is-hidden + & {
+    @include inset-shadow();
+    border-top: 0;
+  }
 }
 
 .player-main-stats__streak {

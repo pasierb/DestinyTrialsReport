@@ -113,7 +113,7 @@
             <hr class="hr--faded">
           </div>
         </div>
-        <div class="row">
+        <div class="row" ng-class="{'is-disabled': !$storage.visibility.equipped.tab}">
           <div class="col-xs-12 col-sm-2">
             <h3 class="stat-header faded">
               Equipped tab
@@ -126,8 +126,7 @@
                   <div class="togglebutton">
                     <label>
                       <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.weapons"
-                             ng-disabled="!$storage.visibility.equipped.tab">
+                             ng-model="$storage.visibility.equipped.weapons">
                     </label>
                   </div>
                   <label>Equipped weapons</label>
@@ -138,8 +137,7 @@
                   <div class="togglebutton">
                     <label>
                       <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.armor"
-                             ng-disabled="!$storage.visibility.equipped.tab">
+                             ng-model="$storage.visibility.equipped.armor">
                     </label>
                   </div>
                   <label>Equipped armor</label>
@@ -150,8 +148,7 @@
                   <div class="togglebutton">
                     <label>
                       <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.build"
-                             ng-disabled="!$storage.visibility.equipped.tab">
+                             ng-model="$storage.visibility.equipped.build">
                     </label>
                   </div>
                   <label>Armor stats</label>
@@ -165,8 +162,7 @@
                   <div class="togglebutton">
                     <label>
                       <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.talents"
-                             ng-disabled="!$storage.visibility.equipped.tab">
+                             ng-model="$storage.visibility.equipped.talents">
                     </label>
                   </div>
                   <label>Character perks</label>

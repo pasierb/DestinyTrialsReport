@@ -32,6 +32,15 @@
 	.modal-hero__title {
 		font-size: 1.3em;
 	}
+
+	.row {
+		transition: opacity linear .2s;
+	}
+
+	.row.is-disabled {
+		opacity: .3;
+		pointer-events: none;
+	}
 }
 
 .setting {
