@@ -49,6 +49,15 @@
     &:first-child {
       width: 33.34%;
     }
+
+    &:first-child:nth-last-child(1) {
+      display: none;
+    }
+
+    &:first-child:nth-last-child(2),
+    &:first-child:nth-last-child(2) ~ li {
+        width: 50%;
+    }
   }
 
   li.active {
@@ -65,6 +74,10 @@
 
   .tab-content {
     height: auto;
+  }
+
+  &.is-hidden div[class^="player-tab--"] {
+    @include inset-shadow();
   }
 }
 

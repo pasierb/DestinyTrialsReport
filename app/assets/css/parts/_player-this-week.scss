@@ -1,0 +1,8 @@
+.player-this-week {
+	@include mild-inset-shadow();
+	background: #fafafa;
+
+	.player-quick-look.is-hidden + .player-main-stats.is-hidden + & {
+		@include inset-shadow();
+	}
+}

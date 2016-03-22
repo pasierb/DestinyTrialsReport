@@ -1,10 +1,14 @@
 .player-main-stats {
-  //padding: $player-content-padding;
-  padding: .6em 1em .6em 1em;
+  padding: $player-content-padding;
   border-top: 1px solid #eee;
 
   .player.with-overlay & {
     @include overlay-modifiers();
+  }
+
+  .player-quick-look.is-hidden + & {
+    @include inset-shadow();
+    border-top: 0;
   }
 }
 

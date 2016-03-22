@@ -35,7 +35,7 @@
     </div>
   </div>
 </div>
-<div class="player__content player-quick-look" ng-show="$storage.visibility.kdRatio">
+<div class="player__content player-quick-look" ng-class="{'is-hidden': !$storage.visibility.kdRatio}" ng-show="$storage.visibility.kdRatio">
   <div class="row">
     <div class="player-quick-look__form col-xs-9">
       <div class="player-quick-look__form__matches" trials-history="player.activities.lastTwentyFive" player-kd="player.stats.killsDeathsRatio.basic.value"></div>
@@ -49,7 +49,7 @@
     </div>
   </div>
 </div>
-<div class="player-main-stats" ng-show="$storage.visibility.mainStats">
+<div class="player-main-stats" ng-class="{'is-hidden': !$storage.visibility.mainStats}" ng-show="$storage.visibility.mainStats">
   <div class="row">
     <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
       <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
@@ -82,43 +82,53 @@
     </div>
   </div>
 </div>
-<div class="player__content player-quick-look player-quick-look__hide-stats" ng-show="$storage.visibility.weeklyStats">
-  <div class="player-overlay-content__header hide-stats__no-stats" ng-if="player.lastWeapons.length < 1">No Matches Found For This Week</div>
-  <div class="player-overlay-content__header hide-stats__header" ng-if="player.lastWeapons.length > 0">Weapon Type Used This Week</div>
-  <div class="row" ng-repeat="weapon in player.lastWeapons | orderObjectBy:'matches_played'">
-    <div class=" col-xs-3">
-      <img class="weapon-type-icon img-responsive"
-           ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName.toLowerCase().replace(' ','-') + '.svg'}}"
-           alt="{{weapon.weapon_type}}">
-    </div>
-    <div class=" col-xs-3">
-      <div class="">
-        <span ng-bind="(weapon.sum_kills / player.lastWeaponTotalKills) * 100 | number:2"></span>%
+<div class="player__content player-this-week" ng-show="$storage.visibility.weeklyStats">
+  <div class="stat">
+    <div class="row row--small-gutter" ng-repeat="weapon in player.lastWeapons | orderObjectBy:'matches_played'">
+      <div class=" col-xs-3">
+        <img class="weapon-type-icon img-responsive"
+             ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName.toLowerCase().replace(' ','-') + '.svg'}}"
+             alt="{{weapon.weapon_type}}">
+      </div>
+      <div class=" col-xs-3">
+        <div class="">
+          <span ng-bind="(weapon.sum_kills / player.lastWeaponTotalKills) * 100 | number:2"></span>%
+        </div>
+      </div>
+      <div class=" col-xs-3">
+        <div class="">
+          <span ng-bind="(weapon.sum_headshots / weapon.sum_kills) * 100 | number:2"></span>%
+        </div>
+      </div>
+      <div class=" col-xs-3">
+        <div class="">
+          <span ng-bind="(weapon.matches_used / player.lastWeaponTotalPlayed) * 100 | number:2"></span>%
+        </div>
       </div>
     </div>
-    <div class=" col-xs-3">
-      <div class="">
-        <span ng-bind="(weapon.sum_headshots / weapon.sum_kills) * 100 | number:2"></span>%
-      </div>
+    <label>Weapon usage</label>
+  </div>
+  <hr class="hr--minor">
+  <div class="row">
+    <div class="col-xs-3 stat">
+      <span ng-bind="player.currentWeek.matches"></span>
+      <label>Matches</label>
     </div>
-    <div class=" col-xs-3">
-      <div class="">
-        <span ng-bind="(weapon.matches_used / player.lastWeaponTotalPlayed) * 100 | number:2"></span>%
-      </div>
+    <div class="col-xs-3 stat">
+      <span ng-bind="player.currentWeek.wins"></span>
+      <label>Wins</label>
+    </div>
+    <div class="col-xs-3 stat">
+      <span ng-bind="player.currentWeek.losses"></span>
+      <label>Losses</label>
+    </div>
+    <div class="col-xs-3 stat">
+      <span ng-bind="player.currentWeek.kd"></span>
+      <label>K/D</label>
     </div>
   </div>
-  <div class="row hide-stats__labels">
-    <div class=" col-xs-3">
-      <label class="data-label">Weapon Type</label>
-    </div>
-    <div class=" col-xs-3">
-      <label class="data-label">Total Kills</label>
-    </div>
-    <div class=" col-xs-3">
-      <label class="data-label">Accuracy</label>
-    </div>
-    <div class=" col-xs-3">
-      <label class="data-label">Matches Used</label>
-    </div>
+  <hr class="hr--minor">
+  <div class="stat-header">
+    This week
   </div>
 </div>
