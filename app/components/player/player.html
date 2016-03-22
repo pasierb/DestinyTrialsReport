@@ -7,17 +7,17 @@
                                       (!$storage.visibility.equipped.tab && !$storage.visibility.stats.tab) ||
                                       (!$storage.visibility.lastMatches.tab && !$storage.visibility.stats.tab) ||
                                       (!$storage.visibility.equipped.tab && !$storage.visibility.lastMatches.tab && !$storage.visibility.stats.tab)}">
-    <uib-tab ng-if="$storage.visibility.equipped.tab" class="player-tab--equipped" heading="Equipped"
+    <uib-tab ng-if="$storage.visibility.all || $storage.visibility.equipped.tab" class="player-tab--equipped" heading="Equipped"
              analytics-on analytics-event="Click" analytics-category="Equipped">
       <div ng-include="'components/inventory/inventory.partial.html'">
       </div>
     </uib-tab>
-    <uib-tab ng-if="$storage.visibility.lastMatches.tab" class="player-tab--last-matches" heading="Last Matches"
+    <uib-tab ng-if="$storage.visibility.all || $storage.visibility.lastMatches.tab" class="player-tab--last-matches" heading="Last Matches"
              analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
       <div ng-include="'components/matches/matches.partial.html'">
       </div>
     </uib-tab>
-    <uib-tab ng-if="$storage.visibility.stats.tab" class="player-tab--stats" heading="Stats"
+    <uib-tab ng-if="$storage.visibility.all || $storage.visibility.stats.tab" class="player-tab--stats" heading="Stats"
              analytics-on analytics-event="Click" analytics-category="Stats">
       <div ng-include="'components/stats/stats.partial.html'">
       </div>

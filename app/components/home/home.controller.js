@@ -12,6 +12,7 @@
       archToggled: false,
       hideStats: false,
       visibility: {
+        all: false,
         kdRatio: true,
         mainStats: true,
         weeklyStats: false,
