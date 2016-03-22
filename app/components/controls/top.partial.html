@@ -95,6 +95,12 @@
 <div class="settings-btn shadow-z-1">
   <button type="button" data-template-url="shared/modals/settings.modal.html" class="btn btn-inline" bs-modal>
     <i class="material-icons icon--small">&#xE8B8;</i> Language &amp; Settings
+    <!-- Mark can style this much better than I can later. -->
+    <span class="togglebutton" style="float:right; margin-right:-10px">
+      <label>
+        <input type="checkbox" ng-model="$storage.visibility.all">
+      </label>
+    </span>
   </button>
 </div>
 
