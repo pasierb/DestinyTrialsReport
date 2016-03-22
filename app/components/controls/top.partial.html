@@ -95,13 +95,15 @@
 <div class="settings-btn shadow-z-1">
   <button type="button" data-template-url="shared/modals/settings.modal.html" class="btn btn-inline" bs-modal>
     <i class="material-icons icon--small">&#xE8B8;</i> Language &amp; Settings
-    <!-- Mark can style this much better than I can later. -->
-    <span class="togglebutton" style="float:right; margin-right:-10px">
+  </button>
+  <div class="settings__master" ng-click="$storage.visibility.all = !$storage.visibility.all">
+    <label class="data-label">Ignore custom<br>card settings</label>
+    <span class="togglebutton">
       <label>
         <input type="checkbox" ng-model="$storage.visibility.all">
       </label>
     </span>
-  </button>
+  </div>
 </div>
 
 <!--<div class="kd-graph shadow-z-1">-->

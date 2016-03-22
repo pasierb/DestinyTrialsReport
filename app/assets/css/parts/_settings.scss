@@ -1,20 +1,59 @@
 .settings-btn {
 	position: relative;
+	display: flex;
+	align-items: stretch;
 	z-index: -1;
-	opacity: .5;
 
 	.btn.btn.btn {
-		background: rgba(255, 255, 255, .07);
+		background: rgba(255, 255, 255, .1);
 		display: block;
 		width: 100%;
 		text-align: left;
 		padding: 1em $controls-padding;
 		font-size: .9em;
 		color: rgba(255, 255, 255, .5);
+		border-right: 1px solid #222;
+		flex-grow: 1;
+			opacity: .5;
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.1);
+			opacity: 1;
+		}
 	}
+}
+
+.settings__master {
+	display: flex;
+	align-items: center;
+	padding-left: .75em;
+	cursor: pointer;
+	background: rgba(255, 255, 255, .03);
+	border-left: 1px solid #666;
+	opacity: .5;
 
 	&:hover {
+		background: rgba(255, 255, 255, 0.1);
 		opacity: 1;
+	}
+
+	.togglebutton {
+		transform: scale(0.8);
+	}
+
+	.togglebutton label .toggle, .togglebutton label input[type=checkbox][disabled] + .toggle {
+		background-color: rgba(150, 150, 150, 0.7);
+
+		&:after {
+			background-color: rgba(150, 150, 150, 1);
+		}
+	}
+
+	> label {
+		font-size: .8em;
+		text-align: right;
+		margin-right: .5em;
+		cursor: pointer;
 	}
 }
 
