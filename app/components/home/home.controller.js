@@ -43,13 +43,18 @@
       $translate.use($localStorage.language);
       return getDefinitions($localStorage, $ocLazyLoad)
         .then(function () {
-          $scope.$evalAsync(function() {
+          // $scope.$evalAsync(function() {
             $scope.DestinyCrucibleMapDefinition = DestinyCrucibleMapDefinition;
             $scope.DestinyHazardDefinition = DestinyHazardDefinition;
             $scope.DestinyMedalDefinition = DestinyMedalDefinition;
             $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
             $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
-          });
+            $scope.currentMapInfo.name = $scope.DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
+            $scope.currentMap = $scope.DestinyCrucibleMapDefinition[$scope.currentMapId];
+            if ($scope.fireteam) {
+              $scope.refreshInventory($scope.fireteam);
+            }
+          // });
       });
     };
 
@@ -117,6 +122,7 @@
         $scope.weaponTotals = map.weaponTotals;
         $scope.mapHistory = map.mapHistory;
         $scope.currentMapInfo = map.mapInfo;
+        $scope.currentMapInfo.name = $scope.DestinyCrucibleMapDefinition[map.mapInfo.referenceId].name;
         $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
         $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
       } else {

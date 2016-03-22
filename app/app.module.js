@@ -269,7 +269,7 @@ function getDefinitions($localStorage, $ocLazyLoad) {
     methods.push('/shared/definitions/' + $localStorage.language + '/' + def + '.js')
   });
 
-  return $ocLazyLoad.load(methods);
+  return $ocLazyLoad.load({reconfig: true, rerun: true, files: methods});
 }
 
 angular

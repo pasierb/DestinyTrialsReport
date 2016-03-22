@@ -64,28 +64,40 @@ angular
         ENGLISH: 'English',
         SPANISH: 'Spanish',
         GERMAN: 'German',
-        FRENCH: 'French'
+        FRENCH: 'French',
+        JAPANESE: 'Japanese'
       })
       .translations('es', {
         LANGUAGE: 'Idioma',
         ENGLISH: 'Inglés',
         SPANISH: 'Español',
         GERMAN: 'Alemán',
-        FRENCH: 'Francés'
+        FRENCH: 'Francés',
+        JAPANESE: 'Japonés'
       })
       .translations('de', {
         LANGUAGE: 'Sprache',
         ENGLISH: 'Englisch',
         SPANISH: 'Spanisch',
         GERMAN: 'Deutsche',
-        FRENCH: 'Französisch'
+        FRENCH: 'Französisch',
+        JAPANESE: 'Japanisch'
       })
       .translations('fr', {
         LANGUAGE: 'Langue',
         ENGLISH: 'Anglais',
         SPANISH: 'Espanol',
         GERMAN: 'Allemand',
-        FRENCH: 'Français'
+        FRENCH: 'Français',
+        JAPANESE: 'Japonais'
+      })
+      .translations('ja', {
+        LANGUAGE: '言語',
+        ENGLISH: '英語',
+        SPANISH: 'スペイン語',
+        GERMAN: 'ドイツ人',
+        FRENCH: 'フランス語',
+        JAPANESE: '日本語'
       })
       .preferredLanguage($localStorageProvider.get('language') || 'en')
       .fallbackLanguage('en');
