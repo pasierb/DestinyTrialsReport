@@ -1,9 +1,9 @@
 <div class="player-tab--equipped">
 
-  <div class="player-tab__section" style="padding-bottom: .4em;padding-top: .4em;" ng-show="$storage.visibility.all || $storage.visibility.equipped.weapons">
+  <div class="player-tab__section" ng-show="$storage.visibility.all || $storage.visibility.equipped.weapons">
     <div weapon-nodes="[player.inventory.weapons.primary, player.inventory.weapons.special, player.inventory.weapons.heavy]" top-weapons="player.topWeapons" hide-stats="hideStats"></div>
   </div>
-  <div class="player-tab__section" style="padding-bottom: .4em;padding-top: .4em;" ng-show="$storage.visibility.all || $storage.visibility.equipped.armor">
+  <div class="player-tab__section" ng-show="$storage.visibility.all || $storage.visibility.equipped.armor">
     <div armor-nodes="player.inventory.armor.equipped" has-exotic="player.inventory.armor.equipped.definition.tierType === 6"></div>
   </div>
   <div ng-show="$storage.visibility.all || $storage.visibility.equipped.build" build-stats="[player.characterInfo.stats.STAT_INTELLECT, player.characterInfo.stats.STAT_DISCIPLINE, player.characterInfo.stats.STAT_STRENGTH]"></div>
@@ -19,21 +19,4 @@
     </div>
   </div>
 
-  <div class="block__footer block__footer--ad" style="padding: .7em .7em .3em .7em;margin-left: 0;margin-right: 0;margin-top: 0;">
-    <div class="ad" style="width: 320px;">
-      <a href="{{player.playerAd.url}}" ng-if="player.playerAd && player.playerAd.url" target="_blank"
-         style="display:inline-block;width:320px;height:50px;margin-bottom: 5px;">
-        <img ng-src="{{player.playerAd.image_url}}">
-      </a>
-      <!--<a href="" ng-if="player.playerAd && !player.playerAd.url" target="_blank"-->
-         <!--title="Advertise your streams for $1" data-content-template="shared/modals/adspace.modal.html"-->
-         <!--style="display:inline-block;width:320px;height:50px;margin-bottom: 5px;" bs-modal>-->
-        <!--<img  ng-src="{{player.playerAd.image_url}}">-->
-      <!--</a>-->
-      <adsense ad-client="ca-pub-7408805581120581" ad-slot="{{adsenseSlots[$index]}}"
-               inline-style="display:inline-block;width:320px;height:50px;" player-ad="true"
-               ng-if="!player.playerAd">
-      </adsense>
-    </div>
-  </div>
 </div>

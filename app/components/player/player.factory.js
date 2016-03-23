@@ -35,7 +35,13 @@ function getAbilityCooldown(subclass, ability, tier) {
   } else if (ability === 'STAT_DISCIPLINE') {
     return cooldownsGrenade[tier];
   } else if (ability === 'STAT_STRENGTH') {
-    return cooldownsMelee[tier];
+    switch (subclass) {
+      case 'Nightstalker':
+      case 'Gunslinger':
+        return cooldownsMeleeA[tier];
+      default:
+        return cooldownsMeleeB[tier];
+    }
   } else {
     return '-:--';
   }

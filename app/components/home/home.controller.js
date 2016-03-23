@@ -108,6 +108,7 @@
     };
 
     $scope.setFlawlessRecord = function (leaderboard) {
+      $scope.lighthouseLeaderboard = undefined;
       if (leaderboard && leaderboard[0]) {
         $scope.lighthouseLeaderboard = [];
 
