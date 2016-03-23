@@ -59,98 +59,13 @@ angular
   }])
   .config(['$translateProvider', '$localStorageProvider', function ($translateProvider, $localStorageProvider) {
     $translateProvider
-      .translations('en', {
-        LANGUAGE: 'Language',
-        ENGLISH: 'English',
-        SPANISH: 'Spanish',
-        GERMAN: 'German',
-        FRENCH: 'French',
-        JAPANESE: 'Japanese',
-        PORTUGUESE: 'Portuguese',
-        INTELLECT: 'Intellect',
-        DISCIPLINE: 'Discipline',
-        STRENGTH: 'Strength',
-        ARMOR: 'Armor',
-        RECOVERY: 'Recovery',
-        AGILITY: 'Agility'
-      })
-      .translations('es', {
-        LANGUAGE: 'Idioma',
-        ENGLISH: 'Inglés',
-        SPANISH: 'Español',
-        GERMAN: 'Alemán',
-        FRENCH: 'Francés',
-        JAPANESE: 'Japonés',
-        PORTUGUESE: 'Portugués',
-        INTELLECT: 'Intelecto',
-        DISCIPLINE: 'Disciplina',
-        STRENGTH: 'Fuerza',
-        ARMOR: 'Armadura',
-        RECOVERY: 'Recuperación',
-        AGILITY: 'Agilidad'
-      })
-      .translations('de', {
-        LANGUAGE: 'Sprache',
-        ENGLISH: 'Englisch',
-        SPANISH: 'Spanisch',
-        GERMAN: 'Deutsche',
-        FRENCH: 'Französisch',
-        JAPANESE: 'Japanisch',
-        PORTUGUESE: 'Portugiesisch',
-        INTELLECT: 'Intellekt',
-        DISCIPLINE: 'Disziplin',
-        STRENGTH: 'Stärke',
-        ARMOR: 'Rüstung',
-        RECOVERY: 'Erholung',
-        AGILITY: 'Agilität'
-      })
-      .translations('fr', {
-        LANGUAGE: 'Langue',
-        ENGLISH: 'Anglais',
-        SPANISH: 'Espanol',
-        GERMAN: 'Allemand',
-        FRENCH: 'Français',
-        JAPANESE: 'Japonais',
-        PORTUGUESE: 'Portugais',
-        INTELLECT: 'Intelligence',
-        DISCIPLINE: 'Discipline',
-        STRENGTH: 'Force',
-        ARMOR: 'Armure',
-        RECOVERY: 'Régénération',
-        AGILITY: 'Agilité'
-      })
-      .translations('ja', {
-        LANGUAGE: '言語',
-        ENGLISH: '英語',
-        SPANISH: 'スペイン語',
-        GERMAN: 'ドイツ人',
-        FRENCH: 'フランス語',
-        JAPANESE: '日本語',
-        PORTUGUESE: 'ポルトガル語',
-        INTELLECT: '知性',
-        DISCIPLINE: '鍛錬',
-        STRENGTH: '敏捷性',
-        ARMOR: '生命力',
-        RECOVERY: '回復',
-        AGILITY: '敏捷性'
-      })
-      .translations('pt-br', {
-        LANGUAGE: 'Língua',
-        ENGLISH: 'Inglês',
-        SPANISH: 'Espanhol',
-        GERMAN: 'Alemão',
-        FRENCH: 'Francês',
-        JAPANESE: 'Japonês',
-        PORTUGUESE: 'Português',
-        INTELLECT: 'Intelecto',
-        DISCIPLINE: 'Disciplina',
-        STRENGTH: 'Força',
-        ARMOR: 'Armadura',
-        RECOVERY: 'Recuperação',
-        AGILITY: 'Agilidade'
-      })
       .preferredLanguage($localStorageProvider.get('language') || 'en')
-      .fallbackLanguage('en');
+      .fallbackLanguage('en')
+      .useSanitizeValueStrategy('sanitize')
+      .useStaticFilesLoader({
+        prefix: 'shared/locales/',
+        suffix: '/translations.json'
+      })
   }])
   .run(function ($rootScope, $window) {
     // delete all the google related variables before you change the url
