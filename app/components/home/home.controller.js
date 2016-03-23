@@ -36,6 +36,7 @@
     $scope.DestinyHazardDefinition = DestinyHazardDefinition;
     $scope.DestinyMedalDefinition = DestinyMedalDefinition;
     $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
+    $scope.DestinyArmorDefinition = DestinyArmorDefinition;
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
 
     var storedDefinitions = {};
@@ -45,6 +46,7 @@
         DestinyHazardDefinition: DestinyHazardDefinition,
         DestinyMedalDefinition: DestinyMedalDefinition,
         DestinyWeaponDefinition: DestinyWeaponDefinition,
+        DestinyArmorDefinition: DestinyArmorDefinition,
         DestinyTalentGridDefinition: DestinyTalentGridDefinition
       }
     }
@@ -54,6 +56,7 @@
       DestinyHazardDefinition = defs[language].DestinyHazardDefinition;
       DestinyMedalDefinition = defs[language].DestinyMedalDefinition;
       DestinyWeaponDefinition = defs[language].DestinyWeaponDefinition;
+      DestinyArmorDefinition = defs[language].DestinyArmorDefinition;
       DestinyTalentGridDefinition = defs[language].DestinyTalentGridDefinition;
     }
 
@@ -143,7 +146,7 @@
         $scope.weaponTotals = map.weaponTotals;
         $scope.mapHistory = map.mapHistory;
         $scope.currentMapInfo = map.mapInfo;
-        $scope.currentMapInfo.name = $scope.DestinyCrucibleMapDefinition[map.mapInfo.referenceId].name;
+        $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[map.mapInfo.referenceId].name;
         $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
         $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
       } else {
@@ -156,10 +159,10 @@
             $scope.currentMapInfo = mapInfo.mapInfo;
             $scope.currentMapInfo.weekText = getRelativeWeekText(moment.utc(mapInfo.mapInfo.start_date), $scope.trialsInProgress, true);
             $scope.currentMapInfo.timeAgo = moment.utc(mapInfo.mapInfo.end_date).fromNow();
-            $scope.currentMapInfo.mapImage = $scope.DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].mapImage;
-            $scope.currentMapInfo.pgcrImage = $scope.DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].pgcrImage;
-            $scope.currentMapInfo.heatmapImage = $scope.DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
-            $scope.currentMapInfo.name = $scope.DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
+            $scope.currentMapInfo.mapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].mapImage;
+            $scope.currentMapInfo.pgcrImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].pgcrImage;
+            $scope.currentMapInfo.heatmapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
+            $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
             $scope.currentMapInfo.lighthouseLeaderboard = mapInfo.lighthouseLeaderboard;
             $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
             $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
@@ -205,22 +208,23 @@
 
     function setCurrentMap(id, week) {
       $scope.currentMapId = id;
-      $scope.currentMap = $scope.DestinyCrucibleMapDefinition[id];
+      $scope.currentMap = DestinyCrucibleMapDefinition[id];
       $scope.loadMapInfo(week);
     }
 
     function getMapFromStorage() {
       $scope.currentMapId = undefined;
-      if (angular.isUndefined($scope.$storage.currentMap.week)) {
-        getMapFromDb();
-      } else if (angular.isDefined($scope.$storage.currentMap) &&
-        angular.isDefined($scope.$storage.currentMap.week)) {
-        var map = $localStorage.currentMap;
-        if (map && map.id && map.start_date) {
-          var today = moment();
-          var weekAfterLastMap = moment.utc(map.start_date).day(12);
-          if (weekAfterLastMap.isAfter(today)) {
-            setCurrentMap(map.id, map.week);
+      if (angular.isDefined($scope.$storage.currentMap)) {
+        if (angular.isUndefined($scope.$storage.currentMap.week)) {
+          getMapFromDb();
+        } else {
+          var map = $localStorage.currentMap;
+          if (map && map.id && map.start_date) {
+            var today = moment();
+            var weekAfterLastMap = moment.utc(map.start_date).day(12);
+            if (weekAfterLastMap.isAfter(today)) {
+              setCurrentMap(map.id, map.week);
+            }
           }
         }
       }
@@ -391,7 +395,7 @@
         $scope.getMatchDetails = function (instanceId) {
           return matchesFactory.getPostGame({id: instanceId})
             .then(function (pgcr) {
-              pgcr.map = $scope.DestinyCrucibleMapDefinition[pgcr.activityDetails.referenceId];
+              pgcr.map = DestinyCrucibleMapDefinition[pgcr.activityDetails.referenceId];
               $scope.matchResults = pgcr;
               locationChanger.skipReload()
                 .withoutRefresh($routeParams.platformName + '/' + config.updateUrl + '/' + instanceId, true);
