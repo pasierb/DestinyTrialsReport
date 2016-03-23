@@ -38,24 +38,43 @@
     $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
     $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
 
+    var storedDefinitions = {};
+    function storeDefinitions(defs, language) {
+      defs[language] = {
+        DestinyCrucibleMapDefinition: DestinyCrucibleMapDefinition,
+        DestinyHazardDefinition: DestinyHazardDefinition,
+        DestinyMedalDefinition: DestinyMedalDefinition,
+        DestinyWeaponDefinition: DestinyWeaponDefinition,
+        DestinyTalentGridDefinition: DestinyTalentGridDefinition
+      }
+    }
+
+    function loadDefinitions(defs, language) {
+      DestinyCrucibleMapDefinition = defs[language].DestinyCrucibleMapDefinition;
+      DestinyHazardDefinition = defs[language].DestinyHazardDefinition;
+      DestinyMedalDefinition = defs[language].DestinyMedalDefinition;
+      DestinyWeaponDefinition = defs[language].DestinyWeaponDefinition;
+      DestinyTalentGridDefinition = defs[language].DestinyTalentGridDefinition;
+    }
+
+    storeDefinitions(storedDefinitions, $localStorage.language);
+
     $scope.changeLanguage = function () {
       // load new manifest
       $analytics.eventTrack('languageChanged', {category: $localStorage.language});
       $translate.use($localStorage.language);
       return getDefinitions($localStorage, $ocLazyLoad)
         .then(function () {
-          // $scope.$evalAsync(function() {
-            $scope.DestinyCrucibleMapDefinition = DestinyCrucibleMapDefinition;
-            $scope.DestinyHazardDefinition = DestinyHazardDefinition;
-            $scope.DestinyMedalDefinition = DestinyMedalDefinition;
-            $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
-            $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
-            $scope.currentMapInfo.name = $scope.DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
-            $scope.currentMap = $scope.DestinyCrucibleMapDefinition[$scope.currentMapId];
-            if ($scope.fireteam) {
-              $scope.refreshInventory($scope.fireteam);
-            }
-          // });
+          if (storedDefinitions && storedDefinitions[$localStorage.language]) {
+            loadDefinitions(storedDefinitions, $localStorage.language);
+          } else {
+            storeDefinitions(storedDefinitions, $localStorage.language);
+          }
+          $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
+          $scope.currentMap = DestinyCrucibleMapDefinition[$scope.currentMapId];
+          if ($scope.fireteam) {
+            $scope.refreshInventory($scope.fireteam);
+          }
       });
     };
 
@@ -191,7 +210,9 @@
 
     function getMapFromStorage() {
       $scope.currentMapId = undefined;
-      if (angular.isDefined($scope.$storage.currentMap) &&
+      if (angular.isUndefined($scope.$storage.currentMap.week)) {
+        getMapFromDb();
+      } else if (angular.isDefined($scope.$storage.currentMap) &&
         angular.isDefined($scope.$storage.currentMap.week)) {
         var map = $localStorage.currentMap;
         if (map && map.id && map.start_date) {
