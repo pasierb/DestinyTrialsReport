@@ -57,15 +57,32 @@ angular
       tooltipTitleFontStyle: "300"
     })
   }])
-  .config(['$translateProvider', '$localStorageProvider', function ($translateProvider, $localStorageProvider) {
-    $translateProvider
-      .preferredLanguage($localStorageProvider.get('language') || 'en')
+  .config(['$translateProvider', '$localStorageProvider',
+    function ($translateProvider, $localStorageProvider) {
+      $translateProvider
       .fallbackLanguage('en')
       .useSanitizeValueStrategy('sanitize')
       .useStaticFilesLoader({
         prefix: 'shared/locales/',
         suffix: '/translations.json'
-      })
+      });
+
+      if ($localStorageProvider.get('language')) {
+        $translateProvider
+        .preferredLanguage($localStorageProvider.get('language'));
+      } else {
+        $translateProvider
+        .registerAvailableLanguageKeys(['en', 'fr', 'es', 'de', 'it', 'ja', 'pt-br'], {
+          'en_*': 'en',
+          'fr_*': 'fr',
+          'es_*': 'es',
+          'de_*': 'de',
+          'it_*': 'it',
+          'ja_*': 'ja',
+          'pt_*': 'pt-br'
+        })
+        .determinePreferredLanguage();
+      }
   }])
   .run(function ($rootScope, $window) {
     // delete all the google related variables before you change the url
