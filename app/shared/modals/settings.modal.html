@@ -3,14 +3,12 @@
     <div class="settings-modal modal-content">
       <div class="modal-hero modal-hero--small">
         <div ng-click="$hide()" class="modal-close"><i class="material-icons">&#xE14C;</i></div>
-        <div class="modal-hero__title">Settings</div>
+        <div class="modal-hero__title" translate="SETTINGS"></div>
       </div>
       <div class="modal-text">
         <div class="row">
           <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header" translate="LANGUAGE">
-              Language
-            </h3>
+            <h3 class="stat-header" translate="LANGUAGE"></h3>
           </div>
           <div class="col-xs-12 col-sm-10">
             <div class="select">
@@ -25,17 +23,13 @@
               </select>
             </div>
             <hr class="hr--faded">
-            <p class="faded text-center">
-              Please note that this setting only influences the names of Destiny-related weapons and gear for now.
-              Want to help us translate the entire site to your language? <a href="mailto:translations@trials.report" target="_blank">Send us an email!</a>
+            <p class="faded text-center" translate="TRANSLATEEMAIL"></p>
           </div>
         </div>
         <hr>
         <div class="row">
           <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header">
-              Customise player card content
-            </h3>
+            <h3 class="stat-header" translate="CUSTOMISE"></h3>
             <span
                data-content="Decide what you want to see after searching for a player by hiding certain sections" bs-popover>
               <i class="material-icons icon--small info">&#xE8FD;</i>
@@ -50,8 +44,8 @@
                       <input type="checkbox" ng-model="$storage.visibility.kdRatio">
                     </label>
                   </div>
-                  <label>Kill/Death ratio</label>
-                  <span>Including the chart from latest matches</span>
+                  <label translate="KDRATIO"></label>
+                  <span translate="INCLUDING"></span>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
@@ -61,8 +55,8 @@
                       <input type="checkbox" ng-model="$storage.visibility.mainStats">
                     </label>
                   </div>
-                  <label>Main stats</label>
-                  <span>Win percentage, win streak, ELO-rating and lighthouse visits</span>
+                  <label translate="MAINSTATS"></label>
+                  <span translate="MAINSTATSDESC"></span>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
@@ -72,8 +66,8 @@
                       <input type="checkbox" ng-model="$storage.visibility.weeklyStats">
                     </label>
                   </div>
-                  <label>Weekly stats</label>
-                  <span>Stats and weapon usage for this week only</span>
+                  <label translate="WEEKSTATS"></label>
+                  <span translate="WEEKSTATSDESC"></span>
                 </div>
               </div>
             </div>
@@ -86,8 +80,8 @@
                       <input type="checkbox" ng-model="$storage.visibility.equipped.tab">
                     </label>
                   </div>
-                  <label>Equipped tab</label>
-                  <span>Current character loadout</span>
+                  <label translate="EQTAB"></label>
+                  <span translate="EQTABDESC"></span>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
@@ -97,8 +91,8 @@
                       <input type="checkbox" ng-model="$storage.visibility.lastMatches.tab">
                     </label>
                   </div>
-                  <label>Last Matches tab</label>
-                  <span>An overview of the character's last three Trials matches</span>
+                  <label translate="MATCHTAB"></label>
+                  <span translate="MATCHTABDESC"></span>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
@@ -108,8 +102,8 @@
                       <input type="checkbox" ng-model="$storage.visibility.stats.tab">
                     </label>
                   </div>
-                  <label>Stats tab</label>
-                  <span>Character data from the beginning of time</span>
+                  <label translate="STATSTAB"></label>
+                  <span translate="STATSTABDESC"></span>
                 </div>
               </div>
             </div>
@@ -118,9 +112,7 @@
         </div>
         <div class="row" ng-class="{'is-disabled': !$storage.visibility.equipped.tab}">
           <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header faded">
-              Equipped tab
-            </h3>
+            <h3 class="stat-header faded" translate="EQTAB"></h3>
           </div>
           <div class="col-xs-12 col-sm-10">
             <div class="row">
@@ -132,7 +124,7 @@
                              ng-model="$storage.visibility.equipped.weapons">
                     </label>
                   </div>
-                  <label>Equipped weapons</label>
+                  <label translate="EQWEAPONS"></label>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
@@ -143,7 +135,7 @@
                              ng-model="$storage.visibility.equipped.armor">
                     </label>
                   </div>
-                  <label>Equipped armor</label>
+                  <label translate="EQARMOR"></label>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-4">
@@ -154,7 +146,7 @@
                              ng-model="$storage.visibility.equipped.build">
                     </label>
                   </div>
-                  <label>Armor stats</label>
+                  <label translate="ARMORSTATS"></label>
                 </div>
               </div>
             </div>
@@ -168,7 +160,7 @@
                              ng-model="$storage.visibility.equipped.talents">
                     </label>
                   </div>
-                  <label>Character perks</label>
+                  <label translate="CHARPERKS"></label>
                 </div>
               </div>
             </div>

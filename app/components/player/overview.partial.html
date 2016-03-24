@@ -27,7 +27,7 @@
             <span ng-bind="player.characterInfo.stats.STAT_LIGHT.value"></span>
           </div>
           <div class="player-level__level" ng-show="player.characterInfo.level">
-            <span>Level</span>
+            <span translate="LEVEL"></span>
             <span ng-bind="player.characterInfo.level"></span>
           </div>
         </div>
@@ -39,7 +39,7 @@
   <div class="row">
     <div class="player-quick-look__form col-xs-9">
       <div class="player-quick-look__form__matches" trials-history="player.activities.lastTwentyFive" player-kd="player.stats.killsDeathsRatio.basic.value"></div>
-      <label class="data-label">Recent Matches</label>
+      <label class="data-label" translate="RECENT"></label>
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
@@ -53,12 +53,12 @@
   <div class="row">
     <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
       <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
-      <label>Wins</label>
+      <label translate="WINS"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
       <span ng-bind="player.activities.streak || 'N/A'"></span>
       <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
-      <label>Streak</label>
+      <label translate="STREAK"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="(player.ggg.elo | number:0) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
@@ -68,7 +68,7 @@
           <i class="material-icons icon--small">&#xE8FD;</i>
         </a>
       </span>
-      <label>Elo Rating</label>
+      <label translate="ELO"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/lighthouse.popover.html" data-placement="top-right" bs-popover>
       <span class="player-main-stats__lighthouse fail" ng-if="player.lighthouse.grimoire !== true">
@@ -78,7 +78,7 @@
         <!--<i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>-->
         <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'"></span>
       </span>
-      <label>Flawless</label>
+      <label translate="FLAWLESS"></label>
     </div>
   </div>
 </div>
@@ -106,21 +106,21 @@
         </div>
       </div>
     </div>
-    <label>Weapon usage</label>
+    <label translate="USAGE"></label>
   </div>
   <hr class="hr--minor">
   <div class="row">
     <div class="col-xs-3 stat">
       <span ng-bind="player.currentWeek.matches"></span>
-      <label>Matches</label>
+      <label translate="MATCHES"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="player.currentWeek.wins"></span>
-      <label>Wins</label>
+      <label translate="WINS"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="player.currentWeek.losses"></span>
-      <label>Losses</label>
+      <label translate="LOSSES"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="player.currentWeek.kd"></span>
@@ -128,7 +128,5 @@
     </div>
   </div>
   <hr class="hr--minor">
-  <div class="stat-header">
-    This week
-  </div>
+  <div class="stat-header" translate="THISWEEK"></div>
 </div>
