@@ -196,7 +196,7 @@
     $scope.focusOnPlayers = false;
     $scope.focusOnPlayer = 1;
 
-    $scope.hideStats = $scope.$storage.hideStats;
+    $scope.hideStats = $localStorage.hideStats;
 
     $scope.switchFocus = function () {
       $scope.focusOnPlayers = !$scope.focusOnPlayers;
@@ -214,8 +214,8 @@
 
     function getMapFromStorage() {
       $scope.currentMapId = undefined;
-      if (angular.isDefined($scope.$storage.currentMap)) {
-        if (angular.isUndefined($scope.$storage.currentMap.week)) {
+      if (angular.isDefined($localStorage.currentMap)) {
+        if (angular.isUndefined($localStorage.currentMap.week)) {
           getMapFromDb();
         } else {
           var map = $localStorage.currentMap;
@@ -251,7 +251,7 @@
 
     $scope.toggleStats = function () {
       $scope.hideStats = !$scope.hideStats;
-      $scope.$storage.hideStats = $scope.hideStats;
+      $localStorage.hideStats = $scope.hideStats;
     };
 
     $scope.searchName = function (name) {
@@ -333,13 +333,13 @@
 
     $scope.togglePlatform = function () {
       $scope.platformValue = !$scope.platformValue;
-      $scope.$storage.platform = $scope.platformValue;
+      $localStorage.platform = $scope.platformValue;
       $scope.gggLoadWeapons($scope.platformValue);
     };
 
     $scope.setPlatform = function (platformBool) {
       $scope.platformValue = platformBool;
-      $scope.$storage.platform = $scope.platformValue;
+      $localStorage.platform = $scope.platformValue;
       $scope.gggLoadWeapons($scope.platformValue);
       return platformBool;
     };
@@ -359,7 +359,7 @@
     if ($routeParams.platformName) {
       $scope.platformValue = $routeParams.platformName === 'ps';
     } else {
-      $scope.platformValue = $scope.$storage.platform;
+      $scope.platformValue = $localStorage.platform;
     }
 
     if (config.fireteam) {
@@ -370,7 +370,7 @@
         $scope.opponents = config.data.reverse();
         $scope.opponentsCopy = $scope.opponents;
         $scope.focusOnPlayers = true;
-        $scope.archToggled = $scope.$storage.archToggled;
+        $scope.archToggled = $localStorage.archToggled;
 
         $scope.filterPlayers = function (change) {
           var result = [];
@@ -384,7 +384,7 @@
 
         $scope.archEnemies = function (value) {
           $scope.archToggled = value;
-          $scope.$storage.archToggled = value;
+          $localStorage.archToggled = value;
           if ($scope.archToggled) {
             $scope.opponents = _.chain($scope.opponents).groupBy('displayName').filter(function(v){return v.length > 1}).flatten().value();
           } else {

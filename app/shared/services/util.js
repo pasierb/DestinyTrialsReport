@@ -41,7 +41,7 @@ app.service('util', [
             //  request();
             //  counter++;
             //} else {
-            //  results.reject("Could not load after multiple tries");
+            //  results.reject('Could not load after multiple tries');
             //}
           });
       };

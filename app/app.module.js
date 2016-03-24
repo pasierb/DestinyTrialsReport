@@ -278,7 +278,6 @@ angular
     'angulartics.google.analytics',
     'angularUtils.directives.dirPagination',
     'angular-loading-bar',
-    'chart.js',
     'mgcrea.ngStrap.modal',
     'mgcrea.ngStrap.popover',
     'ngAnimate',
