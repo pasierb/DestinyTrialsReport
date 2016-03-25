@@ -418,19 +418,6 @@
           var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
 
           guardianggFactory.getTeamElo($scope.fireteam);
-          //statsFactory.getPlayerAds($scope.fireteam).then(function (result) {
-          //  if (!result) {
-              api.getRandomAd().then(function (result) {
-                if (result && result.data && result.data[0]) {
-                  if ($scope.fireteam[_.random(0, 2)]) {
-                    $scope.fireteam[_.random(0, 2)].playerAd = result.data[0];
-                  } else {
-                    $scope.fireteam[0].playerAd = result.data[0];
-                  }
-                }
-              });
-          //  }
-          //});
 
           _.each($scope.fireteam, function (player) {
 

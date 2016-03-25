@@ -84,7 +84,7 @@
 </div>
 <div class="player__content player-this-week" ng-class="{'is-irrelevant': !player.currentWeek.percent}" ng-show="$storage.visibility.all || $storage.visibility.weeklyStats">
   <div class="stat-header"><span ng-bind="currentMapInfo.weekText"></span></div>
-  <div class="row player-this-week__weapons" ng-repeat="weapon in player.lastWeapons | orderObjectBy:'sum_kills':true">
+  <div class="row player-this-week__weapons" ng-repeat="weapon in player.lastWeapons">
     <div class=" col-xs-6">
       <img class="weapon-type-icon img-responsive"
            ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName.toLowerCase().replace(' ','-') + '.svg'}}"
