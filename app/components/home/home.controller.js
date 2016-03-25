@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, definitions, $ocLazyLoad, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics, $q, $http) {
+  function homeController(api, config, definitions, $ocLazyLoad, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics) {
     $scope.$storage = $localStorage.$default({
       language: 'en',
       platform: true,

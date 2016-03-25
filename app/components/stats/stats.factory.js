@@ -30,72 +30,79 @@ angular.module('trialsReportApp')
       return api.getPlayer(
         player.membershipId
       ).then(function (result) {
-          var year2;
-          var nonHazard;
-          var nonHazardCharity;
-          var currentWeek;
-          if (result && result.data && result.data[0]) {
-            var data = result.data[0];
+        var year2;
+        var nonHazard;
+        var nonHazardCharity;
+        var currentWeek;
+        if (result && result.data && result.data[0]) {
+          var data = result.data[0];
 
-            if (data.kills && data.deaths && data.match_count) {
-              var deaths = data.deaths == 0 ? 1 : data.deaths;
-              var kd = (data.kills / deaths).toFixed(2);
-              year2 = {kd: kd, matches: data.match_count};
-            }
+          if (data.kills && data.deaths && data.match_count) {
+            var deaths = data.deaths == 0 ? 1 : data.deaths;
+            var kd = (data.kills / deaths).toFixed(2);
+            year2 = {kd: kd, matches: data.match_count};
+          }
 
-            if (data.flawless) {
-              var lighthouseVisits = {yearCount: 0};
-              lighthouseVisits.years = {};
-              _.each(data.flawless.years, function (values, year) {
-                lighthouseVisits.yearCount++;
-                lighthouseVisits.years[year] = {year: year, accountCount: values.count};
-                if (values.characters) {
-                  lighthouseVisits.years[year].characters = values.characters;
-                }
-              });
-
-              if (player) {
-                if (player.hasOwnProperty('lighthouse')) {
-                  angular.extend(player.lighthouse, lighthouseVisits);
-                } else {
-                  player.lighthouse = lighthouseVisits;
-                }
+          if (data.flawless) {
+            var lighthouseVisits = {yearCount: 0};
+            lighthouseVisits.years = {};
+            _.each(data.flawless.years, function (values, year) {
+              lighthouseVisits.yearCount++;
+              lighthouseVisits.years[year] = {year: year, accountCount: values.count};
+              if (values.characters) {
+                lighthouseVisits.years[year].characters = values.characters;
               }
-            }
+            });
 
-            if (data.supporterStatus && data.supporterStatus[0]) {
-              nonHazard = data.supporterStatus;
-            }
-
-            if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
-              nonHazardCharity = data.charitySupporterStatus;
-            }
-
-            if (data.streak) {
-              player.longestStreak = {accountStreak: data.streak.accountStreak};
-              var characters = data.streak.characters;
-              if (characters && characters[player.characterInfo.characterId]) {
-                var character = characters[player.characterInfo.characterId];
-                player.longestStreak.characterStreak = character.characterStreak;
+            if (player) {
+              if (player.hasOwnProperty('lighthouse')) {
+                angular.extend(player.lighthouse, lighthouseVisits);
+              } else {
+                player.lighthouse = lighthouseVisits;
               }
-            }
-
-            if (data.thisWeek && data.thisWeek[0]) {
-              currentWeek = {
-                percent: +(100 * (data.thisWeek[0].matches - data.thisWeek[0].losses) / data.thisWeek[0].matches).toFixed(0),
-                wins: (data.thisWeek[0].matches - data.thisWeek[0].losses),
-                losses: data.thisWeek[0].losses,
-                matches: data.thisWeek[0].matches,
-                kd: (1 * data.thisWeek[0].kd).toFixed(2)
-              };
             }
           }
-          player.year2 = year2;
-          player.nonHazard = nonHazard;
-          player.nonHazardCharity = nonHazardCharity;
-          player.currentWeek = currentWeek;
-          return player;
-        });
+
+          if (data.supporterStatus && data.supporterStatus[0]) {
+            nonHazard = data.supporterStatus;
+          }
+
+          if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
+            nonHazardCharity = data.charitySupporterStatus;
+          }
+
+          if (data.streak) {
+            player.longestStreak = {accountStreak: data.streak.accountStreak};
+            var characters = data.streak.characters;
+            if (characters && characters[player.characterInfo.characterId]) {
+              var character = characters[player.characterInfo.characterId];
+              player.longestStreak.characterStreak = character.characterStreak;
+            }
+          }
+
+          if (data.thisWeek && data.thisWeek[0]) {
+            var deathsTw = data.thisWeek[0].deaths == 0 ? 1 : data.thisWeek[0].deaths;
+            if (data.thisWeek[0].matches == 0) {
+              deathsTw = 0;
+            }
+            var kdTw = (data.thisWeek[0].kills / deathsTw).toFixed(2);
+            currentWeek = {
+              percent: +(100 * (data.thisWeek[0].matches - data.thisWeek[0].losses) / data.thisWeek[0].matches).toFixed(0),
+              wins: (data.thisWeek[0].matches - data.thisWeek[0].losses),
+              losses: data.thisWeek[0].losses,
+              matches: data.thisWeek[0].matches,
+              kills: data.thisWeek[0].kills,
+              deaths: deathsTw,
+              kd: kdTw
+            };
+          }
+        }
+        player.year2 = year2;
+        player.nonHazard = nonHazard;
+        player.nonHazardCharity = nonHazardCharity;
+        player.currentWeek = currentWeek;
+        return player;
+      });
     };
 
     var getGrimoire = function (player) {

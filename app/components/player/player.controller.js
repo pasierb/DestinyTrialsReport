@@ -1,13 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory) {
-
-    var activityCount = $scope.subdomain ? '200' : '50';
-    homeFactory.getActivities($scope.player, activityCount);
-    statsFactory.getStats($scope.player);
-    statsFactory.getGrimoire($scope.player);
-    statsFactory.getPlayer($scope.player);
+  .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory, $localStorage) {
 
     $scope.getLastMatch = function (player) {
       return matchesFactory.getLastThree(player)
@@ -32,6 +26,20 @@ angular.module('trialsReportApp')
           $scope.player.activities.lastMatches = lastMatches;
         });
     };
+
+    var activityCount = $scope.subdomain ? '200' : '50';
+    homeFactory.getActivities($scope.player, activityCount)
+      .then(function (player) {
+        if (!$localStorage.visibility.equipped.tab) {
+          if ($localStorage.visibility.lastMatches.tab) {
+            $scope.getLastMatch(player);
+          }
+        }
+      });
+    
+    statsFactory.getStats($scope.player);
+    statsFactory.getGrimoire($scope.player);
+    statsFactory.getPlayer($scope.player);
 
     $scope.getWeaponByHash = function (hash) {
       if ($scope.DestinyWeaponDefinition[hash]) {
