@@ -256,13 +256,14 @@
 
     $scope.searchName = function (name) {
       if (name && name.length > 3) {
-        $scope.playerNames = {};
         var membershipType = $scope.platformValue ? 2 : 1;
         return api.searchName(
           name,
           membershipType
         ).then(function (result) {
-          $scope.playerNames = result.data;
+          if (result && result.data && result.data.length > 0) {
+            $scope.playerNames = result.data;
+          }
         });
       }
     };
