@@ -493,44 +493,5 @@
     //    });
     //  }
     //}
-
-    //$scope.chartLabels = [];
-    //$scope.chartValues = [];
-    //$scope.nowIndicator = null;
-    //$scope.dayIndicators = {};
-    //
-    //if ($scope.trialsInProgress) {
-    //  var now = moment().subtract(1, 'week');
-    //}
-    //
-    //var dayChange = trialsDates.begin.clone().local().subtract(1, 'week').endOf('day');
-    //var i = 0;
-    //$scope.dayIndicators[i] = {
-    //  label: dayChange.format('ddd')
-    //};
-    //
-    //angular.forEach(kdGraphData, function (value, key) {
-    //  var dateLabel = moment.utc(value.tmstamp, 'MM/DD/YYYY HH:mm:ss').local();
-    //  $scope.chartLabels.push(dateLabel.format('dddd, HH:00'));
-    //  $scope.chartValues.push(value.kd);
-    //
-    //  if ($scope.trialsInProgress) {
-    //    if ($scope.nowIndicator === null && now < dateLabel) {
-    //      $scope.nowIndicator = key / kdGraphData.length * 100;
-    //    }
-    //  }
-    //
-    //  if (dayChange < dateLabel) {
-    //    $scope.dayIndicators[i].value = key / kdGraphData.length * 100;
-    //
-    //    i++;
-    //    dayChange = dayChange.clone().add(1, 'hour').endOf('day');
-    //    $scope.dayIndicators[i] = {
-    //      label: dayChange.format('ddd')
-    //    };
-    //  }
-    //});
-    //
-    //$scope.chartValues = [$scope.chartValues];
   }
 })();
