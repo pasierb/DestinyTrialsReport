@@ -13,15 +13,6 @@
         abilities: '=playerAbilities'
       },
       link: function ($scope) {
-
-        $scope.getWeaponTitle = function (title) {
-          switch (title) {
-            case 'weaponKillsGrenade': return 'Grenade';
-            case 'weaponKillsMelee':   return 'Melee';
-            case 'weaponKillsSuper':   return 'Super';
-          }
-        };
-
         var getWeaponByHash = function (hash) {
           if (DestinyWeaponDefinition[hash]) {
             var definition = DestinyWeaponDefinition[hash];

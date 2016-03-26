@@ -63,7 +63,6 @@
     storeDefinitions(storedDefinitions, $localStorage.language);
 
     $scope.changeLanguage = function () {
-      // load new manifest
       $analytics.eventTrack('languageChanged', {category: $localStorage.language});
       $translate.use($localStorage.language);
       return getDefinitions($localStorage, $ocLazyLoad)

@@ -51,14 +51,6 @@ angular.module('trialsReportApp')
       }
     };
 
-    $scope.getWeaponTitle = function (title) {
-      switch (title) {
-        case 'weaponKillsGrenade': return 'Grenade';
-        case 'weaponKillsMelee':   return 'Melee';
-        case 'weaponKillsSuper':   return 'Super';
-      }
-    };
-
     $scope.characterLighthouse = function (player, year) {
       var count = 0;
       if (player &&

@@ -55,8 +55,8 @@
         </div>
       </div>
     </div>
-    <div class="last-match-weapon last-match-weapon--{{specialWeapon.id}} col-xs-12" ng-repeat="specialWeapon in abilityKills track by $index"
-         ng-if="getWeaponTitle(specialWeapon.id)">
+    <div class="last-match-weapon last-match-weapon--{{specialWeapon.id}} col-xs-12"
+         ng-repeat="specialWeapon in abilityKills track by $index">
       <div class="row">
         <div class="col-xs-6 last-weapon-weapon__descr">
           <span class="last-match-weapon__img" ng-style="{'background-image':'url(\'' + specialWeapon.icon + '\')'}"></span>
