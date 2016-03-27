@@ -7,7 +7,7 @@ function setPastActivities(reversedAct, n, pastActivities) {
     'date': reversedAct[n].period,
     'dateAgo': moment(reversedAct[n].period).fromNow(),
     'kills': reversedAct[n].values.kills.basic.value,
-    'kd': reversedAct[n].values.killsDeathsRatio.basic.displayValue,
+    'kd': (reversedAct[n].values.killsDeathsRatio.basic.value).toFixed(2),
     'deaths': reversedAct[n].values.deaths.basic.value,
     'assists': reversedAct[n].values.assists.basic.value
   });
