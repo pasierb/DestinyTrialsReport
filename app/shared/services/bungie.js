@@ -6,36 +6,40 @@ app.service('bungie', [
   '$http',
   'util',
   'RequestFallback',
+  '$localStorage',
 
-  function ($http, util, RequestFallback) {
+  function ($http, util, RequestFallback, $localStorage) {
     return new function () {
       //var BASE_URL = 'https://proxys.destinytrialsreport.com/Platform/Destiny/';
       var ENDPOINTS = {
-        searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/',
-        account: '{platform}/Account/{membershipId}/',
-        grimoire: 'Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}',
-        stats: 'Stats/{platform}/{membershipId}/{characterId}/?modes={mode}',
-        inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/',
-        activityHistory: 'Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}',
-        pgcr: 'Stats/PostGameCarnageReport/{instanceId}/'
+        searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/?lc={locale}',
+        account: '{platform}/Account/{membershipId}/?lc={locale}',
+        grimoire: 'Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}&lc={locale}',
+        stats: 'Stats/{platform}/{membershipId}/{characterId}/?modes={mode}&lc={locale}',
+        inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
+        activityHistory: 'Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}&lc={locale}',
+        pgcr: 'Stats/PostGameCarnageReport/{instanceId}/?lc={locale}'
       };
       this.searchForPlayer = function(platform, name) {
         return this.get(ENDPOINTS.searchForPlayer, {
           platform: platform,
-          name: name.replace(/[^\w\s\-]/g, '')
+          name: name.replace(/[^\w\s\-]/g, ''),
+          locale: $localStorage.language
         });
       };
 
       this.getPgcr = function(instanceId) {
         return this.get(ENDPOINTS.pgcr, {
-          instanceId: instanceId
+          instanceId: instanceId,
+          locale: $localStorage.language
         });
       };
 
       this.getAccount = function(platform, membershipId) {
         return this.get(ENDPOINTS.account, {
           platform: platform,
-          membershipId: membershipId
+          membershipId: membershipId,
+          locale: $localStorage.language
         });
       };
 
@@ -43,7 +47,8 @@ app.service('bungie', [
         return this.get(ENDPOINTS.grimoire, {
           platform: platform,
           membershipId: membershipId,
-          cardId: cardId
+          cardId: cardId,
+          locale: $localStorage.language
         });
       };
 
@@ -53,7 +58,8 @@ app.service('bungie', [
           membershipId: membershipId,
           characterId: characterId,
           mode: mode,
-          count: count
+          count: count,
+          locale: $localStorage.language
         });
       };
 
@@ -62,7 +68,8 @@ app.service('bungie', [
           platform: platform,
           membershipId: membershipId,
           characterId: characterId,
-          mode: mode
+          mode: mode,
+          locale: $localStorage.language
         });
       };
 
@@ -71,7 +78,7 @@ app.service('bungie', [
           platform: platform,
           membershipId: membershipId,
           characterId: characterId,
-          locale: 'en'
+          locale: $localStorage.language
         });
       };
 
