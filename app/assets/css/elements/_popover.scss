@@ -161,6 +161,20 @@
   border-left-color: #fff;
 }
 
+.popover.match-summary {
+  min-width: 10em;
+
+  .popover-footer {
+    text-align: center;
+  }
+}
+
+.popover.weapon-stats {
+  .popover-footer {
+    text-align: center;
+  }
+}
+
 .popover.ggg-elo {
   min-width: 12em;
 

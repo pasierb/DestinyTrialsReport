@@ -1,3 +1,3 @@
 <i class="player-quick-look__form__match match" style="{{calcGraphPoint(str.kd)}}"
    ng-repeat="str in activities.slice().reverse()" ng-class="str.standing === 0 ? 'match--win' : 'match--loss'"
-   title="{{str.dateAgo}}" data-content="K/D: {{str.kd}} with {{str.kills}} kills" bs-popover></i>
+   data-template-url="shared/popovers/matchSummary.popover.html" bs-popover></i>
