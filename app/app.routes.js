@@ -36,6 +36,14 @@ angular
       definitions: getDefinitions
     }
   })
+  .when('/dcr', {
+    templateUrl: 'components/dcr/dcr.html',
+    controller: 'homeController',
+    resolve: {
+      config: getFromParams,
+      definitions: getDefinitions
+    }
+  })
   .otherwise({
     redirectTo: '/'
   });
