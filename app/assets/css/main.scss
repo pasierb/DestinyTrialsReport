@@ -65,6 +65,57 @@
 // Maps tab
 @import 'parts/player-maps';
 
+// TODO: Remove after april fools
+.april-fools {
+  background: linear-gradient(to bottom, rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    .april-fools__content {
+      background: linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    }
+  }
+
+  .toggle {
+    margin-right: 1.5em !important // it's all allowed for april fools;
+  }
+
+  .togglebutton label input[type=checkbox]:checked + .toggle,
+  .togglebutton-default label input[type=checkbox]:checked + .toggle {
+    background-color: transparentize($trials-gold, .5);
+  }
+
+  .togglebutton label input[type=checkbox]:checked + .toggle:after,
+  .togglebutton-default label input[type=checkbox]:checked + .toggle:after {
+    background-color: $trials-gold;
+  }
+
+  .togglebutton label .toggle, .togglebutton label input[type=checkbox][disabled] + .toggle {
+		background-color: rgba(255, 255, 255, 0.3);
+
+		&:after {
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}
+
+.april-fools__content2 {
+  padding: 1em $controls-padding;
+  background: rgba(255, 255, 255, 0.3);
+  @include shadow(3);
+}
+
+.april-fools__content {
+  padding: 1em $controls-padding;
+  flex-grow: 1;
+}
+
 $offset: 187;
 $duration: 1.4s;
 
