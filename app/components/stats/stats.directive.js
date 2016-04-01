@@ -9,17 +9,16 @@ angular.module('trialsReportApp')
         kd: '=playerKd'
       },
       link: function ($scope) {
-        var kd = $scope.kd;
         var factor = -60,
             range = 1.5,
             unit = '%';
 
         $scope.calcGraphPoint = function (matchKd) {
           var x = 0;
-          if (matchKd < kd) {
-            x = Math.max(-range, matchKd - kd);
+          if (matchKd < $scope.kd) {
+            x = Math.max(-range, matchKd - $scope.kd);
           } else {
-            x = Math.min(range, matchKd - kd);
+            x = Math.min(range, matchKd - $scope.kd);
           }
           var value = x * factor + unit;
           var translateY = 'translateY(' + value + '); ';
