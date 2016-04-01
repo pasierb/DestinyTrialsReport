@@ -67,7 +67,7 @@ angular
   }
 ])
 .config(function (tmhDynamicLocaleProvider) {
-  tmhDynamicLocaleProvider.localeLocationPattern('resources/angular-locale_{{locale}}.js');
+  tmhDynamicLocaleProvider.localeLocationPattern('shared/resources/angular-locale_{{locale}}.js');
 })
 .run(function ($rootScope, $window) {
   $rootScope.$on('$locationChangeStart', function () {
