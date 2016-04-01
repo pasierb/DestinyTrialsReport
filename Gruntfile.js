@@ -200,7 +200,7 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/components/{,*/}*.js'
+          '<%= yeoman.app %>/**/*.js'
         ]
       },
       test: {
@@ -335,10 +335,8 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/components/**/*.js',
-          '<%= yeoman.dist %>/shared/**/*.js',
-          '<%= yeoman.dist %>/assets/js/**/*.js',
-          '<%= yeoman.dist %>/assets/css/{,*/}*.css'
+          '<%= yeoman.dist %>/**/*.js',
+          '<%= yeoman.dist %>/**/*.css'
         ]
       }
     },
@@ -509,11 +507,6 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/assets/img',
           src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: '.',
-          dest: '<%= yeoman.dist %>',
-          src: ['manifest.js']
         }]
       },
       styles: {
