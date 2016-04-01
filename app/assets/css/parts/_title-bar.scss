@@ -4,18 +4,63 @@
   background-size: auto 20em;
 }
 
+.banner-image {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 20%;
+  height: 10em;
+  display: inline-block;
+}
+
+.banner-image.one {
+  left: 0%;
+  background-position: 0%;
+}
+
+.banner-image.two {
+  left: 20%;
+  background-position: 20%;
+}
+
+.banner-image.three {
+  left: 40%;
+  background-position: 40%;
+}
+
+.banner-image.four {
+  left: 60%;
+  background-position: 60%;
+}
+
+.banner-image.five {
+  left: 80%;
+  background-position: 80%;
+}
+
+.banner-image:hover {
+  left: 0;
+  z-index: 50;
+  background-position: 0%;
+  width: 100%;
+}
+
 .title-bar__content {
   padding: $controls-padding;
   padding-top: 6em;
   padding-bottom: 1.7em;
   display: flex;
   align-items: center;
+
+  z-index: 0;
 }
 
 .title-bar__title {
   font-size: 1.7em;
   line-height: 1.4;
   flex-grow: 1;
+
+  z-index: 100;
 
   a,
   a:hover,
