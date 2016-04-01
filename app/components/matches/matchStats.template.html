@@ -2,15 +2,15 @@
   <div class="row stat-row">
     <div class="col-xs-3 stat">
       <span ng-bind="allStats.kills.count || 0"></span>
-      <label>Kills</label>
+      <label translate="kills"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="allStats.deaths.count || 0"></span>
-      <label>Deaths</label>
+      <label translate="deaths"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="allStats.assists.count || 0"></span>
-      <label>Assists</label>
+      <label translate="assists"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="allStats.precisionKills.count || 0"></span>
@@ -20,18 +20,17 @@
   <div class="row stat-row">
     <div class="col-xs-3 stat">
       <span ng-bind="(allStats.killsDeathsAssists.count/matchCount | number:2) || 0"></span>
-      <label>KA/D</label>
+      <label translate="killsDeathsAssistsShort"></label>
     </div>
     <div class="col-xs-3 stat">
-      <span ng-bind="(allStats.killsDeathsRatio.count/matchCount  | number:2) || 0"></span>
-      <label>K/D</label>
+      <span ng-bind="(allStats.killsDeathsRatio.count/matchCount | number:2) || 0"></span>
+      <label translate="killsDeathsRatioShort"></label>
     </div>
     <div class="col-xs-3 stat">
       <span ng-bind="allStats.resurrectionsPerformed.count || 0"></span>
       <label>Revives</label>
     </div>
     <div class="col-xs-3 stat">
-      <!-- this really needs to be changed to 'Xm Xs' format -->
       <span ng-bind="(allStats.averageLifespan.count/matchCount | secondsToDateTime | date:'mm:ss') || '0s'"></span>
       <label>Lifespan</label>
     </div>
@@ -47,7 +46,7 @@
         </div>
         <div class="col-xs-2 stat">
           <span ng-bind="weapon.uniqueWeaponKills"></span>
-          <label>Kills</label>
+          <label translate="kills"></label>
         </div>
         <div class="col-xs-4 stat">
           <span ng-bind="weapon.uniqueWeaponPrecisionKills"></span>
@@ -64,7 +63,7 @@
         </div>
         <div class="col-xs-2 stat">
           <span ng-bind="specialWeapon.count"></span>
-          <label>Kills</label>
+          <label translate="kills"></label>
         </div>
       </div>
     </div>

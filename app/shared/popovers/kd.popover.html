@@ -1,4 +1,4 @@
-<div class="popover" tabindex="-1" ng-show="player.year2">
+<div class="popover kd" tabindex="-1" ng-show="player.year2">
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row">
@@ -7,7 +7,7 @@
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
             <span ng-bind="player.year2.kd | number:2"></span>
-            <label>K/D</label>
+            <label translate="killsDeathsRatioShort"></label>
           </div>
           <div class="col-xs-6 stat">
             <span ng-bind="player.year2.matches | number:0"></span>
@@ -20,7 +20,7 @@
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
             <span ng-bind="player.currentWeek.kd | number:2"></span>
-            <label>K/D</label>
+            <label translate="killsDeathsRatioShort"></label>
           </div>
           <div class="col-xs-6 stat">
             <span ng-bind="player.currentWeek.matches | number:0"></span>

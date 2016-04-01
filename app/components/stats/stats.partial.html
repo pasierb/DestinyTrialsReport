@@ -3,15 +3,15 @@
     <div class="row stat-row">
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.kills.basic.value | number:0) || 0"></span>
-        <label>Kills</label>
+        <label translate="kills"></label>
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.deaths.basic.value | number:0) || 0"></span>
-        <label>Deaths</label>
+        <label translate="deaths"></label>
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.assists.basic.value | number:0) || 0"></span>
-        <label>Assists</label>
+        <label translate="assists"></label>
       </div>
     </div>
     <div class="row stat-row">
@@ -21,7 +21,7 @@
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.activitiesWon.basic.value | number:0) || 0"></span>
-        <label>Wins</label>
+        <label translate="wins"></label>
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="player.stats.totalActivityDurationSeconds.basic.displayValue || '0s'"></span>
@@ -47,7 +47,7 @@
     <div class="row stat-row">
       <div class="col-xs-6 stat">
         <span ng-bind="player.stats.weaponBestType.basic.displayValue || 'N/A'"></span>
-        <label>Best weapon</label>
+        <label translate="weaponBestType"></label>
       </div>
       <div class="col-xs-6 stat">
         <span ng-bind="(player.stats.precisionKills.basic.value | number:0) || 0"></span>
@@ -58,23 +58,23 @@
       Total kills with
     </div>
     <div class="row stat-row">
-      <div class="col-xs-4 stat stat__kills" ng-repeat="(key, weaponName) in weaponKills">
+      <div class="col-xs-4 stat stat__kills" ng-repeat="key in weaponKills">
         <span ng-bind="(player.stats[key].basic.value | number:0) || 0"></span>
-        <label ng-bind="weaponName"></label>
+        <label translate="{{key}}"></label>
       </div>
     </div>
     <div class="row stat-row">
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.weaponKillsGrenade.basic.value | number:0) || 0"></span>
-        <label>Grenade</label>
+        <label translate="weaponKillsGrenade"></label>
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.weaponKillsMelee.basic.value | number:0) || 0"></span>
-        <label>Melee</label>
+        <label translate="weaponKillsMelee"></label>
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="(player.stats.weaponKillsSuper.basic.value | number:0) || 0"></span>
-        <label>Super</label>
+        <label translate="weaponKillsSuper"></label>
       </div>
     </div>
   </div>
@@ -95,11 +95,11 @@
     <div class="row stat-row">
       <div class="col-xs-6 stat">
         <span ng-bind="player.stats.longestSingleLife.basic.displayValue || 'N/A'"></span>
-        <label>Longest life</label>
+        <label translate="longestSingleLife"></label>
       </div>
       <div class="col-xs-6 stat">
         <span ng-bind="(player.stats.longestKillSpree.basic.value | number:0) || 0"></span>
-        <label>Longest kill spree</label>
+        <label translate="longestKillSpree"></label>
       </div>
     </div>
   </div>

@@ -43,9 +43,9 @@
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
+        <span ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span><!-- needs to be short until UI is adjusted -->
       </div>
-      <label class="data-label text-right">K/D</label>
+      <label class="data-label text-right" translate="killsDeathsRatioShort"></label>
     </div>
   </div>
 </div>
@@ -55,7 +55,7 @@
       <span ng-if="player.stats.activitiesWinPercentage.basic.value"
             ng-bind="(player.stats.activitiesWinPercentage.basic.value | number:0) + '%'"></span>
       <span ng-if="!player.stats.activitiesWinPercentage.basic.value">N/A</span>
-      <label translate="WINS"></label>
+      <label translate="wins"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
       <span ng-bind="player.activities.streak || 'N/A'"></span>
@@ -90,7 +90,7 @@
     <div class=" col-xs-6">
       <img class="weapon-type-icon img-responsive"
            ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName.toLowerCase().replace(' ','-') + '.svg'}}"
-           alt="{{weapon.weapon_type}}">
+           alt="{{weapon.itemTypeName}}"><!-- this isn't translated -->
     </div>
     <div class="col-xs-3">
       <span ng-bind="weapon.sum_kills"></span>
@@ -103,8 +103,8 @@
     <div class="row player-this-week__weapons">
       <div class=" col-xs-6">
         <img class="weapon-type-icon img-responsive"
-             ng-src="{{'assets/img/weapon-icons/sniper-rifle.svg'}}"
-             alt="Sniper Rifle">
+             src="assets/img/weapon-icons/sniper-rifle.svg"
+             alt="{{'weaponKillsSniper' | translate}}">
       </div>
       <div class="col-xs-3">
         0
@@ -116,8 +116,8 @@
     <div class="row player-this-week__weapons">
       <div class=" col-xs-6">
         <img class="weapon-type-icon img-responsive"
-             ng-src="{{'assets/img/weapon-icons/sword.svg'}}"
-             alt="Sword">
+             src="assets/img/weapon-icons/sword.svg"
+             alt="{{'weaponKillsSword' | translate}}">
       </div>
       <div class="col-xs-3">
         0
@@ -129,8 +129,8 @@
     <div class="row player-this-week__weapons">
       <div class=" col-xs-6">
         <img class="weapon-type-icon img-responsive"
-             ng-src="{{'assets/img/weapon-icons/sidearm.svg'}}"
-             alt="Sidearm">
+             src="assets/img/weapon-icons/sidearm.svg"
+             alt="{{'weaponKillsSideArm' | translate}}">
       </div>
       <div class="col-xs-3">
         0
@@ -145,7 +145,7 @@
       <div class="data-label" translate="WEAPONTYPESUSED"></div>
     </div>
     <div class="col-xs-3">
-      <div class="data-label" translate="KILLS"></div>
+      <div class="data-label" translate="kills"></div>
     </div>
     <div class="col-xs-3">
       <div class="data-label" translate="HEADSHOTS"></div>
@@ -163,11 +163,11 @@
       </div>
       <div class="col-xs-3 stat">
         <span ng-bind="player.currentWeek.kills | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.deaths | number:0"></span>
-        <label><span translate="KILLS"></span> / <span translate="DEATHS"></span></label>
+        <label><span translate="kills"></span> / <span translate="deaths"></span></label>
       </div>
       <div class="col-xs-3 stat">
         <span ng-bind="player.currentWeek.kd | number:2"></span>
-        <label>K/D Ratio</label>
+        <label translate="killsDeathsRatioShort"></label>
       </div>
     </div>
   </div>
