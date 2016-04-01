@@ -5452,19 +5452,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"La Cura\"",
     "description": "\"Abbiamo una soluzione.\" - Ikora Rey, in una riunione d'emergenza del Consenso della Città",
-    "icon": "/common/destiny_content/icons/04d468f613cb09263ac6786d5a1e4b20.png",
+    "icon": "/common/destiny_content/icons/cf4c33773be201c37fe3c2ef8f91ed13.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"L'Inconquistabile\"",
     "description": "\"Smettiamola di pensare a come aprire la serratura, cominciamo a pensare a come abbattere il muro.\"",
-    "icon": "/common/destiny_content/icons/d101472bc89d2604ce5afd5780fcabac.png",
+    "icon": "/common/destiny_content/icons/778dc5e4b8afd95147c4f4216e8af0ec.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nato dalla Vista\"",
     "description": "\"La realtà è l'analisi più spietata.\" - Detto prassico",
-    "icon": "/common/destiny_content/icons/eea7aed20d8018795684129cd0a60c5f.png",
+    "icon": "/common/destiny_content/icons/742294b1d6b4f58042914bff138bd30c.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8026,13 +8026,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motore a Inerzia\"",
     "description": "\"Io credo che il Viaggiatore e la sua Luce siano tecnologia avanzata. Rifiuto di accettare che questo mi renda inferiore.\"",
-    "icon": "/common/destiny_content/icons/93d3de449ed2c334c1e3b403d8259dc5.png",
+    "icon": "/common/destiny_content/icons/5e3ea70122344fc9658147bfccda73b5.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verità Cosmiche\"",
     "description": "\"Associare la Luce allo stesso schema dei protoni o di un semplice neutrino è un atto di arroganza e chiusura mentale.\"",
-    "icon": "/common/destiny_content/icons/93d3de449ed2c334c1e3b403d8259dc5.png",
+    "icon": "/common/destiny_content/icons/5e3ea70122344fc9658147bfccda73b5.png",
     "tierType": 3
   },
   "2580679414": {
@@ -10390,13 +10390,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Patto dell'Universale",
     "description": "Alcuni ordini sostengono che la Luce e l'Oscurità possono essere spiegate in termini di fisica supersimmetrica.",
-    "icon": "/common/destiny_content/icons/7d85835e1c46377dc57f8e5e5370918e.png",
+    "icon": "/common/destiny_content/icons/80bc0e65590e8c584df6896b18e80ae8.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Patto della Polarità",
     "description": "Alcuni ordini credono che la Luce e l'Oscurità esistano al di là del piano materiale e che seguano una logica solo loro.",
-    "icon": "/common/destiny_content/icons/208426e6ab6445f3a0d28cd766efab55.png",
+    "icon": "/common/destiny_content/icons/63abb89d5d57fbffb3a7e3649d04a381.png",
     "tierType": 2
   },
   "3346783228": {
@@ -10480,7 +10480,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"Andato\"",
     "description": "\"È venuto da me con un coltello. Io ho allungato una mano verso di lui... ed è bastato per ridurlo in cenere.\"",
-    "icon": "/common/destiny_content/icons/2d0a765e57d19567c0a88ebd824728d7.png",
+    "icon": "/common/destiny_content/icons/b9c8a5afcc3d12f7525c6ced81de9822.png",
     "tierType": 4
   },
   "3366017012": {
@@ -12772,7 +12772,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos Addestrato\"",
     "description": "\"Controlla lo spazio e il tempo. La materia e l'energia ti seguiranno di conseguenza.\"",
-    "icon": "/common/destiny_content/icons/c3ec8769ce8611595b61786e0147c21c.png",
+    "icon": "/common/destiny_content/icons/fd245c34456bef890b50fd9c7b2fdeff.png",
     "tierType": 4
   },
   "4187254944": {
