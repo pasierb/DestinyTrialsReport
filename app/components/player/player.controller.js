@@ -36,7 +36,7 @@ angular.module('trialsReportApp')
           }
         }
       });
-    
+
     statsFactory.getStats($scope.player);
     statsFactory.getGrimoire($scope.player);
     statsFactory.getPlayer($scope.player);
@@ -80,7 +80,11 @@ angular.module('trialsReportApp')
           return count;
         case false:
           _.each(years, function (year) {
-            count += year.accountCount;
+            if ($localStorage.confidence) {
+              count += year.notFlawless;
+            } else {
+              count += year.accountCount;
+            }
           });
           return count;
       }

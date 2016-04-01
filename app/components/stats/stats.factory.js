@@ -19,6 +19,16 @@ angular.module('trialsReportApp')
                 'statId': 'activitiesWinPercentage'
               };
               stats.activitiesWinPercentage.basic.displayValue = stats.activitiesWinPercentage.basic.value + '%';
+
+              // DELETE AFTER APRIL 1
+              stats.activitiesWinPercentage.basic.displayValueHalf = (stats.activitiesWinPercentage.basic.value/2) + '%';
+              var kills = stats.kills.basic.value == 0 ? 1 : stats.kills.basic.value;
+              var dk = +(stats.deaths.basic.value / kills).toFixed(2);
+              stats.deathsKillsRatio = {
+                'basic': {'displayValue': dk},
+                'statId': 'D/K'
+              };
+
             }
           }
           player.stats = stats;
@@ -44,12 +54,17 @@ angular.module('trialsReportApp')
           }
 
           if (data.flawless) {
-            var lighthouseVisits = {yearCount: 0};
+            var lighthouseVisits = {yearCount: 0},
+                characterCount,
+                weeks;
             lighthouseVisits.years = {};
             _.each(data.flawless.years, function (values, year) {
+              weeks = year == 1 ? 16 : 23;
               lighthouseVisits.yearCount++;
               lighthouseVisits.years[year] = {year: year, accountCount: values.count};
               if (values.characters) {
+                characterCount = Object.keys(values.characters).length;
+                lighthouseVisits.years[year].notFlawless = (characterCount * weeks) - values.count;
                 lighthouseVisits.years[year].characters = values.characters;
               }
             });
@@ -238,7 +253,7 @@ angular.module('trialsReportApp')
           }
         });
     };
-    
+
     return {
       getStats: getStats,
       getGrimoire: getGrimoire,

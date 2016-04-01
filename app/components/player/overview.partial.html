@@ -43,16 +43,16 @@
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-bind="player.stats.killsDeathsRatio.basic.displayValue || 'N/A'"></span>
+        <span ng-bind="($storage.confidence ? player.stats.deathsKillsRatio.basic.displayValue : player.stats.killsDeathsRatio.basic.displayValue) || 'N/A'"></span>
       </div>
-      <label class="data-label text-right">K/D</label>
+      <label class="data-label text-right">{{$storage.confidence ? "D/K" : "K/D"}}</label>
     </div>
   </div>
 </div>
 <div class="player-main-stats" ng-class="{'is-hidden': !$storage.visibility.all && !$storage.visibility.mainStats}" ng-show="$storage.visibility.all || $storage.visibility.mainStats">
   <div class="row">
     <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
-      <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
+      <span ng-bind="($storage.confidence ? player.stats.activitiesWinPercentage.basic.displayValueHalf : player.stats.activitiesWinPercentage.basic.displayValue) || 'N/A'"></span>
       <label translate="WINS"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
@@ -61,7 +61,7 @@
       <label translate="STREAK"></label>
     </div>
     <div class="col-xs-3 stat">
-      <span ng-bind="(player.ggg.elo | number:0) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
+      <span ng-bind="($storage.confidence ? (player.ggg.elo/2 | number:0) : (player.ggg.elo | number:0)) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
       <span>
         <a href="https://guardian.gg/en/faq" target="_blank"
            data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
@@ -78,7 +78,8 @@
         <!--<i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>-->
         <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'"></span>
       </span>
-      <label translate="FLAWLESS"></label>
+      <label translate="FLAWLESS" ng-if="!$storage.confidence"></label>
+      <label translate="NOT FLAWLESS" ng-if="$storage.confidence"></label>
     </div>
   </div>
 </div>
