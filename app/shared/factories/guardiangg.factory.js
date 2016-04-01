@@ -13,7 +13,7 @@ function eloTier(playerElo, player, $filter) {
     player.ggg = playerElo;
     player.ggg.tier = getGggTierByElo(player.ggg.elo);
     if (player.ggg.rank > 0) {
-      player.ggg.rank = '#' + $filter('number:0')(player.ggg.rank);
+      player.ggg.rank = '#' + $filter('number', 0)(player.ggg.rank);
     } else if (player.ggg.rank == -1) {
       //player.ggg.rank = 'Placing';
       player.ggg.rank = '-';

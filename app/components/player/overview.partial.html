@@ -104,7 +104,7 @@
       <div class=" col-xs-6">
         <img class="weapon-type-icon img-responsive"
              ng-src="{{'assets/img/weapon-icons/sniper-rifle.svg'}}"
-             alt="Sniper">
+             alt="Sniper Rifle">
       </div>
       <div class="col-xs-3">
         0
@@ -117,7 +117,7 @@
       <div class=" col-xs-6">
         <img class="weapon-type-icon img-responsive"
              ng-src="{{'assets/img/weapon-icons/sword.svg'}}"
-             alt="Sniper">
+             alt="Sword">
       </div>
       <div class="col-xs-3">
         0
@@ -130,7 +130,7 @@
       <div class=" col-xs-6">
         <img class="weapon-type-icon img-responsive"
              ng-src="{{'assets/img/weapon-icons/sidearm.svg'}}"
-             alt="Sniper">
+             alt="Sidearm">
       </div>
       <div class="col-xs-3">
         0
@@ -154,19 +154,19 @@
   <div class="player-this-week__stats">
     <div class="row">
       <div class="col-xs-3 stat">
-        <span ng-bind="player.currentWeek.matches"></span>
+        <span ng-bind="player.currentWeek.matches | number:0"></span>
         <label translate="MATCHES"></label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.currentWeek.wins"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.losses"></span>
+        <span ng-bind="player.currentWeek.wins | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.losses | number:0"></span>
         <label><span translate="WON"></span> / <span translate="LOST"></span></label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.currentWeek.kills"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.deaths"></span>
+        <span ng-bind="player.currentWeek.kills | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.deaths | number:0"></span>
         <label><span translate="KILLS"></span> / <span translate="DEATHS"></span></label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.currentWeek.kd"></span>
+        <span ng-bind="player.currentWeek.kd | number:2"></span>
         <label>K/D Ratio</label>
       </div>
     </div>
