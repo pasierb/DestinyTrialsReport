@@ -6,11 +6,11 @@
         <div class="stat__header" ng-bind="'Year ' + year.year"></div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
-            <span ng-bind="year.accountCount"></span>
+            <span ng-bind="year.accountCount | number:0"></span>
             <label translate="ACCOUNT"></label>
           </div>
           <div class="col-xs-6 stat">
-            <span ng-bind="characterLighthouse(player, year)"></span>
+            <span ng-bind="characterLighthouse(player, year) | number:0"></span>
             <label translate="CHARACTER"></label>
           </div>
         </div>

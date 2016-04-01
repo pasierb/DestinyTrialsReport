@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, definitions, $ocLazyLoad, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics) {
+  function homeController(api, config, definitions, $ocLazyLoad, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics, $rootScope, tmhDynamicLocale) {
     $scope.$storage = $localStorage.$default({
       language: 'en',
       platform: true,
@@ -31,6 +31,8 @@
         }
       }
     });
+
+    tmhDynamicLocale.set($localStorage.language);
 
     $scope.DestinyCrucibleMapDefinition = DestinyCrucibleMapDefinition;
     $scope.DestinyHazardDefinition = DestinyHazardDefinition;
@@ -63,7 +65,6 @@
     storeDefinitions(storedDefinitions, $localStorage.language);
 
     $scope.changeLanguage = function () {
-      $analytics.eventTrack('languageChanged', {category: $localStorage.language});
       $translate.use($localStorage.language);
       return getDefinitions($localStorage, $ocLazyLoad)
         .then(function () {
@@ -79,6 +80,12 @@
           }
       });
     };
+
+    $rootScope.$on('$translateChangeSuccess', function (event, data) {
+      document.documentElement.setAttribute('lang', data.language);
+      $analytics.eventTrack('languageChanged', {category: $localStorage.language});
+      tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
+    });
 
     $scope.searchedMaps = {};
     var wait;

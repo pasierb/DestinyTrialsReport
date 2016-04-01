@@ -165,14 +165,15 @@ module.exports = function (grunt) {
           }
         },
         proxies: [{
-          context: ['/ps', '/xbox'],
+          context: ['/ps', '/xbox', '/shared/resources'],
           host: 'localhost',
           port: 9000,
           https: false,
           xforward: false,
           rewrite: {
             '^/ps': '/#!ps',
-            '^/xbox': '/#!xbox'
+            '^/xbox': '/#!xbox',
+            '^/shared/resources': '/bower_components/angular-i18n'
           }
         }]
       },
@@ -199,7 +200,7 @@ module.exports = function (grunt) {
       all: {
         src: [
           'Gruntfile.js',
-          '<%= yeoman.app %>/components/{,*/}*.js'
+          '<%= yeoman.app %>/**/*.js'
         ]
       },
       test: {
@@ -334,10 +335,8 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/components/**/*.js',
-          '<%= yeoman.dist %>/shared/**/*.js',
-          '<%= yeoman.dist %>/assets/js/**/*.js',
-          '<%= yeoman.dist %>/assets/css/{,*/}*.css'
+          '<%= yeoman.dist %>/assets/js/*.js',
+          '<%= yeoman.dist %>/assets/css/*.css'
         ]
       }
     },
@@ -455,6 +454,30 @@ module.exports = function (grunt) {
       }
     },
 
+    uglify: {
+      options: {
+        mangle: false
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'bower_components/angular-i18n',
+          src: 'angular-locale_*.js',
+          dest: '<%= yeoman.dist %>/shared/resources'
+        }, {
+          expand: true,
+          cwd: '<%= yeoman.app %>/shared/definitions',
+          src: '*/*.js',
+          dest: '<%= yeoman.dist %>/shared/definitions'
+        //}, {
+        //  expand: true,
+        //  cwd: '<%= yeoman.app %>/shared/locales',
+        //  src: '*/*.json',
+        //  dest: '<%= yeoman.dist %>/shared/locales'
+        }]
+      }
+    },
+
     // Copies remaining files to places other tasks can use
     copy: {
       //Heroku Settings
@@ -501,18 +524,14 @@ module.exports = function (grunt) {
             'shared/{,*/}*.html',
             'assets/img/{,*/}*.{webp}',
             'assets/css/fonts/{,*/}*.*',
-            'lib/{,*/}*.*'
+            'lib/{,*/}*.*',
+            'shared/locales/*/*.json'
           ]
         }, {
           expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/assets/img',
           src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: '.',
-          dest: '<%= yeoman.dist %>',
-          src: ['manifest.js']
         }]
       },
       styles: {

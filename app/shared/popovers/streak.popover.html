@@ -4,11 +4,11 @@
     <div class="stat__header" translate="WINSTREAK"></div>
     <div class="row row--small-gutter">
       <div class="col-xs-6 stat">
-        <span ng-bind="player.longestStreak.accountStreak || 0 | number"></span>
+        <span ng-bind="(player.longestStreak.accountStreak | number:0) || 0"></span>
         <label translate="ACCOUNT"></label>
       </div>
       <div class="col-xs-6 stat">
-        <span ng-bind="player.longestStreak.characterStreak || 0 | number"></span>
+        <span ng-bind="(player.longestStreak.characterStreak | number:0) || 0"></span>
         <label translate="CHARACTER"></label>
       </div>
     </div>

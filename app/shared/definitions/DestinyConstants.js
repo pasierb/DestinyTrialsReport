@@ -232,19 +232,19 @@ var className = [
 ];
 
 // Match summary weapon kill definitions
-var weaponKills = {
-  weaponKillsHandCannon: 'Hand Cannon',
-  weaponKillsPulseRifle: 'Pulse Rifle',
-  weaponKillsScoutRifle: 'Scout Rifle',
-  weaponKillsAutoRifle: 'Auto Rifle',
-  weaponKillsSniper: 'Sniper Rifle',
-  weaponKillsShotgun: 'Shotgun',
-  weaponKillsFusionRifle: 'Fusion Rifle',
-  weaponKillsRocketLauncher: 'Launcher',
-  weaponKillsMachinegun: 'Machine Gun',
-  weaponKillsSideArm: 'Sidearm',
-  weaponKillsSword: 'Sword'
-};
+var weaponKills = [
+  'weaponKillsHandCannon',
+  'weaponKillsPulseRifle',
+  'weaponKillsScoutRifle',
+  'weaponKillsAutoRifle',
+  'weaponKillsSniper',
+  'weaponKillsShotgun',
+  'weaponKillsFusionRifle',
+  'weaponKillsRocketLauncher',
+  'weaponKillsMachinegun',
+  'weaponKillsSideArm',
+  'weaponKillsSword'
+];
 
 // Class nodes definitions
 var VIKING_FUNERAL = 2443566286;

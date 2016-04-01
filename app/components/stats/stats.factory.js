@@ -15,7 +15,7 @@ angular.module('trialsReportApp')
             stats = result.data.Response.trialsOfOsiris.allTime;
             if (stats) {
               stats.activitiesWinPercentage = {
-                'basic': {'value': +(100 * stats.activitiesWon.basic.value / stats.activitiesEntered.basic.value).toFixed()},
+                'basic': {'value': 100 * stats.activitiesWon.basic.value / stats.activitiesEntered.basic.value},
                 'statId': 'activitiesWinPercentage'
               };
               stats.activitiesWinPercentage.basic.displayValue = stats.activitiesWinPercentage.basic.value + '%';
@@ -28,7 +28,6 @@ angular.module('trialsReportApp')
                 'basic': {'displayValue': dk},
                 'statId': 'D/K'
               };
-
             }
           }
           player.stats = stats;

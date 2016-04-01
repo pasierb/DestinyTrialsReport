@@ -53,6 +53,8 @@ module.exports = function(config) {
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/oclazyload/dist/ocLazyLoad.js',
       'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
+      'bower_components/angular-translate-handler-log/angular-translate-handler-log.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/app.js',

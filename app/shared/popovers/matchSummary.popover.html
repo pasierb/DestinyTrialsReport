@@ -3,12 +3,12 @@
   <div class="popover-content">
     <div class="row">
       <div class="col-xs-6 stat">
-        <span ng-bind="str.kdDisplay"></span>
+        <span ng-bind="str.kd | number:2"></span>
         <label translate="killsDeathsRatio"></label>
       </div>
       <div class="col-xs-6 stat">
-        <span ng-bind="str.kills"></span>
-        <label translate="KILLS"></label>
+        <span ng-bind="str.kills | number:0"></span>
+        <label translate="kills"></label>
       </div>
     </div>
   </div>
