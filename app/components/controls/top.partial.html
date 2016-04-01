@@ -98,7 +98,7 @@
   <div class="controls-map" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
-        <span ng-bind="currentMap.name"></span>
+        <span ng-bind="$storage.currentMap.week == 23 ? 'Assorted Playlist' : currentMap.name"></span>
         <label ng-bind="(trialsInProgress ? 'This week' : 'Last week') + '\'s map'"></label>
       </div>
       <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.heatmapImage"

@@ -3,7 +3,7 @@
     <div class="maps block blog-post shadow-z-1 {{mapInfoAnimClass}}">
       <div class="modal-hero blog-image" ng-style="{'background-image':'url(' + currentMapInfo.pgcrImage + ')'}">
         <div class="modal-hero__header">
-          <h2 class="modal-hero__title" ng-bind="currentMapInfo.name"></h2>
+          <h2 class="modal-hero__title" ng-bind="currentMapInfo.week == 23 ? 'Assorted Playlist' : currentMapInfo.name"></h2>
           <p class="modal-hero__description stat" ng-bind="currentMapInfo.weekText"></p>
         </div>
         <div class="modal-hero__switch">
