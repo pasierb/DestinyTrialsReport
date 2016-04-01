@@ -1,5 +1,18 @@
 <div class="row">
-  <div class="weapon col-xs-12" ng-repeat="weapon in weapons track by $index" ng-if="weapons">
+  <div class="weapon col-xs-12" ng-repeat="weapon in weapons track by $index" ng-if="$index === 0 && $parent.$parent.$storage.confidence">
+    <div class="weapon__img">
+      <span class="weapon__damage">5</span>
+      <img class="img-responsive"
+           src="https://www.bungie.net/common/destiny_content/icons/9a3a2a86698a976a92cec201980630bb.jpg"
+           alt="Khvostov 7G-02">
+    </div>
+    <div class="weapon__info">
+      <div class="weapon__title">
+        <span>Khvostov 7G-02</span>
+      </div>
+    </div>
+  </div>
+  <div class="weapon col-xs-12" ng-repeat="weapon in weapons track by $index" ng-if="(weapons && !$parent.$parent.$storage.confidence) || (weapons && $index > 0)">
     <div class="weapon__img">
       <span class="weapon__damage" ng-if="weapon.damage" ng-bind="weapon.damage"></span>
       <img class="img-responsive"
