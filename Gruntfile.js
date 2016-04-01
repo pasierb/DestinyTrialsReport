@@ -165,14 +165,15 @@ module.exports = function (grunt) {
           }
         },
         proxies: [{
-          context: ['/ps', '/xbox'],
+          context: ['/ps', '/xbox', '/resources'],
           host: 'localhost',
           port: 9000,
           https: false,
           xforward: false,
           rewrite: {
             '^/ps': '/#!ps',
-            '^/xbox': '/#!xbox'
+            '^/xbox': '/#!xbox',
+            '^/resources': '/bower_components/angular-i18n'
           }
         }]
       },

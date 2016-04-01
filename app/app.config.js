@@ -43,6 +43,7 @@ angular
     $translateProvider
     .fallbackLanguage('en')
     .useSanitizeValueStrategy('sanitize')
+    .useMissingTranslationHandlerLog()
     .useStaticFilesLoader({
       prefix: 'shared/locales/',
       suffix: '/translations.json'
@@ -63,7 +64,11 @@ angular
       })
       .determinePreferredLanguage();
     }
-}])
+  }
+])
+.config(function (tmhDynamicLocaleProvider) {
+  tmhDynamicLocaleProvider.localeLocationPattern('resources/angular-locale_{{locale}}.js');
+})
 .run(function ($rootScope, $window) {
   $rootScope.$on('$locationChangeStart', function () {
     Object.keys($window).filter(function (k) {

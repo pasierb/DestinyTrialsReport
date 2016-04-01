@@ -286,6 +286,7 @@ angular
     'ngStorage',
     'ngTouch',
     'pascalprecht.translate',
+    'tmh.dynamicLocale',
     'toastr',
     'ui.bootstrap.tpls',
     'ui.bootstrap.progressbar',
