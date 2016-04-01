@@ -9,11 +9,11 @@
         <label translate="PERCENT"></label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.currentWeek.wins"></span>
+        <span ng-bind="player.currentWeek.wins | number:0"></span>
         <label translate="WINS"></label>
       </div>
       <div class="col-xs-4 stat">
-        <span ng-bind="player.currentWeek.losses"></span>
+        <span ng-bind="player.currentWeek.losses | number:0"></span>
         <label translate="LOSSES"></label>
       </div>
     </div>

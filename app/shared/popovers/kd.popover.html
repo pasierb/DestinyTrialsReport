@@ -6,11 +6,11 @@
         <div class="stat__header" translate="YEAR2"></div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
-            <span ng-bind="player.year2.kd"></span>
+            <span ng-bind="player.year2.kd | number:2"></span>
             <label>K/D</label>
           </div>
           <div class="col-xs-6 stat">
-            <span ng-bind="player.year2.matches"></span>
+            <span ng-bind="player.year2.matches | number:0"></span>
             <label translate="MATCHES"></label>
           </div>
         </div>
@@ -19,11 +19,11 @@
         <div class="stat__header" translate="THISWEEK"></div>
         <div class="row row--small-gutter">
           <div class="col-xs-6 stat">
-            <span ng-bind="player.currentWeek.kd"></span>
+            <span ng-bind="player.currentWeek.kd | number:2"></span>
             <label>K/D</label>
           </div>
           <div class="col-xs-6 stat">
-            <span ng-bind="player.currentWeek.matches"></span>
+            <span ng-bind="player.currentWeek.matches | number:0"></span>
             <label translate="MATCHES"></label>
           </div>
         </div>

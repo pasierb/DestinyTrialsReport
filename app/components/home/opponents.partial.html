@@ -99,10 +99,10 @@
                 <div class="col-xs-6 last-weapon-weapon__descr">
                   <span class="last-match-weapon__title" style="font-size: 1.2em;" ng-bind="player.player.destinyUserInfo.displayName"></span>
                 </div>
-                <div class="col-xs-2 stat"><span ng-bind="player.values.kills.basic.displayValue"></span>
+                <div class="col-xs-2 stat"><span ng-bind="player.values.kills.basic.value | number:0"></span>
                   <label>Kills</label>
                 </div>
-                <div class="col-xs-4 stat"><span ng-bind="player.values.deaths.basic.displayValue"></span>
+                <div class="col-xs-4 stat"><span ng-bind="player.values.deaths.basic.value | number:0"></span>
                   <label>Deaths</label>
                 </div>
               </div>

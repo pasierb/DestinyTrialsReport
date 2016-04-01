@@ -38,7 +38,7 @@
         <label>Rounds lost</label>
       </div>
       <div class="col-xs-4 stat">
-        <span ng-bind="player.stats.averageKillDistance.basic.displayValue || 'N/A'"></span>
+        <span ng-bind="(player.stats.averageKillDistance.basic.value | number:0) || 'N/A'"></span>
         <label>Kill distance</label>
       </div>
     </div>
@@ -84,21 +84,21 @@
     </div>
     <div class="row stat-row">
       <div class="col-xs-6 stat">
-        <span ng-bind="player.stats.bestSingleGameKills.basic.displayValue || 0"></span>
+        <span ng-bind="(player.stats.bestSingleGameKills.basic.value | number:0) || 0"></span>
         <label>Kills in one game</label>
       </div>
       <div class="col-xs-6 stat">
-        <span ng-bind="player.stats.mostPrecisionKills.basic.displayValue || 0"></span>
+        <span ng-bind="(player.stats.mostPrecisionKills.basic.value | number:0) || 0"></span>
         <label>Headshots in one game</label>
       </div>
     </div>
     <div class="row stat-row">
       <div class="col-xs-6 stat">
-        <span ng-bind="player.stats.longestSingleLife.basic.displayValue || '0s'"></span>
+        <span ng-bind="player.stats.longestSingleLife.basic.displayValue || 'N/A'"></span>
         <label>Longest life</label>
       </div>
       <div class="col-xs-6 stat">
-        <span ng-bind="player.stats.longestKillSpree.basic.displayValue || 0"></span>
+        <span ng-bind="(player.stats.longestKillSpree.basic.value | number:0) || 0"></span>
         <label>Longest kill spree</label>
       </div>
     </div>

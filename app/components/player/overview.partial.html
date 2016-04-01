@@ -43,7 +43,7 @@
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-bind="player.stats.killsDeathsRatio.basic.displayValue || 'N/A'"></span>
+        <span ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
       </div>
       <label class="data-label text-right">K/D</label>
     </div>
@@ -52,7 +52,9 @@
 <div class="player-main-stats" ng-class="{'is-hidden': !$storage.visibility.all && !$storage.visibility.mainStats}" ng-show="$storage.visibility.all || $storage.visibility.mainStats">
   <div class="row">
     <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
-      <span ng-bind="player.stats.activitiesWinPercentage.basic.displayValue || 'N/A'"></span>
+      <span ng-if="player.stats.activitiesWinPercentage.basic.value"
+            ng-bind="(player.stats.activitiesWinPercentage.basic.value | number:0) + '%'"></span>
+      <span ng-if="!player.stats.activitiesWinPercentage.basic.value">N/A</span>
       <label translate="WINS"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
