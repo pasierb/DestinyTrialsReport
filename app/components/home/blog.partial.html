@@ -1,15 +1,14 @@
 <div class="home__content">
   <article class="home__main">
     <div class="maps block blog-post shadow-z-1 {{mapInfoAnimClass}}">
-      <div class="modal-hero blog-image" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
+      <div class="modal-hero blog-image" ng-style="{'background-image': (currentMapInfo.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMapInfo.pgcrImage + ')') }">
         <div class="modal-hero__header">
           <h2 class="modal-hero__title" ng-bind="currentMapInfo.week == 23 ? 'Assorted Playlist' : currentMapInfo.name"></h2>
           <span class="map-cycle-popover"
-                ng-if="$storage.currentMap.week == 23"
+                ng-if="currentMapInfo.week == 23"
                 title="Maps in cycle"
                 data-content="Burning Shrine<br>Widow's Court<br>Asylum<br>Rusted Lands<br>Pantheon"
-                bs-popover
-            >
+                bs-popover>
             <i class="material-icons md-16">&#xE148;</i>
           </span>
           <p class="modal-hero__description stat" ng-bind="currentMapInfo.weekText"></p>
