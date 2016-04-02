@@ -94,6 +94,14 @@
     <div class="controls-map__content">
       <div class="controls-map__title stat">
         <span ng-bind="$storage.currentMap.week == 23 ? 'Assorted Playlist' : currentMap.name"></span>
+        <span class="map-cycle-popover"
+              ng-if="$storage.currentMap.week == 23"
+              title="Maps in cycle"
+              data-content="Burning Shrine<br>Widow's Court<br>Asylum<br>Rusted Lands<br>Pantheon"
+              bs-popover
+          >
+          <i class="material-icons icon--small">&#xE148;</i>
+        </span>
         <label ng-bind="(trialsInProgress ? 'This week' : 'Last week') + '\'s map'"></label>
       </div>
       <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.heatmapImage"

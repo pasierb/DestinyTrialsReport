@@ -50,6 +50,17 @@
   color: white;
   line-height: 1;
   margin: 0;
+  display: inline-block;
+
+  & + .map-cycle-popover {
+    color: white;
+    cursor: pointer;
+    margin-left: .5em;
+
+    i {
+      font-size: 1.25em;
+    }
+  }
 }
 
 .modal-hero__switch {
