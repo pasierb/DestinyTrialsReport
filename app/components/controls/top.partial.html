@@ -1,5 +1,5 @@
 <div class="header__content shadow-z-2">
-  <div class="title-bar" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
+  <div class="title-bar" ng-class="{'is-week-23': $storage.currentMap.week == 23}" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.png\')' : 'url(' + currentMap.pgcrImage + ')') }">
     <div class="title-bar__content">
       <div class="title-bar__title">
         <a href="/" target="_self">
@@ -90,7 +90,7 @@
     </span>
   </div>
 
-  <div class="controls-map" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}">
+  <div class="controls-map" ng-class="{'is-week-23': $storage.currentMap.week == 23}" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.png\')' : 'url(' + currentMap.pgcrImage + ')') }">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
         <span ng-bind="$storage.currentMap.week == 23 ? 'Assorted Playlist' : currentMap.name"></span>

@@ -31,6 +31,11 @@ header {
   padding: $controls-padding .5em 1.35em $controls-padding;
   background: center bottom no-repeat;
   background-size: auto 20em;
+
+  &.is-week-23 {
+    background-position-x: 100%;
+    background-size: auto 13.5em;
+  }
 }
 
 .controls-map__content {
