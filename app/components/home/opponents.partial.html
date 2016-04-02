@@ -89,21 +89,21 @@
         </div>
         <ul class="blog-post__meta">
           <li>
-            <p><span class="material-icons">&#xE8DF;</span> {{matchResults.period | date:'medium':EST}}</p>
+            <p><span class="material-icons">&#xE8DF;</span> {{matchResults.period | date:'medium'}}</p>
           </li>
         </ul>
           <div class="col-xs-12 col-md-6" style="margin-bottom: 1px;" ng-repeat="standing in [0,1]">
-            <h4 ng-bind="standing === 0 ? 'Won' : 'Lost'"></h4>
+            <h4 ng-bind="standing === 0 ? 'Won' : 'Lost'"></h4><!-- needs translations -->
             <div class="col-xs-12" style="margin-bottom: 1px;" ng-repeat="player in matchResults.entries track by $index" ng-if="player.values.standing.basic.value == standing">
               <div class="row">
                 <div class="col-xs-6 last-weapon-weapon__descr">
                   <span class="last-match-weapon__title" style="font-size: 1.2em;" ng-bind="player.player.destinyUserInfo.displayName"></span>
                 </div>
                 <div class="col-xs-2 stat"><span ng-bind="player.values.kills.basic.value | number:0"></span>
-                  <label>Kills</label>
+                  <label translate="kills"></label>
                 </div>
                 <div class="col-xs-4 stat"><span ng-bind="player.values.deaths.basic.value | number:0"></span>
-                  <label>Deaths</label>
+                  <label translate="deaths"></label>
                 </div>
               </div>
             </div>
