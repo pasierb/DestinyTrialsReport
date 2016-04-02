@@ -1,11 +1,5 @@
 {
   "LANGUAGE": "言語",
-  "INTELLECT": "知性",
-  "DISCIPLINE": "鍛錬",
-  "STRENGTH": "敏捷性",
-  "ARMOR": "生命力",
-  "RECOVERY": "回復",
-  "AGILITY": "敏捷性",
 
   "wins": "勝利数",
   "losses": "",
@@ -32,5 +26,11 @@
   "weaponKillsSideArm": "ピストル",
   "weaponKillsSniper": "スナイパーライフル",
   "weaponKillsSuper": "スーパースキル",
-  "weaponKillsSword": "剣"
+  "weaponKillsSword": "剣",
+  "STAT_INTELLECT": "知性",
+  "STAT_DISCIPLINE": "鍛錬",
+  "STAT_STRENGTH": "敏捷性",
+  "STAT_ARMOR": "生命力",
+  "STAT_RECOVERY": "回復",
+  "STAT_AGILITY": "敏捷性"
 }

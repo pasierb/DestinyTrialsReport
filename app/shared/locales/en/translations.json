@@ -1,11 +1,5 @@
 {
   "LANGUAGE": "Language",
-  "INTELLECT": "Intellect",
-  "DISCIPLINE": "Discipline",
-  "STRENGTH": "Strength",
-  "ARMOR": "Armor",
-  "RECOVERY": "Recovery",
-  "AGILITY": "Agility",
   "SETTINGS": "Settings",
   "LEVEL": "Level",
   "ACCOUNT": "Account",
@@ -73,5 +67,11 @@
   "weaponKillsSideArm": "Sidearm",
   "weaponKillsSniper": "Sniper Rifle",
   "weaponKillsSuper": "Super",
-  "weaponKillsSword": "Sword"
+  "weaponKillsSword": "Sword",
+  "STAT_INTELLECT": "Intellect",
+  "STAT_DISCIPLINE": "Discipline",
+  "STAT_STRENGTH": "Strength",
+  "STAT_ARMOR": "Armor",
+  "STAT_AGILITY": "Agility",
+  "STAT_RECOVERY": "Recovery"
 }

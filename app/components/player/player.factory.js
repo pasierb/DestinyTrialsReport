@@ -53,7 +53,7 @@ function setStatPercentage(player) {
     var stats = ['STAT_INTELLECT', 'STAT_DISCIPLINE', 'STAT_STRENGTH', 'STAT_ARMOR', 'STAT_RECOVERY', 'STAT_AGILITY'];
     for (var s = 0; s < stats.length; s++) {
       var statHash = {};
-      statHash.name = statNames[stats[s]];
+      statHash.name = stats[s];
       statHash.value = player.characterInfo.stats[stats[s]].value;
 
       if (statsWithTiers.indexOf(stats[s]) > -1) {

@@ -1,11 +1,5 @@
 {
   "LANGUAGE": "Langue",
-  "INTELLECT": "Intelligence",
-  "DISCIPLINE": "Discipline",
-  "STRENGTH": "Force",
-  "ARMOR": "Armure",
-  "RECOVERY": "Régénération",
-  "AGILITY": "Agilité",
 
   "wins": "Victoires",
   "losses": "Défaites",
@@ -32,5 +26,11 @@
   "weaponKillsSideArm": "Pistolet",
   "weaponKillsSniper": "Fusil de précision",
   "weaponKillsSuper": "Super",
-  "weaponKillsSword": "Épée"
+  "weaponKillsSword": "Épée",
+  "STAT_INTELLECT": "Intelligence",
+  "STAT_DISCIPLINE": "Discipline",
+  "STAT_STRENGTH": "Force",
+  "STAT_ARMOR": "Armure",
+  "STAT_RECOVERY": "Régénération",
+  "STAT_AGILITY": "Agilité"
 }
