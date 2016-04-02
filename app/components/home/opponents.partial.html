@@ -51,7 +51,7 @@
   </div>
   <article class="home__main">
     <div class="block blog-post shadow-z-1" ng-if="!matchResults">
-      <div class="blog-post__img blog-image" ng-style="{'background-image':'url(' + currentMap.pgcrImage + ')'}" style="flex-grow: 1;"></div>
+      <div class="blog-post__img blog-image" ng-class="{'is-week-23': $storage.currentMap.week == 23}" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }" style="flex-grow: 1;"></div>
       <div class="blog-post__content">
         <div class="blog-post__title">
           <h2>Search Year 2 Trials Opponents: Beta</h2>
