@@ -18,15 +18,11 @@ angular.module('trialsReportApp')
                 'basic': {'value': 100 * stats.activitiesWon.basic.value / stats.activitiesEntered.basic.value},
                 'statId': 'activitiesWinPercentage'
               };
-              stats.activitiesWinPercentage.basic.displayValue = stats.activitiesWinPercentage.basic.value + '%';
 
               // DELETE AFTER APRIL 1
-              stats.activitiesWinPercentage.basic.displayValueHalf = (stats.activitiesWinPercentage.basic.value/2) + '%';
-              var kills = stats.kills.basic.value == 0 ? 1 : stats.kills.basic.value;
-              var dk = +(stats.deaths.basic.value / kills).toFixed(2);
               stats.deathsKillsRatio = {
-                'basic': {'displayValue': dk},
-                'statId': 'D/K'
+                'basic': {'value': stats.deaths.basic.value / (stats.kills.basic.value == 0 ? 1 : stats.kills.basic.value)},
+                'statId': 'deathsKillsRatio'
               };
             }
           }

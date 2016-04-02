@@ -43,10 +43,10 @@
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-if="!$storage.confidence" ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span><!-- needs to be short until UI is adjusted -->
-        <span ng-if="$storage.confidence" ng-bind="(player.stats.deathsKillsRatio.basic.displayValue | number:2) || 'N/A'"></span>
+        <span ng-if="!$storage.confidence" ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
+        <span ng-if="$storage.confidence" ng-bind="(player.stats.deathsKillsRatio.basic.value | number:2) || 'N/A'"></span>
       </div>
-      <label class="data-label text-right" ng-if="!$storage.confidence" translate="killsDeathsRatioShort"></label>
+      <label class="data-label text-right" ng-if="!$storage.confidence" translate="killsDeathsRatioShort"></label><!-- needs to be short until UI is adjusted -->
       <label class="data-label text-right" ng-if="$storage.confidence">D/K</label>
     </div>
   </div>

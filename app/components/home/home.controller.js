@@ -197,7 +197,6 @@
 
     $scope.lighthouseLeaderboard = null;
     $scope.weaponKills = weaponKills;
-    $scope.statNamesByHash = statNamesByHash;
 
     $scope.focusOnPlayers = false;
     $scope.focusOnPlayer = 1;

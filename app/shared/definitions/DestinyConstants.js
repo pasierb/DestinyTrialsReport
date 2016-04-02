@@ -14,7 +14,6 @@ var BUCKET_HEAVY_WEAPON = 953998645;
 
 var BUCKET_BUILD = 3284755031;
 
-
 // Destiny Stat Definition
 
 var STAT_INTELLECT = 144602215;
@@ -32,12 +31,6 @@ var statNames = {
   STAT_RECOVERY: 'Recovery'
 };
 
-var statNamesByHash = {
-   392767087: 'Armor',
-  2996146975: 'Agility',
-  1943323491: 'Recovery'
-};
-
 var burns = ['Void Damage', 'Arc Damage', 'Solar Damage'];
 
 // Grenade defs
@@ -53,7 +46,6 @@ var TRIPMINE_GRENADE = 455260043;
 var AXION_GRENADE = 243660113;
 var SKIP_GRENADE = 328872098;
 
-
 // Subclass Definitions
 var SUNSINGER_CLASS = 3658182170;
 var VOIDWALKER_CLASS = 3828867689;
@@ -64,7 +56,6 @@ var STORMCALLER_CLASS = 1256644900;  // or 1256644901
 var GUNSLINGER_CLASS = 1716862031;
 var STRIKER_CLASS = 2455559914;
 var DEFENDER_CLASS = 2007186000;
-
 
 // Hazards
 
