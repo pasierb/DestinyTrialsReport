@@ -7,7 +7,7 @@ function setPastActivities(reversedAct, n, pastActivities) {
     'date': reversedAct[n].period,
     'dateAgo': moment(reversedAct[n].period).fromNow(),
     'kills': reversedAct[n].values.kills.basic.value,
-    'kd': (reversedAct[n].values.killsDeathsRatio.basic.value).toFixed(2),
+    'kd': reversedAct[n].values.killsDeathsRatio.basic.value,
     'deaths': reversedAct[n].values.deaths.basic.value,
     'assists': reversedAct[n].values.assists.basic.value
   });
@@ -65,9 +65,9 @@ function setStatPercentage(player) {
           statHash.remaining -= statHash.tiers[t] = statHash.remaining > 60 ? 60 : statHash.remaining;
         }
         statHash.cooldown = getAbilityCooldown(player.characterInfo.subclassName, stats[s], statHash.tier);
-        statHash.percentage = +(100 * statHash.normalized / 300).toFixed();
+        statHash.percentage = 100 * statHash.normalized / 300;
       } else {
-        statHash.percentage = +(100 * statHash.value / 10).toFixed();
+        statHash.percentage = 100 * statHash.value / 10;
       }
 
       player.characterInfo.stats[stats[s]] = statHash;

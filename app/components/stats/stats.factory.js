@@ -44,7 +44,7 @@ angular.module('trialsReportApp')
 
           if (data.kills && data.deaths && data.match_count) {
             var deaths = data.deaths == 0 ? 1 : data.deaths;
-            var kd = (data.kills / deaths).toFixed(2);
+            var kd = data.kills / deaths;
             year2 = {kd: kd, matches: data.match_count};
           }
 
@@ -95,9 +95,9 @@ angular.module('trialsReportApp')
             if (data.thisWeek[0].matches == 0) {
               deathsTw = 0;
             }
-            var kdTw = (data.thisWeek[0].kills / deathsTw).toFixed(2);
+            var kdTw = data.thisWeek[0].kills / deathsTw;
             currentWeek = {
-              percent: +(100 * (data.thisWeek[0].matches - data.thisWeek[0].losses) / data.thisWeek[0].matches).toFixed(0),
+              percent: 100 * (data.thisWeek[0].matches - data.thisWeek[0].losses) / data.thisWeek[0].matches,
               wins: (data.thisWeek[0].matches - data.thisWeek[0].losses),
               losses: data.thisWeek[0].losses,
               matches: data.thisWeek[0].matches,
@@ -144,10 +144,10 @@ angular.module('trialsReportApp')
             _.each(result.data, function (weapon) {
               topWeapons.push({
                 weaponId: weapon.weaponId,
-                precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
+                precision: 100 * weapon.headshots / weapon.kills,
                 kills: weapon.kills,
                 headshots: weapon.headshots,
-                win_percentage: +(1 * weapon.win_percentage).toFixed(),
+                win_percentage: weapon.win_percentage,
                 total_matches: weapon.total_matches
               });
             });
@@ -172,10 +172,10 @@ angular.module('trialsReportApp')
               var topWeapons = {};
               _.each(result.data, function (weapon) {
                 topWeapons[weapon.weaponId] = {
-                  precision: +(100 * weapon.headshots / weapon.kills).toFixed(),
+                  precision: 100 * weapon.headshots / weapon.kills,
                   kills: weapon.kills,
                   headshots: weapon.headshots,
-                  win_percentage: +(1 * weapon.win_percentage).toFixed()
+                  win_percentage: weapon.win_percentage
                 };
               });
               player.topWeapons = topWeapons;
@@ -220,9 +220,9 @@ angular.module('trialsReportApp')
             var weaponSummary = _.omit(weaponsByBucket, 'heavy');
             _.each(weaponSummary, function (weapons, key) {
               _.each(weapons, function (weapon) {
-                var avgPercentage = +(100 * (weapon.sum_kills/weaponTotals[weapon.bucket].bucketSum)).toFixed(2);
-                weapon.killPercentage = +(100 * (weapon.kills/weaponTotals[weapon.bucket].sum)).toFixed(2);
-                weapon.diffPercentage = (weapon.killPercentage - avgPercentage).toFixed(2);
+                var avgPercentage = 100 * (weapon.sum_kills / weaponTotals[weapon.bucket].bucketSum);
+                weapon.killPercentage = 100 * (weapon.kills / weaponTotals[weapon.bucket].sum);
+                weapon.diffPercentage = weapon.killPercentage - avgPercentage;
               });
             });
 

@@ -12,11 +12,11 @@
           <label translate="HEADSHOTS"></label>
         </div>
         <div class="col-xs-3 stat">
-          <span ng-bind="topWeapons[weapon.definition.itemHash].precision"></span>%
+          <span ng-bind="topWeapons[weapon.definition.itemHash].precision | number:0"></span>%
           <label translate="PRECISION"></label>
         </div>
         <div class="col-xs-3 stat">
-          <span ng-bind="topWeapons[weapon.definition.itemHash].win_percentage"></span>%
+          <span ng-bind="topWeapons[weapon.definition.itemHash].win_percentage | number:0"></span>%
           <label translate="wins"></label>
         </div>
       </div>
