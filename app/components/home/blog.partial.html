@@ -149,6 +149,47 @@
             <hr class="hr--minor visible-xs">
           </div>
         </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Charity of the week
+            </h3>
+            <a
+              href
+        			data-template-url="shared/modals/charity.modal.html"
+        			bs-modal>
+              <i class="material-icons icon--small info">&#xE8FD;</i>
+            </a>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="charity">
+              <div class="charity__logo">
+                <img src="/assets/img/gdsf-logo.gif">
+              </div>
+              <div class="charity__stats">
+                <div class="stat">
+                  <span>$ <span ng-bind="132 | number"></span></span>
+                  <label>Amount donated</label>
+                </div>
+                <a class="btn btn-raised" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5UR8BVAZQHBUW&lc=US&currency_code=USD" target="_blank"
+                   analytics-on analytics-event="Click" analytics-category="Donate Charity">
+                   Donate
+                </a>
+              </div>
+            </div>
+            <hr class="hr--faded">
+            <p>
+              Support charity and get a badge of your choice on your player card, for example <span class="player-hazard player-hazard--border player-hazard--charity2">Philantropist</span>, <span class="player-hazard player-hazard--border player-hazard--charity3">Saint</span>or <span class="player-hazard player-hazard--border player-hazard--charity4">Hero</span>!
+              <a
+                href
+          			data-template-url="shared/modals/charity.modal.html"
+          			bs-modal>
+                This is how it works.
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </article>

@@ -26,6 +26,10 @@
   }
 }
 
+.player-hazard--border {
+  border: 1px solid currentColor;
+}
+
 .weapon__hazards .player-hazard {
   background: $hazard-background;
 }
@@ -52,4 +56,22 @@
   border: 1px solid #B0BEC5;
   background: white;
   color: #B0BEC5;
+}
+
+.player-hazard--charity2 {
+  background: white;
+  text-shadow: none;
+  color: #00695C;
+}
+
+.player-hazard--charity3 {
+  background: white;
+  text-shadow: none;
+  color: #F4511E;
+}
+
+.player-hazard--charity4 {
+  background: white;
+  text-shadow: none;
+  color: #651FFF;
 }

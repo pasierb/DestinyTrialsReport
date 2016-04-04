@@ -1,0 +1,35 @@
+.charity-modal {
+	.modal-hero {
+		background: url('/assets/img/custom-bg.jpg') center 0;
+		background-size: cover;
+	}
+
+	.modal-hero__title {
+		font-size: 1.3em;
+	}
+
+	.modal-text {
+		li + li {
+			margin-top: 1em;
+
+			li {
+				font-size: .9em;
+				margin-top: .25em;
+			}
+		}
+	}
+}
+
+.charity {
+	display: flex;
+	align-items: center;
+}
+
+.charity__logo {
+	flex-grow: 1;
+	padding-right: 4em;
+
+	img {
+		max-width: 100%;
+	}
+}
