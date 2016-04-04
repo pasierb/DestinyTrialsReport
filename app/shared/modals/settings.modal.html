@@ -1,165 +1,173 @@
-<div class="modal modal--white" tabindex="-1" role="dialog" aria-hidden="true" >
-  <div class="modal-dialog">
-    <div class="settings-modal modal-content">
-      <div class="modal-hero modal-hero--small">
-        <div ng-click="$hide()" class="modal-close"><i class="material-icons">&#xE14C;</i></div>
-        <div class="modal-hero__title" translate="SETTINGS"></div>
-      </div>
-      <div class="modal-text">
-        <div class="row">
-          <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header" translate="LANGUAGE"></h3>
-          </div>
-          <div class="col-xs-12 col-sm-10">
-            <div class="select">
-              <select ng-model="$storage.language" ng-change="changeLanguage()">
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="de">Deutsch</option>
-                <option value="fr">Français</option>
-                <option value="it">Italiano</option>
-                <option value="pt-br">Português</option>
-                <option value="ja">日本語</option>
-              </select>
-            </div>
-            <hr class="hr--faded">
-            <p class="faded text-center" translate="TRANSLATEEMAIL"></p>
-          </div>
+<div class="modal modal--white" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-wrapper">
+    <div class="modal-dialog">
+      <div class="settings-modal modal-content">
+        <div class="modal-hero modal-hero--small">
+          <div ng-click="$hide()" class="modal-close"><i class="material-icons">&#xE14C;</i></div>
+          <div class="modal-hero__title" translate="SETTINGS"></div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header" translate="CUSTOMISE"></h3>
-            <span data-content="Decide what you want to see after searching for a player by hiding certain sections" bs-popover>
-              <i class="material-icons icon--small info">&#xE8FD;</i>
-            </span>
-          </div>
-          <div class="col-xs-12 col-sm-10">
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" ng-model="$storage.visibility.kdRatio">
-                    </label>
-                  </div>
-                  <label translate="KDRATIO"></label>
-                  <span translate="INCLUDING"></span>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" ng-model="$storage.visibility.mainStats">
-                    </label>
-                  </div>
-                  <label translate="MAINSTATS"></label>
-                  <span translate="MAINSTATSDESC"></span>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" ng-model="$storage.visibility.weeklyStats">
-                    </label>
-                  </div>
-                  <label translate="WEEKSTATS"></label>
-                  <span translate="WEEKSTATSDESC"></span>
-                </div>
-              </div>
+        <div class="modal-text">
+          <div class="row">
+            <div class="col-xs-12 col-sm-2">
+              <h3 class="stat-header" translate="LANGUAGE"></h3>
             </div>
-            <hr class="hr--faded">
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" ng-model="$storage.visibility.equipped.tab">
-                    </label>
-                  </div>
-                  <label translate="EQTAB"></label>
-                  <span translate="EQTABDESC"></span>
-                </div>
+            <div class="col-xs-12 col-sm-10">
+              <div class="select">
+                <select ng-model="$storage.language" ng-change="changeLanguage()">
+                  <option value="en">English</option>
+                  <option value="es">Español</option>
+                  <option value="de">Deutsch</option>
+                  <option value="fr">Français</option>
+                  <option value="it">Italiano</option>
+                  <option value="pt-br">Português</option>
+                  <option value="ja">日本語</option>
+                </select>
               </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" ng-model="$storage.visibility.lastMatches.tab">
-                    </label>
-                  </div>
-                  <label translate="MATCHTAB"></label>
-                  <span translate="MATCHTABDESC"></span>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox" ng-model="$storage.visibility.stats.tab">
-                    </label>
-                  </div>
-                  <label translate="STATSTAB"></label>
-                  <span translate="STATSTABDESC"></span>
-                </div>
-              </div>
+              <hr class="hr--faded">
+              <p class="faded text-center" translate="TRANSLATEEMAIL"></p>
             </div>
-            <hr class="hr--faded">
           </div>
-        </div>
-        <div class="row" ng-class="{'is-disabled': !$storage.visibility.equipped.tab}">
-          <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header faded" translate="EQTAB"></h3>
-          </div>
-          <div class="col-xs-12 col-sm-10">
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.weapons">
-                    </label>
-                  </div>
-                  <label translate="EQWEAPONS"></label>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.armor">
-                    </label>
-                  </div>
-                  <label translate="EQARMOR"></label>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.build">
-                    </label>
-                  </div>
-                  <label translate="ARMORSTATS"></label>
-                </div>
-              </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12 col-sm-2">
+              <h3 class="stat-header" translate="CUSTOMISE"></h3>
+              <span data-content="Decide what you want to see after searching for a player by hiding certain sections" bs-popover>
+                <i class="material-icons icon--small info">&#xE8FD;</i>
+              </span>
             </div>
-            <hr class="hr--minor">
-            <div class="row">
-              <div class="col-xs-12 col-sm-4">
-                <div class="setting">
-                  <div class="togglebutton">
-                    <label>
-                      <input type="checkbox"
-                             ng-model="$storage.visibility.equipped.talents">
-                    </label>
+            <div class="col-xs-12 col-sm-10">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.kdRatio">
+                      </label>
+                    </div>
+                    <label translate="KDRATIO"></label>
+                    <span translate="INCLUDING"></span>
                   </div>
-                  <label translate="CHARPERKS"></label>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.mainStats">
+                      </label>
+                    </div>
+                    <label translate="MAINSTATS"></label>
+                    <span translate="MAINSTATSDESC"></span>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.weeklyStats">
+                      </label>
+                    </div>
+                    <label translate="WEEKSTATS"></label>
+                    <span translate="WEEKSTATSDESC"></span>
+                  </div>
+                </div>
+              </div>
+              <hr class="hr--faded">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.equipped.tab">
+                      </label>
+                    </div>
+                    <label translate="EQTAB"></label>
+                    <span translate="EQTABDESC"></span>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.lastMatches.tab">
+                      </label>
+                    </div>
+                    <label translate="MATCHTAB"></label>
+                    <span translate="MATCHTABDESC"></span>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.stats.tab">
+                      </label>
+                    </div>
+                    <label translate="STATSTAB"></label>
+                    <span translate="STATSTABDESC"></span>
+                  </div>
+                </div>
+              </div>
+              <hr class="hr--faded">
+            </div>
+          </div>
+          <div class="row" ng-class="{'is-disabled': !$storage.visibility.equipped.tab}">
+            <div class="col-xs-12 col-sm-2">
+              <h3 class="stat-header faded" translate="EQTAB"></h3>
+            </div>
+            <div class="col-xs-12 col-sm-10">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox"
+                               ng-model="$storage.visibility.equipped.weapons">
+                      </label>
+                    </div>
+                    <label translate="EQWEAPONS"></label>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox"
+                               ng-model="$storage.visibility.equipped.armor">
+                      </label>
+                    </div>
+                    <label translate="EQARMOR"></label>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox"
+                               ng-model="$storage.visibility.equipped.build">
+                      </label>
+                    </div>
+                    <label translate="ARMORSTATS"></label>
+                  </div>
+                </div>
+              </div>
+              <hr class="hr--minor">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox"
+                               ng-model="$storage.visibility.equipped.talents">
+                      </label>
+                    </div>
+                    <label translate="CHARPERKS"></label>
+                  </div>
                 </div>
               </div>
             </div>
