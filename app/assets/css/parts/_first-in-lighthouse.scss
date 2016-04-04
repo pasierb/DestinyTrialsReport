@@ -143,3 +143,14 @@
     height: 1.75rem;
   }
 }
+
+@media all and (max-width: 768px) {
+  .first-in-lighthouse__platform-toggle {
+    margin: 0 0 1em 0;
+
+    a {
+      display: inline-block;
+      margin-left: 1.75em;
+    }
+  }
+}
