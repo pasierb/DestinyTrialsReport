@@ -164,30 +164,25 @@
           </div>
           <div class="col-xs-12 col-sm-10">
             <div class="charity">
-              <div class="charity__logo">
+              <div class="charity__descr">
                 <img src="/assets/img/gdsf-logo.gif">
+                <p class="faded">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed sapien quam. Sed dapibus est id enim facilisis. <a href>Visit their website</a>.
+                </p>
               </div>
-              <div class="charity__stats">
-                <div class="stat">
-                  <span>$ <span ng-bind="132 | number"></span></span>
-                  <label>Amount donated</label>
-                </div>
-                <a class="btn btn-raised" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5UR8BVAZQHBUW&lc=US&currency_code=USD" target="_blank"
-                   analytics-on analytics-event="Click" analytics-category="Donate Charity">
-                   Donate
+              <div class="charity__cta">
+                <p>
+                  Support charity and get a badge of your choice on your player card, for example <span class="player-hazard player-hazard--border player-hazard--charity2">Philantropist</span>, <span class="player-hazard player-hazard--border player-hazard--charity3">Saint</span>or <span class="player-hazard player-hazard--border player-hazard--charity4">Hero</span>!
+                </p>
+                <a
+                  href
+            			data-template-url="shared/modals/charity.modal.html"
+            			bs-modal
+                  class="btn btn-raised">
+                  See how it works
                 </a>
               </div>
             </div>
-            <hr class="hr--faded">
-            <p>
-              Support charity and get a badge of your choice on your player card, for example <span class="player-hazard player-hazard--border player-hazard--charity2">Philantropist</span>, <span class="player-hazard player-hazard--border player-hazard--charity3">Saint</span>or <span class="player-hazard player-hazard--border player-hazard--charity4">Hero</span>!
-              <a
-                href
-          			data-template-url="shared/modals/charity.modal.html"
-          			bs-modal>
-                This is how it works.
-              </a>
-            </p>
           </div>
         </div>
       </div>

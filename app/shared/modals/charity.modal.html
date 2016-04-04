@@ -8,15 +8,16 @@
         </div>
         <div class="modal-text">
           <p>
-            Support charity and get a badge of your choice on your player card, for example <span class="player-hazard player-hazard--border player-hazard--charity2">Philantropist</span>, <span class="player-hazard player-hazard--border player-hazard--charity3">Saint</span>or <span class="player-hazard player-hazard--border player-hazard--charity4">Hero</span>! This is how it works:
+            Support charity and get a badge of your choice on your player card. You could be known by everyone as a real <span class="player-hazard player-hazard--border player-hazard--charity2">Philantropist</span>, <span class="player-hazard player-hazard--border player-hazard--charity3">Saint</span>or <span class="player-hazard player-hazard--border player-hazard--charity4">Hero</span>!
           </p>
           <hr class="hr--faded">
+          <p>This is how it works:</p>
           <ol>
             <li>We pick a different charity each week</li>
             <li>
-              You donate an amount of at least $50 through PayPal
+              You donate an amount of at least $30 through PayPal
               <ul class="faded">
-                <li>We donate the entire amount minus $10 to the charity of the week</li>
+                <li>We donate the entire amount minus $5 to the charity of the week</li>
                 <li>Why the large amount? We want to make sure a custom badge is something special without polluting every card. This is a pilot though, so we might tweak the amount in the future.</li>
               </ul>
             </li>
@@ -30,6 +31,22 @@
             <li>We check whether your badge meets all our requirements.<br><span class="faded">We have spent some time on the internet, this is to filter out stuff like <span class="player-hazard player-hazard--border player-hazard--none">Dickbutt</span></span></li>
             <li>Give us some time to implement your custom badge and show it to aaall your friends! <span class="faded">You will most likely have it by the next Trials weekend.</span></li>
           </ol>
+          <hr class="hr--faded">
+          <div class="row">
+            <div class="col-xs-6 col-sm-3">
+              <a
+                class="btn btn-info btn-inline"
+                href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=5UR8BVAZQHBUW&lc=US&currency_code=USD"
+                target="_blank"
+                 analytics-on analytics-event="Click" analytics-category="Donate Charity">
+                 Donate
+              </a>
+            </div>
+            <div class="col-xs-6 stat">
+              <span>$ <span ng-bind="3000 | number: 2"></span></span>
+              <label>Total amount raised</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
