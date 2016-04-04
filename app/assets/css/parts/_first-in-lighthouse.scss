@@ -116,7 +116,7 @@
 }
 
 .first-in-lighthouse__platform-toggle {
-  margin-top: 3.5em;
+  margin-top: 4.3em;
 
   .stat-header {
     color: #999;
@@ -141,6 +141,12 @@
 
   img {
     height: 1.75rem;
+  }
+}
+
+@media all and (max-width: 961px) {
+  .first-in-lighthouse__platform-toggle {
+    margin-top: 3.5em;
   }
 }
 
