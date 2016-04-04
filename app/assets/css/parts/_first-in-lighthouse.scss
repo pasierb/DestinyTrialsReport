@@ -114,3 +114,32 @@
     bottom: 0;
   }
 }
+
+.first-in-lighthouse__platform-toggle {
+  margin-top: 3.5em;
+
+  .stat-header {
+    color: #999;
+  }
+
+  a {
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed';
+    font-size: .8em;
+    font-weight: normal;
+    line-height: 1.75rem;
+    color: #bbb;
+
+    &.is-active:before {
+      @include icon();
+      content: "\e5cc";
+      line-height: 1;
+      vertical-align: -13%;
+    }
+  }
+
+  img {
+    height: 1.75rem;
+  }
+}
