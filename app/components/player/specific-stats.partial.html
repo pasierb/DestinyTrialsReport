@@ -7,9 +7,9 @@
 					 heading="{{currentMapInfo.weekText}}"
 					 analytics-on analytics-event="Click"
 					 analytics-category="This week">
-	  <div class="player-tab--this-week">
+	  <div class="player-tab--this-week"
+				 ng-class="{'is-irrelevant': !player.currentWeek.percent}">
 			<div class="player-tab__section"
-					 ng-class="{'is-irrelevant': !player.currentWeek.percent}"
 					 ng-show="$storage.visibility.all || $storage.visibility.weekly.weapons">
 			  <div class="row" ng-repeat="weapon in player.lastWeapons">
 			    <div class="col-xs-6">
@@ -105,9 +105,9 @@
 					 heading="{{currentMapInfo.name}}"
 					 analytics-on analytics-event="Click"
 					 analytics-category="This map">
-		<div class="player-tab--map-based">
+		<div class="player-tab--map-based"
+				 ng-class="{'is-irrelevant': !player.currentWeek.percent}">
 			<div class="player-tab__section"
-					 ng-class="{'is-irrelevant': !player.currentWeek.percent}"
 					 ng-show="$storage.visibility.all || $storage.visibility.mapbased.weapons">
 			  <div class="row" ng-repeat="weapon in player.lastWeapons">
 			    <div class="col-xs-6">
