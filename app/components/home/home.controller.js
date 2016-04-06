@@ -15,7 +15,14 @@
         all: false,
         kdRatio: true,
         mainStats: true,
-        weeklyStats: false,
+        weekly: {
+          stats: false,
+          weapons: false
+        },
+        mapbased: {
+          stats: false,
+          weapons: false
+        },
         equipped: {
           tab: true,
           weapons: true,

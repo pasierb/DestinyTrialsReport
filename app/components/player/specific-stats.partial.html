@@ -1,13 +1,16 @@
-<uib-tabset class="player-tabs" ng-class="{'is-hidden': false }">
-	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.equipped.tab"
-					 class="player-tab--equipped"
+<uib-tabset class="player-tabs"
+						ng-class="{'is-hidden': !$storage.visibility.all &&
+												((!$storage.visibility.weekly.stats && !$storage.visibility.weekly.weapons) ||
+												(!$storage.visibility.mapbased.stats && !$storage.visibility.mapbased.weapons))}">
+	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.weekly.stats || $storage.visibility.weekly.weapons"
+					 class="player-tab--this-week"
 					 heading="{{currentMapInfo.weekText}}"
 					 analytics-on analytics-event="Click"
 					 analytics-category="This week">
-	  <div class="player-tab--equipped">
+	  <div class="player-tab--this-week">
 			<div class="player-tab__section"
 					 ng-class="{'is-irrelevant': !player.currentWeek.percent}"
-					 ng-show="$storage.visibility.all || $storage.visibility.weeklyStats">
+					 ng-show="$storage.visibility.all || $storage.visibility.weekly.weapons">
 			  <div class="row" ng-repeat="weapon in player.lastWeapons">
 			    <div class="col-xs-6">
 			      <img class="weapon-type-icon img-responsive"
@@ -74,7 +77,8 @@
 			    </div>
 			  </div>
 			</div>
-			<div class="player-tab__section">
+			<div class="player-tab__section"
+					 ng-show="$storage.visibility.all || $storage.visibility.weekly.stats">
 		    <div class="row">
 		      <div class="col-xs-3 stat">
 		        <span ng-bind="player.currentWeek.matches | number:0"></span>
@@ -96,15 +100,15 @@
 			</div>
 		</div>
 	</uib-tab>
-	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.lastMatches.tab"
-					 class="player-tab--last-matches"
+	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.mapbased.stats || $storage.visibility.mapbased.weapons"
+					 class="player-tab--map-based"
 					 heading="{{currentMapInfo.name}}"
 					 analytics-on analytics-event="Click"
 					 analytics-category="This map">
-		<div class="player-tab--last-matches">
+		<div class="player-tab--map-based">
 			<div class="player-tab__section"
 					 ng-class="{'is-irrelevant': !player.currentWeek.percent}"
-					 ng-show="$storage.visibility.all || $storage.visibility.weeklyStats">
+					 ng-show="$storage.visibility.all || $storage.visibility.mapbased.weapons">
 			  <div class="row" ng-repeat="weapon in player.lastWeapons">
 			    <div class="col-xs-6">
 			      <img class="weapon-type-icon img-responsive"
@@ -171,7 +175,8 @@
 			    </div>
 			  </div>
 			</div>
-			<div class="player-tab__section">
+			<div class="player-tab__section"
+					 ng-show="$storage.visibility.all || $storage.visibility.mapbased.stats">
 		    <div class="row">
 		      <div class="col-xs-3 stat">
 		        <span ng-bind="player.currentWeek.matches | number:0"></span>

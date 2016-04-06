@@ -65,11 +65,49 @@
                   <div class="setting">
                     <div class="togglebutton">
                       <label>
-                        <input type="checkbox" ng-model="$storage.visibility.weeklyStats">
+                        <input type="checkbox" ng-model="$storage.visibility.weekly.stats">
                       </label>
                     </div>
                     <label translate="WEEKSTATS"></label>
                     <span translate="WEEKSTATSDESC"></span>
+                  </div>
+                </div>
+              </div>
+              <hr class="hr--faded">
+              <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.weekly.weapons">
+                      </label>
+                    </div>
+                    <label translate="WEEKWEAPONS"></label>
+                    <span translate="WEEKWEAPONSDESC"></span>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.mapbased.stats">
+                      </label>
+                    </div>
+                    <label translate="MAPBASEDSTATS"></label>
+                    <span translate="MAPBASEDSTATSDESC"></span>
+                  </div>
+                  <hr class="visible-xs hr--faded">
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <div class="setting">
+                    <div class="togglebutton">
+                      <label>
+                        <input type="checkbox" ng-model="$storage.visibility.mapbased.weapons">
+                      </label>
+                    </div>
+                    <label translate="MAPBASEDWEAPONS"></label>
+                    <span translate="MAPBASEDWEAPONSDESC"></span>
                   </div>
                 </div>
               </div>
