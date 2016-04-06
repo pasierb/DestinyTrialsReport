@@ -43,11 +43,9 @@
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-if="!$storage.confidence" ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
-        <span ng-if="$storage.confidence" ng-bind="(player.stats.deathsKillsRatio.basic.value | number:2) || 'N/A'"></span>
+        <span ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
       </div>
-      <label class="data-label text-right" ng-if="!$storage.confidence" translate="killsDeathsRatioShort"></label><!-- needs to be short until UI is adjusted -->
-      <label class="data-label text-right" ng-if="$storage.confidence">D/K</label>
+      <label class="data-label text-right" translate="killsDeathsRatioShort"></label>
     </div>
   </div>
 </div>
@@ -55,17 +53,17 @@
   <div class="row">
     <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
       <span ng-if="player.stats.activitiesWinPercentage.basic.value"
-            ng-bind="($storage.confidence ? (player.stats.activitiesWinPercentage.basic.value/2 | number:0) : (player.stats.activitiesWinPercentage.basic.value | number:0)) + '%'"></span>
+            ng-bind="(player.stats.activitiesWinPercentage.basic.value | number:0) + '%'"></span>
       <span ng-if="!player.stats.activitiesWinPercentage.basic.value">N/A</span>
-      <label translate="wins"></label>
+      <label translate="WINS"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
-      <span ng-bind="($storage.confidence ? player.activities.streak * 2 : player.activities.streak) || 'N/A'"></span>
-      <span class="match player-main-stats__streak" ng-class="{'match--win': !$storage.confidence && player.activities.recentActivity.standing === 0, 'match--loss': $storage.confidence || player.activities.recentActivity.standing === 1}"></span>
+      <span ng-bind="player.activities.streak || 'N/A'"></span>
+      <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
       <label translate="STREAK"></label>
     </div>
     <div class="col-xs-3 stat">
-      <span ng-bind="($storage.confidence ? (player.ggg.elo/2 | number:0) : (player.ggg.elo | number:0)) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
+      <span ng-bind="(player.ggg.elo | number:0) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
       <span>
         <a href="https://guardian.gg/en/faq" target="_blank"
            data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
@@ -80,10 +78,9 @@
       </span>
       <span class="player-main-stats__lighthouse success" ng-if="player.lighthouse.grimoire === true">
         <!--<i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>-->
-        <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'" ng-class="{'is-failure': $storage.confidence}"></span>
+        <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'"></span>
       </span>
-      <label translate="FLAWLESS" ng-if="!$storage.confidence"></label>
-      <label translate="NOT FLAWLESS" ng-if="$storage.confidence"></label>
+      <label translate="FLAWLESS"></label>
     </div>
   </div>
 </div>

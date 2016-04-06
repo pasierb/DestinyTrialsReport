@@ -18,12 +18,6 @@ angular.module('trialsReportApp')
                 'basic': {'value': 100 * stats.activitiesWon.basic.value / stats.activitiesEntered.basic.value},
                 'statId': 'activitiesWinPercentage'
               };
-
-              // DELETE AFTER APRIL 1
-              stats.deathsKillsRatio = {
-                'basic': {'value': stats.deaths.basic.value / (stats.kills.basic.value == 0 ? 1 : stats.kills.basic.value)},
-                'statId': 'deathsKillsRatio'
-              };
             }
           }
           player.stats = stats;
@@ -49,17 +43,12 @@ angular.module('trialsReportApp')
           }
 
           if (data.flawless) {
-            var lighthouseVisits = {yearCount: 0},
-                characterCount,
-                weeks;
+            var lighthouseVisits = {yearCount: 0};
             lighthouseVisits.years = {};
             _.each(data.flawless.years, function (values, year) {
-              weeks = year == 1 ? 16 : 23;
               lighthouseVisits.yearCount++;
               lighthouseVisits.years[year] = {year: year, accountCount: values.count};
               if (values.characters) {
-                characterCount = Object.keys(values.characters).length;
-                lighthouseVisits.years[year].notFlawless = (characterCount * weeks) - values.count;
                 lighthouseVisits.years[year].characters = values.characters;
               }
             });

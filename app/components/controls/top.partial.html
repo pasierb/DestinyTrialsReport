@@ -74,22 +74,6 @@
     </div>
   </div>
 
-  <div class="april-fools" ng-click="$storage.confidence = !$storage.confidence">
-    <span class="april-fools__content2">NEW!!!</span>
-    <div class="april-fools__content">
-      <span>BOOST MY CONFIDENCE MODE</span>
-      <i
-        data-content="Works best if you shout stuff like ''They got nothing on us son'' to your teammates. Go get 'em tiger! Hoo-aah!"
-        class="material-icons icon--small info" style="color: white; cursor: pointer;"
-        bs-popover>&#xE8FD;</i>
-    </div>
-    <span class="togglebutton">
-      <label>
-        <input type="checkbox" ng-model="$storage.confidence">
-      </label>
-    </span>
-  </div>
-
   <div class="controls-map" ng-class="{'is-week-23': $storage.currentMap.week == 23}" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
