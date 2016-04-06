@@ -55,7 +55,7 @@
       <span ng-if="player.stats.activitiesWinPercentage.basic.value"
             ng-bind="(player.stats.activitiesWinPercentage.basic.value | number:0) + '%'"></span>
       <span ng-if="!player.stats.activitiesWinPercentage.basic.value">N/A</span>
-      <label translate="WINS"></label>
+      <label translate="wins"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
       <span ng-bind="player.activities.streak || 'N/A'"></span>
