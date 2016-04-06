@@ -43,10 +43,10 @@
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-if="!$storage.confidence" ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
-        <span ng-if="$storage.confidence" ng-bind="(player.stats.deathsKillsRatio.basic.value | number:2) || 'N/A'"></span>
+        <span ng-if="!$storage.confidence" ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span><!-- needs to be short until UI is adjusted -->
+        <span ng-if="$storage.confidence" ng-bind="(player.stats.deathsKillsRatio.basic.displayValue | number:2) || 'N/A'"></span>
       </div>
-      <label class="data-label text-right" ng-if="!$storage.confidence" translate="killsDeathsRatioShort"></label><!-- needs to be short until UI is adjusted -->
+      <label class="data-label text-right" ng-if="!$storage.confidence" translate="killsDeathsRatioShort"></label>
       <label class="data-label text-right" ng-if="$storage.confidence">D/K</label>
     </div>
   </div>
@@ -60,8 +60,8 @@
       <label translate="wins"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
-      <span ng-bind="($storage.confidence ? player.activities.streak * 2 : player.activities.streak) || 'N/A'"></span>
-      <span class="match player-main-stats__streak" ng-class="{'match--win': !$storage.confidence && player.activities.recentActivity.standing === 0, 'match--loss': $storage.confidence || player.activities.recentActivity.standing === 1}"></span>
+      <span ng-bind="player.activities.streak || 'N/A'"></span>
+      <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
       <label translate="STREAK"></label>
     </div>
     <div class="col-xs-3 stat">
@@ -80,7 +80,7 @@
       </span>
       <span class="player-main-stats__lighthouse success" ng-if="player.lighthouse.grimoire === true">
         <!--<i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>-->
-        <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'" ng-class="{'is-failure': $storage.confidence}"></span>
+        <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'"></span>
       </span>
       <label translate="FLAWLESS" ng-if="!$storage.confidence"></label>
       <label translate="NOT FLAWLESS" ng-if="$storage.confidence"></label>
