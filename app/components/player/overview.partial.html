@@ -60,8 +60,8 @@
       <label translate="wins"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
-      <span ng-bind="($storage.confidence ? player.activities.streak * 2 : player.activities.streak) || 'N/A'"></span>
-      <span class="match player-main-stats__streak" ng-class="{'match--win': !$storage.confidence && player.activities.recentActivity.standing === 0, 'match--loss': $storage.confidence || player.activities.recentActivity.standing === 1}"></span>
+      <span ng-bind="player.activities.streak * 2 || 'N/A'"></span>
+      <span class="match player-main-stats__streak" ng-class="{'match--win': $storage.confince && player.activities.recentActivity.standing === 0, 'match--loss': $storage.confidence || player.activities.recentActivity.standing === 1}"></span>
       <label translate="STREAK"></label>
     </div>
     <div class="col-xs-3 stat">
