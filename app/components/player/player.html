@@ -2,6 +2,8 @@
 
   <div ng-include="'components/player/overview.partial.html'"></div>
 
+  <div ng-include="'components/player/specific-stats.partial.html'" ng-if="!subdomain"></div>
+
   <uib-tabset class="player-tabs" ng-if="!subdomain"
               ng-class="{'is-hidden': !$storage.visibility.all &&
                                       ((!$storage.visibility.equipped.tab && !$storage.visibility.lastMatches.tab) ||
