@@ -154,3 +154,33 @@
     }
   }
 }
+
+.player-tab--this-week {
+  @include tab-background-minor($this-week-background);
+
+  ul &.active {
+    background: $this-week-background;
+
+    a,
+    a:focus,
+    a:active,
+    a:hover {
+      color: darken($this-week-background, 50%);
+    }
+  }
+}
+
+.player-tab--map-based {
+  @include tab-background-minor($map-based-background);
+
+  ul &.active {
+    background: $map-based-background;
+
+    a,
+    a:focus,
+    a:active,
+    a:hover {
+      color: darken($map-based-background, 50%);
+    }
+  }
+}
