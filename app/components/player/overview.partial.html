@@ -169,7 +169,7 @@
         <label><span translate="kills"></span> / <span translate="deaths"></span></label>
       </div>
       <div class="col-xs-3 stat">
-        <span ng-bind="player.currentWeek.kd | number:2"></span>
+        <span ng-bind="(player.currentWeek.kd | number:2) || 'N/A'"></span>
         <label translate="killsDeathsRatioShort"></label>
       </div>
     </div>
