@@ -4,7 +4,7 @@
     <div class="stat__header" translate="THISWEEK"></div>
     <div class="row row--small-gutter">
       <div class="col-xs-5 stat">
-        <span ng-if="player.currentWeek.matches > 0" ng-bind="player.currentWeek.percent + '%'"></span>
+        <span ng-if="player.currentWeek.matches > 0" ng-bind="(player.currentWeek.percent | number:0) + '%'"></span>
         <span ng-if="player.currentWeek.matches == 0">N/A</span>
         <label translate="PERCENT"></label>
       </div>
