@@ -67,7 +67,7 @@
               <div class="row top-weapons--map__row" ng-repeat="weapon in weapons">
                 <div class="col-xs-6 col-sm-4">
                   <img class="weapon-type-icon img-responsive"
-                       ng-src="assets/img/weapon-icons/{{weapon.weapon_type.toLowerCase().replace(' ', '-')}}.svg"
+                       ng-src="assets/img/weapon-icons/{{weapon.weapon_type}}.svg"
                        alt="{{weapon.weapon_type}}">
                 </div>
                 <div class="col-xs-3 col-sm-4 stat">
@@ -133,8 +133,7 @@
           </div>
           <div class="col-xs-12 col-sm-10" ng-if="!lighthouseLeaderboard">
             <div class="first-in-lighthouse__undecided">
-              <!--The race is still on...-->
-              The Lighthouse is closed this week for renovations...
+              The race is still on...
             </div>
           </div>
           <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard" ng-repeat="lb in lighthouseLeaderboard">
