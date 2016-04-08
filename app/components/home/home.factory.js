@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .factory('homeFactory', homeFactory);
 
-  function homeFactory(api, bungie, inventoryService, playerFactory, $q, statsFactory, toastr, $location) {
+  function homeFactory(bungie, inventoryService, playerFactory, $q, statsFactory, toastr, $location) {
     var searchByName = function (platform, name, retried) {
       return bungie.searchForPlayer(
         platform,
