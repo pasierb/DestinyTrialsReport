@@ -51,8 +51,8 @@
 
         var getFireteam = function (activities) {
           if (angular.isUndefined(activities[0])) {
-            toastr.error('No Trials matches found for player', 'Error');
-            return activities;
+            toastr.error('No Trials matches found for character', 'Error');
+            return [];
           }
           return bungie.getPgcr(activities[0].activityDetails.instanceId)
             .then(function (result) {

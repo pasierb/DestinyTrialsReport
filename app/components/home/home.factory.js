@@ -79,7 +79,7 @@
             activities.membershipId = account.membershipId;
             return activities;
           } else {
-            toastr.error('No Trials matches found for player', 'Error');
+            toastr.error('No Trials matches found for character', 'Error');
             return account;
           }
         });
@@ -98,7 +98,7 @@
             var activities = result.data.Response.data.activities;
             return setActivityData(account, activities);
           } else {
-            toastr.error('No Trials matches found for player', 'Error');
+            toastr.error('No Trials matches found for character', 'Error');
             return account;
           }
         });
