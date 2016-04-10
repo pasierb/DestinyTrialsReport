@@ -30,7 +30,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
               return homeFactory.getCharacters(
                 player.membershipType,
                 player.membershipId,
-                params.playerName
+                player.name
               );
             } else {
               return homeFactory.getRecentActivity(player)
