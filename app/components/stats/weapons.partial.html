@@ -10,23 +10,23 @@
             <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.weaponId).icon}}" alt="{{DestinyWeaponDefinition[weapon.weaponId].name}}">
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="weapon.kills || 0"></span>
+            <span ng-bind="(weapon.kills | number:0) || 0"></span>
             <label translate="kills"></label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="weapon.headshots || 0"></span>
+            <span ng-bind="(weapon.headshots | number:0) || 0"></span>
             <label>HS</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="weapon.precision + '%' || 0"></span>
+            <span ng-bind="(weapon.precision | number:0) + '%' || 'N/A'"></span>
             <label>Acc</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="(weapon.win_percentage + '%') || 0"></span>
+            <span ng-bind="(weapon.win_percentage | number:0) + '%' || 'N/A'"></span>
             <label>Win %</label>
           </div>
           <div class="col-xs-2 stat">
-            <span ng-bind="weapon.total_matches || 0"></span>
+            <span ng-bind="(weapon.total_matches | number:0) || 0"></span>
             <label>Games</label>
           </div>
         </div>
