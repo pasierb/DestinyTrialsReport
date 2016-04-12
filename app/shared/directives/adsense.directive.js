@@ -32,11 +32,10 @@
       scope: {
         adClient: '@',
         adSlot: '@',
-        adFormat: '@',
         inlineStyle: '@',
-        playerAd: '@',
+        playerAd: '@'
       },
-      template: '<div class="ads"><ins class="adsbygoogle" data-ad-format="{{adFormat || \'horizontal\'}}" data-ad-client="{{adClient}}" data-ad-slot="{{adSlot}}" style="{{inlineStyle}}"></ins></div>',
+      template: '<div class="ads"><ins class="adsbygoogle" data-ad-client="{{adClient}}" data-ad-slot="{{adSlot}}" style="{{inlineStyle}}"></ins></div>',
       controller: 'AdsenseController'
     };
   });
