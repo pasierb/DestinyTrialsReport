@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "Sensación",
-    "statDescription": "Con tu equipo, acaba con todo el equipo enemigo en los primeros 30 segundos de la ronda.",
+    "statDescription": "Con tu escuadra, derrota al equipo enemigo en los primeros 30 segundos de la ronda.",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {

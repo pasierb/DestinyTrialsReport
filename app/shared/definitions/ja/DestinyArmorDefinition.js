@@ -85,6 +85,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4f55f402cbb205f3d3a64990ce378e5a.jpg",
     "tierType": 5
   },
+  "13565936": {
+    "name": "壮観な紋章",
+    "description": "熱がシールドで冷まされ、壊れた虹へと屈折する。",
+    "icon": "/common/destiny_content/icons/966d0d911664dbd060996cfb0a0c0b11.jpg",
+    "tierType": 5
+  },
+  "13565937": {
+    "name": "目撃者の紋章",
+    "description": "「敵と戦うことで敵を理解することができる。集中しろ」――ザヴァラ",
+    "icon": "/common/destiny_content/icons/952af46f6ab948d6a460840838fe2aa7.jpg",
+    "tierType": 5
+  },
+  "13565938": {
+    "name": "荒廃の紋章",
+    "description": "あの影、今動いたか？",
+    "icon": "/common/destiny_content/icons/077a2e0c3d7c3d04121a82d80336e6f9.jpg",
+    "tierType": 5
+  },
   "15845168": {
     "name": "クロマ・バウ",
     "description": "ウォーロックは儀式用の衣服を着用している必要がある。衣服争いはハンターに譲渡できない。",
@@ -96,6 +114,24 @@ var DestinyArmorDefinition = {
     "description": "ウォーロックは儀式用の衣服を着用している必要がある。衣服争いはハンターに譲渡できない。",
     "icon": "/common/destiny_content/icons/c56cc904d9bd609fb7906833c32692bf.jpg",
     "tierType": 3
+  },
+  "16664392": {
+    "name": "番人の結集",
+    "description": "「あの牢獄にいるのは自分の意思で閉じ込められている者達ばかり。それを知った上で、宿られた者達が何故脱出しないのか考えてみろ」――エリス・モーン",
+    "icon": "/common/destiny_content/icons/69620da04b60659ac8fe8b1a44312f6f.jpg",
+    "tierType": 5
+  },
+  "16664393": {
+    "name": "壮観なグラスプ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/a2d33a8093d8f171cd7ef2cfaac05f8a.jpg",
+    "tierType": 5
+  },
+  "16664395": {
+    "name": "荒廃のグリップ",
+    "description": "影以上、星未満。",
+    "icon": "/common/destiny_content/icons/ef0224eb5d83e887fc5db22d56a98070.jpg",
+    "tierType": 5
   },
   "18327078": {
     "name": "明星の航行者の紋章",
@@ -157,6 +193,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4e95ff81025cc137f5590b1743a1451e.jpg",
     "tierType": 5
   },
+  "33631361": {
+    "name": "壮観なグラスプ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/a2d33a8093d8f171cd7ef2cfaac05f8a.jpg",
+    "tierType": 5
+  },
   "35226794": {
     "name": "KALI-GNT スカウト・リグ",
     "description": "私はKALI-GNTスカル・マウント。獲物を見つけよう。",
@@ -203,6 +245,12 @@ var DestinyArmorDefinition = {
     "name": "アイアンブリード・スリーブ",
     "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/751702bb912ed5dd82992516b2d94e6e.jpg",
+    "tierType": 5
+  },
+  "58287017": {
+    "name": "壮観なカリポリスのグローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/5093045dddbce3a596570f2fd895e22f.jpg",
     "tierType": 5
   },
   "60040896": {
@@ -365,6 +413,12 @@ var DestinyArmorDefinition = {
     "name": "H_LDスターワインダー・クローク",
     "description": "クロークがすり切れるにつれて、骨のかけらに刻まれた李清照の古代の作品が明らかになる。",
     "icon": "/common/destiny_content/icons/5e0947a8cbd20bd53acac9cf56b0c134.jpg",
+    "tierType": 5
+  },
+  "98823765": {
+    "name": "壮観な無限なるグリーブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/e0fc58922c14a6ce6447a0f4ead4d2b6.jpg",
     "tierType": 5
   },
   "99926221": {
@@ -535,6 +589,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/f05333be3b83afea5c84e842d601fdaf.jpg",
     "tierType": 5
   },
+  "141200149": {
+    "name": "壮観なヘリオポーズのフード",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/a67726dd859c1fa7b17ca793458de379.jpg",
+    "tierType": 5
+  },
+  "142001566": {
+    "name": "壮観なヘリオポーズのクローク",
+    "description": "ヘリオポーズの向こうに暗黒しかないとしたら、既に負けたも同然だ。",
+    "icon": "/common/destiny_content/icons/701c4165c1aa9a22edbd285563cb49bb.jpg",
+    "tierType": 5
+  },
   "142571568": {
     "name": "宵の明星・タイプ0",
     "description": "黄金時代初期、金星の煮えるように熱い霧の中へ最初に降りて行ったのは明星の航行者達だった。",
@@ -576,12 +642,6 @@ var DestinyArmorDefinition = {
     "description": "シティは我々の秩序と正義の地によって繁栄する。",
     "icon": "/common/destiny_content/icons/3342f5d2d87a5b97db7d440b3cf82eed.jpg",
     "tierType": 5
-  },
-  "155374076": {
-    "name": "サゴマイザー",
-    "description": "あまり近づくな。",
-    "icon": "/common/destiny_content/icons/5985a184214d8bc8f39c88aa13f01737.jpg",
-    "tierType": 6
   },
   "155374077": {
     "name": "生贄の拳",
@@ -817,6 +877,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/944a5be1648a2567c3ddcc7c5ffc1566.jpg",
     "tierType": 2
   },
+  "213518349": {
+    "name": "バークハン砂丘のバンド",
+    "description": "「メリディアンを埋めた砂嵐がガスコーニュを掘り出す」――ウォーロックの格言",
+    "icon": "/common/destiny_content/icons/d7c772b8c68ac5b2013b7f855f797817.jpg",
+    "tierType": 5
+  },
   "214611822": {
     "name": "スカルペル・ウィング",
     "description": "偉大なウォーロックは、自分がどれほど無知であるかを理解している。",
@@ -876,6 +942,24 @@ var DestinyArmorDefinition = {
     "description": "「ヘルメットに酸素が入るようになるまでに時間がかかったが、それでもフォールンの悪臭は取れなかった」",
     "icon": "/common/destiny_content/icons/64985cd9e486c60c0efeb57bffa61aec.jpg",
     "tierType": 4
+  },
+  "233474724": {
+    "name": "荒廃のローブ",
+    "description": "新しい形状になれ。",
+    "icon": "/common/destiny_content/icons/d297e3298e457b94151a16676d46ebf6.jpg",
+    "tierType": 5
+  },
+  "233474726": {
+    "name": "壮観なローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/8bba6430879dffa20b6fd76f38c1626f.jpg",
+    "tierType": 5
+  },
+  "233474727": {
+    "name": "門番のクローク",
+    "description": "「プリズンでは気をつけて、ガーディアン。報酬はいいかもしれないけど、裁きを受けるのは敵だけではない」――イコラ・レイ",
+    "icon": "/common/destiny_content/icons/a39899161c796aa528169987a4e05ff3.jpg",
+    "tierType": 5
   },
   "236238068": {
     "name": "ラク・フルクラム タイプ2",
@@ -1021,6 +1105,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/e49692da1fc60aa11cf68fc7e60ba90b.jpg",
     "tierType": 2
   },
+  "271372403": {
+    "name": "パーリアのトレッド",
+    "description": "「真の色を知りたいなら、まず暗黒を知る必要がある」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/47fac8006d7f05be4580c8e32810b53c.jpg",
+    "tierType": 5
+  },
   "271923586": {
     "name": "プロトタイプ0.9r3",
     "description": "ゴーストが手に入れた塊からワイヤーアーマーを作った。生命維持をサポートしてくれるがそれ以外の用途はない。",
@@ -1147,6 +1237,30 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6a683f7a858bb0b75f2390c5b5966ab6.jpg",
     "tierType": 4
   },
+  "308606233": {
+    "name": "荒廃のレッグ",
+    "description": "変化は必ずしも発見ではない。",
+    "icon": "/common/destiny_content/icons/f04932a73c0b768c39ce0a82b2a96b2a.jpg",
+    "tierType": 5
+  },
+  "308606234": {
+    "name": "番人の道",
+    "description": "「ああ、あの宝部屋に行ったことがある。アウォークンもそろそろあの宝を支払いにしてエレベーターを付けるべきだと思うんだ」――ケイド6",
+    "icon": "/common/destiny_content/icons/0d53d68b93a68e81b1973fd9c6ad5f79.jpg",
+    "tierType": 5
+  },
+  "308606235": {
+    "name": "壮観なブーツ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/702df3fa5ab5db4fcbd7bffc3bd49380.jpg",
+    "tierType": 5
+  },
+  "309852344": {
+    "name": "バークハン砂丘 I",
+    "description": "「かつて、火星にも水が豊富にあったと言っていた。想像できるか？」",
+    "icon": "/common/destiny_content/icons/c73d602651baee398f25ebc2b0f1f489.jpg",
+    "tierType": 5
+  },
   "311226466": {
     "name": "コルセアの逆襲 1.0",
     "description": "「こうしてフォールンのアーマーを装備していると、アーマー獲得のために倒したフォールンのことを思い出す。懐かしい」",
@@ -1183,6 +1297,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1e3db20a1e9f3c3c842aaaae0ce51d79.jpg",
     "tierType": 4
   },
+  "316649358": {
+    "name": "壮観なカリポリスのプレート",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/658aca4166e118ecc55fc566d9c487de.jpg",
+    "tierType": 5
+  },
+  "316970233": {
+    "name": "壮観なヘリオポーズのグリーブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/bc5b2c91e278c3ab57865e381133902b.jpg",
+    "tierType": 5
+  },
   "317533173": {
     "name": "無限なる層のレッグ",
     "description": "「見るたびに、暗黒は大きくなっているように思える」――記録345-CHASM-6736",
@@ -1199,6 +1325,12 @@ var DestinyArmorDefinition = {
     "name": "デッドライト・ベスト",
     "description": "「成功とは生き残ることではなく、発見することだ」――アラーハ・モデスタ",
     "icon": "/common/destiny_content/icons/b70710948971f76ddf7f52d217823e97.jpg",
+    "tierType": 5
+  },
+  "323128718": {
+    "name": "壮観なヘリオポーズのレッグ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/a294543e5fed8ed8f0282cbf2fb17018.jpg",
     "tierType": 5
   },
   "327933420": {
@@ -1645,6 +1777,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1cafc39f5d1015ed279529496bc9d5a1.jpg",
     "tierType": 5
   },
+  "489788636": {
+    "name": "壮観なヘリオポーズのローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/5be73162c006b6dd8061a9848a409672.jpg",
+    "tierType": 5
+  },
   "491878348": {
     "name": "タリオン・グレース",
     "description": "恐ろしい意思の怒りを必要とする戦闘のため、あるフレーズが誇大妄想を誘発させる。",
@@ -1655,6 +1793,12 @@ var DestinyArmorDefinition = {
     "name": "エクストロピー・モーフ",
     "description": "粒子動物学は面白い趣味だが、壊れないものはないということを思い出させる以外、クルーシブルではあまり用途がない。",
     "icon": "/common/destiny_content/icons/0623ea98a3c13d8353036b14391d193a.jpg",
+    "tierType": 5
+  },
+  "494034812": {
+    "name": "壮観なヘリオポーズの紋章",
+    "description": "ヘリオポーズの向こうに暗黒しかないとしたら、既に負けたも同然だ。",
+    "icon": "/common/destiny_content/icons/6423c8bed2cf749801c5b2ef82b4551b.jpg",
     "tierType": 5
   },
   "497757468": {
@@ -1692,6 +1836,12 @@ var DestinyArmorDefinition = {
     "description": ">これを身に着けて死んだ者はいない。\n#本当だ。ふさわしくない者が倒れる前に、彼女は消えてしまうのだ。",
     "icon": "/common/destiny_content/icons/07fc373b6c205a6e4cfaa55017e92e41.jpg",
     "tierType": 6
+  },
+  "502682246": {
+    "name": "壮観なパンディオンのプレート",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/feab9741307f88755bfb0b284107d263.jpg",
+    "tierType": 5
   },
   "506100014": {
     "name": "ウルスス・タクティカル",
@@ -1885,6 +2035,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/187ce73efbcf90ac55f498175cd31536.jpg",
     "tierType": 5
   },
+  "537476480": {
+    "name": "パーリアのグローブ",
+    "description": "「彼は追放された。だが、彼の言葉が依然耳から離れない」――フラクタルの巻物",
+    "icon": "/common/destiny_content/icons/2b34f786679e151d7e5c757e06c91aff.jpg",
+    "tierType": 5
+  },
   "537606594": {
     "name": "ヴァニール・タイプ1",
     "description": "なめらかに、きつく閉じられたプレートがゴーストの助けを借りた熟練技術者の作に語りかける。",
@@ -1896,6 +2052,12 @@ var DestinyArmorDefinition = {
     "description": "なめらかに、きつく閉じられたプレートがゴーストの助けを借りた熟練技術者の作に語りかける。",
     "icon": "/common/destiny_content/icons/99847876c756468624a3c789ec269e36.jpg",
     "tierType": 4
+  },
+  "540220571": {
+    "name": "壮観なガントレット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/ee68a5395d9302532354eec17f64e80c.jpg",
+    "tierType": 5
   },
   "541785999": {
     "name": "アイアンレガリア・グローブ",
@@ -2040,6 +2202,12 @@ var DestinyArmorDefinition = {
     "description": "黄金時代に月のコロニーへ最初に入植した中国人によって装着されていたヘルメット。",
     "icon": "/common/destiny_content/icons/f28523f56de25b2f6c5c56acb9d4b9a5.jpg",
     "tierType": 6
+  },
+  "594403898": {
+    "name": "壮観なカリポリスのガントレット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/01f5d116f555371262d9ea2bc157461e.jpg",
+    "tierType": 5
   },
   "594415800": {
     "name": "エレクター・フード",
@@ -2213,6 +2381,12 @@ var DestinyArmorDefinition = {
     "name": "ウォッチャーのローブ",
     "description": "オシリスの試練で勝ち取れる名誉ある戦利品。",
     "icon": "/common/destiny_content/icons/b8b1719d0c134525d6a0c7dc77d88783.jpg",
+    "tierType": 5
+  },
+  "634743895": {
+    "name": "壮観なカリポリスの紋章",
+    "description": "過去でも未来でもない。見つめているべきは現在だ。",
+    "icon": "/common/destiny_content/icons/5334d1cfee2e28f59a6dcd2e906e1cfc.jpg",
     "tierType": 5
   },
   "651478697": {
@@ -2478,6 +2652,12 @@ var DestinyArmorDefinition = {
     "description": "ファイアブレークを過激で愚かな攻撃だと糾弾する者もいるが、彼らの過激な攻撃は意図的な物だ。",
     "icon": "/common/destiny_content/icons/df8b703ffdf1ea905f64ab96d2795674.jpg",
     "tierType": 3
+  },
+  "709660862": {
+    "name": "壮観なカリポリスのバンド",
+    "description": "過去でも未来でもない。見つめているべきは現在だ。",
+    "icon": "/common/destiny_content/icons/0c64aede798071ec777c1d60c3e2539d.jpg",
+    "tierType": 5
   },
   "712184834": {
     "name": "ダスク・トレッド IV",
@@ -2755,6 +2935,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/b40a19356d3ee39f75bf1d4b707c4c23.jpg",
     "tierType": 2
   },
+  "835063271": {
+    "name": "パーリアのガントレット",
+    "description": "「彼は追放された。だが、彼の言葉が依然耳から離れない」――フラクタルの巻物",
+    "icon": "/common/destiny_content/icons/a992a4bca6d9ede745bb01711276e95e.jpg",
+    "tierType": 5
+  },
   "838428205": {
     "name": "ピュリファイアー・ローブ",
     "description": "「火は束縛を解く。火は自由そのものだ。我々の自由も素早く、綿密であるべきだ」",
@@ -2783,6 +2969,12 @@ var DestinyArmorDefinition = {
     "name": "アストロロード・フード",
     "description": "かつてなく激しい戦いが待っている。否定することはできない。",
     "icon": "/common/destiny_content/icons/cc9b3e42f4b474812e7f2342cae82d13.jpg",
+    "tierType": 5
+  },
+  "861802448": {
+    "name": "バークハン砂丘 I",
+    "description": "「砂に半分埋もれた水筒に緑色の古い水が入っていた。私はそれを飲んだ」",
+    "icon": "/common/destiny_content/icons/29a70fdfd951054f2de763518df69ecd.jpg",
     "tierType": 5
   },
   "862863384": {
@@ -2867,6 +3059,12 @@ var DestinyArmorDefinition = {
     "name": "鉄の友のフード",
     "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/9e503ea284c52377d90d4135cbf7781a.jpg",
+    "tierType": 5
+  },
+  "870594442": {
+    "name": "壮観な無限なるグローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/0ba51fabc74287bae211d5470a7f9da1.jpg",
     "tierType": 5
   },
   "876363304": {
@@ -3043,6 +3241,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/2e7f920d6ccc13c50ba11dd969d2df91.jpg",
     "tierType": 5
   },
+  "928813565": {
+    "name": "壮観なアスプリエットのクローク",
+    "description": "「高く飛べ。強く打て。それを繰り返せ」――アイン・スーフー・アサ",
+    "icon": "/common/destiny_content/icons/ac53d1344f40117cd13643720e4b9e40.jpg",
+    "tierType": 5
+  },
   "929939160": {
     "name": "クリプト 4.6.1",
     "description": "きめ細やかに作られた胸当てと手造りのワイヤー回路は、報酬目当てではなく、自分が好きで作ったものだろう。",
@@ -3169,6 +3373,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c5053677daf3a60e7aaab1816c5eb458.jpg",
     "tierType": 4
   },
+  "971727370": {
+    "name": "壮観な無限なるクローク",
+    "description": "「装置から被験体を出した。凍結していた。脈はないが、体の腐敗もなかった」――記録340-CHASM-0",
+    "icon": "/common/destiny_content/icons/590be4d6cfb61ad95c4ea7d0736182ca.jpg",
+    "tierType": 5
+  },
   "973554318": {
     "name": "オーダーのグリップ",
     "description": "指は折れても、拳は砕けない。",
@@ -3179,6 +3389,24 @@ var DestinyArmorDefinition = {
     "name": "ジャスティカーのグリップ",
     "description": "指は折れても、拳は砕けない。",
     "icon": "/common/destiny_content/icons/a6958005d880fa4fc7804524f67f75d1.jpg",
+    "tierType": 5
+  },
+  "975923469": {
+    "name": "荒廃のバンド",
+    "description": "女王陛下に敬意を表して。",
+    "icon": "/common/destiny_content/icons/855dd69067cd80f6600c28a8128d88fb.jpg",
+    "tierType": 5
+  },
+  "975923470": {
+    "name": "門番の不安",
+    "description": "「まだ女王陛下の存在を感じます。陛下の名の下に私達がしてきたことを認めてくださると思います」――ペトラ・ベンジ",
+    "icon": "/common/destiny_content/icons/87b39e0201fc1cc38bff0f1a8be46461.jpg",
+    "tierType": 5
+  },
+  "975923471": {
+    "name": "壮観なバンド",
+    "description": "真実が1つとは限らない。",
+    "icon": "/common/destiny_content/icons/afbd711da6ecda0bac928064375cb9f5.jpg",
     "tierType": 5
   },
   "976948689": {
@@ -3427,12 +3655,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6eb83e602efd0261945f7205b2df2775.jpg",
     "tierType": 6
   },
-  "1062853751": {
-    "name": "蛇属性",
-    "description": "「私の唇にマムシの毒がついてる？」",
-    "icon": "/common/destiny_content/icons/77aa743f87be6ef950fe0b04d6ca2f0b.jpg",
-    "tierType": 6
-  },
   "1063666590": {
     "name": "鉄の王のブーツ",
     "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
@@ -3570,6 +3792,12 @@ var DestinyArmorDefinition = {
     "description": "「ジャングルの掟は身勝手で残酷なものだと思われている。誰も詩を読んだことがないのだ」 - パハニン",
     "icon": "/common/destiny_content/icons/eb886f474edb85d951172da8d934f167.jpg",
     "tierType": 4
+  },
+  "1113181209": {
+    "name": "長き明日 9G",
+    "description": "「金星まで彼女を追いかけていった。だが、イシュタルシンクのジャングルで見失った」",
+    "icon": "/common/destiny_content/icons/d862d79e314abbaacf9e09110c7b52e7.jpg",
+    "tierType": 5
   },
   "1126328036": {
     "name": "アストロロードベスト",
@@ -3721,6 +3949,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/596a34479f1c17c4e49ae5509dc3660f.jpg",
     "tierType": 5
   },
+  "1186397660": {
+    "name": "荒廃のクローク",
+    "description": "夜から身を守れ。",
+    "icon": "/common/destiny_content/icons/f80d33fc592d4ffc613d493da802a6b5.jpg",
+    "tierType": 5
+  },
+  "1186397662": {
+    "name": "壮観なクローク",
+    "description": "戦場の染みは1色だけではない。",
+    "icon": "/common/destiny_content/icons/61b3428d3989d2e6aa7b0f8a12dfa0fd.jpg",
+    "tierType": 5
+  },
+  "1186397663": {
+    "name": "番人のフード",
+    "description": "「いつも宿られたサイオンを真っ先に狙う。そうすると20発じゃなく、1発で済むからだ」――ケイド6",
+    "icon": "/common/destiny_content/icons/d7c0d7c50b820276361b0358d907c729.jpg",
+    "tierType": 5
+  },
   "1192453324": {
     "name": "キングスの紋章",
     "description": "「獣に地球を我が物顔で歩かせはしない」",
@@ -3817,6 +4063,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6b6d026ecac409f9d53e0fe3d25e10e3.jpg",
     "tierType": 5
   },
+  "1221519781": {
+    "name": "パーリアのバンド",
+    "description": "「私はシティで彼の紋章を誇らしげに身に付ける。オシリスが真の意味でいなくなっていないことを思い出させるためだ」――フラクタルの巻物",
+    "icon": "/common/destiny_content/icons/73184f09862d8628b8271b53c4810686.jpg",
+    "tierType": 5
+  },
   "1225126060": {
     "name": "ゴーストエンジェル・クローク",
     "description": "我々は選ばれし死者の軍だ。",
@@ -3889,6 +4141,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4683f5dd995b4ec27ab3c625384201d3.jpg",
     "tierType": 5
   },
+  "1244321427": {
+    "name": "壮観なパンディオンのヘルメット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/371526823fb395ea85c792048ffcef45.jpg",
+    "tierType": 5
+  },
   "1245063910": {
     "name": "闘神の冠",
     "description": "大群を鎮圧できることを、そしてその内面性が悪夢を生み出すことを見せてやれ。",
@@ -3899,6 +4157,18 @@ var DestinyArmorDefinition = {
     "name": "闘神の苦悩の冠",
     "description": "大群を鎮圧できることを、そしてその内面性が悪夢を生み出すことを見せてやれ。",
     "icon": "/common/destiny_content/icons/575408decbf00d97224be5cd10d30e78.jpg",
+    "tierType": 5
+  },
+  "1245131119": {
+    "name": "壮観なパンディオンの紋章",
+    "description": "「クルーシブルの栄光は、ガーディアンが手にすることができる真の永遠だ」――サロー",
+    "icon": "/common/destiny_content/icons/3cb42f6dcaafa1ced8cd3a69551706e7.jpg",
+    "tierType": 5
+  },
+  "1247507932": {
+    "name": "壮観なパンディオンのグリーブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/4fe4e4fa8a7e5ff7b4b5c7e0eb2b9e48.jpg",
     "tierType": 5
   },
   "1256226942": {
@@ -4057,6 +4327,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/0a52fede45bc37234c677dbf6107d8a6.jpg",
     "tierType": 5
   },
+  "1294420134": {
+    "name": "パーリアのクローク",
+    "description": "「私はシティで彼の紋章を誇らしげに身に付ける。オシリスが真の意味でいなくなっていないことを思い出させるためだ」――フラクタルの巻物",
+    "icon": "/common/destiny_content/icons/5b3da7b1f5dcbe734f30c1da86fc34a5.jpg",
+    "tierType": 5
+  },
   "1302424880": {
     "name": "コーモラントライン II",
     "description": "プラクシック・ウォーロックの中でも最も勇敢な戦士がコーモラント・シールで称えられる。",
@@ -4103,6 +4379,12 @@ var DestinyArmorDefinition = {
     "name": "アンイールディング・カスク",
     "description": "弱い者は飲み込まれる。",
     "icon": "/common/destiny_content/icons/92b853d28f708786c9f6776278d9f569.jpg",
+    "tierType": 5
+  },
+  "1311512974": {
+    "name": "長き明日 9G",
+    "description": "「この宝が囁きの岩の赤い霧の中にあるなんて聞いてないぞ。俺はごめんだ」",
+    "icon": "/common/destiny_content/icons/7d7b08b8097abf42c06d7d775245cade.jpg",
     "tierType": 5
   },
   "1312172922": {
@@ -4175,6 +4457,12 @@ var DestinyArmorDefinition = {
     "name": "アペックス・ハーモニック",
     "description": "意思は武器庫、知識は武器だ。1つ1つの考えが子爆発体だ。",
     "icon": "/common/destiny_content/icons/c3e624499e3c0b60ebb406d47fa76ffd.jpg",
+    "tierType": 5
+  },
+  "1321489224": {
+    "name": "壮観なアスプリエットのグリップ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/80b1d7bf00b95541b8255ef62db27250.jpg",
     "tierType": 5
   },
   "1323189778": {
@@ -4308,6 +4596,30 @@ var DestinyArmorDefinition = {
     "description": "兎を抜くまで走れ。",
     "icon": "/common/destiny_content/icons/eb90906c81173c7f9bc25ad8112b0c84.jpg",
     "tierType": 4
+  },
+  "1353163820": {
+    "name": "パーリアの紋章",
+    "description": "「私はシティで彼の紋章を誇らしげに身に付ける。オシリスが真の意味でいなくなっていないことを思い出させるためだ」――フラクタルの巻物",
+    "icon": "/common/destiny_content/icons/f16b99bbfc861e2e1281061c761593dc.jpg",
+    "tierType": 5
+  },
+  "1353212257": {
+    "name": "ケル達の紋章",
+    "description": "恐れられる存在になれ。",
+    "icon": "/common/destiny_content/icons/0837eb3d9628dc4437ce10110b5b019c.jpg",
+    "tierType": 5
+  },
+  "1353212258": {
+    "name": "キング達の紋章",
+    "description": "王座をもぎ取れ。",
+    "icon": "/common/destiny_content/icons/3d4902f806ae4857390911f1ec5259c0.jpg",
+    "tierType": 5
+  },
+  "1353212259": {
+    "name": "デビル達の紋章",
+    "description": "戦いは終わらない。",
+    "icon": "/common/destiny_content/icons/b3f286af5b5aacd0dfea07ca7c723b3f.jpg",
+    "tierType": 5
   },
   "1353391432": {
     "name": "クリプト 4.6r2",
@@ -4453,12 +4765,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c9dd33af86e56854e0ccd3bb8f9e3f92.jpg",
     "tierType": 5
   },
-  "1394543945": {
-    "name": "フロスト EE5",
-    "description": "「コンピューターでうまくいくなら...」――マーカス・レン",
-    "icon": "/common/destiny_content/icons/6b9d54463a053e129762fdb973a7baaf.jpg",
-    "tierType": 6
-  },
   "1396371287": {
     "name": "ナイト・タイプ1",
     "description": "フィールドプレートデザインを基にしたナイトタイプは金に糸目をつけず、スピンメタルと太古の鉄が使われている。",
@@ -4531,6 +4837,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/30b53fc35cccf48b2457826e721fa397.jpg",
     "tierType": 5
   },
+  "1449661885": {
+    "name": "壮観なミサゴのローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/640048b6bbb69ce538637cebf8315e09.jpg",
+    "tierType": 5
+  },
   "1450166845": {
     "name": "カリポリスのグリップ",
     "description": "まず防壁の中の人々に勝利しなければ、防壁の外の戦いに勝つことはできない。",
@@ -4559,6 +4871,12 @@ var DestinyArmorDefinition = {
     "name": "ウィルブレイカー・フィスト",
     "description": "自分のものを取って行け。",
     "icon": "/common/destiny_content/icons/e0f0d4de473bdf90093d91fe65128b02.jpg",
+    "tierType": 5
+  },
+  "1480335318": {
+    "name": "木星の守人",
+    "description": "リーフと女王陛下への借りを忘れることはない。",
+    "icon": "/common/destiny_content/icons/01e38ac26618406c14806ab5ed11a66c.jpg",
     "tierType": 5
   },
   "1483483181": {
@@ -4999,6 +5317,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/afdbbe76880e500aef1c4aba7c3a416e.jpg",
     "tierType": 5
   },
+  "1648308416": {
+    "name": "荒廃のグローブ",
+    "description": "影以上、星未満。",
+    "icon": "/common/destiny_content/icons/cdabef46728d281b75fd4a64ad3df499.jpg",
+    "tierType": 5
+  },
+  "1648308418": {
+    "name": "壮観なグローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/85b2e8f416316115f5d6660f1a57221b.jpg",
+    "tierType": 5
+  },
+  "1648308419": {
+    "name": "門番のグローブ",
+    "description": "「プリズンはただの牢獄じゃない。裁きの場だ」――バリクス",
+    "icon": "/common/destiny_content/icons/d9d0804bd47d9c6ca2fd7d0b92489f33.jpg",
+    "tierType": 5
+  },
   "1649128456": {
     "name": "悪魔の魂",
     "description": "今はなき第一艦隊を追悼してタイタンが身に着ける儀式用の記章。",
@@ -5227,6 +5563,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/d0defd9bd4af5aea2e1ec75fb00e92e8.jpg",
     "tierType": 5
   },
+  "1705560672": {
+    "name": "壮観な無限なる紋章",
+    "description": "「装置から被験体を出した。凍結していた。脈はないが、体の腐敗もなかった」――記録340-CHASM-0",
+    "icon": "/common/destiny_content/icons/5caf444a73e4929c4e63eea53c20dca8.jpg",
+    "tierType": 5
+  },
   "1712294560": {
     "name": "1番槍の紋章",
     "description": "1番槍部隊は数々の戦略を駆使して勝利してきたが、全く代償がなかったわけでもなかった。",
@@ -5407,6 +5749,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/34fd6e4950f23632e83b41343437c75b.jpg",
     "tierType": 5
   },
+  "1765846920": {
+    "name": "長き明日 9G",
+    "description": "「何人かは生き残った。1人が帰路で願望のドラゴンを見たと言っていた」",
+    "icon": "/common/destiny_content/icons/6ff4c9ea8c40b34ccf85095e4e5ad70b.jpg",
+    "tierType": 5
+  },
   "1770680276": {
     "name": "アゾスベンド I",
     "description": "ウォーロックは手を振るだけで物質の原子を入れ替えることができる。",
@@ -5449,22 +5797,28 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/db43388a41b50657033bd68a92292593.jpg",
     "tierType": 6
   },
+  "1775622225": {
+    "name": "壮観なヘリオポーズのバンド",
+    "description": "ヘリオポーズの向こうに暗黒しかないとしたら、既に負けたも同然だ。",
+    "icon": "/common/destiny_content/icons/aebfdcb5894c3513f0bb6cf7c8bcce61.jpg",
+    "tierType": 5
+  },
   "1776632644": {
     "name": "「ザ・キュア」",
     "description": "「解決策がある」 - イコラ・レイ、シティの総意による緊急会議にて",
-    "icon": "/common/destiny_content/icons/cf4c33773be201c37fe3c2ef8f91ed13.png",
+    "icon": "/common/destiny_content/icons/3f832b388bc871d60d6db4439e0823ec.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "「征服不可能」",
     "description": "「ロックの解除方法を考えるのはもうやめて、壁ごと外すことを考えよう」",
-    "icon": "/common/destiny_content/icons/778dc5e4b8afd95147c4f4216e8af0ec.png",
+    "icon": "/common/destiny_content/icons/131a0febe20907a7cbc537b2fa23aaca.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "「サイト生まれ」",
     "description": "「現実とは、最も容赦のない分析者だ」 - プラクシックの格言",
-    "icon": "/common/destiny_content/icons/742294b1d6b4f58042914bff138bd30c.png",
+    "icon": "/common/destiny_content/icons/3ae27a97356c5d9aaa266f876ef36257.png",
     "tierType": 4
   },
   "1777045417": {
@@ -5568,6 +5922,12 @@ var DestinyArmorDefinition = {
     "description": "ゴーストが身近な塊を使って作ったこのフィールドウィーブは生命維持を司るがそれ以外はほとんど役に立たない。",
     "icon": "/common/destiny_content/icons/a544927e9d66eaefac0b50b6583b0290.jpg",
     "tierType": 2
+  },
+  "1834224941": {
+    "name": "壮観な無限なるグリップ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/0d3d65f7e4b38ecf92e0fa8f8acb076b.jpg",
+    "tierType": 5
   },
   "1835128980": {
     "name": "プライムゼロット・グローブ",
@@ -5712,6 +6072,12 @@ var DestinyArmorDefinition = {
     "description": "「彼の足取りが全くつかめない。金星の沼地が広がるのみだ」――アルビオスの5つの命",
     "icon": "/common/destiny_content/icons/25a802a22269ae32b31da42480076150.jpg",
     "tierType": 4
+  },
+  "1861692137": {
+    "name": "木星の守人",
+    "description": "何百年も誰も足を踏み入れていない地へ行く準備はできたか？",
+    "icon": "/common/destiny_content/icons/77f8a75b09d3f207ab85f5cb1770e16f.jpg",
+    "tierType": 5
   },
   "1864523264": {
     "name": "アイアンブリードの式服",
@@ -5989,11 +6355,29 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1a21bd95ff667ae9265bc5dd44446854.jpg",
     "tierType": 5
   },
+  "1998474274": {
+    "name": "壮観なアスプリエットのブーツ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/d24de7ff03f7dd1c2f5b06973e4b9f46.jpg",
+    "tierType": 5
+  },
   "2001487260": {
     "name": "ライトメイル",
     "description": "ゴーストが手に入れた塊から作ったこの基本アーマーはメッキがとても薄い。",
     "icon": "/common/destiny_content/icons/3e0b919ea55d420156cdf384b66a7f8a.jpg",
     "tierType": 2
+  },
+  "2001658176": {
+    "name": "壮観なアスプリエットのベスト",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/c5dee3edacd3c6b7a12f1f7ab1e7cc67.jpg",
+    "tierType": 5
+  },
+  "2006777123": {
+    "name": "壮観な無限なるガントレット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/0e4b03f286adcfe65181544a9ca79dd1.jpg",
+    "tierType": 5
   },
   "2011165716": {
     "name": "アトロポスのクローク",
@@ -6329,6 +6713,12 @@ var DestinyArmorDefinition = {
     "name": "ヘリオポーズのグリップ",
     "description": "「我々は運命論者ではない。希望を持っているだけだ。この死の領域の向こうに命が存在すると信じているだけだ」――アラーハ・リンデ",
     "icon": "/common/destiny_content/icons/d0fb0620fbc6277db814d79cd54a97f1.jpg",
+    "tierType": 5
+  },
+  "2099650277": {
+    "name": "壮観なミサゴのレッグ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/5df962cc8de95315e6af4b0d2ad265e1.jpg",
     "tierType": 5
   },
   "2109934830": {
@@ -7033,11 +7423,11 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/d99afa8cd112d15b8437ca205503280b.jpg",
     "tierType": 6
   },
-  "2275132880": {
-    "name": "横断のブーツ",
-    "description": "このブーツを履くと、一貫した4次元世界と自分との間の関連性が弱くなる。",
-    "icon": "/common/destiny_content/icons/0ddf279bb413e3d18555dfa1cd5ebadb.jpg",
-    "tierType": 6
+  "2275333236": {
+    "name": "壮観なカリポリスのグリーブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/8ef9f86bf20ac2b48bfd0051e9a5a66b.jpg",
+    "tierType": 5
   },
   "2279754802": {
     "name": "エレクター・ブーツ",
@@ -7169,6 +7559,12 @@ var DestinyArmorDefinition = {
     "name": "スコリのアイアンバンド",
     "description": "「昇れ、下にいる者を引き上げられるように」",
     "icon": "/common/destiny_content/icons/26be8fe08a572d9823c231910a90d0ad.jpg",
+    "tierType": 5
+  },
+  "2317558346": {
+    "name": "壮観なミサゴのフード",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/46bb61a4bb3f3fc0a2b62df37e5a5ac6.jpg",
     "tierType": 5
   },
   "2335332317": {
@@ -7308,6 +7704,12 @@ var DestinyArmorDefinition = {
     "description": "学者は彼らに、実践は哲学を上回ることを気づかせた。",
     "icon": "/common/destiny_content/icons/9b95b101547a89eb64e295ee452d70c2.jpg",
     "tierType": 3
+  },
+  "2364696211": {
+    "name": "壮観なミサゴのグローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/2aaa521d10d7dd8cd671bb69de8389cd.jpg",
+    "tierType": 5
   },
   "2368747176": {
     "name": "エクソダスのブーツ",
@@ -7675,12 +8077,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/2b16fdc3e899d10df1677e85ef125b59.jpg",
     "tierType": 5
   },
-  "2479526175": {
-    "name": "砂漠を歩む者",
-    "description": "硬い岩の上でも、動く砂丘の上でも、冷酷なサンドイーターがそのペースを落とすことはない。",
-    "icon": "/common/destiny_content/icons/11f301cb8d8ec148f8d8719e64080c83.jpg",
-    "tierType": 6
-  },
   "2486746566": {
     "name": "ヘゼンロードのファサード",
     "description": "ヘルムの神経インターフェースがベックスの細胞を合体させる。彼らは当然死んでいる。だがまだ夢を見ることはできる…",
@@ -7710,6 +8106,12 @@ var DestinyArmorDefinition = {
     "description": "ゴーストが身近な塊を使って作ったこのフィールドウィーブは生命維持を司るがそれ以外はほとんど役に立たない。",
     "icon": "/common/destiny_content/icons/9acea728fcfa2a8884691c5a6e9d4525.jpg",
     "tierType": 2
+  },
+  "2496457425": {
+    "name": "木星の守人",
+    "description": "木星の探索では、いつものようにタイタンが先陣を切ってくれる。",
+    "icon": "/common/destiny_content/icons/7600a73b6bf403762ae310aad33959c4.jpg",
+    "tierType": 5
   },
   "2497457952": {
     "name": "ロジック・シンガー III",
@@ -7897,6 +8299,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/226229094bd85af570841f5ad72243dd.jpg",
     "tierType": 5
   },
+  "2546600687": {
+    "name": "壮観な無限なるブーツ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/28dd590511e19ce4b360bfbd36f8cfb6.jpg",
+    "tierType": 5
+  },
   "2547914731": {
     "name": "ポテンシャル・バンド",
     "description": "ウォーロックのバンドはシンボルであり、力の中心でもある。ゴーストがこのシンプル版を即席で作った。",
@@ -8026,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "「内部エンジン」",
     "description": "「トラベラーとその光は高度な技術だと思う。それによって自分の力が弱まるなんて認めるつもりはない」",
-    "icon": "/common/destiny_content/icons/5e3ea70122344fc9658147bfccda73b5.png",
+    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "「宇宙の真実」",
     "description": "「光をプロトンや単なるニュートリノと同じフレームワークに固定することは狭量な思い上がりだ」",
-    "icon": "/common/destiny_content/icons/5e3ea70122344fc9658147bfccda73b5.png",
+    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
     "tierType": 3
   },
   "2580679414": {
@@ -8233,6 +8641,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/8956a524da0d3d82e8d321faf862e694.jpg",
     "tierType": 5
   },
+  "2640087282": {
+    "name": "バークハン砂丘 I",
+    "description": "「砂漠では幻覚を見ることがある。目に映るものを全て信じてはいけない」",
+    "icon": "/common/destiny_content/icons/b90f1aef0dc13f8ee33f7f4899ba0cbb.jpg",
+    "tierType": 5
+  },
   "2642309592": {
     "name": "アイアンキャメロットのバンド",
     "description": "アイアンソングを歌ったスコリを追悼して作られた。",
@@ -8286,6 +8700,12 @@ var DestinyArmorDefinition = {
     "description": "組織的攻撃は個人の技能だけでは成り立たない。ファイアチームには部隊の団結が必要だ。",
     "icon": "/common/destiny_content/icons/179f9d181c820abb509f9ea1734c1b17.jpg",
     "tierType": 4
+  },
+  "2659591096": {
+    "name": "壮観なヘリオポーズのマスク",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/b081fa9852675c45c2f8af2a26be26e9.jpg",
+    "tierType": 5
   },
   "2659960491": {
     "name": "テラバイド",
@@ -8363,6 +8783,12 @@ var DestinyArmorDefinition = {
     "name": "ヴァンス・オルクス0A0X",
     "description": "クルーシブルの装備品。無髄フィールドウィーブが無敵感を誘発する。",
     "icon": "/common/destiny_content/icons/9bb2cf264fd0cd81457fd1f7eea9a546.jpg",
+    "tierType": 5
+  },
+  "2684428967": {
+    "name": "木星の守人",
+    "description": "私達はリーフの向こうへと旅立つ。だがその前に準備をしなければ。",
+    "icon": "/common/destiny_content/icons/3d0c2b5d984183511cb4e70a03452ba5.jpg",
     "tierType": 5
   },
   "2688781040": {
@@ -8449,6 +8875,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4faca245962b4d24dbbdfbded7fcdbef.jpg",
     "tierType": 4
   },
+  "2696707275": {
+    "name": "壮観なカリポリスの王冠",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/7bf89c43afbed36f14de8e2b97c66fd8.jpg",
+    "tierType": 5
+  },
+  "2698833929": {
+    "name": "壮観なヘリオポーズのグリップ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/de3feb9fac2bcf50e14592d6dfa68d8f.jpg",
+    "tierType": 5
+  },
   "2702267948": {
     "name": "鷹ノ目の狩人 1.1",
     "description": "「シティが安全を確保できる前の、タワーが人類の希望となる前の暗黒時代、この世には狩人しかいなかった」――チヨコ・メイ",
@@ -8472,6 +8910,30 @@ var DestinyArmorDefinition = {
     "description": "うなぎのようにツルツル。",
     "icon": "/common/destiny_content/icons/1702bd5d53457ab2a8cd4261739a73a7.jpg",
     "tierType": 4
+  },
+  "2704937713": {
+    "name": "壮観なアスプリエットのマスク",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/9d7ba305ad01c8a74e9d0340e1273140.jpg",
+    "tierType": 5
+  },
+  "2710490084": {
+    "name": "目撃者のグリーブ",
+    "description": "「女王を失うのは悲しいことだ。今俺達がすることは、全て女王のためだ」――バリクス",
+    "icon": "/common/destiny_content/icons/01f15894fb4a309b76ce99fcfcd5313e.jpg",
+    "tierType": 5
+  },
+  "2710490085": {
+    "name": "壮観なグリーブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/7c34654e075ad2f9ef237e5eb4aeecd7.jpg",
+    "tierType": 5
+  },
+  "2710490087": {
+    "name": "荒廃のグリーブ",
+    "description": "変化は必ずしも発見ではない。",
+    "icon": "/common/destiny_content/icons/66f63791f71a34d703612fe628076c71.jpg",
+    "tierType": 5
   },
   "2716750484": {
     "name": "オーダーのフード",
@@ -8665,12 +9127,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/0e90b8c8af3f766578d856a0299711bf.jpg",
     "tierType": 5
   },
-  "2778128366": {
-    "name": "星状細胞の詩",
-    "description": "このヘルムの中に秘められている可能性が、使い手の頭を生身やエクソ神経から純粋な思考へと変えていく。",
-    "icon": "/common/destiny_content/icons/2e596038c90c4f0c16828d12eb66ae49.jpg",
-    "tierType": 6
-  },
   "2778128367": {
     "name": "スタッグ",
     "description": "何ともはや！",
@@ -8813,6 +9269,30 @@ var DestinyArmorDefinition = {
     "name": "8つの月の拳",
     "description": "固く守られた思考が現実である亜空間でのみ、これらの月は静かに存在する。",
     "icon": "/common/destiny_content/icons/a3a015ce724686136344cd3f735a0a11.jpg",
+    "tierType": 5
+  },
+  "2803402711": {
+    "name": "壮観なヘリオポーズのガントレット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/daf51fff2a5ab5cb1dcf0cc0d0c33fa2.jpg",
+    "tierType": 5
+  },
+  "2804968636": {
+    "name": "目撃者のキュイラス",
+    "description": "「王が1人死ぬ。そして、10人がその座を奪おうと躍起になる」――バリクス",
+    "icon": "/common/destiny_content/icons/612ccb71c946e7d81288ff222055fbde.jpg",
+    "tierType": 5
+  },
+  "2804968637": {
+    "name": "壮観なプレート",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/3eb852b978f8aef693610c708021fe88.jpg",
+    "tierType": 5
+  },
+  "2804968639": {
+    "name": "荒廃のプレート",
+    "description": "新しい形状になれ。",
+    "icon": "/common/destiny_content/icons/68108801b9984933097fffe27203bbe2.jpg",
     "tierType": 5
   },
   "2810003152": {
@@ -9295,6 +9775,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/5730bcde9a32b84eb04d61721cdc49a0.jpg",
     "tierType": 5
   },
+  "2928398152": {
+    "name": "荒廃のヘルム",
+    "description": "オゾンの匂い。彼方から聞こえる叫び。不安な気持ち。",
+    "icon": "/common/destiny_content/icons/b26e98bb1540b2bd7409eeaf87acdcc3.jpg",
+    "tierType": 5
+  },
+  "2928398154": {
+    "name": "壮観なヘルメット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/fc315c8fd15fcb57cb2981c955907e08.jpg",
+    "tierType": 5
+  },
+  "2928398155": {
+    "name": "目撃者のヘルム",
+    "description": "「アウォークンの数は大分減りました。ですが、戦う意思が消えることはありません」――ぺトラ・ベンジ",
+    "icon": "/common/destiny_content/icons/9ef6e380b8ffa5b2c626843465b52e45.jpg",
+    "tierType": 5
+  },
   "2935267644": {
     "name": "クイーンズガード・グリーブ",
     "description": "身軽になり、誇りを持て。",
@@ -9317,6 +9815,12 @@ var DestinyArmorDefinition = {
     "name": "ミサゴ II",
     "description": "クルーシブルの装備品。スリップフォームデザインの無髄フィールドウィーブ。",
     "icon": "/common/destiny_content/icons/3f96a481562887024b5336cc7893d98a.jpg",
+    "tierType": 5
+  },
+  "2949302235": {
+    "name": "壮観なヘリオポーズのブーツ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/29d5a6704892426d1243671b3f9ea6d1.jpg",
     "tierType": 5
   },
   "2950887984": {
@@ -9348,6 +9852,12 @@ var DestinyArmorDefinition = {
     "description": "シティはお前の手柄について聞きたがっているぞ。",
     "icon": "/common/destiny_content/icons/e86b08acb3e4b6d906cd03a09f1140ae.jpg",
     "tierType": 3
+  },
+  "2953226480": {
+    "name": "壮観なミサゴのバンド",
+    "description": "「着地できる場所がない。このまま飛び続けるしかないか」",
+    "icon": "/common/destiny_content/icons/608e43cfb8d84fcca2e5db94407e985e.jpg",
+    "tierType": 5
   },
   "2956790198": {
     "name": "アルゴス・デイマティック1.1.2",
@@ -9401,6 +9911,30 @@ var DestinyArmorDefinition = {
     "name": "エクソダスのベスト",
     "description": "人間は捕えられている。その檻を破ろう。",
     "icon": "/common/destiny_content/icons/2c36c493ddb04c37a2c7f7fa97e76cb0.jpg",
+    "tierType": 5
+  },
+  "2975536017": {
+    "name": "荒廃のガントレット",
+    "description": "影以上、星未満。",
+    "icon": "/common/destiny_content/icons/51379b62e915dac24888aefbc7e15080.jpg",
+    "tierType": 5
+  },
+  "2975536018": {
+    "name": "目撃者のガントレット",
+    "description": "「指導者がいなければ、宿られた軍は自然が猛威を振るったようになる。奴らが知っているのは飢餓と怒りだけだ」――エリス・モーン",
+    "icon": "/common/destiny_content/icons/0367b686c86226bd4e37923f7c62269a.jpg",
+    "tierType": 5
+  },
+  "2975536019": {
+    "name": "壮観なガントレット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/ee68a5395d9302532354eec17f64e80c.jpg",
+    "tierType": 5
+  },
+  "2977017205": {
+    "name": "壮観なカリポリスのクローク",
+    "description": "過去でも未来でもない。見つめているべきは現在だ。",
+    "icon": "/common/destiny_content/icons/ec383fe01e7fa7434f9bcd900f0b9f24.jpg",
     "tierType": 5
   },
   "2988284296": {
@@ -9505,6 +10039,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/7a310731af5ebef580725420fe43e528.jpg",
     "tierType": 2
   },
+  "3003499668": {
+    "name": "壮観な無限なるマスク",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/8068b2dac069bde4a8ab1a3d06dfde76.jpg",
+    "tierType": 5
+  },
   "3009953622": {
     "name": "デスシンガーのマントル",
     "description": "クロタの治めるおぞましい世界で取得した戦利品から作られた。",
@@ -9517,6 +10057,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/145e859ac57f0ee03028987e15a05d73.jpg",
     "tierType": 5
   },
+  "3019795155": {
+    "name": "壮観な無限なるベスト",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/2c9d15363f75fe435b45dd716fe51518.jpg",
+    "tierType": 5
+  },
   "3026648396": {
     "name": "カーニボア・マッチ",
     "description": "ロトカ＝ヴォルテラの方程式が世界と自分の関係を示す。",
@@ -9527,6 +10073,12 @@ var DestinyArmorDefinition = {
     "name": "サンクション・カスタム",
     "description": "成功への鍵は敵の処理能力と反応能力を破壊することにある。",
     "icon": "/common/destiny_content/icons/abb6fc1f4994cf01f6dcd05241bab66c.jpg",
+    "tierType": 5
+  },
+  "3032295330": {
+    "name": "壮観なパンディオンのガントレット",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/54ff72a85431b8eeb8bcb5636d41be96.jpg",
     "tierType": 5
   },
   "3034481788": {
@@ -9667,6 +10219,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c0a4af415a8698400ab0378406ba75a4.jpg",
     "tierType": 3
   },
+  "3071494145": {
+    "name": "パーリアのスリーブ",
+    "description": "「彼は追放された。だが、彼の言葉が依然耳から離れない」――フラクタルの巻物",
+    "icon": "/common/destiny_content/icons/ea07ee2c61555dd1907882d66e585777.jpg",
+    "tierType": 5
+  },
   "3072256885": {
     "name": "学者のシェル",
     "description": "シティの知識に貢献したゴースト用。",
@@ -9689,6 +10247,24 @@ var DestinyArmorDefinition = {
     "name": "デッドライトの紋章",
     "description": "「シティの彼方へ。そうだ、トラベラーの彼方へ」――アラーハ・ジャラール",
     "icon": "/common/destiny_content/icons/404405c530fb57c230b96b769f5e3404.jpg",
+    "tierType": 5
+  },
+  "3085609892": {
+    "name": "ケル達のバンド",
+    "description": "1人が率い、大勢が従う。",
+    "icon": "/common/destiny_content/icons/757b6f9f606c1422bef7ddefce2e243f.jpg",
+    "tierType": 5
+  },
+  "3085609894": {
+    "name": "デビル達のバンド",
+    "description": "己の存在を知らしめろ。",
+    "icon": "/common/destiny_content/icons/3b99e72d3be9e66f917833e91e45a1b4.jpg",
+    "tierType": 5
+  },
+  "3085609895": {
+    "name": "キング達のバンド",
+    "description": "我が言葉で誓いを立てる。",
+    "icon": "/common/destiny_content/icons/9d10f2709c3d4e4baef14eab610ce76b.jpg",
     "tierType": 5
   },
   "3092622518": {
@@ -9811,10 +10387,28 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/d14925ac6d48224fa844ee7ddab22ea1.jpg",
     "tierType": 5
   },
+  "3112010724": {
+    "name": "壮観なヘリオポーズのグローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/7cada40043ba68ff3620184099d8415f.jpg",
+    "tierType": 5
+  },
   "3125395949": {
     "name": "デッドライト・ガントレット",
     "description": "「少なくとも努力はした」――アラーハ・ヘンリ",
     "icon": "/common/destiny_content/icons/f147756ac6bf857d1c7688750bfc61c3.jpg",
+    "tierType": 5
+  },
+  "3125615213": {
+    "name": "壮観な無限なるプレート",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/75c8a97390a3cb845f4fce49e132175a.jpg",
+    "tierType": 5
+  },
+  "3128948233": {
+    "name": "パーリアのフード",
+    "description": "「日の出を迎えたいなら、まず日没を迎える必要がある」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/2d5c66293d4e4fd9eabcaf1ca73fb50a.jpg",
     "tierType": 5
   },
   "3129437672": {
@@ -9895,6 +10489,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6803b23d4c5984952ae54091ab4e06de.jpg",
     "tierType": 4
   },
+  "3148233487": {
+    "name": "壮観なヘリオポーズのベスト",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/7fa15a012613d6d7fe2f017227a9e171.jpg",
+    "tierType": 5
+  },
   "3148626578": {
     "name": "デスシンガーのグリップ",
     "description": "宇宙をつかみ作り直せ。叫びは無視しろ。",
@@ -9971,6 +10571,12 @@ var DestinyArmorDefinition = {
     "name": "アイアンキャメロットの紋章",
     "description": "アイアンバナーの首席だったラデガストを追悼して作られた。",
     "icon": "/common/destiny_content/icons/51227708b4fbe21d64bd05e4ebf3344b.jpg",
+    "tierType": 5
+  },
+  "3193131335": {
+    "name": "壮観な無限なるバンド",
+    "description": "「装置から被験体を出した。凍結していた。脈はないが、体の腐敗もなかった」――記録340-CHASM-0",
+    "icon": "/common/destiny_content/icons/82ae364358003797075c9e42df86949e.jpg",
     "tierType": 5
   },
   "3202328104": {
@@ -10183,6 +10789,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6915ed7bf06e1daa2efb9f9d991275d5.jpg",
     "tierType": 5
   },
+  "3273710512": {
+    "name": "パーリアのマスク",
+    "description": "「日の出を迎えたいなら、まず日没を迎える必要がある」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/33f0994fb50155c5aa9533fc1d42a316.jpg",
+    "tierType": 5
+  },
   "3275079860": {
     "name": "アイアンレガリア・プレート",
     "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
@@ -10205,6 +10817,12 @@ var DestinyArmorDefinition = {
     "name": "内なる戦いのグリップ",
     "description": "明日という日は簡単には制覇できないぞ。",
     "icon": "/common/destiny_content/icons/7516931a4d09013525140e87955cae0b.jpg",
+    "tierType": 5
+  },
+  "3291435311": {
+    "name": "壮観なカリポリスのローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/c173d6dcc9678094e57e1fe677a65c17.jpg",
     "tierType": 5
   },
   "3295133852": {
@@ -10321,6 +10939,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c9fbb77a95c597791033a067aee64776.jpg",
     "tierType": 5
   },
+  "3312628684": {
+    "name": "キング達のマントル",
+    "description": "王族に相応しい。",
+    "icon": "/common/destiny_content/icons/b9dad02137b919e55f4624242a4a53e8.jpg",
+    "tierType": 5
+  },
+  "3312628685": {
+    "name": "デビル達の変装",
+    "description": "顔を隠せ。",
+    "icon": "/common/destiny_content/icons/8d92eee078927897798a821e03491131.jpg",
+    "tierType": 5
+  },
+  "3312628687": {
+    "name": "ケル達のクローク",
+    "description": "最強の者が群れを率いる。",
+    "icon": "/common/destiny_content/icons/ccf63573c897155181fb97a5b1f07c64.jpg",
+    "tierType": 5
+  },
   "3316745440": {
     "name": "ローグ 4.5",
     "description": "ハンターのほとんどは、フィールドワイヤーを編み込んだ物よりも軽いプレートの胸当てを好む。",
@@ -10390,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "宇宙のバンド",
     "description": "オーダーの中には光と暗黒は超対称性物理学で説明が付くという者がいる。",
-    "icon": "/common/destiny_content/icons/80bc0e65590e8c584df6896b18e80ae8.png",
+    "icon": "/common/destiny_content/icons/cb2951251d5e822f76802a4da174d78c.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "両極性のバンド",
     "description": "オーダーの中には光と暗黒が独自の理論で、単純な物質世界を越えたところに存在していると信じている者がいる。",
-    "icon": "/common/destiny_content/icons/63abb89d5d57fbffb3a7e3649d04a381.png",
+    "icon": "/common/destiny_content/icons/de4ea1bcd2362ecefc784f04d818ae0b.png",
     "tierType": 2
   },
   "3346783228": {
@@ -10480,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "「去った者」",
     "description": "「ナイフを突きつけられたから手を出して… 慎重に… 灰にしてやった」",
-    "icon": "/common/destiny_content/icons/b9c8a5afcc3d12f7525c6ced81de9822.png",
+    "icon": "/common/destiny_content/icons/8016469a3a0943b07c6cfaf4851ec9fe.png",
     "tierType": 4
   },
   "3366017012": {
@@ -10589,6 +11225,12 @@ var DestinyArmorDefinition = {
     "name": "フェイトキラー・フード",
     "description": "我々と救済の間に敵が立ちふさがる。道を開け。",
     "icon": "/common/destiny_content/icons/c31d2e62675c800042197b0c6072ec86.jpg",
+    "tierType": 5
+  },
+  "3389932104": {
+    "name": "パーリアのローブ",
+    "description": "「挑戦は何でも受けて立つ。そうして強くなれるのだから」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/3412689cbc7eee5bf03475f9c6eaab1c.jpg",
     "tierType": 5
   },
   "3393641174": {
@@ -10705,6 +11347,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/9c86a33cb470de5e2f0260a1a9c7bdb7.jpg",
     "tierType": 3
   },
+  "3439150014": {
+    "name": "壮観な無限なるローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/247966f71f9d6c07585c978a2b8fd355.jpg",
+    "tierType": 5
+  },
+  "3443311670": {
+    "name": "壮観なグローブ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/85b2e8f416316115f5d6660f1a57221b.jpg",
+    "tierType": 5
+  },
   "3449421286": {
     "name": "「足跡なき者」",
     "description": "「重力？ あぁ、あの邪魔な。私は気にしないことにしている」――屈託なきリッサ",
@@ -10733,6 +11387,12 @@ var DestinyArmorDefinition = {
     "name": "アイアンレガリア・グレートヘルム",
     "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/48264d7ab87fb05fa5ceb57ed3a7709c.jpg",
+    "tierType": 5
+  },
+  "3452701201": {
+    "name": "パーリアのプレート",
+    "description": "「挑戦は何でも受けて立つ。そうして強くなれるのだから」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/d4d2860a4b72028d666b3736cf923af5.jpg",
     "tierType": 5
   },
   "3455371673": {
@@ -10775,6 +11435,12 @@ var DestinyArmorDefinition = {
     "name": "アストロロード・グローブ",
     "description": "過渡的状態ではなく基礎的行程が必要だと認めよ。",
     "icon": "/common/destiny_content/icons/eee2d12c57dfb814bc1d47b1b999cb8b.jpg",
+    "tierType": 5
+  },
+  "3461067991": {
+    "name": "パーリアのベスト",
+    "description": "「挑戦は何でも受けて立つ。そうして強くなれるのだから」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/0768aa082aed6f88ae46dcdf64e02b0a.jpg",
     "tierType": 5
   },
   "3470167972": {
@@ -11137,6 +11803,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/be440967f4938cc14ad1aa912a4dafa1.jpg",
     "tierType": 5
   },
+  "3606232300": {
+    "name": "飲まれたシェル",
+    "description": "新しい自分を発見したゴースト用。",
+    "icon": "/common/destiny_content/icons/566da3b42ad844d3e46c822640806143.jpg",
+    "tierType": 5
+  },
   "3607447067": {
     "name": "ヘリオポーズのヘルム",
     "description": "ヘリオポーズの向こうに暗黒しかないとしたら、既に負けたも同然だ。",
@@ -11281,6 +11953,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/a61ff181daa7348e10146d61980d99d5.jpg",
     "tierType": 3
   },
+  "3664806619": {
+    "name": "壮観な無限なるフード",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/bfc745c426a9ae3b7637ecb8027621db.jpg",
+    "tierType": 5
+  },
   "3677348580": {
     "name": "グワリオル・タイプ3",
     "description": "「度が過ぎた軍事化は我々を死滅へと向かわせる」 - 総意の議事録",
@@ -11305,6 +11983,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/cdb06ded034ce417b16fccc82a81e8e2.jpg",
     "tierType": 3
   },
+  "3689370929": {
+    "name": "荒廃のベール",
+    "description": "オゾンの匂い。彼方から聞こえる叫び。不安な気持ち。",
+    "icon": "/common/destiny_content/icons/3e974ad3435f9f14b7d46902f8eb2966.jpg",
+    "tierType": 5
+  },
+  "3689370930": {
+    "name": "門番の心",
+    "description": "「クロウは遠くまで飛ぶ。これから起こることの囁きを持って帰ってくる」――バリクス",
+    "icon": "/common/destiny_content/icons/7efbbd0c809b079ccf1bf67f59193a3d.jpg",
+    "tierType": 5
+  },
+  "3689370931": {
+    "name": "壮観なフード",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/2bddf8ebf876ce1d7b4bb29f1616cb03.jpg",
+    "tierType": 5
+  },
   "3691267894": {
     "name": "フィア・イーター",
     "description": "マスクを被っている時、私は機械になる。その機械が目的とするのは消耗だ。",
@@ -11315,6 +12011,24 @@ var DestinyArmorDefinition = {
     "name": "サンクション・シックス",
     "description": "トワイライトギャップの後、いろいろ変わった。",
     "icon": "/common/destiny_content/icons/8aff09b68644c5e0786883e338cbe1a6.jpg",
+    "tierType": 5
+  },
+  "3692454268": {
+    "name": "壮観なレッグ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/9f839a65f6fea7323ba777f71d0dc98b.jpg",
+    "tierType": 5
+  },
+  "3692454269": {
+    "name": "門番の道",
+    "description": "「女王陛下には様々な経験があり、様々な知識があった。これからは女王陛下の導きなしに学んでいくしかない」――バリクス",
+    "icon": "/common/destiny_content/icons/54010cdf53a7aad78e683f21b6ee1161.jpg",
+    "tierType": 5
+  },
+  "3692454270": {
+    "name": "荒廃のブーツ",
+    "description": "変化は必ずしも発見ではない。",
+    "icon": "/common/destiny_content/icons/e0218ed192c9efaf276509f60f634b01.jpg",
     "tierType": 5
   },
   "3707771005": {
@@ -11509,6 +12223,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/88e312d69bc80c227ec73358c0ec08d4.jpg",
     "tierType": 3
   },
+  "3775423024": {
+    "name": "壮観なカリポリスのグリップ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/5a3f02226cf7d047cc6d90a9f89f4d02.jpg",
+    "tierType": 5
+  },
   "3775512100": {
     "name": "ゴート・タイプ0",
     "description": "かつてはそのスピーカーからモーツァルトを聞くことができた。今は、何の音も発さない。",
@@ -11561,6 +12281,12 @@ var DestinyArmorDefinition = {
     "name": "ウィルブレーカー・グリーブ",
     "description": "汝の足元で地面が揺れる。",
     "icon": "/common/destiny_content/icons/e951be8e263ea9ebb3a2efc4c58be2a6.jpg",
+    "tierType": 5
+  },
+  "3789442822": {
+    "name": "壮観なヘリオポーズのヘルム",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/ddadfb795e9bf1efcabd82c510493970.jpg",
     "tierType": 5
   },
   "3790886867": {
@@ -11671,6 +12397,30 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4ec25f317d4910fead5c17db6ec1067d.jpg",
     "tierType": 5
   },
+  "3808476833": {
+    "name": "バークハン砂丘 I",
+    "description": "「砂の下に、足元に都市が丸ごと埋まっている可能性があるんだ！」",
+    "icon": "/common/destiny_content/icons/2ae98c4274d2168f829259f12463ad5d.jpg",
+    "tierType": 5
+  },
+  "3809851981": {
+    "name": "荒廃のベスト",
+    "description": "新しい形状になれ。",
+    "icon": "/common/destiny_content/icons/23fc5d359bcd0d0f2f4bc9024c23b929.jpg",
+    "tierType": 5
+  },
+  "3809851982": {
+    "name": "番人の血",
+    "description": "「宿られた者は厄介だ... オリックスのような指導者がいたらな。頭さえいなければ大したことはない」――ケイド6",
+    "icon": "/common/destiny_content/icons/6959de5fb65cea2198ea163046c0d02c.jpg",
+    "tierType": 5
+  },
+  "3809851983": {
+    "name": "壮観なベスト",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/8a200c198adf123b7ac5ef1c8f5cd2de.jpg",
+    "tierType": 5
+  },
   "3812790140": {
     "name": "エニグマ・バーン III",
     "description": "フィールドウィーブに適合させよう。きれいなサーキットはいい睡眠のように感じるはずだ。",
@@ -11765,6 +12515,24 @@ var DestinyArmorDefinition = {
     "name": "ウルフウッドのバンド",
     "description": "赤い夜明けの下で、鉄の狼達はアイアンウッドの下に集まった。",
     "icon": "/common/destiny_content/icons/74589e6a2f8394ce5fcc8f7313ae91f8.jpg",
+    "tierType": 5
+  },
+  "3847828216": {
+    "name": "壮観なマスク",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/948f938c18db64b860f87f38433a23dd.jpg",
+    "tierType": 5
+  },
+  "3847828217": {
+    "name": "番人のサイト",
+    "description": "「敵に注意しろ、ガーディアン。よく見て動きを読み、学べ」――バリクス",
+    "icon": "/common/destiny_content/icons/b2c4af3ca1659a19af29f8efb486a8f6.jpg",
+    "tierType": 5
+  },
+  "3847828218": {
+    "name": "荒廃のカバー",
+    "description": "オゾンの匂い。彼方から聞こえる叫び。不安な気持ち。",
+    "icon": "/common/destiny_content/icons/9152b0b4cfc0935458f6745e3be71900.jpg",
     "tierType": 5
   },
   "3848584870": {
@@ -11869,6 +12637,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1a912e151ced04b614167c541b12979f.jpg",
     "tierType": 5
   },
+  "3879283641": {
+    "name": "壮観なカリポリスのマスク",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/4e1992dd4b89b9834009b84a594c03e5.jpg",
+    "tierType": 5
+  },
+  "3882836265": {
+    "name": "パーリアのグリーブ",
+    "description": "「真の色を知りたいなら、まず暗黒を知る必要がある」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/488273bf7a7a4918e8542ee7f539da78.jpg",
+    "tierType": 5
+  },
   "3885369928": {
     "name": "ラク・フルクラム タイプ4",
     "description": "クルーシブルカスタム。触覚パッドが武器性能のフィードバックを行う。",
@@ -11922,6 +12702,12 @@ var DestinyArmorDefinition = {
     "description": "ブーツはあくまでブーツである。ただしウォーロックのブーツは別だ。それは特別なものである。",
     "icon": "/common/destiny_content/icons/270f23e370650d2044d10dbafecb905a.jpg",
     "tierType": 3
+  },
+  "3889553880": {
+    "name": "壮観なカリポリスのフード",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/4bb06403f4221c8bd906b5b1d1528b19.jpg",
+    "tierType": 5
   },
   "3894791157": {
     "name": "ベクター・オース VI",
@@ -11981,6 +12767,12 @@ var DestinyArmorDefinition = {
     "name": "ダークホローのキトン",
     "description": "「奴らの世界は無慈悲で酷だ。だが、不思議に適応性が見られることもある」――エリス・モーン",
     "icon": "/common/destiny_content/icons/fdb24d4bce31df8ec59ac4096f71b8de.jpg",
+    "tierType": 5
+  },
+  "3910264250": {
+    "name": "パーリアのブーツ",
+    "description": "「真の色を知りたいなら、まず暗黒を知る必要がある」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/449edea3c409d08e221dde25675bffb3.jpg",
     "tierType": 5
   },
   "3910559228": {
@@ -12054,6 +12846,18 @@ var DestinyArmorDefinition = {
     "description": "古代の神にちなみ名づけられたこのパターンは、狙いを定めた攻撃的行動を目的としている。",
     "icon": "/common/destiny_content/icons/c9aa02fef1e6657ebef02ff01c1f0e22.jpg",
     "tierType": 4
+  },
+  "3925936918": {
+    "name": "パーリアのヘルム",
+    "description": "「日の出を迎えたいなら、まず日没を迎える必要がある」――英知の泉の寓話",
+    "icon": "/common/destiny_content/icons/7fba48216397f9fc94f5c4f68ebbb45c.jpg",
+    "tierType": 5
+  },
+  "3934967423": {
+    "name": "長き明日 9G",
+    "description": "「女王が火星さえも君臨していたことはあるのだろうか？」",
+    "icon": "/common/destiny_content/icons/d57823733838c5bf5157b6f8b768bbbe.jpg",
+    "tierType": 5
   },
   "3942481540": {
     "name": "エクソダスの印",
@@ -12306,6 +13110,18 @@ var DestinyArmorDefinition = {
     "description": "「ファイアチームでの仕事はパターンを目にして自分のものにすることだ」",
     "icon": "/common/destiny_content/icons/edafb8dfa383fd02cd133553fbe88b82.jpg",
     "tierType": 4
+  },
+  "4005263627": {
+    "name": "長き明日 9G",
+    "description": "「アルファケンタウリまで行ってやると意気込んでいた。彼を見たのはそれが最後だ」",
+    "icon": "/common/destiny_content/icons/b3c8803c676e2e0fbbde6b243c86ac01.jpg",
+    "tierType": 5
+  },
+  "4006497057": {
+    "name": "壮観なヘリオポーズのプレート",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/df9518be6ce846ae2d55dad3942b882d.jpg",
+    "tierType": 5
   },
   "4006760092": {
     "name": "5kmの紋章",
@@ -12637,6 +13453,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/9437ceaa8cc54ff1fafe018b0aed4655.jpg",
     "tierType": 5
   },
+  "4106049498": {
+    "name": "壮観な無限なるヘルム",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/ee38f2510b26c2643b780bd2706b491c.jpg",
+    "tierType": 5
+  },
   "4106244623": {
     "name": "エレクターの覆い",
     "description": "自分自身ではなく、人々の意思のために戦っていると分かってくれるだろう。",
@@ -12654,6 +13476,12 @@ var DestinyArmorDefinition = {
     "description": "弾薬がない？ 問題ない。",
     "icon": "/common/destiny_content/icons/75feb901adf3083874df463ad714b87a.jpg",
     "tierType": 6
+  },
+  "4134058250": {
+    "name": "壮観なカリポリスのブーツ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/1ce9238596f3526fc4f4793d8f21ef13.jpg",
+    "tierType": 5
   },
   "4141399030": {
     "name": "シメトリー・ファング VI",
@@ -12691,6 +13519,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/81a454819a623d19a493d161be43301b.jpg",
     "tierType": 5
   },
+  "4157065304": {
+    "name": "壮観なカリポリスのベスト",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/5a90df086385bab1c6de4ab782a72d2b.jpg",
+    "tierType": 5
+  },
   "4158489058": {
     "name": "ドライブ用シェル",
     "description": "外殻に風を感じたいゴースト用。",
@@ -12725,6 +13559,12 @@ var DestinyArmorDefinition = {
     "name": "アイアンキャメロットのフード",
     "description": "ボイドを見つめたフェルウィンターを追悼して作られた。",
     "icon": "/common/destiny_content/icons/a4a5472a9ac8d10adc5690c891fe546b.jpg",
+    "tierType": 5
+  },
+  "4179265147": {
+    "name": "壮観なカリポリスのレッグ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/fbb88a5c1169d38f7829d3fcc68920f7.jpg",
     "tierType": 5
   },
   "4184289356": {
@@ -12772,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "「熟練のカオス」",
     "description": "「空間と時間を操れ。物質とエネルギーが僅かに流れる」",
-    "icon": "/common/destiny_content/icons/fd245c34456bef890b50fd9c7b2fdeff.png",
+    "icon": "/common/destiny_content/icons/65ce3c23f9330239773583b31663ac3d.png",
     "tierType": 4
   },
   "4187254944": {
@@ -12913,6 +13753,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c7efbf0d88b9f290c41e382e13c4667d.jpg",
     "tierType": 4
   },
+  "4204773796": {
+    "name": "壮観な無限なるレッグ",
+    "description": "多重チャンネルのクロマヒートシンクと融合したアーマー。",
+    "icon": "/common/destiny_content/icons/a1d1b739c9e2e14b32d6612ac3412da4.jpg",
+    "tierType": 5
+  },
   "4204877210": {
     "name": "クイーンズガード・グローブ",
     "description": "王の手",
@@ -13037,6 +13883,12 @@ var DestinyArmorDefinition = {
     "name": "フライの覆い",
     "description": "死が歩くところに集まる。",
     "icon": "/common/destiny_content/icons/8d56546884d7c610a02fc5307f9952db.jpg",
+    "tierType": 5
+  },
+  "4267429868": {
+    "name": "木星の守人",
+    "description": "言葉と印はよく考えて選べ。記憶に残るのはそれなのだから。",
+    "icon": "/common/destiny_content/icons/777d7b57150b092e033c4b8433b16300.jpg",
     "tierType": 5
   },
   "4267828624": {

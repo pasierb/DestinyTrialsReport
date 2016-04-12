@@ -49,6 +49,18 @@ var DestinyWeaponDefinition = {
     "subType": 10,
     "tierType": 4
   },
+  "34013768": {
+    "name": "Her Revenge",
+    "icon": "/common/destiny_content/icons/19ef94c6fcbdc7089199f5c0eb1f51da.jpg",
+    "subType": 9,
+    "tierType": 5
+  },
+  "34013769": {
+    "name": "Stolen Pride",
+    "icon": "/common/destiny_content/icons/38bb0923bb44af55e1ab545451fe3220.jpg",
+    "subType": 9,
+    "tierType": 5
+  },
   "46660196": {
     "name": "Admonisher III",
     "icon": "/common/destiny_content/icons/055175be7bcbce51e426a97ab7e6cd22.jpg",
@@ -163,9 +175,21 @@ var DestinyWeaponDefinition = {
     "subType": 7,
     "tierType": 6
   },
+  "99462853": {
+    "name": "Universal Remote",
+    "icon": "/common/destiny_content/icons/55caeaf14f08224b4bea6b3bd40d3e07.jpg",
+    "subType": 7,
+    "tierType": 6
+  },
   "99462854": {
     "name": "The 4th Horseman",
     "icon": "/common/destiny_content/icons/bb54cc29a8a08805aadee6f6c4c14baf.jpg",
+    "subType": 7,
+    "tierType": 6
+  },
+  "99462855": {
+    "name": "Lord of Wolves",
+    "icon": "/common/destiny_content/icons/82c854e9b6e8c154e608c4cc1d467d7b.jpg",
     "subType": 7,
     "tierType": 6
   },
@@ -349,6 +373,12 @@ var DestinyWeaponDefinition = {
     "subType": 12,
     "tierType": 4
   },
+  "310074617": {
+    "name": "Zen Meteor",
+    "icon": "/common/destiny_content/icons/57e2496cc18b111ebd8208e7ad08d363.jpg",
+    "subType": 12,
+    "tierType": 6
+  },
   "324306190": {
     "name": "Coiled Hiss 1919",
     "icon": "/common/destiny_content/icons/36511f9f754b97068756b8a31bddead0.jpg",
@@ -523,6 +553,12 @@ var DestinyWeaponDefinition = {
     "subType": 6,
     "tierType": 2
   },
+  "486267748": {
+    "name": "Techeun Rage",
+    "icon": "/common/destiny_content/icons/54f6720f9c059ac7e3ff6818537bd5c5.jpg",
+    "subType": 11,
+    "tierType": 5
+  },
   "486279087": {
     "name": "Conspiracy Theory-D",
     "icon": "/common/destiny_content/icons/58412b46270c6cb4762c7bfd69f3714a.jpg",
@@ -606,6 +642,18 @@ var DestinyWeaponDefinition = {
     "icon": "/common/destiny_content/icons/46a3d0cc421f0277abf9fbd33de33d9b.jpg",
     "subType": 9,
     "tierType": 2
+  },
+  "601780094": {
+    "name": "Soulstealer's Claw",
+    "icon": "/common/destiny_content/icons/a87772a0ddef432cfe54aff5aa2fc5ed.jpg",
+    "subType": 6,
+    "tierType": 5
+  },
+  "601780095": {
+    "name": "Her Memory",
+    "icon": "/common/destiny_content/icons/e92745156731c2df2c18d42bc91e0039.jpg",
+    "subType": 6,
+    "tierType": 5
   },
   "602786655": {
     "name": "Ruin Wake",
@@ -797,6 +845,18 @@ var DestinyWeaponDefinition = {
     "name": "Paleocontact JPK-43",
     "icon": "/common/destiny_content/icons/f329e680e7db86c96f7faf7666aad877.jpg",
     "subType": 6,
+    "tierType": 5
+  },
+  "791351720": {
+    "name": "Zombie Apocalypse WF47",
+    "icon": "/common/destiny_content/icons/edea0ec5c31c90338008d92323b3582a.jpg",
+    "subType": 8,
+    "tierType": 5
+  },
+  "791351721": {
+    "name": "THE SWARM",
+    "icon": "/common/destiny_content/icons/edea0ec5c31c90338008d92323b3582a.jpg",
+    "subType": 8,
     "tierType": 5
   },
   "791573149": {
@@ -1051,6 +1111,18 @@ var DestinyWeaponDefinition = {
     "subType": 7,
     "tierType": 4
   },
+  "1033894158": {
+    "name": "The Comedian",
+    "icon": "/common/destiny_content/icons/aee4ea9024696cdb26650a544467339b.jpg",
+    "subType": 7,
+    "tierType": 5
+  },
+  "1033894159": {
+    "name": "Two To The Morgue",
+    "icon": "/common/destiny_content/icons/aee4ea9024696cdb26650a544467339b.jpg",
+    "subType": 7,
+    "tierType": 5
+  },
   "1037965300": {
     "name": "Calcutta-LR2",
     "icon": "/common/destiny_content/icons/74dc5231eb4ac829b687b56a888713f5.jpg",
@@ -1231,6 +1303,18 @@ var DestinyWeaponDefinition = {
     "subType": 13,
     "tierType": 6
   },
+  "1200540134": {
+    "name": "LDR 5001",
+    "icon": "/common/destiny_content/icons/842feccc0aba53d8422985680ed4cc74.jpg",
+    "subType": 12,
+    "tierType": 5
+  },
+  "1200540135": {
+    "name": "Y-09 Longbow Synthesis",
+    "icon": "/common/destiny_content/icons/842feccc0aba53d8422985680ed4cc74.jpg",
+    "subType": 12,
+    "tierType": 5
+  },
   "1201310194": {
     "name": "Hawksaw",
     "icon": "/common/destiny_content/icons/e8cac040d3f6886bbbdc703810d0de5f.jpg",
@@ -1241,6 +1325,18 @@ var DestinyWeaponDefinition = {
     "name": "Prestige IV",
     "icon": "/common/destiny_content/icons/d776c56ccb92b08e4bc3bc7ef5909df2.jpg",
     "subType": 8,
+    "tierType": 5
+  },
+  "1205866942": {
+    "name": "Aegis of the Reef",
+    "icon": "/common/destiny_content/icons/749dc12e75c71f326b71593be8faa674.jpg",
+    "subType": 13,
+    "tierType": 5
+  },
+  "1205866943": {
+    "name": "Final Duty",
+    "icon": "/common/destiny_content/icons/4b5ff928d8483ad3da0bc23e27565551.jpg",
+    "subType": 13,
     "tierType": 5
   },
   "1221909933": {
@@ -2245,6 +2341,18 @@ var DestinyWeaponDefinition = {
     "subType": 11,
     "tierType": 5
   },
+  "1865782060": {
+    "name": "Lethe Noblesse",
+    "icon": "/common/destiny_content/icons/afc3d6cb7d5709c059191fbb7a9a42c3.jpg",
+    "subType": 14,
+    "tierType": 5
+  },
+  "1865782061": {
+    "name": "Hand of Judgment",
+    "icon": "/common/destiny_content/icons/5d36f7872bcea7ea365d92208c54d97d.jpg",
+    "subType": 14,
+    "tierType": 5
+  },
   "1873492565": {
     "name": "One/One Synesthete",
     "icon": "/common/destiny_content/icons/2a8eb662dcec87e10ea4561bf9fdf9ca.jpg",
@@ -2267,6 +2375,18 @@ var DestinyWeaponDefinition = {
     "name": "Deviant Gravity-A",
     "icon": "/common/destiny_content/icons/1bdc021c53a7eb8109d1efbf0b2dca18.jpg",
     "subType": 8,
+    "tierType": 5
+  },
+  "1895604998": {
+    "name": "Lord High Fixer",
+    "icon": "/common/destiny_content/icons/354a70ae8c3f44847aba35e3b169afbc.jpg",
+    "subType": 9,
+    "tierType": 5
+  },
+  "1895604999": {
+    "name": "The Devil You Know",
+    "icon": "/common/destiny_content/icons/354a70ae8c3f44847aba35e3b169afbc.jpg",
+    "subType": 9,
     "tierType": 5
   },
   "1903292368": {
@@ -2299,10 +2419,28 @@ var DestinyWeaponDefinition = {
     "subType": 12,
     "tierType": 5
   },
+  "1982014077": {
+    "name": "Dreg's Promise",
+    "icon": "/common/destiny_content/icons/69ffd7c9729c5a4d6e3cc4737f938e4a.jpg",
+    "subType": 17,
+    "tierType": 6
+  },
   "1990440986": {
     "name": "Arma Engine DOA",
     "icon": "/common/destiny_content/icons/bdec9dad360d16d41173f34a83cc7080.jpg",
     "subType": 8,
+    "tierType": 5
+  },
+  "1994742696": {
+    "name": "Stolen Will",
+    "icon": "/common/destiny_content/icons/fdfbf22bb3503a3148216f3c07756c2b.jpg",
+    "subType": 7,
+    "tierType": 5
+  },
+  "1994742697": {
+    "name": "Her Champion",
+    "icon": "/common/destiny_content/icons/c5f03d0c7f3a38d34501b2140f7e58ba.jpg",
+    "subType": 7,
     "tierType": 5
   },
   "1998842327": {
@@ -2375,6 +2513,12 @@ var DestinyWeaponDefinition = {
     "name": "The Chosen",
     "icon": "/common/destiny_content/icons/0563cbb9a0ce20024488b9c34c9bc8c7.jpg",
     "subType": 12,
+    "tierType": 5
+  },
+  "2072624878": {
+    "name": "The Nightmare",
+    "icon": "/common/destiny_content/icons/b7b7ccffc88e1699e4564d48e9b9bb9d.jpg",
+    "subType": 10,
     "tierType": 5
   },
   "2080150144": {
@@ -2651,6 +2795,18 @@ var DestinyWeaponDefinition = {
     "name": "Silence of A'arn",
     "icon": "/common/destiny_content/icons/4cb0affbcfcd7e97320291b1ecd13be4.jpg",
     "subType": 7,
+    "tierType": 5
+  },
+  "2206272666": {
+    "name": "Shadow Price",
+    "icon": "/common/destiny_content/icons/db20ecbe1415e5b75caf82045a162459.jpg",
+    "subType": 6,
+    "tierType": 5
+  },
+  "2206272667": {
+    "name": "Grim Citizen III",
+    "icon": "/common/destiny_content/icons/db20ecbe1415e5b75caf82045a162459.jpg",
+    "subType": 6,
     "tierType": 5
   },
   "2210820429": {
@@ -3643,6 +3799,12 @@ var DestinyWeaponDefinition = {
     "subType": 14,
     "tierType": 5
   },
+  "2931351952": {
+    "name": "Dreadfang",
+    "icon": "/common/destiny_content/icons/30c6a21b4072897e158e5229e010040c.jpg",
+    "subType": 18,
+    "tierType": 5
+  },
   "2937600841": {
     "name": "The Chosen",
     "icon": "/common/destiny_content/icons/22d402a7f585afdff5eddea4d9e1c6ea.jpg",
@@ -3769,6 +3931,12 @@ var DestinyWeaponDefinition = {
     "subType": 12,
     "tierType": 4
   },
+  "3078564838": {
+    "name": "Queenbreakers' Bow",
+    "icon": "/common/destiny_content/icons/4d51184abefc4bea9ae5f3424847361c.jpg",
+    "subType": 11,
+    "tierType": 6
+  },
   "3078564839": {
     "name": "Plan C",
     "icon": "/common/destiny_content/icons/abf1f8e0f408e282d2e5f56bb39743f5.jpg",
@@ -3870,6 +4038,18 @@ var DestinyWeaponDefinition = {
     "icon": "/common/destiny_content/icons/bfb0b8d8384fc2372d7342d2210a5284.jpg",
     "subType": 9,
     "tierType": 2
+  },
+  "3142762098": {
+    "name": "The Saterienne Rapier",
+    "icon": "/common/destiny_content/icons/82cca47591236dfc48484511502055b8.jpg",
+    "subType": 14,
+    "tierType": 5
+  },
+  "3142762099": {
+    "name": "Badger CCL",
+    "icon": "/common/destiny_content/icons/7c289c62785928dae598d9d13370f8af.jpg",
+    "subType": 14,
+    "tierType": 5
   },
   "3153232297": {
     "name": "Valedictorian 9-44",
@@ -4705,6 +4885,12 @@ var DestinyWeaponDefinition = {
     "subType": 14,
     "tierType": 5
   },
+  "3736078343": {
+    "name": "Her Fury",
+    "icon": "/common/destiny_content/icons/1ce421714ae4385b0e4892cf081ae0dd.jpg",
+    "subType": 12,
+    "tierType": 5
+  },
   "3747674784": {
     "name": "The Good Doctor",
     "icon": "/common/destiny_content/icons/32f19e30cd374d2b888787b5987e50b2.jpg",
@@ -4818,6 +5004,12 @@ var DestinyWeaponDefinition = {
     "icon": "/common/destiny_content/icons/84fde52c69deb13a5b2d0fbd5822383f.jpg",
     "subType": 9,
     "tierType": 4
+  },
+  "3835813880": {
+    "name": "Patience and Time",
+    "icon": "/common/destiny_content/icons/13f53609398995532607ee8463c7b909.jpg",
+    "subType": 12,
+    "tierType": 6
   },
   "3835813881": {
     "name": "No Land Beyond",
@@ -5004,6 +5196,18 @@ var DestinyWeaponDefinition = {
     "icon": "/common/destiny_content/icons/0d83c6bddd7c44f13da89c75cbf72b96.jpg",
     "subType": 13,
     "tierType": 2
+  },
+  "4011143908": {
+    "name": "Queen's Choice",
+    "icon": "/common/destiny_content/icons/1dded51060dd1ebfa2914f11d60498f2.jpg",
+    "subType": 17,
+    "tierType": 5
+  },
+  "4011143909": {
+    "name": "Crow's Eye",
+    "icon": "/common/destiny_content/icons/3eaa7033258b411f8ed35198b609590a.jpg",
+    "subType": 17,
+    "tierType": 5
   },
   "4026257891": {
     "name": "Wolves' Bane",
@@ -5225,6 +5429,12 @@ var DestinyWeaponDefinition = {
     "name": "Crypt Dweller SR1",
     "icon": "/common/destiny_content/icons/835c115b0a8ade549a29a5adb9c5b99d.jpg",
     "subType": 14,
+    "tierType": 5
+  },
+  "4172863584": {
+    "name": "Bane of the Taken",
+    "icon": "/common/destiny_content/icons/c4328590e607a24c9126b52fed3ac460.jpg",
+    "subType": 8,
     "tierType": 5
   },
   "4183608783": {

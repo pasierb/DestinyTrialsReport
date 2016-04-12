@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "Sportskanone",
-    "statDescription": "Vernichte mit deinem Team das gegnerische Team in den ersten 30 Sekunden einer Runde.",
+    "statDescription": "Vernichte mit deinem Einsatztrupp das gegnerische Team in den ersten 30 Sekunden einer Runde.",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {
