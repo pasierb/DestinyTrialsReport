@@ -250,7 +250,7 @@ var DestinyArmorDefinition = {
   "58287017": {
     "name": "Guanti di Callipoli Spektar",
     "description": "Armatura infusa con i dissipatori di calore multicromatici.",
-    "icon": "/common/destiny_content/icons/5093045dddbce3a596570f2fd895e22f.jpg",
+    "icon": "/common/destiny_content/icons/96066d49fe40c0f64c1caed13256f037.jpg",
     "tierType": 5
   },
   "60040896": {
@@ -879,7 +879,7 @@ var DestinyArmorDefinition = {
   },
   "213518349": {
     "name": "Patto delle Duna Barcana",
-    "description": "\"La tempesta di sabbia che seppellirà Meridiana dissotterrerà Vasconia.\" - Massima dei Stregoni",
+    "description": "\"La tempesta di sabbia che seppellirà Meridiana dissotterrerà Vasconia.\" - Massima degli Stregoni",
     "icon": "/common/destiny_content/icons/d7c772b8c68ac5b2013b7f855f797817.jpg",
     "tierType": 5
   },
@@ -1245,7 +1245,7 @@ var DestinyArmorDefinition = {
   },
   "308606234": {
     "name": "Cammino del Vegliante",
-    "description": "\"Eh già, l'ho vista anch'io la sala del tesoro. Penso sia arrivato il momento che gli insonni usino un po' di quel bottino e lo sfruttino per installare un bell'ascensore.\" - Cayde-6",
+    "description": "\"Eh già, l'ho vista anch'io la sala del tesoro. Penso sia arrivato il momento che gli insonni usino un po' di quel bottino per installare un bell'ascensore.\" - Cayde-6",
     "icon": "/common/destiny_content/icons/0d53d68b93a68e81b1973fd9c6ad5f79.jpg",
     "tierType": 5
   },
@@ -1796,7 +1796,7 @@ var DestinyArmorDefinition = {
     "tierType": 5
   },
   "494034812": {
-    "name": "Maschera dell'Eliopausa Spektar",
+    "name": "Marchio dell'Eliopausa Spektar",
     "description": "Se oltre l'eliopausa ci fosse solo Oscurità, avremmo già perso.",
     "icon": "/common/destiny_content/icons/6423c8bed2cf749801c5b2ef82b4551b.jpg",
     "tierType": 5
@@ -2384,7 +2384,7 @@ var DestinyArmorDefinition = {
     "tierType": 5
   },
   "634743895": {
-    "name": "Maschera di Callipoli Spektar",
+    "name": "Marchio di Callipoli Spektar",
     "description": "Non al passato, nemmeno al futuro; è al presente che dovremmo guardare.",
     "icon": "/common/destiny_content/icons/5334d1cfee2e28f59a6dcd2e906e1cfc.jpg",
     "tierType": 5
@@ -4065,7 +4065,7 @@ var DestinyArmorDefinition = {
   },
   "1221519781": {
     "name": "Patto del Paria",
-    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato. \" - Pergamene Frattali",
+    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato.\" - Pergamene Frattali",
     "icon": "/common/destiny_content/icons/73184f09862d8628b8271b53c4810686.jpg",
     "tierType": 5
   },
@@ -4329,7 +4329,7 @@ var DestinyArmorDefinition = {
   },
   "1294420134": {
     "name": "Mantello del Paria",
-    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato. \" - Pergamene Frattali",
+    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato.\" - Pergamene Frattali",
     "icon": "/common/destiny_content/icons/5b3da7b1f5dcbe734f30c1da86fc34a5.jpg",
     "tierType": 5
   },
@@ -4599,7 +4599,7 @@ var DestinyArmorDefinition = {
   },
   "1353163820": {
     "name": "Marchio del Paria",
-    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato. \" - Pergamene Frattali",
+    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato.\" - Pergamene Frattali",
     "icon": "/common/destiny_content/icons/f16b99bbfc861e2e1281061c761593dc.jpg",
     "tierType": 5
   },
@@ -5564,7 +5564,7 @@ var DestinyArmorDefinition = {
     "tierType": 5
   },
   "1705560672": {
-    "name": "Maschera Linee Infinite Spektar",
+    "name": "Marchio Linee Infinite Spektar",
     "description": "... estrassi il soggetto dal dispositivo, sembrava gelido. Nessun segno vitale, ma il corpo non era decomposto. - REGISTRAZIONE 340-ABISSO-VUOTO",
     "icon": "/common/destiny_content/icons/5caf444a73e4929c4e63eea53c20dca8.jpg",
     "tierType": 5
@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"La Cura\"",
     "description": "\"Abbiamo una soluzione.\" - Ikora Rey, in una riunione d'emergenza del Consenso della Città",
-    "icon": "/common/destiny_content/icons/3f832b388bc871d60d6db4439e0823ec.png",
+    "icon": "/common/destiny_content/icons/ed898878720462946189953111c961d8.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"L'Inconquistabile\"",
     "description": "\"Smettiamola di pensare a come aprire la serratura, cominciamo a pensare a come abbattere il muro.\"",
-    "icon": "/common/destiny_content/icons/131a0febe20907a7cbc537b2fa23aaca.png",
+    "icon": "/common/destiny_content/icons/2d90343226d7017ff50c93e39d9b78df.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nato dalla Vista\"",
     "description": "\"La realtà è l'analisi più spietata.\" - Detto prassico",
-    "icon": "/common/destiny_content/icons/3ae27a97356c5d9aaa266f876ef36257.png",
+    "icon": "/common/destiny_content/icons/1a29388efba53ec95c13260a33f131a5.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motore a Inerzia\"",
     "description": "\"Io credo che il Viaggiatore e la sua Luce siano tecnologia avanzata. Rifiuto di accettare che questo mi renda inferiore.\"",
-    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verità Cosmiche\"",
     "description": "\"Associare la Luce allo stesso schema dei protoni o di un semplice neutrino è un atto di arroganza e chiusura mentale.\"",
-    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679414": {
@@ -9279,7 +9279,7 @@ var DestinyArmorDefinition = {
   },
   "2804968636": {
     "name": "Cotta della Contemplazione",
-    "description": "\"Quando re decade, dieci insorgono per potere.\" - Variks",
+    "description": "\"Quando re cade, dieci insorgono per potere.\" - Variks",
     "icon": "/common/destiny_content/icons/612ccb71c946e7d81288ff222055fbde.jpg",
     "tierType": 5
   },
@@ -10822,7 +10822,7 @@ var DestinyArmorDefinition = {
   "3291435311": {
     "name": "Vesti di Callipoli Spektar",
     "description": "Armatura infusa con i dissipatori di calore multicromatici.",
-    "icon": "/common/destiny_content/icons/c173d6dcc9678094e57e1fe677a65c17.jpg",
+    "icon": "/common/destiny_content/icons/6be7901e70f16dc77b7a6299e7801e9d.jpg",
     "tierType": 5
   },
   "3295133852": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Patto dell'Universale",
     "description": "Alcuni ordini sostengono che la Luce e l'Oscurità possono essere spiegate in termini di fisica supersimmetrica.",
-    "icon": "/common/destiny_content/icons/cb2951251d5e822f76802a4da174d78c.png",
+    "icon": "/common/destiny_content/icons/e1f30427b5f6ecc7db60ee2b38b5806a.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Patto della Polarità",
     "description": "Alcuni ordini credono che la Luce e l'Oscurità esistano al di là del piano materiale e che seguano una logica solo loro.",
-    "icon": "/common/destiny_content/icons/de4ea1bcd2362ecefc784f04d818ae0b.png",
+    "icon": "/common/destiny_content/icons/914ff66cf27bb8062fe1da8bda61cc3d.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"Andato\"",
     "description": "\"È venuto da me con un coltello. Io ho allungato una mano verso di lui... ed è bastato per ridurlo in cenere.\"",
-    "icon": "/common/destiny_content/icons/8016469a3a0943b07c6cfaf4851ec9fe.png",
+    "icon": "/common/destiny_content/icons/a3477d4abfe78e7b1b1e4e517e811aa6.png",
     "tierType": 4
   },
   "3366017012": {
@@ -12284,7 +12284,7 @@ var DestinyArmorDefinition = {
     "tierType": 5
   },
   "3789442822": {
-    "name": "Veste dell'Eliopausa Spektar",
+    "name": "Elmo dell'Eliopausa Spektar",
     "description": "Armatura infusa con i dissipatori di calore multicromatici.",
     "icon": "/common/destiny_content/icons/ddadfb795e9bf1efcabd82c510493970.jpg",
     "tierType": 5
@@ -12706,7 +12706,7 @@ var DestinyArmorDefinition = {
   "3889553880": {
     "name": "Cappuccio di Callipoli Spektar",
     "description": "Armatura infusa con i dissipatori di calore multicromatici.",
-    "icon": "/common/destiny_content/icons/4bb06403f4221c8bd906b5b1d1528b19.jpg",
+    "icon": "/common/destiny_content/icons/f7a7a617bf63a6ad79e802f850b45131.jpg",
     "tierType": 5
   },
   "3894791157": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos Addestrato\"",
     "description": "\"Controlla lo spazio e il tempo. La materia e l'energia ti seguiranno di conseguenza.\"",
-    "icon": "/common/destiny_content/icons/65ce3c23f9330239773583b31663ac3d.png",
+    "icon": "/common/destiny_content/icons/07eba033bbc8362611ea80ff97163119.png",
     "tierType": 4
   },
   "4187254944": {

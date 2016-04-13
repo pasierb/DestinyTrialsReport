@@ -250,7 +250,7 @@ var DestinyArmorDefinition = {
   "58287017": {
     "name": "Guantes de Calípolis Spektar",
     "description": "Armadura infundida con disipadores térmicos multicromáticos.",
-    "icon": "/common/destiny_content/icons/5093045dddbce3a596570f2fd895e22f.jpg",
+    "icon": "/common/destiny_content/icons/96066d49fe40c0f64c1caed13256f037.jpg",
     "tierType": 5
   },
   "60040896": {
@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"La Cura\"",
     "description": "\"Tenemos una solución\". (Ikora Rey, en una sesión de emergencia del Consenso de la Ciudad)",
-    "icon": "/common/destiny_content/icons/3f832b388bc871d60d6db4439e0823ec.png",
+    "icon": "/common/destiny_content/icons/ed898878720462946189953111c961d8.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"El inconquistable\"",
     "description": "\"Dejemos de pensar en cómo abrir la cerradura y empecemos a pensar en quitar la pared\".",
-    "icon": "/common/destiny_content/icons/131a0febe20907a7cbc537b2fa23aaca.png",
+    "icon": "/common/destiny_content/icons/2d90343226d7017ff50c93e39d9b78df.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nacido de la vista\"",
     "description": "\"La realidad es el analista más despiadado\". (Dicho práxico)",
-    "icon": "/common/destiny_content/icons/3ae27a97356c5d9aaa266f876ef36257.png",
+    "icon": "/common/destiny_content/icons/1a29388efba53ec95c13260a33f131a5.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motor de inercia\"",
     "description": "\"Creo que el Viajero y su Luz son una tecnología avanzada. Me niego a aceptar que eso me rebaje como persona\".",
-    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verdades cósmicas\"",
     "description": "\"Equiparar la naturaleza de la Luz a la del protón o el humilde neutrino es un acto de soberbia cerrazón\".",
-    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679414": {
@@ -10822,7 +10822,7 @@ var DestinyArmorDefinition = {
   "3291435311": {
     "name": "Túnica de Calípolis Spektar",
     "description": "Armadura infundida con disipadores térmicos multicromáticos.",
-    "icon": "/common/destiny_content/icons/c173d6dcc9678094e57e1fe677a65c17.jpg",
+    "icon": "/common/destiny_content/icons/6be7901e70f16dc77b7a6299e7801e9d.jpg",
     "tierType": 5
   },
   "3295133852": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Banda de lo universal",
     "description": "Algunas órdenes sostienen que la Luz y la Oscuridad pueden explicarse en el contexto de la física de supersimetría.",
-    "icon": "/common/destiny_content/icons/cb2951251d5e822f76802a4da174d78c.png",
+    "icon": "/common/destiny_content/icons/e1f30427b5f6ecc7db60ee2b38b5806a.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Banda de polaridad",
     "description": "Algunas órdenes creen que la Luz y la Oscuridad existen más allá del plano material, y que tienen su propia lógica.",
-    "icon": "/common/destiny_content/icons/de4ea1bcd2362ecefc784f04d818ae0b.png",
+    "icon": "/common/destiny_content/icons/914ff66cf27bb8062fe1da8bda61cc3d.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"Los desaparecidos\"",
     "description": "\"Vino a mí con un cuchillo. Alargué la mano y, sin más, lo convertí en ceniza\".",
-    "icon": "/common/destiny_content/icons/8016469a3a0943b07c6cfaf4851ec9fe.png",
+    "icon": "/common/destiny_content/icons/a3477d4abfe78e7b1b1e4e517e811aa6.png",
     "tierType": 4
   },
   "3366017012": {
@@ -12706,7 +12706,7 @@ var DestinyArmorDefinition = {
   "3889553880": {
     "name": "Capucha de Calípolis Spektar",
     "description": "Armadura infundida con disipadores térmicos multicromáticos.",
-    "icon": "/common/destiny_content/icons/4bb06403f4221c8bd906b5b1d1528b19.jpg",
+    "icon": "/common/destiny_content/icons/f7a7a617bf63a6ad79e802f850b45131.jpg",
     "tierType": 5
   },
   "3894791157": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos controlado\"",
     "description": "\"Controla el espacio y el tiempo. Lo siguiente es la materia y la energía\".",
-    "icon": "/common/destiny_content/icons/65ce3c23f9330239773583b31663ac3d.png",
+    "icon": "/common/destiny_content/icons/07eba033bbc8362611ea80ff97163119.png",
     "tierType": 4
   },
   "4187254944": {

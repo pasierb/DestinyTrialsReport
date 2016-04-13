@@ -250,7 +250,7 @@ var DestinyArmorDefinition = {
   "58287017": {
     "name": "Luvas de Callipolis Spektar",
     "description": "Armadura infundida com dissipadores de calor multicanais cromáticos.",
-    "icon": "/common/destiny_content/icons/5093045dddbce3a596570f2fd895e22f.jpg",
+    "icon": "/common/destiny_content/icons/96066d49fe40c0f64c1caed13256f037.jpg",
     "tierType": 5
   },
   "60040896": {
@@ -3243,7 +3243,7 @@ var DestinyArmorDefinition = {
   },
   "928813565": {
     "name": "Capa Aspriet Spektar",
-    "description": "\"Voe alto. Golpeie forte. Repita.\" – Ain Suhu-ässä",
+    "description": "\"Voe alto. Golpeie forte. Repita.\"\n– Ain Suhu-ässä",
     "icon": "/common/destiny_content/icons/ac53d1344f40117cd13643720e4b9e40.jpg",
     "tierType": 5
   },
@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"A Cura\"",
     "description": "\"Temos uma solução.\" - Ikora Rey em uma sessão de emergância do Consenso da Cidade",
-    "icon": "/common/destiny_content/icons/3f832b388bc871d60d6db4439e0823ec.png",
+    "icon": "/common/destiny_content/icons/ed898878720462946189953111c961d8.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"O Inconquistável\"",
     "description": "\"Vamos parar de pensar em como abrir a fechadura e começar a pensar em como remover a parede.\"",
-    "icon": "/common/destiny_content/icons/131a0febe20907a7cbc537b2fa23aaca.png",
+    "icon": "/common/destiny_content/icons/2d90343226d7017ff50c93e39d9b78df.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nascido da Visão\"",
     "description": "\"A realidade é o analista mais impiedoso.\" - Ditado Prático",
-    "icon": "/common/destiny_content/icons/3ae27a97356c5d9aaa266f876ef36257.png",
+    "icon": "/common/destiny_content/icons/1a29388efba53ec95c13260a33f131a5.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motor Inercial\"",
     "description": "\"Acredito que o Viajante e a sua Luz são tecnologia avançada. Recuso-me a aceitar que isso me diminui.\"",
-    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verdades Cósmicas\"",
     "description": "\"Prender a Luz no mesmo molde do próton, o de um mero neutrino, é um ato de húbris.\"",
-    "icon": "/common/destiny_content/icons/d3c3baf4150a8c8634ef716b581812ea.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679414": {
@@ -10822,7 +10822,7 @@ var DestinyArmorDefinition = {
   "3291435311": {
     "name": "Túnica de Callipolis Spektar",
     "description": "Armadura infundida com dissipadores de calor multicanais cromáticos.",
-    "icon": "/common/destiny_content/icons/c173d6dcc9678094e57e1fe677a65c17.jpg",
+    "icon": "/common/destiny_content/icons/6be7901e70f16dc77b7a6299e7801e9d.jpg",
     "tierType": 5
   },
   "3295133852": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Voto Universal",
     "description": "Algumas ordens postulam que a Luz e a Treva podem ser explicadas no contexto da física de supersimetria.",
-    "icon": "/common/destiny_content/icons/cb2951251d5e822f76802a4da174d78c.png",
+    "icon": "/common/destiny_content/icons/e1f30427b5f6ecc7db60ee2b38b5806a.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Voto da Polaridade",
     "description": "Algumas ordens acreditam que a Luz e a Treva existem além do mundo meramente material, com uma lógica própria.",
-    "icon": "/common/destiny_content/icons/de4ea1bcd2362ecefc784f04d818ae0b.png",
+    "icon": "/common/destiny_content/icons/914ff66cf27bb8062fe1da8bda61cc3d.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"O Desaparecido\"",
     "description": "\"Ele me atacou com uma faca. Estiquei a minha mão e, assim, o transformei em cinzas.\"",
-    "icon": "/common/destiny_content/icons/8016469a3a0943b07c6cfaf4851ec9fe.png",
+    "icon": "/common/destiny_content/icons/a3477d4abfe78e7b1b1e4e517e811aa6.png",
     "tierType": 4
   },
   "3366017012": {
@@ -12411,7 +12411,7 @@ var DestinyArmorDefinition = {
   },
   "3809851982": {
     "name": "Sangue do Carcereiro",
-    "description": "\"Possuídos são um problema... se tiverem alguém como o Oryx botando banca. Sozinhos, eles são meio estúpidos.\" – Cayde-6",
+    "description": "\"Possuídos são um problema... se tiverem alguém como o Oryx botando banca. Sozinhos, eles são meio estúpidos.\"\n– Cayde-6",
     "icon": "/common/destiny_content/icons/6959de5fb65cea2198ea163046c0d02c.jpg",
     "tierType": 5
   },
@@ -12706,7 +12706,7 @@ var DestinyArmorDefinition = {
   "3889553880": {
     "name": "Capuz de Callipolis Spektar",
     "description": "Armadura infundida com dissipadores de calor multicanais cromáticos.",
-    "icon": "/common/destiny_content/icons/4bb06403f4221c8bd906b5b1d1528b19.jpg",
+    "icon": "/common/destiny_content/icons/f7a7a617bf63a6ad79e802f850b45131.jpg",
     "tierType": 5
   },
   "3894791157": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos Treinado\"",
     "description": "\"Controle o espaço-tempo. Matéria e energia se seguirão.\"",
-    "icon": "/common/destiny_content/icons/65ce3c23f9330239773583b31663ac3d.png",
+    "icon": "/common/destiny_content/icons/07eba033bbc8362611ea80ff97163119.png",
     "tierType": 4
   },
   "4187254944": {

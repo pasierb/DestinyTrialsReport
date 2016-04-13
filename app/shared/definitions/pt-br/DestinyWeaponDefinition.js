@@ -849,7 +849,7 @@ var DestinyWeaponDefinition = {
   },
   "791351720": {
     "name": "Apocalipse Zumbi WF47",
-    "icon": "/common/destiny_content/icons/edea0ec5c31c90338008d92323b3582a.jpg",
+    "icon": "/common/destiny_content/icons/2370f2468ee156c11960db01f28a230a.jpg",
     "subType": 8,
     "tierType": 5
   },
@@ -1119,7 +1119,7 @@ var DestinyWeaponDefinition = {
   },
   "1033894159": {
     "name": "Dois Para A Cova",
-    "icon": "/common/destiny_content/icons/aee4ea9024696cdb26650a544467339b.jpg",
+    "icon": "/common/destiny_content/icons/49b897fd4261e525a4911d5d95b5ed48.jpg",
     "subType": 7,
     "tierType": 5
   },
@@ -1311,7 +1311,7 @@ var DestinyWeaponDefinition = {
   },
   "1200540135": {
     "name": "Síntese de Arco Longo Y-09",
-    "icon": "/common/destiny_content/icons/842feccc0aba53d8422985680ed4cc74.jpg",
+    "icon": "/common/destiny_content/icons/e32e5916104a9e1117386e6aee04012a.jpg",
     "subType": 12,
     "tierType": 5
   },
@@ -2379,7 +2379,7 @@ var DestinyWeaponDefinition = {
   },
   "1895604998": {
     "name": "Superintendente-mor",
-    "icon": "/common/destiny_content/icons/354a70ae8c3f44847aba35e3b169afbc.jpg",
+    "icon": "/common/destiny_content/icons/e89d5c428a16b0043e1bd64eda5097fb.jpg",
     "subType": 9,
     "tierType": 5
   },
@@ -2805,7 +2805,7 @@ var DestinyWeaponDefinition = {
   },
   "2206272667": {
     "name": "Cidadão Funesto III",
-    "icon": "/common/destiny_content/icons/db20ecbe1415e5b75caf82045a162459.jpg",
+    "icon": "/common/destiny_content/icons/2b9bd366db5450a42760681843ac080d.jpg",
     "subType": 6,
     "tierType": 5
   },
@@ -4041,13 +4041,13 @@ var DestinyWeaponDefinition = {
   },
   "3142762098": {
     "name": "O Florete Sateriano",
-    "icon": "/common/destiny_content/icons/82cca47591236dfc48484511502055b8.jpg",
+    "icon": "/common/destiny_content/icons/7c289c62785928dae598d9d13370f8af.jpg",
     "subType": 14,
     "tierType": 5
   },
   "3142762099": {
     "name": "Texugo CCL",
-    "icon": "/common/destiny_content/icons/7c289c62785928dae598d9d13370f8af.jpg",
+    "icon": "/common/destiny_content/icons/82cca47591236dfc48484511502055b8.jpg",
     "subType": 14,
     "tierType": 5
   },
