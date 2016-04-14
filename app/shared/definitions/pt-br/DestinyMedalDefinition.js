@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "Ace",
-    "statDescription": "Elimine todos da equipe inimiga nos primeiros 30 segundos de uma rodada.",
+    "statDescription": "Como um esquadrão, derrotem a equipe adversária nos primeiros 30 segundos de uma rodada.",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {

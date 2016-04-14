@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "Ace",
-    "statDescription": "As a team, wipe the enemy team in the first 30 seconds of a round.",
+    "statDescription": "As a fireteam, defeat the enemy team in the first 30 seconds of a round.",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {

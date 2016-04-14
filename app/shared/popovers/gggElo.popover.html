@@ -1,9 +1,9 @@
-<div class="popover ggg-elo {{player.ggg.tier.toLowerCase()}}" tabindex="-1" ng-show="player.ggg">
+<div class="popover ggg-elo {{player.ggg.tier}}" tabindex="-1" ng-show="player.ggg">
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row row--small-gutter">
       <div class="col-xs-6 stat">
-        <span ng-bind="player.ggg.tier"></span>
+        <span translate="GuardianGG.tiers.{{player.ggg.tier}}"></span>
         <label translate="TIER"></label>
       </div>
       <div class="col-xs-6 stat">

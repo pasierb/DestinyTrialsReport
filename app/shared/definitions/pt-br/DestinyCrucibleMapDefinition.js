@@ -17,10 +17,6 @@ var DestinyCrucibleMapDefinition = {
     "name": "Memento",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/memento.jpg"
   },
-  "598437332": {
-    "name": "Acesso restrito",
-    "pgcrImage": "https://www.bungie.netundefined"
-  },
   "637046772": {
     "name": "Covil dos Ladrões",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/thieves_den.jpg"

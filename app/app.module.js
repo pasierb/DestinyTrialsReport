@@ -30,7 +30,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
               return homeFactory.getCharacters(
                 player.membershipType,
                 player.membershipId,
-                params.playerName
+                player.name
               );
             } else {
               return homeFactory.getRecentActivity(player)
@@ -59,7 +59,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
     var getFireteam = function (activities) {
       throwLog('getFireteam');
       if (angular.isUndefined(activities[0])) {
-        toastr.error('No Trials matches found for player', 'Error');
         return activities;
       }
       return bungie.getPgcr(activities[0].activityDetails.instanceId)
@@ -211,7 +210,7 @@ function getTrialsDates() {
   return {
     begin: begin,
     end: end
-  }
+  };
 }
 
 var trialsDates = getTrialsDates();
@@ -266,7 +265,7 @@ function getDefinitions($localStorage, $ocLazyLoad) {
     'DestinyCrucibleMapDefinition',
     'DestinyTalentGridDefinition'
   ], function(def) {
-    methods.push('/shared/definitions/' + language + '/' + def + '.js')
+    methods.push('/shared/definitions/' + language + '/' + def + '.js');
   });
 
   return $ocLazyLoad.load({reconfig: true, rerun: true, files: methods});

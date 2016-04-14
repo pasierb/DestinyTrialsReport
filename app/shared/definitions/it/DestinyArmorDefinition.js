@@ -85,6 +85,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4f55f402cbb205f3d3a64990ce378e5a.jpg",
     "tierType": 5
   },
+  "13565936": {
+    "name": "Marchio Spektar",
+    "description": "Il calore brilla sullo scudo, rifrangendosi in arcobaleni spezzati.",
+    "icon": "/common/destiny_content/icons/966d0d911664dbd060996cfb0a0c0b11.jpg",
+    "tierType": 5
+  },
+  "13565937": {
+    "name": "Marchio della Contemplazione",
+    "description": "\"Combattere il tuo nemico ti aiuta a comprenderlo. Non distrarti.\" - Zavala",
+    "icon": "/common/destiny_content/icons/952af46f6ab948d6a460840838fe2aa7.jpg",
+    "tierType": 5
+  },
+  "13565938": {
+    "name": "Marchio della Desolazione",
+    "description": "Sbaglio o quell'ombra si è appena mossa?",
+    "icon": "/common/destiny_content/icons/077a2e0c3d7c3d04121a82d80336e6f9.jpg",
+    "tierType": 5
+  },
   "15845168": {
     "name": "Voto di Chroma",
     "description": "Gli stregoni sono tenuti a indossare gli abiti cerimoniali. Non possiamo lasciar vinta la battaglia sartoriale ai cacciatori.",
@@ -96,6 +114,24 @@ var DestinyArmorDefinition = {
     "description": "Gli stregoni sono tenuti a indossare gli abiti cerimoniali. Non possiamo lasciar vinta la battaglia sartoriale ai cacciatori.",
     "icon": "/common/destiny_content/icons/c56cc904d9bd609fb7906833c32692bf.jpg",
     "tierType": 3
+  },
+  "16664392": {
+    "name": "Presa del Vegliante",
+    "description": "\"La Prigione non detiene nulla che non voglia rimanerci. Sapendo ciò, chiediti: 'Perché i corrotti non vogliono andarsene?'\" - Eris Morn",
+    "icon": "/common/destiny_content/icons/69620da04b60659ac8fe8b1a44312f6f.jpg",
+    "tierType": 5
+  },
+  "16664393": {
+    "name": "Impugnature Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/a2d33a8093d8f171cd7ef2cfaac05f8a.jpg",
+    "tierType": 5
+  },
+  "16664395": {
+    "name": "Impugnature della Desolazione",
+    "description": "Più di semplici ombre, ma meno di mera materia stellare.",
+    "icon": "/common/destiny_content/icons/ef0224eb5d83e887fc5db22d56a98070.jpg",
+    "tierType": 5
   },
   "18327078": {
     "name": "Marchio dell'Hesperonauta",
@@ -157,6 +193,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4e95ff81025cc137f5590b1743a1451e.jpg",
     "tierType": 5
   },
+  "33631361": {
+    "name": "Impugnature Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/a2d33a8093d8f171cd7ef2cfaac05f8a.jpg",
+    "tierType": 5
+  },
   "35226794": {
     "name": "Assetto d’Esplorazione KALI-GNT",
     "description": "Io sono una MONTATURA CRANIALE KALI-GNT. Apprestiamoci a trovare una preda.",
@@ -203,6 +245,12 @@ var DestinyArmorDefinition = {
     "name": "Maniche Generazione di Ferro",
     "description": "Un'armatura ornata, forgiata dai Signori del Ferro sotto lo Stendardo di Ferro.",
     "icon": "/common/destiny_content/icons/751702bb912ed5dd82992516b2d94e6e.jpg",
+    "tierType": 5
+  },
+  "58287017": {
+    "name": "Guanti di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/96066d49fe40c0f64c1caed13256f037.jpg",
     "tierType": 5
   },
   "60040896": {
@@ -365,6 +413,12 @@ var DestinyArmorDefinition = {
     "name": "H_LD Mantello Soffiastella",
     "description": "Quando il mantello si sfilaccia, rivela le antiche opere di Li Qingzhao, scolpite nei frammenti ossei.",
     "icon": "/common/destiny_content/icons/5e0947a8cbd20bd53acac9cf56b0c134.jpg",
+    "tierType": 5
+  },
+  "98823765": {
+    "name": "Schinieri Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/e0fc58922c14a6ce6447a0f4ead4d2b6.jpg",
     "tierType": 5
   },
   "99926221": {
@@ -535,6 +589,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/f05333be3b83afea5c84e842d601fdaf.jpg",
     "tierType": 5
   },
+  "141200149": {
+    "name": "Cappuccio dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/a67726dd859c1fa7b17ca793458de379.jpg",
+    "tierType": 5
+  },
+  "142001566": {
+    "name": "Mantello dell'Eliopausa Spektar",
+    "description": "Se oltre l'eliopausa ci fosse solo Oscurità, avremmo già perso.",
+    "icon": "/common/destiny_content/icons/701c4165c1aa9a22edbd285563cb49bb.jpg",
+    "tierType": 5
+  },
   "142571568": {
     "name": "Hesperos Tipo 0",
     "description": "All'alba dell'Età dell'Oro, gli Hesperonauti furono i primi ad addentrarsi nella nebbia cocente di Venere.",
@@ -576,12 +642,6 @@ var DestinyArmorDefinition = {
     "description": "La Città prospera grazie al nostro sistema di ordine e giustizia.",
     "icon": "/common/destiny_content/icons/3342f5d2d87a5b97db7d440b3cf82eed.jpg",
     "tierType": 5
-  },
-  "155374076": {
-    "name": "Tagomizzatori",
-    "description": "Non osare avvicinarti.",
-    "icon": "/common/destiny_content/icons/5985a184214d8bc8f39c88aa13f01737.jpg",
-    "tierType": 6
   },
   "155374077": {
     "name": "Pugni dell'Immolazione",
@@ -817,6 +877,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/944a5be1648a2567c3ddcc7c5ffc1566.jpg",
     "tierType": 2
   },
+  "213518349": {
+    "name": "Patto delle Duna Barcana",
+    "description": "\"La tempesta di sabbia che seppellirà Meridiana dissotterrerà Vasconia.\" - Massima degli Stregoni",
+    "icon": "/common/destiny_content/icons/d7c772b8c68ac5b2013b7f855f797817.jpg",
+    "tierType": 5
+  },
   "214611822": {
     "name": "Ala Bisturi",
     "description": "I più grandi stregoni comprendono quanto poco essi comprendano.",
@@ -876,6 +942,24 @@ var DestinyArmorDefinition = {
     "description": "\"Ho lavorato molto per far funzionare le pompe d'ossigeno dei caschi. Ma non sono mai riuscito a togliere il puzzo dei caduti.\"",
     "icon": "/common/destiny_content/icons/64985cd9e486c60c0efeb57bffa61aec.jpg",
     "tierType": 4
+  },
+  "233474724": {
+    "name": "Vesti della Desolazione",
+    "description": "Accetta la tua nuova forma.",
+    "icon": "/common/destiny_content/icons/d297e3298e457b94151a16676d46ebf6.jpg",
+    "tierType": 5
+  },
+  "233474726": {
+    "name": "Vesti Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/8bba6430879dffa20b6fd76f38c1626f.jpg",
+    "tierType": 5
+  },
+  "233474727": {
+    "name": "Mantello del Custode",
+    "description": "\"Fai attenzione nella Prigione. Le ricompense sono grandi, ma i nemici non saranno i soli a esser giudicati.\" - Ikora Rey",
+    "icon": "/common/destiny_content/icons/a39899161c796aa528169987a4e05ff3.jpg",
+    "tierType": 5
   },
   "236238068": {
     "name": "Fulcro Raku tipo 2",
@@ -1021,6 +1105,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/e49692da1fc60aa11cf68fc7e60ba90b.jpg",
     "tierType": 2
   },
+  "271372403": {
+    "name": "Schinieri del Paria",
+    "description": "\"Per conoscere i veri colori devi prima conoscere l'Oscurità.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/47fac8006d7f05be4580c8e32810b53c.jpg",
+    "tierType": 5
+  },
   "271923586": {
     "name": "Prototipo 0.9r3",
     "description": "Il tuo Spettro ha creato quest'armatura di filamenti con il materiale che aveva a sua disposizione. È adeguata per il supporto vitale, ma basta per poco altro.",
@@ -1147,6 +1237,30 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6a683f7a858bb0b75f2390c5b5966ab6.jpg",
     "tierType": 4
   },
+  "308606233": {
+    "name": "Gambali della Desolazione",
+    "description": "Una mutazione non sempre equivale a una rivelazione.",
+    "icon": "/common/destiny_content/icons/f04932a73c0b768c39ce0a82b2a96b2a.jpg",
+    "tierType": 5
+  },
+  "308606234": {
+    "name": "Cammino del Vegliante",
+    "description": "\"Eh già, l'ho vista anch'io la sala del tesoro. Penso sia arrivato il momento che gli insonni usino un po' di quel bottino per installare un bell'ascensore.\" - Cayde-6",
+    "icon": "/common/destiny_content/icons/0d53d68b93a68e81b1973fd9c6ad5f79.jpg",
+    "tierType": 5
+  },
+  "308606235": {
+    "name": "Stivali Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/702df3fa5ab5db4fcbd7bffc3bd49380.jpg",
+    "tierType": 5
+  },
+  "309852344": {
+    "name": "Duna Barcana I",
+    "description": "\"Dicono che una volta c'era acqua su Marte. Non è incredibile?\"",
+    "icon": "/common/destiny_content/icons/c73d602651baee398f25ebc2b0f1f489.jpg",
+    "tierType": 5
+  },
   "311226466": {
     "name": "Vendetta dei Corsari 1.0",
     "description": "\"Indossare le armature dei caduti mi ricorda tutti i caduti che ho ucciso per ottenerle. Bei tempi quelli.\"",
@@ -1183,6 +1297,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1e3db20a1e9f3c3c842aaaae0ce51d79.jpg",
     "tierType": 4
   },
+  "316649358": {
+    "name": "Corazza di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/658aca4166e118ecc55fc566d9c487de.jpg",
+    "tierType": 5
+  },
+  "316970233": {
+    "name": "Schinieri dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/bc5b2c91e278c3ab57865e381133902b.jpg",
+    "tierType": 5
+  },
   "317533173": {
     "name": "Gambali delle Linee Infinite",
     "description": "\"Ogni volta che guardo, è come se l'Oscurità si espandesse.\" - REGISTRAZIONE 345-ABISSO-6736",
@@ -1199,6 +1325,12 @@ var DestinyArmorDefinition = {
     "name": "Veste della Luce Morta",
     "description": "\"Il successo non si misura con la sopravvivenza, ma con la scoperta.\" - Arach Modesta",
     "icon": "/common/destiny_content/icons/b70710948971f76ddf7f52d217823e97.jpg",
+    "tierType": 5
+  },
+  "323128718": {
+    "name": "Gambali dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/a294543e5fed8ed8f0282cbf2fb17018.jpg",
     "tierType": 5
   },
   "327933420": {
@@ -1645,6 +1777,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1cafc39f5d1015ed279529496bc9d5a1.jpg",
     "tierType": 5
   },
+  "489788636": {
+    "name": "Vesti dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/5be73162c006b6dd8061a9848a409672.jpg",
+    "tierType": 5
+  },
   "491878348": {
     "name": "Grazia del Taglione",
     "description": "Alcune frasi-chiave inducono alla megalomania, utile a battaglie che richiedono la furia di una volontà devastante.",
@@ -1655,6 +1793,12 @@ var DestinyArmorDefinition = {
     "name": "Variante Extropica",
     "description": "La zoologia particellare è un hobby interessante, di poca utilità nel Crogiolo... a parte per ricordarci che tutto è frangibile.",
     "icon": "/common/destiny_content/icons/0623ea98a3c13d8353036b14391d193a.jpg",
+    "tierType": 5
+  },
+  "494034812": {
+    "name": "Marchio dell'Eliopausa Spektar",
+    "description": "Se oltre l'eliopausa ci fosse solo Oscurità, avremmo già perso.",
+    "icon": "/common/destiny_content/icons/6423c8bed2cf749801c5b2ef82b4551b.jpg",
     "tierType": 5
   },
   "497757468": {
@@ -1692,6 +1836,12 @@ var DestinyArmorDefinition = {
     "description": "> Nessuno è mai morto mentre mi indossava. \n# Vero. È lei ad andarsene prima che gli indegni muoiano.",
     "icon": "/common/destiny_content/icons/07fc373b6c205a6e4cfaa55017e92e41.jpg",
     "tierType": 6
+  },
+  "502682246": {
+    "name": "Corazza Pandion Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/feab9741307f88755bfb0b284107d263.jpg",
+    "tierType": 5
   },
   "506100014": {
     "name": "Ursus Tattico",
@@ -1885,6 +2035,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/187ce73efbcf90ac55f498175cd31536.jpg",
     "tierType": 5
   },
+  "537476480": {
+    "name": "Guanti del Paria",
+    "description": "\"Pur avendolo cacciato, le sue parole non ci lasciarono mai.\" - Pergamene Frattali",
+    "icon": "/common/destiny_content/icons/2b34f786679e151d7e5c757e06c91aff.jpg",
+    "tierType": 5
+  },
   "537606594": {
     "name": "Vanir tipo 1",
     "description": "Le piastre lisce e ben sigillate rivelano un ottimo lavoro d'artigianato, opera di un maestro aiutato da uno Spettro.",
@@ -1896,6 +2052,12 @@ var DestinyArmorDefinition = {
     "description": "Le piastre lisce e ben sigillate rivelano un ottimo lavoro d'artigianato, opera di un maestro aiutato da uno Spettro.",
     "icon": "/common/destiny_content/icons/99847876c756468624a3c789ec269e36.jpg",
     "tierType": 4
+  },
+  "540220571": {
+    "name": "Guanti Lunghi Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/ee68a5395d9302532354eec17f64e80c.jpg",
+    "tierType": 5
   },
   "541785999": {
     "name": "Guanti dei Paramenti di Ferro",
@@ -2040,6 +2202,12 @@ var DestinyArmorDefinition = {
     "description": "Un casco indossato dai primi coloni lunari cinesi dell'Età dell'Oro.",
     "icon": "/common/destiny_content/icons/f28523f56de25b2f6c5c56acb9d4b9a5.jpg",
     "tierType": 6
+  },
+  "594403898": {
+    "name": "Guanti Lunghi di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/01f5d116f555371262d9ea2bc157461e.jpg",
+    "tierType": 5
   },
   "594415800": {
     "name": "Cappuccio dell'Elettore",
@@ -2213,6 +2381,12 @@ var DestinyArmorDefinition = {
     "name": "Veste delle Sentinelle",
     "description": "Un prestigioso trofeo guadagnato in battaglia durante le Prove di Osiride.",
     "icon": "/common/destiny_content/icons/b8b1719d0c134525d6a0c7dc77d88783.jpg",
+    "tierType": 5
+  },
+  "634743895": {
+    "name": "Marchio di Callipoli Spektar",
+    "description": "Non al passato, nemmeno al futuro; è al presente che dovremmo guardare.",
+    "icon": "/common/destiny_content/icons/5334d1cfee2e28f59a6dcd2e906e1cfc.jpg",
     "tierType": 5
   },
   "651478697": {
@@ -2478,6 +2652,12 @@ var DestinyArmorDefinition = {
     "description": "Alcuni accusano gli ordini Tagliafuoco di aggressioni rabbiose e indiscriminate. Ma le loro aggressioni rabbiose sono invece molto precise.",
     "icon": "/common/destiny_content/icons/df8b703ffdf1ea905f64ab96d2795674.jpg",
     "tierType": 3
+  },
+  "709660862": {
+    "name": "Patto di Callipoli Spektar",
+    "description": "Non al passato, nemmeno al futuro; è al presente che dovremmo guardare.",
+    "icon": "/common/destiny_content/icons/0c64aede798071ec777c1d60c3e2539d.jpg",
+    "tierType": 5
   },
   "712184834": {
     "name": "Calcacrepuscoli IV",
@@ -2755,6 +2935,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/b40a19356d3ee39f75bf1d4b707c4c23.jpg",
     "tierType": 2
   },
+  "835063271": {
+    "name": "Guanti Lunghi del Paria",
+    "description": "\"Pur avendolo cacciato, le sue parole non ci lasciarono mai.\" - Pergamene Frattali",
+    "icon": "/common/destiny_content/icons/a992a4bca6d9ede745bb01711276e95e.jpg",
+    "tierType": 5
+  },
   "838428205": {
     "name": "Veste Purificatrice",
     "description": "\"Il fuoco spezza le catene. Il fuoco è libertà. Dobbiamo essere rapidi e meticolosi nella nostra liberazione...\"",
@@ -2783,6 +2969,12 @@ var DestinyArmorDefinition = {
     "name": "Cappuccio dell'Astrosignore",
     "description": "La lotta più feroce deve ancora iniziare. Questo è inconfutabile.",
     "icon": "/common/destiny_content/icons/cc9b3e42f4b474812e7f2342cae82d13.jpg",
+    "tierType": 5
+  },
+  "861802448": {
+    "name": "Duna Barcana I",
+    "description": "\"Mezza sepolta nella sabbia: una borraccia sigillata piena di antica acqua verdastra. Ne ho bevuta un po'.\"",
+    "icon": "/common/destiny_content/icons/29a70fdfd951054f2de763518df69ecd.jpg",
     "tierType": 5
   },
   "862863384": {
@@ -2867,6 +3059,12 @@ var DestinyArmorDefinition = {
     "name": "Cappuccio della Compagnia di Ferro",
     "description": "Un'armatura forgiata e decorata dai Signori del Ferro sotto lo Stendardo di Ferro.",
     "icon": "/common/destiny_content/icons/9e503ea284c52377d90d4135cbf7781a.jpg",
+    "tierType": 5
+  },
+  "870594442": {
+    "name": "Guanti Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/0ba51fabc74287bae211d5470a7f9da1.jpg",
     "tierType": 5
   },
   "876363304": {
@@ -3043,6 +3241,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/2e7f920d6ccc13c50ba11dd969d2df91.jpg",
     "tierType": 5
   },
+  "928813565": {
+    "name": "Mantello Aspriet Spektar",
+    "description": "\"Vola alto. Colpisci duro. Ripeti.\" - Ain Suhu-ässä",
+    "icon": "/common/destiny_content/icons/ac53d1344f40117cd13643720e4b9e40.jpg",
+    "tierType": 5
+  },
   "929939160": {
     "name": "Criptide 4.6.1",
     "description": "Le piastre elegantemente lavorate e il filo energizzato a mano sono segni di un lavoro fatto con amore.",
@@ -3169,6 +3373,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c5053677daf3a60e7aaab1816c5eb458.jpg",
     "tierType": 4
   },
+  "971727370": {
+    "name": "Mantello Linee Infinite Spektar",
+    "description": "... estrassi il soggetto dal dispositivo, sembrava gelido. Nessun segno vitale, ma il corpo non era decomposto. - REGISTRAZIONE 340-ABISSO-VUOTO",
+    "icon": "/common/destiny_content/icons/590be4d6cfb61ad95c4ea7d0736182ca.jpg",
+    "tierType": 5
+  },
   "973554318": {
     "name": "Impugnatura dell'Ordine",
     "description": "Un dito può rompersi, un pugno no.",
@@ -3179,6 +3389,24 @@ var DestinyArmorDefinition = {
     "name": "Impugnatura del Gran Giustiziere",
     "description": "Un dito può rompersi, un pugno no.",
     "icon": "/common/destiny_content/icons/a6958005d880fa4fc7804524f67f75d1.jpg",
+    "tierType": 5
+  },
+  "975923469": {
+    "name": "Patto della Desolazione",
+    "description": "In onore della Regina.",
+    "icon": "/common/destiny_content/icons/855dd69067cd80f6600c28a8128d88fb.jpg",
+    "tierType": 5
+  },
+  "975923470": {
+    "name": "Terrore del Custode",
+    "description": "\"Sento la presenza della Regina. Credo che approverebbe tutto ciò che stiamo facendo in suo nome.\" - Petra Venj",
+    "icon": "/common/destiny_content/icons/87b39e0201fc1cc38bff0f1a8be46461.jpg",
+    "tierType": 5
+  },
+  "975923471": {
+    "name": "Patto Spektar",
+    "description": "Ci sono molte sfumature di verità.",
+    "icon": "/common/destiny_content/icons/afbd711da6ecda0bac928064375cb9f5.jpg",
     "tierType": 5
   },
   "976948689": {
@@ -3427,12 +3655,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6eb83e602efd0261945f7205b2df2775.jpg",
     "tierType": 6
   },
-  "1062853751": {
-    "name": "Aspetto Ofidiano",
-    "description": "\"Ho forse l'aspide sulle labbra?\"",
-    "icon": "/common/destiny_content/icons/77aa743f87be6ef950fe0b04d6ca2f0b.jpg",
-    "tierType": 6
-  },
   "1063666590": {
     "name": "Stivali dei Signori del Ferro",
     "description": "Un'armatura adornata forgiata dai Signori del Ferro sotto lo Stendardo di Ferro.",
@@ -3570,6 +3792,12 @@ var DestinyArmorDefinition = {
     "description": "\"La gente pensa che la legge della giungla sia solo questione di brutalità egoista. Le persone non hanno letto la poesia.\" - Pahanin",
     "icon": "/common/destiny_content/icons/eb886f474edb85d951172da8d934f167.jpg",
     "tierType": 4
+  },
+  "1113181209": {
+    "name": "Lungo Avvenire 9G",
+    "description": "\"L'ho seguita fino a Venere, ma ho perso le sue tracce tra le giungle del Bacino di Ishtar.\"",
+    "icon": "/common/destiny_content/icons/d862d79e314abbaacf9e09110c7b52e7.jpg",
+    "tierType": 5
   },
   "1126328036": {
     "name": "Vesti dell'Astrosignore",
@@ -3721,6 +3949,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/596a34479f1c17c4e49ae5509dc3660f.jpg",
     "tierType": 5
   },
+  "1186397660": {
+    "name": "Mantello della Desolazione",
+    "description": "Proteggiti dalla notte.",
+    "icon": "/common/destiny_content/icons/f80d33fc592d4ffc613d493da802a6b5.jpg",
+    "tierType": 5
+  },
+  "1186397662": {
+    "name": "Mantello Spektar",
+    "description": "Un colore in più macchierebbe il campo di battaglia.",
+    "icon": "/common/destiny_content/icons/61b3428d3989d2e6aa7b0f8a12dfa0fd.jpg",
+    "tierType": 5
+  },
+  "1186397663": {
+    "name": "Cappuccio del Vegliante",
+    "description": "\"Io miro sempre prima agli psionici corrotti, così non spreco pallottole inutilmente.\" - Cayde-6",
+    "icon": "/common/destiny_content/icons/d7c0d7c50b820276361b0358d907c729.jpg",
+    "tierType": 5
+  },
   "1192453324": {
     "name": "Marchio dei Re",
     "description": "\"Nessuna creatura detta legge sulla Terra.\"",
@@ -3817,6 +4063,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6b6d026ecac409f9d53e0fe3d25e10e3.jpg",
     "tierType": 5
   },
+  "1221519781": {
+    "name": "Patto del Paria",
+    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato.\" - Pergamene Frattali",
+    "icon": "/common/destiny_content/icons/73184f09862d8628b8271b53c4810686.jpg",
+    "tierType": 5
+  },
   "1225126060": {
     "name": "Mantello dell'Angelo Fantasma",
     "description": "Siamo un esercito di morti prescelti.",
@@ -3889,6 +4141,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4683f5dd995b4ec27ab3c625384201d3.jpg",
     "tierType": 5
   },
+  "1244321427": {
+    "name": "Casco Pandion Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/371526823fb395ea85c792048ffcef45.jpg",
+    "tierType": 5
+  },
   "1245063910": {
     "name": "Corona del Nume Guerriero",
     "description": "Mostragli come si gestiscono le masse e come la tua interiorità sia una covata perpetua di incubi.",
@@ -3899,6 +4157,18 @@ var DestinyArmorDefinition = {
     "name": "Corona Demoniaca del Nume Guerriero",
     "description": "Mostragli come si gestiscono le masse e come la tua interiorità sia una covata perpetua di incubi.",
     "icon": "/common/destiny_content/icons/575408decbf00d97224be5cd10d30e78.jpg",
+    "tierType": 5
+  },
+  "1245131119": {
+    "name": "Marchio Pandion Spektar",
+    "description": "\"Gloria nel Crogiolo: la più autentica immortalità che i guardiani possono raggiungere.\" - Thalor",
+    "icon": "/common/destiny_content/icons/3cb42f6dcaafa1ced8cd3a69551706e7.jpg",
+    "tierType": 5
+  },
+  "1247507932": {
+    "name": "Schinieri Pandion Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/4fe4e4fa8a7e5ff7b4b5c7e0eb2b9e48.jpg",
     "tierType": 5
   },
   "1256226942": {
@@ -4057,6 +4327,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/0a52fede45bc37234c677dbf6107d8a6.jpg",
     "tierType": 5
   },
+  "1294420134": {
+    "name": "Mantello del Paria",
+    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato.\" - Pergamene Frattali",
+    "icon": "/common/destiny_content/icons/5b3da7b1f5dcbe734f30c1da86fc34a5.jpg",
+    "tierType": 5
+  },
   "1302424880": {
     "name": "Fila del Cormorano II",
     "description": "I più audaci tra gli stregoni prassici sono onorati con il Sigillo del Cormorano.",
@@ -4103,6 +4379,12 @@ var DestinyArmorDefinition = {
     "name": "Casco dell'Inflessibile",
     "description": "I deboli saranno consumati.",
     "icon": "/common/destiny_content/icons/92b853d28f708786c9f6776278d9f569.jpg",
+    "tierType": 5
+  },
+  "1311512974": {
+    "name": "Lungo Avvenire 9G",
+    "description": "\"Non me l'avevi detto che il tesoro si trovava in mezzo ai vapori rossi della Montagna dei Sospiri. Io mi tiro fuori.\"",
+    "icon": "/common/destiny_content/icons/7d7b08b8097abf42c06d7d775245cade.jpg",
     "tierType": 5
   },
   "1312172922": {
@@ -4175,6 +4457,12 @@ var DestinyArmorDefinition = {
     "name": "Apice Armonico",
     "description": "La volontà è un arsenale, la conoscenza un armamento. Ogni pensiero, una submunizione.",
     "icon": "/common/destiny_content/icons/c3e624499e3c0b60ebb406d47fa76ffd.jpg",
+    "tierType": 5
+  },
+  "1321489224": {
+    "name": "Impugnature Aspriet Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/80b1d7bf00b95541b8255ef62db27250.jpg",
     "tierType": 5
   },
   "1323189778": {
@@ -4308,6 +4596,30 @@ var DestinyArmorDefinition = {
     "description": "Corri fino a quando non superi la lepre.",
     "icon": "/common/destiny_content/icons/eb90906c81173c7f9bc25ad8112b0c84.jpg",
     "tierType": 4
+  },
+  "1353163820": {
+    "name": "Marchio del Paria",
+    "description": "\"Indosso orgogliosamente i suoi simboli nella Città, per ricordar loro che Osiride non ci ha mai lasciato.\" - Pergamene Frattali",
+    "icon": "/common/destiny_content/icons/f16b99bbfc861e2e1281061c761593dc.jpg",
+    "tierType": 5
+  },
+  "1353212257": {
+    "name": "Marchio dei Kell",
+    "description": "Il tuo nome incuterà terrore.",
+    "icon": "/common/destiny_content/icons/0837eb3d9628dc4437ce10110b5b019c.jpg",
+    "tierType": 5
+  },
+  "1353212258": {
+    "name": "Marchio del Casato dei Re",
+    "description": "Sali al trono.",
+    "icon": "/common/destiny_content/icons/3d4902f806ae4857390911f1ec5259c0.jpg",
+    "tierType": 5
+  },
+  "1353212259": {
+    "name": "Marchio del Casato dei Diavoli",
+    "description": "La battaglia non finirà mai.",
+    "icon": "/common/destiny_content/icons/b3f286af5b5aacd0dfea07ca7c723b3f.jpg",
+    "tierType": 5
   },
   "1353391432": {
     "name": "Criptide 4.6r2",
@@ -4453,12 +4765,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c9dd33af86e56854e0ccd3bb8f9e3f92.jpg",
     "tierType": 5
   },
-  "1394543945": {
-    "name": "Fr0st-EE5",
-    "description": "\"Ehi, se funziona per i computer...\" - Marcus Ren",
-    "icon": "/common/destiny_content/icons/6b9d54463a053e129762fdb973a7baaf.jpg",
-    "tierType": 6
-  },
   "1396371287": {
     "name": "Cavaliere tipo 1",
     "description": "Basato sulla Corazza da campo standard, il design Cavaliere impiega filmetallo e ferro del passato, senza badare a spese.",
@@ -4531,6 +4837,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/30b53fc35cccf48b2457826e721fa397.jpg",
     "tierType": 5
   },
+  "1449661885": {
+    "name": "Vesti Haliaetus Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/640048b6bbb69ce538637cebf8315e09.jpg",
+    "tierType": 5
+  },
   "1450166845": {
     "name": "Impugnature di Callipoli",
     "description": "Non vinceremo la guerra oltre le mura se prima non guadagneremo la fiducia delle persone che le abitano.",
@@ -4559,6 +4871,12 @@ var DestinyArmorDefinition = {
     "name": "Pugni dello Spezzavolontà",
     "description": "Prendi ciò che è tuo.",
     "icon": "/common/destiny_content/icons/e0f0d4de473bdf90093d91fe65128b02.jpg",
+    "tierType": 5
+  },
+  "1480335318": {
+    "name": "Guardia Gioviana",
+    "description": "Il nostro debito nei confronti dell'Atollo e della Regina non verrà mai dimenticato.",
+    "icon": "/common/destiny_content/icons/01e38ac26618406c14806ab5ed11a66c.jpg",
     "tierType": 5
   },
   "1483483181": {
@@ -4999,6 +5317,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/afdbbe76880e500aef1c4aba7c3a416e.jpg",
     "tierType": 5
   },
+  "1648308416": {
+    "name": "Guanti della Desolazione",
+    "description": "Più di semplici ombre, ma meno di mera materia stellare.",
+    "icon": "/common/destiny_content/icons/cdabef46728d281b75fd4a64ad3df499.jpg",
+    "tierType": 5
+  },
+  "1648308418": {
+    "name": "Impugnature Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/85b2e8f416316115f5d6660f1a57221b.jpg",
+    "tierType": 5
+  },
+  "1648308419": {
+    "name": "Guanti del Custode",
+    "description": "\"Prigione non è semplice cella, ma luogo di condanna.\" - Variks",
+    "icon": "/common/destiny_content/icons/d9d0804bd47d9c6ca2fd7d0b92489f33.jpg",
+    "tierType": 5
+  },
   "1649128456": {
     "name": "Spirito di Saturno",
     "description": "Un distintivo cerimoniale indossato dai titani in ricordo della prima flotta perduta.",
@@ -5227,6 +5563,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/d0defd9bd4af5aea2e1ec75fb00e92e8.jpg",
     "tierType": 5
   },
+  "1705560672": {
+    "name": "Marchio Linee Infinite Spektar",
+    "description": "... estrassi il soggetto dal dispositivo, sembrava gelido. Nessun segno vitale, ma il corpo non era decomposto. - REGISTRAZIONE 340-ABISSO-VUOTO",
+    "icon": "/common/destiny_content/icons/5caf444a73e4929c4e63eea53c20dca8.jpg",
+    "tierType": 5
+  },
   "1712294560": {
     "name": "Marchio dei Primi Fondatori",
     "description": "Tutte le vittorie strategiche dell'ordine dei Primi Fondatori hanno un prezzo.",
@@ -5407,6 +5749,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/34fd6e4950f23632e83b41343437c75b.jpg",
     "tierType": 5
   },
+  "1765846920": {
+    "name": "Lungo Avvenire 9G",
+    "description": "\"Alcuni sono sopravvissuti... Conosco un tizio che dice di aver visto un drago dei sogni su Giove tempo fa.\"",
+    "icon": "/common/destiny_content/icons/6ff4c9ea8c40b34ccf85095e4e5ad70b.jpg",
+    "tierType": 5
+  },
   "1770680276": {
     "name": "Sindrome di Azoth I",
     "description": "Gli stregoni possono rimescolare le particelle molecolari della materia con un solo gesto.",
@@ -5449,22 +5797,28 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/db43388a41b50657033bd68a92292593.jpg",
     "tierType": 6
   },
+  "1775622225": {
+    "name": "Patto dell'Eliopausa Spektar",
+    "description": "Se oltre l'eliopausa ci fosse solo Oscurità, avremmo già perso.",
+    "icon": "/common/destiny_content/icons/aebfdcb5894c3513f0bb6cf7c8bcce61.jpg",
+    "tierType": 5
+  },
   "1776632644": {
     "name": "\"La Cura\"",
     "description": "\"Abbiamo una soluzione.\" - Ikora Rey, in una riunione d'emergenza del Consenso della Città",
-    "icon": "/common/destiny_content/icons/cf4c33773be201c37fe3c2ef8f91ed13.png",
+    "icon": "/common/destiny_content/icons/ed898878720462946189953111c961d8.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"L'Inconquistabile\"",
     "description": "\"Smettiamola di pensare a come aprire la serratura, cominciamo a pensare a come abbattere il muro.\"",
-    "icon": "/common/destiny_content/icons/778dc5e4b8afd95147c4f4216e8af0ec.png",
+    "icon": "/common/destiny_content/icons/2d90343226d7017ff50c93e39d9b78df.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nato dalla Vista\"",
     "description": "\"La realtà è l'analisi più spietata.\" - Detto prassico",
-    "icon": "/common/destiny_content/icons/742294b1d6b4f58042914bff138bd30c.png",
+    "icon": "/common/destiny_content/icons/1a29388efba53ec95c13260a33f131a5.png",
     "tierType": 4
   },
   "1777045417": {
@@ -5568,6 +5922,12 @@ var DestinyArmorDefinition = {
     "description": "Fabbricata dal tuo Spettro con la massa nelle vicinanze, questo tessuto energetico supporta la vita e poco altro.",
     "icon": "/common/destiny_content/icons/a544927e9d66eaefac0b50b6583b0290.jpg",
     "tierType": 2
+  },
+  "1834224941": {
+    "name": "Impugnature Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/0d3d65f7e4b38ecf92e0fa8f8acb076b.jpg",
+    "tierType": 5
   },
   "1835128980": {
     "name": "Guanti del Primo Zelota",
@@ -5712,6 +6072,12 @@ var DestinyArmorDefinition = {
     "description": "\"Non ne è rimasta traccia. Rimangono solo gli acquitrini di Venere.\" - Le Cinque Vite di Albios",
     "icon": "/common/destiny_content/icons/25a802a22269ae32b31da42480076150.jpg",
     "tierType": 4
+  },
+  "1861692137": {
+    "name": "Guardia Gioviana",
+    "description": "Siete pronti a calpestare una terra dove nessuno mette piede da millenni?",
+    "icon": "/common/destiny_content/icons/77f8a75b09d3f207ab85f5cb1770e16f.jpg",
+    "tierType": 5
   },
   "1864523264": {
     "name": "Vesti Generazione di Ferro",
@@ -5989,11 +6355,29 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1a21bd95ff667ae9265bc5dd44446854.jpg",
     "tierType": 5
   },
+  "1998474274": {
+    "name": "Stivali Aspriet Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/d24de7ff03f7dd1c2f5b06973e4b9f46.jpg",
+    "tierType": 5
+  },
   "2001487260": {
     "name": "Maglia Leggera",
     "description": "Fabbricata dal tuo Spettro con il materiale che aveva a sua disposizione, quest'armatura base ha una placcatura molto sottile.",
     "icon": "/common/destiny_content/icons/3e0b919ea55d420156cdf384b66a7f8a.jpg",
     "tierType": 2
+  },
+  "2001658176": {
+    "name": "Veste Aspriet Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/c5dee3edacd3c6b7a12f1f7ab1e7cc67.jpg",
+    "tierType": 5
+  },
+  "2006777123": {
+    "name": "Guanti Lunghi Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/0e4b03f286adcfe65181544a9ca79dd1.jpg",
+    "tierType": 5
   },
   "2011165716": {
     "name": "Mantello di Atropos",
@@ -6329,6 +6713,12 @@ var DestinyArmorDefinition = {
     "name": "Impugnature dell'Eliopausa",
     "description": "\"Non siamo fatalisti. Siamo ottimisti. Crediamo che ci sia vita oltre quest'orbita morta.\" - Arach Linde",
     "icon": "/common/destiny_content/icons/d0fb0620fbc6277db814d79cd54a97f1.jpg",
+    "tierType": 5
+  },
+  "2099650277": {
+    "name": "Gambali Haliaetus Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/5df962cc8de95315e6af4b0d2ad265e1.jpg",
     "tierType": 5
   },
   "2109934830": {
@@ -7033,11 +7423,11 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/d99afa8cd112d15b8437ca205503280b.jpg",
     "tierType": 6
   },
-  "2275132880": {
-    "name": "Passi Trasversivi",
-    "description": "Con questi stivali inizierai a percepire che il tuo rapporto con lo spaziotempo sta diventando... inconsistente.",
-    "icon": "/common/destiny_content/icons/0ddf279bb413e3d18555dfa1cd5ebadb.jpg",
-    "tierType": 6
+  "2275333236": {
+    "name": "Schinieri di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/8ef9f86bf20ac2b48bfd0051e9a5a66b.jpg",
+    "tierType": 5
   },
   "2279754802": {
     "name": "Stivali dell'Elettore",
@@ -7169,6 +7559,12 @@ var DestinyArmorDefinition = {
     "name": "Patto di Ferro di Skarri",
     "description": "\"Alzati, così potrai sollevare quelli rimasti in basso.\"",
     "icon": "/common/destiny_content/icons/26be8fe08a572d9823c231910a90d0ad.jpg",
+    "tierType": 5
+  },
+  "2317558346": {
+    "name": "Cappuccio Haliaetus Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/46bb61a4bb3f3fc0a2b62df37e5a5ac6.jpg",
     "tierType": 5
   },
   "2335332317": {
@@ -7308,6 +7704,12 @@ var DestinyArmorDefinition = {
     "description": "Coloro che hanno una mente pratica rifiutano la filosofia. Lo studioso ricorda loro che la guerra è ontologia applicata.",
     "icon": "/common/destiny_content/icons/9b95b101547a89eb64e295ee452d70c2.jpg",
     "tierType": 3
+  },
+  "2364696211": {
+    "name": "Guanti Haliaetus Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/2aaa521d10d7dd8cd671bb69de8389cd.jpg",
+    "tierType": 5
   },
   "2368747176": {
     "name": "Stivali dell'Esodo",
@@ -7675,12 +8077,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/2b16fdc3e899d10df1677e85ef125b59.jpg",
     "tierType": 5
   },
-  "2479526175": {
-    "name": "Valicadune",
-    "description": "Sia sulla roccia solida che tra le rosse dune, gli inesorabili Mangiatori di Sabbia non rallentano mai il passo.",
-    "icon": "/common/destiny_content/icons/11f301cb8d8ec148f8d8719e64080c83.jpg",
-    "tierType": 6
-  },
   "2486746566": {
     "name": "Facciata dei Signori Hezeni",
     "description": "L'interfaccia neurale del casco comprende delle cellule vex. Di vex morti, chiaramente. Non abbastanza morti da aver smesso di sognare, però...",
@@ -7710,6 +8106,12 @@ var DestinyArmorDefinition = {
     "description": "Fabbricata dal tuo Spettro con la massa nelle vicinanze, questo tessuto energetico supporta la vita e poco altro.",
     "icon": "/common/destiny_content/icons/9acea728fcfa2a8884691c5a6e9d4525.jpg",
     "tierType": 2
+  },
+  "2496457425": {
+    "name": "Guardia Gioviana",
+    "description": "La spedizione gioviana sarà guidata dai titani, come del resto fanno sempre.",
+    "icon": "/common/destiny_content/icons/7600a73b6bf403762ae310aad33959c4.jpg",
+    "tierType": 5
   },
   "2497457952": {
     "name": "Cantore della Logica III",
@@ -7897,6 +8299,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/226229094bd85af570841f5ad72243dd.jpg",
     "tierType": 5
   },
+  "2546600687": {
+    "name": "Stivali Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/28dd590511e19ce4b360bfbd36f8cfb6.jpg",
+    "tierType": 5
+  },
   "2547914731": {
     "name": "Patto Potenziale",
     "description": "Il patto degli stregoni è sia un simbolo che un centro di potere. Il tuo Spettro ha appena preparato questo semplice esempio.",
@@ -8026,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motore a Inerzia\"",
     "description": "\"Io credo che il Viaggiatore e la sua Luce siano tecnologia avanzata. Rifiuto di accettare che questo mi renda inferiore.\"",
-    "icon": "/common/destiny_content/icons/5e3ea70122344fc9658147bfccda73b5.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verità Cosmiche\"",
     "description": "\"Associare la Luce allo stesso schema dei protoni o di un semplice neutrino è un atto di arroganza e chiusura mentale.\"",
-    "icon": "/common/destiny_content/icons/5e3ea70122344fc9658147bfccda73b5.png",
+    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
     "tierType": 3
   },
   "2580679414": {
@@ -8233,6 +8641,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/8956a524da0d3d82e8d321faf862e694.jpg",
     "tierType": 5
   },
+  "2640087282": {
+    "name": "Duna Barcana I",
+    "description": "\"Il deserto gioca brutti scherzi alla vista. Non credere a tutto ciò che vedi.\"",
+    "icon": "/common/destiny_content/icons/b90f1aef0dc13f8ee33f7f4899ba0cbb.jpg",
+    "tierType": 5
+  },
   "2642309592": {
     "name": "Patto del Ferro di Camelot",
     "description": "Forgiato in memoria di Skarri, colei che cantò l'Inno del Ferro.",
@@ -8286,6 +8700,12 @@ var DestinyArmorDefinition = {
     "description": "Assalti coordinati richiedono più del talento individuale. La squadra deve muoversi come un'unità.",
     "icon": "/common/destiny_content/icons/179f9d181c820abb509f9ea1734c1b17.jpg",
     "tierType": 4
+  },
+  "2659591096": {
+    "name": "Maschera dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/b081fa9852675c45c2f8af2a26be26e9.jpg",
+    "tierType": 5
   },
   "2659960491": {
     "name": "Attesa Terrestre",
@@ -8363,6 +8783,12 @@ var DestinyArmorDefinition = {
     "name": "Vanth Orcus 0A0X",
     "description": "Variante del Crogiolo. Il tessuto energetico privo di mielina può indurre sensazioni di invincibilità.",
     "icon": "/common/destiny_content/icons/9bb2cf264fd0cd81457fd1f7eea9a546.jpg",
+    "tierType": 5
+  },
+  "2684428967": {
+    "name": "Guardia Gioviana",
+    "description": "Supereremo anche l'Atollo, ma prima dobbiamo prepararci.",
+    "icon": "/common/destiny_content/icons/3d0c2b5d984183511cb4e70a03452ba5.jpg",
     "tierType": 5
   },
   "2688781040": {
@@ -8449,6 +8875,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4faca245962b4d24dbbdfbded7fcdbef.jpg",
     "tierType": 4
   },
+  "2696707275": {
+    "name": "Corona di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/7bf89c43afbed36f14de8e2b97c66fd8.jpg",
+    "tierType": 5
+  },
+  "2698833929": {
+    "name": "Impugnature dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/de3feb9fac2bcf50e14592d6dfa68d8f.jpg",
+    "tierType": 5
+  },
   "2702267948": {
     "name": "Ranger Takanome 1.1",
     "description": "\"Durante l'Età Oscura, prima della sicurezza confortante della Città e prima che nascesse la Torre, vi erano solamente i Ranger.\" - Chiyoko Mey",
@@ -8472,6 +8910,30 @@ var DestinyArmorDefinition = {
     "description": "Sfuggente come un'anguilla.",
     "icon": "/common/destiny_content/icons/1702bd5d53457ab2a8cd4261739a73a7.jpg",
     "tierType": 4
+  },
+  "2704937713": {
+    "name": "Maschera Aspriet Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/9d7ba305ad01c8a74e9d0340e1273140.jpg",
+    "tierType": 5
+  },
+  "2710490084": {
+    "name": "Schinieri della Contemplazione",
+    "description": "\"Perdita di Regina è grave. Ora nostre azioni sono in suo nome.\" - Variks",
+    "icon": "/common/destiny_content/icons/01f15894fb4a309b76ce99fcfcd5313e.jpg",
+    "tierType": 5
+  },
+  "2710490085": {
+    "name": "Schinieri Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/7c34654e075ad2f9ef237e5eb4aeecd7.jpg",
+    "tierType": 5
+  },
+  "2710490087": {
+    "name": "Schinieri della Desolazione",
+    "description": "Una mutazione non sempre equivale a una rivelazione.",
+    "icon": "/common/destiny_content/icons/66f63791f71a34d703612fe628076c71.jpg",
+    "tierType": 5
   },
   "2716750484": {
     "name": "Cappuccio dell'Ordine",
@@ -8665,12 +9127,6 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/0e90b8c8af3f766578d856a0299711bf.jpg",
     "tierType": 5
   },
-  "2778128366": {
-    "name": "Verso dell'Astrocita",
-    "description": "L'ideocosmo contenuto in questo casco trasforma le teste composte di carne e/o exoneuroni in pura materia del pensiero.",
-    "icon": "/common/destiny_content/icons/2e596038c90c4f0c16828d12eb66ae49.jpg",
-    "tierType": 6
-  },
   "2778128367": {
     "name": "Il Cervo",
     "description": "\"Quando spuntano fanno male, ma una volta spuntate aiutano a trafiggere.\"",
@@ -8813,6 +9269,30 @@ var DestinyArmorDefinition = {
     "name": "Pugno delle Otto Lune",
     "description": "Potrai trovare queste lune solo nella piana ascendente, dove ogni idea ben difesa può diventare realtà.",
     "icon": "/common/destiny_content/icons/a3a015ce724686136344cd3f735a0a11.jpg",
+    "tierType": 5
+  },
+  "2803402711": {
+    "name": "Impugnature dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/daf51fff2a5ab5cb1dcf0cc0d0c33fa2.jpg",
+    "tierType": 5
+  },
+  "2804968636": {
+    "name": "Cotta della Contemplazione",
+    "description": "\"Quando re cade, dieci insorgono per potere.\" - Variks",
+    "icon": "/common/destiny_content/icons/612ccb71c946e7d81288ff222055fbde.jpg",
+    "tierType": 5
+  },
+  "2804968637": {
+    "name": "Corazza Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/3eb852b978f8aef693610c708021fe88.jpg",
+    "tierType": 5
+  },
+  "2804968639": {
+    "name": "Corazza della Desolazione",
+    "description": "Accetta la tua nuova forma.",
+    "icon": "/common/destiny_content/icons/68108801b9984933097fffe27203bbe2.jpg",
     "tierType": 5
   },
   "2810003152": {
@@ -9295,6 +9775,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/5730bcde9a32b84eb04d61721cdc49a0.jpg",
     "tierType": 5
   },
+  "2928398152": {
+    "name": "Casco della Desolazione",
+    "description": "L'odore di ozono. Un grido lontano. Un senso di paura.",
+    "icon": "/common/destiny_content/icons/b26e98bb1540b2bd7409eeaf87acdcc3.jpg",
+    "tierType": 5
+  },
+  "2928398154": {
+    "name": "Elmo Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/fc315c8fd15fcb57cb2981c955907e08.jpg",
+    "tierType": 5
+  },
+  "2928398155": {
+    "name": "Casco della Contemplazione",
+    "description": "\"Il numero degli insonni si è ridotto, ma la nostra voglia di combattere è cresciuta.\" - Petra Venj",
+    "icon": "/common/destiny_content/icons/9ef6e380b8ffa5b2c626843465b52e45.jpg",
+    "tierType": 5
+  },
   "2935267644": {
     "name": "Schinieri Guardia della Regina",
     "description": "Comportati con leggerezza e orgoglio.",
@@ -9317,6 +9815,12 @@ var DestinyArmorDefinition = {
     "name": "Haliaetus II",
     "description": "Variante del Crogiolo. Un tessuto energetico non mielinato dal design aderente.",
     "icon": "/common/destiny_content/icons/3f96a481562887024b5336cc7893d98a.jpg",
+    "tierType": 5
+  },
+  "2949302235": {
+    "name": "Stivali dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/29d5a6704892426d1243671b3f9ea6d1.jpg",
     "tierType": 5
   },
   "2950887984": {
@@ -9348,6 +9852,12 @@ var DestinyArmorDefinition = {
     "description": "La Città è desiderosa di ascoltare le leggende delle tue imprese.",
     "icon": "/common/destiny_content/icons/e86b08acb3e4b6d906cd03a09f1140ae.jpg",
     "tierType": 3
+  },
+  "2953226480": {
+    "name": "Patto Haliaetus Spektar",
+    "description": "\"Non possiamo atterrare. Dobbiamo proseguire.\"",
+    "icon": "/common/destiny_content/icons/608e43cfb8d84fcca2e5db94407e985e.jpg",
+    "tierType": 5
   },
   "2956790198": {
     "name": "Argus Deimatico 1.1.2",
@@ -9401,6 +9911,30 @@ var DestinyArmorDefinition = {
     "name": "Veste dell'Esodo",
     "description": "L'umanità è stata messa in gabbia. Noi spezzeremo le sbarre.",
     "icon": "/common/destiny_content/icons/2c36c493ddb04c37a2c7f7fa97e76cb0.jpg",
+    "tierType": 5
+  },
+  "2975536017": {
+    "name": "Guanti Lunghi della Desolazione",
+    "description": "Più di semplici ombre, ma meno di mera materia stellare.",
+    "icon": "/common/destiny_content/icons/51379b62e915dac24888aefbc7e15080.jpg",
+    "tierType": 5
+  },
+  "2975536018": {
+    "name": "Guanti Lunghi della Contemplazione",
+    "description": "\"Senza una guida, i corrotti sono una forza della natura. Sentono solo la fame e conoscono solo la collera.\" - Eris Morn",
+    "icon": "/common/destiny_content/icons/0367b686c86226bd4e37923f7c62269a.jpg",
+    "tierType": 5
+  },
+  "2975536019": {
+    "name": "Guanti Lunghi Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/ee68a5395d9302532354eec17f64e80c.jpg",
+    "tierType": 5
+  },
+  "2977017205": {
+    "name": "Mantello di Callipoli Spektar",
+    "description": "Non al passato, nemmeno al futuro; è al presente che dovremmo guardare.",
+    "icon": "/common/destiny_content/icons/ec383fe01e7fa7434f9bcd900f0b9f24.jpg",
     "tierType": 5
   },
   "2988284296": {
@@ -9505,6 +10039,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/7a310731af5ebef580725420fe43e528.jpg",
     "tierType": 2
   },
+  "3003499668": {
+    "name": "Maschera Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/8068b2dac069bde4a8ab1a3d06dfde76.jpg",
+    "tierType": 5
+  },
   "3009953622": {
     "name": "Mantello della Cantamorte",
     "description": "Foggiato dai bottini di guerra nel cosmo infernale di Crota.",
@@ -9517,6 +10057,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/145e859ac57f0ee03028987e15a05d73.jpg",
     "tierType": 5
   },
+  "3019795155": {
+    "name": "Veste Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/2c9d15363f75fe435b45dd716fe51518.jpg",
+    "tierType": 5
+  },
   "3026648396": {
     "name": "Scontro Carnivoro",
     "description": "Le equazioni di Lotka-Volterra descrivono il rapporto tra te e il mondo.",
@@ -9527,6 +10073,12 @@ var DestinyArmorDefinition = {
     "name": "Sanzione Personalizzata",
     "description": "La chiave del successo sta nel distruggere l'abilità processuale o reagente del nemico.",
     "icon": "/common/destiny_content/icons/abb6fc1f4994cf01f6dcd05241bab66c.jpg",
+    "tierType": 5
+  },
+  "3032295330": {
+    "name": "Guanti Lunghi Pandion Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/54ff72a85431b8eeb8bcb5636d41be96.jpg",
     "tierType": 5
   },
   "3034481788": {
@@ -9667,6 +10219,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c0a4af415a8698400ab0378406ba75a4.jpg",
     "tierType": 3
   },
+  "3071494145": {
+    "name": "Maniche del Paria",
+    "description": "\"Pur avendolo cacciato, le sue parole non ci lasciarono mai.\" - Pergamene Frattali",
+    "icon": "/common/destiny_content/icons/ea07ee2c61555dd1907882d66e585777.jpg",
+    "tierType": 5
+  },
   "3072256885": {
     "name": "Involucro Erudito",
     "description": "Per gli Spettri che hanno offerto nuove conoscenze alla Città.",
@@ -9689,6 +10247,24 @@ var DestinyArmorDefinition = {
     "name": "Marchio della Luce Morta",
     "description": "\"Oltre la Città. Sì, oltre il Viaggiatore.\" - Arach Jalaal",
     "icon": "/common/destiny_content/icons/404405c530fb57c230b96b769f5e3404.jpg",
+    "tierType": 5
+  },
+  "3085609892": {
+    "name": "Patto dei Kell",
+    "description": "Una sola guida per un gran seguito.",
+    "icon": "/common/destiny_content/icons/757b6f9f606c1422bef7ddefce2e243f.jpg",
+    "tierType": 5
+  },
+  "3085609894": {
+    "name": "Patto dei Diavoli",
+    "description": "Lascia il segno.",
+    "icon": "/common/destiny_content/icons/3b99e72d3be9e66f917833e91e45a1b4.jpg",
+    "tierType": 5
+  },
+  "3085609895": {
+    "name": "Patto dei Re",
+    "description": "La mia parola è il mio giuramento.",
+    "icon": "/common/destiny_content/icons/9d10f2709c3d4e4baef14eab610ce76b.jpg",
     "tierType": 5
   },
   "3092622518": {
@@ -9811,10 +10387,28 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/d14925ac6d48224fa844ee7ddab22ea1.jpg",
     "tierType": 5
   },
+  "3112010724": {
+    "name": "Guanti dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/7cada40043ba68ff3620184099d8415f.jpg",
+    "tierType": 5
+  },
   "3125395949": {
     "name": "Guanti Lunghi della Luce Morta",
     "description": "\"Almeno sapremo di averci provato.\" - Arach Henri",
     "icon": "/common/destiny_content/icons/f147756ac6bf857d1c7688750bfc61c3.jpg",
+    "tierType": 5
+  },
+  "3125615213": {
+    "name": "Corazza Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/75c8a97390a3cb845f4fce49e132175a.jpg",
+    "tierType": 5
+  },
+  "3128948233": {
+    "name": "Cappuccio del Paria",
+    "description": "\"Il sole deve tramontare prima di poter sorgere nuovamente.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/2d5c66293d4e4fd9eabcaf1ca73fb50a.jpg",
     "tierType": 5
   },
   "3129437672": {
@@ -9895,6 +10489,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6803b23d4c5984952ae54091ab4e06de.jpg",
     "tierType": 4
   },
+  "3148233487": {
+    "name": "Veste dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/7fa15a012613d6d7fe2f017227a9e171.jpg",
+    "tierType": 5
+  },
   "3148626578": {
     "name": "Stretta della Cantamorte",
     "description": "Stringi l'universo. Plasmalo. Ignora le urla.",
@@ -9971,6 +10571,12 @@ var DestinyArmorDefinition = {
     "name": "Marchio del Ferro di Camelot",
     "description": "Forgiato in memoria di Radegast, il primo tra i nobili dello Stendardo di Ferro.",
     "icon": "/common/destiny_content/icons/51227708b4fbe21d64bd05e4ebf3344b.jpg",
+    "tierType": 5
+  },
+  "3193131335": {
+    "name": "Patto Linee Infinite Spektar",
+    "description": "... estrassi il soggetto dal dispositivo, sembrava gelido. Nessun segno vitale, ma il corpo non era decomposto. - REGISTRAZIONE 340-ABISSO-VUOTO",
+    "icon": "/common/destiny_content/icons/82ae364358003797075c9e42df86949e.jpg",
     "tierType": 5
   },
   "3202328104": {
@@ -10183,6 +10789,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/6915ed7bf06e1daa2efb9f9d991275d5.jpg",
     "tierType": 5
   },
+  "3273710512": {
+    "name": "Maschera del Paria",
+    "description": "\"Il sole deve tramontare prima di poter sorgere nuovamente.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/33f0994fb50155c5aa9533fc1d42a316.jpg",
+    "tierType": 5
+  },
   "3275079860": {
     "name": "Corazza dei Paramenti di Ferro",
     "description": "Un'armatura adornata forgiata dai Signori del Ferro sotto lo Stendardo di Ferro.",
@@ -10205,6 +10817,12 @@ var DestinyArmorDefinition = {
     "name": "Impugnature Guerra Immanente",
     "description": "Il futuro non verrà conquistato facilmente.",
     "icon": "/common/destiny_content/icons/7516931a4d09013525140e87955cae0b.jpg",
+    "tierType": 5
+  },
+  "3291435311": {
+    "name": "Vesti di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/6be7901e70f16dc77b7a6299e7801e9d.jpg",
     "tierType": 5
   },
   "3295133852": {
@@ -10321,6 +10939,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c9fbb77a95c597791033a067aee64776.jpg",
     "tierType": 5
   },
+  "3312628684": {
+    "name": "Mantello del Casato dei Re",
+    "description": "A misura di regalità.",
+    "icon": "/common/destiny_content/icons/b9dad02137b919e55f4624242a4a53e8.jpg",
+    "tierType": 5
+  },
+  "3312628685": {
+    "name": "Inganno dei Diavoli",
+    "description": "Cela il volto.",
+    "icon": "/common/destiny_content/icons/8d92eee078927897798a821e03491131.jpg",
+    "tierType": 5
+  },
+  "3312628687": {
+    "name": "Mantello dei Kell",
+    "description": "Il più forte guiderà il branco.",
+    "icon": "/common/destiny_content/icons/ccf63573c897155181fb97a5b1f07c64.jpg",
+    "tierType": 5
+  },
   "3316745440": {
     "name": "Furfante 4.5",
     "description": "La maggior parte dei cacciatori preferisce una corazza a piastre leggere ai tessuti di fili energetici.",
@@ -10390,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Patto dell'Universale",
     "description": "Alcuni ordini sostengono che la Luce e l'Oscurità possono essere spiegate in termini di fisica supersimmetrica.",
-    "icon": "/common/destiny_content/icons/80bc0e65590e8c584df6896b18e80ae8.png",
+    "icon": "/common/destiny_content/icons/e1f30427b5f6ecc7db60ee2b38b5806a.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Patto della Polarità",
     "description": "Alcuni ordini credono che la Luce e l'Oscurità esistano al di là del piano materiale e che seguano una logica solo loro.",
-    "icon": "/common/destiny_content/icons/63abb89d5d57fbffb3a7e3649d04a381.png",
+    "icon": "/common/destiny_content/icons/914ff66cf27bb8062fe1da8bda61cc3d.png",
     "tierType": 2
   },
   "3346783228": {
@@ -10480,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"Andato\"",
     "description": "\"È venuto da me con un coltello. Io ho allungato una mano verso di lui... ed è bastato per ridurlo in cenere.\"",
-    "icon": "/common/destiny_content/icons/b9c8a5afcc3d12f7525c6ced81de9822.png",
+    "icon": "/common/destiny_content/icons/a3477d4abfe78e7b1b1e4e517e811aa6.png",
     "tierType": 4
   },
   "3366017012": {
@@ -10589,6 +11225,12 @@ var DestinyArmorDefinition = {
     "name": "Cappuccio dello Sterminasorte",
     "description": "Tra noi e la salvezza c'è solo il nemico. Apri la strada.",
     "icon": "/common/destiny_content/icons/c31d2e62675c800042197b0c6072ec86.jpg",
+    "tierType": 5
+  },
+  "3389932104": {
+    "name": "Vesti del Paria",
+    "description": "\"Accetto tutte le sfide, a patto che mi rendano più forte.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/3412689cbc7eee5bf03475f9c6eaab1c.jpg",
     "tierType": 5
   },
   "3393641174": {
@@ -10705,6 +11347,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/9c86a33cb470de5e2f0260a1a9c7bdb7.jpg",
     "tierType": 3
   },
+  "3439150014": {
+    "name": "Vesti Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/247966f71f9d6c07585c978a2b8fd355.jpg",
+    "tierType": 5
+  },
+  "3443311670": {
+    "name": "Impugnature Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/85b2e8f416316115f5d6660f1a57221b.jpg",
+    "tierType": 5
+  },
   "3449421286": {
     "name": "\"Impronta Zero\"",
     "description": "\"La gravità? Che seccatura, non ho tempo da badarle.\" - Lyssa, la Spensierata",
@@ -10733,6 +11387,12 @@ var DestinyArmorDefinition = {
     "name": "Grandelmo dei Paramenti di Ferro",
     "description": "Un'armatura adornata forgiata dai Signori del Ferro sotto lo Stendardo di Ferro.",
     "icon": "/common/destiny_content/icons/48264d7ab87fb05fa5ceb57ed3a7709c.jpg",
+    "tierType": 5
+  },
+  "3452701201": {
+    "name": "Corazza del Paria",
+    "description": "\"Accetto tutte le sfide, a patto che mi rendano più forte.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/d4d2860a4b72028d666b3736cf923af5.jpg",
     "tierType": 5
   },
   "3455371673": {
@@ -10775,6 +11435,12 @@ var DestinyArmorDefinition = {
     "name": "Guanti dell'Astrosignore",
     "description": "Accettare la guerra come un processo fondamentale, non una condizione transitoria.",
     "icon": "/common/destiny_content/icons/eee2d12c57dfb814bc1d47b1b999cb8b.jpg",
+    "tierType": 5
+  },
+  "3461067991": {
+    "name": "Veste del Paria",
+    "description": "\"Accetto tutte le sfide, a patto che mi rendano più forte.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/0768aa082aed6f88ae46dcdf64e02b0a.jpg",
     "tierType": 5
   },
   "3470167972": {
@@ -11137,6 +11803,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/be440967f4938cc14ad1aa912a4dafa1.jpg",
     "tierType": 5
   },
+  "3606232300": {
+    "name": "Involucro consumato",
+    "description": "Per gli Spettri che hanno trovato una nuova forma.",
+    "icon": "/common/destiny_content/icons/566da3b42ad844d3e46c822640806143.jpg",
+    "tierType": 5
+  },
   "3607447067": {
     "name": "Elmo dell'Eliopausa",
     "description": "Se oltre l'eliopausa ci fosse solo Oscurità, avremmo già perso.",
@@ -11281,6 +11953,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/a61ff181daa7348e10146d61980d99d5.jpg",
     "tierType": 3
   },
+  "3664806619": {
+    "name": "Cappuccio Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/bfc745c426a9ae3b7637ecb8027621db.jpg",
+    "tierType": 5
+  },
   "3677348580": {
     "name": "Gwalior tipo 3",
     "description": "\"La militarizzazione totale ci guiderebbe all'estinzione.\" - Trascrizione del Consenso",
@@ -11305,6 +11983,24 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/cdb06ded034ce417b16fccc82a81e8e2.jpg",
     "tierType": 3
   },
+  "3689370929": {
+    "name": "Velo della Desolazione",
+    "description": "L'odore di ozono. Un grido lontano. Un senso di paura.",
+    "icon": "/common/destiny_content/icons/3e974ad3435f9f14b7d46902f8eb2966.jpg",
+    "tierType": 5
+  },
+  "3689370930": {
+    "name": "Mente del Custode",
+    "description": "\"Corvi volano in alto e sussurrano a noi ciò che accadrà.\" - Variks",
+    "icon": "/common/destiny_content/icons/7efbbd0c809b079ccf1bf67f59193a3d.jpg",
+    "tierType": 5
+  },
+  "3689370931": {
+    "name": "Cappuccio Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/2bddf8ebf876ce1d7b4bb29f1616cb03.jpg",
+    "tierType": 5
+  },
   "3691267894": {
     "name": "Mangia Timori",
     "description": "Quando indosso la maschera sono una macchina, e lo scopo della macchina è il consumo.",
@@ -11315,6 +12011,24 @@ var DestinyArmorDefinition = {
     "name": "Sanzione Sei",
     "description": "La Breccia del Crepuscolo cambiò tutto.",
     "icon": "/common/destiny_content/icons/8aff09b68644c5e0786883e338cbe1a6.jpg",
+    "tierType": 5
+  },
+  "3692454268": {
+    "name": "Gambali Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/9f839a65f6fea7323ba777f71d0dc98b.jpg",
+    "tierType": 5
+  },
+  "3692454269": {
+    "name": "Cammino del Custode",
+    "description": "\"Lei vedeva e conosceva ogni cosa. Ora noi impariamo senza sua guida.\" - Variks",
+    "icon": "/common/destiny_content/icons/54010cdf53a7aad78e683f21b6ee1161.jpg",
+    "tierType": 5
+  },
+  "3692454270": {
+    "name": "Stivali della Desolazione",
+    "description": "Una mutazione non sempre equivale a una rivelazione.",
+    "icon": "/common/destiny_content/icons/e0218ed192c9efaf276509f60f634b01.jpg",
     "tierType": 5
   },
   "3707771005": {
@@ -11509,6 +12223,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/88e312d69bc80c227ec73358c0ec08d4.jpg",
     "tierType": 3
   },
+  "3775423024": {
+    "name": "Impugnature di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/5a3f02226cf7d047cc6d90a9f89f4d02.jpg",
+    "tierType": 5
+  },
   "3775512100": {
     "name": "VISIGOTA Tipo 0",
     "description": "Una volta, potevi ascoltare Mozart dai suoi altoparlanti. Ora, puoi ascoltare un silenzio di tomba.",
@@ -11561,6 +12281,12 @@ var DestinyArmorDefinition = {
     "name": "Schinieri dello Spezzavolontà",
     "description": "La terra trema sotto i tuoi piedi.",
     "icon": "/common/destiny_content/icons/e951be8e263ea9ebb3a2efc4c58be2a6.jpg",
+    "tierType": 5
+  },
+  "3789442822": {
+    "name": "Elmo dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/ddadfb795e9bf1efcabd82c510493970.jpg",
     "tierType": 5
   },
   "3790886867": {
@@ -11671,6 +12397,30 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/4ec25f317d4910fead5c17db6ec1067d.jpg",
     "tierType": 5
   },
+  "3808476833": {
+    "name": "Duna Barcana I",
+    "description": "\"Potrebbero esserci intere città sepolte sotto la sabbia, proprio sotto i nostri piedi!\"",
+    "icon": "/common/destiny_content/icons/2ae98c4274d2168f829259f12463ad5d.jpg",
+    "tierType": 5
+  },
+  "3809851981": {
+    "name": "Veste della Desolazione",
+    "description": "Accetta la tua nuova forma.",
+    "icon": "/common/destiny_content/icons/23fc5d359bcd0d0f2f4bc9024c23b929.jpg",
+    "tierType": 5
+  },
+  "3809851982": {
+    "name": "Sangue del Vegliante",
+    "description": "\"I corrotti sarebbero un problema... se trovassero un degno sostituto di Oryx. Ma da soli sono parecchio stupidi.\" - Cayde-6",
+    "icon": "/common/destiny_content/icons/6959de5fb65cea2198ea163046c0d02c.jpg",
+    "tierType": 5
+  },
+  "3809851983": {
+    "name": "Veste Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/8a200c198adf123b7ac5ef1c8f5cd2de.jpg",
+    "tierType": 5
+  },
   "3812790140": {
     "name": "Braci dell'Enigma III",
     "description": "Sintonizzati con il tuo tessuto energetico. Un circuito pulito dovrebbe farti sentire come dopo una notte di buon sonno.",
@@ -11765,6 +12515,24 @@ var DestinyArmorDefinition = {
     "name": "Patto dei Lupi delle Selve",
     "description": "Sotto i fiochi raggi di un'alba scarlatta, i Lupi del Ferro si riunirono sotto la Quercia di Ferro.",
     "icon": "/common/destiny_content/icons/74589e6a2f8394ce5fcc8f7313ae91f8.jpg",
+    "tierType": 5
+  },
+  "3847828216": {
+    "name": "Maschera Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/948f938c18db64b860f87f38433a23dd.jpg",
+    "tierType": 5
+  },
+  "3847828217": {
+    "name": "Giudizio del Vegliante",
+    "description": "\"Osserva tuoi nemici, studia loro, condanna loro... impara da loro.\" - Variks",
+    "icon": "/common/destiny_content/icons/b2c4af3ca1659a19af29f8efb486a8f6.jpg",
+    "tierType": 5
+  },
+  "3847828218": {
+    "name": "Calotta della Desolazione",
+    "description": "L'odore di ozono. Un grido lontano. Un senso di paura.",
+    "icon": "/common/destiny_content/icons/9152b0b4cfc0935458f6745e3be71900.jpg",
     "tierType": 5
   },
   "3848584870": {
@@ -11869,6 +12637,18 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/1a912e151ced04b614167c541b12979f.jpg",
     "tierType": 5
   },
+  "3879283641": {
+    "name": "Maschera di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/4e1992dd4b89b9834009b84a594c03e5.jpg",
+    "tierType": 5
+  },
+  "3882836265": {
+    "name": "Schinieri del Paria",
+    "description": "\"Per conoscere i veri colori devi prima conoscere l'Oscurità.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/488273bf7a7a4918e8542ee7f539da78.jpg",
+    "tierType": 5
+  },
   "3885369928": {
     "name": "Fulcro Raku tipo 4",
     "description": "Crogiolo personalizzato. I dispositivi tattili forniscono un feedback sulle prestazioni dell'arma.",
@@ -11922,6 +12702,12 @@ var DestinyArmorDefinition = {
     "description": "Uno stivale è solo uno stivale. A meno che non sia uno stivale degli stregoni... in quel caso ha qualcosa in più.",
     "icon": "/common/destiny_content/icons/270f23e370650d2044d10dbafecb905a.jpg",
     "tierType": 3
+  },
+  "3889553880": {
+    "name": "Cappuccio di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/f7a7a617bf63a6ad79e802f850b45131.jpg",
+    "tierType": 5
   },
   "3894791157": {
     "name": "Giuramento Vettoriale VI",
@@ -11981,6 +12767,12 @@ var DestinyArmorDefinition = {
     "name": "Chitone Nerovuoto",
     "description": "\"Spietato e crudele è il loro regno, eppure in un certo senso è più malleabile del nostro.\" - Eris Morn",
     "icon": "/common/destiny_content/icons/fdb24d4bce31df8ec59ac4096f71b8de.jpg",
+    "tierType": 5
+  },
+  "3910264250": {
+    "name": "Stivali del Paria",
+    "description": "\"Per conoscere i veri colori devi prima conoscere l'Oscurità.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/449edea3c409d08e221dde25675bffb3.jpg",
     "tierType": 5
   },
   "3910559228": {
@@ -12054,6 +12846,18 @@ var DestinyArmorDefinition = {
     "description": "Dal nome di un'antica divinità, questo modello è costruito per azioni aggressive.",
     "icon": "/common/destiny_content/icons/c9aa02fef1e6657ebef02ff01c1f0e22.jpg",
     "tierType": 4
+  },
+  "3925936918": {
+    "name": "Casco del Paria",
+    "description": "\"Il sole deve tramontare prima di poter sorgere nuovamente.\" - Parabole dell'Eterna Primavera",
+    "icon": "/common/destiny_content/icons/7fba48216397f9fc94f5c4f68ebbb45c.jpg",
+    "tierType": 5
+  },
+  "3934967423": {
+    "name": "Lungo Avvenire 9G",
+    "description": "\"Una volta anche Marte era il dominio della Regina.\"",
+    "icon": "/common/destiny_content/icons/d57823733838c5bf5157b6f8b768bbbe.jpg",
+    "tierType": 5
   },
   "3942481540": {
     "name": "Marchio dell'Esodo",
@@ -12306,6 +13110,18 @@ var DestinyArmorDefinition = {
     "description": "\"Nella squadra, il tuo incarico è vedere gli schemi e impadronirtene.\"",
     "icon": "/common/destiny_content/icons/edafb8dfa383fd02cd133553fbe88b82.jpg",
     "tierType": 4
+  },
+  "4005263627": {
+    "name": "Lungo Avvenire 9G",
+    "description": "\"Ha detto che era determinato a raggiungere Alfa Centauri. Quella è stata l'ultima volta che l'ho visto.\"",
+    "icon": "/common/destiny_content/icons/b3c8803c676e2e0fbbde6b243c86ac01.jpg",
+    "tierType": 5
+  },
+  "4006497057": {
+    "name": "Corazza dell'Eliopausa Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/df9518be6ce846ae2d55dad3942b882d.jpg",
+    "tierType": 5
   },
   "4006760092": {
     "name": "Marchio dei Cinque Chilometri",
@@ -12637,6 +13453,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/9437ceaa8cc54ff1fafe018b0aed4655.jpg",
     "tierType": 5
   },
+  "4106049498": {
+    "name": "Elmo Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/ee38f2510b26c2643b780bd2706b491c.jpg",
+    "tierType": 5
+  },
   "4106244623": {
     "name": "Veste dell'Elettore",
     "description": "Capiranno che non lotti per la tua propria volontà, ma per quella del popolo.",
@@ -12654,6 +13476,12 @@ var DestinyArmorDefinition = {
     "description": "Munizioni finite? Nessun problema.",
     "icon": "/common/destiny_content/icons/75feb901adf3083874df463ad714b87a.jpg",
     "tierType": 6
+  },
+  "4134058250": {
+    "name": "Stivali di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/1ce9238596f3526fc4f4793d8f21ef13.jpg",
+    "tierType": 5
   },
   "4141399030": {
     "name": "Zamma Simmetrica VI",
@@ -12691,6 +13519,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/81a454819a623d19a493d161be43301b.jpg",
     "tierType": 5
   },
+  "4157065304": {
+    "name": "Veste di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/5a90df086385bab1c6de4ab782a72d2b.jpg",
+    "tierType": 5
+  },
   "4158489058": {
     "name": "Involucro Girovago",
     "description": "Per gli Spettri che amano sentire il vento sul telaio.",
@@ -12725,6 +13559,12 @@ var DestinyArmorDefinition = {
     "name": "Cappuccio del Ferro di Camelot",
     "description": "Forgiato in memoria di Felwinter, colui che osò guardare nel vuoto.",
     "icon": "/common/destiny_content/icons/a4a5472a9ac8d10adc5690c891fe546b.jpg",
+    "tierType": 5
+  },
+  "4179265147": {
+    "name": "Gambali di Callipoli Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/fbb88a5c1169d38f7829d3fcc68920f7.jpg",
     "tierType": 5
   },
   "4184289356": {
@@ -12772,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos Addestrato\"",
     "description": "\"Controlla lo spazio e il tempo. La materia e l'energia ti seguiranno di conseguenza.\"",
-    "icon": "/common/destiny_content/icons/fd245c34456bef890b50fd9c7b2fdeff.png",
+    "icon": "/common/destiny_content/icons/07eba033bbc8362611ea80ff97163119.png",
     "tierType": 4
   },
   "4187254944": {
@@ -12913,6 +13753,12 @@ var DestinyArmorDefinition = {
     "icon": "/common/destiny_content/icons/c7efbf0d88b9f290c41e382e13c4667d.jpg",
     "tierType": 4
   },
+  "4204773796": {
+    "name": "Gambali Linee Infinite Spektar",
+    "description": "Armatura infusa con i dissipatori di calore multicromatici.",
+    "icon": "/common/destiny_content/icons/a1d1b739c9e2e14b32d6612ac3412da4.jpg",
+    "tierType": 5
+  },
   "4204877210": {
     "name": "Guanti Guardia della Regina",
     "description": "La mano del trono.",
@@ -13037,6 +13883,12 @@ var DestinyArmorDefinition = {
     "name": "Sudario di Mosche",
     "description": "Si addensano dove passa la morte.",
     "icon": "/common/destiny_content/icons/8d56546884d7c610a02fc5307f9952db.jpg",
+    "tierType": 5
+  },
+  "4267429868": {
+    "name": "Guardia Gioviana",
+    "description": "Scegliete le parole e i sigilli giusti poiché rappresenteranno i vostri ricordi.",
+    "icon": "/common/destiny_content/icons/777d7b57150b092e033c4b8433b16300.jpg",
     "tierType": 5
   },
   "4267828624": {

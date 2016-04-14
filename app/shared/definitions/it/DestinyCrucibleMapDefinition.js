@@ -17,10 +17,6 @@ var DestinyCrucibleMapDefinition = {
     "name": "Memento",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/memento.jpg"
   },
-  "598437332": {
-    "name": "Classificato",
-    "pgcrImage": "https://www.bungie.netundefined"
-  },
   "637046772": {
     "name": "Covo dei Ladri",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/thieves_den.jpg"
