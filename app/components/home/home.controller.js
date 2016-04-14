@@ -16,12 +16,12 @@
         kdRatio: true,
         mainStats: true,
         weekly: {
-          stats: false,
-          weapons: false
+          stats: true,
+          weapons: true
         },
         mapbased: {
-          stats: false,
-          weapons: false
+          stats: true,
+          weapons: true
         },
         equipped: {
           tab: true,
