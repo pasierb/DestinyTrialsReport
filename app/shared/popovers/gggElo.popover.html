@@ -2,13 +2,17 @@
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row row--small-gutter">
-      <div class="col-xs-6 stat">
+      <div class="col-xs-4 stat">
         <span translate="GuardianGG.tiers.{{player.ggg.tier}}"></span>
         <label translate="TIER"></label>
       </div>
-      <div class="col-xs-6 stat">
+      <div class="col-xs-4 stat">
         <span ng-bind="player.ggg.rank"></span>
         <label translate="RANK"></label>
+      </div>
+      <div class="col-xs-4 stat">
+        <span ng-bind="player.ggg.seasonOneElo | number:0"></span>
+        <label translate="SEASON1"></label>
       </div>
     </div>
   </div>
