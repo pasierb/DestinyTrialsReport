@@ -130,7 +130,7 @@
         if ($scope.lighthouseFilter > 0) {
           leaderboard = _.filter(leaderboard, function(team){ return team.platform == $scope.lighthouseFilter; });
         }
-        $scope.lighthouseLeaderboard = _.sortBy(leaderboard, 'rank');
+        $scope.lighthouseLeaderboard = _.sortBy(leaderboard, 'period');
 
         if ($scope.lighthouseLeaderboard[0]) {
           $scope.lighthouseLeaderboard[0].rank = 1;
