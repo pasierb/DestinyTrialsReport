@@ -125,9 +125,9 @@
             </span>
             <div class="first-in-lighthouse__platform-toggle">
               <span class="stat-header">Platform</span>
-              <a href class="is-active">Both</a>
-              <a href>Xbox</a>
-              <a href>PlayStation</a>
+              <a href ng-click="toggleFlawless(0)" ng-class="{'is-active': lighthouseFilter == 0}">Both</a>
+              <a href ng-click="toggleFlawless(1)" ng-class="{'is-active': lighthouseFilter == 1}">Xbox</a>
+              <a href ng-click="toggleFlawless(2)" ng-class="{'is-active': lighthouseFilter == 2}">PlayStation</a>
             </div>
 
           </div>
@@ -136,7 +136,7 @@
               The race is still on...
             </div>
           </div>
-          <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard" ng-repeat="lb in lighthouseLeaderboard">
+          <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard && $index < 3" ng-repeat="lb in lighthouseLeaderboard">
             <span class="first-in-lighthouse__rank first-in-lighthouse__rank&#45;&#45;{{lb.class}}">
               <span>{{lb.rank}}<sup ng-bind="lb.rankSuffix"></sup></span>
             </span>

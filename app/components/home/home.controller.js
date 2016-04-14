@@ -39,6 +39,7 @@
       }
     });
 
+    $scope.lighthouseFilter = 0;
     tmhDynamicLocale.set($localStorage.language);
 
     $scope.DestinyCrucibleMapDefinition = DestinyCrucibleMapDefinition;
@@ -126,24 +127,29 @@
     $scope.setFlawlessRecord = function (leaderboard) {
       $scope.lighthouseLeaderboard = undefined;
       if (leaderboard && leaderboard[0]) {
-        $scope.lighthouseLeaderboard = [];
+        if ($scope.lighthouseFilter > 0) {
+          leaderboard = _.filter(leaderboard, function(team){ return team.platform == $scope.lighthouseFilter; });
+        }
+        $scope.lighthouseLeaderboard = _.sortBy(leaderboard, 'rank');
 
-        $scope.lighthouseLeaderboard[0] = _.find(leaderboard, function(lb){ return lb.rank == 1; });
         if ($scope.lighthouseLeaderboard[0]) {
+          $scope.lighthouseLeaderboard[0].rank = 1;
           $scope.lighthouseLeaderboard[0].rankSuffix = 'st';
           $scope.lighthouseLeaderboard[0].class = '';
           $scope.lighthouseLeaderboard[0].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[0].period)
             .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[0].period))).format('HH:mm:ss');
         }
-        $scope.lighthouseLeaderboard[1] = _.find(leaderboard, function(lb){ return lb.rank == 2; });
+
         if ($scope.lighthouseLeaderboard[1]) {
+          $scope.lighthouseLeaderboard[1].rank = 2;
           $scope.lighthouseLeaderboard[1].rankSuffix = 'nd';
           $scope.lighthouseLeaderboard[1].class = 'second';
           $scope.lighthouseLeaderboard[1].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[1].period)
             .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[1].period))).format('HH:mm:ss');
         }
-        $scope.lighthouseLeaderboard[2] = _.find(leaderboard, function(lb){ return lb.rank == 3; });
+
         if ($scope.lighthouseLeaderboard[2]) {
+          $scope.lighthouseLeaderboard[2].rank = 3;
           $scope.lighthouseLeaderboard[2].rankSuffix = 'rd';
           $scope.lighthouseLeaderboard[2].class = 'third';
           $scope.lighthouseLeaderboard[2].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[2].period)
@@ -264,6 +270,11 @@
     $scope.toggleStats = function () {
       $scope.hideStats = !$scope.hideStats;
       $localStorage.hideStats = $scope.hideStats;
+    };
+
+    $scope.toggleFlawless = function (platform) {
+      $scope.lighthouseFilter = platform;
+      $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
     };
 
     $scope.searchName = function (name) {
