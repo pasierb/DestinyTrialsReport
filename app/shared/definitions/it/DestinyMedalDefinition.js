@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "Fuoriclasse",
-    "statDescription": "Come squadra, uccidete l'intera squadra nemica entro i primi 30 secondi di un round.",
+    "statDescription": "Con una squadra di amici, sconfiggete l'intera squadra nemica entro i primi 30 secondi di un round.",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {

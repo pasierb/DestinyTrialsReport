@@ -1,0 +1,201 @@
+<uib-tabset class="player-tabs"
+						ng-class="{'is-hidden': !$storage.visibility.all &&
+												((!$storage.visibility.weekly.stats && !$storage.visibility.weekly.weapons) ||
+												(!$storage.visibility.mapbased.stats && !$storage.visibility.mapbased.weapons))}">
+	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.weekly.stats || $storage.visibility.weekly.weapons"
+					 class="player-tab--this-week"
+					 heading="{{currentMapInfo.weekText}}"
+					 analytics-on analytics-event="Click"
+					 analytics-category="This week">
+	  <div class="player-tab--this-week"
+				 ng-class="{'is-irrelevant': !player.currentWeek.percent}">
+			<div class="player-tab__section"
+					 ng-show="$storage.visibility.all || $storage.visibility.weekly.weapons">
+			  <div class="row" ng-repeat="weapon in player.lastWeapons">
+			    <div class="col-xs-6">
+			      <img class="weapon-type-icon img-responsive"
+			           ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName + '.svg'}}"
+			           alt="{{weapon.itemTypeName}}"><!-- this isn't translated -->
+			    </div>
+			    <div class="col-xs-3">
+			      <span ng-bind="weapon.sum_kills"></span>
+			    </div>
+			    <div class="col-xs-3">
+			      <span ng-bind="(weapon.sum_headshots / weapon.sum_kills) * 100 | number:2"></span>%
+			    </div>
+			  </div>
+			  <div ng-if="player.lastWeapons.length === 0">
+			    <div class="row player-this-week__weapons">
+			      <div class=" col-xs-6">
+			        <img class="weapon-type-icon img-responsive"
+			             src="assets/img/weapon-icons/Sniper Rifle.svg"
+			             alt="{{'weaponKillsSniper' | translate}}">
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			    </div>
+			    <div class="row player-this-week__weapons">
+			      <div class=" col-xs-6">
+			        <img class="weapon-type-icon img-responsive"
+			             src="assets/img/weapon-icons/Sword.svg"
+			             alt="{{'weaponKillsSword' | translate}}">
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			    </div>
+			    <div class="row player-this-week__weapons">
+			      <div class=" col-xs-6">
+			        <img class="weapon-type-icon img-responsive"
+			             src="assets/img/weapon-icons/Sidearm.svg"
+			             alt="{{'weaponKillsSideArm' | translate}}">
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class=" col-xs-6">
+			      <div class="data-label" translate="WEAPONTYPESUSED"></div>
+			    </div>
+			    <div class="col-xs-3">
+			      <div class="data-label" translate="kills"></div>
+			    </div>
+			    <div class="col-xs-3">
+			      <div class="data-label" translate="HEADSHOTS"></div>
+			    </div>
+			  </div>
+			</div>
+			<div class="player-tab__section"
+					 ng-show="$storage.visibility.all || $storage.visibility.weekly.stats">
+		    <div class="row">
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentWeek.matches | number:0"></span>
+		        <label translate="MATCHES"></label>
+		      </div>
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentWeek.wins | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.losses | number:0"></span>
+		        <label><span translate="WON"></span> / <span translate="LOST"></span></label>
+		      </div>
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentWeek.kills | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.deaths | number:0"></span>
+		        <label><span translate="kills"></span> / <span translate="deaths"></span></label>
+		      </div>
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentWeek.kd | number:2"></span>
+		        <label translate="killsDeathsRatioShort"></label>
+		      </div>
+		    </div>
+			</div>
+		</div>
+	</uib-tab>
+	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.mapbased.stats || $storage.visibility.mapbased.weapons"
+					 class="player-tab--map-based"
+					 heading="{{currentMapInfo.name}}"
+					 analytics-on analytics-event="Click"
+					 analytics-category="This map">
+		<div class="player-tab--map-based"
+				 ng-class="{'is-irrelevant': !player.currentWeek.percent}">
+			<div class="player-tab__section"
+					 ng-show="$storage.visibility.all || $storage.visibility.mapbased.weapons">
+			  <div class="row" ng-repeat="weapon in player.mapWeapons">
+			    <div class="col-xs-6">
+			      <img class="weapon-type-icon img-responsive"
+			           ng-src="{{'assets/img/weapon-icons/' + weapon.itemTypeName + '.svg'}}"
+			           alt="{{weapon.itemTypeName}}"><!-- this isn't translated -->
+			    </div>
+			    <div class="col-xs-3">
+			      <span ng-bind="weapon.sum_kills"></span>
+			    </div>
+			    <div class="col-xs-3">
+			      <span ng-bind="(weapon.sum_headshots / weapon.sum_kills) * 100 | number:2"></span>%
+			    </div>
+			  </div>
+			  <div ng-if="player.mapWeapons.length === 0">
+			    <div class="row player-this-week__weapons">
+			      <div class=" col-xs-6">
+			        <img class="weapon-type-icon img-responsive"
+			             src="assets/img/weapon-icons/Sniper Rifle.svg"
+			             alt="{{'weaponKillsSniper' | translate}}">
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			    </div>
+			    <div class="row player-this-week__weapons">
+			      <div class=" col-xs-6">
+			        <img class="weapon-type-icon img-responsive"
+			             src="assets/img/weapon-icons/Sword.svg"
+			             alt="{{'weaponKillsSword' | translate}}">
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			    </div>
+			    <div class="row player-this-week__weapons">
+			      <div class=" col-xs-6">
+			        <img class="weapon-type-icon img-responsive"
+			             src="assets/img/weapon-icons/Sidearm.svg"
+			             alt="{{'weaponKillsSideArm' | translate}}">
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			      <div class="col-xs-3">
+			        0
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class=" col-xs-6">
+			      <div class="data-label" translate="WEAPONTYPESUSED"></div>
+			    </div>
+			    <div class="col-xs-3">
+			      <div class="data-label" translate="kills"></div>
+			    </div>
+			    <div class="col-xs-3">
+			      <div class="data-label" translate="HEADSHOTS"></div>
+			    </div>
+			  </div>
+			</div>
+			<div class="player-tab__section"
+					 ng-show="$storage.visibility.all || $storage.visibility.mapbased.stats">
+		    <div class="row">
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentMap.matches | number:0"></span>
+		        <label translate="MATCHES"></label>
+		      </div>
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentMap.wins | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentMap.losses | number:0"></span>
+		        <label><span translate="WON"></span> / <span translate="LOST"></span></label>
+		      </div>
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentMap.kills | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentMap.deaths | number:0"></span>
+		        <label><span translate="kills"></span> / <span translate="deaths"></span></label>
+		      </div>
+		      <div class="col-xs-3 stat">
+		        <span ng-bind="player.currentMap.kd | number:2"></span>
+		        <label translate="killsDeathsRatioShort"></label>
+		      </div>
+		    </div>
+			</div>
+		</div>
+	</uib-tab>
+</uib-tabset>

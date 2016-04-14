@@ -154,3 +154,72 @@
     }
   }
 }
+
+.player-tab--this-week {
+  @include tab-background-minor($this-week-background);
+
+  ul &.active {
+    background: $this-week-background;
+
+    a,
+    a:focus,
+    a:active,
+    a:hover {
+      color: darken($this-week-background, 50%);
+    }
+  }
+}
+
+.player-tab--map-based {
+  @include tab-background-minor($map-based-background);
+
+  ul &.active {
+    background: $map-based-background;
+
+    a,
+    a:focus,
+    a:active,
+    a:hover {
+      color: darken($map-based-background, 50%);
+    }
+  }
+}
+
+.player-tab--this-week,
+.player-tab--map-based {
+  position: relative;
+  &.is-irrelevant {
+    .player-tab__section {
+      opacity: .25;
+    }
+  }
+
+	&.is-irrelevant:before {
+		position: absolute;
+		content: "";
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		text-align: center;
+		width: 100%;
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 100%);
+		z-index: 1;
+	}
+
+	&.is-irrelevant:after {
+		position: absolute;
+		content: "No matches played";
+		left: 50%;
+		top: 50%;
+		@extend .data-label;
+		z-index: 2;
+		transform: translate(-50%, -50%);
+		padding: .75em 1.5em;
+		background: white;
+		border-radius: .5em;
+		@include shadow(1);
+	}
+}

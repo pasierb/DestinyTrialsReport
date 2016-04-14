@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "Décimation",
-    "statDescription": "En tant qu'équipe, tuez l'intégralité de l'équipe adverse dans les 30 premières secondes d'une manche.",
+    "statDescription": "En tant qu'escouade, battez l'équipe adverse dans les 30 premières secondes d'une manche.",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {

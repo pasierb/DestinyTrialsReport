@@ -17,10 +17,6 @@ var DestinyCrucibleMapDefinition = {
     "name": "Mémento",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/memento.jpg"
   },
-  "598437332": {
-    "name": "Confidentiel",
-    "pgcrImage": "https://www.bungie.netundefined"
-  },
   "637046772": {
     "name": "Le Repaire des voleurs",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/thieves_den.jpg"

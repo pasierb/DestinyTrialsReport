@@ -17,10 +17,6 @@ var DestinyCrucibleMapDefinition = {
     "name": "Recuerdo",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/memento.jpg"
   },
-  "598437332": {
-    "name": "Clasificado",
-    "pgcrImage": "https://www.bungie.netundefined"
-  },
   "637046772": {
     "name": "Guarida de Ladrones",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/thieves_den.jpg"

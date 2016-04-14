@@ -17,10 +17,6 @@ var DestinyCrucibleMapDefinition = {
     "name": "思い出の地",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/memento.jpg"
   },
-  "598437332": {
-    "name": "機密",
-    "pgcrImage": "https://www.bungie.netundefined"
-  },
   "637046772": {
     "name": "シーブズ・デン",
     "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/thieves_den.jpg"

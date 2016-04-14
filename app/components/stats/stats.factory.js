@@ -29,10 +29,13 @@ angular.module('trialsReportApp')
       return api.getPlayer(
         player.membershipId
       ).then(function (result) {
-        var year2;
-        var nonHazard;
-        var nonHazardCharity;
-        var currentWeek;
+        var year2,
+          nonHazard,
+          nonHazardCharity,
+          currentWeek,
+          currentMap,
+          mapWeapons = [];
+
         if (result && result.data && result.data[0]) {
           var data = result.data[0];
 
@@ -95,11 +98,41 @@ angular.module('trialsReportApp')
               kd: kdTw
             };
           }
+
+          if (data.thisMap && data.thisMap[0]) {
+            var deathsTm = data.thisMap[0].deaths == 0 ? 1 : data.thisMap[0].deaths;
+            if (data.thisMap[0].matches == 0) {
+              deathsTm = 0;
+            }
+            var kdTm = data.thisMap[0].kills / deathsTm;
+            currentMap = {
+              percent: 100 * (data.thisMap[0].matches - data.thisMap[0].losses) / data.thisMap[0].matches,
+              wins: (data.thisMap[0].matches - data.thisMap[0].losses),
+              losses: data.thisMap[0].losses,
+              matches: data.thisMap[0].matches,
+              kills: data.thisMap[0].kills,
+              deaths: deathsTm,
+              kd: kdTm
+            };
+          }
+
+          if (data.thisMapWeapons && data.thisMapWeapons[0]) {
+            _.each(data.thisMapWeapons, function (weapon) {
+              mapWeapons.push({
+                itemTypeName: weapon.itemTypeName,
+                sum_kills: weapon.sum_kills,
+                sum_headshots: weapon.sum_headshots
+              });
+            });
+          }
         }
+
         player.year2 = year2;
         player.nonHazard = nonHazard;
         player.nonHazardCharity = nonHazardCharity;
         player.currentWeek = currentWeek;
+        player.currentMap = currentMap;
+        player.mapWeapons = mapWeapons;
         return player;
       });
     };

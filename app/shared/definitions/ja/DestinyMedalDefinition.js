@@ -376,7 +376,7 @@ var DestinyMedalDefinition = {
   },
   "medalsEliminationWipeQuick": {
     "statName": "圧勝",
-    "statDescription": "チームの力を合わせ、ラウンド開始後30秒以内に敵を全滅させる。",
+    "statDescription": "ファイアチームとして、ラウンド開始後30秒以内に敵チームを全滅させる。",
     "iconImage": "/common/destiny_content/icons/icon_mc6d31ef5e788b733b1b3326dc23cd250.png"
   },
   "medalsEliminationWipeSolo": {

@@ -21,6 +21,10 @@
   background-image: linear-gradient(180deg, $bg 0%, darken($bg, 10%) 50%, lighten($bg, 1%) 100%);
 }
 
+@mixin tab-background-minor($bg) {
+  background-image: linear-gradient(180deg, $bg 0%, darken($bg, 2%) 50%, lighten($bg, 1%) 100%);
+}
+
 @mixin overlay-modifiers() {
   filter: blur(2px);
   pointer-events: none;

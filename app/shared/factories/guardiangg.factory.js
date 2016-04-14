@@ -1,11 +1,11 @@
 'use strict';
 
 function getGggTierByElo(elo) {
-  if (elo < 1100) return 'Bronze';
-  if (elo < 1300) return 'Silver';
-  if (elo < 1500) return 'Gold';
-  if (elo < 1700) return 'Platinum';
-  return 'Diamond';
+  if (elo < 1100) return 'bronze';
+  if (elo < 1300) return 'silver';
+  if (elo < 1500) return 'gold';
+  if (elo < 1700) return 'platinum';
+  return 'diamond';
 };
 
 function eloTier(playerElo, player, $filter) {

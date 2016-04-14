@@ -32,5 +32,14 @@
   "STAT_STRENGTH": "Fuerza",
   "STAT_ARMOR": "Armadura",
   "STAT_RECOVERY": "Recuperación",
-  "STAT_AGILITY": "Agilidad"
+  "STAT_AGILITY": "Agilidad",
+  "GuardianGG": {
+    "tiers": {
+      "bronze": "Bronce",
+      "silver": "Plata",
+      "gold": "Oro",
+      "platinum": "Platino",
+      "diamond": "Diamante"
+    }
+  }
 }
