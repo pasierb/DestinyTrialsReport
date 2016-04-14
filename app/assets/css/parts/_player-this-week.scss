@@ -26,6 +26,10 @@
 }
 
 .player-this-week__weapons {
+	img {
+		height: 1em;
+	}
+	
 	& + .player-this-week__weapons {
 		margin-top: .2em;
 	}
