@@ -6,7 +6,9 @@
 }
 
 .colofon__copyright {
-  font-size: 1.2em;
+  font-size: .9em;
+  line-height: 1.9;
+  white-space: nowrap;
   color: lighten($text-on-dark, 20%);
   flex-grow: 1;
 }
