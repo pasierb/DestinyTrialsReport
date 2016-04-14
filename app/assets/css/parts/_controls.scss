@@ -78,3 +78,9 @@ header {
     padding: .5em;
   }
 }
+
+@media all and (max-height: 909px) {
+  header {
+    flex-grow: 0;
+  }
+}
