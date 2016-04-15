@@ -118,11 +118,7 @@ angular.module('trialsReportApp')
 
           if (data.thisMapWeapons && data.thisMapWeapons[0]) {
             _.each(data.thisMapWeapons, function (weapon) {
-              mapWeapons.push({
-                itemTypeName: weapon.itemTypeName,
-                sum_kills: weapon.sum_kills,
-                sum_headshots: weapon.sum_headshots
-              });
+              mapWeapons.push(weapon);
             });
           }
         }
