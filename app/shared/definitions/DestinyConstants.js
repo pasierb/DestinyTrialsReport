@@ -247,6 +247,7 @@ var cooldownsMeleeB  = ['1:00', '0:55', '0:49', '0:42', '0:34', '0:25'];
 
 // Nodes hidden from weapon and armor stats
 var hiddenNodes = [
+  73039185,   // Blue Chroma
   74523350,   // Cannibalism
   193091484,  // Increase Strength
   213547364,  // Will of Light
@@ -254,10 +255,12 @@ var hiddenNodes = [
   300289986,  // Dreg Burn
   431265444,  // Mutineer
   472357138,  // Void Damage
+  519240296,  // White Chroma
   617082448,  // Reforge Ready
   643689081,  // Kinetic Damage
   994456416,  // Burgeoning Hunger
   1034209669, // Increase Intellect
+  1259277924, // Red Chroma
   1263323987, // Increase Discipline
   1270552711, // Infuse
   1305317488, // Aspect Swap
@@ -277,6 +280,7 @@ var hiddenNodes = [
   3575189929, // Hands-On
   3707521590, // Vandal Burn
   3742851299, // Lich Bane
+  3838454323, // Yellow Chroma
   3985040583, // Disciplinarian
   4197414939  // Inverse Shadow
 ];
