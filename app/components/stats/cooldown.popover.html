@@ -13,7 +13,7 @@
     </div>
     <div class="row" ng-if="!stat.tier">
       <div class="col-xs-12 stat">
-        <span ng-bind="(stat.percentage | number:2) + '%'"></span>
+        <span ng-bind="(stat.percentage | number:0) + '%'"></span>
         <label translate="{{stat.name}}"></label>
       </div>
     </div>
