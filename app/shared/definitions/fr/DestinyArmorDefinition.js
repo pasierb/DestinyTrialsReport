@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "« Le Remède »",
     "description": "« Nous avons une solution. » – Ikora Rey, pendant une session extraordinaire du Consensus",
-    "icon": "/common/destiny_content/icons/ed898878720462946189953111c961d8.png",
+    "icon": "/common/destiny_content/icons/24804753c64e03b87f358d94f066d3d3.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "« L'Imprenable »",
     "description": "« Pas le temps de jouer avec la serrure, faisons sauter le mur. »",
-    "icon": "/common/destiny_content/icons/2d90343226d7017ff50c93e39d9b78df.png",
+    "icon": "/common/destiny_content/icons/efe22e278ee92afff36cc4facbf95b50.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "« Regard constructif »",
     "description": "« La réalité est la plus cruelle des vérités. » – Dicton praxique",
-    "icon": "/common/destiny_content/icons/1a29388efba53ec95c13260a33f131a5.png",
+    "icon": "/common/destiny_content/icons/ecf2ba585671784b37121f7277bbe46e.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "« Mécanique inertielle »",
     "description": "« Je pense que le Voyageur et sa Lumière sont dérivés de technologies avancées. Je refuse de croire que cela me rend plus faible. »",
-    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
+    "icon": "/common/destiny_content/icons/6dc3f95fed31a047aa4c3178bd198df7.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "« Vérités cosmiques »",
     "description": "« Associer la Lumière à une existence physique comparable au proton ou même au neutrino est la preuve d'un esprit obtus. »",
-    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
+    "icon": "/common/destiny_content/icons/6dc3f95fed31a047aa4c3178bd198df7.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Brassard universel",
     "description": "Certains ordres prétendent que la Lumière et les Ténèbres peuvent être expliquées par la supersymétrie.",
-    "icon": "/common/destiny_content/icons/e1f30427b5f6ecc7db60ee2b38b5806a.png",
+    "icon": "/common/destiny_content/icons/c3a503296930c5c36cbd48b55af971b9.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Brassard de polarité",
     "description": "Certains ordres prétendent que la Lumière et les Ténèbres existent au-delà du monde tangible et suivent leur propre logique.",
-    "icon": "/common/destiny_content/icons/914ff66cf27bb8062fe1da8bda61cc3d.png",
+    "icon": "/common/destiny_content/icons/86212388dbdd31fa58dcd58d890b8bcd.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "« Le consumé »",
     "description": "« Il s'est approché de moi avec un couteau. J'ai donc tendu la main et l'ai transformé en cendres. »",
-    "icon": "/common/destiny_content/icons/a3477d4abfe78e7b1b1e4e517e811aa6.png",
+    "icon": "/common/destiny_content/icons/cd509e1fa281d88fefcba3e5a2d8ab98.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "« Chaos organisé »",
     "description": "« Contrôlez l'espace et le temps. La matière et l'énergie suivront. »",
-    "icon": "/common/destiny_content/icons/07eba033bbc8362611ea80ff97163119.png",
+    "icon": "/common/destiny_content/icons/706acd7b83d8354673443f20af9b1a42.png",
     "tierType": 4
   },
   "4187254944": {

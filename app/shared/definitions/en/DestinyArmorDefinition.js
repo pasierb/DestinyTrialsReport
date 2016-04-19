@@ -5890,19 +5890,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"The Cure\"",
     "description": "\"We have a solution.\" - Ikora Rey, in an emergency session of the City Consensus",
-    "icon": "/common/destiny_content/icons/ed898878720462946189953111c961d8.png",
+    "icon": "/common/destiny_content/icons/24804753c64e03b87f358d94f066d3d3.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"The Unconquerable\"",
     "description": "\"Let's stop thinking about how to open the lock and start thinking about removing the wall.\"",
-    "icon": "/common/destiny_content/icons/2d90343226d7017ff50c93e39d9b78df.png",
+    "icon": "/common/destiny_content/icons/efe22e278ee92afff36cc4facbf95b50.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Born of Sight\"",
     "description": "\"Reality is the most ruthless analyst.\" - Praxic saying",
-    "icon": "/common/destiny_content/icons/1a29388efba53ec95c13260a33f131a5.png",
+    "icon": "/common/destiny_content/icons/ecf2ba585671784b37121f7277bbe46e.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8578,13 +8578,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Inertia Engine\"",
     "description": "\"I believe that the Traveler and its Light are advanced technology. I refuse to accept that this diminishes me.\"",
-    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
+    "icon": "/common/destiny_content/icons/6dc3f95fed31a047aa4c3178bd198df7.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Cosmic Truths\"",
     "description": "\"To bind Light into the same framework as the proton or the mere neutrino is an act of close-minded hubris.\"",
-    "icon": "/common/destiny_content/icons/9a8ae61b3debb8097d68c489e9e03472.png",
+    "icon": "/common/destiny_content/icons/6dc3f95fed31a047aa4c3178bd198df7.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11194,13 +11194,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Bond of the Universal",
     "description": "Some orders argue that Light and Darkness can be explained in the context of supersymmetric physics.",
-    "icon": "/common/destiny_content/icons/e1f30427b5f6ecc7db60ee2b38b5806a.png",
+    "icon": "/common/destiny_content/icons/c3a503296930c5c36cbd48b55af971b9.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Bond of Polarity",
     "description": "Some orders believe that Light and Darkness exist beyond the merely material, with a logic of their own.",
-    "icon": "/common/destiny_content/icons/914ff66cf27bb8062fe1da8bda61cc3d.png",
+    "icon": "/common/destiny_content/icons/86212388dbdd31fa58dcd58d890b8bcd.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11284,7 +11284,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"The Gone\"",
     "description": "\"He came at me with a knife. I put out my hand and - just so - made him into ash.\"",
-    "icon": "/common/destiny_content/icons/a3477d4abfe78e7b1b1e4e517e811aa6.png",
+    "icon": "/common/destiny_content/icons/cd509e1fa281d88fefcba3e5a2d8ab98.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13810,7 +13810,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Trained Chaos\"",
     "description": "\"Control space and time. Mere matter and energy will follow.\"",
-    "icon": "/common/destiny_content/icons/07eba033bbc8362611ea80ff97163119.png",
+    "icon": "/common/destiny_content/icons/706acd7b83d8354673443f20af9b1a42.png",
     "tierType": 4
   },
   "4187254944": {
