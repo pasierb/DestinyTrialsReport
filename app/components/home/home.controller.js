@@ -224,6 +224,31 @@
       $scope.focusOnPlayer = Math.min(3, Math.max(1, $scope.focusOnPlayer + Math.floor(window.innerWidth / 320) * direction));
     };
 
+    $scope.isMultiMap = function (week) {
+      var isMulti = false;
+      if (!week) {
+        week = $localStorage.currentMap.week;
+      }
+      if (week == 23 ||
+        week == 26) {
+        isMulti = true;
+      }
+      return isMulti;
+    };
+
+    $scope.multiMapList = function (week) {
+      var list;
+      if (!week) {
+        week = $localStorage.currentMap.week;
+      }
+      if (week == 23) {
+        list = "Burning Shrine<br>Widow's Court<br>Asylum<br>Rusted Lands<br>Pantheon";
+      } else if (week == 26) {
+        list = "Exodus Blue<br>Widow's Court<br>Frontier<br>Rusted Lands<br>Bannerfall<br>Twilight Gap";
+      }
+      return list;
+    };
+
     function setCurrentMap(id, week) {
       $scope.currentMapId = id;
       $scope.currentMap = DestinyCrucibleMapDefinition[id];

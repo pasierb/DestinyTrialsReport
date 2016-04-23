@@ -1,5 +1,5 @@
 <div class="header__content shadow-z-2">
-  <div class="title-bar" ng-class="{'is-week-23': $storage.currentMap.week == 23}" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
+  <div class="title-bar" ng-class="{'is-week-23': isMultiMap()}" ng-style="{'background-image': (isMultiMap() ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
     <div class="title-bar__content">
       <div class="title-bar__title">
         <a href="/" target="_self">
@@ -75,25 +75,25 @@
     </div>
   </div>
 
-  <div class="controls-map" ng-class="{'is-week-23': $storage.currentMap.week == 23}" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
+  <div class="controls-map" ng-class="{'is-week-23': isMultiMap()}" ng-style="{'background-image': (isMultiMap() ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
-        <span ng-bind="$storage.currentMap.week == 23 ? 'Assorted Playlist' : currentMap.name"></span>
+        <span ng-bind="isMultiMap() ? 'Assorted Playlist' : currentMap.name"></span>
         <span class="map-cycle-popover"
-              ng-if="$storage.currentMap.week == 23"
+              ng-if="isMultiMap()"
               title="Maps in cycle"
-              data-content="Burning Shrine<br>Widow's Court<br>Asylum<br>Rusted Lands<br>Pantheon"
+              data-content="{{multiMapList()}}"
               bs-popover
           >
           <i class="material-icons icon--small">&#xE148;</i>
         </span>
         <label ng-bind="(trialsInProgress ? 'This week' : 'Last week') + '\'s map'"></label>
       </div>
-      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.heatmapImage"
+      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.heatmapImage && !isMultiMap()"
               data-template-url="shared/modals/heatmap.modal.html" bs-modal>
         Heatmap
       </button>
-      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.mapImage"
+      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.mapImage && !isMultiMap()"
               data-template-url="shared/modals/map.modal.html" bs-modal>
         Overview
       </button>
