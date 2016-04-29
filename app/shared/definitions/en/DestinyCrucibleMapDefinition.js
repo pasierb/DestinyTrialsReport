@@ -79,7 +79,8 @@ var DestinyCrucibleMapDefinition = {
   },
   "3277621970": {
     "name": "The Timekeeper",
-    "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/timekeeper.jpg"
+    "pgcrImage": "https://www.bungie.net/img/theme/destiny/bgs/pgcrs/timekeeper.jpg",
+    "mapImage": "/assets/img/maps/the_timekeeper.jpg"
   },
   "3292667877": {
     "name": "Asylum",
