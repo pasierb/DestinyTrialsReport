@@ -224,29 +224,25 @@
       $scope.focusOnPlayer = Math.min(3, Math.max(1, $scope.focusOnPlayer + Math.floor(window.innerWidth / 320) * direction));
     };
 
-    $scope.isMultiMap = function (week) {
-      var isMulti = false;
-      if (!week) {
-        week = $localStorage.currentMap.week;
-      }
-      if (week == 23 ||
-        week == 26) {
-        isMulti = true;
-      }
-      return isMulti;
+    $scope.isPlaylist = function (week) {
+      if (!week) week = $localStorage.currentMap.week;
+      return playlists.hasOwnProperty(week);
     };
 
-    $scope.multiMapList = function (week) {
-      var list;
-      if (!week) {
-        week = $localStorage.currentMap.week;
+    $scope.getPlaylistHeader = function (week) {
+      if (!week) week = $localStorage.currentMap.week;
+      return playlists[week].header;
+    };
+
+    $scope.getPlaylistPopover = function (week) {
+      if (!week) week = $localStorage.currentMap.week;
+      var list = [];
+      var count = playlists[week].maps.length;
+      for (var i=0; i<count; i++) {
+        var id = playlists[week].maps[i];
+        list.push(DestinyCrucibleMapDefinition[id].name);
       }
-      if (week == 23) {
-        list = "Burning Shrine<br>Widow's Court<br>Asylum<br>Rusted Lands<br>Pantheon";
-      } else if (week == 26) {
-        list = "Exodus Blue<br>Widow's Court<br>Frontier<br>Rusted Lands<br>Bannerfall<br>Twilight Gap";
-      }
-      return list;
+      return list.join('<br />');
     };
 
     function setCurrentMap(id, week) {

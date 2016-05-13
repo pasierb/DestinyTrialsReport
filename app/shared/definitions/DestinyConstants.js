@@ -284,3 +284,28 @@ var hiddenNodes = [
   3985040583, // Disciplinarian
   4197414939  // Inverse Shadow
 ];
+
+// Playlists
+var playlists = {
+  23: {
+    header: '/assets/img/maps/week23.jpg',
+    maps: [
+      284635225,  // The Burning Shrine
+      2332037858, // Widow's Court
+      3292667877, // Asylum
+      4107311671, // Rusted Lands
+      4260139097  // Pantheon
+    ]
+  },
+  26: {
+    header: '/assets/img/maps/week23.jpg',
+    maps: [
+      2332037858, // Widow's Court
+      2507231345, // Frontier
+      3602734434, // Bannerfall
+      3817155567, // Twilight Gap
+      4107311671, // Rusted Lands
+      4287936726  // Exodus Blue
+    ]
+  }
+};
