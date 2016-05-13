@@ -12,9 +12,11 @@
         name
       ).then(function (result) {
           var response;
+          var resLength;
           if (result && result.data && result.data.Response) {
-            if (result.data.Response.length > 0) {
-              response = result.data.Response[0];
+            resLength = result.data.Response.length;
+            if (resLength > 0) {
+              response = result.data.Response[resLength - 1];
               return response;
             } else {
               if (retried) {
