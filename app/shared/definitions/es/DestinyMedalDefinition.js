@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "Completa una partida de Grieta como portador 2 o más veces  y prendiendo la grieta el 100% de las veces.",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "Armado y peligroso",
-    "statDescription": "Derrota a 5 guardianes en una sola carrera con armamento.",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "Denegado.",
     "statDescription": "Derrota a un enemigo portador del chispazo cerca de la Grieta.",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "¡... Y no te levantes!",
     "statDescription": "Derrota a un hechicero en los 3 primeros segundos tras revivirte con Radiancia.",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "El golpe",
-    "statDescription": "Toma el armamento después de derrotar a su portador.",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Abre un camino",

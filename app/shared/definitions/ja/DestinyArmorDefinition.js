@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "「ザ・キュア」",
     "description": "「解決策がある」 - イコラ・レイ、シティの総意による緊急会議にて",
-    "icon": "/common/destiny_content/icons/7507e2d75eaa459ddcc8a480873ee49b.png",
+    "icon": "/common/destiny_content/icons/df56e71147b020c92f8c0d28d384401d.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "「征服不可能」",
     "description": "「ロックの解除方法を考えるのはもうやめて、壁ごと外すことを考えよう」",
-    "icon": "/common/destiny_content/icons/4eaf6ca96533e3ecbf2e2313394e473d.png",
+    "icon": "/common/destiny_content/icons/2599121ae1359d644a2fc8ca1c143bcd.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "「サイト生まれ」",
     "description": "「現実とは、最も容赦のない分析者だ」 - プラクシックの格言",
-    "icon": "/common/destiny_content/icons/0381447170184bdbe203f438240b0ff4.png",
+    "icon": "/common/destiny_content/icons/9d97f674cb6cd7040fa3db191b756106.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "「内部エンジン」",
     "description": "「トラベラーとその光は高度な技術だと思う。それによって自分の力が弱まるなんて認めるつもりはない」",
-    "icon": "/common/destiny_content/icons/88031d1923aae5e77055374559cc5ca8.png",
+    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "「宇宙の真実」",
     "description": "「光をプロトンや単なるニュートリノと同じフレームワークに固定することは狭量な思い上がりだ」",
-    "icon": "/common/destiny_content/icons/88031d1923aae5e77055374559cc5ca8.png",
+    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "宇宙のバンド",
     "description": "オーダーの中には光と暗黒は超対称性物理学で説明が付くという者がいる。",
-    "icon": "/common/destiny_content/icons/7679c7167b0e5e137e00b9c7e4c3545b.png",
+    "icon": "/common/destiny_content/icons/f7231f79d28bc6ee1203549d7ac976f5.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "両極性のバンド",
     "description": "オーダーの中には光と暗黒が独自の理論で、単純な物質世界を越えたところに存在していると信じている者がいる。",
-    "icon": "/common/destiny_content/icons/74f2af6d28818444e872fe4bdd72fe72.png",
+    "icon": "/common/destiny_content/icons/3906978e6446842b5839141e916047cf.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "「去った者」",
     "description": "「ナイフを突きつけられたから手を出して… 慎重に… 灰にしてやった」",
-    "icon": "/common/destiny_content/icons/1110123409308af5a940fc8e98b8495a.png",
+    "icon": "/common/destiny_content/icons/7ec5357315ccb7ab34797289624bf19b.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "「熟練のカオス」",
     "description": "「空間と時間を操れ。物質とエネルギーが僅かに流れる」",
-    "icon": "/common/destiny_content/icons/78f88d0cc69a7fbfa08f0f8df217460e.png",
+    "icon": "/common/destiny_content/icons/e0867b5a595723fcd4a04c6ff38bf567.png",
     "tierType": 4
   },
   "4187254944": {

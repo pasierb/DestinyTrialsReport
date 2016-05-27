@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "Terminez une partie en mode Faille en ayant porté l'étincelle au moins 2 fois et avec un taux de capture de 100 %.",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "Danger ambulant",
-    "statDescription": "Éliminez 5 Gardiens pendant un seul transport d'armement.",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "Interruption",
     "statDescription": "Éliminez un porteur d'étincelle adverse près de la faille.",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "Reste à terre !",
     "statDescription": "Éliminez un Arcaniste dans les 3 secondes qui suivent votre utilisation de Radiance pour vous auto-réanimer.",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "Braquage",
-    "statDescription": "Emparez-vous de l'armement après avoir éliminé le Gardien qui le portait précédemment.",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Voie libérée",

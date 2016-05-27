@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "運んだ回数2回以上、奪取率100%で暁光の対戦を完了させる。",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "古代人の力",
-    "statDescription": "1回のアーティファクト・ランでガーディアンを5人倒す。",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "拒絶！",
     "statDescription": "暁光の近くにいる敵のスパークの運び屋を倒す。",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "起き上がるな！",
     "statDescription": "ラディエンスで自己蘇生したウォーロックを3秒以内に倒す。",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "強奪",
-    "statDescription": "アーティファクトの所有者を倒して、それを奪う。",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "道を開けろ",

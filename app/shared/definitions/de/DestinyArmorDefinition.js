@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "„Die Heilung“",
     "description": "„Wir haben eine Lösung.“ - Ikora Rey, in einer Krisensitzung des Konsens",
-    "icon": "/common/destiny_content/icons/7507e2d75eaa459ddcc8a480873ee49b.png",
+    "icon": "/common/destiny_content/icons/df56e71147b020c92f8c0d28d384401d.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "„Der Unbesiegbare“",
     "description": "„Denken wir nicht darüber nach, wie man das Schloss öffnen kann, sondern darüber, wie man die Mauer einreißen kann.“",
-    "icon": "/common/destiny_content/icons/4eaf6ca96533e3ecbf2e2313394e473d.png",
+    "icon": "/common/destiny_content/icons/2599121ae1359d644a2fc8ca1c143bcd.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "„Sichtgeboren“",
     "description": "„Die Realität ist die unbarmherzigste Analyse.“ - Praxianisches Sprichwort",
-    "icon": "/common/destiny_content/icons/0381447170184bdbe203f438240b0ff4.png",
+    "icon": "/common/destiny_content/icons/9d97f674cb6cd7040fa3db191b756106.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "„Trägheitsmotor“",
     "description": "„Ich glaube, dass der Reisende und sein Licht nichts anderes als fortschrittliche Technologien sind. Ich weigere mich zu akzeptieren, dass mich das herabsetzt.“",
-    "icon": "/common/destiny_content/icons/88031d1923aae5e77055374559cc5ca8.png",
+    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "„Kosmische Wahrheiten“",
     "description": "„Das Licht im selben Rahmen sehen zu wollen wie das Proton oder gar das Neutrino, ist ein Akt von engstirniger Arroganz.“",
-    "icon": "/common/destiny_content/icons/88031d1923aae5e77055374559cc5ca8.png",
+    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Reif des Universellen",
     "description": "Einige Orden behaupten, dass Licht und Dunkelheit im Kontext der supersymmetrischen Physik erklärt werden können.",
-    "icon": "/common/destiny_content/icons/7679c7167b0e5e137e00b9c7e4c3545b.png",
+    "icon": "/common/destiny_content/icons/f7231f79d28bc6ee1203549d7ac976f5.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Reif der Polarität",
     "description": "Einige Orden glauben, dass Licht und Dunkelheit auch abseits des Materiellen bestehen und einer eigenen Logik unterliegen.",
-    "icon": "/common/destiny_content/icons/74f2af6d28818444e872fe4bdd72fe72.png",
+    "icon": "/common/destiny_content/icons/3906978e6446842b5839141e916047cf.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "„Der Vergangene“",
     "description": "„Er hat mich mit einem Messer angefallen. Ich streckte meine Hand aus ... und er zerfiel zu Asche.“",
-    "icon": "/common/destiny_content/icons/1110123409308af5a940fc8e98b8495a.png",
+    "icon": "/common/destiny_content/icons/7ec5357315ccb7ab34797289624bf19b.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "„Trainiertes Chaos“",
     "description": "„Kontrolliere Raum und Zeit. Materie und Energie werden folgen.“",
-    "icon": "/common/destiny_content/icons/78f88d0cc69a7fbfa08f0f8df217460e.png",
+    "icon": "/common/destiny_content/icons/e0867b5a595723fcd4a04c6ff38bf567.png",
     "tierType": 4
   },
   "4187254944": {

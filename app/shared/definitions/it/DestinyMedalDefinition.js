@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "Completa una partita di Frattura come corridore per 2 o più volte e innescando la frattura il 100% delle volte.",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "Armati e Pericolosi",
-    "statDescription": "Abbatti 5 guardiani in una singola corsa con l'armamento.",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "Accesso negato",
     "statDescription": "Abbatti un corridore nemico vicino alla frattura.",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "... Rimani a terra!",
     "statDescription": "Abbatti uno stregone in 3 secondi dalla sua rianimazione con Radianza.",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "Furto",
-    "statDescription": "Prendi l'armamento dopo aver sconfitto il precedente portatore.",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Via libera",

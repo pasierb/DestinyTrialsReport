@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "Complete a Rift match with 2 or more carries and a 100% capture rate.",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "Armed and Dangerous",
-    "statDescription": "Defeat 5 opposing Guardians in a single Armament run.",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "Denied",
     "statDescription": "Defeat an enemy Spark Runner near the Rift.",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "...And Stay Down!",
     "statDescription": "Defeat a Warlock within 3 seconds of their self-reviving with Radiance.",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "The Heist",
-    "statDescription": "Take the Armament after defeating its previous carrier.",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Clear a Path",

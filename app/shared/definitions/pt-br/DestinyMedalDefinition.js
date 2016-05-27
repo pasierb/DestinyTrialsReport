@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "Complete uma partida de Fissura com 2 ou mais portes e uma taxa de captura de 100%.",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "Armado e Perigoso",
-    "statDescription": "Derrote 5 Guardiões em um único porte do armamento.",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "Negado",
     "statDescription": "Derrote um portador da centelha inimigo perto da fissura.",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "...Não Mandei Levantar!",
     "statDescription": "Derrote um Arcano dentro de 3 segundos após ele se reviver com o Resplendor.",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "O Latrocínio",
-    "statDescription": "Pegue o armamento após derrotar o seu antigo portador.",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Abrindo Caminho",

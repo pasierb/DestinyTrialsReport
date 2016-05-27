@@ -419,11 +419,6 @@ var DestinyMedalDefinition = {
     "statDescription": "Schließe ein Rift-Match mit 2-mal oder mehr Kriegsgerät-Besitz und 100%iger Eroberungsrate ab.",
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
-  "medalsArtifactKillSpree": {
-    "statName": "Bewaffnet und gefährlich",
-    "statDescription": "Besiege 5 Hüter in einem einzigen Kriegsgerät-Lauf.",
-    "iconImage": "/common/destiny_content/icons/icon_m6ce460f071bd845b703bda41d4cda83c.png"
-  },
   "medalsSingularityFlagHolderKilledClose": {
     "statName": "Verweigert",
     "statDescription": "Besiege einen gegnerischen Funkenläufer nahe des Rifts.",
@@ -468,11 +463,6 @@ var DestinyMedalDefinition = {
     "statName": "... und bleib unten!",
     "statDescription": "Besiege einen Warlock in den ersten 3 Sekunden der Selbst-Wiederbelebung mit Erleuchten.",
     "iconImage": "/common/destiny_content/icons/icon_m7a1ba4190b056693e497d1ac1e05d6b2.png"
-  },
-  "medalsArtifactHeist": {
-    "statName": "Der Raub",
-    "statDescription": "Nimm das Kriegsgerät an dich, nachdem du den vorherigen Besitzer besiegt hast.",
-    "iconImage": "/common/destiny_content/icons/icon_me9f4d46fdb3f511e9b0ee04afdcdc37a.png"
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Pfad räumen",
