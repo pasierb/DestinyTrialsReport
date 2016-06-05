@@ -12,6 +12,7 @@
       </div>
       <div class="col-xs-4 stat">
         <span ng-bind="player.ggg.seasonOneElo | number:0"></span>
+        <span ng-if="!player.ggg.seasonOneElo">N/A</span>
         <label translate="SEASON1"></label>
       </div>
     </div>

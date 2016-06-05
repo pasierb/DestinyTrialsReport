@@ -35,6 +35,35 @@ angular.module('trialsReportApp')
           });
           eloTier(playerElo, player, $filter);
           return player;
+        }).then(function (player) {
+          return guardianGG.getSeasonOne(player.membershipId)
+          .then(function (elo) {
+            if (elo && elo.data && elo.data.data) {
+              var seasonElo = _.find(elo.data.data, function (arr) {
+              return arr.mode === 14;
+            });
+            if (seasonElo) {
+              player.ggg.seasonOneElo = seasonElo.elo;
+            }
+            return player;
+            }
+          })
+        }).catch(function () {});
+    };
+
+    var getSeasonOne = function (player) {
+      return guardianGG.getSeasonOne(player.membershipId)
+        .then(function (elo) {
+          console.log(elo)
+          if (elo && elo.data && elo.data.data) {
+            var seasonElo = _.find(elo.data.data, function (arr) {
+            return arr.mode === 14;
+          });
+          if (seasonElo) {
+            player.ggg.seasonOneElo = seasonElo.elo;
+          }
+          return player;
+          }
         }).catch(function () {});
     };
 
@@ -84,6 +113,7 @@ angular.module('trialsReportApp')
     return {
       getElo: getElo,
       getTeamElo: getTeamElo,
+      getSeasonOne: getSeasonOne,
       getFireteam: getFireteam,
       getWeapons: getWeapons
     };

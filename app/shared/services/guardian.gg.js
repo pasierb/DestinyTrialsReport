@@ -11,6 +11,7 @@ app.service('guardianGG', [
       var BASE_URL = 'https://api.guardian.gg/';
       var ENDPOINTS = {
         getElo: 'elo/{membershipId}',
+        getSeasonOne: 'v2/players/{membershipId}/seasons',
         getMap: 'dtr/trials-map',
         getTeamElo: 'dtr/elo?alpha={teamArray}',
         getFireteam: 'fireteam/{mode}/{membershipId}',
@@ -20,6 +21,12 @@ app.service('guardianGG', [
 
       this.getElo = function(membershipId) {
         return this.get(ENDPOINTS.getElo, {
+          membershipId: membershipId
+        });
+      };
+
+      this.getSeasonOne = function(membershipId) {
+        return this.get(ENDPOINTS.getSeasonOne, {
           membershipId: membershipId
         });
       };
