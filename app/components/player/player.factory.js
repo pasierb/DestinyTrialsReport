@@ -54,7 +54,10 @@ function setStatPercentage(player) {
     for (var s = 0; s < stats.length; s++) {
       var statHash = {};
       statHash.name = stats[s];
-      statHash.value = player.characterInfo.stats[stats[s]].value;
+      statHash.value = 0;
+      if (player.characterInfo.stats[stats[s]]) {
+        statHash.value = player.characterInfo.stats[stats[s]].value
+      }
 
       if (statsWithTiers.indexOf(stats[s]) > -1) {
         statHash.normalized = statHash.value > 300 ? 300 : statHash.value;

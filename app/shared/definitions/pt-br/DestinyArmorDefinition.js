@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"A Cura\"",
     "description": "\"Temos uma solução.\" - Ikora Rey em uma sessão de emergância do Consenso da Cidade",
-    "icon": "/common/destiny_content/icons/df56e71147b020c92f8c0d28d384401d.png",
+    "icon": "/common/destiny_content/icons/4ef41c0101e905aa85595f8f4648f4a3.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"O Inconquistável\"",
     "description": "\"Vamos parar de pensar em como abrir a fechadura e começar a pensar em como remover a parede.\"",
-    "icon": "/common/destiny_content/icons/2599121ae1359d644a2fc8ca1c143bcd.png",
+    "icon": "/common/destiny_content/icons/92e2817face85e19aa35024f93bf70fa.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nascido da Visão\"",
     "description": "\"A realidade é o analista mais impiedoso.\" - Ditado Prático",
-    "icon": "/common/destiny_content/icons/9d97f674cb6cd7040fa3db191b756106.png",
+    "icon": "/common/destiny_content/icons/d8767abc9cac46fdc3fbaebeee7ce789.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motor Inercial\"",
     "description": "\"Acredito que o Viajante e a sua Luz são tecnologia avançada. Recuso-me a aceitar que isso me diminui.\"",
-    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
+    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verdades Cósmicas\"",
     "description": "\"Prender a Luz no mesmo molde do próton, o de um mero neutrino, é um ato de húbris.\"",
-    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
+    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Voto Universal",
     "description": "Algumas ordens postulam que a Luz e a Treva podem ser explicadas no contexto da física de supersimetria.",
-    "icon": "/common/destiny_content/icons/f7231f79d28bc6ee1203549d7ac976f5.png",
+    "icon": "/common/destiny_content/icons/992fb49048b823a304124a6ac9aaf9a8.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Voto da Polaridade",
     "description": "Algumas ordens acreditam que a Luz e a Treva existem além do mundo meramente material, com uma lógica própria.",
-    "icon": "/common/destiny_content/icons/3906978e6446842b5839141e916047cf.png",
+    "icon": "/common/destiny_content/icons/9ff3937068ed34083fa917f25cc35daf.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"O Desaparecido\"",
     "description": "\"Ele me atacou com uma faca. Estiquei a minha mão e, assim, o transformei em cinzas.\"",
-    "icon": "/common/destiny_content/icons/7ec5357315ccb7ab34797289624bf19b.png",
+    "icon": "/common/destiny_content/icons/be9a3baf1e1a5ecb28058e0cc0ecd07d.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos Treinado\"",
     "description": "\"Controle o espaço-tempo. Matéria e energia se seguirão.\"",
-    "icon": "/common/destiny_content/icons/e0867b5a595723fcd4a04c6ff38bf567.png",
+    "icon": "/common/destiny_content/icons/4e3568069d4344bdf40068742fce424e.png",
     "tierType": 4
   },
   "4187254944": {

@@ -1341,7 +1341,7 @@ var DestinyArmorDefinition = {
   },
   "327933421": {
     "name": "Corona rota",
-    "description": "Las canciones de Eliksni hablan de Chelchis, kell de piedra, que se alzó ante las Fauces.",
+    "description": "Las canciones de los elixni hablan de Chelchis, kell de piedra, que se alzó ante las Fauces.",
     "icon": "/common/destiny_content/icons/2255e9345d53a2b54090d038e0dc5086.jpg",
     "tierType": 5
   },
@@ -5270,7 +5270,7 @@ var DestinyArmorDefinition = {
     "tierType": 4
   },
   "1619609940": {
-    "name": "La picadura de Khepri's",
+    "name": "La picadura de Khepri",
     "description": "La herida no es profunda, pero ahí está... y eso es lo que importa.",
     "icon": "/common/destiny_content/icons/4503b1e7a2af17c042438194a5c04746.jpg",
     "tierType": 6
@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"La Cura\"",
     "description": "\"Tenemos una solución\". (Ikora Rey, en una sesión de emergencia del Consenso de la Ciudad)",
-    "icon": "/common/destiny_content/icons/df56e71147b020c92f8c0d28d384401d.png",
+    "icon": "/common/destiny_content/icons/4ef41c0101e905aa85595f8f4648f4a3.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"El inconquistable\"",
     "description": "\"Dejemos de pensar en cómo abrir la cerradura y empecemos a pensar en quitar la pared\".",
-    "icon": "/common/destiny_content/icons/2599121ae1359d644a2fc8ca1c143bcd.png",
+    "icon": "/common/destiny_content/icons/92e2817face85e19aa35024f93bf70fa.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nacido de la vista\"",
     "description": "\"La realidad es el analista más despiadado\". (Dicho práxico)",
-    "icon": "/common/destiny_content/icons/9d97f674cb6cd7040fa3db191b756106.png",
+    "icon": "/common/destiny_content/icons/d8767abc9cac46fdc3fbaebeee7ce789.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8312,13 +8312,13 @@ var DestinyArmorDefinition = {
     "tierType": 2
   },
   "2549035182": {
-    "name": "Hebras de vacío oscuro gradadas",
+    "name": "Suelas de vacío oscuro gradadas",
     "description": "\"Incluso ahora, las hijas de Oryx tejen negras palabras plagadas para vincular su reino al nuestro\". (Eris Morn)",
     "icon": "/common/destiny_content/icons/d90ed55f674779b72dfc919d667db394.jpg",
     "tierType": 5
   },
   "2549035183": {
-    "name": "Hebras de vacío oscuro",
+    "name": "Suelas de vacío oscuro",
     "description": "\"Incluso ahora, las hijas de Oryx tejen negras palabras plagadas para vincular su reino al nuestro\". (Eris Morn)",
     "icon": "/common/destiny_content/icons/a7006bf7509d3b5c974121f14afa766e.jpg",
     "tierType": 5
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motor de inercia\"",
     "description": "\"Creo que el Viajero y su Luz son una tecnología avanzada. Me niego a aceptar que eso me rebaje como persona\".",
-    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
+    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verdades cósmicas\"",
     "description": "\"Equiparar la naturaleza de la Luz a la del protón o el humilde neutrino es un acto de soberbia cerrazón\".",
-    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
+    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Banda de lo universal",
     "description": "Algunas órdenes sostienen que la Luz y la Oscuridad pueden explicarse en el contexto de la física de supersimetría.",
-    "icon": "/common/destiny_content/icons/f7231f79d28bc6ee1203549d7ac976f5.png",
+    "icon": "/common/destiny_content/icons/992fb49048b823a304124a6ac9aaf9a8.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Banda de polaridad",
     "description": "Algunas órdenes creen que la Luz y la Oscuridad existen más allá del plano material, y que tienen su propia lógica.",
-    "icon": "/common/destiny_content/icons/3906978e6446842b5839141e916047cf.png",
+    "icon": "/common/destiny_content/icons/9ff3937068ed34083fa917f25cc35daf.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"Los desaparecidos\"",
     "description": "\"Vino a mí con un cuchillo. Alargué la mano y, sin más, lo convertí en ceniza\".",
-    "icon": "/common/destiny_content/icons/7ec5357315ccb7ab34797289624bf19b.png",
+    "icon": "/common/destiny_content/icons/be9a3baf1e1a5ecb28058e0cc0ecd07d.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos controlado\"",
     "description": "\"Controla el espacio y el tiempo. Lo siguiente es la materia y la energía\".",
-    "icon": "/common/destiny_content/icons/e0867b5a595723fcd4a04c6ff38bf567.png",
+    "icon": "/common/destiny_content/icons/4e3568069d4344bdf40068742fce424e.png",
     "tierType": 4
   },
   "4187254944": {

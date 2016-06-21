@@ -420,8 +420,8 @@ var DestinyMedalDefinition = {
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
   "medalsSingularityFlagHolderKilledClose": {
-    "statName": "Interruption",
-    "statDescription": "Éliminez un porteur d'étincelle adverse près de la faille.",
+    "statName": "Accès refusé",
+    "statDescription": "Éliminez un Porteur d'étincelle adverse près de la faille.",
     "iconImage": "/common/destiny_content/icons/icon_m749cc44215ecc39fe3d0a5493d78e34a.png"
   },
   "medalsActivityCompleteCycle": {
@@ -451,7 +451,7 @@ var DestinyMedalDefinition = {
   },
   "medalsSingularityFlagHolderKilledMulti": {
     "statName": "Pion inflexible",
-    "statDescription": "Éliminez le porteur d'étincelle adverse à trois reprises pendant une seule partie.",
+    "statDescription": "Éliminez le Porteur d'étincelle adverse à trois reprises pendant une seule partie.",
     "iconImage": "/common/destiny_content/icons/icon_m02a734da81d66414c55e3f267658b47c.png"
   },
   "medalsWeaponSwordKillSpree": {
@@ -466,7 +466,7 @@ var DestinyMedalDefinition = {
   },
   "medalsSingularityRunnerDefenseMulti": {
     "statName": "Voie libérée",
-    "statDescription": "Pendant un seul transport d'étincelle, éliminez 2 ennemis qui attaquent votre porteur.",
+    "statDescription": "Pendant un seul transport d'étincelle, éliminez 2 ennemis qui attaquent votre Porteur.",
     "iconImage": "/common/destiny_content/icons/icon_m36ae16c5a210ed1a3d377f38f94540a1.png"
   },
   "medalsWeaponAutoRifleKillSpree": {

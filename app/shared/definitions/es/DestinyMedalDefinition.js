@@ -420,7 +420,7 @@ var DestinyMedalDefinition = {
     "iconImage": "/common/destiny_content/icons/icon_mf41a75c0811f5592673f77d1a888b3e8.png"
   },
   "medalsSingularityFlagHolderKilledClose": {
-    "statName": "Denegado.",
+    "statName": "Denegado",
     "statDescription": "Derrota a un enemigo portador del chispazo cerca de la Grieta.",
     "iconImage": "/common/destiny_content/icons/icon_m749cc44215ecc39fe3d0a5493d78e34a.png"
   },

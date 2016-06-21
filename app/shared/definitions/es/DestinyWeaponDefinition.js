@@ -5228,7 +5228,7 @@ var DestinyWeaponDefinition = {
     "tierType": 5
   },
   "4049432596": {
-    "name": "Hebras en las Estrellas",
+    "name": "Pisadas en las Estrellas",
     "icon": "/common/destiny_content/icons/d884eccdd634691139fba43c8890d256.jpg",
     "subType": 14,
     "tierType": 5

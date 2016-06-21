@@ -243,7 +243,7 @@ var DestinyArmorDefinition = {
   },
   "42867523": {
     "name": "アイアンブリード・スリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/751702bb912ed5dd82992516b2d94e6e.jpg",
     "tierType": 5
   },
@@ -351,7 +351,7 @@ var DestinyArmorDefinition = {
   },
   "82944038": {
     "name": "鉄の友のプレート",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/8097cac5a8cf3a97362896b3e283ae0d.jpg",
     "tierType": 5
   },
@@ -1359,7 +1359,7 @@ var DestinyArmorDefinition = {
   },
   "333467661": {
     "name": "アイアンブリード・ベスト",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/e560974bbb350a1578aac055b4c0df36.jpg",
     "tierType": 5
   },
@@ -1503,13 +1503,13 @@ var DestinyArmorDefinition = {
   },
   "391890850": {
     "name": "アイアンレガリア・グローブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/a030cc107fcc15da6111821c2caaa9bd.jpg",
     "tierType": 5
   },
   "391890851": {
     "name": "セブンのグローブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/a030cc107fcc15da6111821c2caaa9bd.jpg",
     "tierType": 5
   },
@@ -1635,7 +1635,7 @@ var DestinyArmorDefinition = {
   },
   "443208337": {
     "name": "アイアンブリード・プレート",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/19d3b1427d8c3ef32d0e920f5d18073c.jpg",
     "tierType": 5
   },
@@ -2061,7 +2061,7 @@ var DestinyArmorDefinition = {
   },
   "541785999": {
     "name": "アイアンレガリア・グローブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/14893d9a972cbee4be2f3e113024ecab.jpg",
     "tierType": 5
   },
@@ -2115,7 +2115,7 @@ var DestinyArmorDefinition = {
   },
   "554244708": {
     "name": "鉄の友のベスト",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/9eca64683fa215b35280d6fa8012ac2f.jpg",
     "tierType": 5
   },
@@ -2391,7 +2391,7 @@ var DestinyArmorDefinition = {
   },
   "651478697": {
     "name": "アイアンブリード・グリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/35804fe85ab29abffb335d9ffdab1143.jpg",
     "tierType": 5
   },
@@ -2577,7 +2577,7 @@ var DestinyArmorDefinition = {
   },
   "694579350": {
     "name": "アイアンブリード・グレートヘルム",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/ced62d9aa0f988b0ba8cc743dd7f43d2.jpg",
     "tierType": 5
   },
@@ -3057,7 +3057,7 @@ var DestinyArmorDefinition = {
   },
   "870077908": {
     "name": "鉄の友のフード",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/9e503ea284c52377d90d4135cbf7781a.jpg",
     "tierType": 5
   },
@@ -3099,7 +3099,7 @@ var DestinyArmorDefinition = {
   },
   "883472904": {
     "name": "アイアンブリード・グローブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/dbbc0c8a049687df883611795da91c4c.jpg",
     "tierType": 5
   },
@@ -3237,7 +3237,7 @@ var DestinyArmorDefinition = {
   },
   "925496553": {
     "name": "アイアンレガリアの式服",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/2e7f920d6ccc13c50ba11dd969d2df91.jpg",
     "tierType": 5
   },
@@ -3656,14 +3656,14 @@ var DestinyArmorDefinition = {
     "tierType": 6
   },
   "1063666590": {
-    "name": "鉄の王のブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "name": "鉄の豪傑のブーツ",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/10b22c6bf6f68ebcf547c84dd34f5eb0.jpg",
     "tierType": 5
   },
   "1063666591": {
     "name": "アイアンレガリア・ブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/10b22c6bf6f68ebcf547c84dd34f5eb0.jpg",
     "tierType": 5
   },
@@ -3891,7 +3891,7 @@ var DestinyArmorDefinition = {
   },
   "1157862961": {
     "name": "アイアンレガリア・ブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/ce2df52234e7e5e4797e0cf3c3c59f8c.jpg",
     "tierType": 5
   },
@@ -4041,7 +4041,7 @@ var DestinyArmorDefinition = {
   },
   "1212068371": {
     "name": "鉄の友の式服",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/859c318a20fd71f4e0e9d99f7b271e0e.jpg",
     "tierType": 5
   },
@@ -4827,13 +4827,13 @@ var DestinyArmorDefinition = {
   },
   "1448055470": {
     "name": "セブンのプレート",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/256e15882bb0a15326d60254184ad2fd.jpg",
     "tierType": 5
   },
   "1448055471": {
     "name": "アイアンレガリア・プレート",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/30b53fc35cccf48b2457826e721fa397.jpg",
     "tierType": 5
   },
@@ -5049,19 +5049,19 @@ var DestinyArmorDefinition = {
   },
   "1556318808": {
     "name": "アイアンレガリア・グレートヘルム",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/5f5c78b473d2797bba6d88f5eb0b8bc5.jpg",
     "tierType": 5
   },
   "1556318809": {
     "name": "セブンのヘルム",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/b026545c4b47ad3a86a0f0137e4cc611.jpg",
     "tierType": 5
   },
   "1556318810": {
     "name": "",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/5f5c78b473d2797bba6d88f5eb0b8bc5.jpg",
     "tierType": 5
   },
@@ -5091,13 +5091,13 @@ var DestinyArmorDefinition = {
   },
   "1571566214": {
     "name": "アイアンレガリアの式服",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/6d48328e2eeda3e19f870de2caef325d.jpg",
     "tierType": 5
   },
   "1571566215": {
     "name": "セブンの式服",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/6d48328e2eeda3e19f870de2caef325d.jpg",
     "tierType": 5
   },
@@ -5703,7 +5703,7 @@ var DestinyArmorDefinition = {
   },
   "1737847390": {
     "name": "アイアンレガリア・フード",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/9462c3992c01b7f24b67d9354e69d6f4.jpg",
     "tierType": 5
   },
@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "「ザ・キュア」",
     "description": "「解決策がある」 - イコラ・レイ、シティの総意による緊急会議にて",
-    "icon": "/common/destiny_content/icons/df56e71147b020c92f8c0d28d384401d.png",
+    "icon": "/common/destiny_content/icons/4ef41c0101e905aa85595f8f4648f4a3.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "「征服不可能」",
     "description": "「ロックの解除方法を考えるのはもうやめて、壁ごと外すことを考えよう」",
-    "icon": "/common/destiny_content/icons/2599121ae1359d644a2fc8ca1c143bcd.png",
+    "icon": "/common/destiny_content/icons/92e2817face85e19aa35024f93bf70fa.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "「サイト生まれ」",
     "description": "「現実とは、最も容赦のない分析者だ」 - プラクシックの格言",
-    "icon": "/common/destiny_content/icons/9d97f674cb6cd7040fa3db191b756106.png",
+    "icon": "/common/destiny_content/icons/d8767abc9cac46fdc3fbaebeee7ce789.png",
     "tierType": 4
   },
   "1777045417": {
@@ -5985,13 +5985,13 @@ var DestinyArmorDefinition = {
   },
   "1846030074": {
     "name": "セブンのグリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/1eca5d7b4c36ec0db34ceed680bbdbe0.jpg",
     "tierType": 5
   },
   "1846030075": {
     "name": "アイアンレガリア・グリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/1eca5d7b4c36ec0db34ceed680bbdbe0.jpg",
     "tierType": 5
   },
@@ -6081,7 +6081,7 @@ var DestinyArmorDefinition = {
   },
   "1864523264": {
     "name": "アイアンブリードの式服",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/4426bd3923bfe74973448500bf2c4255.jpg",
     "tierType": 5
   },
@@ -6093,7 +6093,7 @@ var DestinyArmorDefinition = {
   },
   "1866413378": {
     "name": "鉄の友のガントレット",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/651f56def29dbec38961e0e95812b2cf.jpg",
     "tierType": 5
   },
@@ -6117,7 +6117,7 @@ var DestinyArmorDefinition = {
   },
   "1898672999": {
     "name": "アイアンブリード・ガントレット",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/676875e53451fa514cfbae393278bd96.jpg",
     "tierType": 5
   },
@@ -6141,7 +6141,7 @@ var DestinyArmorDefinition = {
   },
   "1914248812": {
     "name": "アイアンレガリア・ガントレット",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/ca94246b9009d896e062f868157fdfc7.jpg",
     "tierType": 5
   },
@@ -6339,7 +6339,7 @@ var DestinyArmorDefinition = {
   },
   "1984812258": {
     "name": "アイアンブリード・ブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/1fcc97f18cb62a439acc9fb121c6ef38.jpg",
     "tierType": 5
   },
@@ -6489,13 +6489,13 @@ var DestinyArmorDefinition = {
   },
   "2020019240": {
     "name": "セブンのガントレット",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/ca94246b9009d896e062f868157fdfc7.jpg",
     "tierType": 5
   },
   "2020019241": {
     "name": "アイアンレガリア・ガントレット",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/ca94246b9009d896e062f868157fdfc7.jpg",
     "tierType": 5
   },
@@ -7407,7 +7407,7 @@ var DestinyArmorDefinition = {
   },
   "2266818225": {
     "name": "アイアンブリード・フード",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/fa43d64ba061507ea9b19dcdce704f32.jpg",
     "tierType": 5
   },
@@ -7725,7 +7725,7 @@ var DestinyArmorDefinition = {
   },
   "2369983328": {
     "name": "アイアンレガリア・ブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/10b22c6bf6f68ebcf547c84dd34f5eb0.jpg",
     "tierType": 5
   },
@@ -7767,7 +7767,7 @@ var DestinyArmorDefinition = {
   },
   "2402750214": {
     "name": "鉄の友のブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/66196727177c7449738cb9dec9e57470.jpg",
     "tierType": 5
   },
@@ -7790,14 +7790,14 @@ var DestinyArmorDefinition = {
     "tierType": 5
   },
   "2413349890": {
-    "name": "鉄の王のベスト",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "name": "鉄の豪傑のベスト",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/736ab727cbcb51f7005fe26a65c6d0a8.jpg",
     "tierType": 5
   },
   "2413349891": {
     "name": "アイアンレガリア・ベスト",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/736ab727cbcb51f7005fe26a65c6d0a8.jpg",
     "tierType": 5
   },
@@ -7839,7 +7839,7 @@ var DestinyArmorDefinition = {
   },
   "2429881589": {
     "name": "アイアンブリード・ブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/d53455bf0ada18916dba28f9bb735c3d.jpg",
     "tierType": 5
   },
@@ -7989,7 +7989,7 @@ var DestinyArmorDefinition = {
   },
   "2452629279": {
     "name": "アイアンレガリア・マスク",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/90e49b78173f3488da1393379008a6d5.jpg",
     "tierType": 5
   },
@@ -8355,7 +8355,7 @@ var DestinyArmorDefinition = {
   },
   "2559980950": {
     "name": "アイアンレガリア・グリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/e23399b77b404805dd9471d4f8730e4d.jpg",
     "tierType": 5
   },
@@ -8397,7 +8397,7 @@ var DestinyArmorDefinition = {
   },
   "2566597498": {
     "name": "アイアンブリード・マスク",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/d0be8583aede9119752323a3536a4a3c.jpg",
     "tierType": 5
   },
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "「内部エンジン」",
     "description": "「トラベラーとその光は高度な技術だと思う。それによって自分の力が弱まるなんて認めるつもりはない」",
-    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
+    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "「宇宙の真実」",
     "description": "「光をプロトンや単なるニュートリノと同じフレームワークに固定することは狭量な思い上がりだ」",
-    "icon": "/common/destiny_content/icons/b94d0cfe273ce17f98218ff849d62313.png",
+    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
     "tierType": 3
   },
   "2580679414": {
@@ -8991,7 +8991,7 @@ var DestinyArmorDefinition = {
   },
   "2747259661": {
     "name": "鉄の友のマスク",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/3e9e03f2dc11f105d48b9ca9cd91cbed.jpg",
     "tierType": 5
   },
@@ -9327,7 +9327,7 @@ var DestinyArmorDefinition = {
   },
   "2810850918": {
     "name": "アイアンレガリア・スリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/37f76a3368967a9650d778c90b35be25.jpg",
     "tierType": 5
   },
@@ -9705,19 +9705,19 @@ var DestinyArmorDefinition = {
   },
   "2898884241": {
     "name": "",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/0712a9e6e4741bf3d56a495df2379131.jpg",
     "tierType": 5
   },
   "2898884242": {
     "name": "セブンのフード",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/133976fcf6d3b34d7ddea388def96e9f.jpg",
     "tierType": 5
   },
   "2898884243": {
     "name": "アイアンレガリア・フード",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/0712a9e6e4741bf3d56a495df2379131.jpg",
     "tierType": 5
   },
@@ -9747,13 +9747,13 @@ var DestinyArmorDefinition = {
   },
   "2902070748": {
     "name": "アイアンレガリア・ブーツ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/7c9d8b2242598536650a7c1dd8d94da8.jpg",
     "tierType": 5
   },
   "2902070749": {
     "name": "セブンのレッグ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/7c9d8b2242598536650a7c1dd8d94da8.jpg",
     "tierType": 5
   },
@@ -10082,14 +10082,14 @@ var DestinyArmorDefinition = {
     "tierType": 5
   },
   "3034481788": {
-    "name": "鉄の王のスリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "name": "鉄の豪傑のスリーブ",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/37f76a3368967a9650d778c90b35be25.jpg",
     "tierType": 5
   },
   "3034481789": {
     "name": "アイアンレガリア・スリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/6ad48ef12e61ded4e037ee3e856fd1db.jpg",
     "tierType": 5
   },
@@ -10797,7 +10797,7 @@ var DestinyArmorDefinition = {
   },
   "3275079860": {
     "name": "アイアンレガリア・プレート",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/27fec7db496e04b6fa389cd6c528779c.jpg",
     "tierType": 5
   },
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "宇宙のバンド",
     "description": "オーダーの中には光と暗黒は超対称性物理学で説明が付くという者がいる。",
-    "icon": "/common/destiny_content/icons/f7231f79d28bc6ee1203549d7ac976f5.png",
+    "icon": "/common/destiny_content/icons/992fb49048b823a304124a6ac9aaf9a8.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "両極性のバンド",
     "description": "オーダーの中には光と暗黒が独自の理論で、単純な物質世界を越えたところに存在していると信じている者がいる。",
-    "icon": "/common/destiny_content/icons/3906978e6446842b5839141e916047cf.png",
+    "icon": "/common/destiny_content/icons/9ff3937068ed34083fa917f25cc35daf.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "「去った者」",
     "description": "「ナイフを突きつけられたから手を出して… 慎重に… 灰にしてやった」",
-    "icon": "/common/destiny_content/icons/7ec5357315ccb7ab34797289624bf19b.png",
+    "icon": "/common/destiny_content/icons/be9a3baf1e1a5ecb28058e0cc0ecd07d.png",
     "tierType": 4
   },
   "3366017012": {
@@ -11259,7 +11259,7 @@ var DestinyArmorDefinition = {
   },
   "3399822332": {
     "name": "鉄の友のスリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/9fcf8cd26119fcf2e19fc82cdc4ca17c.jpg",
     "tierType": 5
   },
@@ -11385,7 +11385,7 @@ var DestinyArmorDefinition = {
   },
   "3451716861": {
     "name": "アイアンレガリア・グレートヘルム",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/48264d7ab87fb05fa5ceb57ed3a7709c.jpg",
     "tierType": 5
   },
@@ -11445,19 +11445,19 @@ var DestinyArmorDefinition = {
   },
   "3470167972": {
     "name": "アイアンレガリア・マスク",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/0d2043d2173645ff0e49bce6a696bf0e.jpg",
     "tierType": 5
   },
   "3470167973": {
-    "name": "鉄の王のマスク",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "name": "鉄の豪傑のマスク",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/0d2043d2173645ff0e49bce6a696bf0e.jpg",
     "tierType": 5
   },
   "3470167974": {
     "name": "",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/d885a8b830056bda28f7bfa5c53ef4bf.jpg",
     "tierType": 5
   },
@@ -11511,7 +11511,7 @@ var DestinyArmorDefinition = {
   },
   "3477470986": {
     "name": "アイアンレガリア・ベスト",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/12c577f54044fc96137350e3f99f777c.jpg",
     "tierType": 5
   },
@@ -12753,7 +12753,7 @@ var DestinyArmorDefinition = {
   },
   "3907475891": {
     "name": "鉄の友のヘルム",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/9cffb9f32be45a7b96e311dc7e999159.jpg",
     "tierType": 5
   },
@@ -12777,7 +12777,7 @@ var DestinyArmorDefinition = {
   },
   "3910559228": {
     "name": "鉄の友のグリーブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/3a6314391ad119461a8f119503001b95.jpg",
     "tierType": 5
   },
@@ -13059,7 +13059,7 @@ var DestinyArmorDefinition = {
   },
   "3995873645": {
     "name": "鉄の友のグローブ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/92c3105af88e591d5594066c9365c406.jpg",
     "tierType": 5
   },
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "「熟練のカオス」",
     "description": "「空間と時間を操れ。物質とエネルギーが僅かに流れる」",
-    "icon": "/common/destiny_content/icons/e0867b5a595723fcd4a04c6ff38bf567.png",
+    "icon": "/common/destiny_content/icons/4e3568069d4344bdf40068742fce424e.png",
     "tierType": 4
   },
   "4187254944": {
@@ -13851,7 +13851,7 @@ var DestinyArmorDefinition = {
   },
   "4242215215": {
     "name": "鉄の友のレッグ",
-    "description": "アイアンバナーの下で鉄の王が作った飾り付きアーマー。",
+    "description": "アイアンバナーの下で鉄の豪傑が作った飾り付きアーマー。",
     "icon": "/common/destiny_content/icons/33d77b5fb035f124fe94442207b150b6.jpg",
     "tierType": 5
   },
