@@ -463,7 +463,7 @@
           var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
 
           // Uncomment when Elo issue is resolved
-          // guardianggFactory.getTeamElo($scope.fireteam);
+          guardianggFactory.getTeamElo($scope.fireteam);
 
           _.each($scope.fireteam, function (player) {
 

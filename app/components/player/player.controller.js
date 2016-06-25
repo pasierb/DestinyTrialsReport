@@ -37,7 +37,7 @@ angular.module('trialsReportApp')
         }
       });
 
-    guardianggFactory.getElo($scope.player);
+    // guardianggFactory.getElo($scope.player);
     statsFactory.getStats($scope.player);
     statsFactory.getGrimoire($scope.player);
     statsFactory.getPlayer($scope.player);

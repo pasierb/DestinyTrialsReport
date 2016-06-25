@@ -117,9 +117,22 @@ angular.module('trialsReportApp')
           }
 
           if (data.thisMapWeapons && data.thisMapWeapons[0]) {
-            _.each(data.thisMapWeapons, function (weapon) {
-              mapWeapons.push(weapon);
+            _.each(data.thisMapWeapons, function (mapWeapon) { 
+              var weekWeapon = _.find(player.lastWeapons, function(w){ 
+                return w.itemTypeName == mapWeapon.itemTypeName; 
+              }); 
+              if (weekWeapon) {
+                mapWeapon.sum_headshots = parseInt(mapWeapon.sum_headshots) + parseInt(weekWeapon.sum_headshots)
+                mapWeapon.sum_kills = parseInt(mapWeapon.sum_kills) + parseInt(weekWeapon.sum_kills)
+              }
+              if (parseInt(mapWeapon.sum_kills) > 0) {
+                mapWeapons.push(mapWeapon);
+              }
             });
+          } else {
+            if (player.lastWeapons) {
+              mapWeapons = player.lastWeapons
+            }
           }
         }
 
@@ -129,6 +142,7 @@ angular.module('trialsReportApp')
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;
+
         return player;
       });
     };
