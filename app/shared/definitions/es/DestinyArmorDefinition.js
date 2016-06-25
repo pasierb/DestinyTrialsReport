@@ -5806,19 +5806,19 @@ var DestinyArmorDefinition = {
   "1776632644": {
     "name": "\"La Cura\"",
     "description": "\"Tenemos una solución\". (Ikora Rey, en una sesión de emergencia del Consenso de la Ciudad)",
-    "icon": "/common/destiny_content/icons/4ef41c0101e905aa85595f8f4648f4a3.png",
+    "icon": "/common/destiny_content/icons/9580483264cd77529d1f68b070cb1c2c.png",
     "tierType": 4
   },
   "1776632646": {
     "name": "\"El inconquistable\"",
     "description": "\"Dejemos de pensar en cómo abrir la cerradura y empecemos a pensar en quitar la pared\".",
-    "icon": "/common/destiny_content/icons/92e2817face85e19aa35024f93bf70fa.png",
+    "icon": "/common/destiny_content/icons/ed6364e8d96c27a71e8978df94206b62.png",
     "tierType": 4
   },
   "1776632647": {
     "name": "\"Nacido de la vista\"",
     "description": "\"La realidad es el analista más despiadado\". (Dicho práxico)",
-    "icon": "/common/destiny_content/icons/d8767abc9cac46fdc3fbaebeee7ce789.png",
+    "icon": "/common/destiny_content/icons/3d81ce8ecd354e64445498394b7614ff.png",
     "tierType": 4
   },
   "1777045417": {
@@ -8434,13 +8434,13 @@ var DestinyArmorDefinition = {
   "2580679412": {
     "name": "\"Motor de inercia\"",
     "description": "\"Creo que el Viajero y su Luz son una tecnología avanzada. Me niego a aceptar que eso me rebaje como persona\".",
-    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
+    "icon": "/common/destiny_content/icons/4d1a0beb1f9602262d14d2928c3444e8.png",
     "tierType": 3
   },
   "2580679413": {
     "name": "\"Verdades cósmicas\"",
     "description": "\"Equiparar la naturaleza de la Luz a la del protón o el humilde neutrino es un acto de soberbia cerrazón\".",
-    "icon": "/common/destiny_content/icons/d23e614b9eff4781053e6c8539e829f9.png",
+    "icon": "/common/destiny_content/icons/4d1a0beb1f9602262d14d2928c3444e8.png",
     "tierType": 3
   },
   "2580679414": {
@@ -11026,13 +11026,13 @@ var DestinyArmorDefinition = {
   "3346519202": {
     "name": "Banda de lo universal",
     "description": "Algunas órdenes sostienen que la Luz y la Oscuridad pueden explicarse en el contexto de la física de supersimetría.",
-    "icon": "/common/destiny_content/icons/992fb49048b823a304124a6ac9aaf9a8.png",
+    "icon": "/common/destiny_content/icons/bae46e74eb4fb16d920bcdaf444d35ec.png",
     "tierType": 2
   },
   "3346519203": {
     "name": "Banda de polaridad",
     "description": "Algunas órdenes creen que la Luz y la Oscuridad existen más allá del plano material, y que tienen su propia lógica.",
-    "icon": "/common/destiny_content/icons/9ff3937068ed34083fa917f25cc35daf.png",
+    "icon": "/common/destiny_content/icons/d16f5e696a10716f3c82b5af2d06aedc.png",
     "tierType": 2
   },
   "3346783228": {
@@ -11116,7 +11116,7 @@ var DestinyArmorDefinition = {
   "3359564871": {
     "name": "\"Los desaparecidos\"",
     "description": "\"Vino a mí con un cuchillo. Alargué la mano y, sin más, lo convertí en ceniza\".",
-    "icon": "/common/destiny_content/icons/be9a3baf1e1a5ecb28058e0cc0ecd07d.png",
+    "icon": "/common/destiny_content/icons/0dbaf9e7632c095c7d0257e08b6f8853.png",
     "tierType": 4
   },
   "3366017012": {
@@ -13612,7 +13612,7 @@ var DestinyArmorDefinition = {
   "4187038139": {
     "name": "\"Caos controlado\"",
     "description": "\"Controla el espacio y el tiempo. Lo siguiente es la materia y la energía\".",
-    "icon": "/common/destiny_content/icons/4e3568069d4344bdf40068742fce424e.png",
+    "icon": "/common/destiny_content/icons/443af6180b19b02dab6fd606abf6e6cd.png",
     "tierType": 4
   },
   "4187254944": {
