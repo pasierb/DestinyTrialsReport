@@ -265,7 +265,7 @@ function getDefinitions($localStorage, $ocLazyLoad) {
     'DestinyCrucibleMapDefinition',
     'DestinyTalentGridDefinition'
   ], function(def) {
-    methods.push('/shared/definitions/' + language + '/' + def + '.js');
+    methods.push('//api.destinytrialsreport.com/manifest/' + language + '/' + def + '.js');
   });
 
   return $ocLazyLoad.load({reconfig: true, rerun: true, files: methods});
