@@ -251,25 +251,34 @@ function gggWeapons($localStorage, guardianggFactory) {
     });
 }
 
-function getDefinitions($localStorage, $ocLazyLoad) {
+var DestinyArmorDefinition;
+var DestinyMedalDefinition;
+var DestinySubclassDefinition;
+var DestinyWeaponDefinition;
+var DestinyCrucibleMapDefinition;
+var DestinyTalentGridDefinition;
+
+function getDefinitions($localStorage, $q, $http) {
   var language = 'en';
   if (['en', 'es', 'de', 'fr', 'it', 'pt-br', 'ja'].indexOf($localStorage.language) !== -1) {
     language = $localStorage.language;
   }
-
-  var methods = [];
-  angular.forEach([
-    'DestinyArmorDefinition',
-    'DestinyMedalDefinition',
-    'DestinySubclassDefinition',
-    'DestinyWeaponDefinition',
-    'DestinyCrucibleMapDefinition',
-    'DestinyTalentGridDefinition'
-  ], function(def) {
-    methods.push('//api.destinytrialsreport.com/manifest/' + language + '/' + def + '.js');
+  return $q.all([
+    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyArmorDefinition.json', {cache:true}),
+    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyMedalDefinition.json', {cache:true}),
+    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinySubclassDefinition.json', {cache:true}),
+    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyWeaponDefinition.json', {cache:true}),
+    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyCrucibleMapDefinition.json', {cache:true}),
+    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyTalentGridDefinition.json', {cache:true})
+  ])
+  .then(function (responses) {
+    DestinyArmorDefinition       = responses[0].data;
+    DestinyMedalDefinition       = responses[1].data;
+    DestinySubclassDefinition    = responses[2].data;
+    DestinyWeaponDefinition      = responses[3].data;
+    DestinyCrucibleMapDefinition = responses[4].data;
+    DestinyTalentGridDefinition  = responses[5].data;
   });
-
-  return $ocLazyLoad.load({reconfig: true, rerun: true, cache: false, files: methods});
 }
 
 angular
@@ -291,6 +300,5 @@ angular
     'ui.bootstrap.tpls',
     'ui.bootstrap.progressbar',
     'ui.bootstrap.tabs',
-    'ui.bootstrap.pagination',
-    'oc.lazyLoad'
+    'ui.bootstrap.pagination'
   ]);

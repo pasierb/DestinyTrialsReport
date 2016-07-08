@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, definitions, $ocLazyLoad, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics, $rootScope, tmhDynamicLocale) {
+  function homeController(api, config, definitions, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics, $rootScope, tmhDynamicLocale, $q, $http) {
     $scope.$storage = $localStorage.$default({
       language: 'en',
       platform: true,
@@ -44,7 +44,7 @@
 
     $scope.changeLanguage = function () {
       $translate.use($localStorage.language);
-      return getDefinitions($localStorage, $ocLazyLoad)
+      return getDefinitions($localStorage, $q, $http)
         .then(function () {
           $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
           $scope.currentMap = DestinyCrucibleMapDefinition[$scope.currentMapId];
