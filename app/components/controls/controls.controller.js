@@ -30,7 +30,7 @@
                 return homeFactory.getRecentActivity(player)
                   .then(function (resultBNG) {
                     if (resultBNG && resultBNG[0]) {
-                      return getFireteam(resultBNG);
+                      return homeFactory.getFireteam(resultBNG);
                     } else {
                       return guardianggFactory.getFireteam('14', player.membershipId)
                         .then(function (resultGGG) {
@@ -38,7 +38,7 @@
                             resultGGG.data.membershipId = player.membershipId;
                             return resultGGG.data;
                           } else {
-                            return getFireteam(resultBNG);
+                            return homeFactory.getFireteam(resultBNG);
                           }
                         });
                     }
@@ -46,26 +46,6 @@
               } else {
                 return false;
               }
-            });
-        };
-
-        var getFireteam = function (activities) {
-          if (angular.isUndefined(activities[0])) {
-            return [];
-          }
-          return bungie.getPgcr(activities[0].activityDetails.instanceId)
-            .then(function (result) {
-              var fireteam = [];
-              if (result && result.data && result.data.Response && result.data.Response.data) {
-                _.each(result.data.Response.data.entries, function (player) {
-                  if (parseInt(player.values.team.basic.value) === parseInt(activities[0].values.team.basic.value)) {
-                    if (activities.membershipId && activities.membershipId != player.player.destinyUserInfo.membershipId) {
-                      fireteam.push(player.player.destinyUserInfo.displayName);
-                    }
-                  }
-                });
-              }
-              return fireteam;
             });
         };
 
@@ -90,15 +70,11 @@
         } else {
           getFromParams(platform, name).then(function (result) {
             if (result) {
-              $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + result.join('/'));
-            }
-          });
-        }
-      } else {
-        if (angular.isDefined($scope.searchedPlayer)) {
-          getFromParams(platform, name).then(function (result) {
-            if (result) {
-              $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + result.join('/'));
+              var teammates = _.filter(result, function (player) {
+                return !player.searched;
+              });
+              var names = _.pluck(teammates, "name")
+              $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + names.join('/'));
             }
           });
         }

@@ -36,7 +36,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
               return homeFactory.getRecentActivity(player)
                 .then(function (resultBNG) {
                   if (resultBNG && resultBNG[0]) {
-                    return getFireteam(resultBNG);
+                    return homeFactory.getFireteam(resultBNG);
                   } else {
                     return guardianggFactory.getFireteam('14', player.membershipId)
                       .then(function (resultGGG) {
@@ -44,7 +44,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
                           resultGGG.data.membershipId = player.membershipId;
                           return resultGGG.data;
                         } else {
-                          return getFireteam(resultBNG);
+                          return homeFactory.getFireteam(resultBNG);
                         }
                       });
                   }
@@ -53,32 +53,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
           } else {
             return false;
           }
-        });
-    };
-
-    var getFireteam = function (activities) {
-      throwLog('getFireteam');
-      if (angular.isUndefined(activities[0])) {
-        return activities;
-      }
-      return bungie.getPgcr(activities[0].activityDetails.instanceId)
-        .then(function (result) {
-          var fireteam = [];
-          if (result && result.data && result.data.Response && result.data.Response.data) {
-            _.each(result.data.Response.data.entries, function (player) {
-              if (parseInt(player.values.team.basic.value) === parseInt(activities[0].values.team.basic.value)) {
-                fireteam.push({
-                  membershipType: player.player.destinyUserInfo.membershipType,
-                  membershipId: player.player.destinyUserInfo.membershipId,
-                  name: player.player.destinyUserInfo.displayName
-                });
-              }
-            });
-          }
-          if (activities.membershipId) {
-            fireteam.membershipId = activities.membershipId;
-          }
-          return fireteam;
         });
     };
 
@@ -109,7 +83,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
       throwLog('teammatesFromRecent');
       if (players && players[0] && !players[0].characterInfo) {
         var playerOne = _.find(players, function (player) {
-          return player.membershipId === players.membershipId;
+          return player.searched;
         });
         var methods = [homeFactory.getCharacters(
           playerOne.membershipType,

@@ -106,6 +106,57 @@
         });
     };
 
+    var getFireteam = function (activities) {
+      if (angular.isUndefined(activities[0])) {
+        return [];
+      }
+      return bungie.getPgcr(activities[0].activityDetails.instanceId)
+        .then(function (result) {
+          var fireteam = [];
+          if (result && result.data && result.data.Response && result.data.Response.data) {
+            var searched = _.find(result.data.Response.data.entries, function(player){ 
+                              return player.player.destinyUserInfo.membershipId == activities.membershipId;
+                            });
+
+            fireteam.push({
+              membershipType: searched.player.destinyUserInfo.membershipType,
+              membershipId: searched.player.destinyUserInfo.membershipId,
+              name: searched.player.destinyUserInfo.displayName,
+              searched: true
+            });
+
+            var teammates = _.filter(result.data.Response.data.entries, function(player){ 
+                              return (player.values.team.basic.value == searched.values.team.basic.value) && 
+                                     (player.characterId != searched.characterId)
+                            })
+
+            if (teammates && teammates.length > 2) {
+              var score = _.filter(teammates, function(player) {
+                                return player.values.score.basic.value == searched.values.score.basic.value;
+                              });
+              if (score && score.length > 2) {
+                var completed = _.filter(teammates, function(player) {
+                                return player.values.completed.basic.value == searched.values.completed.basic.value;
+                              });
+                teammates = completed;
+              } else {
+                teammates = score;
+              }
+            }
+
+            _.each(teammates, function (player) {
+                fireteam.push({
+                  membershipType: player.player.destinyUserInfo.membershipType,
+                  membershipId: player.player.destinyUserInfo.membershipId,
+                  name: player.player.destinyUserInfo.displayName
+                });
+            });
+          }
+
+          return fireteam;
+        });
+    };
+
     function setLastThreeMatches(lastThree, activities) {
       for (var l = 0; l < 3; l++) {
         if (activities[l]) {
@@ -170,7 +221,8 @@
       getRecentActivity: getRecentActivity,
       getCharacters: getCharacters,
       getActivities: getActivities,
-      refreshInventory: refreshInventory
+      refreshInventory: refreshInventory,
+      getFireteam: getFireteam
     };
   }
 })();
