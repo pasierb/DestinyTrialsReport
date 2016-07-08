@@ -42,45 +42,10 @@
     $scope.lighthouseFilter = 0;
     tmhDynamicLocale.set($localStorage.language);
 
-    $scope.DestinyCrucibleMapDefinition = DestinyCrucibleMapDefinition;
-    $scope.DestinyHazardDefinition = DestinyHazardDefinition;
-    $scope.DestinyMedalDefinition = DestinyMedalDefinition;
-    $scope.DestinyWeaponDefinition = DestinyWeaponDefinition;
-    $scope.DestinyArmorDefinition = DestinyArmorDefinition;
-    $scope.DestinyTalentGridDefinition = DestinyTalentGridDefinition;
-
-    var storedDefinitions = {};
-    function storeDefinitions(defs, language) {
-      defs[language] = {
-        DestinyCrucibleMapDefinition: DestinyCrucibleMapDefinition,
-        DestinyHazardDefinition: DestinyHazardDefinition,
-        DestinyMedalDefinition: DestinyMedalDefinition,
-        DestinyWeaponDefinition: DestinyWeaponDefinition,
-        DestinyArmorDefinition: DestinyArmorDefinition,
-        DestinyTalentGridDefinition: DestinyTalentGridDefinition
-      }
-    }
-
-    function loadDefinitions(defs, language) {
-      DestinyCrucibleMapDefinition = defs[language].DestinyCrucibleMapDefinition;
-      DestinyHazardDefinition = defs[language].DestinyHazardDefinition;
-      DestinyMedalDefinition = defs[language].DestinyMedalDefinition;
-      DestinyWeaponDefinition = defs[language].DestinyWeaponDefinition;
-      DestinyArmorDefinition = defs[language].DestinyArmorDefinition;
-      DestinyTalentGridDefinition = defs[language].DestinyTalentGridDefinition;
-    }
-
-    storeDefinitions(storedDefinitions, $localStorage.language);
-
     $scope.changeLanguage = function () {
       $translate.use($localStorage.language);
       return getDefinitions($localStorage, $ocLazyLoad)
         .then(function () {
-          if (storedDefinitions && storedDefinitions[$localStorage.language]) {
-            loadDefinitions(storedDefinitions, $localStorage.language);
-          } else {
-            storeDefinitions(storedDefinitions, $localStorage.language);
-          }
           $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
           $scope.currentMap = DestinyCrucibleMapDefinition[$scope.currentMapId];
           if ($scope.fireteam) {
@@ -462,7 +427,6 @@
           $scope.focusOnPlayers = true;
           var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
 
-          // Uncomment when Elo issue is resolved
           guardianggFactory.getTeamElo($scope.fireteam);
 
           _.each($scope.fireteam, function (player) {
@@ -488,22 +452,6 @@
             }
           });
 
-          // if ($scope.fireteam[2] && $scope.fireteam[2].membershipId) {
-          //   if (!$scope.subdomain && !$scope.sdOpponents && angular.isDefined(config.updateUrl)) {
-          //     locationChanger.skipReload()
-          //       .withoutRefresh(platformUrl + $scope.fireteam[0].name + '/' +
-          //       $scope.fireteam[1].name + '/' + $scope.fireteam[2].name, true);
-          //   }
-          // }
-
-          //var intervalPeriod = 30000;
-          //$interval(function () {
-          //  //if ($scope.hideStats) {
-          //    $scope.refreshInventory($scope.fireteam);
-          //    //$interval.cancel(autoRefresh);
-          //  //}
-          //}, intervalPeriod);
-
         }
       } else {
         $scope.fireteam = null;
@@ -517,28 +465,5 @@
       $scope.platformNumeric = config.platformNumeric;
       $scope.gggShow = $scope.gggWeapons[config.platformNumeric].show;
     }
-
-    //if (_.isUndefined(config.fireteam)) {
-    //  if (!$scope.lighthouseLeaderboard) {
-    //    api.lighthouseLeaderboard()
-    //    .then(function (results) {
-    //      if (results && results.data && results.data.data) {
-    //        $scope.lighthouseLeaderboard = [];
-    //        _.each(results.data.data, function (entry) {
-    //          var period = moment.utc(entry.period);
-    //          var trialsBeginDate = getTrialsBeginDate(entry.period);
-    //
-    //          $scope.lighthouseLeaderboard.push({
-    //            map: DestinyCrucibleMapDefinition[entry.map].pgcrImage,
-    //            platform: entry.platform,
-    //            players: entry.players,
-    //            time: moment.utc(period.diff(trialsBeginDate)).format('HH:mm:ss'),
-    //            weekText: getRelativeWeekText(trialsBeginDate, $scope.trialsInProgress, false, period)
-    //          });
-    //        });
-    //      }
-    //    });
-    //  }
-    //}
   }
 })();

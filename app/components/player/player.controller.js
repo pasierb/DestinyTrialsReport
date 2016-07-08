@@ -43,8 +43,8 @@ angular.module('trialsReportApp')
     statsFactory.getPlayer($scope.player);
 
     $scope.getWeaponByHash = function (hash) {
-      if ($scope.DestinyWeaponDefinition[hash]) {
-        var definition = $scope.DestinyWeaponDefinition[hash];
+      if (DestinyWeaponDefinition[hash]) {
+        var definition = DestinyWeaponDefinition[hash];
         if (definition.icon.substr(0, 4) !== 'http') {
           definition.icon = 'https://www.bungie.net' + definition.icon;
         }

@@ -268,7 +268,7 @@ function getDefinitions($localStorage, $ocLazyLoad) {
     methods.push('//api.destinytrialsreport.com/manifest/' + language + '/' + def + '.js');
   });
 
-  return $ocLazyLoad.load({reconfig: true, rerun: true, files: methods});
+  return $ocLazyLoad.load({reconfig: true, rerun: true, cache: false, files: methods});
 }
 
 angular
