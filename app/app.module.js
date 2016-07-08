@@ -253,9 +253,10 @@ function gggWeapons($localStorage, guardianggFactory) {
 
 function getDefinitions($localStorage, $ocLazyLoad) {
   var language = 'en';
-  if ($localStorage.language) {
+  if (['en', 'es', 'de', 'fr', 'it', 'pt-br', 'ja'].indexOf($localStorage.language) !== -1) {
     language = $localStorage.language;
   }
+
   var methods = [];
   angular.forEach([
     'DestinyArmorDefinition',
