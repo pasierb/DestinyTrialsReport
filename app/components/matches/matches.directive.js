@@ -61,10 +61,20 @@
               medals[index].name = DestinyMedalDefinition[index].statName;
               medals[index].description = DestinyMedalDefinition[index].statDescription;
               medals[index].icon = DestinyMedalDefinition[index].iconImage;
-            } else if (index.substring(0, 11) === 'weaponKills' && $scope.abilities[index]) {
-              setOrIncrement(abilityKills, value, index);
-              abilityKills[index].name = $scope.abilities[index].name;
-              abilityKills[index].icon = $scope.abilities[index].icon;
+            } else if (index.substring(0, 11) === 'weaponKills' && $scope.abilities) {
+              var ability;
+              if (index == "weaponKillsSuper") {
+                ability = $scope.abilities.super;
+              } else if (index == "weaponKillsGrenade") {
+                ability = $scope.abilities.grenade;
+              } else if (index == "weaponKillsMelee") {
+                ability = $scope.abilities.melee;
+              }
+              if (ability && ability.name && ability.icon) {
+                setOrIncrement(abilityKills, value, index);
+                abilityKills[index].name = ability.name;
+                abilityKills[index].icon = ability.icon;
+              }
             } else {
               setOrIncrement(allStats, value, index);
             }

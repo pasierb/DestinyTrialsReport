@@ -46,7 +46,7 @@ function getBuildName(column) {
 function defineAbilities(subclass) {
   _.each(subclass.nodes, function (node) {
     subclass.displayedNodes[node.nodeStepHash] = node;
-    subclass.build[getBuildName(node.column)] = node.nodeStepHash;
+    subclass.build[getBuildName(node.column)] = node;
   });
 
   subclass.displayedNodes = _.reject(subclass.nodes, function (n) {
@@ -167,6 +167,8 @@ angular.module('trialsReportApp')
         hazards: []
       };
 
+      // console.time("This is pretty cool");
+
       for (var n = 0; n < items.length; n++) {
         var item = items[n], bucket = getDefinitionsByBucket(item.bucketHash);
         var definition;
@@ -208,6 +210,8 @@ angular.module('trialsReportApp')
           defineAbilities(subclass);
         }
       }
+
+      // console.timeEnd("This is pretty cool");
 
       if (armors.equipped.increasedArmor) {
         if (armors.equipped.increasedArmor.indexOf(subclass.definition.itemHash) > -1) {
