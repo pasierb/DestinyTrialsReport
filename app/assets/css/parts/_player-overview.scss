@@ -60,14 +60,8 @@
   text-shadow: $text-shadow;
 }
 
-.player-info__grimoire {
-  margin: 0 .75em;
-  font-size: .9em;
-
-  img {
-    height: 1em;
-    margin-right: .3em;
-  }
+.player-info__class {
+  margin-right: .5em;
 }
 
 .player-level {
@@ -84,4 +78,13 @@
 .player-level__light {
   font-size: 1.1em;
   font-weight: normal;
+}
+
+.player-level__grimoire {
+  font-size: .9em;
+
+  img {
+    height: 1em;
+    margin-right: .3em;
+  }
 }

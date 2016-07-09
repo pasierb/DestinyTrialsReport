@@ -6,10 +6,6 @@
         <div class="player-info">
           <h2 class="player-header__gamertag" ng-bind="player.name"></h2>
           <span class="player-info__class" ng-bind="player.characterInfo.subclassName"></span>
-          <span class="player-info__grimoire" ng-show="player.grimoire">
-            <img src="/assets/img/grimoire.png" alt="Grimoire">
-            <span ng-bind="player.grimoire"></span>
-          </span>
           <div ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard" class="player-hazard"
                ng-class="{'player-hazard--developer': hazard === 'Developer' || hazard === 'Guardian.gg', 'player-hazard--donator': hazard === 'Donator'}"
                data-placement="bottom" data-content="{{DestinyHazardDefinition[hazard]}}" bs-popover>
@@ -26,10 +22,10 @@
             <span>&#10022;</span>
             <span ng-bind="player.characterInfo.stats.STAT_LIGHT.value"></span>
           </div>
-          <div class="player-level__level" ng-show="player.characterInfo.level">
-            <span translate="LEVEL"></span>
-            <span ng-bind="player.characterInfo.level"></span>
-          </div>
+          <span class="player-level__grimoire" ng-show="player.grimoire">
+            <img src="/assets/img/grimoire.png" alt="Grimoire">
+            <span ng-bind="player.grimoire"></span>
+          </span>
         </div>
       </div>
     </div>
