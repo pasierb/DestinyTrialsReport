@@ -83,16 +83,11 @@
               ng-if="isMultiMap()"
               title="Maps in cycle"
               data-content="{{multiMapList()}}"
-              bs-popover
-          >
+              bs-popover>
           <i class="material-icons icon--small">&#xE148;</i>
         </span>
         <label ng-bind="(trialsInProgress ? 'This week' : 'Last week') + '\'s map'"></label>
       </div>
-      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.heatmapImage && !isMultiMap()"
-              data-template-url="shared/modals/heatmap.modal.html" bs-modal>
-        Heatmap
-      </button>
       <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.mapImage && !isMultiMap()"
               data-template-url="shared/modals/map.modal.html" bs-modal>
         Overview
