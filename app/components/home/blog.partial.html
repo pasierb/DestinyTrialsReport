@@ -4,7 +4,7 @@
       <div class="modal-hero blog-image"
            ng-style="{'background-image': !isPlaylist(currentMapInfo.week) ? 'url(' + currentMapInfo.pgcrImage + ')' : 'url(' + getPlaylistHeader(currentMapInfo.week) + ')'}">
         <div class="modal-hero__header">
-          <h2 class="modal-hero__title" ng-bind="!isPlaylist(currentMapInfo.week) ? currentMapInfo.name : 'Assorted Playlist'"></h2><!-- add to translations -->
+          <h2 class="modal-hero__title" ng-bind="!isPlaylist(currentMapInfo.week) ? currentMapInfo.name : ('playlist_name' | translate)"></h2>
           <span class="map-cycle-popover"
                 ng-if="isPlaylist(currentMapInfo.week)"
                 data-content="{{getPlaylistPopover(currentMapInfo.week)}}"

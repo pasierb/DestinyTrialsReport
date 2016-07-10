@@ -78,7 +78,7 @@
   <div class="controls-map" ng-class="{'is-week-23': isPlaylist()}" ng-style="{'background-image': !isPlaylist() ? 'url(' + currentMap.pgcrImage + ')' : 'url(' + getPlaylistHeader() + ')'}">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
-        <span ng-bind="!isPlaylist() ? currentMap.name : 'Assorted Playlist'"></span><!-- add to translations -->
+        <span ng-bind="!isPlaylist() ? currentMap.name : ('playlist_name' | translate)"></span>
         <span class="map-cycle-popover"
               ng-if="isPlaylist()"
               data-content="{{getPlaylistPopover()}}"
