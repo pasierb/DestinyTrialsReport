@@ -8,13 +8,10 @@
           <span class="player-info__class" ng-bind="player.characterInfo.subclassName"></span>
           <div ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard" class="player-hazard"
                ng-class="{'player-hazard--developer': hazard === 'Developer' || hazard === 'Guardian.gg', 'player-hazard--donator': hazard === 'Donator'}"
-               data-placement="bottom" data-content="{{DestinyHazardDefinition[hazard]}}" bs-popover>
+               data-placement="bottom" data-content="{{'badges.' + hazard | translate}}" bs-popover>
           </div>
-          <div class="player-hazard player-hazard--charity1" ng-repeat="hazard in player.nonHazardCharity track by $index"
-               data-template-url="shared/popovers/charity1.popover.html"
-               data-placement="bottom"
-               ng-bind="hazard.status"
-               bs-popover>
+          <div ng-repeat="hazard in player.nonHazardCharity track by $index" ng-bind="hazard.status" class="player-hazard player-hazard--charity1"
+               data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" bs-popover>
           </div>
         </div>
         <div class="player-level">
