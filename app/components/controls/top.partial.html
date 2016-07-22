@@ -75,25 +75,20 @@
     </div>
   </div>
 
-  <div class="controls-map" ng-class="{'is-week-23': isMultiMap()}" ng-style="{'background-image': (isMultiMap() ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
+  <div class="controls-map" ng-class="{'is-week-23': isPlaylist()}" ng-style="{'background-image': !isPlaylist() ? 'url(' + currentMap.pgcrImage + ')' : 'url(' + getPlaylistHeader() + ')'}">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
-        <span ng-bind="isMultiMap() ? 'Assorted Playlist' : currentMap.name"></span>
+        <span ng-bind="!isPlaylist() ? currentMap.name : ('playlist_name' | translate)"></span>
         <span class="map-cycle-popover"
-              ng-if="isMultiMap()"
-              title="Maps in cycle"
-              data-content="{{multiMapList()}}"
-              bs-popover
-          >
+              ng-if="isPlaylist()"
+              data-content="{{getPlaylistPopover()}}"
+              data-placement="right"
+              bs-popover>
           <i class="material-icons icon--small">&#xE148;</i>
         </span>
         <label ng-bind="(trialsInProgress ? 'This week' : 'Last week') + '\'s map'"></label>
       </div>
-      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.heatmapImage && !isMultiMap()"
-              data-template-url="shared/modals/heatmap.modal.html" bs-modal>
-        Heatmap
-      </button>
-      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.mapImage && !isMultiMap()"
+      <button type="button" class="btn btn-flat btn-sm" ng-if="currentMap.mapImage && !isPlaylist()"
               data-template-url="shared/modals/map.modal.html" bs-modal>
         Overview
       </button>

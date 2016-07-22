@@ -247,6 +247,7 @@ var cooldownsMeleeB  = ['1:00', '0:55', '0:49', '0:42', '0:34', '0:25'];
 
 // Nodes hidden from weapon and armor stats
 var hiddenNodes = [
+  21956111,   // Orange Chroma
   73039185,   // Blue Chroma
   74523350,   // Cannibalism
   193091484,  // Increase Strength
@@ -265,13 +266,16 @@ var hiddenNodes = [
   1270552711, // Infuse
   1305317488, // Aspect Swap
   1450441122, // Demotion
+  1516989546, // Magenta Chroma
   1644354530, // Sword Strike
   1782221257, // Shank Burn
   1891493121, // Dark Breaker
   1920788875, // Ascend
   1975859941, // Solar Damage
   2086308543, // Upgrade Defense
+  2133116599, // Deactivate Chroma
   2470010183, // Hive Disruptor
+  2493487228, // Green Chroma
   2688431654, // Arc Damage
   2689436406, // Upgrade Damage
   2845051978, // Ice Breaker

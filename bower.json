@@ -7,9 +7,10 @@
     "angular": "~1.4.8",
     "angulartics": "~1.0.3",
     "angulartics-google-analytics": "~0.1.4",
-    "angular-utils-pagination": "~0.9.4",
     "angular-animate": "~1.4.8",
     "angular-bootstrap": "~0.14.3",
+    "angular-dynamic-locale": "^0.1.30",
+    "angular-i18n": "^1.5.3",
     "angular-loading-bar": "~0.8.0",
     "angular-moment": "~0.10.3",
     "angular-motion": "~0.4.3",
@@ -18,23 +19,19 @@
     "angular-strap": "~2.3.6",
     "angular-toastr": "~1.6.0",
     "angular-touch": "~1.4.8",
+    "angular-translate": "~2.11.0",
+    "angular-translate-handler-log": "^2.11.0",
+    "angular-translate-loader-static-files": "^2.11.0",
+    "angular-utils-pagination": "~0.9.4",
     "arrive": "~2.3.0",
     "bootstrap": "~3.3.6",
     "bootstrap-additions": "~0.3.1",
     "bootstrap-material-design": "~0.3.0",
-    "moment": "~2.11.1",
+    "moment": "~2.10.6",
     "moment-timezone": "~0.5.0",
     "ngstorage": "~0.3.10",
     "underscore": "~1.8.3",
-    "angularUtils-pagination": "angular-utils-pagination#~0.9.3",
-    "angular-chart.js": "~0.8.8",
-    "xpull": "*",
-    "angular-translate": "~2.11.0",
-    "oclazyload": "^1.0.9",
-    "angular-translate-loader-static-files": "^2.11.0",
-    "angular-dynamic-locale": "^0.1.30",
-    "angular-i18n": "^1.5.3",
-    "angular-translate-handler-log": "^2.11.0"
+    "xpull": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.8"
@@ -46,8 +43,5 @@
         "dist/js/bootstrap.js"
       ]
     }
-  },
-  "resolutions": {
-    "moment": "~2.11.1"
   }
 }
