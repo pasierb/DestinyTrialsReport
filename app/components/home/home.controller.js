@@ -41,7 +41,6 @@
 
     $scope.lighthouseFilter = 0;
     tmhDynamicLocale.set($localStorage.language);
-    $scope.DestinyHazardDefinition = DestinyHazardDefinition;
 
     $scope.changeLanguage = function () {
       $translate.use($localStorage.language);
