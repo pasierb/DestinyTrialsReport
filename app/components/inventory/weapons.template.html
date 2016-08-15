@@ -18,7 +18,7 @@
         <div class="weapon-perk" ng-repeat="node in weapon.nodes track by $index"
              title="{{node.name}}" data-content="{{node.description}}" bs-popover>
           <i class="weapon-perk__icon">
-            <img class="img-responsive" ng-src="{{node.icon}}" alt="{{node.name}}">
+            <img class="img-responsive" ng-src="{{'https://www.bungie.net' + node.icon}}" alt="{{node.name}}">
           </i>
         </div>
       </div>

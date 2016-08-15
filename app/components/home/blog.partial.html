@@ -2,7 +2,7 @@
   <article class="home__main">
     <div class="maps block blog-post shadow-z-1 {{mapInfoAnimClass}}">
       <div class="modal-hero blog-image"
-           ng-style="{'background-image': !isPlaylist(currentMapInfo.week) ? 'url(' + currentMapInfo.pgcrImage + ')' : 'url(' + getPlaylistHeader(currentMapInfo.week) + ')'}">
+           ng-style="{'background-image': !isPlaylist(currentMapInfo.week) ? 'url(https://www.bungie.net/' + currentMapInfo.pgcrImage + ')' : 'url(' + getPlaylistHeader(currentMapInfo.week) + ')'}">
         <div class="modal-hero__header">
           <h2 class="modal-hero__title" ng-bind="!isPlaylist(currentMapInfo.week) ? currentMapInfo.name : ('playlist_name' | translate)"></h2>
           <span class="map-cycle-popover"

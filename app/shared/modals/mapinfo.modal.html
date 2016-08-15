@@ -4,7 +4,7 @@
     <a href="javascript:void(0)" class="btn btn-default btn-fab pull-right btn-fab-right btn-fab-map" ng-click="toggleDirection('right')" ng-show="showNext"><i class="material-icons">&#xE5C8;</i></a>
     <div class="modal-content" ng-class="{ 'slide-left': direction == 'left', 'slide-right' : direction == 'right' }">
       <div ng-click="$hide()" class="modal-close"><i class="material-icons">&#xE14C;</i></div>
-      <div class="modal-hero" ng-style="{'background-image':'url(' + DestinyCrucibleMapDefinition[mapInfo.referenceId].pgcrImage + ')'}">
+      <div class="modal-hero" ng-style="{'background-image':'url(https://www.bungie.net/' + DestinyCrucibleMapDefinition[mapInfo.referenceId].pgcrImage + ')'}">
         <div style="width: 100%;">
           <div class="modal-hero__title" ng-bind="DestinyCrucibleMapDefinition[mapInfo.referenceId].name"></div>
           <div class="modal-hero__label" ng-bind="mapInfo.weekText"></div>

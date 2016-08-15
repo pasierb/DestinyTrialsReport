@@ -1,5 +1,5 @@
 <div class="header__content shadow-z-2">
-  <div class="title-bar" ng-class="{'is-week-23': isMultiMap()}" ng-style="{'background-image': (isMultiMap() ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(' + currentMap.pgcrImage + ')') }">
+  <div class="title-bar" ng-class="{'is-week-23': isMultiMap()}" ng-style="{'background-image': (isMultiMap() ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(https://www.bungie.net/' + currentMap.pgcrImage + ')') }">
     <div class="title-bar__content">
       <div class="title-bar__title">
         <a href="/" target="_self">
@@ -75,7 +75,7 @@
     </div>
   </div>
 
-  <div class="controls-map" ng-class="{'is-week-23': isPlaylist()}" ng-style="{'background-image': !isPlaylist() ? 'url(' + currentMap.pgcrImage + ')' : 'url(' + getPlaylistHeader() + ')'}">
+  <div class="controls-map" ng-class="{'is-week-23': isPlaylist()}" ng-style="{'background-image': !isPlaylist() ? 'url(https://www.bungie.net/' + currentMap.pgcrImage + ')' : 'url(' + getPlaylistHeader() + ')'}">
     <div class="controls-map__content">
       <div class="controls-map__title stat">
         <span ng-bind="!isPlaylist() ? currentMap.name : ('playlist_name' | translate)"></span>
