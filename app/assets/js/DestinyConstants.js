@@ -311,5 +311,13 @@ var playlists = {
       4107311671, // Rusted Lands
       4287936726  // Exodus Blue
     ]
+  },
+  44: {
+    header: '/assets/img/maps/week23.jpg',
+    maps: [
+      284635225,  // The Burning Shrine
+      2082069870, // The Anomaly
+      3292667877, // Asylum
+    ]
   }
 };
