@@ -134,11 +134,14 @@ angular.module('trialsReportApp')
   .factory('inventoryFactory', function () {
     var getData = function (items) {
       var weaponBuckets = [BUCKET_PRIMARY_WEAPON, BUCKET_SPECIAL_WEAPON, BUCKET_HEAVY_WEAPON];
-      var armorBuckets = [BUCKET_HEAD, BUCKET_ARMS, BUCKET_CHEST, BUCKET_LEGS];
+      var armorBuckets = [BUCKET_HEAD, BUCKET_ARMS, BUCKET_CHEST, BUCKET_LEGS, BUCKET_ARTIFACT];
       var itemPerk;
       var armors = {
           hazards: [],
           equipped: {
+            hazards: []
+          },
+          artifact: {
             hazards: []
           }
         };
@@ -183,23 +186,60 @@ angular.module('trialsReportApp')
         } else if (armorBuckets.indexOf(item.bucketHash) > -1) {
 
           definition = setItemDefinition(item, DestinyArmorDefinition);
-          for (var a = 0; a < item.perks.length; a++) {
-            itemPerk = item.perks[a];
-            if (itemPerk.isActive) {
-              setArmorHazards(armors, itemPerk, weapons);
+
+          if (item.bucketHash === BUCKET_ARTIFACT) {
+            armors.artifact = definition;
+
+            // TODO: correct artifact harzard
+            var artifactHazard;
+            switch (Math.round(Math.random() * 9)) {
+              case 1:
+                artifactHazard = [ "Sword deflects rockets" ] // Radeghast
+                break;
+              case 2:
+                artifactHazard = [ "Highlights low health/full super" ] // Perun
+                break;
+              case 3:
+                artifactHazard = [ "No sprint cooldown" ] // Jolder
+                break;
+              case 4:
+                artifactHazard = [ "Resists damage over time" ] // Silmar
+                break;
+              case 5:
+                artifactHazard = [ "No super, increased everything else" ] // Felwinter
+                break;
+              case 6:
+                artifactHazard = [ "Detailed radar" ] // Gheleon
+                break;
+              case 7:
+                artifactHazard = [ "Faster super recharge" ] // Skorri
+                break;
+              case 0:
+              case 8: // Timur
+              default:
+                artifactHazard = null; // No Rise of Iron Artifact
+                break;
+
+            }
+            armors.artifact.hazards = artifactHazard; // TODO: correct artifact harzard
+          } else {
+            for (var a = 0; a < item.perks.length; a++) {
+              itemPerk = item.perks[a];
+              if (itemPerk.isActive) {
+                setArmorHazards(armors, itemPerk, weapons);
+              }
+            }
+
+            if (definition.tierType === 6) {
+              armors.equipped.definition = definition;
+              armors.equipped.nodes = item.nodes;
+            }
+
+            if (!armors.equipped.definition && item.bucketHash === BUCKET_HEAD) {
+              armors.equipped.definition = definition;
+              armors.equipped.nodes = item.nodes;
             }
           }
-
-          if (definition.tierType === 6) {
-            armors.equipped.definition = definition;
-            armors.equipped.nodes = item.nodes;
-          }
-
-          if (!armors.equipped.definition && item.bucketHash === BUCKET_HEAD) {
-            armors.equipped.definition = definition;
-            armors.equipped.nodes = item.nodes;
-          }
-
         } else if (item.bucketHash === BUCKET_BUILD) {
           definition = setItemDefinition(item, DestinySubclassDefinition);
           subclass.nodes = _.reject(item.nodes, function (node) {

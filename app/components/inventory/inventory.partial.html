@@ -3,7 +3,7 @@
     <div weapon-nodes="[player.inventory.weapons.primary, player.inventory.weapons.special, player.inventory.weapons.heavy]" top-weapons="player.topWeapons" hide-stats="hideStats"></div>
   </div>
   <div class="player-tab__section" ng-show="$storage.visibility.all || $storage.visibility.equipped.armor">
-    <div armor-nodes="player.inventory.armor.equipped" has-exotic="player.inventory.armor.equipped.definition.tierType === 6"></div>
+    <div armor-nodes="player.inventory.armor.equipped" has-exotic="player.inventory.armor.equipped.definition.tierType === 6" artifact="player.inventory.armor.artifact" is-roi-artifact="player.inventory.armor.artifact.hazards"></div>
   </div>
   <div ng-show="$storage.visibility.all || $storage.visibility.equipped.build" build-stats="[player.characterInfo.stats.STAT_INTELLECT, player.characterInfo.stats.STAT_DISCIPLINE, player.characterInfo.stats.STAT_STRENGTH]"></div>
   <div ng-show="$storage.visibility.all || $storage.visibility.equipped.build" build-stats="[player.characterInfo.stats.STAT_ARMOR, player.characterInfo.stats.STAT_RECOVERY, player.characterInfo.stats.STAT_AGILITY]"></div>

@@ -11,7 +11,9 @@
       restrict: 'A',
       scope: {
         exoticArmor: '=armorNodes',
-        hasExotic: '=hasExotic'
+        hasExotic: '=hasExotic',
+        artifact: '=artifact',
+        isRoiArtifact: '=isRoiArtifact'
       },
       templateUrl: 'components/inventory/armor.template.html'
     };
