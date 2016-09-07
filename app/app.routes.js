@@ -12,6 +12,9 @@ angular
       definitions: getDefinitions
     }
   })
+  .when('/yeartwo', {
+    templateUrl: 'components/infographic/main.html'
+  })
   .when('/:platformName/:playerName', {
     templateUrl: 'components/home/home.html',
     controller: 'homeController',

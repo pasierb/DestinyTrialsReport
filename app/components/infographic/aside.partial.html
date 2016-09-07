@@ -1,0 +1,72 @@
+<div class="more">
+	<h2 class="more__title">More Trials Report!</h2>
+	<hr>
+	<section class="more__section more__section--side-by-side">
+		<a href="https://twitter.com/trialsreport"
+			target="_blank"
+			title="Destiny Trials Report on Twitter"
+			analytics-on=""
+			analytics-event="Click"
+			analytics-category="Twitter Blog">
+			<img src="/assets/img/twitter.svg">
+			<label>
+				Follow us on <span class="info">Twitter</span> for updates on the site and all things Destiny!
+			</label>
+		</a>
+	</section>
+	<hr>
+	<section class="more__section" ng-if="!subdomain">
+		<a
+			href="https://my.trials.report"
+			target="_self"
+			 analytics-on analytics-event="Click"
+			 analytics-category="myReport">
+			<span class="more__logo">myReport</span>
+			<label>
+				See all your characters in one view with more detailed stats
+			</label>
+		</a>
+	</section>
+	<hr>
+	<section class="more__section" ng-if="!sdOpponents" href="https://opponents.trials.report">
+		<a
+			href="https://opponents.trials.report"
+			target="_self"
+			analytics-on analytics-event="Click"
+			analytics-category="myOpponents">
+			<span class="more__logo more__logo--alt"><span>my</span>Opponents</span>
+			<label>
+				Search through your opponents and see every match in detail
+			</label>
+		</a>
+	</section>
+	<hr>
+	<section class="more__section" ng-if="subdomain || sdOpponents">
+		<a
+			href="https://trials.report"
+			target="_self"
+			analytics-on analytics-event="Click"
+			analytics-category="trialsReport">
+			<span class="more__logo">Destiny Trials Report</span>
+		</a>
+	</section>
+	<hr>
+	<section class="more__section">
+		<a
+			title="FAQ"
+			data-template-url="shared/modals/faq.modal.html"
+			bs-modal
+			analytics-on analytics-event="Click"
+			analytics-category="FAQ">
+			<span class="more__logo more__logo--small">FAQ</span>
+		</a>
+		<a
+			title="Guardian.gg"
+			href="https://guardian.gg"
+			target="_blank"
+			analytics-on analytics-event="Click"
+			analytics-category="GGG Controls">
+			<span class="more__logo more__logo--small">GUARDIAN.GG</span>
+		</a>
+	</section>
+</div>

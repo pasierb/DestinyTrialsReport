@@ -1,0 +1,61 @@
+.infographic {
+  pointer-events: none;
+
+  .content {
+    pointer-events: auto;
+    padding-left: 0;
+    position: static;
+  }
+
+  @media (min-width: 961px) {
+    .more {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .infographic-top-weapons-stat {
+    font-size: 1em;
+    line-height: 2.1;
+  }
+
+  .home__aside {
+    order: 99;
+  }
+
+  .modal-hero {
+    box-shadow: none;
+  }
+
+  .modal-hero__switch img {
+    max-height: 1.5em;
+  }
+
+  hr.spacer {
+    background: none;
+    margin: .75em 0;
+  }
+
+  .infographic__section {
+    margin-top: 3em;
+    box-shadow: -5px -5px 20px rgba(0, 0, 0, .25);
+    min-height: 0;
+
+    h2 {
+      font-size: 1.25em;
+    }
+  }
+
+  @media (min-width: 961px) {
+    .more {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .col-xs-6:nth-child(n+3) {
+        margin-top: 1em;
+    }
+  }
+}
