@@ -1,5 +1,18 @@
 <div class="more">
-	<h2 class="more__title">More Trials Report!</h2>
+	<h2 class="more__title">More Statistics!</h2>
+  <hr>
+	<section class="more__section">
+		<a
+			href="https://trials.report"
+			target="_self"
+			analytics-on analytics-event="Click"
+			analytics-category="trialsReport">
+			<span class="more__logo">Destiny Trials Report</span>
+      <label>
+        Your tool to reach the Lighthouse every weekend
+      </label>
+		</a>
+	</section>
 	<hr>
 	<section class="more__section more__section--side-by-side">
 		<a href="https://twitter.com/trialsreport"
@@ -10,12 +23,12 @@
 			analytics-category="Twitter Blog">
 			<img src="/assets/img/twitter.svg">
 			<label>
-				Follow us on <span class="info">Twitter</span> for updates on the site and all things Destiny!
+				Follow us on <span class="info">Twitter</span>, where we will share the best stats every weekend
 			</label>
 		</a>
 	</section>
 	<hr>
-	<section class="more__section" ng-if="!subdomain">
+	<section class="more__section">
 		<a
 			href="https://my.trials.report"
 			target="_self"
@@ -28,7 +41,7 @@
 		</a>
 	</section>
 	<hr>
-	<section class="more__section" ng-if="!sdOpponents" href="https://opponents.trials.report">
+	<section class="more__section" href="https://opponents.trials.report">
 		<a
 			href="https://opponents.trials.report"
 			target="_self"
@@ -41,25 +54,7 @@
 		</a>
 	</section>
 	<hr>
-	<section class="more__section" ng-if="subdomain || sdOpponents">
-		<a
-			href="https://trials.report"
-			target="_self"
-			analytics-on analytics-event="Click"
-			analytics-category="trialsReport">
-			<span class="more__logo">Destiny Trials Report</span>
-		</a>
-	</section>
-	<hr>
 	<section class="more__section">
-		<a
-			title="FAQ"
-			data-template-url="shared/modals/faq.modal.html"
-			bs-modal
-			analytics-on analytics-event="Click"
-			analytics-category="FAQ">
-			<span class="more__logo more__logo--small">FAQ</span>
-		</a>
 		<a
 			title="Guardian.gg"
 			href="https://guardian.gg"

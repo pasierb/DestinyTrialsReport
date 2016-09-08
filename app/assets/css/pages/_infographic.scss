@@ -7,6 +7,12 @@
     position: static;
   }
 
+  @media (max-width: 400px) {
+    .home__content {
+      width: calc(100vw - 2em);
+    }
+  }
+
   @media (min-width: 961px) {
     .more {
       position: fixed;
@@ -32,6 +38,10 @@
 
   .infographic-weapon-big {
     font-size: 1.75em;
+  }
+
+  .infographic-map-icon {
+    width: 5em;
   }
 
   .infographic-weapon-leaderboard img {
@@ -62,6 +72,24 @@
 
     h2 {
       font-size: 1.25em;
+    }
+  }
+
+  .infographic__section--last {
+    margin-bottom: -2em;
+    text-align: left;
+    box-shadow: -5px -5px 20px rgba(0, 0, 0, .25), inset 0 -200px 90px -120px rgba(0,0,0,.75);
+
+    .modal-hero__title {
+      line-height: 1.4;
+      font-size: 1.5em;
+      margin-top: 5em;
+      text-shadow: 0 0 5px black;
+    }
+
+    img {
+      margin-top: 1em;
+      height: 1em;
     }
   }
 

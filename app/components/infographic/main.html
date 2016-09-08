@@ -55,6 +55,304 @@
             }
           }
       });
+
+      var ctx2 = document.getElementById("weeksChart");
+      var myChart2 = new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9","Week 10", "Week 11", "Week 12", "Week 13", "Week 14", "Week 15", "Week 16", "Week 17", "Week 18", "Week 19", "Week 20", "Week 21", "Week 22", "Week 23", "Week 24", "Week 25", "Week 26", "Week 27", "Week 28", "Week 29", "Week 30", "Week 31", "Week 32", "Week 33", "Week 34", "Week 35", "Week 36", "Week 37", "Week 38", "Week 39", "Week 40", "Week 41", "Week 42", "Week 43", "Week 44" ],
+            datasets: [
+              {
+                label: "Participating",
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "RGBA(0, 158, 245, .2)",
+                borderColor: "#03A9F4",
+                borderCapStyle: 'round',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'bevel',
+                pointBorderColor: "#03A9F4",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 3,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "#03A9F4",
+                pointHoverBorderColor: "#01579B",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [
+                  132791,
+                  101189,
+                  83764,
+                  60248,
+                  77435,
+                  78200,
+                  70954,
+                  73221,
+                  65314,
+                  51591,
+                  69425,
+                  78701,
+                  81800,
+                  53871,
+                  74412,
+                  69351,
+                  83203,
+                  58380,
+                  75684,
+                  58173,
+                  53540,
+                  56730,
+                  40995,
+                  55857,
+                  70103,
+                  74862,
+                  57040,
+                  63296,
+                  62785,
+                  47246,
+                  59770,
+                  54382,
+                  14231,
+                  62888,
+                  42310,
+                  53377,
+                  51094,
+                  27104,
+                  49216,
+                  46929,
+                  52338,
+                  38673,
+                  24139,
+                  60378
+                ],
+                spanGaps: false,
+              },
+              {
+                label: "Participating",
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "#D1C4E9",
+                borderColor: "#673AB7",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "#673AB7",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 3,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "#673AB7",
+                pointHoverBorderColor: "#311B92",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [
+                  132791,
+                  48749,
+                  27374,
+                  13080,
+                  19081,
+                  16253,
+                  12279,
+                  12654,
+                  11089,
+                  6746,
+                  11903,
+                  14669,
+                  13684,
+                  6452,
+                  11457,
+                  10598,
+                  15439,
+                  7346,
+                  11509,
+                  8393,
+                  7187,
+                  7763,
+                  4282,
+                  8072,
+                  5607,
+                  7019,
+                  4815,
+                  6016,
+                  5940,
+                  4777,
+                  6503,
+                  5446,
+                  867,
+                  8069,
+                  4082,
+                  6104,
+                  5639,
+                  2117,
+                  5439,
+                  4899,
+                  5593,
+                  3592,
+                  5957,
+                  8987
+                ],
+                spanGaps: false,
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            legend: {
+              display: false
+            },
+            scales: {
+              yAxes: [{
+                display: false
+              }],
+              xAxes: [{
+                ticks: {
+                    display: false
+                }
+              }]
+            },
+            tooltips: {
+              titleFontFamily: 'Roboto',
+              titleFontStyle: 'normal',
+              bodyFontFamily: 'Roboto',
+              bodyFontStyle: '300',
+              bodySpacing: 10,
+              xPadding: 20,
+              mode: 'label',
+              backgroundColor: 'rgba(0, 0, 0, .6)',
+              callbacks: {
+                label: function (tooltipItem, data) {
+                  var label = "";
+                  if (tooltipItem.datasetIndex === 0) {
+                    label = 'Reached lighthouse';
+                  } else if (tooltipItem.datasetIndex === 1) {
+                    label = 'Of which for the first time'
+                  }
+                  var label = label + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString();
+                  return label;
+                }
+              }
+            }
+          }
+      });
+
+      var ctx3 = document.getElementById("matchesChart");
+      var myChart3 = new Chart(ctx3, {
+          type: 'line',
+          data: {
+            labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9","Week 10", "Week 11", "Week 12", "Week 13", "Week 14", "Week 15", "Week 16", "Week 17", "Week 18", "Week 19", "Week 20", "Week 21", "Week 22", "Week 23", "Week 24", "Week 25", "Week 26", "Week 27", "Week 28", "Week 29", "Week 30", "Week 31", "Week 32", "Week 33", "Week 34", "Week 35", "Week 36", "Week 37", "Week 38", "Week 39", "Week 40", "Week 41", "Week 42", "Week 43", "Week 44" ],
+            datasets: [
+              {
+                label: "Participating",
+                fill: true,
+                lineTension: 0.1,
+                backgroundColor: "RGBA(107, 198, 189, .30)",
+                borderColor: "#009688",
+                borderCapStyle: 'round',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'bevel',
+                pointBorderColor: "#009688",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 3,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "#009688",
+                pointHoverBorderColor: "#01579B",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [
+                  3328080,
+                  2132164,
+                  1769366,
+                  1239323,
+                  1690504,
+                  1764930,
+                  1666041,
+                  1714250,
+                  1556543,
+                  1201517,
+                  1761268,
+                  1977349,
+                  2218218,
+                  1337402,
+                  1900060,
+                  1676356,
+                  2005994,
+                  1404408,
+                  1904287,
+                  1481882,
+                  1367986,
+                  1493594,
+                  1070902,
+                  1483247,
+                  1811793,
+                  1954028,
+                  1473531,
+                  1634286,
+                  1631687,
+                  1226230,
+                  1570359,
+                  1717268,
+                  291568,
+                  1653389,
+                  1147808,
+                  1434099,
+                  1401740,
+                  1093286,
+                  1417738,
+                  1257058,
+                  1472729,
+                  1067054,
+                  1405374,
+                  1712322
+                ],
+                spanGaps: false,
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            legend: {
+              display: false
+            },
+            scales: {
+              yAxes: [{
+                display: false
+              }],
+              xAxes: [{
+                ticks: {
+                    display: false
+                }
+              }]
+            },
+            tooltips: {
+              titleFontFamily: 'Roboto',
+              titleFontStyle: 'normal',
+              bodyFontFamily: 'Roboto',
+              bodyFontStyle: '300',
+              bodySpacing: 10,
+              xPadding: 20,
+              mode: 'label',
+              backgroundColor: 'rgba(0, 0, 0, .6)',
+              callbacks: {
+                label: function (tooltipItem, data) {
+                  var label = "";
+                  if (tooltipItem.datasetIndex === 0) {
+                    label = '';
+                  } else if (tooltipItem.datasetIndex === 1) {
+                    label = 'Reached lighthouse'
+                  }
+                  var label = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString();
+                  return label;
+                }
+              }
+            }
+          }
+      });
+
     }
 
   }
