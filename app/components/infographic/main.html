@@ -5,3 +5,57 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
+<script>
+  var interval = setInterval(function() { charts(); }, 300);
+
+  var charts = function () {
+    if (Chart !== undefined) {
+      clearInterval(interval);
+      var ctx = document.getElementById("weaponTypeChart");
+      var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ["Primary", "Heavy", "Secondary"],
+              datasets: [{
+                  label: 'Kills',
+                  data: [682740953, 117361134, 733896091],
+                  backgroundColor: [
+                      '#D6D4D0',
+                      '#695583',
+                      '#7BA884'
+                  ],
+                  borderColor: [
+                      '#D6D4D0',
+                      '#695583',
+                      '#7BA884'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            responsive: true,
+            legend: {
+              position: 'bottom',
+              fullWidth: false
+            },
+            tooltips: {
+              bodyFontFamily: 'Roboto',
+              bodyFontStyle: '300',
+              xPadding: 20,
+              mode: 'label',
+              backgroundColor: 'rgba(0, 0, 0, .6)',
+              callbacks: {
+                label: function (tooltipItem, data) {
+                  var label = data.labels[tooltipItem.index] + ' kills : ' + data.datasets[0].data[tooltipItem.index].toLocaleString();
+                  return label;
+                }
+              }
+            }
+          }
+      });
+    }
+
+  }
+</script>

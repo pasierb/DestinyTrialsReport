@@ -437,7 +437,7 @@
               } else {
                 statsFactory.weaponStats(player);
               }
-              
+
               api.lastWeapons(
                 player.characterInfo.characterId
               ).then(function (result) {
