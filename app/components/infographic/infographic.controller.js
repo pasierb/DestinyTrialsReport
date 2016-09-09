@@ -61,7 +61,7 @@
 	    	name: getItemName(2808364178), 
 	    	icon: getItemIcon(2808364178), 
 	    	kills: '42,420,851', 
-	    	headshots: ''
+	    	headshots: '0.004%'
 	    },
 	    {
 	    	name: getItemName(1551744703), 
@@ -73,7 +73,7 @@
 	    	name: getItemName(1397524041), 
 	    	icon: getItemIcon(1397524041), 
 	    	kills: '9,803,379',  
-	    	headshots: ''
+	    	headshots: '0.014%'
 	    }
 	  ]
 	};
