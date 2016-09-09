@@ -31,7 +31,8 @@
     "moment-timezone": "~0.5.0",
     "ngstorage": "~0.3.10",
     "underscore": "~1.8.3",
-    "xpull": "*"
+    "xpull": "*",
+    "angular-chart.js": "^1.0.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.8"

@@ -51,6 +51,8 @@ module.exports = function(config) {
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/underscore/underscore.js',
       'bower_components/xpull/xpull.js',
+      'bower_components/chart.js/src/chart.js',
+      'bower_components/angular-chart.js/dist/angular-chart.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/app.js',

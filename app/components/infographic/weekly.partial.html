@@ -14,7 +14,11 @@
             </h3>
           </div>
           <div class="col-xs-12 col-sm-10">
-            <canvas width="300" id="matchesChart">
+            <!-- <canvas width="300" id="matchesChart"> -->
+            <canvas id="line" class="chart chart-line" chart-data="dataMatches"
+            chart-labels="labels" chart-options="options"
+            chart-dataset-override="datasetOverride">
+            </canvas> 
           </div>
         </div>
         <hr>
@@ -45,7 +49,11 @@
             </h3>
           </div>
           <div class="col-xs-12 col-sm-10">
-            <canvas width="300" id="weeksChart">
+            <!-- <canvas width="300" id="weeksChart"> -->
+            <canvas id="line" class="chart chart-line" chart-data="dataWeeks"
+            chart-labels="labels" chart-options="optionsWeeks"
+            chart-dataset-override="datasetsWeeks">
+            </canvas> 
           </div>
         </div>
         <hr>
