@@ -44,7 +44,7 @@
 	    	headshots: '77%'
 	    },
 	    {
-	    	name: getItemIcon(486279087), 
+	    	name: getItemName(486279087), 
 	    	icon: getItemIcon(486279087), 
 	    	kills: '78,350,662', 
 	    	headshots: '7%'
