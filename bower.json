@@ -43,6 +43,11 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "chart.js": {
+      "main": [
+        "dist/Chart.bundle.min.js"
+      ]
     }
   }
 }
