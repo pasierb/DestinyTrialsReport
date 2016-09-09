@@ -13,7 +13,11 @@ angular
     }
   })
   .when('/yeartwo', {
-    templateUrl: 'components/infographic/main.html'
+    templateUrl: 'components/infographic/main.html',
+    controller: 'infographicController',
+    resolve: {
+      definitions: getDefinitions
+    }
   })
   .when('/:platformName/:playerName', {
     templateUrl: 'components/home/home.html',
