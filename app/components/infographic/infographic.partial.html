@@ -1,0 +1,70 @@
+<div class="home__content">
+  <article class="home__main">
+    <div class="maps block blog-post shadow-z-1 {{mapInfoAnimClass}}">
+      <div class="modal-hero blog-image"
+           ng-style="{'background-image': 'url(/assets/img/infographic/header.png)'}">
+        <div class="modal-hero__header">
+          <h1 class="modal-hero__title">
+            Trials by numbers
+          </h1>
+        </div>
+        <div class="modal-hero__switch">
+          <img src="/assets/img/logo.png" title="DestinyTrialsReport">
+        </div>
+      </div>
+      <div class="blog-post__content">
+        <div class="row">
+          <div class="col-xs-12">
+            <p>
+              As we eagerly await the return of Trials of Orisis in Rise of Iron we decided to look back at Year Two. In this infographic you'll find all the interesting statistics we could find.
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Totals
+            </h3>
+          </div>
+          <div class="col-xs-6 col-sm-5 stat">
+            <span>2,443,630</span>
+            <label>Guardians participated</label>
+          </div>
+          <div class="col-xs-6 col-sm-5 stat">
+            <span>548,770</span>
+            <label>Reached the lighthouse</label>
+          </div>
+        </div>
+        <hr class="spacer">
+        <div class="row">
+          <div class="col-xs-6 col-sm-offset-2 col-sm-5 stat">
+            <span>69,519,018</span>
+            <label>Matches</label>
+          </div>
+          <div class="col-xs-6 col-sm-5 stat">
+            <span>1,534,004,822</span>
+            <label>Kills</label>
+          </div>
+        </div>
+      </div>
+      <div ng-include="'components/infographic/weekly.partial.html'"></div>
+      <div ng-include="'components/infographic/weapons.partial.html'" ></div>
+      <div ng-include="'components/infographic/heroes.partial.html'"></div>
+      <div ng-include="'components/infographic/maps.partial.html'"></div>
+      <div class="modal-hero blog-image infographic__section infographic__section--last"
+           ng-style="{'background-image': 'url(/assets/img/infographic/bye.png)'}">
+        <div class="modal-hero__header">
+          <p class="modal-hero__title">
+            Thanks for all the support,<br>see you in Year 3!
+            <br>
+            <img src="/assets/img/logo.png" title="DestinyTrialsReport">
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="home__aside">
+    <div ng-include="'components/infographic/aside.partial.html'"></div>
+  </div>
+</div>

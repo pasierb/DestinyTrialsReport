@@ -1,0 +1,107 @@
+.infographic {
+  pointer-events: none;
+
+  .content {
+    pointer-events: auto;
+    padding-left: 0;
+    position: static;
+  }
+
+  @media (max-width: 640px) {
+    .home__content {
+      width: calc(100vw - 2em);
+    }
+  }
+
+  @media (min-width: 961px) {
+    .more {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .infographic-top-weapons-stat {
+    font-size: 1em;
+    line-height: 2.1;
+  }
+
+  .stat big {
+    font-size: 4.5em;
+  }
+
+  .infographic-stat-medium {
+    big {
+      font-size: 2em;
+    }
+  }
+
+  .infographic-weapon-big {
+    font-size: 1.75em;
+  }
+
+  .infographic-map-icon {
+    width: 5em;
+  }
+
+  .infographic-weapon-leaderboard img {
+    margin: .5em auto 0 auto;
+  }
+
+  .home__aside {
+    order: 99;
+  }
+
+  .modal-hero {
+    box-shadow: none;
+  }
+
+  .modal-hero__switch img {
+    max-height: 1.5em;
+  }
+
+  hr.spacer {
+    background: none;
+    margin: .75em 0;
+  }
+
+  .infographic__section {
+    margin-top: 3em;
+    box-shadow: -5px -5px 20px rgba(0, 0, 0, .25), inset 0 -70px 40px -50px rgba(0, 0, 0, 0.75);
+    min-height: 0;
+
+    h2 {
+      font-size: 1.25em;
+    }
+  }
+
+  .infographic__section--last {
+    margin-bottom: -2em;
+    text-align: left;
+    box-shadow: -5px -5px 20px rgba(0, 0, 0, .25), inset 0 -200px 90px -120px rgba(0,0,0,.75);
+
+    .modal-hero__title {
+      line-height: 1.4;
+      font-size: 1.5em;
+      margin-top: 5em;
+      text-shadow: 0 0 5px black;
+    }
+
+    img {
+      margin-top: 1em;
+      height: 1em;
+    }
+  }
+
+  @media (min-width: 961px) {
+    .more {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .col-xs-6:nth-child(n+3) {
+        margin-top: 0;
+    }
+  }
+}

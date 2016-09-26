@@ -1,0 +1,386 @@
+<div class="modal-hero blog-image infographic__section"
+           ng-style="{'background-image': 'url(https://www.bungie.net//img/theme/destiny/bgs/pgcrs/crucible_asylum.jpg)'}">
+        <div class="modal-hero__header">
+          <h2 class="modal-hero__title">
+            Weapons
+          </h2>
+        </div>
+      </div>
+      <div class="blog-post__content">
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Top weapons
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="top-weapons--map">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                  <label class="top-weapons__label">Primary</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Kills</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Headshots</label>
+                </div>
+              </div>
+              <div class="row top-weapons--map__row" ng-repeat="weapon in topWeapons.primary">
+                <div class="col-xs-6 col-sm-6">
+                  <div class="last-weapon-weapon__descr">
+                    <img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net' + weapon.icon}}">
+                    <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span class="infographic-top-weapons-stat" ng-bind="weapon.kills"></span>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span class="infographic-top-weapons-stat" ng-bind="weapon.headshots"></span>
+                </div>
+              </div>
+              <hr class="hr--minor">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                  <label class="top-weapons__label">Secondary</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Kills</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Headshots</label>
+                </div>
+              </div>
+              <div class="row top-weapons--map__row" ng-repeat="weapon in topWeapons.secondary">
+                <div class="col-xs-6 col-sm-6">
+                  <div class="last-weapon-weapon__descr">
+                    <img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net' + weapon.icon}}">
+                    <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span class="infographic-top-weapons-stat" ng-bind="weapon.kills"></span>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span class="infographic-top-weapons-stat" ng-bind="weapon.headshots"></span>
+                </div>
+              </div>
+              <hr class="hr--minor">
+              <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                  <label class="top-weapons__label">Heavy</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Kills</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Headshots</label>
+                </div>
+              </div>
+              <div class="row top-weapons--map__row" ng-repeat="weapon in topWeapons.heavy">
+                <div class="col-xs-6 col-sm-6">
+                  <div class="last-weapon-weapon__descr">
+                    <img class="last-match-weapon__img img-responsive" ng-src="{{'https://www.bungie.net' + weapon.icon}}">
+                    <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+                  </div>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span class="infographic-top-weapons-stat" ng-bind="weapon.kills"></span>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span class="infographic-top-weapons-stat" ng-bind="weapon.headshots"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Kills with the Khvostov 7G-02 &nbsp;
+              <img class="last-match-weapon__img img-responsive" ng-src="https://www.bungie.net//common/destiny_content/icons/9a3a2a86698a976a92cec201980630bb.jpg">
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-7 stat">
+                <big>5,853</big>
+                <label>kills in total</labe>
+              </div>
+              <hr class="hr--minor visible-xs">
+              <div class="col-xs-12 col-sm-5 stat first-in-lighthouse__players">
+                <span class="first-in-lighthouse__rank first-in-lighthouse__rank--1">
+                  <span>1<sup>st</sup></span>
+                </span>
+                <span class="first-in-lighthouse__player">
+                  <a ng-href="https://my.trials.report/xbox/Tehrminatr" target="_blank">Tehrminatr</a>
+                </span>
+                <span class="first-in-lighthouse__time">
+                  <span>27 kills</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Weapon types
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <!-- <canvas width="300" id="weaponTypeChart"> -->
+            <canvas id="pie" class="chart chart-pie"
+              chart-data="dataWeapons" chart-labels="labelsWeapons" chart-options="optionsWeapons"
+              chart-dataset-override="datasetsWeapons">
+            </canvas> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-offset-2 col-sm-10">
+            <hr class="hr--minor">
+            <div class="top-weapons--map">
+              <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                  <label class="top-weapons__label">Primary</label>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <label>Kills</label>
+                </div>
+                <div class="col-xs-3 col-sm-5 stat">
+                  <label></label>
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/pulse-rifle.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>194,523,945</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>28</span>%
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/scout-rifle.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>184,748,677</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>27</span>%
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/auto-rifle.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>153,648,430</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>23</span>%
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/hand-cannon.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>149,819,901</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>22</span>%
+                </div>
+              </div>
+              <hr class="hr--minor">
+              <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                  <label class="top-weapons__label">Secondary</label>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <label>Kills</label>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <label></label>
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/sniper-rifle.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>458,671,910</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>63</span>%
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/shotgun.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>249,578,696</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>34</span>%
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/fusion-rifle.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>15,196,183</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>2</span>%
+                </div>
+              </div>
+              <div class="row top-weapons--map__row">
+                <div class="col-xs-6 col-sm-4">
+                  <img class="weapon-type-icon img-responsive"
+                       ng-src="assets/img/weapon-icons/sidearm.svg">
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>10,449,302</span>
+                </div>
+                <div class="col-xs-3 col-sm-4 stat">
+                  <span>1</span>%
+                </div>
+              </div>
+            </div>
+            <hr class="hr--minor">
+            <div class="row">
+              <div class="col-xs-6 col-sm-4">
+                <label class="top-weapons__label">Heavy</label>
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <label>Kills</label>
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <label></label>
+              </div>
+            </div>
+            <div class="row top-weapons--map__row">
+              <div class="col-xs-6 col-sm-4">
+                <img class="weapon-type-icon img-responsive"
+                     ng-src="assets/img/weapon-icons/rocket-launcher.svg">
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <span>84,351,291</span>
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <span>72</span>%
+              </div>
+            </div>
+            <div class="row top-weapons--map__row">
+              <div class="col-xs-6 col-sm-4">
+                <img class="weapon-type-icon img-responsive"
+                     ng-src="assets/img/weapon-icons/machine-gun.svg">
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <span>30,537,959</span>
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <span>26</span>%
+              </div>
+            </div>
+            <div class="row top-weapons--map__row">
+              <div class="col-xs-6 col-sm-4">
+                <img class="weapon-type-icon img-responsive"
+                     ng-src="assets/img/weapon-icons/sword.svg">
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <span>2,471,884</span>
+              </div>
+              <div class="col-xs-3 col-sm-4 stat">
+                <span>2</span>%
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row first-in-lighthouse">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Least used exotic
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8">
+                <div class="last-weapon-weapon__descr infographic-weapon-big">
+                  <img class="last-match-weapon__img img-responsive" ng-src="https://www.bungie.net//common/destiny_content/icons/32313b7a8cb2ce9105a4b9852bb1e4d2.jpg">
+                  <span class="last-match-weapon__title">Pocket Infinity</span>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 stat infographic-stat-medium">
+                <big>17,551</big>
+                <label>kills in total</labe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row first-in-lighthouse">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Most kills with common weapons
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 stat first-in-lighthouse__players">
+                <span class="first-in-lighthouse__rank first-in-lighthouse__rank--first infographic-weapon-leaderboard">
+                  <img class="last-match-weapon__img img-responsive" ng-src="https://www.bungie.net/common/destiny_content/icons/9ce4d43fc1621527999d6cf3b3658101.jpg" style="margin: -.2em auto 0 auto;height: 3em;width: 3em;z-index: -1;border-radius: 2em">
+                </span>
+                <span class="first-in-lighthouse__player ">
+                  Ascalon-LR1
+                  <br><br>
+                </span>
+                <span class="first-in-lighthouse__time">
+                  <span>19,888 kills</span>
+                </span>
+              </div>
+              <div class="col-xs-12 col-sm-4 stat first-in-lighthouse__players">
+                <span class="first-in-lighthouse__rank first-in-lighthouse__rank--second infographic-weapon-leaderboard">
+                  <img class="last-match-weapon__img img-responsive" ng-src="https://www.bungie.net/common/destiny_content/icons/da228eb46b3cd8d215e78605a4f7a946.jpg" style="margin: -.1em auto 0 auto;height: 2.6em;width: 2.6em;z-index: -1;border-radius: 1.5em">
+                </span>
+                <span class="first-in-lighthouse__player infographic-weapon-leaderboard">
+                  Häkke Test-A
+                  <br><br>
+                </span>
+                <span class="first-in-lighthouse__time">
+                  <span>17,472 kills</span>
+                </span>
+              </div>
+              <div class="col-xs-12 col-sm-4 stat first-in-lighthouse__players">
+                <span class="first-in-lighthouse__rank first-in-lighthouse__rank--third infographic-weapon-leaderboard">
+                  <img class="last-match-weapon__img img-responsive" ng-src="https://www.bungie.net/common/destiny_content/icons/03222b32781bc37f97148e1e97599c59.jpg" style="margin: 0 auto 0 auto;height: 2.2em;width: 2.2em;z-index: -.05;border-radius: 1em">
+                </span>
+                <span class="first-in-lighthouse__player infographic-weapon-leaderboard">
+                  SUROS TSR-10
+                  <br><br>
+                </span>
+                <span class="first-in-lighthouse__time">
+                  <span>11,302 kills</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
