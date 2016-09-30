@@ -5,7 +5,7 @@
     .module('trialsReportApp')
     .controller('homeController', homeController);
 
-  function homeController(api, config, definitions, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $interval, $timeout, $translate, $analytics, $rootScope, tmhDynamicLocale, $q, $http) {
+  function homeController(api, config, guardianggFactory, homeFactory, $localStorage, locationChanger, matchesFactory, $routeParams, $scope, statsFactory, $translate, $analytics, $rootScope, tmhDynamicLocale, $q, $http) {
     $scope.$storage = $localStorage.$default({
       language: 'en',
       platform: true,
@@ -39,7 +39,6 @@
       }
     });
 
-    $scope.lighthouseFilter = 0;
     tmhDynamicLocale.set($localStorage.language);
 
     $scope.changeLanguage = function () {
@@ -60,102 +59,6 @@
       tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
     });
 
-    $scope.searchedMaps = {};
-    var wait;
-
-    $scope.resetMapVars = function () {
-      $scope.direction = 'center';
-      $scope.mapIndex = 0;
-      $scope.showNext = false;
-      $scope.showPrev = true;
-    };
-
-    $scope.mapInfoAnimClass = '';
-    $scope.toggleDirection = function (value) {
-      var offset = (value === 'left' ? -1 : 1);
-      if ((value === 'right' && $scope.showNext) || ((value === 'left' && $scope.showPrev))){
-        $scope.mapInfoAnimClass = 'is-switching-' + value;
-        $timeout(function () {
-          $scope.mapInfoAnimClass = 'is-waiting-' + value;
-          $scope.mapIndex = ($scope.mapIndex + offset);
-          var newIndex = ($scope.mapIndex + $scope.mapHistory.length - 1);
-          var nextIndex = newIndex + 1;
-          $scope.showNext = angular.isDefined($scope.mapHistory[nextIndex]);
-          $scope.showPrev = angular.isDefined($scope.mapHistory[newIndex-1]);
-          $scope.direction = value;
-          $scope.loadMapInfo($scope.mapHistory[newIndex].week);
-          $scope.direction = 'center';
-        }, 300);
-      }
-    };
-
-    $scope.setFlawlessRecord = function (leaderboard) {
-      $scope.lighthouseLeaderboard = undefined;
-      if (leaderboard && leaderboard[0]) {
-        if ($scope.lighthouseFilter > 0) {
-          leaderboard = _.filter(leaderboard, function(team){ return team.platform == $scope.lighthouseFilter; });
-        }
-        $scope.lighthouseLeaderboard = _.sortBy(leaderboard, 'period');
-
-        if ($scope.lighthouseLeaderboard[0]) {
-          $scope.lighthouseLeaderboard[0].rank = 1;
-          $scope.lighthouseLeaderboard[0].rankSuffix = 'st';
-          $scope.lighthouseLeaderboard[0].class = '';
-          $scope.lighthouseLeaderboard[0].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[0].period)
-            .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[0].period))).format('HH:mm:ss');
-        }
-
-        if ($scope.lighthouseLeaderboard[1]) {
-          $scope.lighthouseLeaderboard[1].rank = 2;
-          $scope.lighthouseLeaderboard[1].rankSuffix = 'nd';
-          $scope.lighthouseLeaderboard[1].class = 'second';
-          $scope.lighthouseLeaderboard[1].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[1].period)
-            .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[1].period))).format('HH:mm:ss');
-        }
-
-        if ($scope.lighthouseLeaderboard[2]) {
-          $scope.lighthouseLeaderboard[2].rank = 3;
-          $scope.lighthouseLeaderboard[2].rankSuffix = 'rd';
-          $scope.lighthouseLeaderboard[2].class = 'third';
-          $scope.lighthouseLeaderboard[2].time = moment.utc(moment.utc($scope.lighthouseLeaderboard[2].period)
-            .diff(getTrialsBeginDate($scope.lighthouseLeaderboard[2].period))).format('HH:mm:ss');
-        }
-      }
-    };
-
-    $scope.loadMapInfo = function (week) {
-      if ($scope.searchedMaps[week]) {
-        var map = $scope.searchedMaps[week];
-        $scope.weaponSummary = map.weaponSummary;
-        $scope.weaponTotals = map.weaponTotals;
-        $scope.mapHistory = map.mapHistory;
-        $scope.currentMapInfo = map.mapInfo;
-        $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[map.mapInfo.referenceId].name;
-        $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
-        $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
-      } else {
-        return statsFactory.mapStats(week)
-          .then(function (mapInfo) {
-            $scope.searchedMaps[week] = mapInfo;
-            $scope.weaponSummary = mapInfo.weaponSummary;
-            $scope.weaponTotals = mapInfo.weaponTotals;
-            $scope.mapHistory = mapInfo.mapHistory;
-            $scope.currentMapInfo = mapInfo.mapInfo;
-            $scope.currentMapInfo.weekText = getRelativeWeekText(moment.utc(mapInfo.mapInfo.start_date), $scope.trialsInProgress, true);
-            $scope.currentMapInfo.timeAgo = moment.utc(mapInfo.mapInfo.end_date).fromNow();
-            $scope.currentMapInfo.mapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].mapImage;
-            $scope.currentMapInfo.pgcrImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].pgcrImage;
-            $scope.currentMapInfo.heatmapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
-            $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
-            $scope.currentMapInfo.lighthouseLeaderboard = mapInfo.lighthouseLeaderboard;
-            $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
-            $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
-          }
-        );
-      }
-    };
-
-    $scope.resetMapVars();
     getMapFromStorage();
 
     $scope.adsenseSlots = {
@@ -166,12 +69,6 @@
 
     $scope.subdomain = config.subdomain === 'my';
     $scope.sdOpponents = config.subdomain === 'opponents';
-
-    $scope.trialsDates = {
-      begin: trialsDates.begin.format('YYYY-MM-DD'),
-      end: trialsDates.end.format('YYYY-MM-DD')
-    };
-    $scope.trialsInProgress = moment().isBefore(trialsDates.end);
 
     $scope.lighthouseLeaderboard = null;
     $scope.weaponKills = weaponKills;
@@ -189,31 +86,10 @@
       $scope.focusOnPlayer = Math.min(3, Math.max(1, $scope.focusOnPlayer + Math.floor(window.innerWidth / 320) * direction));
     };
 
-    $scope.isPlaylist = function (week) {
-      if (!week) week = $localStorage.currentMap.week;
-      return playlists.hasOwnProperty(week);
-    };
-
-    $scope.getPlaylistHeader = function (week) {
-      if (!week) week = $localStorage.currentMap.week;
-      return playlists[week].header;
-    };
-
-    $scope.getPlaylistPopover = function (week) {
-      if (!week) week = $localStorage.currentMap.week;
-      var list = [];
-      var count = playlists[week].maps.length;
-      for (var i=0; i<count; i++) {
-        var id = playlists[week].maps[i];
-        list.push(DestinyCrucibleMapDefinition[id].name);
-      }
-      return list.join('<br />');
-    };
-
     function setCurrentMap(id, week) {
       $scope.currentMapId = id;
       $scope.currentMap = DestinyCrucibleMapDefinition[id];
-      $scope.loadMapInfo(week);
+      // $scope.loadMapInfo(week);
       // $scope.loadMapInfo(38);
     }
 
@@ -257,11 +133,6 @@
     $scope.toggleStats = function () {
       $scope.hideStats = !$scope.hideStats;
       $localStorage.hideStats = $scope.hideStats;
-    };
-
-    $scope.toggleFlawless = function (platform) {
-      $scope.lighthouseFilter = platform;
-      $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
     };
 
     $scope.searchName = function (name) {
@@ -314,45 +185,6 @@
           });
         }
       });
-    };
-
-    $scope.gggLoadWeapons = function (platform, start_date, end_date) {
-      $scope.platformNumeric = platform ? 2 : 1;
-      var dates = trialsDates;
-
-      if (start_date && end_date) {
-        dates = {
-          begin:  moment.utc(start_date),
-          end:  moment.utc(end_date)
-        }
-      }
-
-      if ($scope.gggWeapons) {
-        return guardianggFactory.getWeapons(
-          $scope.platformNumeric,
-          dates
-        ).then(function (result) {
-            $scope.mapInfoAnimClass = '';
-            $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
-            $scope.gggWeapons[$scope.platformNumeric].show = result.show;
-            $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
-          });
-      } else {
-        $scope.gggShow = false;
-      }
-    };
-
-    $scope.togglePlatform = function () {
-      $scope.platformValue = !$scope.platformValue;
-      $localStorage.platform = $scope.platformValue;
-      $scope.gggLoadWeapons($scope.platformValue);
-    };
-
-    $scope.setPlatform = function (platformBool) {
-      $scope.platformValue = platformBool;
-      $localStorage.platform = $scope.platformValue;
-      $scope.gggLoadWeapons($scope.platformValue);
-      return platformBool;
     };
 
     $scope.getWeaponTypeByIndex = function (index) {
@@ -425,8 +257,6 @@
         $scope.platformValue = $scope.fireteam[0].membershipType === 2;
         if (($scope.fireteam[0] && $scope.fireteam[1] && $scope.fireteam[2]) || $scope.subdomain) {
           $scope.focusOnPlayers = true;
-          var platformUrl = $scope.platformValue ? '/ps/' : '/xbox/';
-
           guardianggFactory.getTeamElo($scope.fireteam);
 
           _.each($scope.fireteam, function (player) {
@@ -456,14 +286,6 @@
       } else {
         $scope.fireteam = null;
       }
-    }
-
-    if (config.gggWeapons) {
-      $scope.gggWeapons = {};
-      $scope.gggWeapons[config.platformNumeric] = config.gggWeapons.gggWeapons;
-      $scope.gggWeapons[config.platformNumeric].show = config.gggWeapons.show;
-      $scope.platformNumeric = config.platformNumeric;
-      $scope.gggShow = $scope.gggWeapons[config.platformNumeric].show;
     }
   }
 })();

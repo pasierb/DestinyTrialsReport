@@ -12,6 +12,9 @@ var BUCKET_PRIMARY_WEAPON = 1498876634;
 var BUCKET_SPECIAL_WEAPON = 2465295065;
 var BUCKET_HEAVY_WEAPON = 953998645;
 
+var BUCKET_WEAPONS = [BUCKET_PRIMARY_WEAPON, BUCKET_SPECIAL_WEAPON, BUCKET_HEAVY_WEAPON];
+var BUCKET_ARMOR    = [BUCKET_HEAD, BUCKET_ARMS, BUCKET_CHEST, BUCKET_LEGS];
+
 var BUCKET_BUILD = 3284755031;
 
 // Destiny Stat Definition
@@ -157,12 +160,6 @@ var itemPerkToBucket = {
   1094584227: 'heavy'
 };
 
-var bucketHashToName = {
-  1498876634: 'primary',
-  2465295065: 'special',
-  953998645: 'heavy'
-};
-
 var reloadPerksToItemType = {
   2129333927: 14,
   1394084296: 14,
@@ -191,6 +188,12 @@ var itemTypeToBucket = {
   17: 'special',
    8: 'heavy',
   10: 'heavy'
+};
+
+var bucketHashToName = {
+  1498876634: 'primary',
+  2465295065: 'special',
+  953998645: 'heavy'
 };
 
 var itemTypeNameToBucket = {

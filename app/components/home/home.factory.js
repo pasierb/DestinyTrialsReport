@@ -82,7 +82,7 @@
             return activities;
           } else {
             toastr.error('No Trials matches found for character', 'Error');
-            return account;
+            return [];
           }
         });
     };
@@ -114,7 +114,7 @@
         .then(function (result) {
           var fireteam = [];
           if (result && result.data && result.data.Response && result.data.Response.data) {
-            var searched = _.find(result.data.Response.data.entries, function(player){ 
+            var searched = _.find(result.data.Response.data.entries, function(player){
                               return player.player.destinyUserInfo.membershipId == activities.membershipId;
                             });
 
@@ -125,8 +125,8 @@
               searched: true
             });
 
-            var teammates = _.filter(result.data.Response.data.entries, function(player){ 
-                              return (player.values.team.basic.value == searched.values.team.basic.value) && 
+            var teammates = _.filter(result.data.Response.data.entries, function(player){
+                              return (player.values.team.basic.value == searched.values.team.basic.value) &&
                                      (player.characterId != searched.characterId)
                             })
 

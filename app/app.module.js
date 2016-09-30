@@ -44,7 +44,7 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
                           resultGGG.data.membershipId = player.membershipId;
                           return resultGGG.data;
                         } else {
-                          return homeFactory.getFireteam(resultBNG);
+                          return player;
                         }
                       });
                   }
@@ -211,26 +211,13 @@ function getRelativeWeekText(trialsBeginDate, trialsInProgress, showImmediately,
   return text;
 }
 
-function gggWeapons($localStorage, guardianggFactory) {
-  var platformNumeric = $localStorage.platform ? 2 : 1;
-  return guardianggFactory.getWeapons(
-    platformNumeric,
-    trialsDates
-  ).then(function (result) {
-      return {
-        gggWeapons: result,
-        platformNumeric: platformNumeric,
-        subdomain: getSubdomain()
-      };
-    });
-}
-
 var DestinyArmorDefinition;
 var DestinyMedalDefinition;
 var DestinySubclassDefinition;
 var DestinyWeaponDefinition;
 var DestinyCrucibleMapDefinition;
 var DestinyTalentGridDefinition;
+var DestinyStepsDefinition;
 
 function getDefinitions($localStorage, $q, $http) {
   var language = 'en';
@@ -243,7 +230,8 @@ function getDefinitions($localStorage, $q, $http) {
     $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinySubclassDefinition.json', {cache:true}),
     $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyWeaponDefinition.json', {cache:true}),
     $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyCrucibleMapDefinition.json', {cache:true}),
-    $http.get('//api.destinytrialsreport.com/manifest/' + language + '/DestinyTalentGridDefinition.json', {cache:true})
+    $http.get('//api.destinytrialsreport.com/manifest/v2/all/DestinyTalentGridDefinition.json', {cache:true}),
+    $http.get('//api.destinytrialsreport.com/manifest/v2/' + language + '/DestinyStepsDefinition.json', {cache:true})
   ])
   .then(function (responses) {
     DestinyArmorDefinition       = responses[0].data;
@@ -252,6 +240,7 @@ function getDefinitions($localStorage, $q, $http) {
     DestinyWeaponDefinition      = responses[3].data;
     DestinyCrucibleMapDefinition = responses[4].data;
     DestinyTalentGridDefinition  = responses[5].data;
+    DestinyStepsDefinition       = responses[6].data;
   });
 }
 

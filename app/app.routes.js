@@ -8,7 +8,9 @@ angular
     templateUrl: 'components/home/home.html',
     controller: 'homeController',
     resolve: {
-      config: gggWeapons,
+      config: function () {
+        return {};
+      },
       definitions: getDefinitions
     }
   })

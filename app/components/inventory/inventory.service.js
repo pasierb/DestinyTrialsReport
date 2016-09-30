@@ -1,76 +1,114 @@
 'use strict';
 
-function buildNode(definedNodes, nodeDef, itemNode, nodeStep) {
-  definedNodes.push({
-    nodeHash: nodeDef.nodeHash,
-    row: nodeDef.row,
-    column: nodeDef.column,
-    isActivated: itemNode.isActivated,
-    stepIndex: itemNode.stepIndex,
-    nodeStepHash: nodeDef.steps[itemNode.stepIndex].nodeStepHash,
-    perkHashes: nodeDef.steps[itemNode.stepIndex].perkHashes,
-    name: nodeStep.name,
-    description: nodeStep.description,
-    icon: nodeStep.icon,
-    affectsQuality: nodeStep.affectsQuality
-  });
-}
-
-function buildItem(definedItems, item, equippedItem, definedNodes) {
-  definedItems.push({
-    itemHash: item.itemHash,
-    itemLevel: item.itemLevel,
-    bucketHash: equippedItem.bucketHash,
-    stats: item.stats,
-    perks: item.perks,
-    primaryStat: item.primaryStat,
-    nodes: definedNodes
-  });
-}
-
 function collectDefinedNodes(talentGrid, item) {
-  var definedNodes = [];
+  var nodes = [];
   if (talentGrid) {
-    for (var n = 0, nlen = item.nodes.length; n < nlen; n++) {
-      var nodeDef = talentGrid[n],
-        itemNode = item.nodes[n];
-      if (itemNode.isActivated === true && nodeDef.column > -1) {
-        var nodeStep = nodeDef.steps[itemNode.stepIndex];
-        if (nodeStep) {
-          if (nodeStep.name && (hiddenNodes.indexOf(nodeStep.nodeStepHash) < 0)) {
-            buildNode(definedNodes, nodeDef, itemNode, nodeStep);
+    _.each(item.nodes, function (node, index) {
+      var definition = talentGrid[index];
+      if (node.isActivated === true && definition.c > -1) {
+        var stepHash = definition.s[node.stepIndex];
+        if (stepHash) {
+          var step = DestinyStepsDefinition[stepHash];
+          if (step && step.n && (hiddenNodes.indexOf(stepHash) < 0)) {
+            nodes.push({
+              nodeHash: definition.n,
+              column: definition.c,
+              row: definition.r,
+              nodeStepHash: step.s,
+              perkHashes: step.p,
+              name: step.n,
+              description: step.d,
+              icon: step.i
+            });
           }
         }
       }
-    }
+    });
   }
-  return definedNodes;
+  return nodes;
 }
+
+function setItemDefinition(item, definition) {
+  if (item.itemHash in definition) {
+    if ('icon' in definition[item.itemHash]) {
+      if (definition[item.itemHash].localIcon !== true) {
+        if (definition[item.itemHash].icon.substr(0, 4) !== 'http') {
+          definition[item.itemHash].icon = 'https://www.bungie.net' + definition[item.itemHash].icon;
+        }
+      }
+    }
+    definition[item.itemHash].itemHash = item.itemHash;
+    return definition[item.itemHash];
+  } else {
+    console.log('Classified Item Hash: ' + item.itemHash);
+    return {name: 'Classified', description: 'Classified', icon: 'https://www.bungie.net/img/misc/missing_icon.png', subType: 0};
+  }
+}
+
 angular.module('trialsReportApp')
-  .factory('inventoryService', function (inventoryFactory, bungie, $q) {
+  .factory('inventoryService', function (bungie, $q, util) {
+
     var getData = function (player) {
       return bungie.getInventory(
         player.membershipType,
         player.membershipId,
-        player.characterInfo.characterId,
-        '14',
-        '21'
+        player.characterInfo.characterId
       )
       .then(function (result) {
           if (result && result.data && result.data.Response) {
-            var equippedItems = result.data.Response.data.buckets.Equippable,
-              definedItems = [],
-              talentGrid;
-            for (var i = 0, len = equippedItems.length; i < len; i++) {
-              var equippedItem = equippedItems[i],
-                item = equippedItem.items[0];
+            var equippedItems   = result.data.Response.data.buckets.Equippable,
+                armors          = {equipped: {}},
+                weapons         = {primary: {}, special: {}, heavy: {}},
+                abilities       = {weaponKillsGrenade: {}, weaponKillsSuper: {}, weaponKillsMelee: {}},
+                subclass        = {abilities: abilities, build: {}, nodes: {}, displayedNodes: {}};
+
+            _.each(equippedItems, function (equippedItem) {
+              var item = equippedItem.items[0];
+
               if (item) {
-                talentGrid = DestinyTalentGridDefinition[item.talentGridHash];
-                var definedNodes = collectDefinedNodes(talentGrid, item);
-                buildItem(definedItems, item, equippedItem, definedNodes);
+                if (_.includes(BUCKET_WEAPONS, equippedItem.bucketHash)) {
+                  var bucket = util.getDefinitionsByBucket(equippedItem.bucketHash);
+                  weapons[bucket].definition = setItemDefinition(item, DestinyWeaponDefinition);
+                  weapons[bucket].nodes = collectDefinedNodes(DestinyTalentGridDefinition[item.talentGridHash], item);
+                  weapons[bucket].damage = item.primaryStat.value;
+
+                } else if (_.includes(BUCKET_ARMOR, equippedItem.bucketHash)) {
+                  var definition = setItemDefinition(item, DestinyArmorDefinition);
+                  if (definition.tierType === 6) {
+                    armors.equipped.definition = definition;
+                    armors.equipped.nodes = collectDefinedNodes(DestinyTalentGridDefinition[item.talentGridHash], item);
+                  }
+
+                  if (!armors.equipped.definition && equippedItem.bucketHash === BUCKET_HEAD) {
+                    armors.equipped.definition = definition;
+                    armors.equipped.nodes = collectDefinedNodes(DestinyTalentGridDefinition[item.talentGridHash], item);
+                  }
+
+                } else if (equippedItem.bucketHash === BUCKET_BUILD) {
+                  var nodes = collectDefinedNodes(DestinyTalentGridDefinition[item.talentGridHash], item);
+                  subclass.nodes = _.reject(nodes, function (node) {
+                    return _.includes([5, 7], node.column);
+                  });
+                  subclass.definition = setItemDefinition(item, DestinySubclassDefinition);
+
+                  subclass.definition.itemHash = item.itemHash;
+                  _.each(subclass.nodes, function (node) {
+                    subclass.displayedNodes[node.nodeStepHash] = node;
+                    subclass.build[util.getBuildName(node.column)] = node;
+                  });
+
+                  subclass.displayedNodes = _.reject(subclass.nodes, function (n) {
+                    return (_.includes([2, 3, 4], n.column) && n.row === 0);
+                  });
+                }
               }
-            }
-            return definedItems;
+            });
+
+            return {
+              weapons: weapons,
+              armors: armors,
+              subclass: subclass
+            };
           }
       });
     };
@@ -81,15 +119,6 @@ angular.module('trialsReportApp')
           dfd.resolve(getData(player));
 
           return dfd.promise;
-        },
-        inventoryInParallel = function (inventoryItems) {
-          if (inventoryItems) {
-            var dfd = $q.defer();
-            dfd.resolve(inventoryFactory.getData(inventoryItems));
-            return dfd.promise;
-          } else {
-            return null;
-          }
         },
         setPlayerInventory = function (inventory) {
           var dfd = $q.defer();
@@ -103,7 +132,6 @@ angular.module('trialsReportApp')
           console.log(String(fault));
         };
       return returnInventory(membershipType, player)
-        .then(inventoryInParallel)
         .then(setPlayerInventory)
         .catch(reportProblems);
     };

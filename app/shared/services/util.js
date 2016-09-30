@@ -20,6 +20,29 @@ app.service('util', [
 
         return url;
       };
+
+      this.getBuildName = function(column) {
+        switch (column) {
+          case 1: return 'grenade';
+          case 2: return 'jump';
+          case 3: return 'super';
+          case 4: return 'melee';
+          case 6: return 'ability1';
+          case 8: return 'ability2';
+        }
+      }
+
+      this.getDefinitionsByBucket = function(bucketHash) {
+        switch (bucketHash) {
+          case BUCKET_PRIMARY_WEAPON: return 'primary';
+          case BUCKET_SPECIAL_WEAPON: return 'special';
+          case BUCKET_HEAVY_WEAPON:   return 'heavy';
+          case BUCKET_HEAD:           return 'head';
+          case BUCKET_ARMS:           return 'arms';
+          case BUCKET_CHEST:          return 'chest';
+          case BUCKET_LEGS:           return 'legs';
+        }
+      }
     };
   }
 ])
