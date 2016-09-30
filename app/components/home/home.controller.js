@@ -59,7 +59,7 @@
       tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
     });
 
-    getMapFromStorage();
+    getMapFromDb();
 
     $scope.adsenseSlots = {
       0: '1401297353',
@@ -90,7 +90,7 @@
       $scope.currentMapId = id;
       $scope.currentMap = DestinyCrucibleMapDefinition[id];
       // $scope.loadMapInfo(week);
-      $scope.loadMapInfo(45);
+      // $scope.loadMapInfo(38);
     }
 
     function getMapFromStorage() {
@@ -129,6 +129,12 @@
           }
         });
     }
+
+    $scope.togglePlatform = function () {
+      $scope.platformValue = !$scope.platformValue;
+      $localStorage.platform = $scope.platformValue;
+      // $scope.gggLoadWeapons($scope.platformValue);
+    };
 
     $scope.toggleStats = function () {
       $scope.hideStats = !$scope.hideStats;

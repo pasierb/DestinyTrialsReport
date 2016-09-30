@@ -5,8 +5,7 @@
     .module('trialsReportApp')
     .controller('mapsController', mapsController);
 
-  function mapsController(guardianggFactory, $localStorage, $scope, statsFactory, $timeout, tmhDynamicLocale) {
-
+  function mapsController(guardianggFactory, $localStorage, $scope, statsFactory, $timeout, tmhDynamicLocale, api) {
     $scope.gggWeapons = {};
     $scope.lighthouseFilter = 0;
     tmhDynamicLocale.set($localStorage.language);
@@ -117,17 +116,35 @@
     $scope.weaponKills = weaponKills;
 
     $scope.isPlaylist = function (week) {
-      if (!week) week = $localStorage.currentMap.week;
+      if (!week) {
+        if ($localStorage.currentMap && $localStorage.currentMap.week) {
+          week = $localStorage.currentMap.week;
+        } else {
+          week = 45;
+        }
+      }
       return playlists.hasOwnProperty(week);
     };
 
     $scope.getPlaylistHeader = function (week) {
-      if (!week) week = $localStorage.currentMap.week;
+      if (!week) {
+        if ($localStorage.currentMap && $localStorage.currentMap.week) {
+          week = $localStorage.currentMap.week;
+        } else {
+          week = 45;
+        }
+      }
       return playlists[week].header;
     };
 
     $scope.getPlaylistPopover = function (week) {
-      if (!week) week = $localStorage.currentMap.week;
+      if (!week) {
+        if ($localStorage.currentMap && $localStorage.currentMap.week) {
+          week = $localStorage.currentMap.week;
+        } else {
+          week = 45;
+        }
+      }
       var list = [];
       var count = playlists[week].maps.length;
       for (var i=0; i<count; i++) {
@@ -168,12 +185,6 @@
       }
     };
 
-    $scope.togglePlatform = function () {
-      $scope.platformValue = !$scope.platformValue;
-      $localStorage.platform = $scope.platformValue;
-      $scope.gggLoadWeapons($scope.platformValue);
-    };
-
     $scope.setPlatform = function (platformBool) {
       $scope.platformValue = platformBool;
       $localStorage.platform = $scope.platformValue;
@@ -189,7 +200,14 @@
       }
     };
 
-    $scope.loadMapInfo($localStorage.currentMap.week);
+    return api.getCurrentMap()
+      .then(function (result) {
+        if (result && result.data && result.data[0] && result.data[0].referenceId) {
+          $scope.loadMapInfo(result.data[0].week)
+        } else {
+          $scope.loadMapInfo(45)
+        }
+      });
 
   }
 })();

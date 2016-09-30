@@ -36,10 +36,10 @@
             <span ng-bind="currentMapInfo.matches | number"></span>
             <label>Total matches</label>
           </div>
-          <div class="col-xs-6 col-md-3 stat">
-            <span ng-bind="currentMapInfo.kills | number"></span>
-            <label>Total kills</label>
-          </div>
+          <!--<div class="col-xs-6 col-md-3 stat">-->
+            <!--<span ng-bind="currentMapInfo.kills | number"></span>-->
+            <!--<label>Total kills</label>-->
+          <!--</div>-->
         </div>
         <hr>
         <div class="row" ng-if="currentMapInfo">
@@ -51,8 +51,14 @@
               <i class="material-icons icon--small info">&#xE8FD;</i>
             </span>
           </div>
+          <div class="col-xs-12 col-sm-10" ng-if="currentMapInfo.week == 45">
+            <div class="first-in-lighthouse__undecided">
+              Temporarily disabled due to Bungie API issues.
+            </div>
+          </div>
           <div class="col-xs-12 col-sm-4" ng-repeat="(key, weapons) in weaponSummary track by $index"
-               ng-class="{'col-sm-offset-1': $index > 0}">
+               ng-class="{'col-sm-offset-1': $index > 0}"
+               ng-if="currentMapInfo.week < 45">
             <div class="top-weapons--map">
               <div class="row">
                 <div class="col-xs-6 col-sm-4">
