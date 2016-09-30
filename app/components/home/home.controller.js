@@ -90,7 +90,7 @@
       $scope.currentMapId = id;
       $scope.currentMap = DestinyCrucibleMapDefinition[id];
       // $scope.loadMapInfo(week);
-      // $scope.loadMapInfo(38);
+      $scope.loadMapInfo(45);
     }
 
     function getMapFromStorage() {
