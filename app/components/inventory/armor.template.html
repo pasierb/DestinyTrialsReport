@@ -25,4 +25,22 @@
       </div>
     </div>
   </div>
+  <div class="weapon armor col-xs-12">
+    <div class="armor__img">
+      <img class="img-responsive"
+           ng-src="{{artifact.icon}}"
+           alt="{{artifact.name}}">
+    </div>
+    <div class="weapon__info">
+      <div class="weapon__title">
+        <span ng-bind="artifact.name"></span>
+      </div>
+      <div class="weapon__label" ng-if="!isRoiArtifact">
+        <span class="player-hazard player-hazard--none">Harmless artifact</span>
+      </div>
+      <div class="weapon__hazards">
+        <span class="player-hazard" ng-repeat="hazard in artifact.hazards" ng-bind="hazard"></span>
+      </div>
+    </div>
+  </div>
 </div>

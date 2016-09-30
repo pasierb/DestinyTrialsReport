@@ -30,11 +30,12 @@ angular.module('trialsReportApp')
         player.membershipId
       ).then(function (result) {
         var year2,
-          nonHazard,
-          nonHazardCharity,
-          currentWeek,
-          currentMap,
-          mapWeapons = [];
+            year3,
+            nonHazard,
+            nonHazardCharity,
+            currentWeek,
+            currentMap,
+            mapWeapons = [];
 
         if (result && result.data && result.data[0]) {
           var data = result.data[0];
@@ -42,7 +43,13 @@ angular.module('trialsReportApp')
           if (data.kills && data.deaths && data.match_count) {
             var deaths = data.deaths == 0 ? 1 : data.deaths;
             var kd = data.kills / deaths;
-            year2 = {kd: kd, matches: data.match_count};
+            year3 = {kd: kd, matches: data.match_count};
+          }
+
+          if (data.kills_y2 && data.deaths_y2 && data.match_count_y2) {
+            var deaths = data.deaths_y2 == 0 ? 1 : data.deaths_y2;
+            var kd = data.kills_y2 / deaths;
+            year2 = {kd: kd, matches: data.match_count_y2};
           }
 
           if (data.flawless) {
@@ -117,10 +124,10 @@ angular.module('trialsReportApp')
           }
 
           if (data.thisMapWeapons && data.thisMapWeapons[0]) {
-            _.each(data.thisMapWeapons, function (mapWeapon) { 
-              var weekWeapon = _.find(player.lastWeapons, function(w){ 
-                return w.itemTypeName == mapWeapon.itemTypeName; 
-              }); 
+            _.each(data.thisMapWeapons, function (mapWeapon) {
+              var weekWeapon = _.find(player.lastWeapons, function(w){
+                return w.itemTypeName == mapWeapon.itemTypeName;
+              });
               if (weekWeapon) {
                 mapWeapon.sum_headshots = parseInt(mapWeapon.sum_headshots) + parseInt(weekWeapon.sum_headshots)
                 mapWeapon.sum_kills = parseInt(mapWeapon.sum_kills) + parseInt(weekWeapon.sum_kills)
@@ -137,6 +144,7 @@ angular.module('trialsReportApp')
         }
 
         player.year2 = year2;
+        player.year3 = year3;
         player.nonHazard = nonHazard;
         player.nonHazardCharity = nonHazardCharity;
         player.currentWeek = currentWeek;

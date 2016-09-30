@@ -18,7 +18,8 @@ app.service('bungie', [
         stats: 'Stats/{platform}/{membershipId}/{characterId}/?modes={mode}&lc={locale}',
         inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
         activityHistory: 'Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}&lc={locale}',
-        pgcr: 'Stats/PostGameCarnageReport/{instanceId}/?lc={locale}'
+        pgcr: 'Stats/PostGameCarnageReport/{instanceId}/?lc={locale}',
+        partnership: 'https://www.bungie.net/Platform/User/%7Bparam1%7D/Partnerships/'
       };
       this.searchForPlayer = function(platform, name) {
         return this.get(ENDPOINTS.searchForPlayer, {

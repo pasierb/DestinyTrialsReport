@@ -57,7 +57,7 @@ angular.module('trialsReportApp')
       .then(function (result) {
           if (result && result.data && result.data.Response) {
             var equippedItems   = result.data.Response.data.buckets.Equippable,
-                armors          = {equipped: {}},
+                armors          = {equipped: {}, artifact: {hazards: []}},
                 weapons         = {primary: {}, special: {}, heavy: {}},
                 abilities       = {weaponKillsGrenade: {}, weaponKillsSuper: {}, weaponKillsMelee: {}},
                 subclass        = {abilities: abilities, build: {}, nodes: {}, displayedNodes: {}};
@@ -74,6 +74,42 @@ angular.module('trialsReportApp')
 
                 } else if (_.includes(BUCKET_ARMOR, equippedItem.bucketHash)) {
                   var definition = setItemDefinition(item, DestinyArmorDefinition);
+                  if (equippedItem.bucketHash === BUCKET_ARTIFACT) {
+                    armors.artifact = definition;
+                    var artifactHazard;
+
+                    switch (item.itemHash) {
+                      case 2672107536:
+                        artifactHazard = [ "Sword deflects rockets" ]; // Radeghast
+                        break;
+                      case 2672107537:
+                        artifactHazard = [ "Highlights low health/full super" ]; // Perun
+                        break;
+                      case 2672107542:
+                        artifactHazard = [ "No sprint cooldown" ]; // Jolder
+                        break;
+                      case 2672107541:
+                        artifactHazard = [ "Resists damage over time" ]; // Silmar
+                        break;
+                      case 2672107540:
+                        artifactHazard = [ "No super, increased everything else" ]; // Felwinter
+                        break;
+                      case 2672107551:
+                        artifactHazard = [ "Detailed radar" ]; // Gheleon
+                        break;
+                      case 2672107538:
+                        artifactHazard = [ "Faster super recharge" ]; // Skorri
+                        break;
+                      case 0:
+                      case 2672107539: // Timur
+                      default:
+                        artifactHazard = null; // No Rise of Iron Artifact
+                        break;
+
+                    }
+                    armors.artifact.hazards = artifactHazard;
+                  }
+
                   if (definition.tierType === 6) {
                     armors.equipped.definition = definition;
                     armors.equipped.nodes = collectDefinedNodes(DestinyTalentGridDefinition[item.talentGridHash], item);
