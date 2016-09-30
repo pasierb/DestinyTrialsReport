@@ -4,7 +4,7 @@
 												(!$storage.visibility.mapbased.stats && !$storage.visibility.mapbased.weapons))}">
 	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.weekly.stats || $storage.visibility.weekly.weapons"
 					 class="player-tab--this-week"
-					 heading="{{currentMapInfo.weekText}}"
+					 heading="This Week"
 					 analytics-on analytics-event="Click"
 					 analytics-category="This week">
 	  <div class="player-tab--this-week"
@@ -102,7 +102,7 @@
 	</uib-tab>
 	<uib-tab ng-if="$storage.visibility.all || $storage.visibility.mapbased.stats || $storage.visibility.mapbased.weapons"
 					 class="player-tab--map-based"
-					 heading="{{currentMapInfo.name}}"
+					 heading="This Map"
 					 analytics-on analytics-event="Click"
 					 analytics-category="This map">
 		<div class="player-tab--map-based"
