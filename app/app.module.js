@@ -83,7 +83,11 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
       throwLog('teammatesFromRecent');
       if (players && players[0] && !players[0].characterInfo) {
         var playerOne = _.find(players, function (player) {
-          return player.searched;
+          if (player.searched) {
+            return player.searched;
+          } else {
+            return player.membershipId == players.membershipId;
+          }
         });
         var methods = [homeFactory.getCharacters(
           playerOne.membershipType,

@@ -96,6 +96,7 @@
         '14',
         aCount
       ).then(function (result) {
+          account.searched = true;
           if (result && result.data && result.data.Response && result.data.Response.data && result.data.Response.data.activities) {
             var activities = result.data.Response.data.activities;
             return setActivityData(account, activities);
