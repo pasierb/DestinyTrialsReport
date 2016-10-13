@@ -71,7 +71,11 @@
           getFromParams(platform, name).then(function (result) {
             if (result) {
               var teammates = _.filter(result, function (player) {
-                return !player.searched;
+                if (result.membershipId) {
+                  return player.membershipId != result.membershipId;
+                } else {
+                  return !player.searched;
+                }
               });
               var names = _.pluck(teammates, "name")
               $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + names.join('/'));
