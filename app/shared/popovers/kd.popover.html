@@ -1,45 +1,18 @@
-<div class="popover kd" tabindex="-1" ng-show="player.year2 || player.year3">
+<div class="popover" tabindex="-1" ng-show="player.year3.kd > 0 || player.year2.kd > 0">
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="row">
-      <div class="col-xs-{{player.currentWeek.matches == 0 ? 6 : 4}}">
-        <div class="stat__header" translate="YEAR3"></div>
-        <div class="row row--small-gutter">
-          <div class="col-xs-12 stat">
-            <span ng-bind="player.year3.kd | number:2"></span>
-            <label translate="killsDeathsRatioShort"></label>
-          </div>
-          <!--<div class="col-xs-6 stat">-->
-            <!--<span ng-bind="player.year3.matches | number:0"></span>-->
-            <!--<label translate="MATCHES"></label>-->
-          <!--</div>-->
-        </div>
+      <div class="popover-col stat" ng-if="player.currentWeek.kd > 0">
+        <span ng-bind="player.currentWeek.kd | number:2"></span>
+        <label translate="THISWEEK"></label>
       </div>
-      <div class="col-xs-{{player.currentWeek.matches == 0 ? 6 : 4}}">
-        <div class="stat__header" translate="YEAR2"></div>
-        <div class="row row--small-gutter">
-          <div class="col-xs-12 stat">
-            <span ng-bind="player.year2.kd | number:2"></span>
-            <label translate="killsDeathsRatioShort"></label>
-          </div>
-          <!--<div class="col-xs-6 stat">-->
-            <!--<span ng-bind="player.year2.matches | number:0"></span>-->
-            <!--<label translate="MATCHES"></label>-->
-          <!--</div>-->
-        </div>
+      <div class="popover-col stat" ng-if="player.year3.kd > 0">
+        <span ng-bind="player.year3.kd | number:2"></span>
+        <label translate="YEAR3"></label>
       </div>
-      <div class="col-xs-4" ng-if="player.currentWeek.matches > 0">
-        <div class="stat__header" translate="THISWEEK"></div>
-        <div class="row row--small-gutter">
-          <div class="col-xs-12 stat">
-            <span ng-bind="player.currentWeek.kd | number:2"></span>
-            <label translate="killsDeathsRatioShort"></label>
-          </div>
-          <!--<div class="col-xs-6 stat">-->
-            <!--<span ng-bind="player.currentWeek.matches | number:0"></span>-->
-            <!--<label translate="MATCHES"></label>-->
-          <!--</div>-->
-        </div>
+      <div class="popover-col stat" ng-if="player.year2.kd > 0">
+        <span ng-bind="player.year2.kd | number:2"></span>
+        <label translate="YEAR2"></label>
       </div>
     </div>
   </div>
