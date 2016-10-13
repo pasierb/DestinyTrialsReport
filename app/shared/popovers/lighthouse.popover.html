@@ -1,6 +1,23 @@
 <div class="popover" tabindex="-1" ng-show="player.lighthouse.yearCount">
   <div class="arrow"></div>
   <div class="popover-content">
+    <table>
+      <tr>
+        <th></th>
+        <th translate="ACCOUNT" class="lighthouse-header"></th>
+        <th translate="CHARACTER" class="lighthouse-header"></th>
+      </tr>
+      <tr ng-repeat="year in player.lighthouse.years | orderObjectBy:'year' track by $index">
+        <td ng-bind="'Year ' + year.year" class="lighthouse-year"></td>
+        <td ng-bind="year.accountCount | number:0"></td>
+        <td ng-bind="characterLighthouse(player, year) | number:0"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!--<div class="popover" tabindex="-1" ng-show="player.lighthouse.yearCount">
+  <div class="arrow"></div>
+  <div class="popover-content">
     <div class="row">
       <div class="col-xs-{{12/player.lighthouse.yearCount}}" ng-repeat="year in player.lighthouse.years | orderObjectBy:'year':true track by $index">
         <div class="stat__header" ng-bind="'Year ' + year.year"></div>
@@ -17,4 +34,4 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
