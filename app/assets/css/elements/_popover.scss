@@ -169,8 +169,12 @@
   }
 }
 
-.popover.kd {
-  min-width: 12em;
+.popover-col {
+  position: relative;
+  float: left;
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .popover.weapon-stats {
@@ -180,8 +184,6 @@
 }
 
 .popover.ggg-elo {
-  min-width: 16em;
-
   .stat > span {
     font-size: 1em;
     color: rgba(255, 255, 255, 0.85);
