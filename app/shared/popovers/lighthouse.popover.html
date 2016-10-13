@@ -1,15 +1,15 @@
 <div class="popover" tabindex="-1" ng-show="player.lighthouse.yearCount">
   <div class="arrow"></div>
   <div class="popover-content">
-    <div class="stat__header" ng-bind="'FLAWLESS WITH ACCOUNT / CHARACTER'"></div>
+    <div class="stat__header" translate="flawlessPopoverHeader"></div>
     <div class="row">
-      <div class="col-xs-4" ng-repeat="i in [3, 2, 1]" ng-init="year = player.lighthouse.years[i]">
+      <div class="popover-col" ng-repeat="i in [3, 2, 1]" ng-init="year = player.lighthouse.years[i]">
         <div class="stat">
           <span class="success" ng-if="year">
             <span ng-bind="(year.accountCount | number:0) + 'x'"></span> / <span ng-bind="(characterLighthouse(player, year) | number:0) + 'x'"></span>
           </span>
           <span class="player-main-stats__lighthouse fail" ng-if="!year">
-            <i class="material-icons">&#xE14C;</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="material-icons">&#xE14C;</i>
           </span>
           <label ng-bind="'Year ' + i"></label>
         </div>
