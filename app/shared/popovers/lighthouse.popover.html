@@ -1,37 +1,19 @@
 <div class="popover" tabindex="-1" ng-show="player.lighthouse.yearCount">
   <div class="arrow"></div>
   <div class="popover-content">
-    <table>
-      <tr>
-        <th></th>
-        <th translate="ACCOUNT" class="lighthouse-header"></th>
-        <th translate="CHARACTER" class="lighthouse-header"></th>
-      </tr>
-      <tr ng-repeat="year in player.lighthouse.years | orderObjectBy:'year' track by $index">
-        <td ng-bind="'Year ' + year.year" class="lighthouse-year"></td>
-        <td ng-bind="year.accountCount | number:0"></td>
-        <td ng-bind="characterLighthouse(player, year) | number:0"></td>
-      </tr>
-    </table>
-  </div>
-</div>
-<!--<div class="popover" tabindex="-1" ng-show="player.lighthouse.yearCount">
-  <div class="arrow"></div>
-  <div class="popover-content">
+    <div class="stat__header" ng-bind="'FLAWLESS WITH ACCOUNT / CHARACTER'"></div>
     <div class="row">
-      <div class="col-xs-{{12/player.lighthouse.yearCount}}" ng-repeat="year in player.lighthouse.years | orderObjectBy:'year':true track by $index">
-        <div class="stat__header" ng-bind="'Year ' + year.year"></div>
-        <div class="row row--small-gutter">
-          <div class="col-xs-6 stat">
-            <span ng-bind="year.accountCount | number:0"></span>
-            <label translate="ACCOUNT"></label>
-          </div>
-          <div class="col-xs-6 stat">
-            <span ng-bind="characterLighthouse(player, year) | number:0"></span>
-            <label translate="CHARACTER"></label>
-          </div>
+      <div class="col-xs-4" ng-repeat="i in [3, 2, 1]" ng-init="year = player.lighthouse.years[i]">
+        <div class="stat">
+          <span class="success" ng-if="year">
+            <span ng-bind="(year.accountCount | number:0) + 'x'"></span> / <span ng-bind="(characterLighthouse(player, year) | number:0) + 'x'"></span>
+          </span>
+          <span class="player-main-stats__lighthouse fail" ng-if="!year">
+            <i class="material-icons">&#xE14C;</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </span>
+          <label ng-bind="'Year ' + i"></label>
         </div>
       </div>
     </div>
   </div>
-</div>-->
+</div>
