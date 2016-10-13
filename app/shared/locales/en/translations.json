@@ -97,5 +97,14 @@
     "Donator": "Part of an amazing few who have helped keep this site running",
     "Guardian.gg": "One of the creators of Guardian.gg, a fantastic resource for all things Destiny"
   },
-  "flawlessPopoverHeader": "FLAWLESS WITH ACCOUNT / CHARACTER"
+  "flawlessPopoverHeader": "FLAWLESS WITH ACCOUNT / CHARACTER",
+  "artifactHazards": {
+    "Radegast": "Sword deflects rockets",
+    "Perun": "Highlights low health/full super",
+    "Skorri": "Faster super recharge",
+    "Felwinter": "No super, increased everything else",
+    "Silimar": "Resists damage over time",
+    "Jolder": "No sprint cooldown",
+    "Gheleon": "Detailed radar"
+  }
 }
