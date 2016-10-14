@@ -10,7 +10,7 @@ app.service('bungie', [
 
   function ($http, util, RequestFallback, $localStorage) {
     return new function () {
-      var BASE_URL = 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
+      // var BASE_URL = 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
       var ENDPOINTS = {
         searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/?lc={locale}',
         account: '{platform}/Account/{membershipId}/?lc={locale}',
@@ -83,6 +83,8 @@ app.service('bungie', [
       };
 
       this.get = function(endpoint, tokens) {
+        var rand = _.random(0, 1);
+        var BASE_URL = '//' + ['proxy', 'osiris'][rand] + '.DestinyTrialsReport.com/Platform/Destiny/';
         // return RequestFallback(BASE_URL, endpoint, tokens);
         return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };
