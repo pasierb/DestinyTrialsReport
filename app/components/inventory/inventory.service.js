@@ -76,36 +76,20 @@ angular.module('trialsReportApp')
                   var definition = setItemDefinition(item, DestinyArmorDefinition);
                   if (equippedItem.bucketHash === BUCKET_ARTIFACT) {
                     armors.artifact = definition;
+
                     var artifactHazard;
-
                     switch (item.itemHash) {
-                      case 2672107536:
-                        artifactHazard = [ "Sword deflects rockets" ]; // Radeghast
-                        break;
-                      case 2672107537:
-                        artifactHazard = [ "Highlights low health/full super" ]; // Perun
-                        break;
-                      case 2672107542:
-                        artifactHazard = [ "No sprint cooldown" ]; // Jolder
-                        break;
-                      case 2672107541:
-                        artifactHazard = [ "Resists damage over time" ]; // Silmar
-                        break;
-                      case 2672107540:
-                        artifactHazard = [ "No super, increased everything else" ]; // Felwinter
-                        break;
-                      case 2672107551:
-                        artifactHazard = [ "Detailed radar" ]; // Gheleon
-                        break;
-                      case 2672107538:
-                        artifactHazard = [ "Faster super recharge" ]; // Skorri
-                        break;
-                      case 0:
+                      case 2672107536: artifactHazard = ["Radeghast"]; break;
+                      case 2672107537: artifactHazard = ["Perun"];     break;
+                      case 2672107538: artifactHazard = ["Skorri"];    break;
+                      case 2672107540: artifactHazard = ["Felwinter"]; break;
+                      case 2672107541: artifactHazard = ["Silmar"];    break;
+                      case 2672107542: artifactHazard = ["Jolder"];    break;
+                      case 2672107551: artifactHazard = ["Gheleon"];   break;
                       case 2672107539: // Timur
+                      case 0:
                       default:
-                        artifactHazard = null; // No Rise of Iron Artifact
-                        break;
-
+                        artifactHazard = null;
                     }
                     armors.artifact.hazards = artifactHazard;
                   }
