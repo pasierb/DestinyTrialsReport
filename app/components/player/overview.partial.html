@@ -31,12 +31,12 @@
 <div class="player__content player-quick-look" ng-class="{'is-hidden': !$storage.visibility.all && !$storage.visibility.kdRatio}" ng-show="$storage.visibility.all || $storage.visibility.kdRatio">
   <div class="row">
     <div class="player-quick-look__form col-xs-9">
-      <div class="player-quick-look__form__matches" trials-history="player.activities.lastTwentyFive" player-kd="player.stats.killsDeathsRatio.basic.value"></div>
+      <div class="player-quick-look__form__matches" trials-history="player.activities.lastTwentyFive" player-kd="player.totalKd"></div>
       <label class="data-label" translate="RECENT"></label>
     </div>
     <div class="player-quick-look__kd col-xs-3" data-template-url="shared/popovers/kd.popover.html" data-placement="left" bs-popover>
       <div class="player-quick-look__kd__nr">
-        <span ng-bind="(player.stats.killsDeathsRatio.basic.value | number:2) || 'N/A'"></span>
+        <span ng-bind="((player.year3 && player.year3.kd) ? player.year3.kd : (player.year3 && player.year3.kd) ? player.year3.kd : 0 | number:2) || 'N/A'"></span>
       </div>
       <label class="data-label text-right" translate="killsDeathsRatioShort"></label>
     </div>
@@ -45,9 +45,9 @@
 <div class="player-main-stats" ng-class="{'is-hidden': !$storage.visibility.all && !$storage.visibility.mainStats}" ng-show="$storage.visibility.all || $storage.visibility.mainStats">
   <div class="row">
     <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
-      <span ng-if="player.stats.activitiesWinPercentage.basic.value"
-            ng-bind="(player.stats.activitiesWinPercentage.basic.value | number:0) + '%'"></span>
-      <span ng-if="!player.stats.activitiesWinPercentage.basic.value">N/A</span>
+      <span ng-if="player.winPercentage"
+            ng-bind="(player.winPercentage | number:0) + '%'"></span>
+      <span ng-if="!player.winPercentage">N/A</span>
       <label translate="wins"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>

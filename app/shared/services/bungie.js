@@ -84,7 +84,7 @@ app.service('bungie', [
 
       this.get = function(endpoint, tokens) {
         var rand = _.random(0, 1);
-        var BASE_URL = '//' + ['proxy', 'osiris'][rand] + '.DestinyTrialsReport.com/Platform/Destiny/';
+        var BASE_URL = 'https://' + ['proxy', 'osiris'][rand] + '.DestinyTrialsReport.com/Platform/Destiny/';
         // return RequestFallback(BASE_URL, endpoint, tokens);
         return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
       };

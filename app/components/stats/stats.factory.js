@@ -31,6 +31,7 @@ angular.module('trialsReportApp')
       ).then(function (result) {
         var year2,
             year3,
+            winPercentage,
             nonHazard,
             nonHazardCharity,
             currentWeek,
@@ -50,6 +51,12 @@ angular.module('trialsReportApp')
             var deaths = data.deaths_y2 == 0 ? 1 : data.deaths_y2;
             var kd = data.kills_y2 / deaths;
             year2 = {kd: kd, matches: data.match_count_y2};
+          }
+
+          if (data.losses && data.match_count && data.match_count_y2) {
+            var totalMatches = parseInt(data.match_count) + parseInt(data.match_count_y2);
+            var wins = totalMatches - parseInt(data.losses)
+            winPercentage = 100 * wins / totalMatches;
           }
 
           if (data.flawless) {
@@ -145,6 +152,7 @@ angular.module('trialsReportApp')
 
         player.year2 = year2;
         player.year3 = year3;
+        player.winPercentage = winPercentage;
         player.nonHazard = nonHazard;
         player.nonHazardCharity = nonHazardCharity;
         player.currentWeek = currentWeek;
