@@ -10,10 +10,12 @@
       restrict: 'A',
       scope: {
         message: '=message',
-        messageType: '=messageType',
+        messageType: '=messageType', // error, warning or info for now
         messageId: '=messageId'
       },
       link: function ($scope) {
+        $scope.messageType = $scope.messageType || 'info';
+        
         $scope.isHidden = sessionStorage.getItem('hideMessage' + $scope.messageId);
 
         $scope.hideMessage = function () {
