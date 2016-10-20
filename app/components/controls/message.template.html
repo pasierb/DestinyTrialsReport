@@ -1,0 +1,6 @@
+<div class="message" ng-class="{'message--error': messageType === 'error', 'message--warning': messageType === 'warning', 'message--info': messageType === 'info'}" ng-if="!isHidden">
+  <p ng-bind="message"></p>
+  <div class="message__close" ng-click="hideMessage()">
+    <i class="material-icons">&#xE14C;</i>
+  </div>
+</div>
