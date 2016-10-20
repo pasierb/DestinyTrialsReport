@@ -1,0 +1,66 @@
+.message {
+  padding: .75em $controls-padding;
+  color: white;
+  position: relative;
+
+  p {
+    padding: 0 1em 0 1.75em;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  &:before {
+    @include icon();
+    left: 1.5rem;
+    top: .75rem;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    position: absolute;
+  }
+}
+
+.message--error {
+  background: $fail;
+
+  &:before {
+    content: "\e000";
+  }
+}
+
+.message--warning {
+  background: $warning;
+
+  &:before {
+    content: "\e002";
+  }
+}
+
+.message--info {
+  background: $info;
+
+  &:before {
+    content: "\e88f";
+  }
+}
+
+.message__close {
+  position: absolute;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.5);
+  right: .75rem;
+  top: .75rem;
+  line-height: 1.5em;
+  cursor: pointer;
+
+  > i {
+    font-size: .9em;
+  }
+
+  &:hover {
+    color: white;
+  }
+}

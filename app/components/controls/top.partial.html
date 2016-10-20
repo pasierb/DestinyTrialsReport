@@ -76,6 +76,27 @@
     </div>
   </div>
 
+  <div class="message message--error" ng-if="false">
+    <p>Uh-oh.</p>
+    <div class="message__close">
+      <i class="material-icons">&#xE14C;</i>
+    </div>
+  </div>
+
+  <div class="message message--warning" ng-if="false">
+    <p>Oh no.</p>
+    <div class="message__close">
+      <i class="material-icons">&#xE14C;</i>
+    </div>
+  </div>
+
+  <div class="message message--info" ng-if="false">
+    <p>Yay!</p>
+    <div class="message__close">
+      <i class="material-icons">&#xE14C;</i>
+    </div>
+  </div>
+
   <div class="controls-map" ng-class="{'is-week-23': isPlaylist()}"
        ng-style="{'background-image': !isPlaylist() ? 'url(https://www.bungie.net/' + currentMap.pgcrImage + ')' : 'url(' + getPlaylistHeader() + ')'}">
     <div class="controls-map__content">
