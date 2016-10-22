@@ -29,6 +29,8 @@ module.exports = function(config) {
       'bower_components/angulartics-google-analytics/lib/angulartics-google-analytics.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/chart.js/dist/Chart.bundle.min.js',
+      'bower_components/angular-chart.js/dist/angular-chart.js',
       'bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
       'bower_components/moment/moment.js',
@@ -51,8 +53,6 @@ module.exports = function(config) {
       'bower_components/ngstorage/ngStorage.js',
       'bower_components/underscore/underscore.js',
       'bower_components/xpull/xpull.js',
-      'bower_components/chart.js/dist/Chart.bundle.min.js',
-      'bower_components/angular-chart.js/dist/angular-chart.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/app.js',

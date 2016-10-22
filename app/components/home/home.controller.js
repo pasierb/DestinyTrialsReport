@@ -59,6 +59,12 @@
       tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));
     });
 
+    $scope.trialsDates = {
+      begin: trialsDates.begin.format('YYYY-MM-DD'),
+      end: trialsDates.end.format('YYYY-MM-DD')
+    };
+    $scope.trialsInProgress = moment().isBefore(trialsDates.end);
+
     getMapFromDb();
 
     $scope.adsenseSlots = {

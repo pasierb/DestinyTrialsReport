@@ -105,13 +105,6 @@
     };
 
     $scope.resetMapVars();
-
-    $scope.trialsDates = {
-      begin: trialsDates.begin.format('YYYY-MM-DD'),
-      end: trialsDates.end.format('YYYY-MM-DD')
-    };
-    $scope.trialsInProgress = moment().isBefore(trialsDates.end);
-
     $scope.lighthouseLeaderboard = null;
     $scope.weaponKills = weaponKills;
 
