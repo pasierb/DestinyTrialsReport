@@ -24,6 +24,21 @@
   line-height: 7em;
 }
 
+.first-in-lighthouse__undecided--sadface {
+  white-space: normal;
+  line-height: 1.4;
+  text-transform: none;
+  font-family: 'Roboto', sans-serif;
+  max-width: 35em;
+  margin: 0 auto;
+
+  img {
+    max-height: 5em;
+    display: block;
+    margin: 0 auto .5em auto;
+  }
+}
+
 .first-in-lighthouse__content {
   padding: .3em 1.5em 1.25em;
   display: flex;

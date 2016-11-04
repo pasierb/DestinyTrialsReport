@@ -126,10 +126,10 @@
             <h3 class="stat-header">
               First fireteams to reach the lighthouse
             </h3>
-            <span data-content="Due to the way Bungie provides information on lighthouse visits, this leaderboard is subject to change when the tension is high." bs-popover>
+            <span ng-if="currentMapInfo.week < 50" data-content="Due to the way Bungie provides information on lighthouse visits, this leaderboard is subject to change when the tension is high." bs-popover>
               <i class="material-icons icon--small info">&#xE8FD;</i>
             </span>
-            <div class="first-in-lighthouse__platform-toggle">
+            <div class="first-in-lighthouse__platform-toggle" ng-if="currentMapInfo.week < 50">
               <span class="stat-header">Platform</span>
               <a href ng-click="toggleFlawless(0)" ng-class="{'is-active': lighthouseFilter == 0}">Both</a>
               <a href ng-click="toggleFlawless(1)" ng-class="{'is-active': lighthouseFilter == 1}">Xbox</a>
@@ -138,8 +138,9 @@
 
           </div>
           <div class="col-xs-12 col-sm-10" ng-if="!lighthouseLeaderboard">
-            <div class="first-in-lighthouse__undecided">
-              The race is still on...
+            <div class="first-in-lighthouse__undecided first-in-lighthouse__undecided--sadface">
+              <img src="/assets/img/sadface.png">
+              Unfortunately we can't show this anymore. Bungie has turned the Lighthouse into a social space, making us unable to see who got there first.
             </div>
           </div>
           <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="lighthouseLeaderboard && $index < 3" ng-repeat="lb in lighthouseLeaderboard">
