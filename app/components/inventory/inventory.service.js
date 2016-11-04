@@ -83,7 +83,7 @@ angular.module('trialsReportApp')
                       case 2672107537: artifactHazard = ["Perun"];     break;
                       case 2672107538: artifactHazard = ["Skorri"];    break;
                       case 2672107540: artifactHazard = ["Felwinter"]; break;
-                      case 2672107541: artifactHazard = ["Silmar"];    break;
+                      case 2672107541: artifactHazard = ["Silimar"];   break;
                       case 2672107542: artifactHazard = ["Jolder"];    break;
                       case 2672107551: artifactHazard = ["Gheleon"];   break;
                       case 2672107539: // Timur
