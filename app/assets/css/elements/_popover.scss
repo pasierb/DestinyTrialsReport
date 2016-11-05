@@ -6,7 +6,7 @@
   left: 0;
   z-index: 1060;
   display: none;
-  max-width: 276px;
+  max-width: 320px;
   padding: 1px;
   font-size: 1em;
   font-style: normal;
@@ -169,12 +169,21 @@
   }
 }
 
+.popover-row {
+  display: flex;
+}
+
 .popover-col {
-  position: relative;
-  float: left;
-  width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  flex-shrink: 0;
+  margin: 0 15px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .popover.weapon-stats {
