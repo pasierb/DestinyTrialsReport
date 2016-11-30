@@ -94,8 +94,11 @@
   "playlist_name": "Assorted Playlist",
   "badges": {
     "Developer": "Hey! We made this site, so more than likely we are looking you up too...",
+    "Twitter Guy": "I run the DestinyTrialsReport Twitter! Say hi to me at @TrialsReport",
     "Donator": "Part of an amazing few who have helped keep this site running",
-    "Guardian.gg": "One of the creators of Guardian.gg, a fantastic resource for all things Destiny"
+    "Guardian.gg": "One of the creators of Guardian.gg, a fantastic resource for all things Destiny",
+    "Jerk": "This jerk shut us down on our flawless game! >:(",
+    "Ishtar": "The creator of Ishtar Commander, a fantastic item manager application for mobile devices"
   },
   "flawlessPopoverHeader": "FLAWLESS WITH ACCOUNT / CHARACTER",
   "artifactHazards": {
@@ -104,6 +107,7 @@
     "Skorri": "Faster super recharge",
     "Felwinter": "No super, increased everything else",
     "Silimar": "Resists damage over time",
+    "Silmar": "Resists damage over time",
     "Jolder": "No sprint cooldown",
     "Gheleon": "Detailed radar"
   }
