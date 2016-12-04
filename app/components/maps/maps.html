@@ -121,7 +121,7 @@
           </div>
         </div>
         <hr>
-        <div class="row first-in-lighthouse">
+        <div class="row first-in-lighthouse" ng-if="currentMapInfo.week <= 51"> <!-- TODO: Change this to 54 -->
           <div class="col-xs-12 col-sm-2">
             <h3 class="stat-header">
               First fireteams to reach the lighthouse
@@ -159,6 +159,60 @@
             <span class="first-in-lighthouse__time">
               <span ng-bind="lb.time"></span>
             </span>
+            <hr class="hr--minor visible-xs">
+          </div>
+        </div>
+        <div class="row first-in-lighthouse" ng-if="currentMapInfo.week >= 52"> <!-- TODO: Change this to 55 -->
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Challenge of the week
+            </h3>
+            <span data-content="Variks got bored since no-one plays Prison of Elders anymore, so he decided to do challenges in Trials" bs-popover>
+              <i class="material-icons icon--small info">&#xE8FD;</i>
+            </span>
+          </div>
+          <div class="col-xs-12 col-sm-10" ng-if="!challenges[currentMapInfo.week]">
+            <div class="first-in-lighthouse__undecided first-in-lighthouse__undecided--sadface">
+              <img src="/assets/img/sadface.png">
+              No challenge this week. Sorry!
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-10" ng-if="challenges[currentMapInfo.week]">
+            <div class="challenge-intro" ng-if="!challenges[currentMapInfo.week].leaderboard">
+              <div class="challenge-intro__header">
+                <span ng-if="currentMapInfo.weekText === 'this week'">You are challenged, in the ways of old</span>
+                <span ng-if="currentMapInfo.weekText !== 'this week'">You were challenged, in the ways of old</span>
+              </div>
+              <div class="challenge-intro__challenge" ng-bind="challenges[currentMapInfo.week].duringTitle"></div>
+              <div class="challenge-intro__descr">
+                <span ng-if="currentMapInfo.weekText === 'this week'">
+                  Be among the three best challengers to earn a &nbsp;<div class="player-hazard player-hazard--challenger">Challenger</div>&nbsp;badge
+                </span>
+                <span ng-if="currentMapInfo.weekText !== 'this week'">
+                  Variks is counting the results, you will know soon who got the &nbsp;<div class="player-hazard player-hazard--challenger">Challenger</div>&nbsp;badge
+                </span>
+              </div>
+            </div>
+            <div class="challenge-after" ng-if="challenges[currentMapInfo.week].leaderboard" ng-bind-html="challenges[currentMapInfo.week].afterTitle"></div>
+          </div>
+        </div>
+        <div class="row challenge-result" ng-if="challenges[currentMapInfo.week] && challenges[currentMapInfo.week].leaderboard">
+          <div class="col-xs-12 col-sm-2">
+          </div>
+          <div class="col-xs-12 col-sm-3 stat first-in-lighthouse__players" ng-if="$index < 3" ng-repeat="lb in challenges[currentMapInfo.week].leaderboard">
+            <span class="first-in-lighthouse__rank first-in-lighthouse__rank&#45;&#45;{{lb.class}}">
+              <span>{{lb.rank}}<sup ng-bind="lb.rankSuffix"></sup></span>
+            </span>
+            <span class="first-in-lighthouse__player" ng-repeat="player in lb.players track by $index">
+              <a ng-href="https://my.trials.report/{{$parent.lb.platform === 1 ? 'xbox' : 'ps'}}/{{player}}" ng-bind="player" target="_blank"></a>
+            </span>
+            <span class="challenge__amount">
+              <span ng-bind="lb.amount | number"></span>
+            </span>
+            <div class="first-in-lighthouse__platform">
+              <img ng-if="$parent.lb.platform === 1" src="assets/img/xbox.svg" alt="Xbox">
+              <img ng-if="$parent.lb.platform === 2" src="assets/img/ps.svg" alt="PlayStation">
+            </div>
             <hr class="hr--minor visible-xs">
           </div>
         </div>
