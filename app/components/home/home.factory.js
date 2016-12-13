@@ -16,6 +16,14 @@
           if (result && result.data && result.data.Response) {
             resLength = result.data.Response.length;
             if (resLength > 0) {
+              // for (var l = 0; l < resLength; l++) {
+              //   if (result.data.Response[l]) {
+              //     var res = result.data.Response[l];
+              //     if (res['displayName'] && res['displayName'].toLowerCase() == name) {
+              //       response = res;
+              //     }
+              //   }
+              // }
               response = result.data.Response[resLength - 1];
               return response;
             } else {
