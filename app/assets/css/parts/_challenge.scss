@@ -1,0 +1,52 @@
+$challenge-color: #009688;
+
+.challenge-intro {
+  background: url('/assets/img/variks.png') #E0F2F1 no-repeat -3em bottom;
+  background-size: 15em auto;
+  border-radius: .5em;
+  padding: 1.5em;
+  border: 1px solid $challenge-color;
+  text-align: left;
+  padding-left: 13em;
+}
+
+.challenge-intro__header {
+  color: $challenge-color;
+  font-family: 'Roboto Condensed';
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: .9em;
+}
+
+.challenge-intro__challenge {
+  font-size: 1.2em;
+}
+
+.challenge-intro__descr {
+  margin-top: 1em;
+  color: $challenge-color;
+}
+
+.challenge-after {
+  > strong {
+    color: $challenge-color;
+  }
+}
+
+.challenge__amount {
+  font-size: 1.2em;
+  margin: .5em 0;
+  display: block;
+}
+
+@media all and (max-width: 400px) {
+  .challenge-intro {
+    padding-left: 1.5em;
+    background-size: 10em auto;
+    background-position: left bottom;
+  }
+
+  .challenge-intro__descr {
+    padding-left: 9em;
+  }
+}

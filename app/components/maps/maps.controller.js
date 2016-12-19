@@ -19,6 +19,19 @@
       $scope.showPrev = true;
     };
 
+    // TODO
+    $scope.challenges = {
+      "53": {
+        duringTitle: "Get as much kills with a blue weapon as you can",
+        afterTitle: "The top 3 challengers that got the <strong>most kills with a blue weapon</strong> this week:",
+        leaderboard: JSON.parse('[{"platform":2,"players":["Murdaro"],"amount":"1234","rank":1,"rankSuffix":"st","class":"","time":"00:48:51"},{"platform":2,"players":["nico-andreas"],"amount":"1234","rank":2,"rankSuffix":"nd","class":"second","time":"00:52:03"},{"platform":1,"players":["Durern"],"amount":"1234","rank":3,"rankSuffix":"rd","class":"third","time":"00:53:14"},{"platform":2,"players":["BLACKO-RIP"],"amount":"1234","rank":4},{"platform":1,"players":["Magadian"],"amount":"1234","rank":5},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":6}]')
+      },
+      "54": {
+        duringTitle: "Get as much kills with a blue weapon as you can",
+        afterTitle: "Get as much kills with a blue weapon as you can"
+      }
+    };
+
     $scope.mapInfoAnimClass = '';
     $scope.toggleDirection = function (value) {
       var offset = (value === 'left' ? -1 : 1);
