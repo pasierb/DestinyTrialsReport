@@ -5,13 +5,17 @@
       <div class="player-header__char">
         <div class="player-info">
           <h2 class="player-header__gamertag" ng-bind="player.name"></h2>
-          <span class="player-info__class" ng-bind="player.characterInfo.subclassName"></span>
-          <div ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard" class="player-hazard"
-               ng-class="{'player-hazard--developer': hazard === 'Developer' || hazard === 'Guardian.gg', 'player-hazard--donator': hazard === 'Donator'}"
-               data-placement="bottom" data-content="{{'badges.' + hazard | translate}}" bs-popover>
-          </div>
-          <div ng-repeat="hazard in player.nonHazardCharity track by $index" ng-bind="hazard.status" class="player-hazard player-hazard--charity1"
-               data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" bs-popover>
+          <div class="player-info__sub">
+            <div class="player-info__class" ng-bind="player.characterInfo.subclassName"></div>
+            <div class="player-info__hazards">
+              <span ng-repeat="hazard in player.nonHazardCharity track by $index" ng-bind="hazard.status" class="player-hazard player-hazard--charity1"
+                   data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" bs-popover>
+              </span>
+              <span ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard" class="player-hazard"
+                   ng-class="{'player-hazard--developer': hazard === 'Developer' || hazard === 'Guardian.gg', 'player-hazard--joel': hazard === 'Twitter Guy', 'player-hazard--donator': hazard === 'Donator'}"
+                   data-placement="bottom" data-content="{{'badges.' + hazard | translate}}" bs-popover>
+              </span>
+            </div>
           </div>
         </div>
         <div class="player-level">
