@@ -39,6 +39,53 @@ $challenge-color: #009688;
   display: block;
 }
 
+.leaderboard {
+  display: flex;
+  align-items: center;
+  font-size: .9em;
+  line-height: 2.5em;
+
+  &:first-child {
+    margin-top: -.5em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .first-in-lighthouse__rank {
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    margin-right: .5em;
+
+    span {
+      font-size: 1em;
+      text-shadow: none;
+    }
+  }
+}
+
+.leaderboard__rank {
+  width: 2em;
+  margin-right: .5em;
+  text-align: center;
+}
+
+.leaderboard__amount {
+  font-size: 1em;
+}
+
+.leaderboard__player {
+  flex-grow: 1;
+
+  > img {
+    height: .9em;
+    vertical-align: middle;
+    margin-left: .25em;
+  }
+}
+
 @media all and (max-width: 400px) {
   .challenge-intro {
     padding-left: 1.5em;

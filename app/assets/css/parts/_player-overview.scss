@@ -57,7 +57,29 @@
 .player-info {
   font-size: .8em;
   flex-grow: 1;
+  overflow: hidden;
   text-shadow: $text-shadow;
+  white-space: nowrap;
+
+  .player-hazard {
+    display: inline-block;
+  }
+}
+
+.player-info__sub {
+  display: flex;
+}
+
+.player-info__hazards {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.3em;
+  vertical-align: -.25em;
+  white-space: normal;
+
+  .player-hazard {
+    display: inline-block;
+  }
 }
 
 .player-info__class {
@@ -67,7 +89,7 @@
 .player-level {
   padding: 0 1em 0 0.5em;
   text-align: right;
-  float: right;
+  flex-shrink: 0;
   text-shadow: $text-shadow;
 }
 
