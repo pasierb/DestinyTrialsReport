@@ -19,20 +19,6 @@
       $scope.showPrev = true;
     };
 
-    // TODO
-    $scope.challenges = {
-      "55": {
-        duringTitle: "Get as much kills with a blue weapon as you can",
-        afterTitle: "The top 3 challengers that got the <strong>most kills with a blue weapon</strong> this week:",
-        leaderboard: JSON.parse('[{"platform":2,"players":["Murdaro"],"amount":"1234","rank":1,"rankSuffix":"st","class":"","time":"00:48:51"},{"platform":2,"players":["nico-andreas"],"amount":"1234","rank":2,"rankSuffix":"nd","class":"second","time":"00:52:03"},{"platform":1,"players":["Durern"],"amount":"1234","rank":3,"rankSuffix":"rd","class":"third","time":"00:53:14"},{"platform":2,"players":["BLACKO-RIP"],"amount":"1234","rank":4},{"platform":1,"players":["Magadian"],"amount":"1234","rank":5},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":6}]')
-      },
-      "56": {
-        duringTitle: "Get as much kills with a blue weapon as you can",
-        afterTitle: "Get as much kills with a blue weapon as you can",
-        runningLeaderboard: JSON.parse('[{"platform":2,"players":["Murdaro"],"amount":"1234","rank":1,"rankSuffix":"st","class":"","time":"00:48:51"},{"platform":2,"players":["nico-andreas"],"amount":"1234","rank":2,"rankSuffix":"nd","class":"second","time":"00:52:03"},{"platform":1,"players":["Durern"],"amount":"1234","rank":3,"rankSuffix":"rd","class":"third","time":"00:53:14"},{"platform":2,"players":["BLACKO-RIP"],"amount":"1234","rank":4},{"platform":1,"players":["Magadian"],"amount":"1234","rank":5},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":6},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":7},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":8},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":9},{"platform":1,"players":["Keonelehua"],"amount":"1234","rank":10}]')
-      }
-    };
-
     $scope.mapInfoAnimClass = '';
     $scope.toggleDirection = function (value) {
       var offset = (value === 'left' ? -1 : 1);
@@ -49,6 +35,34 @@
           $scope.loadMapInfo($scope.mapHistory[newIndex].week);
           $scope.direction = 'center';
         }, 300);
+      }
+    };
+
+    $scope.setChallenge = function (challenge, endDate) {
+      $scope.challenge = undefined;
+      if (challenge && challenge[0]) {
+        $scope.challenge = challenge[0];
+        $scope.challenge.active = moment.utc() < moment.utc(endDate);
+
+        if ($scope.challenge.leaderboard) {
+          if ($scope.challenge.leaderboard[0]) {
+            $scope.challenge.leaderboard[0].rank = 1;
+            $scope.challenge.leaderboard[0].rankSuffix = 'st';
+            $scope.challenge.leaderboard[0].class = '';
+          }
+
+          if ($scope.challenge.leaderboard[1]) {
+            $scope.challenge.leaderboard[1].rank = 2;
+            $scope.challenge.leaderboard[1].rankSuffix = 'nd';
+            $scope.challenge.leaderboard[1].class = 'second';
+          }
+
+          if ($scope.challenge.leaderboard[2]) {
+            $scope.challenge.leaderboard[2].rank = 3;
+            $scope.challenge.leaderboard[2].rankSuffix = 'rd';
+            $scope.challenge.leaderboard[2].class = 'third';
+          }
+        }
       }
     };
 
@@ -96,6 +110,7 @@
         $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[map.mapInfo.referenceId].name;
         $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
         $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
+        $scope.setChallenge($scope.currentMapInfo.challenge, $scope.currentMapInfo.end_date);
       } else {
         return statsFactory.mapStats(week)
           .then(function (mapInfo) {
@@ -111,14 +126,16 @@
             $scope.currentMapInfo.heatmapImage = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].heatmapImage;
             $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
             $scope.currentMapInfo.lighthouseLeaderboard = mapInfo.lighthouseLeaderboard;
+            $scope.currentMapInfo.challenge = mapInfo.challenge;
             $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
-            $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
+            $scope.setChallenge($scope.currentMapInfo.challenge, $scope.currentMapInfo.end_date);
           }
         );
       }
     };
 
     $scope.resetMapVars();
+    $scope.challenge = null;
     $scope.lighthouseLeaderboard = null;
     $scope.weaponKills = weaponKills;
 
