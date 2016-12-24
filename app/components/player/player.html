@@ -28,14 +28,17 @@
   </uib-tabset>
 
   <uib-tabset class="player-tabs" ng-if="subdomain">
-    <uib-tab class="player-tab--stats" heading="Stats" analytics-on analytics-event="Click" analytics-category="Stats">
+    <uib-tab class="player-tab--stats my-tab" heading="Stats" analytics-on analytics-event="Click" analytics-category="Stats">
       <div ng-include="'components/stats/stats.partial.html'"></div>
     </uib-tab>
-    <uib-tab class="player-tab--maps" heading="Weapons" analytics-on analytics-event="Click" analytics-category="Weapons">
+    <uib-tab class="player-tab--maps my-tab" heading="Weapons" analytics-on analytics-event="Click" analytics-category="Weapons">
       <div ng-include="'components/stats/weapons.partial.html'"></div>
     </uib-tab>
-    <uib-tab class="player-tab--last-matches" heading="Last Matches" analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
+    <uib-tab class="player-tab--last-matches my-tab" heading="Last Matches" analytics-on analytics-event="Click" analytics-category="Last Matches" ng-click="getLastMatch(player)">
       <div ng-include="'components/matches/matches.partial.html'"></div>
+    </uib-tab>
+    <uib-tab class="player-tab--equipped my-tab" heading="Challenge" analytics-on analytics-event="Click" analytics-category="Challenge">
+      <div ng-include="'components/stats/challenge.partial.html'"></div>
     </uib-tab>
   </uib-tabset>
 

@@ -177,7 +177,7 @@
               No challenge this week. Sorry!
             </div>
           </div>
-          <div class="col-xs-12 col-sm-10" ng-if="challenge && challenge.length > 0">
+          <div class="col-xs-12 col-sm-10" ng-if="challenge">
             <div class="challenge-intro" ng-if="challenge.leaderboard">
               <div class="challenge-intro__header">
                 <span ng-if="currentMapInfo.weekText === 'this week'">You are challenged, in the ways of old</span>
@@ -208,7 +208,7 @@
               <span>{{player.rank}}<sup ng-bind="player.rankSuffix"></sup></span>
             </span>
             <span class="first-in-lighthouse__player">
-              <a ng-href="https://my.trials.report/{{player.membershipType === 1 ? 'xbox' : 'ps'}}/{{player.displayName}}" ng-bind="player.displayName" target="_blank"></a>
+              <a ng-href="https://my.trials.report/{{player.membershipType == 1 ? 'xbox' : 'ps'}}/{{player.displayName}}" ng-bind="player.displayName" target="_blank"></a>
             </span>
             <span class="challenge__amount">
               <span ng-bind="player.score | number"></span>
@@ -226,7 +226,7 @@
                 <span>#{{player.rank || $index + 1}}</span>
               </span>
               <span class="leaderboard__player">
-                <a ng-href="https://my.trials.report/{{player.membershipType === 1 ? 'xbox' : 'ps'}}/{{player.displayName}}" ng-bind="player.displayName" target="_blank"></a>
+                <a ng-href="https://my.trials.report/{{player.membershipType == 1 ? 'xbox' : 'ps'}}/{{player.displayName}}" ng-bind="player.displayName" target="_blank"></a>
                 <img ng-if="player.membershipType == 1" src="assets/img/xbox.svg" alt="Xbox">
                 <img ng-if="player.membershipType == 2" src="assets/img/ps.svg" alt="PlayStation">
               </span>
@@ -241,7 +241,7 @@
                 <span>#{{player.rank || $index + 6}}</span>
               </span>
               <span class="leaderboard__player">
-                <a ng-href="https://my.trials.report/{{$parent.lb.membershipType === 1 ? 'xbox' : 'ps'}}/{{player.displayName}}" ng-bind="player.displayName" target="_blank"></a>
+                <a ng-href="https://my.trials.report/{{player.membershipType == 1 ? 'xbox' : 'ps'}}/{{player.displayName}}" ng-bind="player.displayName" target="_blank"></a>
                 <img ng-if="player.membershipType == 1" src="assets/img/xbox.svg" alt="Xbox">
                 <img ng-if="player.membershipType == 2" src="assets/img/ps.svg" alt="PlayStation">
               </span>

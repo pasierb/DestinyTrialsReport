@@ -35,7 +35,9 @@ angular.module('trialsReportApp')
             nonHazardCharity,
             currentWeek,
             currentMap,
-            mapWeapons = [];
+            mapWeapons = [],
+            score,
+            challengeWeapons;
 
         if (result && result.data && result.data[0]) {
           var data = result.data[0];
@@ -141,6 +143,18 @@ angular.module('trialsReportApp')
               mapWeapons = player.lastWeapons
             }
           }
+
+          if (data.challenge && data.challenge.score) {
+            score = data.challenge.score;
+            if (data.challenge.weapons) {
+              var allWeapons = data.challenge.weapons.split(',');
+              challengeWeapons = [];
+              while (allWeapons.length) {
+                challengeWeapons.push(allWeapons.splice(0, 2))
+              }
+            }
+          }
+
         }
 
         player.year2 = year2;
@@ -150,7 +164,8 @@ angular.module('trialsReportApp')
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;
-
+        player.challengeScore = score;
+        player.challengeWeapons = challengeWeapons;
         return player;
       });
     };

@@ -60,6 +60,14 @@
     }
   }
 
+  li.my-tab {
+    width: 25%;
+
+    &:first-child {
+      width: 25%;
+    }
+  }
+
   li.active {
     z-index: 1;
     position: relative;
