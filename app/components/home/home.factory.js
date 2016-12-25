@@ -15,13 +15,12 @@
           if (result && result.data && result.data.Response) {
             length = result.data.Response.length;
             if (length > 0) {
-              //should work, needs testing
-              //for (var i=0; i < length; i++) {
-              //  account = result.data.Response[i]
-              //  if (account && account.displayName && account.displayName.toUpperCase() === name.toUpperCase()) {
-              //    return account;
-              //  }
-              //}
+              for (var i=0; i < length; i++) {
+                account = result.data.Response[i]
+                if (account.displayName && account.displayName.toUpperCase() === name.toUpperCase()) {
+                  return account;
+                }
+              }
               return result.data.Response[length - 1];
             } else {
               if (retried) {
