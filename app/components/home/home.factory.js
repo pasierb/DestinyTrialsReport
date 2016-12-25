@@ -11,21 +11,18 @@
         platform,
         name
       ).then(function (result) {
-          var response;
-          var resLength;
+          var length, account;
           if (result && result.data && result.data.Response) {
-            resLength = result.data.Response.length;
-            if (resLength > 0) {
-              // for (var l = 0; l < resLength; l++) {
-              //   if (result.data.Response[l]) {
-              //     var res = result.data.Response[l];
-              //     if (res['displayName'] && res['displayName'].toLowerCase() == name) {
-              //       response = res;
-              //     }
-              //   }
-              // }
-              response = result.data.Response[resLength - 1];
-              return response;
+            length = result.data.Response.length;
+            if (length > 0) {
+              //should work, needs testing
+              //for (var i=0; i < length; i++) {
+              //  account = result.data.Response[i]
+              //  if (account && account.displayName && account.displayName.toUpperCase() === name.toUpperCase()) {
+              //    return account;
+              //  }
+              //}
+              return result.data.Response[length - 1];
             } else {
               if (retried) {
                 toastr.error('Player not found', 'Error');
