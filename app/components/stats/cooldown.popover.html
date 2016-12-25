@@ -1,18 +1,18 @@
 <div class="popover" tabindex="-1">
   <div class="arrow"></div>
   <div class="popover-content">
-    <div class="row" ng-if="stat.tier">
-      <div class="col-xs-4 stat">
+    <div class="popover-row" ng-if="stat.tier">
+      <div class="popover-col stat">
         <span ng-bind="stat.tier"></span>
         <label>Tier</label>
       </div>
-      <div class="col-xs-8 stat">
+      <div class="popover-col stat">
         <span ng-bind="stat.cooldown"></span>
         <label>Cooldown</label>
       </div>
     </div>
-    <div class="row" ng-if="!stat.tier">
-      <div class="col-xs-12 stat">
+    <div class="popover-row" ng-if="!stat.tier">
+      <div class="popover-col stat">
         <span ng-bind="(stat.percentage | number:0) + '%'"></span>
         <label translate="{{stat.name}}"></label>
       </div>
