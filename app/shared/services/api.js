@@ -28,7 +28,14 @@ app.service('api', [
         searchByName: 'searchByName/{membershipType}/{displayName}',
         getRandomAd: 'getRandomAd',
         playerAds: 'playerAds/{membershipIds}',
+        challengeWeapons: 'trials/thisMap/{membershipId}',
         searchName: 'search/name/{name}/{membershipType}'
+      };
+
+      this.challengeWeapons = function(membershipId) {
+        return this.get(ENDPOINTS.challengeWeapons, {
+          membershipId: membershipId
+        });
       };
 
       this.searchByName = function(membershipType, displayName) {

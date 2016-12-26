@@ -36,8 +36,7 @@ angular.module('trialsReportApp')
             currentWeek,
             currentMap,
             mapWeapons = [],
-            score,
-            challengeWeapons;
+            score;
 
         if (result && result.data && result.data[0]) {
           var data = result.data[0];
@@ -146,15 +145,7 @@ angular.module('trialsReportApp')
 
           if (data.challenge && data.challenge.score) {
             score = data.challenge.score;
-            if (data.challenge.weapons) {
-              var allWeapons = data.challenge.weapons.split(',');
-              challengeWeapons = [];
-              while (allWeapons.length) {
-                challengeWeapons.push(allWeapons.splice(0, 2))
-              }
-            }
           }
-
         }
 
         player.year2 = year2;
@@ -165,8 +156,36 @@ angular.module('trialsReportApp')
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;
         player.challengeScore = score;
-        player.challengeWeapons = challengeWeapons;
         return player;
+      });
+    };
+
+    var getChallengeWeapons = function (player) {
+      var dfd = $q.defer();
+      return api.challengeWeapons(
+        player.membershipId
+      ).then(function (result) {
+        if (result && result.data) {
+          var weapons = [],
+              challengeWeapons = [];
+
+          _.each(result.data, function (weapon) {
+            var weaponDef = DestinyWeaponDefinition[weapon];
+            if (weaponDef) {
+              weaponDef.id = weapon;
+              weapons.push(weaponDef);
+            }
+          });
+          var sorted = _.sortBy(weapons, function (w) { return -w.tierType; });
+
+          while (sorted.length) {
+            challengeWeapons.push(sorted.splice(0, 2))
+          }
+
+          player.challengeWeapons = challengeWeapons;
+          dfd.resolve(player);
+          return dfd.promise;
+        }
       });
     };
 
@@ -310,6 +329,7 @@ angular.module('trialsReportApp')
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
       weaponStats: weaponStats,
-      mapStats: mapStats
+      mapStats: mapStats,
+      getChallengeWeapons: getChallengeWeapons
     };
   });

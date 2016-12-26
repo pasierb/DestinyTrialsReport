@@ -14,10 +14,10 @@
   <div class="player-tab__section" ng-if="player.challengeWeapons">
     <div class="row">
       <div class="last-match-weapon col-xs-12">
-        <div class="row" ng-repeat="weapons in player.challengeWeapons track by $index">
+        <div class="row" style="margin-bottom: 10px;" ng-repeat="weapons in player.challengeWeapons track by $index">
           <div class="col-xs-6 last-weapon-weapon__descr" ng-repeat="weapon in weapons">
-            <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon).icon}}" alt="{{getWeaponByHash(weapon).name}}">
-            <span class="last-match-weapon__title" ng-bind="getWeaponByHash(weapon).name"></span>
+            <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.id).icon}}" alt="{{weapon.name}}">
+            <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
           </div>
         </div>
       </div>
