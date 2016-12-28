@@ -7,7 +7,7 @@
         </div>
         <div class="row stat-row">
           <div class="col-xs-2 stat">
-            <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.weaponId).icon}}" alt="{{DestinyWeaponDefinition[weapon.weaponId].name}}">
+            <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.weaponId).icon}}" bs-popover data-content="{{getWeaponByHash(weapon.weaponId).name}}">
           </div>
           <div class="col-xs-2 stat">
             <span ng-bind="(weapon.kills | number:0) || 0"></span>
