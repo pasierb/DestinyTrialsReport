@@ -11,6 +11,10 @@
               <span ng-repeat="hazard in player.nonHazardCharity track by $index" ng-bind="hazard.status" class="player-hazard player-hazard--charity1"
                    data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" bs-popover>
               </span>
+              <span ng-repeat="badge in player.badges track by $index" ng-bind="badge.title" class="player-hazard"
+                    ng-class="{'player-hazard--challenger': badge.title === 'Challenger', 'player-hazard--joel': badge.title === 'Jerk'}"
+                    data-content="{{badge.text}}" data-placement="bottom" bs-popover>
+              </span>
               <span ng-repeat="hazard in player.nonHazard track by $index" ng-bind="hazard" class="player-hazard"
                    ng-class="{'player-hazard--developer': hazard === 'Developer' || hazard === 'Guardian.gg', 'player-hazard--joel': hazard === 'Twitter Guy', 'player-hazard--donator': hazard === 'Donator'}"
                    data-placement="bottom" data-content="{{'badges.' + hazard | translate}}" bs-popover>

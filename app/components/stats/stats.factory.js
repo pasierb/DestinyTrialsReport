@@ -33,6 +33,7 @@ angular.module('trialsReportApp')
             year3,
             nonHazard,
             nonHazardCharity,
+            badges,
             currentWeek,
             currentMap,
             mapWeapons = [],
@@ -79,6 +80,10 @@ angular.module('trialsReportApp')
 
           if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
             nonHazardCharity = data.charitySupporterStatus;
+          }
+
+          if (data.badges && data.badges[0]) {
+            badges = data.badges;
           }
 
           if (data.streak) {
@@ -152,6 +157,7 @@ angular.module('trialsReportApp')
         player.year3 = year3;
         player.nonHazard = nonHazard;
         player.nonHazardCharity = nonHazardCharity;
+        player.badges = badges;
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;
