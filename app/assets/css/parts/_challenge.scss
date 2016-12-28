@@ -10,6 +10,24 @@ $challenge-color: #009688;
   padding-left: 13em;
 }
 
+.challenge-tab {
+  background: url('/assets/img/variks.png') #E0F2F1 no-repeat 2em bottom;
+  background-size: auto 100%;
+  border-radius: .5em;
+  padding: 1.5em;
+  margin-bottom: -$player-content-padding;
+  text-align: left;
+  padding-left: 9em;
+
+  .stat {
+    text-align: center;
+
+    > span {
+      font-size: 2em;
+    }
+  }
+}
+
 .challenge-intro__header {
   color: $challenge-color;
   font-family: 'Roboto Condensed';

@@ -193,6 +193,21 @@
   }
 }
 
+.player-tab--challenge {
+  @include tab-background-minor($challenge-background);
+
+  ul &.active {
+    background: $challenge-background;
+
+    a,
+    a:focus,
+    a:active,
+    a:hover {
+      color: darken($challenge-background, 50%);
+    }
+  }
+}
+
 .player-tab--this-week,
 .player-tab--map-based {
   position: relative;
