@@ -10,39 +10,26 @@ app.service('api', [
     return new function () {
       var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
-        player: 'player/{membershipId}',
-        supporterStatus: 'supporterStatus/{membershipId}',
+        player:           'player/{membershipId}',
+        supporterStatus:  'supporterStatus/{membershipId}',
         charitySupporter: 'charitySupporter/{membershipId}',
-        lighthouseCount: 'lighthouseCount/{membershipIdArray}',
-        opponents: 'getOpponents/{membershipId}',
-        streak: 'longestStreak/{membershipId}/{characterId}',
-        topWeapons: 'topWeapons/{membershipId}',
-        lastWeapons: 'lastWeapons/{characterId}',
-        weaponStats: 'weaponStats/{membershipId}/{weaponIdArray}',
-        recentTeammates: 'recentTeammates/{membershipId}',
-        previousMatches: 'previousMatches/{membershipId}',
-        lighthouseLeaderboard: 'lighthouseLeaderboard',
-        mapInfo: 'maps/week/{week}',
-        currentMap: 'currentMap',
-        currentWeek: 'currentWeek/{membershipId}',
-        searchByName: 'searchByName/{membershipType}/{displayName}',
-        getRandomAd: 'getRandomAd',
-        playerAds: 'playerAds/{membershipIds}',
+        opponents:        'getOpponents/{membershipId}',
+        topWeapons:       'topWeapons/{membershipId}',
+        lastWeapons:      'lastWeapons/{characterId}',
+        weaponStats:      'weaponStats/{membershipId}/{weaponIdArray}',
+        recentTeammates:  'recentTeammates/{membershipId}',
+        previousMatches:  'previousMatches/{membershipId}',
+        mapInfo:          'maps/week/{week}',
+        currentMap:       'currentMap',
+        currentWeek:      'currentWeek/{membershipId}',
+        previousWeek:     'previousWeek/{membershipId}',
         challengeWeapons: 'trials/thisMap/{membershipId}',
-        searchName: 'search/name/{name}/{membershipType}'
+        searchName:       'search/name/{name}/{membershipType}'
       };
 
       this.challengeWeapons = function(membershipId) {
         return this.get(ENDPOINTS.challengeWeapons, {
           membershipId: membershipId
-        });
-      };
-
-      this.searchByName = function(membershipType, displayName) {
-        var name = displayName.replace(/[^\w\s\-]/g, '');
-        return this.get(ENDPOINTS.searchByName, {
-          membershipType: membershipType,
-          displayName: name
         });
       };
 
@@ -72,22 +59,9 @@ app.service('api', [
         });
       };
 
-      this.lighthouseCount = function(membershipIdArray) {
-        return this.get(ENDPOINTS.lighthouseCount, {
-          membershipIdArray: membershipIdArray
-        });
-      };
-
       this.getOpponents = function(membershipId) {
         return this.get(ENDPOINTS.opponents, {
           membershipId: membershipId
-        });
-      };
-
-      this.longestStreak = function(membershipId, characterId) {
-        return this.get(ENDPOINTS.streak, {
-          membershipId: membershipId,
-          characterId: characterId
         });
       };
 
@@ -122,10 +96,6 @@ app.service('api', [
         });
       };
 
-      this.lighthouseLeaderboard = function() {
-        return this.get(ENDPOINTS.lighthouseLeaderboard, {});
-      };
-
       this.getMapInfo = function(week) {
         return this.get(ENDPOINTS.mapInfo, {
           week: week
@@ -142,14 +112,10 @@ app.service('api', [
         });
       };
 
-      this.playerAds = function(membershipIds) {
-        return this.get(ENDPOINTS.playerAds, {
-          membershipIds: membershipIds
+      this.previousWeek = function(membershipId) {
+        return this.get(ENDPOINTS.previousWeek, {
+          membershipId: membershipId
         });
-      };
-
-      this.getRandomAd = function() {
-        return this.get(ENDPOINTS.getRandomAd, {});
       };
 
       this.get = function(endpoint, tokens) {

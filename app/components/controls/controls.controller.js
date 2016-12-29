@@ -5,19 +5,14 @@
     .module('trialsReportApp')
     .controller('controlsController', controlsController);
 
-  function controlsController(guardianggFactory, homeFactory, $location, $routeParams, $scope, bungie) {
+  function controlsController(guardianggFactory, homeFactory, $location, $routeParams, $scope, util) {
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
 
-    function getSubdomain() {
-      var segments = location.hostname.split('.');
-      return segments.length > 2 ? segments[segments.length - 3].toLowerCase() : null;
-    }
-
     function getFromParams(platform, name) {
       if (angular.isDefined(name)) {
-        if (getSubdomain()) {
+        if (util.getSubdomain(location.hostname)) {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
         }
 
@@ -65,7 +60,8 @@
         $scope.platformValue = (platform == 2);
       }
       if (angular.isDefined(name)) {
-        if (getSubdomain() && getSubdomain() !== 'staging') {
+        var subdomain = util.getSubdomain(location.hostname);
+        if (subdomain && subdomain !== 'staging') {
           $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name);
         } else {
           getFromParams(platform, name).then(function (result) {
@@ -77,7 +73,7 @@
                   return !player.searched;
                 }
               });
-              var names = _.pluck(teammates, "name")
+              var names = _.pluck(teammates, "name");
               $location.path(($scope.platformValue ? '/ps/' : '/xbox/') + name + '/' + names.join('/'));
             }
           });

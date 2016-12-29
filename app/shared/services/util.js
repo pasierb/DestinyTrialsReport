@@ -21,11 +21,28 @@ app.service('util', [
         return url;
       };
 
+      this.domainIsValid = function (domain) {
+        var domains = [
+          'destinytrialsreport.com',
+          'my.destinytrialsreport.com',
+          'opponents.destinytrialsreport.com',
+          'trials.report',
+          'my.trials.report'
+        ];
+
+        return _.contains(domains, domain);
+      };
+
       this.getApiKey = function (domain) {
         switch (domain) {
-          case 'destinytrialsreport.com': return '4b412fb8d30644c8a74f9e7df86f1616';
-          case 'trials.report':           return 'd07d015b11284f4ebee6604c7bc0cec7';
-          case 'localhost':               return 'ee5c2bf3759e4219a50fa9fd47d47805';
+          // oh no dont look!
+          case 'destinytrialsreport.com':           return _.sample(['4b412fb8d30644c8a74f9e7df86f1616', '7ca3a8b4abf34db9a838481521f52563']);
+          case 'my.destinytrialsreport.com':        return _.sample(['b51e316a69c94461877b17c64bdbae4b', '9dc03577fe9543fea9c61d27f2daf42b']);
+          case 'opponents.destinytrialsreport.com': return _.sample(['f729ebd477874cf5be3df82915db3d4e', '7f7a161d0400466587a8b82161c6bb26']);
+          case 'trials.report':                     return _.sample(['d07d015b11284f4ebee6604c7bc0cec7', '682fe6a9860f4227b37a72eb7f1afd3f']);
+          case 'my.trials.report':                  return _.sample(['9345c6553e7f4e03a77b3b181c15d611', '5bf328ae30ec49edbe99fd355c8f68fd']);
+          case 'opponents.trials.report':           return _.sample(['55c4547e8a7a436bb6adc91f42257487', 'a1e2c1490a454cb98dc293f55fe6f236']);
+          default:                                  return 'ee5c2bf3759e4219a50fa9fd47d47805';
         }
       };
 
@@ -50,7 +67,15 @@ app.service('util', [
           case BUCKET_CHEST:          return 'chest';
           case BUCKET_LEGS:           return 'legs';
         }
-      }
+      };
+
+      this.getSubdomain = function(location) {
+        var segments = location.split('.');
+        if (segments.length > 2) {
+          segments.splice(0,1);
+        }
+        return segments.length > 2 ? segments.splice(0,1)[0].toLowerCase() : null;
+      };
     };
   }
 ])

@@ -1,26 +1,13 @@
 'use strict';
 
-function getSubdomain() {
-  var segments = location.hostname.split('.');
-  return segments.length > 2 ? segments[segments.length - 3].toLowerCase() : null;
-}
-
-function throwLog(msg) {
-  var logsOn = false;
-  if (logsOn) {
-    console.log(msg);
-  }
-}
-
-function getFromParams(homeFactory, inventoryService, $localStorage, guardianggFactory, api, toastr, bungie, $route, $q) {
+function getFromParams(homeFactory, inventoryService, guardianggFactory, api, $route, $q, util) {
   var params = $route.current.params;
   var name = params.playerName || params.playerOne;
   if (angular.isDefined(name)) {
     var platform = params.platformName === 'xbox' ? 1 : 2;
-    var subdomain = getSubdomain();
+    var subdomain = util.getSubdomain(location.hostname);
 
     var getPlayer = function () {
-      throwLog('getPlayer');
       return homeFactory.getAccount(platform, params.playerName)
         .then(function (result) {
           if (result) {
@@ -57,7 +44,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
     };
 
     var teammatesFromParams = function () {
-      throwLog('teammatesFromParams');
       var methods = [
         homeFactory.getAccount(platform, params.playerOne),
         homeFactory.getAccount(platform, params.playerTwo),
@@ -67,7 +53,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
     };
 
     var teammatesFromChars = function (player) {
-      throwLog('teammatesFromChars');
       if (player) {
         var methods = [];
         angular.forEach(player.characters, function (character) {
@@ -80,7 +65,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
     };
 
     var teammatesFromRecent = function (players) {
-      throwLog('teammatesFromRecent');
       if (players && players[0] && !players[0].characterInfo) {
         var playerOne = _.find(players, function (player) {
           if (player.searched) {
@@ -112,7 +96,6 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
     };
 
     var getInventory = function (players) {
-      throwLog('getInventory');
       var methods = [];
       angular.forEach(players, function (player) {
         methods.push(inventoryService.getInventory(player.membershipType, player));
@@ -121,12 +104,10 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
     };
 
     var getOpponents = function (player) {
-      throwLog('getOpponents');
       return api.getOpponents(player.membershipId);
     };
 
     var returnPlayer = function (results) {
-      throwLog('returnPlayer', results);
       if (results && (results.length > 0 || results.data)) {
         return {
           fireteam: [results[0], results[1], results[2]],
@@ -135,12 +116,15 @@ function getFromParams(homeFactory, inventoryService, $localStorage, guardianggF
           data: results.data
         };
       } else {
-        return gggWeapons($localStorage, guardianggFactory);
+        return {
+          fireteam: [],
+          subdomain: subdomain,
+          updateUrl: params.playerName
+        };
       }
     };
 
     var reportProblems = function (fault) {
-      throwLog('reportProblems');
       console.log(fault);
     };
 

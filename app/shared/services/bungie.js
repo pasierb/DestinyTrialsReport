@@ -13,7 +13,7 @@ app.service('bungie', [
       var HEADERS = {
         headers: {'X-API-KEY': util.getApiKey($location.host())}
       };
-      var BASE_URL = 'https://www.bungie.net/Platform/Destiny/';
+      var BASE_URL = util.domainIsValid ? 'https://www.bungie.net/Platform/Destiny/' : 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
       var ENDPOINTS = {
         searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/?lc={locale}',
         account: '{platform}/Account/{membershipId}/?lc={locale}',
