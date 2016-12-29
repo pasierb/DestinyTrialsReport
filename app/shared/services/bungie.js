@@ -4,13 +4,16 @@ var app = angular.module('trialsReportApp');
 
 app.service('bungie', [
   '$http',
+  '$location',
   'util',
-  'RequestFallback',
   '$localStorage',
 
-  function ($http, util, RequestFallback, $localStorage) {
+  function ($http, $location, util, $localStorage) {
     return new function () {
-      var BASE_URL = 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
+      var HEADERS = {
+        headers: {'X-API-KEY': util.getApiKey($location.host())}
+      };
+      var BASE_URL = 'https://www.bungie.net/Platform/Destiny/';
       var ENDPOINTS = {
         searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/?lc={locale}',
         account: '{platform}/Account/{membershipId}/?lc={locale}',
@@ -83,10 +86,7 @@ app.service('bungie', [
       };
 
       this.get = function(endpoint, tokens) {
-        // var rand = _.random(0, 1);
-        // var BASE_URL = 'https://' + ['proxy', 'osiris'][rand] + '.DestinyTrialsReport.com/Platform/Destiny/';
-        // return RequestFallback(BASE_URL, endpoint, tokens);
-        return $http.get(BASE_URL + util.buildUrl(endpoint, tokens));
+        return $http.get(BASE_URL + util.buildUrl(endpoint, tokens), HEADERS);
       };
     };
   }

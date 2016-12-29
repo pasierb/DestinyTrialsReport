@@ -21,6 +21,14 @@ app.service('util', [
         return url;
       };
 
+      this.getApiKey = function (domain) {
+        switch (domain) {
+          case 'destinytrialsreport.com': return '4b412fb8d30644c8a74f9e7df86f1616';
+          case 'trials.report':           return 'd07d015b11284f4ebee6604c7bc0cec7';
+          case 'localhost':               return 'ee5c2bf3759e4219a50fa9fd47d47805';
+        }
+      };
+
       this.getBuildName = function(column) {
         switch (column) {
           case 1: return 'grenade';
@@ -30,7 +38,7 @@ app.service('util', [
           case 6: return 'ability1';
           case 8: return 'ability2';
         }
-      }
+      };
 
       this.getDefinitionsByBucket = function(bucketHash) {
         switch (bucketHash) {
@@ -60,12 +68,6 @@ app.service('util', [
           .error(function() {
             var fallback = 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
             request(fallback + util.buildUrl(endpoint, tokens));
-            //if (counter < MAX_REQUESTS) {
-            //  request();
-            //  counter++;
-            //} else {
-            //  results.reject('Could not load after multiple tries');
-            //}
           });
       };
 
