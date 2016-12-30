@@ -71,9 +71,6 @@ app.service('util', [
 
       this.getSubdomain = function(location) {
         var segments = location.split('.');
-        if (segments.length > 2) {
-          segments.splice(0,1);
-        }
         return segments.length > 2 ? segments.splice(0,1)[0].toLowerCase() : null;
       };
     };
