@@ -19,7 +19,7 @@
     }
     $timeout(function () {
      try {
-       (window.adsbygoogle = window.adsbygoogle || []).push({});
+       // (window.adsbygoogle = window.adsbygoogle || []).push({});
      } catch (ex) {
      }
     }, 750);

@@ -173,15 +173,27 @@ angular.module('trialsReportApp')
       ).then(function (result) {
         if (result && result.data) {
           var weapons = [],
-              challengeWeapons = [];
+              challengeWeapons = [],
+              weaponDef;
 
           _.each(result.data, function (weapon) {
-            var weaponDef = DestinyWeaponDefinition[weapon];
-            if (weaponDef) {
-              weaponDef.id = weapon;
-              weapons.push(weaponDef);
+            if (_.isObject(weapon)) {
+              weaponDef = DestinyWeaponDefinition[weapon.id];
+              if (weaponDef) {
+                weaponDef.id = weapon.id;
+                weaponDef.kills = weapon.kills;
+                weaponDef.headshots = weapon.headshots;
+                weapons.push(weaponDef);
+              }
+            } else {
+              weaponDef = DestinyWeaponDefinition[weapon];
+              if (weaponDef) {
+                weaponDef.id = weapon;
+                weapons.push(weaponDef);
+              }
             }
           });
+
           var sorted = _.sortBy(weapons, function (w) { return -w.tierType; });
 
           while (sorted.length) {
