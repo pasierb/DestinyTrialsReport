@@ -11,11 +11,31 @@
   </div>
   <div class="player-tab__section" ng-if="player.challengeWeapons && player.challengeWeapons.length > 0">
     <div class="row">
-      <div class="last-match-weapon col-xs-12">
-        <div class="row" style="margin-bottom: 10px;" ng-repeat="weapons in player.challengeWeapons track by $index">
+      <!-- Just weapons -->
+      <div class="col-xs-12" ng-if="player.challengeWeapons[0][0].kills === undefined">
+        <div class="challenge-weapon row" ng-repeat="weapons in player.challengeWeapons track by $index">
           <div class="col-xs-6 last-weapon-weapon__descr" ng-repeat="weapon in weapons">
             <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.id).icon}}" alt="{{weapon.name}}">
             <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+          </div>
+        </div>
+      </div>
+      <!-- Weapons + stats -->
+      <div class="col-xs-12" ng-if="player.challengeWeapons[0][0].kills !== undefined">
+        <div ng-repeat="weapons in player.challengeWeapons track by $index">
+          <div class="challenge-weapon row" ng-repeat="weapon in weapons">
+            <div class="col-xs-6 last-weapon-weapon__descr">
+              <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.id).icon}}" alt="{{weapon.name}}">
+              <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+            </div>
+            <div class="col-xs-2 stat">
+              <span ng-bind="weapon.kills || 0"></span>
+              <label translate="kills"></label>
+            </div>
+            <div class="col-xs-2 stat">
+              <span ng-bind="weapon.headshots || 0"></span>
+              <label translate="headshots"></label>
+            </div>
           </div>
         </div>
       </div>
