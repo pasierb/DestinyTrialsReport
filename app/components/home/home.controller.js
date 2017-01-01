@@ -148,6 +148,16 @@
       $localStorage.hideStats = $scope.hideStats;
     };
 
+    $scope.playing = false;
+    $scope.audio = document.createElement('audio');
+    $scope.audio.src = '/assets/js/cena.wav';
+    $scope.johnCena = function(badge) {
+      if (badge === 'John Cena') {
+        $scope.audio.play();
+        $scope.playing = true;
+      }
+    };
+
     $scope.searchName = function (name) {
       if (name && name.length > 3) {
         var membershipType = $scope.platformValue ? 2 : 1;

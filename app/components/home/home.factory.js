@@ -13,10 +13,11 @@
       ).then(function (result) {
           var length, account;
           if (result && result.data && result.data.Response) {
-            length = result.data.Response.length;
+            var response = result.data.Response.reverse();
+            length = response.length;
             if (length > 0) {
               for (var i=0; i < length; i++) {
-                account = result.data.Response[i]
+                account = response[i];
                 if (account.displayName && account.displayName.toUpperCase() === name.toUpperCase()) {
                   return account;
                 }
