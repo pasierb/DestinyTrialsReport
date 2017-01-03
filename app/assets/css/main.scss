@@ -419,7 +419,6 @@ $light-off-opacity: 0.4;
   }
 
   li {
-    pointer-events: none;
     position: relative;
     animation-fill-mode: both;
     animation-iteration-count:infinite;
@@ -506,4 +505,5 @@ $light-off-opacity: 0.4;
   background-size: auto 50vh;
   background-position: right bottom;
   background-repeat: repeat;
+  pointer-events: none;
 }
