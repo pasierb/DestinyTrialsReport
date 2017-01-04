@@ -150,7 +150,7 @@
 
     $scope.playing = false;
     $scope.audio = document.createElement('audio');
-    $scope.audio.src = '/assets/js/cena.wav';
+    $scope.audio.src = '/assets/media/cena.wav';
     $scope.johnCena = function(badge) {
       if (badge === 'John Cena') {
         $scope.audio.play();

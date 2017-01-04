@@ -524,6 +524,7 @@ module.exports = function (grunt) {
             'components/{,*/}*.html',
             'shared/{,*/}*.html',
             'assets/img/{,*/}*.{webp}',
+            'assets/media/*.wav',
             'assets/css/fonts/{,*/}*.*',
             'lib/{,*/}*.*',
             'shared/locales/*/*.json'

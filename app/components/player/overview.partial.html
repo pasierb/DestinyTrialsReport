@@ -9,7 +9,7 @@
             <div class="player-info__class" ng-bind="player.characterInfo.subclassName"></div>
             <div class="player-info__hazards">
               <span ng-repeat="hazard in player.nonHazardCharity track by $index" ng-bind="hazard.status" class="player-hazard player-hazard--charity1"
-                   data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" ng-mouseover="johnCena(hazard.status)" bs-popover>
+                   data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" ng-mouseover="johnCena(hazard.status)" ng-click="johnCena(hazard.status)" bs-popover>
               </span>
               <span ng-repeat="badge in player.badges track by $index" ng-bind="badge.title" class="player-hazard"
                     ng-class="{'player-hazard--challenger': badge.title === 'Challenger', 'player-hazard--joel': badge.title === 'Jerk'}"
