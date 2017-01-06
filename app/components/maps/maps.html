@@ -180,13 +180,13 @@
           <div class="col-xs-12 col-sm-10" ng-if="challenge">
             <div class="challenge-intro" ng-if="challenge.leaderboard && challenge.active">
               <div class="challenge-intro__header">
-                <span ng-if="currentMapInfo.weekText === 'this week'">You are challenged, in the ways of old</span>
+                <span ng-if="currentMapInfo.weekText === 'this week' || currentMapInfo.weekText === '0 weeks ago'">You are challenged, in the ways of old</span>
                 <!--<span ng-if="currentMapInfo.weekText !== 'this week'">You were challenged, in the ways of old</span>-->
               </div>
               <div class="challenge-intro__challenge" ng-bind="challenge.duringTitle"></div>
               <div class="challenge-after" ng-bind-html="challenge.details" ng-if="challenge.details"></div>
               <div class="challenge-intro__descr">
-                <span ng-if="currentMapInfo.weekText === 'this week'">
+                <span ng-if="currentMapInfo.weekText === 'this week' || currentMapInfo.weekText === '0 weeks ago'">
                   Be among the three best challengers to earn a &nbsp;<div class="player-hazard player-hazard--challenger">Challenger</div>&nbsp;badge
                 </span>
                 <!--<span ng-if="currentMapInfo.weekText !== 'this week'">-->
