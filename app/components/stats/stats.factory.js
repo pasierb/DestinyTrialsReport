@@ -182,7 +182,11 @@ angular.module('trialsReportApp')
               if (weaponDef) {
                 weaponDef.id = weapon.id;
                 weaponDef.kills = weapon.kills;
-                weaponDef.headshots = weapon.headshots;
+                if (weapon.multiplier) {
+                  weaponDef.multiplier = weapon.multiplier;
+                } else {
+                  weaponDef.headshots = weapon.headshots;
+                }
                 weapons.push(weaponDef);
               }
             } else {

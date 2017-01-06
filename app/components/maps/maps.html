@@ -184,6 +184,7 @@
                 <!--<span ng-if="currentMapInfo.weekText !== 'this week'">You were challenged, in the ways of old</span>-->
               </div>
               <div class="challenge-intro__challenge" ng-bind="challenge.duringTitle"></div>
+              <div class="challenge-after" ng-bind-html="challenge.details" ng-if="challenge.details"></div>
               <div class="challenge-intro__descr">
                 <span ng-if="currentMapInfo.weekText === 'this week'">
                   Be among the three best challengers to earn a &nbsp;<div class="player-hazard player-hazard--challenger">Challenger</div>&nbsp;badge

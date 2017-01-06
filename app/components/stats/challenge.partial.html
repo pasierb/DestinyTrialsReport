@@ -1,9 +1,9 @@
-<div class="player-tab--challenge" ng-if="player.challengeScore">
+<div class="player-tab--challenge" >
   <div class="player-tab__section">
     <div class="row">
       <div class="challenge-tab">
         <div class="stat">
-          <span ng-bind="player.challengeScore | number:0"></span>
+          <span ng-bind="player.challengeScore | number:0" ng-class="{'fail': player.challengeScore < 0}"></span>
           <label>Current score</label>
         </div>
       </div>
@@ -32,9 +32,13 @@
               <span ng-bind="weapon.kills || 0"></span>
               <label translate="kills"></label>
             </div>
-            <div class="col-xs-2 stat">
+            <div class="col-xs-2 stat" ng-if="weapon.headshots">
               <span ng-bind="weapon.headshots || 0"></span>
               <label translate="headshots"></label>
+            </div>
+            <div class="col-xs-2 stat" ng-if="weapon.multiplier">
+              <span ng-bind="weapon.multiplier || 0" ng-class="{'success': weapon.multiplier > 0, 'fail': weapon.multiplier < 0}"></span>
+              <label translate="multiplier"></label>
             </div>
           </div>
         </div>
