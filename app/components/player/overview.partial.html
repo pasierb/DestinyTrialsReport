@@ -6,7 +6,7 @@
         <div class="player-info">
           <h2 class="player-header__gamertag" ng-bind="player.name"></h2>
           <div class="player-info__sub">
-            <div class="player-info__class" ng-bind="player.characterInfo.subclassName"></div>
+            <div class="player-info__class" ng-bind="player.totalBadges > 2 ? subclassShort(player.characterInfo.subclassName) : player.characterInfo.subclassName"></div>
             <div class="player-info__hazards">
               <span ng-repeat="hazard in player.nonHazardCharity track by $index" ng-bind="hazard.status" class="player-hazard player-hazard--charity1"
                    data-template-url="shared/popovers/charity1.popover.html" data-placement="bottom" ng-mouseover="johnCena(hazard.status)" ng-click="johnCena(hazard.status)" bs-popover>

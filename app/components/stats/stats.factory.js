@@ -37,6 +37,7 @@ angular.module('trialsReportApp')
             currentWeek,
             currentMap,
             mapWeapons = [],
+            totalBadges = 0,
             score;
 
         if (result && result.data && result.data[0]) {
@@ -76,14 +77,17 @@ angular.module('trialsReportApp')
 
           if (data.supporterStatus && data.supporterStatus[0]) {
             nonHazard = data.supporterStatus;
+            totalBadges += nonHazard.length;
           }
 
           if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
             nonHazardCharity = data.charitySupporterStatus;
+            totalBadges += nonHazardCharity.length;
           }
 
           if (data.badges && data.badges[0]) {
             badges = data.badges;
+            totalBadges += badges.length;
           }
 
           if (data.streak) {
@@ -158,6 +162,7 @@ angular.module('trialsReportApp')
         player.nonHazard = nonHazard;
         player.nonHazardCharity = nonHazardCharity;
         player.badges = badges;
+        player.totalBadges = totalBadges;
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;

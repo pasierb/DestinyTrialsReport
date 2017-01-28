@@ -217,6 +217,20 @@
       }
     };
 
+    $scope.subclassShort = function (subclass) {
+      switch (subclass) {
+        case 'Nightstalker' :  return 'Tether';
+        case 'Voidwalker'   :  return 'Nova';
+        case 'Defender'     :  return 'Bubble';
+        case 'Sunbreaker'   :  return 'Hammer';
+        case 'Sunsinger'    :  return 'Sunlock';
+        case 'Gunslinger'   :  return 'Golden';
+        case 'Striker'      :  return 'Striker';
+        case 'Stormcaller'  :  return 'Storm';
+        case 'Bladedancer'  :  return 'Blade';
+      }
+    };
+
     if ($routeParams.playerName) {
       $scope.searchedPlayer = $routeParams.playerName;
     }
