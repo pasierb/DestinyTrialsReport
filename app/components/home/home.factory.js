@@ -106,7 +106,17 @@
             var activities = result.data.Response.data.activities;
             return setActivityData(account, activities);
           } else {
-            toastr.error('No Trials matches found for character', 'Error');
+            if (result && result.data && result.data.ErrorStatus) {
+              if (result.data.ErrorStatus === 'DestinyUnexpectedError') {
+                account.errorStatus = 'Bungie API is down.';
+              } else if (result.data.ErrorStatus === 'DestinyShardRelayProxyTimeout') {
+                account.errorStatus = 'Request has timed out.';
+              } else {
+                account.errorStatus = result.data.ErrorStatus;
+              }
+            } else {
+              toastr.error('No Trials matches found for character', 'Error');
+            }
             return account;
           }
         });

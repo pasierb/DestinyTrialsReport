@@ -1,0 +1,5 @@
+<span ng-repeat="badge in badges | orderBy:'-' track by $index"
+      ng-bind="badge.status"
+      class="player-hazard"
+      ng-class="badge.htmlClass">
+</span>

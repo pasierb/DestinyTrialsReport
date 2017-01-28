@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .factory('statsFactory', function ($http, bungie, api, $q) {
+  .factory('statsFactory', function ($http, bungie, api, $q, $translate) {
 
     var getStats = function (player) {
       return bungie.getStats(
@@ -31,13 +31,10 @@ angular.module('trialsReportApp')
       ).then(function (result) {
         var year2,
             year3,
-            nonHazard,
-            nonHazardCharity,
-            badges,
             currentWeek,
             currentMap,
+            badges = [],
             mapWeapons = [],
-            totalBadges = 0,
             score;
 
         if (result && result.data && result.data[0]) {
@@ -75,19 +72,35 @@ angular.module('trialsReportApp')
             }
           }
 
-          if (data.supporterStatus && data.supporterStatus[0]) {
-            nonHazard = data.supporterStatus;
-            totalBadges += nonHazard.length;
-          }
-
           if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
-            nonHazardCharity = data.charitySupporterStatus;
-            totalBadges += nonHazardCharity.length;
+            _.each(data.charitySupporterStatus, function (badge) {
+              badges.push({
+                status: badge.status,
+                description: badge.description,
+                icon: badge.icon,
+                htmlClass: 'player-hazard--charity1'
+              });
+            });
           }
 
           if (data.badges && data.badges[0]) {
-            badges = data.badges;
-            totalBadges += badges.length;
+            _.each(data.badges, function (badge) {
+              badges.push({
+                status: badge.title,
+                description: badge.description,
+                htmlClass: badge.title === 'Challenger' ? 'player-hazard--challenger' : 'player-hazard--joel'
+              });
+            });
+          }
+
+          if (data.supporterStatus && data.supporterStatus[0]) {
+            var badgeTitle = data.supporterStatus[0];
+            badges.push({
+              status: badgeTitle,
+              translate: true,
+              htmlClass: badgeTitle === 'Donator' ? 'player-hazard--donator' :
+                (badgeTitle === 'Twitter Guy' ? 'player-hazard--joel' : 'player-hazard--developer')
+            });
           }
 
           if (data.streak) {
@@ -159,10 +172,8 @@ angular.module('trialsReportApp')
 
         player.year2 = year2;
         player.year3 = year3;
-        player.nonHazard = nonHazard;
-        player.nonHazardCharity = nonHazardCharity;
         player.badges = badges;
-        player.totalBadges = totalBadges;
+        player.totalBadges = badges.length;
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;

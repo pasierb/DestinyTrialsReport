@@ -1,0 +1,8 @@
+<div class="popover" tabindex="-1">
+  <div class="arrow"></div>
+  <div class="popover-content">
+    <p ng-bind="badge.description" ng-if="!badge.translate"></p>
+    <p ng-bind="'badges.' + badge.status | translate" ng-if="badge.translate"></p>
+		<a href="" target="_blank"><img ng-src="{{badge.icon}}" ng-if="badge.icon"></a>
+  </div>
+</div>
