@@ -24,12 +24,19 @@ app.service('api', [
         currentWeek:      'currentWeek/{membershipId}',
         previousWeek:     'previousWeek/{membershipId}',
         challengeWeapons: 'trials/thisMap/{membershipId}',
-        searchName:       'search/name/{name}/{membershipType}'
+        searchName:       'search/name/{name}/{membershipType}',
+        weaponPercentage: 'leaderboard/percentage/{week}'
       };
 
       this.challengeWeapons = function(membershipId) {
         return this.get(ENDPOINTS.challengeWeapons, {
           membershipId: membershipId
+        });
+      };
+
+      this.weaponPercentage = function(week) {
+        return this.get(ENDPOINTS.weaponPercentage, {
+          week: week
         });
       };
 

@@ -91,30 +91,10 @@ angular.module('trialsReportApp')
         }).catch(function () {});
     };
 
-    var getWeapons = function (platform, trialsDates) {
-      return guardianGG.getWeapons(platform, trialsDates.begin.format('YYYY-MM-DD'), trialsDates.end.format('YYYY-MM-DD'))
-        .then(function (weapons) {
-          var show = false;
-          if (angular.isDefined(weapons.data)) {
-            if (angular.isDefined(weapons.data.primary) && angular.isDefined(weapons.data.special) && angular.isDefined(weapons.data.heavy)) {
-              if (weapons.data.primary.length > 0 && weapons.data.special.length > 0 && weapons.data.heavy.length > 0) {
-                show = true;
-              }
-            }
-          }
-
-          return {
-            gggWeapons: weapons.data,
-            show: show
-          };
-        }).catch(function () {});
-    };
-
     return {
       getElo: getElo,
       getTeamElo: getTeamElo,
       getSeasonOne: getSeasonOne,
-      getFireteam: getFireteam,
-      getWeapons: getWeapons
+      getFireteam: getFireteam
     };
   });

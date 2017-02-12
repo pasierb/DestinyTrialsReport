@@ -5,8 +5,8 @@
     .module('trialsReportApp')
     .controller('mapsController', mapsController);
 
-  function mapsController(guardianggFactory, $localStorage, $scope, statsFactory, $timeout, tmhDynamicLocale, api) {
-    $scope.gggWeapons = {};
+  function mapsController($localStorage, $scope, statsFactory, $timeout, tmhDynamicLocale, api) {
+    $scope.weaponPercentage = [];
     $scope.lighthouseFilter = 0;
     tmhDynamicLocale.set($localStorage.language);
 
@@ -108,7 +108,7 @@
         $scope.mapHistory = map.mapHistory;
         $scope.currentMapInfo = map.mapInfo;
         $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[map.mapInfo.referenceId].name;
-        $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
+        $scope.getWeaponPercentage(week);
         $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
         $scope.setChallenge($scope.currentMapInfo.challenge, $scope.currentMapInfo.end_date);
       } else {
@@ -127,7 +127,7 @@
             $scope.currentMapInfo.name = DestinyCrucibleMapDefinition[$scope.currentMapInfo.referenceId].name;
             $scope.currentMapInfo.lighthouseLeaderboard = mapInfo.lighthouseLeaderboard;
             $scope.currentMapInfo.challenge = mapInfo.challenge;
-            $scope.gggLoadWeapons($scope.platformValue, $scope.currentMapInfo.start_date, $scope.currentMapInfo.end_date);
+            $scope.getWeaponPercentage(week);
             $scope.setChallenge($scope.currentMapInfo.challenge, $scope.currentMapInfo.end_date);
           }
         );
@@ -183,36 +183,26 @@
       $scope.setFlawlessRecord($scope.currentMapInfo.lighthouseLeaderboard);
     };
 
-    $scope.gggLoadWeapons = function (platform, start_date, end_date) {
-      $scope.platformNumeric = platform ? 2 : 1;
-      var dates = trialsDates;
-
-      if (start_date && end_date) {
-        dates = {
-          begin:  moment.utc(start_date),
-          end:  moment.utc(end_date)
-        }
-      }
-
-      if ($scope.gggWeapons) {
-        return guardianggFactory.getWeapons(
-          $scope.platformNumeric,
-          dates
-        ).then(function (result) {
-            $scope.mapInfoAnimClass = '';
-            $scope.gggWeapons[$scope.platformNumeric] = result.gggWeapons;
-            $scope.gggWeapons[$scope.platformNumeric].show = result.show;
-            $scope.gggShow = $scope.gggWeapons[$scope.platformNumeric].show;
+    $scope.getWeaponPercentage = function (week) {
+      return api.weaponPercentage(
+        week
+      ).then(function (result) {
+        if (result && result.data && result.data.length > 0) {
+          var primary = result.data.filter(function (weapon) {
+            return weapon.bucketTypeHash == BUCKET_PRIMARY_WEAPON;
           });
-      } else {
-        $scope.gggShow = false;
-      }
+          var special = result.data.filter(function (weapon) {
+            return weapon.bucketTypeHash == BUCKET_SPECIAL_WEAPON;
+          });
+          $scope.weaponPercentage = [primary, special];
+        }
+        $scope.mapInfoAnimClass = '';
+      });
     };
 
     $scope.setPlatform = function (platformBool) {
       $scope.platformValue = platformBool;
       $localStorage.platform = $scope.platformValue;
-      $scope.gggLoadWeapons($scope.platformValue);
       return platformBool;
     };
 

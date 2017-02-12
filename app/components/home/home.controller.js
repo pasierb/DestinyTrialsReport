@@ -139,7 +139,6 @@
     $scope.togglePlatform = function () {
       $scope.platformValue = !$scope.platformValue;
       $localStorage.platform = $scope.platformValue;
-      // $scope.gggLoadWeapons($scope.platformValue);
     };
 
     $scope.toggleStats = function () {

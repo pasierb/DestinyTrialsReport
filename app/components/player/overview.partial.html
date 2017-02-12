@@ -9,7 +9,7 @@
             <div class="player-info__class" ng-bind="player.totalBadges > 2 ? subclassShort(player.characterInfo.subclassName) : player.characterInfo.subclassName"></div>
             <div class="player-info__hazards">
               <span ng-repeat="badge in player.badges track by $index"
-                    ng-bind="badge.status"
+                    ng-bind="badge.status || badge.text"
                     class="player-hazard"
                     ng-class="badge.htmlClass"
                     data-template-url="shared/popovers/charity.popover.html"

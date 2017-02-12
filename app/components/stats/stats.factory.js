@@ -72,23 +72,23 @@ angular.module('trialsReportApp')
             }
           }
 
+          if (data.badges && data.badges[0]) {
+            _.each(data.badges, function (badge) {
+              badges.push({
+                status: badge.title,
+                description: badge.text,
+                htmlClass: badge.title === 'Challenger' ? 'player-hazard--challenger' : 'player-hazard--joel'
+              });
+            });
+          }
+
           if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
-            _.each(data.charitySupporterStatus, function (badge) {
+            _.each(data.charitySupporterStatus.reverse(), function (badge) {
               badges.push({
                 status: badge.status,
                 description: badge.description,
                 icon: badge.icon,
                 htmlClass: 'player-hazard--charity1'
-              });
-            });
-          }
-
-          if (data.badges && data.badges[0]) {
-            _.each(data.badges, function (badge) {
-              badges.push({
-                status: badge.title,
-                description: badge.description,
-                htmlClass: badge.title === 'Challenger' ? 'player-hazard--challenger' : 'player-hazard--joel'
               });
             });
           }
