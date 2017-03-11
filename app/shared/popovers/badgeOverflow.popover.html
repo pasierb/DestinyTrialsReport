@@ -1,7 +1,7 @@
 <div class="popover" tabindex="-1">
   <div class="arrow"></div>
   <div class="popover-content">
-    <div class="badge-overview" ng-repeat="badge in player.badges | limitTo:-2 track by $index">
+    <div class="badge-overview" ng-if="$index >= 2" ng-repeat="badge in player.badges track by $index">
       <hr>
       <div class="badge-overview__item">
         <div class="badge-overview__badge">
