@@ -65,3 +65,25 @@
   background: white;
   color: #B0BEC5;
 }
+
+.player-hazard--more {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.badge-overview:first-child hr {
+  display: none;
+}
+
+.badge-overview__item {
+  display: flex;
+}
+
+.badge-overview__badge .player-hazard {
+  border: 1px solid currentColor;
+}
+
+.badge-overview__description {
+  font-size: .9em;
+  margin-left: 1em;
+  padding-top: .25em;
+}

@@ -6,9 +6,10 @@
         <div class="player-info">
           <h2 class="player-header__gamertag" ng-bind="player.name"></h2>
           <div class="player-info__sub">
-            <div class="player-info__class" ng-bind="player.totalBadges > 2 ? subclassShort(player.characterInfo.subclassName) : player.characterInfo.subclassName"></div>
+            <div class="player-info__class" ng-bind="player.characterInfo.subclassName"></div>
             <div class="player-info__hazards">
-              <span ng-repeat="badge in player.badges track by $index"
+              <span ng-repeat="badge in player.badges | limitTo:2 track by $index"
+                    ng-if="$index < 2"
                     ng-bind="badge.status || badge.text"
                     class="player-hazard"
                     ng-class="badge.htmlClass"
@@ -16,6 +17,13 @@
                     data-placement="bottom"
                     ng-mouseover="johnCena(badge.status)"
                     ng-click="johnCena(badge.status)" bs-popover>
+              </span><!--
+              --><span ng-if="player.totalBadges > 2"
+                       class="player-hazard player-hazard--more"
+                       bs-popover
+                       data-template-url="/shared/popovers/badgeOverflow.popover.html"
+                       data-placement="bottom"
+                       ng-bind="'+' + (player.totalBadges - 2)">
               </span>
             </div>
           </div>

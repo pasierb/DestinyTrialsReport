@@ -1,0 +1,17 @@
+<div class="popover" tabindex="-1">
+  <div class="arrow"></div>
+  <div class="popover-content">
+    <div class="badge-overview" ng-repeat="badge in player.badges | limitTo:-2 track by $index">
+      <hr>
+      <div class="badge-overview__item">
+        <div class="badge-overview__badge">
+          <span ng-bind="badge.status" class="player-hazard" ng-class="badge.htmlClass"></span>
+        </div>
+        <div class="badge-overview__description">
+          <p ng-bind="badge.description" ng-if="!badge.translate"></p>
+          <p ng-bind="'badges.' + badge.status | translate" ng-if="badge.translate"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
