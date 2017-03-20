@@ -31,6 +31,7 @@ angular.module('trialsReportApp')
       ).then(function (result) {
         var year2,
             year3,
+            year1,
             currentWeek,
             currentMap,
             badges = [],
@@ -47,9 +48,15 @@ angular.module('trialsReportApp')
           }
 
           if (data.kills_y2 && data.deaths_y2 && data.match_count_y2) {
-            var deaths = data.deaths_y2 == 0 ? 1 : data.deaths_y2;
-            var kd = data.kills_y2 / deaths;
-            year2 = {kd: kd, matches: data.match_count_y2};
+            var deathsY2 = data.deaths_y2 == 0 ? 1 : data.deaths_y2;
+            var kdY2 = data.kills_y2 / deathsY2;
+            year2 = {kd: kdY2, matches: data.match_count_y2};
+          }
+
+          if (data.kills_y1 && data.deaths_y1 && data.match_count_y1) {
+            var deathsY1 = data.deaths_y1 == 0 ? 1 : data.deaths_y1;
+            var kdY1 = data.kills_y1 / deathsY1;
+            year1 = {kd: kdY1, matches: data.match_count_y1};
           }
 
           if (data.flawless) {
@@ -124,6 +131,7 @@ angular.module('trialsReportApp')
               losses: data.thisWeek[0].losses,
               matches: data.thisWeek[0].matches,
               kills: data.thisWeek[0].kills,
+              flawless: data.thisWeek[0].flawless,
               deaths: deathsTw,
               kd: kdTw
             };
@@ -141,6 +149,7 @@ angular.module('trialsReportApp')
               losses: data.thisMap[0].losses,
               matches: data.thisMap[0].matches,
               kills: data.thisMap[0].kills,
+              flawless: data.thisMap[0].flawless,
               deaths: deathsTm,
               kd: kdTm
             };
@@ -172,6 +181,7 @@ angular.module('trialsReportApp')
 
         player.year2 = year2;
         player.year3 = year3;
+        player.year1 = year1;
         player.badges = badges;
         player.totalBadges = badges.length;
         player.currentWeek = currentWeek;

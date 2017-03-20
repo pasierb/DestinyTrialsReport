@@ -81,17 +81,21 @@
 					 ng-show="$storage.visibility.all || $storage.visibility.weekly.stats">
 		    <div class="row">
 		      <div class="col-xs-3 stat">
-		        <span ng-bind="player.currentWeek.matches | number:0"></span>
-		        <label translate="MATCHES"></label>
-		      </div>
-		      <div class="col-xs-3 stat">
-		        <span ng-bind="player.currentWeek.wins | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.losses | number:0"></span>
-		        <label><span translate="WON"></span> / <span translate="LOST"></span></label>
+		        <span ng-bind="player.currentWeek.wins | number:0"></span>
+            <div class="stat-divider">/</div>
+            <span ng-bind="player.currentWeek.losses | number:0"></span>
+		        <label>
+              <span translate="WON"></span> / <span translate="LOST"></span>
+            </label>
 		      </div>
 		      <div class="col-xs-3 stat">
 		        <span ng-bind="player.currentWeek.kills | number:0"></span><div class="stat-divider">/</div><span ng-bind="player.currentWeek.deaths | number:0"></span>
 		        <label><span translate="kills"></span> / <span translate="deaths"></span></label>
 		      </div>
+          <div class="col-xs-3 stat" style="padding-left: 30px;">
+            <span ng-bind="player.currentWeek.flawless | number:0"></span>
+            <label translate="FLAWLESS"></label>
+          </div>
 		      <div class="col-xs-3 stat">
 		        <span ng-bind="(player.currentWeek.kd | number:2) || 'N/A'"></span>
 		        <label translate="killsDeathsRatioShort"></label>
@@ -179,10 +183,6 @@
 					 ng-show="$storage.visibility.all || $storage.visibility.mapbased.stats">
 		    <div class="row">
 		      <div class="col-xs-3 stat">
-		        <span ng-bind="(player.currentMap.matches | number:0) || 0"></span>
-		        <label translate="MATCHES"></label>
-		      </div>
-		      <div class="col-xs-3 stat">
 		        <span ng-bind="(player.currentMap.wins | number:0) || 0"></span><div class="stat-divider">/</div><span ng-bind="(player.currentMap.losses | number:0) || 0"></span>
 		        <label><span translate="WON"></span> / <span translate="LOST"></span></label>
 		      </div>
@@ -190,6 +190,10 @@
 		        <span ng-bind="(player.currentMap.kills | number:0) || 0"></span><div class="stat-divider">/</div><span ng-bind="(player.currentMap.deaths | number:0) || 0"></span>
 		        <label><span translate="kills"></span> / <span translate="deaths"></span></label>
 		      </div>
+          <div class="col-xs-3 stat" style="padding-left: 30px;">
+            <span ng-bind="player.currentMap.flawless | number:0"></span>
+            <label translate="FLAWLESS"></label>
+          </div>
 		      <div class="col-xs-3 stat">
 		        <span ng-bind="(player.currentMap.kd | number:2) || 'N/A'"></span>
 		        <label translate="killsDeathsRatioShort"></label>
