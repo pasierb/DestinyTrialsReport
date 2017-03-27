@@ -158,6 +158,7 @@
     transform: translate3d(0, 0, 0);
     transition: opacity .2s linear, transform .2s ease-out;
     display: inline-block;
+    will-change: opacity, transform;
 
     &.transitioning {
       transform: translate3d(0, .2em, 0);

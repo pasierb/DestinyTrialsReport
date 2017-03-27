@@ -31,7 +31,11 @@
         'Blinking',
         'Gliding',
         'Titan-skating',
-        'DDOSing'
+        'DDOSing',
+        'Sweating',
+        'Try-harding',
+        'Giving up',
+        'LFGing'
       ];
 
       var locationPlaces = [
