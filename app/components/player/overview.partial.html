@@ -86,10 +86,10 @@
       <label translate="ELO"></label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/lighthouse.popover.html" data-placement="top-right" bs-popover>
-      <span class="player-main-stats__lighthouse fail" ng-if="player.lighthouse.grimoire !== true">
+      <span class="player-main-stats__lighthouse fail" ng-if="getLighthouseCount(player, subdomain) < 1">
         <i class="material-icons">&#xE14C;</i>
       </span>
-      <span class="player-main-stats__lighthouse success" ng-if="player.lighthouse.grimoire === true">
+      <span class="player-main-stats__lighthouse success" ng-if="getLighthouseCount(player, subdomain) > 0">
         <!--<i class="material-icons" ng-if="player.lighthouse.accountCount">&#xE876;</i>-->
         <span ng-bind="player.lighthouse.years ? getLighthouseCount(player, subdomain) + 'x' : 'Year 1'"></span>
       </span>

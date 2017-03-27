@@ -175,24 +175,31 @@
             <div class="challenge-intro" ng-if="challenge.leaderboard && challenge.active">
               <div class="challenge-intro__header">
                 <span ng-if="currentMapInfo.weekText === 'this week' || currentMapInfo.weekText === '0 weeks ago'">You are challenged, in the ways of old</span>
-                <!--<span ng-if="currentMapInfo.weekText !== 'this week'">You were challenged, in the ways of old</span>-->
               </div>
               <div class="challenge-intro__challenge" ng-bind="challenge.duringTitle"></div>
-              <div class="challenge-after" ng-bind-html="challenge.details" ng-if="challenge.details"></div>
+              <div class="challenge-after" ng-bind-html="challenge.details" ng-if="challenge.details && challenge.counting == 0"></div>
               <div class="challenge-intro__descr">
                 <span ng-if="currentMapInfo.weekText === 'this week' || currentMapInfo.weekText === '0 weeks ago'">
                   Be among the three best challengers to earn a &nbsp;<div class="player-hazard player-hazard--challenger">Challenger</div>&nbsp;badge
                 </span>
-                <!--<span ng-if="currentMapInfo.weekText !== 'this week'">-->
-                  <!--Variks is counting the results, you will know soon who got the &nbsp;<div class="player-hazard player-hazard&#45;&#45;challenger">Challenger</div>&nbsp;badge-->
-                <!--</span>-->
               </div>
             </div>
-            <div class="challenge-after" ng-if="challenge.leaderboard && !challenge.active" ng-bind-html="challenge.afterTitle"></div>
+            <div class="challenge-intro" ng-if="challenge.leaderboard && !challenge.active && challenge.counting == 1">
+              <div class="challenge-intro__header">
+                <span>You were challenged, in the ways of old</span>
+              </div>
+              <div class="challenge-intro__challenge" ng-bind="challenge.duringTitle"></div>
+              <div class="challenge-intro__descr">
+                <span>
+                  Variks is counting the results, you will know soon who got the &nbsp;<div class="player-hazard player-hazard--challenger">Challenger</div>&nbsp;badge
+                </span>
+              </div>
+            </div>
+            <div class="challenge-after" ng-if="challenge.leaderboard && !challenge.active && challenge.counting == 0" ng-bind-html="challenge.afterTitle"></div>
           </div>
         </div>
-        <p ng-if="challenge.active">&nbsp;</p>
-        <div class="row" ng-class="{'challenge-result': !challenge.active}" ng-if="challenge && challenge.leaderboard && challenge.leaderboard.length > 0">
+        <p ng-if="challenge.active && challenge.counting == 0">&nbsp;</p>
+        <div class="row" ng-class="{'challenge-result': !challenge.active}" ng-if="challenge && challenge.leaderboard && challenge.leaderboard.length > 0 && challenge.counting == 0">
           <div class="col-xs-12 col-sm-2">
             <h3 class="stat-header faded" ng-if="challenge.active">
               Current leaderboard
