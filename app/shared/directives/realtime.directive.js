@@ -18,7 +18,20 @@
         'Walking',
         'Sniping',
         'Dying',
-        'Planning'
+        'Planning',
+        'Googling',
+        'Ducking',
+        'Barking',
+        'Chillin\'',
+        'Thinking about life',
+        'Peeing',
+        'Contemplating',
+        'Going mad',
+        'Jumping',
+        'Blinking',
+        'Gliding',
+        'Titan-skating',
+        'DDOSing'
       ];
 
       var locationPlaces = [
@@ -32,10 +45,29 @@
       var thoughts = [
         'I should make pizza tonight',
         'Halo 2 is a much better game than this',
+        'I miss doubleshotting :(',
         'I don\'t feel like dancing',
         'Please please please let me go flawless',
         'Lorem ipsum dolor sit amet',
-        'Dance to the music'
+        'Daaaaaaance to the music',
+        'I should throw money at my screen',
+        'IF I GET HEADSHOTTED ONE MORE TIME..!',
+        'Destiny Trials Report sucks',
+        'Destiny Trials Report is da best',
+        'This is a nice rock to hide behind',
+        'Can\'t wait for the Fusion Rifle meta',
+        'Those Trials Report developers are sexy',
+        'Has anyone really been far even as decided to use even go want to do look more like?',
+        'Is this the real life?',
+        'Hello? Is it me you\'re looking for?',
+        'It\'s called teamwork Hotshy',
+        'There\'s no I in team',
+        'HELP!',
+        'Uh-oh',
+        'Why do I even care anymore?',
+        'Leave Britney alone!',
+        'I need to get out more',
+        'I wanna know what love is'
       ];
 
       var getRandomItemOf = function (array) {
@@ -94,7 +126,7 @@
 
             $timeout(function () {
               $scope.update();
-            }, Math.round(Math.random() * 5000) + 3000);
+            }, Math.round(Math.random() * 5000) + 5000);
           };
 
           $scope.update();
