@@ -70,6 +70,137 @@
 // Infographic
 @import 'pages/infographic';
 
+// TODO: Remove after april fools
+.april-fools {
+  background: linear-gradient(to bottom, rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    .april-fools__content {
+      background: linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    }
+  }
+
+  .toggle {
+    margin-right: 1.5em !important // it's all allowed for april fools;
+  }
+
+  .togglebutton label input[type=checkbox]:checked + .toggle,
+  .togglebutton-default label input[type=checkbox]:checked + .toggle {
+    background-color: transparentize($trials-gold, .5);
+  }
+
+  .togglebutton label input[type=checkbox]:checked + .toggle:after,
+  .togglebutton-default label input[type=checkbox]:checked + .toggle:after {
+    background-color: $trials-gold;
+  }
+
+  .togglebutton label .toggle, .togglebutton label input[type=checkbox][disabled] + .toggle {
+		background-color: rgba(255, 255, 255, 0.3);
+
+		&:after {
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}
+
+.april-fools__content2 {
+  padding: 1em $controls-padding;
+  background: rgba(255, 255, 255, 0.3);
+  @include shadow(3);
+}
+
+.april-fools__content {
+  padding: 1em $controls-padding;
+  flex-grow: 1;
+}
+
+.realtime {
+  background: #37474F;
+  color: white;
+  box-shadow: inset 0px 10px 8px -10px rgba(0, 0, 0, 0.75);
+  position: relative;
+  overflow: hidden;
+
+  .last-match-weapon__img {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: .2em;
+    vertical-align: -.1em;
+  }
+
+  .player-hazard {
+    margin-left: .5em;
+    animation: blink 1s linear infinite;
+  }
+
+  .stat {
+    margin-top: 1em;
+
+    > span {
+      text-overflow: ellipsis;
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      line-height: 1.4;
+    }
+  }
+
+  *[realtime] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity .2s linear, transform .2s ease-out;
+    display: inline-block;
+
+    &.transitioning {
+      transform: translate3d(0, .2em, 0);
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes blink {
+  0% { color: rgba(255, 255, 255, 0.5); }
+  100% { color: rgba(255, 255, 255, 1); }
+}
+@-webkit-keyframes blink {
+  0% { color: rgba(255, 255, 255, 0.5); }
+  100% { color: rgba(255, 255, 255, 1); }
+}
+
+.realtime__flag {
+  background: #FDD835;
+  color: #37474F;
+  position: absolute;
+  right: -1.5em;
+  top: .75em;
+  text-align: center;
+  transform: rotateZ(45deg);
+  font-size: .8em;
+  font-weight: bold;
+  padding: .2em 2em;
+}
+
+.realtime__header {
+  @extend .data-label;
+  margin-top: 0;
+  color: #FDD835;
+  font-weight: 400;
+  font-family: 'Roboto';
+  margin-bottom: .5em;
+
+  i {
+    color: #FDD835;
+  }
+}
+
 $offset: 187;
 $duration: 1.4s;
 

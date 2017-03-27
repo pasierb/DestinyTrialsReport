@@ -36,7 +36,8 @@
         stats: {
           tab: true
         }
-      }
+      },
+      realtime: false
     });
 
     tmhDynamicLocale.set($localStorage.language);

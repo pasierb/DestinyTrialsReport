@@ -2,6 +2,46 @@
 
   <div ng-include="'components/player/overview.partial.html'"></div>
 
+  <div class="realtime" ng-if="$storage.realtime">
+    <div class="player-tab__section">
+      <div class="realtime__flag">
+        BETA
+      </div>
+      <div class="realtime__header">
+        MEGA REAL-TIME REPORT
+        <i
+          data-content="Maybe probably around 96% accurate we think"
+          class="material-icons icon--small info" style="cursor: pointer;"
+          bs-popover>&#xE8FD;</i>
+      </div>
+      <div class="stat">
+        <span realtime type="location">Camping in Circle Room</span>
+        <label>Current location <span class="player-hazard">LIVE</span></label>
+      </div>
+      <div class="row">
+        <div class="col-xs-7">
+          <div class="stat">
+            <span realtime type="weapon" inventory="[player.inventory.weapons.primary, player.inventory.weapons.special, player.inventory.weapons.heavy]">
+              <img class="last-match-weapon__img img-responsive" ng-src="https://www.bungie.net/common/destiny_content/icons/d60c04ac69d9cc73f2fdb2ab704b1ec8.jpg" alt="No Land Beyond" src="https://www.bungie.net/common/destiny_content/icons/d60c04ac69d9cc73f2fdb2ab704b1ec8.jpg">
+              No Land Beyond
+            </span>
+            <label>Equipped weapon <span class="player-hazard">LIVE</span></label>
+          </div>
+        </div>
+        <div class="col-xs-5">
+          <div class="stat">
+            <span realtime type="elo">1,200</span>
+            <label>Actual Elo <span class="player-hazard">LIVE</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="stat">
+        <span realtime type="thought">"I should make pizza tonight"</span>
+        <label>Current thought <span class="player-hazard">LIVE</span></label>
+      </div>
+    </div>
+  </div>
+
   <div ng-include="'components/player/specific-stats.partial.html'" ng-if="!subdomain"></div>
 
   <uib-tabset class="player-tabs" ng-if="!subdomain"
