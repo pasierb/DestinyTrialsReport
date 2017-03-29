@@ -76,14 +76,29 @@
       <label translate="STREAK"></label>
     </div>
     <div class="col-xs-3 stat">
-      <span ng-bind="(player.ggg.elo | number:0) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
-      <span>
-        <a href="https://guardian.gg/en/faq" target="_blank"
-           data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
-          <i class="material-icons icon--small">&#xE8FD;</i>
-        </a>
+      <span ng-if="!$storage.rating || $storage.rating === 'elo'">
+        <span ng-bind="(player.ggg.elo | number:0) || 'N/A'" data-template-url="shared/popovers/gggElo.popover.html" bs-popover></span>
+        <span>
+          <a href="https://guardian.gg/en/faq" target="_blank"
+             data-content="Elo is an account-wide rating system provided by Guardian.gg" bs-popover>
+            <i class="material-icons icon--small">&#xE8FD;</i>
+          </a>
+        </span>
       </span>
-      <label translate="ELO"></label>
+      <span ng-if="$storage.rating === 'mmr'">
+        <span ng-bind="((player.ggg.elo / 2) | number:0) || 'N/A'" ng-if="$storage.rating === 'mmr'"></span>
+        <span>
+          <a href="https://destinytracker.com" target="_blank"
+             data-content="MMR stands for 'Matchmaking Rating', and is being developed by DestinyTracker as a more precise alternative to Elo." bs-popover>
+            <i class="material-icons icon--small">&#xE8FD;</i>
+          </a>
+        </span>
+      </span>
+      <label class="rating-toggle__label">
+        <a href="" ng-class="{'is-active': !$storage.rating || $storage.rating === 'elo'}" ng-click="$storage.rating = 'elo'">ELO</a>
+        /
+        <a href="" ng-class="{'is-active': $storage.rating === 'mmr'}" ng-click="$storage.rating = 'mmr'">MMR</a>
+      </label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/lighthouse.popover.html" data-placement="top-right" bs-popover>
       <span class="player-main-stats__lighthouse fail" ng-if="player.lighthouse.grimoire !== true">
