@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory, $localStorage, guardianggFactory) {
-
+  .controller('playerController', function ($scope, statsFactory, matchesFactory, homeFactory, $localStorage) {
     $scope.getLastMatch = function (player) {
       return matchesFactory.getLastThree(player)
         .then(function (postGame) {
@@ -37,7 +36,7 @@ angular.module('trialsReportApp')
         }
       });
 
-    // guardianggFactory.getElo($scope.player);
+    statsFactory.getMMR($scope.player);
     statsFactory.getStats($scope.player);
     // statsFactory.getGrimoire($scope.player);
     statsFactory.getPlayer($scope.player);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .factory('statsFactory', function ($http, bungie, api, $q, $translate) {
+  .factory('statsFactory', function ($http, bungie, api, $q, destinyTRN) {
 
     var getStats = function (player) {
       return bungie.getStats(
@@ -370,7 +370,28 @@ angular.module('trialsReportApp')
         });
     };
 
+    var getMMR = function (player) {
+      return destinyTRN.getMMR(
+        player.membershipType,
+        player.membershipId
+      ).then(function (result) {
+        console.log(result);
+        player.mmr = {};
+        if (result && result.data && result.data[0]) {
+          var data = result.data[0];
+          player.mmr = {
+            rating: data['rating'],
+            rank: (data['playerank'] && data['playerank']['rank']) ? data['playerank']['rank'] : 'N/A',
+            hardened: data['hardenedPct'],
+            updated: moment.utc(data['lastGameDate']).fromNow()
+          };
+        }
+        return player;
+      });
+    };
+
     return {
+      getMMR: getMMR,
       getStats: getStats,
       getGrimoire: getGrimoire,
       getPlayer: getPlayer,
