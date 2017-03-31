@@ -106,11 +106,27 @@
       ];
 
       var locationPlaces = [
-        'Top Blue',
-        'Top Mid',
-        'Elbow',
-        'BR Tower',
-        'Snipe 3'
+        'Back Wall',
+        'Inside Platform',
+        'Inside Heavy',
+        'A Flag',
+        'B Flag',
+        'C Flag',
+        'A Special',
+        'Pillar',
+        'A Wheel',
+        'C Wheel',
+        'C Special',
+        'Outside A',
+        'Outside Platform',
+        'Outside Heavy',
+        'Outside C',
+        'Head-glitch Rock',
+        'A Bridge',
+        'C Bridge',
+        'Lower Hall',
+        'A Stairs',
+        'C Stairs'
       ];
 
       var thoughts = [
