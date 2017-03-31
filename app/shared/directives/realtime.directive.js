@@ -253,12 +253,9 @@
             index = 2;
           }
 
-          return `
-            <img class="last-match-weapon__img img-responsive" alt="${inventory[index].definition.name}" src="${inventory[index].definition.icon}">
-            ${inventory[index].definition.name}
-            `;
+          return '<img class="last-match-weapon__img img-responsive" alt="' + inventory[index].definition.name +'" src="' + inventory[index].definition.icon + '">' + inventory[index].definition.name;
         }
-      }
+      };
 
       return {
         getNewHtml: getNewHtml

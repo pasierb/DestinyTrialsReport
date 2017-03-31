@@ -8,7 +8,7 @@ app.service('destinyTRN', [
 
   function ($http, util) {
     return new function () {
-      var BASE_URL = 'http://api.insights.destinytracker.com/api/';
+      var BASE_URL = 'https://mmr.destinytracker.net/api/';
       var ENDPOINTS = {
         getMMR: 'mmr/{platform}/{membershipId}/14'
       };
