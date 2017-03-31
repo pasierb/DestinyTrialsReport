@@ -1,0 +1,12 @@
+.rating-toggle__label {
+  a {
+    color: inherit;
+
+    &.is-active:after {
+      @include icon();
+      content: "\e314";
+      line-height: 1;
+      vertical-align: -13%;
+    }
+  }
+}

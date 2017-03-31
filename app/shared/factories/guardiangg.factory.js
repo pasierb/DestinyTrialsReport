@@ -6,7 +6,7 @@ function getGggTierByElo(elo) {
   if (elo < 1500) return 'gold';
   if (elo < 1700) return 'platinum';
   return 'diamond';
-};
+}
 
 function eloTier(playerElo, player, $filter) {
   if (playerElo) {
@@ -54,7 +54,6 @@ angular.module('trialsReportApp')
     var getSeasonOne = function (player) {
       return guardianGG.getSeasonOne(player.membershipId)
         .then(function (elo) {
-          console.log(elo)
           if (elo && elo.data && elo.data.data) {
             var seasonElo = _.find(elo.data.data, function (arr) {
             return arr.mode === 14;

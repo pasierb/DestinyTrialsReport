@@ -14,6 +14,10 @@
         <span ng-bind="player.year2.kd | number:2"></span>
         <label translate="YEAR2"></label>
       </div>
+      <div class="popover-col stat" ng-if="player.year1.kd > 0">
+        <span ng-bind="player.year1.kd | number:2"></span>
+        <label translate="YEAR1"></label>
+      </div>
     </div>
   </div>
 </div>

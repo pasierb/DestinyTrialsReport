@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('trialsReportApp')
-  .factory('statsFactory', function ($http, bungie, api, $q, $translate) {
+  .factory('statsFactory', function ($http, bungie, api, $q, destinyTRN) {
 
     var getStats = function (player) {
       return bungie.getStats(
@@ -31,6 +31,7 @@ angular.module('trialsReportApp')
       ).then(function (result) {
         var year2,
             year3,
+            year1,
             currentWeek,
             currentMap,
             badges = [],
@@ -47,9 +48,15 @@ angular.module('trialsReportApp')
           }
 
           if (data.kills_y2 && data.deaths_y2 && data.match_count_y2) {
-            var deaths = data.deaths_y2 == 0 ? 1 : data.deaths_y2;
-            var kd = data.kills_y2 / deaths;
-            year2 = {kd: kd, matches: data.match_count_y2};
+            var deathsY2 = data.deaths_y2 == 0 ? 1 : data.deaths_y2;
+            var kdY2 = data.kills_y2 / deathsY2;
+            year2 = {kd: kdY2, matches: data.match_count_y2};
+          }
+
+          if (data.kills_y1 && data.deaths_y1 && data.match_count_y1) {
+            var deathsY1 = data.deaths_y1 == 0 ? 1 : data.deaths_y1;
+            var kdY1 = data.kills_y1 / deathsY1;
+            year1 = {kd: kdY1, matches: data.match_count_y1};
           }
 
           if (data.flawless) {
@@ -124,6 +131,7 @@ angular.module('trialsReportApp')
               losses: data.thisWeek[0].losses,
               matches: data.thisWeek[0].matches,
               kills: data.thisWeek[0].kills,
+              flawless: data.thisWeek[0].flawless,
               deaths: deathsTw,
               kd: kdTw
             };
@@ -141,6 +149,7 @@ angular.module('trialsReportApp')
               losses: data.thisMap[0].losses,
               matches: data.thisMap[0].matches,
               kills: data.thisMap[0].kills,
+              flawless: data.thisMap[0].flawless,
               deaths: deathsTm,
               kd: kdTm
             };
@@ -172,6 +181,7 @@ angular.module('trialsReportApp')
 
         player.year2 = year2;
         player.year3 = year3;
+        player.year1 = year1;
         player.badges = badges;
         player.totalBadges = badges.length;
         player.currentWeek = currentWeek;
@@ -360,7 +370,37 @@ angular.module('trialsReportApp')
         });
     };
 
+    function getMMRTier(mmr) {
+      if (mmr < 1100) return 'bronze';
+      if (mmr < 1300) return 'silver';
+      if (mmr < 1500) return 'gold';
+      if (mmr < 1700) return 'platinum';
+      return 'diamond';
+    }
+
+    var getMMR = function (player) {
+      return destinyTRN.getMMR(
+        player.membershipType,
+        player.membershipId
+      ).then(function (result) {
+        player.mmr = {};
+        if (result && result.data && result.data[0]) {
+          var data = result.data[0];
+          player.mmr = {
+            rating: data['rating'],
+            matches: data['games'],
+            rank: (data['playerank'] && data['playerank']['rank']) ? data['playerank']['rank'] : 'N/A',
+            hardened: data['hardenedPct'],
+            updated: moment.utc(data['lastGameDate']).fromNow(),
+            tier: getMMRTier(data['rating'])
+          };
+        }
+        return player;
+      });
+    };
+
     return {
+      getMMR: getMMR,
       getStats: getStats,
       getGrimoire: getGrimoire,
       getPlayer: getPlayer,
