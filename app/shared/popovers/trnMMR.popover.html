@@ -1,14 +1,18 @@
-<div class="popover ggg-elo {{player.ggg.tier}}" tabindex="-1" ng-show="player.mmr">
+<div class="popover ggg-elo {{player.mmr.tier}}" tabindex="-1" ng-show="player.mmr">
   <div class="arrow"></div>
   <div class="popover-content">
     <div class="popover-row">
-      <div class="popover-col stat">
-        <span translate="GuardianGG.tiers.{{player.ggg.tier}}"></span>
-        <label translate="TIER"></label>
-      </div>
+      <!--<div class="popover-col stat">-->
+        <!--<span translate="GuardianGG.tiers.{{player.mmr.tier}}"></span>-->
+        <!--<label translate="TIER"></label>-->
+      <!--</div>-->
       <div class="popover-col stat">
         <span ng-bind="player.mmr.rank | number:0"></span>
         <label translate="RANK"></label>
+      </div>
+      <div class="popover-col stat">
+        <span ng-bind="player.mmr.matches | number:0"></span>
+        <label translate="MATCHES"></label>
       </div>
       <div class="popover-col stat">
         <span ng-bind="player.mmr.updated"></span>

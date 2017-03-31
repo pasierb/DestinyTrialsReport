@@ -64,13 +64,13 @@
 </div>
 <div class="player-main-stats" ng-class="{'is-hidden': !$storage.visibility.all && !$storage.visibility.mainStats}" ng-show="$storage.visibility.all || $storage.visibility.mainStats">
   <div class="row">
-    <div class="col-xs-2 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
+    <div class="col-xs-3 stat" data-template-url="shared/popovers/currentWeek.popover.html" data-placement="top-left" bs-popover>
       <span ng-if="player.stats.activitiesWinPercentage.basic.value"
             ng-bind="(player.stats.activitiesWinPercentage.basic.value | number:0) + '%'"></span>
       <span ng-if="!player.stats.activitiesWinPercentage.basic.value">N/A</span>
       <label translate="wins"></label>
     </div>
-    <div class="col-xs-2 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
+    <div class="col-xs-3 stat" data-template-url="shared/popovers/streak.popover.html" bs-popover>
       <span ng-bind="player.activities.streak || 'N/A'"></span>
       <span class="match player-main-stats__streak" ng-class="{'match--win': player.activities.recentActivity.standing === 0, 'match--loss': player.activities.recentActivity.standing === 1}"></span>
       <label translate="STREAK"></label>
@@ -95,9 +95,9 @@
         </span>
       </span>
       <label class="rating-toggle__label">
-        <a href="" ng-class="{'is-active': $storage.rating === 'mmr'}" ng-click="$storage.rating = 'mmr'">MMR</a>
+        <a href="" ng-class="{'is-active': !$storage.rating || $storage.rating === 'mmr'}" ng-click="$storage.rating = 'mmr'">MMR</a>
         /
-        <a href="" ng-class="{'is-active': !$storage.rating || $storage.rating === 'elo'}" ng-click="$storage.rating = 'elo'">ELO</a>
+        <a href="" ng-class="{'is-active': $storage.rating === 'elo'}" ng-click="$storage.rating = 'elo'">ELO</a>
       </label>
     </div>
     <div class="col-xs-3 stat" data-template-url="shared/popovers/lighthouse.popover.html" data-placement="top-right" bs-popover>

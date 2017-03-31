@@ -370,20 +370,29 @@ angular.module('trialsReportApp')
         });
     };
 
+    function getMMRTier(mmr) {
+      if (mmr < 1100) return 'bronze';
+      if (mmr < 1300) return 'silver';
+      if (mmr < 1500) return 'gold';
+      if (mmr < 1700) return 'platinum';
+      return 'diamond';
+    }
+
     var getMMR = function (player) {
       return destinyTRN.getMMR(
         player.membershipType,
         player.membershipId
       ).then(function (result) {
-        console.log(result);
         player.mmr = {};
         if (result && result.data && result.data[0]) {
           var data = result.data[0];
           player.mmr = {
             rating: data['rating'],
+            matches: data['games'],
             rank: (data['playerank'] && data['playerank']['rank']) ? data['playerank']['rank'] : 'N/A',
             hardened: data['hardenedPct'],
-            updated: moment.utc(data['lastGameDate']).fromNow()
+            updated: moment.utc(data['lastGameDate']).fromNow(),
+            tier: getMMRTier(data['rating'])
           };
         }
         return player;
