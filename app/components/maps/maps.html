@@ -176,7 +176,7 @@
               <div class="challenge-intro__header">
                 <span ng-if="currentMapInfo.weekText === 'this week' || currentMapInfo.weekText === '0 weeks ago'">You are challenged, in the ways of old</span>
               </div>
-              <div class="challenge-intro__challenge" ng-bind="challenge.duringTitle"></div>
+              <div class="challenge-intro__challenge" ng-bind-html="challenge.duringTitle"></div>
               <div class="challenge-after" ng-bind-html="challenge.details" ng-if="challenge.details && challenge.counting == 0"></div>
               <div class="challenge-intro__descr">
                 <span ng-if="currentMapInfo.weekText === 'this week' || currentMapInfo.weekText === '0 weeks ago'">
