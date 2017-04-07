@@ -67,23 +67,25 @@ angular.module('trialsReportApp')
     };
 
     $scope.getLighthouseCount = function (player, subdomain) {
-      var years = player.lighthouse.years,
-        count = 0,
-        character;
-      switch (subdomain) {
-        case true:
-          _.each(years, function (year) {
-            character = year.characters[player.characterInfo.characterId];
-            if (character) {
-              count += character.count;
-            }
-          });
-          return count;
-        case false:
-          _.each(years, function (year) {
-            count += year.accountCount;
-          });
-          return count;
+      if (player.lighthouse) {
+        var years = player.lighthouse.years,
+          count = 0,
+          character;
+        switch (subdomain) {
+          case true:
+            _.each(years, function (year) {
+              character = year.characters[player.characterInfo.characterId];
+              if (character) {
+                count += character.count;
+              }
+            });
+            return count;
+          case false:
+            _.each(years, function (year) {
+              count += year.accountCount;
+            });
+            return count;
+        }
       }
     };
 
