@@ -90,6 +90,11 @@
   <div class="player__links">
     <div class="row">
       <div class="col-xs-12 player__links__btns">
+        <a ng-href="http://destinytracker.com/destiny/playlists/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}/trialsOfOsiris"
+           type="button" target="_blank" class="btn btn-default"
+           analytics-on analytics-event="Click" analytics-category="DestinyTracker">
+          <img src="/assets/img/trn-logo.png" alt="DestinyTracker">
+        </a>
         <a ng-href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default"
            analytics-on analytics-event="Click" analytics-category="Guardian.gg">
