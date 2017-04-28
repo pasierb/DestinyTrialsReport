@@ -35,6 +35,7 @@ angular.module('trialsReportApp')
             currentWeek,
             currentMap,
             badges = [],
+            charityIcons= [],
             mapWeapons = [],
             score;
 
@@ -91,12 +92,20 @@ angular.module('trialsReportApp')
 
           if (data.charitySupporterStatus && data.charitySupporterStatus[0]) {
             _.each(data.charitySupporterStatus.reverse(), function (badge) {
-              badges.push({
-                status: badge.status,
-                description: badge.description,
-                icon: badge.icon,
-                htmlClass: 'player-hazard--charity1'
-              });
+              if (badge.status == 'Jake') {
+                charityIcons.push({
+                  status: '/assets/img/badges/paw.png',
+                  description: badge.description,
+                  icon: badge.icon
+                });
+              } else {
+                badges.push({
+                  status: badge.status,
+                  description: badge.description,
+                  icon: badge.icon,
+                  htmlClass: 'player-hazard--charity1'
+                });
+              }
             });
           }
 
@@ -183,6 +192,7 @@ angular.module('trialsReportApp')
         player.year3 = year3;
         player.year1 = year1;
         player.badges = badges;
+        player.charityIcons = charityIcons;
         player.totalBadges = badges.length;
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;

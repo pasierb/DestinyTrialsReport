@@ -8,6 +8,11 @@
           <div class="player-info__sub">
             <div class="player-info__class" ng-bind="player.characterInfo.subclassName"></div>
             <div class="player-info__hazards">
+              <img ng-repeat="badge in player.charityIcons track by $index"
+                   ng-src="{{badge.status}}"
+                   data-template-url="shared/popovers/charity.popover.html"
+                   data-placement="bottom"
+                   style="height: 100%;margin-left: 3px;margin-right: 5px;" bs-popover>
               <span ng-repeat="badge in player.badges | limitTo:2 track by $index"
                     ng-if="$index < 2"
                     ng-bind="badge.status || badge.text"
@@ -17,8 +22,8 @@
                     data-placement="bottom"
                     ng-mouseover="johnCena(badge.status)"
                     ng-click="johnCena(badge.status)" bs-popover>
-              </span><!--
-              --><span ng-if="player.totalBadges > 2"
+              </span>
+              <span ng-if="player.totalBadges > 2"
                        class="player-hazard player-hazard--more"
                        bs-popover
                        data-template-url="/shared/popovers/badgeOverflow.popover.html"
