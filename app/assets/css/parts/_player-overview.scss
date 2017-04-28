@@ -79,6 +79,12 @@
 
   .player-hazard {
     display: inline-block;
+
+    > img {
+      display: inline-block;
+      vertical-align: -.1em;
+      height: 1em;
+    }
   }
 }
 
