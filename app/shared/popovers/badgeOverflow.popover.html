@@ -5,7 +5,7 @@
       <hr>
       <div class="badge-overview__item">
         <div class="badge-overview__badge">
-          <span ng-bind="badge.status" class="player-hazard" ng-class="badge.htmlClass"></span>
+          <span ng-bind="badge.status" class="player-hazard" data-count="{{badge.count}}" ng-class="badge.htmlClass"></span>
         </div>
         <div class="badge-overview__description">
           <p ng-bind="badge.description" ng-if="!badge.translate"></p>

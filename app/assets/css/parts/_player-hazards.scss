@@ -42,6 +42,24 @@
   color: $success;
 }
 
+.player-hazard--sherpa {
+  background: white;
+  text-shadow: none;
+  color: #E65100;
+  padding-right: 0;
+
+  &:after {
+    content: attr(data-count) "x";
+    padding: 1px 3px 1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border-radius: 0 3px 3px 0;
+    background: transparentize(#E65100, 0.8);
+    color: #E65100;
+    display: inline-block;
+  }
+}
+
 .player-hazard--joel {
   background: white;
   text-shadow: none;
@@ -80,6 +98,8 @@
 
 .badge-overview__badge .player-hazard {
   border: 1px solid currentColor;
+  white-space: nowrap;
+  font-size: .7em;
 }
 
 .badge-overview__description {
