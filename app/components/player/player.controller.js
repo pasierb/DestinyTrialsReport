@@ -40,7 +40,6 @@ angular.module('trialsReportApp')
     statsFactory.getStats($scope.player);
     // statsFactory.getGrimoire($scope.player);
     statsFactory.getPlayer($scope.player);
-    statsFactory.getChallengeWeapons($scope.player);
 
     $scope.getWeaponByHash = function (hash) {
       if (DestinyWeaponDefinition[hash]) {

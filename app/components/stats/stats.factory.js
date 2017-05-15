@@ -33,11 +33,14 @@ angular.module('trialsReportApp')
             year3,
             year1,
             currentWeek,
+            lastWeapons,
+            lastAbilities,
             currentMap,
             badges = [],
+            challengeWeapons = [],
             charityIcons= [],
             mapWeapons = [],
-            score;
+            challengeScore;
 
         if (result && result.data && result.data[0]) {
           var data = result.data[0];
@@ -183,8 +186,72 @@ angular.module('trialsReportApp')
             }
           }
 
-          if (data.challenge && data.challenge.score) {
-            score = data.challenge.score;
+          if (data.challenge) {
+            var weapons = [],
+              weaponDef;
+
+            if (data.challenge.details && data.challenge.details[0] && data.challenge.details[0].displayName) {
+              _.each(data.challenge.details, function (weapon) {
+                weapons.push({
+                  displayName: weapon.displayName,
+                  instanceId: weapon.instanceId
+                });
+              });
+              challengeWeapons = weapons;
+            } else {
+              _.each(data.challenge.details, function (weapon) {
+                if (_.isObject(weapon)) {
+                  weaponDef = DestinyWeaponDefinition[weapon.id];
+                  if (weaponDef) {
+                    weaponDef.id = weapon.id;
+                    weaponDef.kills = weapon.kills;
+                    if (weapon.multiplier) {
+                      weaponDef.multiplier = weapon.multiplier;
+                    } else {
+                      weaponDef.headshots = weapon.headshots;
+                    }
+                    weapons.push(weaponDef);
+                  }
+                } else {
+                  weaponDef = DestinyWeaponDefinition[weapon];
+                  if (weaponDef) {
+                    weaponDef.id = weapon;
+                    weapons.push(weaponDef);
+                  }
+                }
+              });
+              var sorted = _.sortBy(weapons, function (w) { return -w.tierType; });
+
+              while (sorted.length) {
+                challengeWeapons.push(sorted.splice(0, 2))
+              }
+            }
+            if (data.challenge.score) {
+              challengeScore = data.challenge.score;
+            }
+          }
+
+          if (data.thisWeek && data.thisWeek.weapons) {
+            var abilityNames = ['Melee', 'Grenade', 'Super', 'Get it Off!'];
+            var matches = _.pluck(data.thisWeek.weapons, 'matches_used');
+            var kills = _.pluck(data.thisWeek.weapons, 'sum_kills');
+            var abilities = data.thisWeek.weapons.filter(function(w){return abilityNames.indexOf(w.name) > -1});
+
+            var melee = abilities.find(function(w){return w.name == 'Melee'});
+            var grenade = abilities.find(function(w){return w.name == 'Grenade'});
+            var supers = abilities.find(function(w){return w.name == 'Super'});
+            var sticky = abilities.find(function(w){return w.name == 'Get it Off!'});
+
+            player.lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
+            player.lastWeaponTotalKills = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
+
+            lastWeapons = data.thisWeek.weapons.filter(function(w){return abilityNames.indexOf(w.name) < 0}).splice(0,2);
+            lastAbilities = {
+              melee: melee ? melee.sum_kills : 0,
+              grenade: grenade ? grenade.sum_kills : 0,
+              supers: supers ? supers.sum_kills : 0,
+              sticky: sticky ? sticky.sum_kills : 0
+            };
           }
         }
 
@@ -197,53 +264,11 @@ angular.module('trialsReportApp')
         player.currentWeek = currentWeek;
         player.currentMap = currentMap;
         player.mapWeapons = mapWeapons;
-        player.challengeScore = score;
+        player.challengeScore = challengeScore;
+        player.challengeWeapons = challengeWeapons;
+        player.lastWeapons = lastWeapons;
+        player.lastAbilities = lastAbilities;
         return player;
-      });
-    };
-
-    var getChallengeWeapons = function (player) {
-      var dfd = $q.defer();
-      return api.challengeWeapons(
-        player.membershipId
-      ).then(function (result) {
-        if (result && result.data) {
-          var weapons = [],
-              challengeWeapons = [],
-              weaponDef;
-
-          _.each(result.data, function (weapon) {
-            if (_.isObject(weapon)) {
-              weaponDef = DestinyWeaponDefinition[weapon.id];
-              if (weaponDef) {
-                weaponDef.id = weapon.id;
-                weaponDef.kills = weapon.kills;
-                if (weapon.multiplier) {
-                  weaponDef.multiplier = weapon.multiplier;
-                } else {
-                  weaponDef.headshots = weapon.headshots;
-                }
-                weapons.push(weaponDef);
-              }
-            } else {
-              weaponDef = DestinyWeaponDefinition[weapon];
-              if (weaponDef) {
-                weaponDef.id = weapon;
-                weapons.push(weaponDef);
-              }
-            }
-          });
-
-          var sorted = _.sortBy(weapons, function (w) { return -w.tierType; });
-
-          while (sorted.length) {
-            challengeWeapons.push(sorted.splice(0, 2))
-          }
-
-          player.challengeWeapons = challengeWeapons;
-          dfd.resolve(player);
-          return dfd.promise;
-        }
       });
     };
 
@@ -279,7 +304,6 @@ angular.module('trialsReportApp')
                 precision: 100 * weapon.headshots / weapon.kills,
                 kills: weapon.kills,
                 headshots: weapon.headshots,
-                win_percentage: weapon.win_percentage,
                 total_matches: weapon.total_matches
               });
             });
@@ -306,8 +330,7 @@ angular.module('trialsReportApp')
                 topWeapons[weapon.weaponId] = {
                   precision: 100 * weapon.headshots / weapon.kills,
                   kills: weapon.kills,
-                  headshots: weapon.headshots,
-                  win_percentage: weapon.win_percentage
+                  headshots: weapon.headshots
                 };
               });
               player.topWeapons = topWeapons;
@@ -358,8 +381,20 @@ angular.module('trialsReportApp')
               });
             });
 
+            var abilitySummary = mapInfo.data.ability_stats;
+            var abilitySum = _.reduce(abilitySummary, function(total, ability){ return total + parseInt(ability.count); }, 0);
+            var abilityTypeSum = _.reduce(abilitySummary, function(total, ability){ return total + parseInt(ability.sum_kills); }, 0);
+            _.each(abilitySummary, function (ability) {
+              var avgPercentage = 100 * (ability.sum_kills / abilityTypeSum);
+              ability.name = ability.statName;
+              ability.killPercentage = 100 * (ability.count / abilitySum);
+              ability.percentOfTotal = 100 * (ability.count / ability.all_kills);
+              ability.diffPercentage = ability.killPercentage - avgPercentage;
+            });
+
             return {
               weaponSummary: weaponSummary,
+              abilitySummary: abilitySummary,
               weaponTotals:  weaponTotals,
               mapHistory:    mapHistory,
               mapInfo:       mapData,
@@ -417,7 +452,6 @@ angular.module('trialsReportApp')
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
       weaponStats: weaponStats,
-      mapStats: mapStats,
-      getChallengeWeapons: getChallengeWeapons
+      mapStats: mapStats
     };
   });

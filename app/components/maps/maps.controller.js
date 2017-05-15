@@ -104,6 +104,7 @@
       if ($scope.searchedMaps[week]) {
         var map = $scope.searchedMaps[week];
         $scope.weaponSummary = map.weaponSummary;
+        $scope.abilitySummary = map.abilitySummary;
         $scope.weaponTotals = map.weaponTotals;
         $scope.mapHistory = map.mapHistory;
         $scope.currentMapInfo = map.mapInfo;
@@ -116,6 +117,7 @@
           .then(function (mapInfo) {
             $scope.searchedMaps[week] = mapInfo;
             $scope.weaponSummary = mapInfo.weaponSummary;
+            $scope.abilitySummary = mapInfo.abilitySummary;
             $scope.weaponTotals = mapInfo.weaponTotals;
             $scope.mapHistory = mapInfo.mapHistory;
             $scope.currentMapInfo = mapInfo.mapInfo;

@@ -11,15 +11,29 @@
   </div>
   <div class="player-tab__section" ng-if="player.challengeWeapons && player.challengeWeapons.length > 0">
     <div class="row">
-      <!-- Just weapons -->
-      <div class="col-xs-12" ng-if="player.challengeWeapons[0][0].kills === undefined">
-        <div class="challenge-weapon row" ng-repeat="weapons in player.challengeWeapons track by $index">
-          <div class="col-xs-6 last-weapon-weapon__descr" ng-repeat="weapon in weapons">
-            <img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.id).icon}}" alt="{{weapon.name}}">
-            <span class="last-match-weapon__title" ng-bind="weapon.name"></span>
+      <div class="col-xs-12" ng-if="player.challengeWeapons[0].displayName !== undefined">
+        <div class="challenge-weapon row" ng-repeat="player in player.challengeWeapons track by $index">
+          <div class="col-xs-6 last-weapon-weapon__descr">
+            <span class="last-match-weapon__title" ng-bind="player.displayName"></span>
+          </div>
+          <div class="col-xs-6 last-weapon-weapon__descr">
+            <span class="last-match-weapon__title">
+              <a ng-href="https://www.bungie.net/en/legend/PGCR?instanceId={{player.instanceId}}" target="_blank">
+                Bungie.net PGCR
+              </a>
+            </span>
           </div>
         </div>
       </div>
+      <!-- Just weapons -->
+      <!--<div class="col-xs-12" ng-if="player.challengeWeapons[0][0].kills === undefined">-->
+        <!--<div class="challenge-weapon row" ng-repeat="weapons in player.challengeWeapons track by $index">-->
+          <!--<div class="col-xs-6 last-weapon-weapon__descr" ng-repeat="weapon in weapons">-->
+            <!--<img class="last-match-weapon__img img-responsive" ng-src="{{getWeaponByHash(weapon.id).icon}}" alt="{{weapon.name}}">-->
+            <!--<span class="last-match-weapon__title" ng-bind="weapon.name"></span>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
       <!-- Weapons + stats -->
       <div class="col-xs-12" ng-if="player.challengeWeapons[0][0].kills !== undefined">
         <div ng-repeat="weapons in player.challengeWeapons track by $index">

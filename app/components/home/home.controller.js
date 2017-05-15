@@ -303,18 +303,6 @@
               } else {
                 statsFactory.weaponStats(player);
               }
-
-              api.lastWeapons(
-                player.characterInfo.characterId
-              ).then(function (result) {
-                  if (result && result.data) {
-                    var matches = _.pluck(result.data, 'matches_used');
-                    var kills = _.pluck(result.data, 'sum_kills');
-                    player.lastWeaponTotalPlayed = _.reduce(matches, function(memo, num){ return memo + parseInt(num); }, 0);
-                    player.lastWeaponTotalKills = _.reduce(kills, function(memo, num){ return memo + parseInt(num); }, 0);
-                    player.lastWeapons = result.data;
-                  }
-                });
             }
           });
 
