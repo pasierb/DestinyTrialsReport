@@ -16,7 +16,7 @@
                    <img ng-src="{{badge.status}}"/>
               </span><!--
               -->
-              <span class="player-hazard player-hazard--sherpa" data-count="3">
+              <span class="player-hazard player-hazard--sherpa" data-count="3x">
                 Sherpa<!-- TODO: REMOVE THIS-->
               </span><!--
               --><span ng-repeat="badge in player.badges | limitTo:2 track by $index"
@@ -24,7 +24,7 @@
                     ng-bind="badge.status || badge.text"
                     class="player-hazard"
                     ng-class="badge.htmlClass"
-                    data-count="{{badge.count}}"
+                    data-count="{{badge.count > 100 ? '100+' : badge.count + 'x'}}"
                     data-template-url="shared/popovers/charity.popover.html"
                     data-placement="bottom"
                     ng-mouseover="johnCena(badge.status)"
