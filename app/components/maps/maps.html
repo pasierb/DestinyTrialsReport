@@ -45,53 +45,6 @@
         <div class="row" ng-if="currentMapInfo">
           <div class="col-xs-12 col-sm-2">
             <h3 class="stat-header">
-              Ability usage by type
-            </h3>
-            <span data-content="Percentages are based on usage of weapon types in relation to total kills in their category.<hr />Difference to the average represents how much more or less that specific weapon type is used on {{currentMapInfo.name || 'this map'}} in relation to all other Trials of Osiris maps since the latest balance update." bs-popover>
-              <i class="material-icons icon--small info">&#xE8FD;</i>
-            </span>
-          </div>
-          <div class="col-xs-12 col-sm-10">
-            <div class="top-weapons--map">
-              <div class="row">
-                <div class="col-xs-3 col-sm-3">
-                  <label class="top-weapons__label">
-                    Abilites
-                  </label>
-                </div>
-                <div class="col-xs-3 col-sm-3 stat">
-                  <label>Kills</label>
-                </div>
-                <div class="col-xs-3 col-sm-3 stat">
-                  <label>Diff. to avg</label>
-                </div>
-                <div class="col-xs-3 col-sm-3 stat">
-                  <label>% of total kills</label>
-                </div>
-              </div>
-              <div class="row top-weapons--map__row" ng-repeat="ability in abilitySummary track by $index">
-                <div class="col-xs-3 col-sm-3">
-                  <span ng-bind="ability.name"></span>
-                </div>
-                <div class="col-xs-3 col-sm-3 stat">
-                  <span ng-bind="ability.killPercentage | number:2"></span>%
-                </div>
-                <div class="col-xs-3 col-sm-3 stat"
-                     ng-class="{'success': ability.diffPercentage > 0, 'fail': ability.diffPercentage < 0}">
-                  <i class="material-icons" ng-bind="ability.diffPercentage > 0 ? '&#xE5CE;' : '&#xE5CF;'"></i>
-                  <span ng-bind="ability.diffPercentage | number:2"></span>%
-                </div>
-                <div class="col-xs-3 col-sm-3 stat">
-                  <span ng-bind="ability.percentOfTotal | number:2"></span>%
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="row" ng-if="currentMapInfo">
-          <div class="col-xs-12 col-sm-2">
-            <h3 class="stat-header">
               Weapon usage by type
             </h3>
             <span data-content="Percentages are based on usage of weapon types in relation to total kills in their category.<hr />Difference to the average represents how much more or less that specific weapon type is used on {{currentMapInfo.name || 'this map'}} in relation to all other Trials of Osiris maps since the latest balance update." bs-popover>
@@ -133,6 +86,50 @@
                 </div>
               </div>
               <hr class="hr--minor visible-xs" ng-if="$index === 0">
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row" ng-if="currentMapInfo">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              Ability kills by type
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-10">
+            <div class="top-weapons--map">
+              <div class="row">
+                <div class="col-xs-3 col-sm-3">
+                  <label class="top-weapons__label">
+                    Abilites
+                  </label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Kills</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>Diff. to avg</label>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <label>% of total kills</label>
+                </div>
+              </div>
+              <div class="row top-weapons--map__row" ng-repeat="ability in abilitySummary track by $index">
+                <div class="col-xs-3 col-sm-3">
+                  <span ng-bind="ability.name"></span>
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span ng-bind="ability.killPercentage | number:2"></span>%
+                </div>
+                <div class="col-xs-3 col-sm-3 stat"
+                     ng-class="{'success': ability.diffPercentage > 0, 'fail': ability.diffPercentage < 0}">
+                  <i class="material-icons" ng-bind="ability.diffPercentage > 0 ? '&#xE5CE;' : '&#xE5CF;'"></i>
+                  <span ng-bind="ability.diffPercentage | number:2"></span>%
+                </div>
+                <div class="col-xs-3 col-sm-3 stat">
+                  <span ng-bind="ability.percentOfTotal | number:2"></span>%
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -299,7 +296,33 @@
               </span>
             </div>
           </div>
-
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-12 col-sm-2">
+            <h3 class="stat-header">
+              The Official Trials Report "Get Everyone To The Lighthouse" Initiative
+            </h3>
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <label class="top-weapons__label">Never been to the Lighthouse before?</label>
+            <p>
+              Guardians will do anything for a lovely <span class="player-hazard player-hazard--sherpa">Sherpa</span> badge. Probably even help you to Mercury!
+            </p>
+            <p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdSchxN8sTynOz0fzVoceSklbVnPiqxufBJOeXXWirkQygNug/viewform?usp=sf_link" target="_blank">Sign up to be carried <i class="material-icons icon--small">chevron_right</i></a>
+            </p>
+            <hr class="hr--minor visible-xs">
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <label class="top-weapons__label">Want to help Guardians reach Mercury?</label>
+            <p>
+              Earn yourself an awesome <span class="player-hazard player-hazard--sherpa">Sherpa</span> badge and make someone the happiest person in the world.
+            </p>
+            <p>
+              <a href="https://docs.google.com/spreadsheets/d/1TFt5jyBHOnhkK5oW0gsLMeBHR-gVkf0bQYEgtCfkP0M/edit?usp=sharing" target="_blank">Look for Guardians to carry <i class="material-icons icon--small">chevron_right</i></a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

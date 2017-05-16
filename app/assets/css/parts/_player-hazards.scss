@@ -45,7 +45,7 @@
 .player-hazard--sherpa {
   background: white;
   text-shadow: none;
-  color: #E65100;
+  color: $sherpa-color;
   padding-right: 0;
 
   &:after {
@@ -54,8 +54,8 @@
     margin-top: -1px;
     margin-bottom: -1px;
     border-radius: 0 3px 3px 0;
-    background: transparentize(#E65100, 0.85);
-    color: #E65100;
+    background: transparentize($sherpa-color, 0.85);
+    color: $sherpa-color;
     display: inline-block;
   }
 }
@@ -100,6 +100,15 @@
   border: 1px solid currentColor;
   white-space: nowrap;
   font-size: .7em;
+}
+
+.blog-post__content .player-hazard {
+  border: 1px solid currentColor;
+  padding-right: 3px;
+
+  &:after {
+    display: none;
+  }
 }
 
 .badge-overview__description {
