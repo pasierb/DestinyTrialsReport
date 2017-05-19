@@ -88,7 +88,7 @@ angular.module('trialsReportApp')
               if (badge.title === 'Sherpa') {
                 badges.push({
                   status: badge.title,
-                  description: badge.text,
+                  description: 'Helped a Guardian to the Lighthouse for the very first time',
                   count: badge.count,
                   htmlClass: 'player-hazard--sherpa'
                 });
