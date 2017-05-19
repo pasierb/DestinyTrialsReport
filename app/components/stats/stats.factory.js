@@ -85,11 +85,20 @@ angular.module('trialsReportApp')
 
           if (data.badges && data.badges[0]) {
             _.each(data.badges, function (badge) {
-              badges.push({
-                status: badge.title,
-                description: badge.text,
-                htmlClass: badge.title === 'Challenger' ? 'player-hazard--challenger' : 'player-hazard--joel'
-              });
+              if (badge.title === 'Sherpa') {
+                badges.push({
+                  status: badge.title,
+                  description: badge.text,
+                  count: badge.count,
+                  htmlClass: 'player-hazard--sherpa'
+                });
+              } else {
+                badges.push({
+                  status: badge.title,
+                  description: badge.text,
+                  htmlClass: badge.title === 'Challenger' ? 'player-hazard--challenger' : 'player-hazard--joel'
+                });
+              }
             });
           }
 
