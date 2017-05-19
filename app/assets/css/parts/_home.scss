@@ -89,6 +89,12 @@
   }
 }
 
+@media (min-width: 1281px) and (min-height: 600px) {
+  .home__aside {
+    max-height: 100vh;
+  }
+}
+
 @media all and (min-width: 1441px) {
   .home {
     max-width: 1323px;
