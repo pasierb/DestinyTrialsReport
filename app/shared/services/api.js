@@ -11,8 +11,6 @@ app.service('api', [
       var BASE_URL = '//api.destinytrialsreport.com/';
       var ENDPOINTS = {
         player:           'player/{membershipId}',
-        supporterStatus:  'supporterStatus/{membershipId}',
-        charitySupporter: 'charitySupporter/{membershipId}',
         opponents:        'getOpponents/{membershipId}',
         topWeapons:       'topWeapons/{membershipId}',
         lastWeapons:      'lastWeapons/{characterId}',
@@ -50,18 +48,6 @@ app.service('api', [
 
       this.getPlayer = function(membershipId) {
         return this.get(ENDPOINTS.player, {
-          membershipId: membershipId
-        });
-      };
-
-      this.checkSupporterStatus = function(membershipId) {
-        return this.get(ENDPOINTS.supporterStatus, {
-          membershipId: membershipId
-        });
-      };
-
-      this.checkCharitySupporter = function(membershipId) {
-        return this.get(ENDPOINTS.charitySupporter, {
           membershipId: membershipId
         });
       };

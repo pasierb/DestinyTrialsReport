@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1321px" height="478px" viewBox="0 0 1321 478" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <image id="Bitmap" x="0" y="26" width="20" height="20" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAA1teXP8meAAAAYlJREFUOBGtlU9Lw0AQxdPYSEMM9CJ6zhfw6jGCd2+C4vcrihJy1EuOJUJEvVcQT5LeTFPa/Knvhc2yUUs1cWDoZGbeb3fb7LSnNa2HRx1uKN4XOXxoJTyHZ4ozt4J/sxq0g8puGIZncRxfLhaL17Isl3TGzKF2zh44e7k4tQ1jYhs+9DzPTZLkfrXB2MNeaoRWQnlMrjIcj8enRVEkG1iyzF5qBJQMsrQtuM3V0PAhu38ZUCN2aguWNrAsay9N08efGKPRSKbVWCYRUEsGgIPqhwiC4Ng0zQMkWhm1ZEBsVEDHcU5akRSRYFTAvm3bh0qtVSgYfe5QNwxjvxVFEQmGXr07+F6XSq1TSGCZ53nciQJxlmXvZBGYz2az565AMB7IIjCbTCY3XYFgXJNVAV3XvZ3P509todSCcUcgGZ2vnu/7R+DIq/fvw4G75NHl+Fp3r7/e33Xji0AaoRxBNi96FEUX0+n0CkP1DcM1w1RJEb8wx5oYBjxmY8BW8wvJ2vhcg9lI/9NfwCdrl/NnDWxWiAAAAABJRU5ErkJggg=="></image>
+            <g id="Group-3" transform="translate(26.000000, 0.000000)">
+                <g id="dragIconRoundSmall">
+                    <g id="Group">
+                        <circle id="Oval" fill="#000000" opacity="0.3" cx="9" cy="10" r="9"></circle>
+                        <circle id="Oval" fill="#FFFFFF" cx="9" cy="9" r="9"></circle>
+                        <g id="Group-2" transform="translate(7.000000, 4.000000)" stroke="#979797" stroke-width="2" stroke-linecap="square">
+                            <path d="M0.5,0.5 L5.02769257,5.02769257" id="Line"></path>
+                            <path d="M0.5,5.5 L4.5,9.5" id="Line" transform="translate(2.500000, 7.500000) scale(-1, 1) translate(-2.500000, -7.500000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <polygon id="Shape" fill="#6441A5" points="1320.5 249.247 1320.5 420.503 1234.876 477.595 1177.793 477.595 1177.793 449.042 1137.833 477.595 1086.463 477.595 1086.463 449.042 1057.927 477.595 966.585 477.595 938.032 449.042 932.317 477.595 852.407 477.595 819.729 449.042 817.899 477.595 727.323 477.595 724.12 449.042 699.603 477.595 561.258 477.595 532.711 466.175 532.711 477.595 458.507 477.595 372.874 426.205 321.5 374.85 321.5 146.5 429.97 146.5 481.34 197.882 715.396 197.882 715.396 146.5 909.488 146.5 909.488 197.882 960.868 197.882 960.868 226.418 989.42 197.882 1046.494 197.882 1097.88 146.5 1206.34 146.5 1206.34 197.882 1269.138 197.882"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="1297.683 260.665 1257.728 220.715 1183.506 220.715 1183.506 169.328 1120.7 169.328 1120.7 403.385 1183.506 403.385 1183.506 283.495 1234.876 283.495 1234.876 403.385 1297.683 403.385 1297.683 260.665"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="1097.88 220.715 1000.83 220.715 960.867 260.665 960.867 363.418 1000.83 403.388 1097.88 403.388 1097.88 340.598 1023.656 340.598 1023.656 283.498 1097.879 283.498 1097.879 220.713"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="938.032 220.715 886.662 220.715 886.662 169.328 823.855 169.328 823.855 363.416 863.818 403.386 938.032 403.386 938.032 340.596 886.662 340.596 886.662 283.496 938.032 283.496 938.032 220.713"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="801.02 169.328 738.23 169.328 738.23 197.88 801.02 197.88 801.02 169.33"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="801.02 220.712 738.23 220.712 738.23 403.382 801.02 403.382 801.02 220.714"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="715.396 220.712 652.6 220.712 652.6 340.596 629.772 340.596 629.772 220.714 566.974 220.714 566.974 340.598 544.148 340.598 544.148 220.714 481.34 220.714 481.34 403.387 675.44 403.387 715.396 363.417 715.396 220.715"></polygon>
+            <polygon id="Path" fill="#FFFFFF" points="458.506 220.712 407.133 220.712 407.133 169.33 344.338 169.33 344.338 363.418 384.298 403.388 458.506 403.388 458.506 340.598 407.133 340.598 407.133 283.498 458.506 283.498 458.506 220.713"></polygon>
+            <circle id="Oval-2" fill="#D0011B" cx="189" cy="262" r="100"></circle>
+        </g>
+    </g>
+</svg>

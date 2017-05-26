@@ -1,97 +1,20 @@
 <div class="home__content">
-  <div class="home__aside" ng-if="opponents">
-    <article class="block top-weapons shadow-z-1">
-      <div class="block__title">
-        <input type="text" class="form-control" placeholder="Filter by player name"
-               ng-model="opponentName" ng-change="filterPlayers(opponentName)">
-      </div>
-      <div class="top-weapons__type" style="min-height: 112px;">
-        <div class="row">
-          <div class="col-xs-6">
-            <label class="top-weapons__label">
-              <a href="#" ng-click="archEnemies(!archToggled)" ng-bind="archToggled ? 'Nemesis' : 'Player' "></a>
-              <span> (click for <span ng-bind="archToggled ? 'Player' : 'Nemesis' "></span>)</span>
-            </label>
-          </div>
-          <div class="col-xs-2 stat">
-            <label> Standing </label>
-          </div>
-          <div class="col-xs-4 stat">
-            <label>
-            <a href="#" ng-click="orderByField='kd'; reverseSort = !reverseSort" style="display: block; float: left">
-              Opponent KD
-              <span class="d-block pull-right" ng-show="orderByField == 'kd'">
-                <i ng-hide="reverseSort" class="material-icons" style="font-size: 16px;line-height: 10px;">&#xE316;</i>
-                <i ng-show="reverseSort" class="material-icons" style="font-size: 16px;line-height: 10px;">&#xE313;</i>
-              </span>
-              </a>
-            </label>
-          </div>
-        </div>
-        <div class="row top-weapon" dir-paginate="opponent in opponents | orderBy:orderByField:reverseSort | itemsPerPage: 15" style="margin-top: 0; padding-top: .75em; cursor: pointer; cursor: hand;"
-             ng-click="getMatchDetails(opponent.instanceId)" ng-class="{'active-player': matchResults.activityDetails.instanceId == opponent.instanceId}">
-          <div class="col-xs-6 last-weapon-weapon__descr">
-            <span class="last-match-weapon__title" style="line-height: 1.3;" ng-bind="opponent.displayName"></span>
-          </div>
-          <div class="col-xs-2 stat">
-            <span class="last-match-weapon__title" style="line-height: 1.3;"
-                  ng-bind="opponent.standing === '1' ? 'Won' : 'Lost'"></span>
-          </div>
-          <div class="col-xs-4 stat">
-            <span class="last-match-weapon__title" style="line-height: 1.3;"
-                  ng-bind="opponent.kd | number:2 "></span>
-          </div>
-        </div>
-        <dir-pagination-controls max-size="6"></dir-pagination-controls>
-      </div>
-    </article>
-  </div>
-  <div class="home__aside" ng-if="!opponents">
-    <div ng-include="'components/home/aside.partial.html'"></div>
-  </div>
-  <article class="home__main">
-    <div class="block blog-post shadow-z-1" ng-if="!matchResults">
-      <div class="blog-post__img blog-image" ng-style="{'background-image': ($storage.currentMap.week == 23 ? 'url(\'/assets/img/maps/week23.jpg\')' : 'url(https://www.bungie.net/' + currentMap.pgcrImage + ')') }" style="flex-grow: 1;"></div>
-      <div class="blog-post__content">
-        <div class="blog-post__title">
-          <h2>Search Year 2 Trials Opponents: Beta</h2>
-        </div>
-        <ul class="blog-post__meta">
-          <li>
-            <p><span class="material-icons">&#xE8DF;</span> Dec 22th, 2015</p>
-          </li>
-        </ul>
-        <div class="blog-post__text">
-          <p>
-            This is actually something that I know all of us always wanted to have, the ability to search through opponents
-            and see the match results. <br/>
-            Just type in your name as you would on the regular section of the site and then you will be able to filter and view all your opponents.
-          </p>
+  <div class="home__aside" ng-if="matchResults">
+      <div class="block blog-post shadow-z-1">
+        <div class="blog-post__img blog-image" ng-style="{'background-image':'url(https://www.bungie.net/' + matchResults.map.pgcrImage + ')'}" style="flex-grow: 1;"></div>
+        <div class="blog-post__content">
+          <div class="blog-post__title">
+            <h2 ng-bind="matchResults.map.name"></h2>
+            <span style="float: right;">
+              <a href="{{'https://www.bungie.net/en/Legend/PGCR?instanceId=' + matchResults.activityDetails.instanceId + '&characterId=' + player.characterInfo.characterId}}" target="_blank">Bungie.net PGCR</a>
+            </span>
 
-          <p>
-            This is still in beta and currently a very early release of the section. <br/>
-            Nothing is final so send over your suggestion to the links below.
-          </p>
-
-          <p>
-            <strong>If you come across any issue, error, or just want to send us a suggestion you can
-              <a href="mailto:destinytrialsreport@gmail.com" target="_top">email</a> us or open a ticket on
-              <a href="https://github.com/DestinyTrialsReport/DestinyTrialsReport" target="_top">GitHub</a>.</strong>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="block blog-post shadow-z-1" ng-if="matchResults">
-      <div class="blog-post__img blog-image" ng-style="{'background-image':'url(https://www.bungie.net/' + matchResults.map.pgcrImage + ')'}" style="flex-grow: 1;"></div>
-      <div class="blog-post__content">
-        <div class="blog-post__title">
-          <h2 ng-bind="matchResults.map.name"></h2>
-        </div>
-        <ul class="blog-post__meta">
-          <li>
-            <p><span class="material-icons">&#xE8DF;</span> {{matchResults.period | date:'medium'}}</p>
-          </li>
-        </ul>
+          </div>
+          <ul class="blog-post__meta">
+            <li>
+              <p><span class="material-icons">&#xE8DF;</span> {{matchResults.period | date:'medium'}}</p>
+            </li>
+          </ul>
           <div class="col-xs-12 col-md-6" style="margin-bottom: 1px;" ng-repeat="standing in [0,1]">
             <h4 ng-bind="standing === 0 ? 'Won' : 'Lost'"></h4><!-- needs translations -->
             <div class="col-xs-12" style="margin-bottom: 1px;" ng-repeat="player in matchResults.entries track by $index" ng-if="player.values.standing.basic.value == standing">
@@ -107,8 +30,50 @@
                 </div>
               </div>
             </div>
+          </div>
         </div>
       </div>
+  </div>
+
+  <article class="block top-weapons shadow-z-1">
+    <div class="block__title">
+      <input type="text" class="form-control" placeholder="Filter by player name"
+             ng-model="opponentName" ng-change="filterPlayers(opponentName)">
+    </div>
+    <div class="top-weapons__type" style="min-height: 112px;">
+      <div class="row">
+        <div class="col-xs-6">
+          <label class="top-weapons__label">
+            <a href="#" ng-click="archEnemies(!archToggled)" ng-bind="archToggled ? 'Nemesis' : 'Player' "></a>
+            <span> (click for <span ng-bind="archToggled ? 'Player' : 'Nemesis' "></span>)</span>
+          </label>
+        </div>
+        <div class="col-xs-6 stat">
+          <label> Standing </label>
+        </div>
+        <!--<div class="col-xs-4 stat">-->
+          <!--<label>-->
+            <!--<a href="#" ng-click="orderByField='kd'; reverseSort = !reverseSort" style="display: block; float: left">-->
+              <!--Opponent KD-->
+              <!--<span class="d-block pull-right" ng-show="orderByField == 'kd'">-->
+                <!--<i ng-hide="reverseSort" class="material-icons" style="font-size: 16px;line-height: 10px;">&#xE316;</i>-->
+                <!--<i ng-show="reverseSort" class="material-icons" style="font-size: 16px;line-height: 10px;">&#xE313;</i>-->
+              <!--</span>-->
+            <!--</a>-->
+          <!--</label>-->
+        <!--</div>-->
+      </div>
+      <div class="row top-weapon" dir-paginate="opponent in opponents | orderBy:orderByField:reverseSort | itemsPerPage: 15" style="margin-top: 0; padding-top: .75em; cursor: pointer; cursor: hand;"
+           ng-click="getMatchDetails(opponent.instanceId)" ng-class="{'active-player': matchResults.activityDetails.instanceId == opponent.instanceId}">
+        <div class="col-xs-6 last-weapon-weapon__descr">
+          <span class="last-match-weapon__title" style="line-height: 1.3;" ng-bind="opponent.displayName"></span>
+        </div>
+        <div class="col-xs-6 stat">
+            <span class="last-match-weapon__title" style="line-height: 1.3;"
+                  ng-bind="opponent.standing === '1' ? 'Won' : 'Lost'"></span>
+        </div>
+      </div>
+      <dir-pagination-controls max-size="6"></dir-pagination-controls>
     </div>
   </article>
 </div>

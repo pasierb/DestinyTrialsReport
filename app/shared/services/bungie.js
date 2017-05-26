@@ -13,16 +13,18 @@ app.service('bungie', [
       var HEADERS = {
         headers: {'X-API-KEY': util.getApiKey($location.host())}
       };
-      var BASE_URL = util.domainIsValid ? 'https://www.bungie.net/Platform/Destiny/' : 'https://proxy.destinytrialsreport.com/Platform/Destiny/';
+      var BASE_URL = 'https://www.bungie.net/Platform/';
       var ENDPOINTS = {
-        searchForPlayer: 'SearchDestinyPlayer/{platform}/{name}/?lc={locale}',
-        account: '{platform}/Account/{membershipId}/?lc={locale}',
-        grimoire: 'Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}&lc={locale}',
-        stats: 'Stats/{platform}/{membershipId}/{characterId}/?modes={mode}&lc={locale}',
-        inventory: '{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
-        activityHistory: 'Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}&lc={locale}',
-        pgcr: 'Stats/PostGameCarnageReport/{instanceId}/?lc={locale}'
+        searchForPlayer: 'Destiny/SearchDestinyPlayer/{platform}/{name}/?lc={locale}',
+        account: 'Destiny/{platform}/Account/{membershipId}/?lc={locale}',
+        grimoire: 'Destiny/Vanguard/Grimoire/{platform}/{membershipId}/?single={cardId}&lc={locale}',
+        stats: 'Destiny/Stats/{platform}/{membershipId}/{characterId}/?modes={mode}&lc={locale}',
+        inventory: 'Destiny/{platform}/Account/{membershipId}/Character/{characterId}/Inventory/?lc={locale}',
+        activityHistory: 'Destiny/Stats/ActivityHistory/{platform}/{membershipId}/{characterId}/?mode={mode}&count={count}&lc={locale}',
+        pgcr: 'Destiny/Stats/PostGameCarnageReport/{instanceId}/?lc={locale}',
+        partnership: 'User/{bnetId}/Partnerships/'
       };
+
       this.searchForPlayer = function(platform, name) {
         return this.get(ENDPOINTS.searchForPlayer, {
           platform: platform,
@@ -35,6 +37,12 @@ app.service('bungie', [
         return this.get(ENDPOINTS.pgcr, {
           instanceId: instanceId,
           locale: $localStorage.language
+        });
+      };
+
+      this.getPartnership = function(bnetId) {
+        return this.get(ENDPOINTS.partnership, {
+          bnetId: bnetId
         });
       };
 

@@ -264,6 +264,7 @@ angular.module('trialsReportApp')
           }
         }
 
+        player.bnetId = data.bnetId;
         player.year2 = year2;
         player.year3 = year3;
         player.year1 = year1;
@@ -303,7 +304,7 @@ angular.module('trialsReportApp')
     var getTopWeapons = function (player) {
       var dfd = $q.defer();
       return api.topWeapons(
-        player.characterInfo.characterId
+        player.membershipId
       ).then(function (result) {
           if (result && result.data) {
             var topWeapons = [];
@@ -424,6 +425,29 @@ angular.module('trialsReportApp')
         });
     };
 
+    var getPartnership = function (player) {
+      return bungie.getPartnership(
+        player.bnetId
+      ).then(function (result) {
+          player.twitch = {};
+          if (result && result.data && result.data.Response && result.data.Response[0]) {
+            var partnership = result.data.Response[0];
+            if (partnership && partnership.partnerType == 1) {
+              player.twitch = {identifier: partnership.identifier};
+            }
+          }
+          return player;
+      });
+    };
+
+    var getStream = function (player) {
+      return $http.get('https://api.twitch.tv/kraken/streams/' + player.twitch.identifier + '?client_id=o8cuwhl23x5ways7456xhitdm0f4th0')
+        .then(function (result) {
+          player.twitch.isLive = result && result.data && result.data.stream && result.data.stream.stream_type == 'live';
+          return player;
+        });
+    };
+
     function getMMRTier(mmr) {
       if (mmr < 1100) return 'bronze';
       if (mmr < 1300) return 'silver';
@@ -458,6 +482,8 @@ angular.module('trialsReportApp')
       getStats: getStats,
       getGrimoire: getGrimoire,
       getPlayer: getPlayer,
+      getPartnership: getPartnership,
+      getStream: getStream,
       getTopWeapons: getTopWeapons,
       getPreviousMatches: getPreviousMatches,
       weaponStats: weaponStats,

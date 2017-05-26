@@ -38,8 +38,15 @@ angular.module('trialsReportApp')
 
     statsFactory.getMMR($scope.player);
     statsFactory.getStats($scope.player);
-    // statsFactory.getGrimoire($scope.player);
-    statsFactory.getPlayer($scope.player);
+    statsFactory.getPlayer($scope.player).then(function (player) {
+      if (player && player.bnetId) {
+        statsFactory.getPartnership(player).then(function (twitchPlayer) {
+          if (twitchPlayer.twitch && twitchPlayer.twitch.identifier) {
+            statsFactory.getStream(twitchPlayer);
+          }
+        });
+      }
+    });
 
     $scope.getWeaponByHash = function (hash) {
       if (DestinyWeaponDefinition[hash]) {

@@ -102,6 +102,7 @@
   },
   "flawlessPopoverHeader": "FLAWLESS WITH ACCOUNT / CHARACTER",
   "artifactHazards": {
+    "Radeghast": "Sword deflects rockets",
     "Radegast": "Sword deflects rockets",
     "Perun": "Highlights low health/full super",
     "Skorri": "Faster super recharge",

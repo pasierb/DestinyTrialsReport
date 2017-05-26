@@ -95,11 +95,6 @@
            analytics-on analytics-event="Click" analytics-category="DestinyTracker">
           <img src="/assets/img/trn-logo.png" alt="DestinyTracker">
         </a>
-        <a ng-href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
-           type="button" target="_blank" class="btn btn-default"
-           analytics-on analytics-event="Click" analytics-category="Guardian.gg">
-          <img src="/assets/img/ggg-logo.png" alt="Guardian.gg">
-        </a>
         <a ng-href="https://my.trials.report/{{player.membershipType === 2 ? 'ps' : 'xbox'}}/{{player.name}}"
            type="button" target="_blank" class="btn btn-default" ng-if="!subdomain"
            analytics-on analytics-event="Click" analytics-category="myDestinyTrialsReport">
@@ -110,11 +105,11 @@
            analytics-on analytics-event="Click" analytics-category="DestinyTrialsReport">
           DestinyTrialsReport
         </a>
-        <!--<a ng-if="true" ng-href="https://twitch.tv//{{player.twitch}}"-->
-           <!--type="button" target="_blank" class="btn btn-default"-->
-           <!--analytics-on analytics-event="Click" analytics-category="Twitch">-->
-          <!--<img src="/assets/img/twitch-logo.svg" alt="Twitch">-->
-        <!--</a>-->
+        <a ng-href="https://guardian.gg/en/profile/{{player.membershipType}}/{{player.name}}"
+           type="button" target="_blank" class="btn btn-default"
+           analytics-on analytics-event="Click" analytics-category="Guardian.gg">
+          <img src="/assets/img/ggg-logo.png" alt="Guardian.gg">
+        </a>
       </div>
     </div>
   </div>
