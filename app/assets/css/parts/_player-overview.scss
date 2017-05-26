@@ -29,6 +29,34 @@
   }
 }
 
+.player__twitch {
+  margin-left: 1.25rem;
+  color: #ccc;
+
+  &:hover {
+    text-decoration: none;
+    color: #6441a5;
+  }
+
+  > img {
+    height: 1.1rem;
+    display: inline-block;
+    vertical-align: -.1rem;
+  }
+
+  .player__twitch-dot {
+    vertical-align: .15rem;
+    opacity: 1;
+    border-radius: 50%;
+    display: inline-block;
+    background: red;
+    width: .5rem;
+    height: .5rem;
+    animation: blink 2s step-start 0s infinite;
+    -webkit-animation: blink 2s step-start 0s infinite;
+  }
+}
+
 .player-header__char {
   display: flex;
   align-items: center;

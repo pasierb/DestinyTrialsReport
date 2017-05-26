@@ -9,3 +9,10 @@
   50% {opacity: 1;}
   100% {opacity: 0.6;}
 }
+
+@keyframes blink {
+  50% { opacity: 0.0; }
+}
+@-webkit-keyframes blink {
+  50% { opacity: 0.0; }
+}
